@@ -1,0 +1,2128 @@
+\documentclass[11pt,oneside]{amsbook}
+
+\title{Introduction to real analysis}
+\author{Course notes written by Samuel Coskey\\Based on material from ``Understanding Analysis,'' by Stephen Abbott}
+
+\usepackage[vscale=.8,vmarginratio=4:3]{geometry}
+\usepackage{mathpazo,amssymb}
+\usepackage{setspace}\onehalfspacing\raggedbottom
+\renewcommand{\labelitemi}{$\circ$}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\chaptername}{Part}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\usepackage{remreset}
+\makeatletter\@removefromreset{section}{chapter}\makeatother
+\usepackage{etoolbox}
+\makeatletter
+\pretocmd{\@seccntformat}{\S}{}{}
+\patchcmd{\tocsection}{#2.}{\S#2.}{}{}
+\apptocmd{\tocsection}{\dotfill}{}{}
+\patchcmd{\@maketitle}{\newpage}{}{}{}
+\makeatother
+\usepackage[linktoc=all]{hyperref}
+\usepackage{tikz}\usetikzlibrary{positioning,decorations.fractals,decorations.pathmorphing}
+
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+\newcommand{\NN}{\mathbb N}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\RR}{\mathbb R}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\rng}{rng}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\inte}{int}
+\DeclareMathOperator{\ext}{ext}
+
+\theoremstyle{definition}
+\newtheorem{exerc}{Exercise}[section]
+\swapnumbers
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+\newtheorem*{notes}{Notes and further reading}
+\newtheorem*{reading}{Reading}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\renewcommand{\theequation}{\arabic{section}.e\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{section}.f\arabic{figure}}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{The theory of the real number line}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{What are rational and real numbers?}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{reading}
+  Abbott, \S 1.1
+\end{reading}
+
+% real numbers can be motivated by the intermediate value theorem, which is false in the rational number system
+
+We begin the course by briefly pondering a very deep question: what are numbers and what are they for?
+
+The natural or counting numbers $0$, $1$, $2$, etc are collectively denoted $\NN$ and lead to numerous areas of mathematical study. \emph{Combinatorics} is the study of counting finite sets. For example: how many ways are there to write 10 as a sum of smaller positive integers? \emph{Number theory} is the study of the arithmetic operations on the natural numbers. For example: how many prime numbers are there less than $10^{10}$?
+
+But in \emph{calculus}, analysis, and geometry, numbers are used for measurement. Using the blackboard as a plane, how can we measure the distance between two points? To answer this we would first need to choose a unit, such as a randomly chosen straight stick. With this in hand, we can try count how many copies of the unit stick fit along the striaght line segment joining the two points. But what if the number of unit sticks doesn't come out whole?
+
+In this case we can try to use \emph{ratios} to measure the distance. For example, suppose we are trying to measure the distance $d$, and three unit sticks fit perfectly inside two copies of $d$. Then we say that $d=3/2$ units. Sometimes this telescoping process takes a long time, for example if five units fit perfectly inside four copies of $d$.
+
+This leads to the \emph{big question}: do ratios suffice to measure all distances? The answer to this question is a big fat NO, a fact which surprised the ancients. Rational distances do suffice for any practical purposes because in the real world we are satisfied with approximations. But there are ideal distances (numbers) which cannot be measured by any ratio. The classical Greek example is $d=$ the diagonal of a square. Notice that $d$ has the property that $d^2=2$.
+
+\begin{center}
+\begin{tikzpicture}
+  \draw (0,0)--(1,0)--(1,1)--node[above]{$1$}(0,1)--node[left]{$1$}(0,0)--node[below right,inner sep=0]{$d$} (1,1);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+  \draw (0,0)--(2,0)--(2,2)--node[above]{$2$}(0,2)--node[left]{$2$}(0,0);
+  \draw (1,0)--(2,1)--(1,2)--node[below right,inner sep=0]{$d$}(0,1)--(1,0);
+\end{tikzpicture}
+\end{center}
+
+The argument is given in Plato's Meno. If we quadruplicate the square, we see that the square with sidelength $d$ is exactly half the square with sidelength $2$. Thus $d^2=2^2/2=2$.
+
+\begin{thm}
+  \label{thm:root-2-irrational}
+  If $d^2=2$ then $d\notin\QQ$.
+\end{thm}
+
+\begin{proof}
+  Suppose $d$ is rational and write $d=a/b$ where $a,b$ are integers and the fraction is in lowest terms. Then $a^2=2b^2$. Notice that the right-hand side is even, and therefore so is the left-hand side. It follows that $a$ is even. Hence the left-hand side is divisible by $4$, and so is the right-hand side. It follows that $b$ is even. Thus both $a$ and $B$ are even, contradicting that the fraction $a/b$ is in lowest terms.
+\end{proof}
+
+We conclude that the rational number system has \emph{gaps}, such as that defined by $\sqrt2$. All we can say at the moment is that some rational numbers are less than $\sqrt2$ and others are larger than $\sqrt2$. Actually the number $\sqrt2$ doesn't exist yet, we can only really say that some numbers have square less than $2$ and others have square greater than $2$. This is an example of a property which \emph{cuts} the rational number system into two halves.
+
+\begin{defn}
+  A subset $C\subset\QQ$ is called a \emph{cut} if it satisfies the following three properties.
+  \begin{enumerate}
+  \item (nontriviality) $C\neq\emptyset$ and $C\neq\QQ$
+  \item (downward closure) if $q<r$ and $r\in C$ then $q\in C$
+  \item (no greatest element) if $q\in C$ then there is $r\in C$ such that $q<r$
+  \end{enumerate}
+\end{defn}
+
+There are two types of cuts: obvious ones called rational cuts, such as the cut at $2$, and less obvious ones called gaps such as the cut at $\sqrt2$. The latter kind are called gaps, because these correspond to distances that the rational number system cannot measure.
+
+\begin{defn}
+  A cut $C$ is said to be a \emph{gap} if the complement $\QQ\smallsetminus C$ has no least element.
+\end{defn}
+
+For example, the cut at $r=2$ is the set $C=\set{q\in\QQ\mid q<2}$, and this is a rational cut because $\QQ\smallsetminus C=\set{q\in\QQ\mid q\geq2}$ has a least element, namely $2$. Generally, $C$ is a rational cut exactly when $C$ is of the form $\set{q\in\QQ\mid q<r}$ for some $r\in\QQ$. On the other hand the cut at $\sqrt2$ is the set $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$ and this is a gap because $\QQ\smallsetminus C=\set{q\in\QQ\mid q>0\text{ and}q^2\geq2}$ has no rational least element (we will prove this rigorously in the next section).
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cuts and least upper bounds}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We have just given a definition of a gap in the rational number system, but have yet to give an official example. According to our motivation, the cut at $\sqrt2$ should be a gap. The proof turns out somewhat more technical than may be expected. It gives an example of the kind of arguments we will be giving quite a lot in this class.
+
+\begin{thm}
+  \label{thm:root-2-cut}
+  $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$ is a gap.
+\end{thm}
+
+\begin{proof}
+  We begin by verifying that $C$ has the three properties of a cut.
+
+  (a) (nontriviality) Note that $0\in C$ and $5\notin C$.
+
+  (b) (downward closure) Suppose that $r\geq0$ and that $r\in C$, so that we have $r^2<2$. Let $q<r$ be given. Clearly if $q<0$ we have $q\in C$. On the other hand if $q\geq0$ then we have $q^2<r^2<2$ so again $q\in C$.
+
+  (c) (no greatest element) Suppose that $q\geq0$ and $q\in C$, so that $q^2<2$. We seek to find a small rational number $\epsilon>0$ such that $(q+\epsilon)^2<2$ also.
+
+  To see what $\epsilon$ has to be, we work \emph{backwards}.
+  \begin{align*}
+    (q+\epsilon)^2<2&\iff q^2+2q\epsilon+\epsilon^2<2\\
+    &\,\Longleftarrow\,\,\, q^2+2q\epsilon+\epsilon\leq2\\
+    &\iff \epsilon\leq(2-q^2)/(2q+1)
+  \end{align*}
+  There is a clever trick going on it the second implication (the $\Longleftarrow$ one) which we will comment on in a moment. But overall, this calculation is telling us that we will be safe if we choose $\epsilon\leq(2-q^2)/(2q+1)$.
+
+  Now, in the second implication we replaced $\epsilon^2$ with $\epsilon$ to simplify the expression and make it easy to solve for $\epsilon$. To do this, we actually need to make the extra assumption that $\epsilon$ is smaller than $1$, since then $\epsilon^2<\epsilon$ and the $\Longleftarrow$ holds true. This is acceptible because we haven't yet chosen $\epsilon$, so we just need to additionally promise to choose $\epsilon<1$.
+
+  We now know that our proof will succeed if we choose $\epsilon$ to be any rational number that is both $<1$ and $\leq(2-q^2)/(2q+1)$. To verify that this works, we use our preparatory work above \emph{forwards} as follows.
+  \begin{align*}
+    (q+\epsilon)^2&=q^2+2q\epsilon+\epsilon^2\\
+    &<q^2+2q\epsilon+\epsilon\\
+    &=q^2+(2q+1)\epsilon\\
+    &=q^2+(2q+1)(2-q^2)/(2q+1)\\
+    &=2
+  \end{align*}
+  Thus we conclude that $r=q+\epsilon$ is a rational number such that $q<r$ and $r^2<2$, which completes the proof of (c).
+
+  Finally, to see that $C$ is a gap, we note that the same argument as in part (c) above can be used to show that the set $\set{q\in\QQ\mid q>0\text{ and }q^2>2}$ has no least element. Then since Theorem~\ref{thm:root-2-irrational} implies that $\sqrt2$ is itself not rational, we can conclude that $\QQ\smallsetminus C$ has no least element.
+\end{proof}
+
+Let us look at the number systems we know so far, from smallest to largest. Each one has progressively more power than the last.
+\begin{itemize}
+\item $\NN$: you can add but not subtract.
+\item $\ZZ$: you can add and subtract, but not divide.
+\item $\QQ$: you can add and subtract and divide, but there are gaps.
+\end{itemize}
+
+The real number system $\RR$ will be defined in such a way that it fills the gaps of $\QQ$. Last time we defined a gap as a cut without a least upper bound. We now investigate gaps further in terms of least upper bounds.
+
+\begin{defn}
+  If $A$ is a set of real numbers, then an \emph{upper bound} for $A$ is any number $b$ such that for all $a\in A$, $a\leq b$. If $b$ is an upper bound for $A$ then it is called the \emph{least upper bound} or \emph{supremum} of $A$ if it is least among all possible upper bounds of $A$.
+\end{defn}
+
+\begin{example}
+  \begin{itemize}
+  \item The set $(-5,5]$ has a maximum element $5$. Therefore it has least upper bound $5$.
+  \item The set $(-5,5)$ has no maximum element. But the set has upper bounds, for example $7$, $23.6$, and $100$. The least possible upper bound is $5$.
+  \item The set $\set{\frac12,\frac23,\frac34,\ldots}$ has no maximum element. But it again has upper bounds, and the least possible upper bound is $1$.
+  \end{itemize}
+\end{example}
+
+The fact that $\QQ$ has gaps can be summarized as saying that $\QQ$ has cuts with no supremum in $\QQ$. We therefore fill these gaps by adding a supremum to every cut that doesn't have one.
+
+\begin{defn}
+  The \emph{real number system} consists of the rational numbers $\QQ$ together with a supremum for every cut of $\QQ$ that doesn't already have a supremum (that is, for every gap).
+\end{defn}
+
+In other words, to form the real number system we first build the rational number system, observe that it has gaps, and then manually \emph{fill in} all these gaps. According to this definition, irrational numbers are \emph{defined} by their cuts. We can't define $\sqrt2$ by saying it is positive number whose square is $2$, that tells you what property the number has, but not what it actually is. Rather we must define $\sqrt2$ to be the supremum of the cut $\set{q\in\QQ\mid q<0\text{ or }q^2<2}$.
+
+We close this section with characterization of the supremum that is useful for working with the notion.
+
+\begin{lem}
+  If $A$ is a set, then $\alpha$ is the supremum of $A$ if and only if the following two conditions are satisfied:
+  \begin{itemize}
+  \item ($\alpha$ is an upper bound) for all $a\in A$ we have $a\leq\alpha$, and
+  \item ($\alpha$ is the least such) for all $\epsilon>0$ there exists $a\in A$ such that $\alpha-\epsilon\leq a$.
+  \end{itemize}
+\end{lem}
+
+The proof of this is left as an exercise.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The axiom of completeness}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In the previous section we showed how one can construct the real number system; in this section we take a high-level approach and show how to define the real number system by its properties alone.
+
+To begin, we note that the real number system should be much more than just a set of distances, it should be an \emph{ordered field}. This means that you should be able to add, subtract, multiply, divide, and compare numbers, and these operations should satisfy the usual axioms of associativity, commutativity, and so forth. The rational number system has all these properties, and the real number system does too. What is missing are the definitions of the plus, times, and comparison operations, as well as the verification that the usual axioms are actually true.
+
+For example, if $A$ and $B$ are cuts then we define
+\[A+B=\set{a+b\mid a\in A\text{ and }b\in B}
+\]
+One should then verify that $A+B=B+A$, and $(A+B)+C=A+(B+C)$, and so forth. Similarly we define
+\[A<B\iff A\subset B\text{ and }A\neq B
+\]
+One should then verify that $A<B<C\implies A<C$, and $A<B\implies A+C<B+C$, and so forth. We skip the remaining details of these tedious definitions and verifications.
+
+Since we constructed $\RR$ by filling the gaps of $\QQ$, it is natural to ask whether $\RR$ itself has gaps. In other words, maybe in filling some gaps we introduced new ones! In fact $\RR$ does not have any gaps
+
+\begin{defn}
+  An ordered field is said to satisfy the \emph{axiom of completeness} or the \emph{least upper bound property (LUBP)} if every bounded subset has a least upper bound.
+\end{defn}
+
+For example, $\QQ$ is an ordered field that is not complete, since we checked that the cut corresponding to $\sqrt2$ has no supremum. On the other hand the real field $\RR$ does turn out to be complete. The results of this discussion are summarized in the following big theorem.
+
+\begin{thm}
+  The real number system $\RR$ is an ordered field satisfying the axiom of completeness. Moreover, $\RR$ is the unique such field up to isomorphism.
+\end{thm}
+
+As soon as one accepts this theorem, it is actually never necessary to speak of cuts again. In the future we can describe a real number in many ways: algebraically, as a limit, as a summation, or even by its decimal expansion.
+
+Although we are omitting the greater part of the proof of the above theorem, let us verify the axiom of completeness holds in the real number system.
+
+\begin{proof}[Proof of completeness]
+  Suppose that $S$ is a bounded set of real numbers (cuts). We claim that the union $U=\bigcup S$ is a cut too. Indeed, since $S$ is bounded, there is a cut $B$ such that  $U\subset B$. It follows that $U$ is nontrivial. Next it is easy to check that the union of downward closed sets is again downward closed. Thirdly if $U$ had a greatest element $x$, then $x$ must lie in some cut $A\in S$. But then $x$ would be the greatest element of $A$, a contradiction.
+
+  Now, since $A\subset U$ for every $A\in S$, we see that $U$ is an upper bound for $S$. Moreover $U$ is the least upper bound for $S$. Indeed, any other upper bound $U'$ satisfies $A\subset U'$ for every $A\in S$, and therefore $U=\bigcup S\subset U'$. In other words, $U\leq U'$, as desired.
+\end{proof}
+
+Recall that although we have defined the real number system using cuts, once the construction is complete we refer to the properties of the system rather than the construction. That is, from now on the real number system $\RR$ is the unique ordered field extending the rational number system and satisfying the axiom of completeness. From these properties alone we can conclude all familiar facts about the real number system.
+
+\begin{thm}[Archimedian property]
+  For any real number $x$ there exists a natural number $n$ such that $x<n$. That is, the real numbers fill in between the integers, they do not extend to the right.
+\end{thm}
+
+\begin{proof}
+  Suppose to the contrary that $x$ is a real number such that for all $n\in\NN$ we have $n\leq x$. Then this says the set $\NN$ is bounded. By the axiom of completeness, $\NN$ should have a least upper bound, call it $\alpha$.
+
+  Now, since $\alpha$ is the \emph{least} upper bound, $\alpha-1$ is not an upper bound for $\NN$. Hence there exists $n\in\NN$ such that $\alpha-1\leq n$. It follows that $\alpha\leq n+1$, contradicting that $\alpha$ is an upper bound for all natural numbers.
+\end{proof}
+
+As a consequence of this simple fact, we can now formally establish one fact we have claimed before. While the rational number system is not sufficient to measure all distance, it is sufficient to \emph{approximate} any real distance. In the following result, we assume that $x<y$ and imagine that they are very close to one another.
+
+\begin{thm}[Rational density]
+  For any real numbers $x<y$ there exists $q\in\QQ$ such that $x<q<y$.
+\end{thm}
+
+\begin{proof}
+  Using the Archimedean principle, we can find $n\in\NN$ such that $n>1/(y-x)$. Intuitively, this guarantees that increments of size $1/n$ cannot step over the interval $(x,y)$.
+
+  Now let $m\in\NN$ be the smallest natural number such that $x<m/n$ (again use the Archimedean principle). Note that by this minimality we have $m/n-1/n\leq x$. Putting these equations together, we have
+\begin{align*}
+  x&<m/n\\
+   &\leq x+1/n\\
+   &<x+(y-x)=y
+\end{align*}
+Thus the rational number $q=m/n$ lies in the interval $(x,y)$.
+\end{proof}
+
+To see that this implies we can approximate real numbers by rational numbers, let $x$ be a given real number and apply the rational density theorem to the intervals $(x-\epsilon,x+\epsilon)$.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Completeness and the size of the reals}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The NIP has numerous consequences, one of which is the surprising fact that there are more irrational numbers than there are rational numbers!
+
+In order to make this claim precise, we need to introduce the notion of countable and uncountable sets.
+
+\begin{defn}
+  A set $A$ is \emph{countable} if its elements all appear in some sequence. Intuitively, $A$ is countable if and only if its elements can be placed into a system of boxes of the form
+\begin{center}
+  \begin{tikzpicture}
+    \foreach \i in {0,...,4}
+    \draw (\i,0) rectangle (\i+1,1);
+    \draw (5,0)--(6,0);
+    \draw (5,1)--(6,1);
+    \node at (6.5,.5) {$\cdots$};
+  \end{tikzpicture}
+\end{center}
+\end{defn}
+
+\begin{example}
+  The set of natural numbers $\NN$ is countable, as is any of its subsets.
+\end{example}
+
+\begin{example}
+  The set of integers $\ZZ$ is countable. To see this, one can simply alternate between positive and negative integers: $0,1,-1,2,-2,3,-3,\ldots$.
+\end{example}
+
+\begin{example}
+  The set of rational numbers $\QQ$ is countable. To see this, let us first show that the set of positive rational numbers $\QQ_+$ is countable. Although the numerator and denominator make it seem like there are two ``dimensions'' of information, we can get around this by fixing the sum of the two and then letting it increase: begin with $\frac11$, then do $\frac12,\frac21$, then $\frac13,\frac22,\frac31$, then $\frac14,\frac23,\frac32,\frac41$, and so forth. Finally we can include the negatives as well by applying the same method as we did for $\ZZ$.
+\end{example}
+
+The following result can be handy for showing sets are countable.
+
+\begin{lem}
+  \begin{itemize}
+  \item If $A,B$ are countable, then the union $A\cup B$ is countable.
+  \item If $A_1,A_2,\ldots$ is a sequence of countable sets, then $\bigcup A_n$ is countable.
+  \end{itemize}
+\end{lem}
+
+\begin{proof}
+  For the first statement, since $A$ is countable we can enumerate its elements $a_1,a_2,a_3,\ldots$ and since $B$ is countable we can enumerate its elements $b_1,b_2,b_3,\ldots$. It follows that we can enumerate the elements of $A\cup B$ in the sequence $a_1,b_1,a_2,b_2,a_3,b_3\ldots$ and so $A\cup B$ is countable.
+
+  We leave the proof of the second statement as an exercise.
+\end{proof}
+
+For example, the result can be used to give a systematic proof that $\ZZ$ is countable. It is obvious that the set $\ZZ_+$ of nonnegative integers is uncountable, and ditto for the negative integers $\ZZ_-$. Since $\ZZ$ is the union of the two sets, it follows that $\ZZ$ is countable.
+
+\begin{thm}
+  \label{thm:reals-uncountable}
+  The set of real numbers $\RR$ is \emph{not} countable.
+\end{thm}
+
+In order to prove this theorem, we need the following consequence of completeness, which will be used frequently throughout the course.
+
+\begin{thm}[Nested interval property]
+  Suppose that $I_n$ is a sequence of closed and bounded intervals, that is, intervals of the form $[l,r]$. Moreover suppose that the intervals $I_n$ are nested, that is, $I_{n+1}\subset I_n$. Then we have $\bigcap I_n\neq\emptyset$.
+\end{thm}
+
+\begin{proof}
+  For naming purposes, let $l_n$ be the left endpoint and $r_n$ be the right endpoint of the interval $I_n$. Notice that the set of left endpoints $\set{l_n\mid n\in\NN}$ is bounded above, with any of the $r_n$ being such an upper bound. By the axiom of completeness, the set $\set{l_n\mid n\in\NN}$ has a least upper bound, call it $\alpha$.
+
+  Then given any $n$, we have $l_n\leq\alpha$, since $\alpha$ is an upper bound for the set $\set{l_n\mid n\in\NN}$. On the other hand, we also have $\alpha<r_n$, since $\alpha$ is the \emph{least} upper bound for the set $\set{l_n\mid n\in\NN}$. It follows that $\alpha$ lies in the interval $I_n=[l_n,r_n]$. Since $n$ was arbitrary, we have that $\alpha$ lies in $\bigcap I_n$.
+\end{proof}
+
+We are now ready to prove that the set of real numbers is uncountable.
+
+\begin{proof}[Proof of Theorem~\ref{thm:reals-uncountable}]
+  Suppose towards a contradiction that $\RR$ is countable. Then its elements can be enumerated in a sequence $a_n$. Now inductively construct a nested sequence of closed, bounded intervals as follows. Let $I_1$ be any closed, bounded interval not containing $a_1$. Let $I_2$ be any closed subinterval of $I_1$ not containing $a_2$. Inductively, let $I_n\subset I_{n-1}$ be any closed interval not containing $a_n$. This completes the construction.
+
+  Now by the NIP, there exists an element $\alpha\in\RR$ such that for all $n$, we have $\alpha\in I_n$. Since $I_n$ does not contain $a_n$ and $\alpha\in I_n$, we have that $\alpha\neq a_n$. Since this is true for all $n$, the existence of $\alpha$ contradicts the claim that every element of $\RR$ is enumerated in the sequence $a_n$!
+\end{proof}
+
+\begin{cor}
+  The set of irrational numbers is uncountable.
+\end{cor}
+
+\begin{proof}
+  Suppose towards a contradiction that the set of irrational numbers is countable. Then $\RR=\QQ\bigcup(\RR\smallsetminus\QQ)$ is countable, being the union of two countable sets, contradicting the theorem.
+\end{proof}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{More on countability and uncountability}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+When Cantor found that the real numbers are uncountable, he was so surprised that he continued studying it for a long time. Eventually he gave the following more systematic argument of uncountability using the decimal number system. The proof is referred to as the Cantor diagonalization argument, and has since appeared in many different contexts.
+
+\begin{thm}
+  The unit interval $(0,1)$ is uncountable.
+\end{thm}
+
+\begin{proof}
+  Suppose towards a contradiction that $(0,1)$ is countable. Then the elements of $(0,1)$ can all be enumerated in a sequence $a_n$. We need to analyze the digits of each entry of this sequence, so let us fix some notation for them:
+  \begin{align*}
+    a_1&=0.a_{11}\,a_{12}\,a_{13}\cdots\\
+    a_2&=0.a_{21}\,a_{22}\,a_{33}\cdots\\
+    a_3&=0.a_{31}\,a_{32}\,a_{33}\cdots\\
+    \vdots&
+  \end{align*}
+  We now define a ``diagonal'' real number $d\in(0,1)$ with a decimal expansion $d_n$ with the property that for all $n$
+  \[d_n\neq a_{nn}
+  \]
+  More precisely, we let $d_n=2$ if $a_{nn}\neq2$ and we let $d_n=3$ if $a_{nn}=2$. It then follows that for all $n$, we have $d\neq a_n$. Thus $d$ is an element of $(0,1)$ which does not appear in the sequence $a_n$, contradicting our assumption that every element of $(0,1)$ appears in the sequence $a_n$.
+\end{proof}
+
+The dichotomy between countable and uncountable sets suggests that one should further investigate the possibilities for the size of an infinite set. Recall that for finite sets we write $|A|$ for the number of elements of $A$. However for infinite sets this definition of $|A|$ isn't a good one anymore. What is needed is the following.
+
+\begin{defn}
+  Suppose that $A,B$ are sets. Then we introduce the following notation:
+  \begin{itemize}
+  \item We write $|A|\leq|B|$ if there is a one-to-one function $A\to B$
+  \item We write $|A|=|B|$ if there exists a one-to-one, onto function $A\to B$
+  \item We write $|A|<|B|$ if we have $|A|\leq|B|$ and $|A|\neq|B|$.
+  \end{itemize}
+\end{defn}
+
+Observe that we never defined what $|A|$ actually is, only the way in which it compares with other sets. Such a thing can be done (as set theorists do), but it isn't necessary for this class.
+
+While the terms ``more'' or ``fewer'' elements lose their meaning for infinite sets, the notions of one-to-one and onto functions do not. Moreover, the definition given above is consistent with the behavior of the ``number of elements'' definition used in the special case of finite sets.
+
+Cantor's theorem can be generalized to show that for any set there is a set of even larger cardinality. Therefore there is no bound on the number of different sizes of infinity! Recall that if $A$ is any set, the \emph{power set} $\mathcal P(A)$ is the set of all subsets of $A$. Of course if $A$ is finite, then we have $|\mathcal P(A)|=2^{|A|}$ so in particular $|A|<|\mathcal P(A)|$. Cantor showed that this generalizes to arbitrary sets.
+
+\begin{thm}
+  If $A$ is any set, then $|A|\leq|\mathcal P(A)|$.
+\end{thm}
+
+\begin{proof}
+  To show that $|A|\leq|\mathcal P(A)|$ we must exhibit a one-to-one function $A\to\mathcal P(A)$. For this, we can use the function $i(a)=\{a\}$.
+
+  To show that $|A|\neq|\mathcal P(A)|$, we have to show that there is no one-to-one, onto function $f\colon A\to\mathcal P(A)$. For this, suppose that $f\colon A\to\mathcal P(A)$ is any function. Then we consider the ``diagonal'' set $D$:
+  \[D=\set{a\in A\mid a\notin f(a)}
+  \]
+  We claim that $D$ is not in the range of $f$, and therefore that $f$ is not onto. To see this, suppose towards a contradiction that there exists $a_0\in A$ such that $D=f(a_0)$. Then by the definition of $D$, we have that $a_0\in D$ iff $a_0\notin f(a_0)$. And since $D=f(a_0)$ we can write this as $a_0\in D$ iff $a_0\notin D$, which is a clear contradiction.
+\end{proof}
+
+It is natural to ask to what extent cardinalities behave like ordinary finite counting numbers. For instance, is it possible to have two sets which are \emph{incomarable} in size, that is $|A|\not\leq|B|$ and $|B|\not\leq|A|$? If we assume all of the standard axioms about sets (including the axiom of choice) then this situation is impossible.
+
+\begin{thm}
+  If $A,B$ are any sets, then exactly one of the following is true: $|A|<|B|$, $|A|=|B|$, or $|B|<|A|$.
+\end{thm}
+
+Another natural question is whether the set of all real numbers is the \emph{smallest} uncountable set. Many very narrow or thin subsets of $\RR$ still have the full cardinality of $\RR$. Just consider $(0,1)$ or $(0,\epsilon)$ or the set of irrationals. So one is led to ask whether it is true that for any set $A$ of real numbers, if $A$ is uncountable then $|A|=|\RR|$? 
+
+This question is known as the \emph{continuum hypothesis} and has great historical significance. After remaining open for many decades, it was finally settled in a surprising way: the answer is \emph{undecidable} using the usual axioms about sets! In other words, there is a universe in which the continuum hypothesis is true, and also a universe in which it is false.
+
+The existence of undecidable propositions in mathematics has been a key interest to set theorists ever since.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Sequences and series}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Infinity and arithmetic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{sec:sequences}
+
+We have already used the concept of a sequence of real numbers $a_n$. In fact sequences play a huge role in analysis. In this section we give some motivation for studying sequences and their brother concept of series.
+
+To begin consider the simple addition problem $\pi+e$, which we write out in decimal notation as
+\begin{align*}
+&3.14159265\cdots\\
+{}+&2.71828182\cdots
+\end{align*}
+It is unclear how to begin this problem. Our usual method of carrying would have us start at the right-most digit, but there isn't one! It is possible to handle this issue by regarding $\pi$ and $e$ as cuts. But it is even more elegant to regard $\pi$ and $e$ as limits of a sequence, and perform the addition term-by-term.
+
+Another problem with addition is the prospect of adding together infinitely many numbers at once. Sometimes this clearly isn't possible, since for example 
+\[1+1+1+1+\cdots
+\]
+should by infinite, and certainly cannot be said to have any real value. On the other hand the familiar Zeno paradox asks whether
+\[1+\frac12+\frac14+\frac18+\cdots
+\]
+has any real value, and we usually agree that has a value of $2$. It seems that sometimes it makes sense to add together infinitely many numbers, and other times it does not.
+
+But this conclusion deserves a great deal of scrutiny. For instance, consider the following simple proof that the Zeno series has a value of $2$. We first notice that
+\begin{align*}
+(1+\frac12+\frac14+\frac18+\cdots)-1&=\frac12+\frac14+\frac18+\cdots\\
+                                    &=\frac12(1+\frac12+\frac14+\cdots)
+\end{align*}
+Thus we see that if $x=1+\frac12+\frac14+\frac18+\cdots$, then $x$ satisfies the equation $x-1=\frac12x$ and therefore $x=2$.
+
+Now let us apply this proof to the series $1+2+4+8+\cdots$. Again write
+\begin{align*}
+(1+2+4+8+\cdots)-1&=2+4+8+\cdots\\
+                  &=2(1+2+4+\cdots)
+\end{align*}
+This time we conclude that if $x=1+2+4+8+\cdots$ then $x$ satisfies the equation $x-1=2x$ and therefore that $x=-1$, which is absurd!
+
+Finally, even if we do accept infinite summations as valid, we must take care to decide whether the familiar laws of associativity and commutativity of addition may be used in this situation. To see the potential difficulty, consider two ways of grouping the terms of the same infinite summation:
+\begin{align*}
+S_1&=(1-1)+(1-1)+(1-1)+\cdots\\
+S_2&=1+(-1+1)+(-1+1)+\cdots
+\end{align*}
+With the first grouping, we see that the value is $0$. With the second grouping, we see that the value is $1$.
+
+Commutativity has similar issues. For example, consider two ways of summing the same series:
+\begin{align*}
+S_1&=1-\frac12+\frac13-\frac14+\frac15-\frac16+-\cdots\\
+S_2&=1+\frac13-\frac12+\frac15+\frac17-\frac14++-\cdots
+\end{align*}
+In the second summation we first add two of the positive terms before then adding one of the negative terms. A quick calculator computation shows that $S_1\approx0.69$ while $S_2\approx1.03$. This time we conclude that even if infinite summations are possible, one must be very careful when applying the usual laws of arithmetic to them!
+
+[Activity about rearrangements of this series]
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Convergence}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Recall that a \emph{sequence} is just a list $a_n$ of real numbers indexed by natural numbers. Set-theoretically, a sequence is simply a function $\NN\to\RR$. The only difference is that in the sequence notation we write $a_n$, and in the function notation we write $f(n)$.
+
+The most important characteristic of a sequence is whether it converges or diverges. Intuitively a sequence $a_n$ converges to a limit point $L$ if the sequence eventually comes as close as one wishes to $L$.
+
+\begin{defn}
+  The sequence $a_n$ \emph{converges} to $L$ if the following holds:
+  \[(\forall\epsilon>0)\;(\exists N\in\NN)\;(\forall n\geq N)\;|a_n-L|<\epsilon
+  \]
+  In this case we write both $\lim a_n=L$ and also $a_n\to L$, and we say that $L$ is the \emph{limit} of the sequence.
+\end{defn}
+
+Since the definition is both of central importance and also somewhat subtle, we will analyze it in great detail.
+
+\begin{itemize}
+\item The $(\forall\epsilon>0)$ clause. Intuitively we think of $\epsilon$ as a very small \emph{tolerance}. Thus the definition of convergence begins by saying that for all possible tolerances, something will happen.
+\item The $(\exists N\in\NN)\;(\forall n>N)$ clause. Intuitively this means that \emph{eventually} something will happen. This is because it says that there is some index such that for all later indices, that thing will be true.
+\item The $|a_n-L|<\epsilon$ clause. Intuitively we think of this as saying that $a_n$ lies within a small \emph{neighborhood} of $L$. Formally, if $x$ is any real number and $\epsilon>0$, then the \emph{$\epsilon$-neighborhood} of $x$, denoted $V_\epsilon(x)$, is the open interval centered at $x$ of radius $\epsilon$. In symbols:
+  \[V_\epsilon(x)=(x-\epsilon,x+\epsilon)=\set{y\in\RR\mid|y-x|<\epsilon}
+  \]
+  Thus the conclusion of the definition of convergence says precisely that $a_n$ lies in the $\epsilon$-neighborhood of $L$.
+\end{itemize}
+
+In conclusion, the statement that $a_n$ converges to $L$ says
+\begin{quotation}
+ ``for all tolerances $\epsilon$, the sequence eventually falls within the $\epsilon$-neighborhood of $L$.''
+\end{quotation}
+
+So how does one show that a given sequence converges to a specified limit? One way to think of verifying that the three-quantifier definition holds is to play a three-step game. Your enemy takes the first turn and gives you some (small) value of $\epsilon$. You respond by calculating a (large enough) value of $N$. Your enemy then responds by choosing some $n\geq N$. Finally, you win if you can show that $L-\epsilon<a_n<L+\epsilon$.
+
+\begin{example}
+  Let us confirm from the definition that $\lim1/\sqrt{n}=0$. Suppose that $\epsilon$ is given to us. We must find a value $N$ (depending on this $\epsilon$) with the property that whenever $n\geq N$ we have $-\epsilon<1/\sqrt{n}<\epsilon$. Since $1/\sqrt{n}$ is always positive, we only have to worry about the second inequality.
+
+  To get an idea of how this is going to work, if $\epsilon=.1$ then we would need to take $N=100$. Similarly if $\epsilon=.01$ then we would need to take $N=10,000$. In general we can figure out the needed relationship by working backwards. We want
+  \begin{align*}
+    1/\sqrt{n}<\epsilon &\iff \sqrt{n}>1/\epsilon\\
+                        &\iff n>1/\epsilon^2
+  \end{align*}
+  This tells us we should take $N=1/\epsilon^2$. Technically $N$ has to be a natural number, but we can just take any natural number $N\geq\epsilon^2$.
+
+  Finally we can write the proof forwards as follows. Given any $\epsilon>0$, we let $N$ be any natural number such that $N\geq1/\epsilon^2$. Then for all $n>N$ we have
+  \begin{align*}
+    n>1/\epsilon^2&\implies\sqrt{n}>1/\epsilon\\
+                  &\implies1/\sqrt{n}<\epsilon
+  \end{align*}
+  Since we always have $-\epsilon<1/\sqrt{n}$, the proof is complete.\qed
+\end{example}
+
+\begin{example}
+  Let us confirm from the definition that $n/(n+1)\to1$. So let $\epsilon$ be given; we wish to conclude that eventually $1-\epsilon<n/(n+1)<1+\epsilon$. Since $n/(n+1)$ is always less than $1$, we only have to worry about the first inequality. To see the needed value of $N$ we work backwards:
+  \begin{align*}
+    1-\epsilon<n/(n+1)&\iff 1-n/(n+1)<\epsilon \\
+                      &\iff 1/(n+1)<\epsilon \\
+                      &\iff n+1>1/\epsilon \\
+                      &\iff n>1/\epsilon-1
+  \end{align*}
+  Thus the needed value of $N$ is $1/\epsilon-1$. To simplify the calculation, it will be good enough to take $N\geq1/\epsilon$.
+  
+  Now to write the proof forwards, let $\epsilon$ be given and let $N$ be a natural number such that $N\geq1/\epsilon$. Then for all $n>N$ we have
+  \begin{align*}
+    1-n/(n+1) &= 1/(n+1)\\
+              &< 1/n\\
+              &<\epsilon
+  \end{align*}
+  Thus $1-\epsilon < n/(n+1)$, as desired.\qed
+\end{example}
+
+We should be careful to point out that we give a careful definition of convergence not so we can routinely verify specific instances of convergence. Rather, we verify the specific instances so that we can be sure our definition agrees with our intuition.
+
+%discussion of tails?
+
+So far we have discussed only convergence of sequences. What happens when a sequence $a_n$ does \emph{not} converge to $L$? Formally negating the definition of convergence, this says
+\[(\exists\epsilon>0)\;(\forall N\in\NN)\;(\exists n\geq N)\;|a_n-L|\geq\epsilon
+\]
+Intuitively this says that there is some tolerance $\epsilon$ such that the sequence frequently lies outside the $\epsilon$-neighborhood of $L$.
+
+\begin{example}
+  Consider the following sequence with the terms, and discuss whether it converges to $0$ or not:
+  \[1,-\frac12,+\frac13,-\frac14,+\frac15,-\frac15,+\frac15,-\frac15,\ldots
+  \]
+  If $\epsilon$ has a given value of $.5$ it is possible to find a suitable response $N$ which satisfies the definition of convergence. The same is true if $\epsilon=.25$. But if $\epsilon=.2$ then it is \emph{not} possible, so we conclude that the sequence does not converge to $0$
+\end{example}
+
+In general, we say that a sequence \emph{diverges} if it fails to converge to $L$ for every possible limit $L$.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Limit calculus}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In the previous section we gave a rigorous definition of convergence, and checked that it corresponds with our intuition for several special examples. In this section we begin our study of \emph{calculus}, that is, the rules for calculating with objects such as limits. Many people think of calculus as the rules for calculating with derivatives and integrals, but limits are a predecessor to both.
+
+Before we begin recall the \emph{triangle inequality} states that for any $x,y$ we have $||x|-|y||\leq|x-y|\leq|x|+|y|$. The triangle inequality is actually best visualized in two dimensions, where it says that if $x$ is $|x|$ away from the origin and $y$ is $|y|$ away from the origin, then the distance between $x$ and $y$ cannot be less than $||x|-|y||$ and not more than $|x|+|y|$.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \draw (0,0) circle (.8);
+    \draw (0,0) circle (1.3);
+    \node[circle,draw,inner sep=1] at (0,0) {};
+    \node[circle,fill,draw,inner sep=1,label=right:$x$] (x) at (0:.8) {};
+    \node[circle,fill,draw,inner sep=1,label=left:$y$] (y) at (180:1.3) {};
+    \draw (x)--(y);
+  \end{tikzpicture}
+  \qquad
+  \begin{tikzpicture}
+    \draw (0,0) circle (.8);
+    \draw (0,0) circle (1.3);
+    \node[circle,draw,inner sep=1] at (0,0) {};
+    \node[circle,fill,draw,inner sep=1,label=left:$x$] (x) at (0:.8) {};
+    \node[circle,fill,draw,inner sep=1,label=right:$y$] (y) at (0:1.3) {};
+    \draw (x)--(y);
+  \end{tikzpicture}
+  \caption{On the left, $x$ and $y$ are as far apart as possible at $|x|+|y|$ units. On the right, $x$ and $y$ are as close together as possible at $||x|-|y||$ units.}
+\end{figure}
+
+We can now state the laws for the calculus of limits. The proof is long, but the method of proof is very important and worth exploring at least until the tedium sets in.
+
+\begin{thm}[Limit calculus]
+  Suppose that $\lim a_n=a$ and $\lim b_n=b$. Then we have
+  \begin{enumerate}
+  \item $\lim a_n+b_n=a+b$
+  \item $\lim ka_n=ka$ for any $k\in\RR$
+  \item $\lim a_nb_n=ab$
+  \item $\lim a_n/b_n=a/b$ provided $b_n,b\neq 0$
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  \begin{enumerate}
+  \item This is our first example of a so-called ``$\epsilon/2$-argument.'' If $\epsilon>0$ is given, we cleverly apply the convergence of $a_n$ and $b_n$ to $\epsilon/2$. Thus there exists an $N_1$ such that for all $n>N_1$ we have $|a_n-a|<\epsilon/2$, and there exsits an $N_2$ such that for all $n>N_2$ we have $|b_n-b|<\epsilon/2$. Thus if $n>\max(N_2,N_2)$, we have
+    \begin{align*}
+      |(a_n+b_n)-(a+b)|&=|(a_n-a)+(b_n-b)|\\
+      &\leq|a_n-a|+|b_n-b|\\
+      &<\epsilon/2+\epsilon/2\\
+      &=\epsilon
+    \end{align*}
+    In other words, we use the triangle inequality to \emph{split} the distance from $a_n+b_n$ to $a+b$ into two portions, each of which we can bound.
+  \item This is similar but easier; we just use an $\epsilon/|k|$ argument. Given $\epsilon$, we can find $N$ such that for all $n>N$ we have $|a_n-a|<\epsilon/|k|$. It follows that $|ka_n-ka|<\epsilon$, as desired.
+  \item Given $\epsilon$, we wish to show that eventually we have $|a_nb_n-ab|<\epsilon$. To see what we will need, we calculate
+    \begin{align*}
+      |a_nb_n-ab|&\leq|a_nb_n-ab_n+ab_n-ab|\\
+      &\leq|a_nb_n-ab_n|+|ab_n-ab|\\
+      &=|a_n-a||b_n|+|a||b_n-b|
+    \end{align*}
+    Since $b_n$ converges, we can find a bound $M$ such that $|b_n|\leq M$ for all $n$ (see below). Now since $a_n$ and $b_n$ converge, we can find an $N$ large enough so that for $n>N$ we have both $|a_n-a|<\epsilon/2M$ and $|b_n-b|<\epsilon/2|a|$. Together with the calculation above, we thus conclude that $|a_nb_n-ab|<\epsilon$, as desired.
+  \item This is similar to multiplication and we omit it.
+  \end{enumerate}
+\end{proof}
+
+\begin{example}
+  We can now verify that $\frac{n}{n+1}\to1$ as follows:
+  \begin{align*}
+    \lim\frac{n}{n+1}&=\frac1{\lim\frac{n+1}{n}}\\
+    &=\frac1{\lim 1+1/n}\\
+    &=\frac1{1+\lim 1/n}\\
+    &=1
+  \end{align*}
+\end{example}
+
+Thus the previous result provides a method of establishing convergence using algebraic properties of the sequence. Another key method of establishing convergence is using the order properties of sequence. The result is sometimes known as the \emph{squeeze theorem}.
+
+\begin{thm}[Squeeze theorem]\
+  \begin{itemize}
+  \item If $a_n\geq0$ and $\lim a_n$ exists then $\lim a_n\geq0$.
+  \item If $a_n\leq b_n\leq c_n$ and $\lim a_n=\lim c_n=L$ then $\lim b_n$ exists and $=L$.
+  \end{itemize}
+\end{thm}
+
+\begin{proof}
+  For the first statement, suppose towards a contradiction that $a=\lim a_n<0$. Then applying the definition of convergence to $\epsilon=|a|$ we see that eventually $|a_n-a|<|a|$. It follows that $a_n-a<-a$ and hence $a_n<0$, which is a contradiction.
+
+  For the second statement, first note that by the limit laws $\lim(c_n-a_n)=0$. Thus given $\epsilon$ we eventually have both $c_n-a_n<\epsilon/2$ and also $|a_n-L|<\epsilon/2$. Now we calculate that
+  \begin{align*}
+    |b_n-L|&=|b_n-a_n+a_n-L|\\
+    &\leq b_n-a_n+|a_n-L|\\
+    &\leq c_n-a_n+|a_n-L|\\
+    &<\epsilon
+  \end{align*}
+  and thus $\lim b_n=L$, as desired.
+\end{proof}
+
+\begin{example}
+  We can now show that $\lim\frac{1}{n^2}e^{1/n}\to0$ by writing $0\leq\frac{1}{n^2}e^{1/n}\leq\frac{e}{n^2}$ and noting the left and right sides converge to $0$.
+\end{example}
+
+If convergence or divergence is the most important property of a sequence, a second very important property is that of boundedness.
+
+\begin{defn}
+  The sequence $a_n$ is \emph{bounded} if there exists an interval $[a,b]$ such that $\{a_n\}\subset[a,b]$.
+\end{defn}
+
+Frequently one shows that a sequence is bounded by showing the equivalent property that the set of absolute values $|a_n|$ is bounded above. Indeed, if $|a_n|\leq M$ for all $n\in\NN$, then it follows that $a_n$ is contained in the interval $[-M,M]$ and thus is bounded.
+
+\begin{prop}
+  If $a_n$ is convergent, then $a_n$ is bounded.
+\end{prop}
+
+\begin{proof}
+  Suppose $a_n\to L$, so that for all $\epsilon$ we can find $N$ such that $|a_n-L|<\epsilon$ whenever $n>N$. In particular whenever $n\geq N$ we have that $a_n$ lies in the interval $[a,b]=[L-\epsilon,L+\epsilon]$ and so this tail of the sequence is bounded.
+
+  Meanwhile all that remains of the sequence is the finite initial segment $a_1,\ldots,a_N$. Since it is clear that finite sets are always bounded, let us say that this initial segment is contained in the interval $[c,d]$. It follows that the full sequence is contained in the interval $[\min(a,c),\max(b,d)]$ and therefore is bounded.
+\end{proof}
+
+The converse of this Proposition is false, with a simple example being the sequence with terms $+1,-1,+1,-1,\ldots$.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Convergence and summations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this section we begin to look at convergence in the context of series summations. We will define what it means for an infinite series to converge, and give a first look into the so-called convergence tests. We will return to convergence tests later on.
+
+\begin{defn}
+  If $a_n$ is any sequence then the \emph{sequence of partial sums} of the $a_n$ is the sequence $S_N$ with terms
+  \[S_n=a_1+\cdots+a_n=\sum_1^na_k
+  \]
+  We say that the series $\sum a_n$ \emph{converges} and equals $L$ if the sequence of partial sums $S_n$ converges to $L$ in the ordinary sense.
+\end{defn}
+
+This definition answers any questions about how the terms of the sum are grouped. When we write $\sum a_n$, we mean $\cdots(((a_1+a_2)+a_3)+a_4)+\cdots$
+
+It is important to remark that the sequence of terms $a_n$ and the sequence of partial sums $S_n$ are both just ordinary sequences. The precise relation ship between the two is given by the two equations:
+\begin{align*}
+  S_n&=a_1+\cdots+a_n\\
+  a_n&=S_{n+1}-S_n
+\end{align*}
+
+It is natural to ask about the relationship between convergence of $a_n$ and convergence of $S_n$. We will see later on that if $S_n$ converges then $a_n$ converges too. On the other hand the converse is false, that is, $a_n$ may converge while $S_n$ diverges. For a simple example if $a_n=1$ for all $n$, then $S_n=n$ for all $n$ and this clearly diverges.
+
+The definition of $S_n$ as a sum of a variable number of terms frequently makes it difficult to compute its values exactly. Still, sometimes one can find tricks to do so, such as with the following ``geometric'' sequence.
+
+\begin{example}
+  \label{ex:geometric}
+  The series with terms $a_n=1/2^n$, beginning at $n=1$, has partial sums $S_1=1/2$, $S_2=3/4$, $S_3=7/8$, $S_4=15/16$, etc. It is easy to prove by induction that
+  \[S_n=\frac{2^n-1}{2^n}
+  \]
+  This calculates to $S_n=1-1/2^n$ which makes it clear that $S_n\to1$. In series notation, we write $\sum1/2^n=1$.
+\end{example}
+
+It is not usually so easy to calculate the exact value of $S_n$ and of $\sum a_n$. Thus when given a series, we usually begin with the simpler question of whether it converges at all, or whether it diverges.
+
+\begin{example}
+  \label{ex:1/n^2}
+  The series $\sum1/n^2$ converges. In fact the value is $\pi^2/6$, but it requires some serious calculus to determine this! Rather than calculate the partial sums exactly, we will show only that the sequence $S_n$ of partial sums is bounded as follows. 
+  \begin{align*}
+    S_{2^n}&=1+\left(\frac14+\frac19\right)
+             +\left(\frac1{16}+\frac1{25}+\frac1{36}+\frac1{49}\right)
+             +\cdots
+             +\frac1{(2^n)^2}\\
+           &\leq1+2\frac14+4\frac1{16}
+             +\cdots+2^{n-1}\frac1{(2^{n-1})^2}+\frac1{(2^n)^2}\\
+           &\leq\sum\frac1{2^n}=1
+  \end{align*}
+  This shows that $S_{2^n}$ is bounded by $1$, and since the sequence $S_n$ is increasing, clearly the whole sequence $S_n$ is bounded by $1$. The next result implies that we can conclude $\sum1/n^2$ converges even without knowing its value.
+\end{example}
+
+\begin{thm}[Monotone convergence theorem]
+  Suppose that $b_n$ is a monotone increasing sequence, that is, for all $n$ we have $b_n\leq b_{n+1}$. Suppose furher that $b_n$ is bounded. Then $b_n$ converges to the limit $L=\sup(b_n)$.
+\end{thm}
+
+\begin{proof}
+  Let $\epsilon>0$ be given. Since $L$ is an upper bound for the $b_n$, we have $b_n\leq L$ for all $n$. Since $L$ is the least upper bound for the $b_n$, we can find a particular element $b_N$ of the sequence such that $b_N>L-\epsilon$. Since the sequence is monotone increasing, $n>N\implies b_n>L-\epsilon$ as well. Thus for all $n>N$ we have $L-\epsilon<b_n<L+\epsilon$, and the convergence is established.
+\end{proof}
+
+To complete Example~\ref{ex:1/n^2}, we know that the sequence of partial sums $S_n$ is increasing and bounded above by $1$, therefore it is convergent. Hence the series $\sum1/n^2$ converges to some unknown value $\leq1$.
+
+We conclude our examples with a divergent series.
+
+\begin{example}
+  The series $\sum 1/n$ looks similar to the previous one, but in fact it diverges. To prove this, we show that the sequence of partial sums is unbounded using a similar grouping trick.
+\begin{align*}
+  S_{2^n} &= 1+\frac12+\frac13+\frac14+\frac15+\frac16+\frac17+\frac18
+            \cdots+\frac1{2^n}\\
+          &\geq 1+\frac12+\left(\frac14+\frac14\right)
+            +\left(\frac18+\frac18+\frac18+\frac18\right)
+            +\cdots+2^{n-1}\frac1{2^n}\\
+          &=1+n\frac12
+\end{align*}
+It follows that the sequence of partial sums $S_n$ is unbounded and therefore divergent.
+\end{example}
+
+The method of this last two examples can be used in a wide variety of situations. We can package this method of proof in the following convergence test.
+
+\begin{thm}[Condensation test]
+  If $a_n$ is a positive, decreasing sequence, then $\sum a_n$ converges if and only if $\sum2^ka_{2^k}$ converges.
+\end{thm}
+
+% Can omit the proof...
+
+\begin{proof}
+  First suppose that $\sum2^ka_{2^k}$ converges and let $S_n$ denote the partial sums of the sequence $a_n$. Then
+  \begin{align*}
+    S_{2^n}&=a_1+(a_2+a_3)+\cdots+(a_{2^{n-1}}+\cdots+a_{2^n-1})+a_{2^n}\\
+           &\leq a_1+2a_2+\cdots+2^{n-1}a_{2^{n-1}}+2^na_{2^n}\\
+           &\leq\sum2^ka_{2^k}
+  \end{align*}
+  Thus the monotone convergence theorem implies that $S_n$ converges, in other words that $\sum a_n$ converges.
+
+  Conversely suppose that $\sum a_n$ converges and let $T_k$ be the partial sums of the sequence $2^ka_{2^k}$. Then
+  \begin{align*}
+    T_k&=a_1+2a_2+4a_4+\cdots+2^ka_{2^k}\\
+       &\leq 2a_1+2a_2+2(a_3+a_4)+\cdots+2(a_{2^{k-1}+1}+\cdots+a_{2^k})\\
+       &\leq 2\sum a_n
+  \end{align*}
+  Thus again the monotone convergence theorem implies that $T_k$ converges, in other words that $\sum2^ka_{2^k}$ converges.
+\end{proof}
+
+The condensation test may be applied to our earlier examples as follows.
+\begin{itemize}
+\item To test whether $\sum1/n^2$ converges, we may instead test $\sum2^k/(2^k)^2=\sum1/2^k$. This latter series converges by Example~\ref{ex:geometric}, so $\sum1/n^2$ converges as well.
+\item To test whether $\sum1/n$ converges, we may instead test $\sum2^k/2^k=\sum1$. This latter series clearly diverges, so $\sum1/n$ diverges as well.
+\end{itemize}
+
+% Another consequence of the monotone convergence theorem is the following.
+
+% \begin{example}
+%   The series $\sum1/n(n+1)$ converges and its value can be calculated using another clever trick. Specifically, we compute the values of the partial sums $Sn$ using the method of ``telescoping.''
+%   \begin{align*}
+%     S_n&=\frac12+\frac16+\frac1{12}+\cdots+\frac1{n(n-1)}\\
+%        &=\frac12+\left(\frac12-\frac13\right)+\left(\frac13-\frac14\right)
+%          +\cdots+\left(\frac1{n-1}-\frac1n\right)\\
+%        &=\frac12+\frac12-\frac1n
+%   \end{align*}
+%   It is now clear that $S_n$ converges to $1$.
+% \end{example}
+
+% \begin{cor}[Comparison test]
+%   If $a_n$ and $b_n$ are nonnegative sequences with $a_n\leq b_n$ for all $n$, and if $\sum b_n$ is known to converge, then $\sum a_n$ converges too.
+% \end{cor}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Subsequences}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defn}
+  Given a sequence $a_n$, a \emph{subsequence} of $a_n$ is a selection of infinitely many terms of $a_n$. More formally, if $n_1<n_2<n_3<\ldots$ is a properly increasing sequence of indices, then the corresponding subsequence $a_{n_k}$ consists of the temrs $a_{n_1},a_{n_2},a_{n_3},\ldots$.
+\end{defn}
+
+\begin{example}
+  Starting with the sequence $a_n=1/n$, let's make some subsequences:
+  \begin{align*}
+    a_{2n}&: \frac12, \frac14, \frac16, \frac18, \ldots\\
+    a_{n^2}&: 1, \frac14, \frac19, \frac1{16}, \ldots
+  \end{align*}
+  One could also have a selection of terms with no apparent pattern whatsoever:
+  \[a_{n_k}:\frac14, \frac{1}{15}, \frac{1}{37},\ldots
+  \]
+\end{example}
+
+One must be careful to point out that it is not allowed to reorder or repeat the terms. Thus in the example of $a_n=1/n^2$ the terms $1,\frac13,\frac12,\frac14,\ldots$ cannot be part of a subsequence of $a_n$, and neither can the terms $1,\frac12,\frac12,\frac13,\ldots$.
+
+It should not be surprising that if a sequence converges, so do its subsequences.
+
+\begin{prop}
+  \label{prop:subsequence}
+  If $a_n$ is a sequence which converges to $L$, and $a_{n_k}$ is a subsequence of $a_n$, then $a_{n_k}$ converges to $L$ too.
+\end{prop}
+
+\begin{proof}
+  Since $a_n\to L$, if $\epsilon>0$ is given we can find $N$ such that $n>N$ implies $|a_n-L|<\epsilon$. Since the $n_k$ are strictly increasing, we always have $n_k\geq k$. Hence if $k>N$ then we have $n_k>n_N\geq N$ and therefore $|a_{n_k}-L|<\epsilon$ too.
+\end{proof}
+
+Of course the converse is false with a simple example being the subsequence $1,1,1,1,\ldots$ of $1,-1,+1,-1,\ldots$.
+
+Although it is very simple, Proposition~\ref{prop:subsequence} has a surprising number of applications. The first application allows us to settle the question posed about the associative law for series way back in Section~\ref{sec:sequences}.
+
+\begin{cor}
+  The associative law holds for convergent series. That is, if $\sum a_n$ converges then any association of its terms converges.
+\end{cor}
+
+So for example if $\sum a_n$ converges then the following series converges:
+\[(a_1+a_2+a_3)+(a_4+a_5+a_6)+\cdots
+\]
+The proof is simple: the partial sums of the re-associated series form a subsequence of the partial sums of the original series. Therefore the re-associated series converges by Proposition~\ref{prop:subsequence}.
+
+The second application gives a method of determining that a seqeunce is divergent. In the past, we have checked that a given sequence fails to converge to a proposed limit. The following result lets you check that a sequence fails to converge at all.
+
+\begin{cor}
+  \label{cor:divergence}
+  Let $a_n$ be a sequence, and suppose the subsequences $a_{n_k}$ and $a_{n_l}$ both converge but to different limits. Then $a_n$ does not converge.
+\end{cor}
+
+For example if $a_n=(-1)^n(1+1/n)$, then $a_n$ has terms
+\[-2,3/2,-4/3,5/4,-6/5,\ldots
+\]
+The subsequence $a_{2n}=1+1/n$ converges to $1$, and the subsequence $a_{2n+1}=-1-1/n$ converges to $-1$. Therefore the original sequence $a_n$ diverges.
+
+We conclude this section with an existence result surrounding convergent subsequences. Recall that we saw every convergent sequence is bounded, but not every bounded sequence is convergent. The following famous theorem states that even if a bounded sequence does not converge, it is at least guaranteed to  have convergent subsequences.
+
+\begin{thm}[Bolzano--Weierstra\ss]
+  If $a_n$ is a bounded sequence, then $a_n$ has a convergent subsequence.
+\end{thm}
+
+\begin{proof}
+  Since $a_n$ is bounded we may assume it is a subset of some large interval $[-M,M]$. We go in search of the limit by iteratively subdividing the interval. To begin, at least one of $[-M,0]$ or $[0,M]$ must contain infinitely many terms of the sequence. Whichever of these intervals it is, call it $I_1$, and let $a_{n_1}$ be a term of the sequence lying in $I_1$.
+
+  Next, one of the two halves of $I_1$ must contain infinitely terms of the sequence $a_n$, call it $I_2$, and let $a_{n_2}$ be a term of the sequence lying in $I_2$. (Ensure here that $n_1<n_2$.)
+
+  Continuing in this manner, we find intervals $I_{n_k}\subset I_{n_{k-1}}$ with diameter $M/2^{k-1}$ and terms of the sequence $a_{n_k}\in I_{n_k}$. By the NIP there exists a real number $L\in\bigcap I_k$. We claim $a_{n_k}$ is convergent and has limit $L$.
+
+  For this, let $\epsilon>0$ be given. Choose $K$ large enough so that $M/2^{K-1}<\epsilon$. Then for all $k>K$ we have $a_{n_k}\in I_k\subset I_K$ and therefore $|a_{n_k}-L|<\epsilon$, as desired.
+\end{proof}
+
+The BW theorem has numerous theoretical applications, some of which we shall see throughout the course. To give one small example, we can establish the following partial converse to Corollary~\ref{cor:divergence}.
+
+\begin{prop}
+  Let $a_n$ be a bounded sequence. If $a_n$ is divergent, then it has subsequences $a_{n_k}$ and $a_{n_l}$ which both converge but to different limits.
+\end{prop}
+
+\begin{proof}
+  By the Bolzano--Weierstra\ss\ theorem, there is a convergent subsequence $a_{n_k}\to L$. Since $a_n$ itself does not converge to $L$, there exists $\epsilon$ such that infinitely many terms $a_n$ of the sequence satisfy $|a_n-L|\geq\epsilon$. Enumerate these terms in a subsequence $a_{n_l}$. Again by the Bolzano--Weierstra\ss\ theorem, this subsequence $a_{n_l}$ has a further subsequence $a_{n_{l_m}}$ which converges to a limit $M$. Then we have $|M-L|\geq\epsilon$, in particular $M\neq L$.
+\end{proof}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Completeness}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Recall that the real number system satisfies the axiom of completeness, which says that every bounded set has a least upper bound (supremum). We have said that this should be interpreted as saying that the real number system does not have any gaps.
+
+But this leads to the question of what it means for other spaces, besides the real numbers, to be complete? For example it is intuitively clear that $\RR^2$ or the sphere $\mathbb S^2$ do not have any gaps. To capture this, we need a more general definition of completeness.
+
+\begin{defn}
+  The sequence $a_n$ is \emph{Cauchy} if for all $\epsilon>0$ there exists $N\in\NN$ such that for all $m,n>N$ we have $|a_n-a_m|<\epsilon$.
+\end{defn}
+
+The Cauchy sequences are the ones which really, really want to converge, but don't know what their limit should be!
+
+\begin{example}
+  The sequence $a_n=1/2^n$ is Cauchy. Indeed given $\epsilon$ we can let $N$ be large enough that $1/2^N<\epsilon$. Then if $m,n>N$ we have the following (assume for convenience that $m>n$):
+  \begin{align*}
+    \frac1{2^n}-\frac1{2^m}&=\frac{2^m-2^n}{2^{m+n}}\\
+    &\leq\frac{2^m}{2^{m+n}}\\
+    &\leq\frac1{2^N}<\epsilon
+  \end{align*}
+\end{example}
+
+The proof that the above sequence is Cauchy is not too different than the proof that it is convergent. In fact the notions of Cauchy and convergent sequences turn out to be exactly the same.
+
+\begin{thm}[Cauchy criterion]
+  A sequence of real numbers is Cauchy if and only if it is convergent.
+\end{thm}
+
+\begin{proof}
+  Let us first suppose that $a_n$ is convergent with limit $L$ and show that it is Cauchy. Given $\epsilon$ we can choose $N$ large enough that $n>N$ implies $|a_n-L|<\epsilon/2$. Then if $m,n>N$ we have
+  \begin{align*}
+    |a_n-a_m|&= |a_n-L+L-a_m|\\
+             &\leq |a_n-L|+|L-a_m|\\
+             &<\epsilon
+  \end{align*}
+  and hence $a_n$ is Cauchy.
+  
+  Conversely suppose that $a_n$ is Cauchy. Before showing it is convergent, we will first show it is bounded. For this, we can choose $N$ large enough that $m,n>N$ implies $|a_n-a_m|<1$. This shows that a tail of the sequence is bounded, and since finite sets are always bounded, the whole sequence must be bounded too.
+
+  Now since $a_n$ is bounded, it follows from the Bolzano--Weierstra\ss\ theorem that $a_n$ has a convergent subsequence $a_{n_k}$ with limit $L$. We claim that the whole sequence $a_n$ converges to $L$ as well. Indeed given $\epsilon$ we can choose $N$ large enough that $m,n>N$ implies $|a_n-a_m|<\epsilon/2$. Moreover we can find $k$ large enough that $n_k>N$ and $|a_{n_k}-L|<\epsilon/2$. Therefore
+  \begin{align*}
+    |a_n-L|&\leq|a_n-a_{n_k}|+|a_{n_k}-L|<\epsilon
+  \end{align*}
+  and so $a_n$ converges to $L$, as desired.
+\end{proof}
+
+The above theorem says that in the real number system, every sequence that wants to converge (beacues it is Cauchy) really does converge. This statement is false if you restrict to the just the rational number system. Rather, the statement can be regarded as another way of saying that the real number system is complete. (More generally, we say that a space is \emph{Cauchy complete} if all of its Cauchy sequences converge.)
+
+Like this one, many of the statements we have investigated so far can be regarded as statements of completeness: the axiom of completeness itself (AOC) the nested interval property (NIP), the Bolzano--Weierstra\ss\ theorem (BWT), and the Cauchy criterion (CC). Examining our proofs, we have seen that
+\[AOC\implies NIP\implies BWT\implies CC
+\]
+
+We now prepare to show that in fact all four of these statements are equivalent by showing that the Cauchy criterion implies the axiom of completeness.
+
+\begin{thm}
+  All of the statements AOC, NIP, BWT, CC are equivalent.
+\end{thm}
+
+\begin{proof}
+  It remains only to show that CC implies AOC. Suppose we know Cauchy sequences converge and let $A$ be a bounded subset of $\RR$. Then $A$ is contained in some interval $[a,b]$. For each $n$, divide $[a,b]$ into cells of width $(b-a)/2^n$ and let $a_n$ be the top endpoint of the highest cell meeting $A$. Then for any $N$, the sequence $a_n$ eventually lies in an interval of with $(b-a)/2^N$ and hence $a_n$ is Cauchy.
+
+  Since Cauchy sequences converge we may let $L$ be the limit of $a_n$. We claim that $L$ is the least upper bound for $A$. Indeed since for all $n$ we have that $a_n$ is an upper bound for $A$, it is clear that $L$ is an upper bound for $A$. Moreover given $\epsilon$ we can find $n$ large enough that $(b-a)/2^n<\epsilon$, and then we have $a_n>L-\epsilon$. Thus AOC holds, as desired.
+\end{proof}
+
+In the exercises you will be asked to prove that the monotone convergence theorem (MCT) is also equivalent to completeness.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Series convergence tests}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this section we return to series and the so-called tests for series convergence. First, we note that just as limits obey calculus laws, series obey certain rules as well.
+
+\begin{thm}[Series calculus]
+  Suppose $\sum a_n$ and $\sum b_n$ both converge. Then $\sum ca_n=c\sum a_n$ and $\sum(a_n+b_n)=\sum a_n+\sum b_n$.
+\end{thm}
+
+\begin{proof}
+  This follows almost directly from the limit calculus. For example, to show that $\sum a_n+b_n=\sum a_n+\sum b_n$, we let $S_n$ denote the sequence of partial sums of the $a_n$ and $T_n$ the sequence of partial sums of $b_n$.
+  \begin{align*}
+    \sum(a_n+b_n)&=\lim\sum_1^n(a_k+b_k)\\
+                &=\lim (S_n+T_n)\\
+                &=\lim S_n+\lim T_n\\
+                &=\sum a_n+\sum b_n
+  \end{align*}
+  Here, the third equality is an instance of the limit summation law.
+\end{proof}
+
+Before proceeding to the convergence tests, we state formally one simple test for divergence which should be kept in mind when considering practical examples.
+
+\begin{thm}[Divergence criterion]
+  If $\sum a_n$ is a series such that the terms $a_n$ do not converge to zero, then $\sum a_n$ diverges.
+\end{thm}
+
+\begin{proof}
+  We use the contrapositive. Suppose that $\sum a_n=S$. Then the sequence partial sums $S_n$ converges to $S$. It follows from the summation law that the terms $a_n=S_n-S_{n-1}$ converge to $S-S=0$.
+\end{proof}
+
+\begin{example}
+  Consider the series $\sum(-1)^n\frac{3n^2+1}{2n^2-5}$. The terms are alternating in sign and one might think they could conceivably cancel with one another to yield a finite summation. However we know from the limit calculus that the subsequence of positive terms converges to $3/2$ and the subsequence of negative terms to $-3/2$. Hence the terms of the series do not converge to $0$, so the series diverges.
+\end{example}
+
+The next two tests summarize some familiar series, and help give us a library of known series convergence and divergence for future use.
+
+\begin{thm}[Geometric series test]
+  Let $r$ be a real number. Then the series $\sum r^n$ converges if and only if $|r|<1$. If it does converge the value of the zero-indexed series is $1/(1-r)$.
+\end{thm}
+
+\begin{thm}[$p$-series test]
+  Let $p$ be a real number. Then the series $\sum \frac{1}{n^p}$ converges if and only if $p>1$.
+\end{thm}
+
+We leave the proofs of these results as exercises. 
+The geometric series test is a straightforward generalization of the calculation in Example~\ref{ex:geometric}. The $p$-test is an easy application of the condensation test.
+
+\begin{example}
+  Consider the series $\sum 9^{-n+2}4^{n+1}$. We can rewrite it as $4\cdot81\sum(4/9)^n$. Since $4/9<1$ the series converges and the summation is $4\cdot81/(1-4/9)$.
+\end{example}
+
+
+\begin{thm}[Comparison test]
+  Let $a_n$ and $b_n$ be positive-term sequences and suppose $\sum b_n$ converges. If for all $n$ we have $a_n\leq b_n$, then $\sum a_n$ converges too.
+\end{thm}
+
+\begin{proof}
+  Let $S_n$ denote the partial sums of $a_n$ and let $T_n$ denote the partial sums of $b_n$. By assumption we have that $T_n$ converges to some value, let's call it $T$. Meanwhile since $a_n\leq b_n$ we clearly have $S_n\leq T_n\leq T$. Thus we have shown $S_n$ is monotone and bounded above, and it follows from the MCT that the sequence $S_n$ converges. This means by definition that the series $\sum a_n$ converges.
+\end{proof}
+
+\begin{example}
+  Consider the series $\sum\frac{n^2-3n-1}{n^4+2n^3+3}$. Intuitively the series is little different from $\sum\frac{1}{n^2}$, but it is difficult to apply the condensation test to this one directly. However, we can easily calculate
+  \[\frac{n^2-3n-1}{n^4+2n^3+3}\leq\frac{n^2}{n^4}=\frac{1}{n^2}
+  \]
+  Since $\sum\frac{1}{n^2}$ converges, the comparison test implies that $\sum\frac{n^2-3n-1}{n^4+2n^3+3}$ converges too.
+\end{example}
+
+\begin{example}
+  The comparison test may also be applied in contrapositive as follows. Consider the series $\sum\frac{n^2+2n+1}{n^3-2n-1}$. Intuitively the series is little different from $\sum\frac1n$, and this again bears out:
+  \[\frac{n^2+2n+1}{n^3-2n-1}\geq\frac{n^2}{n^3}=\frac1n
+  \]
+  Since $\sum\frac1n$ diverges, the comparison test implies that $\sum\frac{n^2+2n+1}{n^3-2n-1}$ diverges too.
+\end{example}
+
+Although the comparison test is very simple, it may be leveraged to yield numerous more powerful tests. Perhaps the most famous consequences of the comparison test are the ratio and root tests.
+
+\begin{thm}[Root and ratio test]
+  Let $a_n$ be a positive-term sequence.
+  \begin{itemize}
+  \item If the sequence $(a_n)^{1/n}$ converges to a limit $r<1$, then the series $\sum a_n$ converges.
+  \item If the sequence $a_{n+1}/a_n$ converges to a limit $r<1$, then the series $\sum a_n$ converges.
+  \end{itemize}
+\end{thm}
+
+\begin{proof}
+  We prove only the root test. Let $r'$ be any number such that $r<r'<1$. Then there exists $N$ such that $n>N$ implies $a_n^{1/n}<r'$. Since we can ignore initial segments for the purposes of series convergence, we can suppose without loss of generality that $a_n^{1/n}<r'$ for all $n$. It follows that $a_n<(r')^n$, and since $\sum (r')^n$ converges, the comparison test implies that $\sum a_n$ converges too.
+\end{proof}
+
+\begin{example}
+  Consider the series $\sum(1/2+1/n)^n$. Intuitively it is similar to the series $\sum1/2^n$, but it is hard to apply either the geometric series test or the comparison test directly. Instead, we calculate
+  \[\lim[(1/2+1/n)^n]^{1/n}=\lim(1/2+1/n)=1/2
+  \]
+  Since this value is less than $1$, the root test implies the series converges.
+\end{example}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conditional convergence}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The convergence tests we studied in the previous section applied primarily to series with nonnegative terms. But many series have terms of mixed signs, and as we saw previously these series can exhibit some of the most confusing behavior (such as a lack of commutativity).
+
+Of course, if $\sum a_n$ is a series with mixed signs, one can always take absolute values of the terms and study $\sum|a_n|$ instead. Then all of the tests in the previous section may be applied to this latter series. This idea leads to the question of what is the relationship between convergence of $\sum a_n$ and convergence of $\sum|a_n|$.
+
+\begin{defn}
+  A series $\sum a_n$ is said to be \emph{absolutely convergent} if $\sum |a_n|$ is convergent.
+\end{defn}
+
+Thus if $\sum a_n$ is a series with nonnegative terms and $sum a_n$ converges, then $\sum a_n$ is absolutely convergent by definition. 
+
+\begin{thm}
+  \label{thm:absolute}
+  If $\sum a_n$ is absolutely convergent, then $\sum a_n$ is convergent.
+\end{thm}
+
+\begin{proof}
+  Consider the new series $\sum(a_n+|a_n|)$ and note that the terms $a_n+|a_n|$ are nonnegative. Since $a_n+|a_n|\leq2|a_n|$, the comparison test implies that $\sum(a_n+|a_n|)$ converges. Now the series calculus implies that $\sum a_n=\sum(a_n+|a_n|)-\sum|a_n|$, and in particular $\sum a_n$ converges.
+\end{proof}
+
+% maybe use b_n = min(a_n,0) ?
+
+\begin{example}
+  The series $\sum\sin(n)/n^2$ is absolutely convergent. Indeed, its absolute variant is $\sum|\sin(n)|/n^2$, and this can be compared with the convergent series $\sum 1/n^2$.
+\end{example}
+
+The converse to the Theorem~\ref{thm:absolute} is very false, that is, it is possible for a series to be convergent but not absolutely convergent.
+
+\begin{example}
+  The series $\sum(-1)^{n+1}/n$ is convergent. Although we will prove this shortly, for now recall that in the introductory section we estimated its value at 0.69. On the other hand, the absolute variant of this series is $\sum 1/n$, which we know to be divergent.
+\end{example}
+
+\begin{defn}
+  A series $\sum a_n$ is said to be \emph{conditionally convergent} if it is convergent but not absolutely convergent.
+\end{defn}
+
+The possibilities for convergence are shown in Figure~\ref{fig:convergence}.
+
+\begin{figure}[h]
+  \begin{tabular}{l|cc}
+                     & $\sum a_n$ conv & $\sum a_n$ div\\\hline
+    $\sum|a_n|$ conv & AC & X\\
+    $\sum|a_n|$ div & CC & Div
+  \end{tabular}
+  \caption{Possibilities for convergence. The ``X'' denotes an impossible situation\label{fig:convergence}}
+\end{figure}
+
+All of the tests in the previous section can now be regarded as tests for absolute convergence. To apply them to a series $\sum a_n$ with mixed signs, one simply considers the series $\sum|a_n|$ and applies some test to conclude that $\sum|a_n|$ converges and hence $\sum a_n$ converges absolutely. Tests for conditional convergence are somewhat harder to come by, but there are several. The simplest and most famous is the following.
+
+\begin{thm}[Alternating series test]
+  Assume that $a_n$ is a decreasing sequence with limit $0$. Then the series $\sum(-1)^na_n$ converges.
+\end{thm}
+
+\begin{proof}
+  Observe that $S_{2n+2}=S_{2n}-(a_{2n+1}-a_{2n+1})$ and that $S_{2n+3}=S_{2n+1}+(a_{2n+2}-a_{2n+3})$. Since the terms $a_n$ are decreasing, it follows that the even-indexed subsequence $S_{2n}$ is decreasing and the odd-indexed subsequence $S_{2n+1}$ is increasing. Moreover $S_{2n}$ is bounded below by $a_1$ and $S_{2n+1}$ is bounded above by $S_2$.
+
+  Therefore by the monotone convergence theorem, both subsequences converge, say to $S$ and $T$ respectively. Now it follows that $S_{2n+1}-S_{2n}\to S-T$. But we also have $S_{2n+1}-S_{2n}=a_{2n+1}\to0$. Therefore $S=T$ and it is easy to see this implies $S_n\to S$. Hence $\sum a_n$ converges.
+\end{proof}
+
+\begin{example}
+  The series $\sum(-1)^n\frac{n^2}{n^3+9}$ is conditionally convergent. To see that it is not absolutely convergent one can compare $\sum\frac{n^2}{n^3+9}$ against a variant of the series $\sum 1/n$. To see that it is convergent, we apply the alternating series test. The only tricky thing to check is that $n^2/(n^3+9)$ is (eventually) decreasing. For this one can simply check that the derivative of $x^2/(x^3+9)$ is (eventually) negative.
+\end{example}
+
+We close our discussion of series by answering our initial question about commutativity in infinite summations. Recall that we calculated two different values for series with terms $1,-1/2,+1/3,-1/4,\ldots$. As we shall now see, this phenomenon occurs precisely when a series is conditionally convergent.
+
+\begin{thm}
+  \begin{itemize}
+  \item If $\sum a_n$ is absolutely convergent then any rearrangement of its terms converges to the same limit.
+  \item If $\sum a_n$ is conditionally convergent then any value can be obtained as the sum of a rearrangement of its terms.
+  \end{itemize}
+\end{thm}
+
+\begin{proof}[Proof sketch]
+  Beginning with the first statement, suppose that $\sum a_n$ is absolutely convergent and that $\sum a_n=A$. Let $\sum b_n$ be a given rearrangement of $\sum a_n$. Since $\sum a_n$ is absolutely convergent, given $\epsilon$ we can find $N$ so large that $\sum_N^\infty|a_n|<\epsilon/2$. Next choose $N'$ large enough that all of the terms $a_1,\ldots,a_N$ appear in the list $b_1,\ldots,b_{N'}$. Then
+  \begin{align*}
+    |\sum_1^{N'}b_n-A|&\leq\left|\sum_1^{N'}b_n-\sum_1^Na_n\right|
+                        +\left|\sum_1^Na_n-A\right|\\
+                      &\leq\sum_{N+1}^\infty|a_n|
+                        +\left|\sum_{N+1}^\infty a_n\right|\\
+                      &\leq2\sum_{N+1}^\infty|a_n|\\
+                      &<\epsilon
+  \end{align*}
+  This shows that the partial sums of the $b_n$ converge to $A$, as desired.
+  
+  For the second statement, note that the sum of just the positive terms must be divergent, and the sum of just the negative terms must also be divergent. Thus given a target summation $S$, we can add together enough positive terms until we just overshoot $S$. We can then add together enough negative terms until we just undershoot $S$. Continuing in like fashion, we straddle $S$ infinitely many times. Since the terms $a_n\to0$, these attempts get arbitrarily close to the value $S$.
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Topology}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Cantor set}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this chapter we study subsets of the real line using \emph{topology}, which is an abstract notion of shape. Before commencing with the appropriate definitions, we wish to give a taste for how complicated subsets of the real line can really be.
+
+To motivate our discussion, let us begin with the notoriously difficult problem of measuring the \emph{size} of a subset. We have already introduced the notion of countable and uncountable sets, which gives us some idea of their size. But this notion is very course (it has only two outcomes). In this section we wish to focus on two new ideas: the \emph{length} and the \emph{dimension} of a set. Once we have introduced topology we will briefly touch on a fourth notion called \emph{category}.
+
+To give an idea of how complex the problem of measuring length is, we will introduce the \emph{Cantor set}. This set has many unusual properties not seen in our familiar examples of sets, that is, the intervals, cuts, sequences, and so forth.
+
+The Cantor set is constructed as follows. Begin with the unit interval $[0,1]$, and remove its open middle third to obtain the set $C_1=[0,\frac13]\cup[2/3,1]$. Next remove the open middle third of each of these intervals to obtain the set $C_2=[0,\frac19]\cup[\frac29,\frac13]
+\cup[\frac23,\frac79]\cup[\frac89,1]$. Continuing in like fashion, we obtain a decreasing sequence of closed sets $C_n$, each of which is the union of several disjoint closed intervals. The Cantor set $C$ is then defined to be $\bigcap C_n$.
+
+\begin{figure}[h]
+\begin{center}
+  \begin{tikzpicture}
+    \draw[|-|] (0,0) -- (10,0) node[anchor=west] {\ \ $C_1$};
+    \draw[|-|] (0,-.5) -- (10/3,-.5);
+    \draw[|-|] (20/3,-.5) -- (10,-.5) node[anchor=west] {\ \ $C_2$};
+    \draw[|-|] (0,-1) -- (10/9,-1);
+    \draw[|-|] (20/9,-1) -- (30/9,-1);
+    \draw[|-|] (60/9,-1) -- (70/9,-1);
+    \draw[|-|] (80/9,-1) -- (10,-1) node[anchor=west] {\ \ $C_3$};
+    \node[anchor=west] at (10,-1.4) {\ \ \ $\vdots$};
+    \draw[decoration=Cantor set,very thick]
+    decorate{ decorate{ decorate{ decorate{ decorate{ decorate{
+                (0,-2) -- (10,-2) }}}}}} node[anchor=west] {\ \ $C$};
+  \end{tikzpicture}
+\end{center}
+\caption{The first few steps in the construction of the Cantor set, and a rough image of the Cantor set itself.\label{fig:cantor-set}}
+\end{figure}
+
+Initially it is hard to see whether $C$ has any elements at all. But it does, for example both $0$ and $1$ lie in $C$. In fact $C$ is infinite because the endpoints of every interval making up $C_n$ lie in $C$ (for example $\frac13$, $\frac19$, etc). The following result states that the Cantor set is in fact very large.
+
+\begin{prop}
+  The Cantor set is uncountable.
+\end{prop}
+
+\begin{proof}
+  Let $S$ denote the set of infinite binary sequences. We have already seen using the diagonalization argument that $S$ is uncountable. Thus it suffices to find a one-to-one function from $S$ to the Cantor set. Indeed, given any element $s\in S$ we define a sequence of intervals $I_n$ from $C_n$ as follows. If $s(1)=0$ we let $I_1=$ the left interval of $C_1$ and if $s(1)=1$ we let $I_1=$ the right such. Similarly if $s(2)=0$ we let $I_2=$ the left interval of $C_2$ contained in $I_1$, and if $s(2)=1$ we let $I_2=$ the right such.
+
+  Continuing in this fashion, $s$ determines a nested sequence of closed intervals $I_n$. By the NIP there exists a point $x_s$ lying in $\bigcap I_n$. Moreover the function $x\mapsto x_s$ is one-to-one. Indeed, if $s\neq s'$ then there is some first index $n$ such that $s(n)\neq s(n')$. Then the interval $I_n$ determined by $s$ and the interval $I'_n$ determined by $s'$ are disjoint, and this implies $x_s\neq x_{s'}$.
+\end{proof}
+
+We next consider the \emph{length} of the Cantor set. Although we do not give the definition of length in full generality, we need only keep in mind the following very simple properties. First, the length of an interval $[a,b]$ or $(a,b)$ is equal to $b-a$. Second, the length of a finite or countable union of disjoint sets is equal to the sum of the lengths of the factors.
+
+\begin{prop}
+  The Cantor set has no length.
+\end{prop}
+
+\begin{proof}
+  Going from $C_0$ to $C_1$ we remove one interval of length $1/3$. Going from $C_1$ to $C_2$ we remove two intervals of length $1/9$. Going from $C_2$ to $C_3$ we remove four intervals of length $1/27$. In general, going from stage $n$ to stage $n+1$ we remove a total length of $2^{n-1}/3^n$. Therefore in the whole construction we remove a total of
+  \begin{align*}
+    \sum\frac{2^{n-1}}{3^n}&=\frac13\sum\left(\frac23\right)^n\\
+                           &=\frac13\cdot\frac{1}{1-2/3}\\
+                           &=1
+  \end{align*}
+  We therefore conclude that the total length remaining in the Cantor set is $0$.
+\end{proof}
+
+We close with a brief discussion of the \emph{dimension} of the Cantor set. Although we do not give a precise definition of dimension, we motivate it by observing the following property. When you dilate a square by a factor of two, the result contains $4=2^2$ copies of the original square. When you dilate a cube by a factor of two, the result contains $8=2^3$ copies of the original cube. In each case the number appearing in the exponent is commonly known as the dimension of the object. This leads to the following formula, which is used whenever it is applicable:
+\[\text{number of copies}=\text{(scaling factor)}^\text{dimension}
+\]
+The most general definitions of dimension are somewhat complicated to describe, but all of them reduce to the above formula when it applies.
+
+\begin{prop}
+  The Cantor set has dimension strictly between $0$ and $1$.
+\end{prop}
+
+\begin{proof}
+  The trick is to dilate the Cantor set by a factor of three. Looking at the result applied to the first step $C_1$, we see it becomes two unit intervals. Thus if the construction is completed on the dilated copy, we will obtain two full copies of the Cantor set. The dimension formula therefore yields:
+\[2=3^{\text{dimension}}
+\]
+Hence the dimension of $C$ is equal to $\log(2)/\log(3)\approx0.63$.
+\end{proof}
+
+The three propositions taken together yield an odd conclusion: the Cantor set is large from the point of view of cardinality, small from the point of view of length, and intermediate from the point of view of dimension!
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The boundary of a set}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We can think of a subset $A$ of some universe $X$ as dividing the universe into two parts: the points in $A$ and the points in $A^c$. However this divide is purely set-theoretic in that it doesn't take into account the relative placement of the points. If one has any kind of idea about the location or ordering of the points of $X$, then $A$ really divides the universe into \emph{three} parts: the points well inside $A$, the points well outside of $A$, and the points on the boundary of $A$.
+
+Recall the neighborhood notation that we introduced alongside the definition of convergence. If $x$ is any point of $\RR$ then the $\epsilon$-neighborhood of $x$ consists of all points whose distance to $x$ is less than $\epsilon$. In symobls:
+\[V_\epsilon(x)=\set{y\in\RR\mid|y-x|<\epsilon}
+\]
+In other words $\epsilon$-neighborhood is simply the interval $V_\epsilon(x)=(x-\epsilon,x+\epsilon)$.
+
+% mention of other spaces such as plane, sphere, metric space?
+
+\begin{defn}
+  Let $A$ be a subset of $\RR$. A point $x$ is said to be a \emph{boundary point} of $A$ if every neighborhood $V_\epsilon(x)$ meets both $A$ and $A^c$. The set of all boundary points of $A$ is denoted $\partial A$.
+\end{defn}
+
+\begin{example}
+  If $A$ is the closed interval $[0,1]$ then the boundary of $A$ is exactly the set $\{0,1\}$. Similarly, if $A$ is the open interval $(0,1)$ then the boundary is once again the set $\{0,1\}$.
+\end{example}
+
+Notice that the boundary points of a set $A$ may lie in $A$ but that they do not necessarily. In fact following the example above, it is easy to see that a closed interval will always contain its boundary, while an open interval will always omit its boundary. This observation leads us to make the following general definition of closed and open sets.
+
+\begin{defn}
+  The set $A$ is \emph{open} if $\partial A\cap A=\emptyset$. The set $A\subset\RR$ is \emph{closed} if $\partial A\subset A$.
+\end{defn}
+
+\begin{example}
+  \begin{itemize}
+  \item Open intervals are open, and so are unions of open intervals such as $(0,1)\cup(2,3)$.
+  \item Closed intervals are closed, and so are unions of (finitely many) closed intervals such as $[0,1]\cup[2,3]$.
+  \item Single points $\{x\}$ are closed, as is the set $\ZZ$.
+  \item The set $\set{1/n\mid n\in\NN}$ is neither open nor closed: $1$ is a boundary point which lies in the set, and $0$ is a boundary point which does not lie in the set.
+  \item The empty set $\emptyset$ is both open and closed.
+  \end{itemize}
+\end{example}
+
+As we have just seen, open and closed sets are not opposites, since it is possible for a set to be both or neither. The following fundamental result states rather that the two notions are complementary.
+
+\begin{thm}
+  $A$ is open if and only if $A^c$ is closed.
+\end{thm}
+
+\begin{proof}
+  By the symmetry of the definition of boundary point, it is clear that $\partial A=\partial(A^c)$. Hence $A$ omits its boundary if and only if $A^c$ contains its boundary.
+\end{proof}
+
+\begin{thm}
+  The union of any family of open sets is open. The intersection of finitely many open sets is open.
+\end{thm}
+
+\begin{proof}
+  For the first statement let $\mathcal A$ be a family of open sets, and $S=\bigcup\mathcal A$. Let $x\in S$; we wish to show that $x$ lies in the interior of $S$. Indeed, let $A\in\mathcal A$ be such that $x\in A$. Since $A$ is open, $x$ is in the interior of $A$. Thus there exists $\epsilon$ such that $V_\epsilon(x)\subset A$. Hence also $V_\epsilon(x)\subset S$, so $x$ lies in the interior of $S$, as desired.
+
+  For the second statement let $A_1,\ldots,A_n$ be open sets, let $T=A_1\cap\cdots\cap A_n$, and let $x\in T$. Then for all $i\leq n$ there exists $\epsilon_i$ such that $V_{\epsilon_i}(x)\subset A_i$. Letting $\epsilon=\min(\epsilon_1,\ldots,\epsilon_n)$ we clearly have that $V_\epsilon(x)\subset T$. Thus $x$ lies in the interior of $T$.
+\end{proof}
+
+We also have an analogous statement regarding closed sets. It follows directly from the previous theorem using De Morgan's law.
+
+\begin{thm}
+  The intersection of any family of closed sets is closed. The union of finitely many closed sets is closed.
+\end{thm}
+
+\begin{example}
+  The Cantor set is closed. Indeed, all of the sets removed in the construction of the Cantor set are open. This includes the initial removal of $(-\infty,0)$ and $(1,\infty)$, and then all the open middle thirds. Thus the complement of the Cantor set is a union of open sets and hence open. Hence the Cantor set is closed.
+\end{example}
+
+It is now time to introduce some more terminology surrounding open and closed sets.
+
+\begin{defn}
+  Let $A$ be a subset of $\RR$.
+  \begin{itemize}
+  \item A point $x$ is said to be an \emph{interior point} of $A$ if there exists a neighborhood $V_\epsilon(x)$ which is contained in $A$. The set of all interior points of $A$ is denoted $\inte(A)$.
+  \item A point $x$ is said to be an \emph{exterior point} of $A$ if there exists a neighborhood $V_\epsilon(x)$ which is contained in $A^c$. The set of all exterior points of $A$ is denoted $\ext(A)$.
+  \end{itemize}
+\end{defn}
+
+Thus, as hinted in our motivation, any set $A$ it divides $\RR$ into three disjoint pieces: the interior of $A$, the exterior of $A$, and the boundary of $A$.
+
+\begin{defn}
+  The \emph{closure} of $A$ is the set $\overline{A}=A\cup\partial A$.
+\end{defn}
+
+\begin{thm}
+  \label{thm:closure}
+  A set $A$ is open if and only if $A=\inte(A)$. A set $A$ is closed if and only if $A=\overline{A}$.
+\end{thm}
+
+\begin{proof}
+  For the first statement, first assume that $A$ is open. Note that we always have $\inte(A)\subset A$. On the other hand since $A$ is open it omits its boundary. And since $A$ always omits its exterior we must have $A\subset\inte(A)$. Conversely, if $A=\inte(A)$ then $A$ clearly omits its boundary so $A$ is open.
+
+  The second statement follows from the first by taking complements: $A$ is closed iff $A^c$ is open iff $A^c=\inte(A^c)$ iff $A^c=\ext(A)$ iff $A=\inte(A)\cup\partial A$.
+\end{proof}
+
+We conclude this section with a second very natural method of forming the closure of a set. Intuitively, if one begins with a set $A$ and takes limits of all convergent sequences in $A$, then one should end up with the closure of $A$.
+
+\begin{defn}
+  Let $A$ be a subset of $\RR$.
+  \begin{itemize}
+  \item A point $x$ is said to be a \emph{limit point} of $A$ if every neighborhood $V_\epsilon(x)$ meets $A$ in some point other than $x$ itself. The set of limit points of $A$ is denoted $A'$.
+  \item A point $x$ is said to be a \emph{isolated point} of $A$ if $x\in A$ and there exists a neighborhood $V_\epsilon(x)$ which meets $A$ in no points other than $x$ itself. In other words the set of isolated points of $A$ is equal to $A\smallsetminus A'$.
+  \end{itemize}
+\end{defn}
+
+The terminology ``limit point'' is justified by the fact that in $\RR$, if $x$ is a limit point of $A$ then there is some sequence of elements of $A$ which converges to $x$. The following result explains the ``closure'' terminology: the closure of a set can be thought of as the closure under the limit operation.
+
+\begin{prop}
+  \label{prop:closure-equiv}
+  We have $\overline{A}=A\cup\partial A=A\cup A'$.
+\end{prop}
+
+\begin{proof}
+  Suppose first that $x\in A\cup\partial A$. If $x\in A$ we are done, so suppose $x\notin A$. Then $x\in \partial A$, so every neighborhood $V_\epsilon(x)$ meets $A$. Since $x\notin A$ this meeting must be in a point other than $x$ itself, and so $x\in A'$.
+
+  Converesly suppose that $x\in A\cup A'$. If $x\in A$ we are again done, so suppose $x\notin A$. Then $x\in A'$, so every neighborhood $V_\epsilon(x)$ meets $A$. Since $x\notin A$, every neighborhood $V_\epsilon(x)$ also meets $A^c$, and so $x\in\partial A$, as desired.
+\end{proof}
+
+% venn diagram of different types of points?
+
+% zooming metaphor?
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Compact sets}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Recall the Nested Interval Property, which states that the intersection of a family of nested closed intervals $I_n$ is nonempty. We have seen that this theorem may fail if the intervals are not assumed to be closed, or not assumed to be bounded. However, a version of the NIP does hold even if the intervals are replaced by arbitrary sets which are both closed and bounded.
+
+It turns out that for subsets of $\RR$, the closed and bounded properties together are very strong. Indeed if $A$ is bounded then every sequence of elements of $A$ has a convergent subsequence, and if $A$ is also closed then the limit of the subesquence lies in $A$. Sets with this latter property are given a special name.
+
+\begin{defn}
+  A subset $A\subset\RR$ is called \emph{compact} if every sequence from $A$ has a convergent subsequence whose limit lies in $A$.
+\end{defn}
+
+\begin{example}
+  Any set which is closed and bounded is an example of a compact set. Thus the interval $[0,1]$ is an example, as is the Cantor set $C$. The open interval $(0,1)$ is not compact, since the sequence $a_n=1/n$ has no subsequence that converges to a point in $(0,1)$. The unbounded interval $[0,\infty)$ is not compact, since the sequence $a_n=n$ has no subsequence which converges at all.
+\end{example}
+
+The following result gives what one might call the ``nested compact sets property.''
+
+\begin{thm}
+  Let $A_n$ be a sequence of nonempty compact sets such that $A_{n+1}\subset A_n$ for all $n$. Then $\bigcap A_n\neq\emptyset$.
+\end{thm}
+
+\begin{proof}
+  For each $n$ choose any element $a_n\in A_n$. In particular the entire sequence lies in $A_1$, and since $A_1$ is compact, $a_n$ has a convergent subsequence $a_{n_k}$ with some limit $L\in A_1$. Moreover, since the $A_n$ are nested, for every $n$ some tail of the subsequence $a_{n_k}$ lies entirely within $A_n$. Since $A_n$ is compact, $a_{n_k}$ has a subsequence whose limit is in $A_n$. Since $a_{n_k}$ converges to $L$, this limit must be $x$ and therefore $L\in A_n$. Thus we have shown that $L\in\bigcap A_n$.
+\end{proof}
+
+Compact sets occur far and wide in mathematics. As just a small example consider the extreme value theorem from calculus. The way it is usually stated, the EVT says that a continuous function on a closed, bounded interval attains its minimum and maximum value. It turns out that the domain of the function can be taken to be any compact set. Since we have not yet introduced continuous functions, we give a sketch of the proof that will be made more formal in the future.
+
+\begin{thm}[Extreme Value Theorem]
+  Any continuous function defined on a compact set attains a minimum and maximum value.
+\end{thm}
+
+\begin{proof}[Proof sketch]
+  Let $A$ be a compact set and let $f\colon A\to\RR$ be a continuous function. Let $R=\{f(x)\mid x\in A\}$ be the range of $f$, and let $\alpha=\sup(R)$. We wish to show there is some $x\in A$ such that $f(x)=\alpha$. Since $\alpha=\sup(R)$ there exists a sequence $y_n$ contained within $R$ such that $y_n\to\alpha$. For each $n$ we may then let $x_n\in A$ be such that $f(x_n)=y_n$. Since $A$ is compact, there exists a convergent subsequence $x_{n_k}$ with some limit $x$. Then since $f$ is continuous $f(x)=f(\lim x_{n_k})=\lim f(x_{n_k})=\lim y_{n_k}=\alpha$, as desired. [Passing the limit inside the function $f$ that remains to be justified using the definition of continuity.]
+\end{proof}
+
+As we have outlined above, any closed and bounded subset of $\RR$ is compact. In fact for subsets of $\RR$ (or even $\RR^n$), this turns out to be an equivalence.
+
+\begin{thm}[Heine--Borel]
+  If $A\subset\RR$ then $A$ is compact if and only if $A$ is closed and bounded.
+\end{thm}
+
+\begin{proof}
+  We have already seen that the Bolzano--Weierstra\ss\ theorem implies that every set which is closed and bounded is compact. For the converse we will show that if $A$ is either not closed or unbounded, then $A$ is not compact.
+
+  First suppose that $A$ is unbounded. Then for all $n$ there exists some point $a_n\in A$ such that $|a_n|>n$. It follows that every subsequence of $a_n$ does not converge at all, and therefore that $A$ is not compact.
+
+  Next suppose that $A$ is not closed. Then by Theorems~\ref{thm:closure} and~\ref{prop:closure-equiv} there exists some $a\in A'\smallsetminus A$. By our remarks about limit points, there exists a sequence $a_n$ contained in $A$ such that $a_n\to a$. Then $a_n$ has the property that none of its subsequences converges to a point of $A$, and so $A$ is again not compact.
+\end{proof}
+
+\begin{rem}
+  The equivalence in the last theorem turns out to be something of a coincidence. Indeed when one studies the topology of more general types of spaces, the result above turns out to fail. For example, if one does topology on $\RR$ with the usual distance $|x-y|$ replaced by the function $d(x,y)=|x-y|/(1+|x-y|)$ then the entire space $\RR$ is closed and bounded, though it fails to be compact. Perhaps more surprisingly, if one studies general topology without any distance function at all, then our definition of compactness above fails to be adequate as well.
+\end{rem}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Connected sets}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Thinking about sets in the plane, it is easy to visualize the idea that some sets come all in one blob, while others are split up into multiple blobs. But if a set is just a collection of points, how can we make precise the distinction between one and multiple blobs? This task turns out to be somewhat difficult to achieve using just na\"ive intuition.
+
+For open sets a good definition is the natural one: an open set is connected if it cannot be expressed as a union of two (nonempty) disjoint open subsets. Thus $(0,1)\cup(1,2)$ is disconnected, and one can verify that $(0,3)$ is connected. However this definition is problematic for more general types of sets. For example $[0,1]\cup[2,3]$ should be disconnected but it can't be expressed as a union of two disjoint open subsets. At this point one might suggest dropping the condition that the two disjoint subsets be open. But consider that $(0,1)\cup[1,2)$ is actually connected, being equal to $(0,2)$.
+
+To begin to resolve this mess, let us return to the example of $[0,1]\cup[2,3]$. Although it cannot be expressed as a union of two disjoint open subsets, its two components are \emph{contained} in disjoint open subsets. That is, $[0,1]\subset(-.1,1.1)$ and $[2,3]\subset(1.9,3.1)$. The following correct definition takes all of this discussion into account. 
+
+\begin{defn}
+  A subset $A\subset\RR^n$ is said to be \emph{disconnected} if there exist disjoint open sets $V,V'$, both meeting $A$, and such that $A\subset V\cup V'$. A subset $A\subset\RR^n$ is said to be \emph{connected} if it is not disconnected.
+\end{defn}
+
+Observe that it was easier to define disconnectedness first, and connectedness as its opposite. Thus we begin with examples of disconnected sets.
+
+\begin{example}
+  The union $(0,1)\cup(3,4)$ is clearly disconnected. The Cantor set is disconnected, being contained in $(-1,\frac12)\cup(\frac12,2)$. The set $\QQ$ is disconnected, being contained in $(-\infty,\sqrt2)\cup(\sqrt2,\infty)$.
+\end{example}
+
+In fact, as the next proposition shows, any subset of $\RR$ which is not an interval must be disconnected. In the past we have mentioned open and closed intervals, but when we say just \emph{interval}, we mean an interval of any type. Thus the sets $(a,b)$, $(a,b]$, $[a,b)$, and $[a,b]$ are all intervals, where $a,b$ may be real numbers or even $\pm\infty$. It is easy to see that a subset $A\subset\RR$ is an interval if and only if whenever $a,b\in A$ and $a<c<b$ we have $c\in A$ too.
+
+\begin{prop}
+  If $A$ is a subset of $\RR$ and $A$ is connected, then $A$ is an interval.
+\end{prop}
+
+\begin{proof}
+  Let $a,b\in A$ and $a<c<b$; we wish to show that $c\in A$ too. Indeed if $c\notin A$, then the sets $V=(-\infty,c)$ and $V'=(c,\infty)$ would witness that $A$ is disconnected, which is contrary to our hypothesis.
+\end{proof}
+
+At this point we should stress that for subsets of $\RR^2$ or higher, the situation is much more complex. In fact, in these higher dimensions there are connected figures of any shape you can imagine.
+
+So far we have not given any examples of connected sets. Intuitively speaking all intervals should be connected, that is, the converse to the above proposition should be true. Thus if our definition of connectedness is a good one, it will allow us to verify that intervals are connected. Because the definition was so complex, this verification turns out to be slightly tricky.
+
+\begin{thm}
+  If $A$ is a subset of $\RR$, then $A$ is connected if and only if $A$ is an interval.
+\end{thm}
+
+\begin{proof}
+  We have already shown that connected subsets of $\RR$ must be intervals. Conversely, let $I$ be an interval, and towards a contradiction let $V,V'$ be disjoint open sets meeting $I$, such that $I\subset V\cup V'$. Since $V,V'$ meet $I$ we can choose elements $a_1\in I\cap V$ and $b_1\in I\cap V'$. Since $V,V'$ are disjoint, we can assume without loss of generality that $a_1<b_1$.
+
+  In the next part of the proof, we will use $a_1,b_1$ as the basis for sequences $a_n$ and $b_n$. The sequence $a_n$ will be monotone increasing and lie in $V$, while the sequence $b_n$ will be monotone decreasing and lie in $V'$. Moreover the two sequences will be getting closer and closer to one another, that is, $a_n-b_n\to0$.
+
+  Assuming this has been done, we can complete the proof as follows. By the monotone convergence theorem $a_n$ and $b_n$ both converge, and since $a_n-b_n\to0$ they both converge to the same limit $L$. Since $I$ is an interval and $a_1\leq L\leq b_1$, we clearly have $L\in I$. Since $I\subset V\cup V'$, we have either $L\in V$ or $V'$. But $L$ cannot be in $V$ since $V$ is open and $L$ is a limit of points outside $V$. Similarly, $L$ cannot be in $V'$, resulting in a contradiction.
+
+  To construct the sequences $a_n$ and $b_n$, assume the terms $a_n,b_n$ have been defined and define $a_{n+1},b_{n+1}$ as follows. Let $c$ be the midpoint of $a_n,b_n$. Since $I$ is an interval, $c$ lies in $I$ too. Since $I\subset V\cup V'$, we either have $c\in V$ or $V'$. If $c$ lies in $V$ then let $a_{n+1}=c$ and $b_{n+1}=b_n$; if $c$ lies in $V'$ then let $a_{n+1}=a_n$ and $b_{n+1}=c$. In either case we have everything we want: $a_{n+1}\in V$, $b_{n+1}\in V'$, $a_n\leq a_{n+1}<b_{n+1}\leq b_n$ and the distance between $a_{n+1},b_{n+1}$ has decreased by half.
+\end{proof}
+
+Athough we had some difficulty establishing the intervals are connected, this fact can be leveraged to show that a variety of subsets of $\RR^n$ are connected. For this we will need to see how one can piece together several connected sets to make a larger one.
+
+\begin{prop}
+  If $\mathcal F$ is a family of connected sets which overlap pairwise, then $S=\bigcup\mathcal F$ is connected.
+\end{prop}
+
+\begin{proof}
+  Suppose, towards a contradiction, that there exist disjoint open sets $V,V'$ meeting $S$ such that $S\subset V\cup V'$. Since each set $A\in\mathcal F$ is connected, must be contained in either $V$ or $V'$. Indeed, otherwise $V,V'$ would witness that $A$ is disconnected. Since both $V,V'$ meet $S$, we can find $A,B\in\mathcal F$ such that $A\subset V$ and $B\subset V'$. But we are assuming that $A,B$ overlap, while $V,V'$ are disjoint, a contradiction.
+\end{proof}
+
+As a simple application, this result can be used to show that disks in $\RR^2$ are connected.
+
+\begin{cor}
+  Let $D$ be a disk in $\RR^2$, possibly containing some or all of its boundary. Then $D$ is connected.
+\end{cor}
+
+\begin{proof}
+  $D$ can be written as a union of straight line segments from $\mathbf{0}$ to the boundary of $D$. The proof that intervals are connected may also be used to show that line segments are connected. Since these line segments all overlap at $\mathbf{0}$, the previous proposition implies that $D$ is connected.
+\end{proof}
+
+% connected components?
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Metric space}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+So far we have studied the topology of the real line $\RR$ and to some extent the Euclidean spaces $\RR^n$. Almost everything we have said about these spaces applies in a vastly more general context
+
+\begin{defn}
+  A \emph{metric space} consists of a set of points $X$ together with a distance function $d\colon X\times X\to\RR$ satisfying the following properties for all $x,y,z\in X$:
+  \begin{enumerate}
+  \item $d(x,y)\geq0$, with $d(x,y)=0$ iff $x=y$;
+  \item $d(x,y)=d(y,x)$; and
+  \item $d(x,z)\leq d(x,y)+d(y,z)$.
+  \end{enumerate}
+\end{defn}
+
+Parts~(a) and (b) of the definition should seem quite natural. Part~(c) is motivated by the triangle inequality for real numbers, which we have often used in the form $|x-z|\leq|x-y|+|y-z|$.
+
+\begin{example}
+  The real line $\RR$ and Euclidean spaces $\RR^n$ are the quintessential examples of metric spaces. The usual distance function on $\RR$ is $d(x,y)=|x-y|$ and the usual distance function on $\RR^n$ is $d(x,y)=\|x-y\|$.
+\end{example}
+
+\begin{example}
+  Any subset $A$ of a given metric space $X$ can be thought of as a metric space in its own right. The restriction of the metric $d$ to $A\times A$ still satisfies properties (a)--(c). Thus for examlpe the Cantor set is a metric space.
+\end{example}
+
+\begin{example}
+  The space $C[0,1]$ consists of all continuous functions $f\colon[0,1]\to\RR$. (Recall that we will discuss continuity more rigorously in the next chapter.) The distance function is the \emph{uniform distance} $d(f,g)=\sup_{t\in[0,1]}|f(t)-g(t)|$.
+\end{example}
+
+To do topology in metric space, we first have to have neighborhoods. Recall that in $\RR$ the neighborhood notation $V_\epsilon(x)$ denotes the interval $(x-\epsilon,x+\epsilon)$. In $\RR^2$ the neighborhood notation $V_\epsilon(\mathbf{x})$ denotes the disk centered at $x$ of radius $\epsilon$, and so forth. By analogy, if $X$ is a metric space with distance function $d$, we can define the neighborhoods $V_\epsilon(x)=\{y\mid d(x,y)<\epsilon\}$.
+
+We can use these neighborhoods to repeat the definitions of all the basic topological concepts.
+
+\begin{defn}
+  Let $X$ be a metric space with distance function $d$ and let $A\subset X$.
+  \begin{itemize}
+  \item A point $x\in X$ is on the boundary of $A$ if every neighborhood $V_\epsilon(x)$ meets both $A$ and $X\smallsetminus A$
+  \item $A$ is open if it omits its boundary, $A$ is closed if it contains its boundary
+  \item $A$ is compact if every sequence of $A$ has a subsequence converging to a limit in $A$
+  \item $A$ is connected if one cannot find disjoint open sets $V,V'$ meeting $A$ such that $A\subset V\cup V'$.
+  \end{itemize}
+\end{defn}
+
+It is easy to fill in the omitted definitions of interior, exterior, limit point, isolated point, and several others.
+
+We can also define convergent and Cauchy sequences in metric space as follows. The sequence $x_n$ is convergent with limit $x$ if and only if for all $\epsilon$ there exists $N$ such that $n>N$ implies $d(x_n,x)<\epsilon$. The sequence $x_n$ is Cauchy if and only if for all $\epsilon$ there exists $N$ such that $m,n>N$ implies $d(x_m,x_n)<\epsilon$. At the level of generality of metric spaces, the statement we called the Cauchy criterion now becomes a definition.
+
+\begin{defn}
+  A metric space $X$ is \emph{complete} if every Cauchy sequence is convergent.
+\end{defn}
+
+The space $\RR$ is complete by the Cauchy criterion itself, and the spaces $\RR^n$ are complete as well. On the other hand, the space $X=(0,1)$, that is the open unit interval considered as a subspace of $\RR$, is not complete. For example the sequence $1/n$ is a Cauchy sequence of $(0,1)$ but has no limit in $(0,1)$.
+
+\begin{prop}
+  A subspace $A\subset\RR$ is complete if and only if $A$ is closed.
+\end{prop}
+
+\begin{proof}
+  First suppose that $A$ is closed and let $a_n$ be a sequence of $A$. By the Cauchy criterion, $a_n$ has a limit $a$, and since $A$ is closed, $a\in A$. 
+
+  Conversely, suppose that $A$ is complete and let $a$ be a limit point of $A$. Then there exists a sequence $a_n$ of $A$ with limit $a$. Since $a_n$ is convergent, it is Cauchy and therefore has a subsequence with limit in $A$. Since subsequences of a convergent sequence converge to the same limit, it follows that $a\in A$ and therefore that $A$ is closed.
+\end{proof}
+
+\begin{thm}
+  The space $C[0,1]$ is complete.
+\end{thm}
+
+\begin{proof}
+  Let $f_n$ be a sequence of functions which is Cauchy in the metric of $C[0,1]$. This means that for all $\epsilon$ there exists $N$ such that $n>N$ implies $\sup_{t\in[0,1]}|f_n(t)-f_m(t)|<\epsilon$. We seek to find a function $f$ which is the limit of the sequence. To define the function $f$, first note that since $f_n$ is Cauchy, it follows that for each $t\in[0,1]$ the sequence $f_n(t)$ is a Cauchy sequence of real numbers. Now by the Cauchy criterion, for each $t$ the sequence $f_n(t)$ has a limit. Thus we can define a function $f(t)=\lim f_n(t)$.
+
+  While it may seem like we are done, we actually have to verify that $f$ really lies in $C[0,1]$, in other words, that $f$ is a continuous function. We also have to verify that $f_n$ converges to $f$ in the metric of $C[0,1]$. The proof that $f$ is continuous will be postponed until we have studied continuity more formally.
+
+  To see that $f_n$ converges to $f$ in the uniform metric, let $\epsilon$ be given and choose $N$ large enough such that $m,n>N$ implies $\sup_{t\in[0,1]}|f_m(t)-f_n(t)|<\epsilon/2$. Fixing $n>N$ and $t\in[0,1]$, find $m>N$ large enough that $|f_m(t)-f(t)|<\epsilon/2$. Now we have
+\[|f_n(t)-f(t)|\leq|f_n(t)-f_m(t)|+|f_m(t)-f(t)|<\epsilon/2+\epsilon/2=\epsilon\;.
+\]
+Since $t$ was arbitrary, we have $\sup_{t\in[0,1]}|f_n(t)-f(t)|\leq\epsilon$, which shows that $f_n\to f$ in the uniform metric.
+\end{proof}
+
+When $f_n\to f$ in the uniform metric, we say that the sequence $f_n$ \emph{converges uniformly} to $f$. In the next part, We will address the missing component in the above proof by showing that whenever a sequence of continuous functions converges uniformly to a limit, the limit must be continuous.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Continuity and calculus}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Wild functions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% booooring. combine with next section!
+
+So far in this course we have investigated real numbers and their arithmetic, and sets of real numbers. In this part we will study functions, especially those that arise naturally in models and applications.
+
+Many of the most important functions in terms of theory, models, and applications turn out to be continuous. For example if you go for a jog, the distance you have travelled varies continuously over time. Moreover many common expressions such as $x^2$, $\ln(x)$, or $3\sin(x)-2e^x$ define continuous functions. However it is important to note that not all natural functions are continuous. For example the charge for a phone call does not vary continuous over time, but rather jumps at each minute.
+
+What exactly is a continuous function? We often say intuitively that a continuous function has no breaks in its graph. But what does this mean in terms of formal definitions? A simple example of a discontinuous function is one with a jump:
+\begin{center}
+\begin{tikzpicture}[domain=0:4]
+\draw (-0.2,0) -- (4.2,0);
+\draw (0,-0.2) -- (0,2.2);
+\draw plot (\x,{1+sin(\x r)});
+\draw[fill=white] (3,{1+sin(3r)}) circle (.07);
+\draw[fill=black] (3,{1.5+sin(3r)}) circle (.07);
+\draw (3,.05)--(3,-.05);
+\node[below] at (3,0) {$a$};
+\end{tikzpicture}
+\end{center}
+What makes this function discontinuous is that the value $f(a)$ is nowhere near the values of $f(x)$ for $x$ very near to $a$.
+
+At this point one may guess that the concept of a limit should be useful here. In fact, roughly speaking, we will define that $f$ is continuous at $a$ if whenever the values of $x$ approach $a$, the values of $f(x)$ approach $f(a)$:
+\[f(a)=\lim_{x\to a}f(x)
+\]
+Unfortunately, in the past we have only worked with limits as the integer value $n$ approaches $\infty$, never as a continuous variable $x$ approaches $a$. In the rest of this section we will begin to explore what should be meant by this limit expression.
+
+To reduce the question to one of sequential limits, one might replace the continuous variable $x$ by a sequence $x_n$ converging to $a$. For example, if $f(x)=x^3+5x+2$ then we can compute $\lim_{x\to0}f(x)$ as follows. First replace $x$ with the sequence $1/n$, since this has limit $0$. Next note that $\lim f(x_n)=\lim \frac{1}{n^3}+5\frac{1}{n}+2=2$.
+
+On problem with this approach is the possibility that the function doesn't just have a jump iscontinuity, but actually has a break.
+\begin{center}
+\begin{tikzpicture}
+\draw (-0.2,0) -- (4.2,0);
+\draw (0,-0.2) -- (0,2.2);
+\draw[domain=0:3] plot (\x,{1+sin(\x r)});
+\draw[domain=3:4] plot (\x,{1.5+sin(\x r)});
+\draw[fill=white] (3,{1+sin(3r)}) circle (.07);
+\draw[fill=black] (3,{1.5+sin(3r)}) circle (.07);
+\draw (3,.05)--(3,-.05);
+\node[below] at (3,0) {$a$};
+\end{tikzpicture}
+\end{center}
+When we used the sequence $1/n$ we only considered values of $x$ to the right of $a$, and none to the left. Thus this method would mistakenly conclude that the function depicted above is continuous.
+
+For example, if $f$ is the function
+\[f(x)=\begin{cases}x-1&x\leq0\\x+1&x>0\end{cases}
+\]
+then $\lim f(1/n)=1$, while $\lim f(-1/n)=-1$. Since we cannot say that either value has a greater claim to being the true limit, we correctly conclude that $\lim_{x\to0}f(x)$ does not exist.
+
+At this point one may be tempted to define $\lim_{x\to a}f(x)$ as the value of $\lim f(a+1/n)$ and $\lim f(a-1/n)$ provided these values exist and agree. However, this would again be mistaken! To see this consider the \emph{Dirichlet function} defined by
+\[f(x)=\begin{cases}1&x\in\QQ\\0&x\notin\QQ\end{cases}
+\]
+This function is so ugly that our definitions should definitely imply it is discontinuous. In fact our definitions should imply that none of its functional limits exist. But since we have $\lim f(1/n)=\lim f(-1/n)=1$, the above method would incorrectly conclude that $\lim_{x\to0}f(x)=1$. It is thanks to this strange example that we settle on the following very strong definition.
+
+\begin{defn}
+  We say that $\lim_{x\to a}f(x)=L$ if for every sequence $x_n$ such that $x_n\to a$ and $x_n\neq a$, we have $\lim f(x_n)=f(a)$.
+\end{defn}
+
+For example, if $f(x)=x^2$, then we can calculate $\lim_{x\to2}f(x)$ as follows. Let $x_n$ be an arbitrary sequence such that $x_n\to2$. Then $\lim f(x_n)=\lim(x_n)^2=(\lim x_n)^2=2^2=4$. Since $x_n$ was arbitrary, we can conclude that the functional limit $\lim_{x\to2}f(x)=4$ too.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Functions and limits}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In the previous section we finally settled upon a definition for the functional limit symbol: $\lim_{x\to a}f(x)$ has the value $L$ if and only if whenever $x_n\to a$ and $x_n\neq a$ we have $f(x_n)\to L$. In this section we develop an equivalent definition that more closely mirrors our definition of sequential limits.
+
+In convergence for ordinary limits, as the index $n$ gets larger the values $x_n$ get closer to the limit $L$. Thus the definition began ``for all $epsilon$ there exists an $N$.'' In convergence for functional limits, as the variable $x$ gets closer to $a$ the values $f(x)$ get closer to $L$. Thus the definition will begin ``for all $\epsilon$ there exists a $\delta$'', where $\delta$ is another small quantity.
+
+\begin{defn}
+  We say that $\lim_{x\to a}f(x)=L$ if for all $\epsilon>0$ there exists $\delta>0$ such that $0<|x-a|<\delta$ implies $|f(x)-L|<\epsilon$.
+\end{defn}
+
+Visualizing the definition on the graph of $f$, it means that whenever we draw a band of radius $\epsilon$ around the line $y=L$, there exists a small enough $\delta$ such that on $V_\delta(a)$ the function lies entirely within the band.
+\begin{center}
+\begin{tikzpicture}
+\draw (-0.2,0) -- (4.2,0);
+\draw (0,-0.2) -- (0,2.2);
+\draw[domain=0:4] plot (\x,{1+sin(\x r)});
+\draw[domain=2.8:3.2,samples=100,very thick] plot (\x,{1+sin(\x r)});
+\draw[fill=white] (3,{1+sin(3r)}) circle (.07);
+\draw[dashed] (0,{1+sin(3r)+.3}) -- (4,{1+sin(3r)+.3}) node[right] {$L+\epsilon$};
+\draw[dashed] (0,{1+sin(3r)-.3}) -- (4,{1+sin(3r)-.3}) node[right] {$L-\epsilon$};
+\node[below] at (3,0) {$V_\delta(a)$};
+\draw (2.8,.05)--(2.8,-.05);
+\draw (3.2,.05)--(3.2,-.05);
+\draw[very thick] (2.8,0)--(3.2,0);
+\end{tikzpicture}
+\end{center}
+
+\begin{example}
+  We can verify by hand that $\lim_{x\to2}5x+3=13$. As scratch work, let $\epsilon$ be given and let us work backwards as follows:
+  \begin{align*}
+    |5x+3-13|<\epsilon&\iff|5x-10|<\epsilon\\
+                      &\iff5|x-2|<\epsilon\\
+                      &\iff|x-2|<\epsilon/5
+  \end{align*}
+  This calculation suggests we should let $\delta=\epsilon/5$. To write the proof forwards, we do indeed let $\delta=\epsilon/5$ and then observe that the calculation above shows that $|x-2|<\delta\implies|5x+3-13|<\epsilon$, as desired.
+\end{example}
+
+The linear example above was perhaps a little too simple; the following quadratic example gives one an idea of the kinds of manipulations that can arise generally.
+
+\begin{example}
+  Let us verify by hand that $\lim_{x\to2}x^2=4$. As scratch work, we once again work backwards from the desired conclusion:
+  \begin{align*}
+    |x^2-4|<\epsilon&\iff |x-2||x+2|<\epsilon\\
+                    &\iff |x-2|<\epsilon/|x+2|
+  \end{align*}
+  Now unfurtunately this last quantity is not a constant so it does not tell us directly what number to choose for $\delta$. However for values of $x$ near $2$ we will certainly have $|x+2|<10$. Thus we choose $\delta=\epsilon/10$, promise ourselves to consider values of $x$ within a unit or two of $2$, and write the proof forwards as follows:
+  \begin{align*}
+    |x-2|<\delta &\implies |x-2|<\epsilon/10\\
+                 &\implies |x-2|<\epsilon/|x+2|\\
+                 &\implies |x^2-4|<\epsilon
+  \end{align*}
+  which concludes this example.
+\end{example}
+
+Between this section and the last, we have two different definitions of functional limits. As you might expect, they are equally good.
+
+\begin{thm}
+  The following are equivalent.
+  \begin{itemize}
+  \item for all $\epsilon>0$ there exists $\delta>0$ such that $0<|x-a|<\delta$ implies $|f(x)-L|<\epsilon$;
+  \item for all sequences $x_n\neq a$ if $x_n\to a$ then $f(x_n)\to L$.
+  \end{itemize}
+\end{thm}
+
+\begin{proof}
+  We first assume the $\epsilon,\delta$ statement holds. Letting $x_n$ be a given sequence such that $x_n\neq a$ and $x_n\to a$, we wish to show that $f(x_n)\to L$. To this end let $\epsilon$ be arbitrary, and choose $\delta$ as in the the hypothesis. Since $x_n\to a$ we can find $N$ such that $n>N$ implies $|x_n-a|<\delta$. The hypothesis now gives that $|f(x_n)-L|<\epsilon$, and therefore that $f(x_n)\to L$.
+
+  For the converse, we proceed by contrapositive. Assume that the negation of the $\epsilon,\delta$ statement holds, that is, there exists $\epsilon$ such that for al $\delta$ there exists $x\neq a$ such that $|x-a|<\delta$ but $|f(x)-L|\geq\epsilon$. Fix this special value of $\epsilon$, and apply the statement repeatedly to $\delta$-values $1/n$. We thus obtain a sequence of $x_n\neq a$ such that $|x_n-a|<1/n$ but $f|(x_n)-L|\geq\epsilon$. It follows that $x_n\to a$, but $f(x_n)$ does not converge to $L$. This establishes the negation of the latter statement, as desired.
+\end{proof}  
+
+This theorem is nice to have because the two equivalent clauses have complementary uses. The sequential definition is really handy for refuting functional limit equalities, since one can use a single sequence as a counterexample. On the other hand, the definition is cumbersome for establishing functional limit equalities because of the ``for all sequences'' quantifier. The $\epsilon,\delta$ definition is often one's only resort for establishing a functional limit equality.
+
+We close this section with the analog of the limit calculus for functional limits.
+
+\begin{thm}[Functional limit calculus]
+  Suppose that $\lim_{x\to a}f(x)=L$ and $\lim_{x\to a}g(x)=M$. Then we have
+  \begin{enumerate}
+  \item $\displaystyle\lim_{x\to a}[f(x)+g(x)]=L+M$
+  \item $\displaystyle\lim_{x\to a}kf(x)=kM$ for any $k\in\RR$
+  \item $\displaystyle\lim_{x\to a}f(x)g(x)=LM$
+  \item $\displaystyle\lim_{x\to a}f(x)/g(x)=L/M$ provided $M\neq 0$
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  Each of these statements can be proved using the corresponding statement in the ordinary limit calculus. For example let us prove part~(a). For this let $x_n$ be an arbitrary sequence such that $x_n\to a$. Then $\lim[f(x_n)+g(x_n)]=\lim f(x_n)+\lim g(x_n)$ by the limit calculus. By our hypothesis and the limit characterization of functional limits, this latter quantity equals $L+M$. Since $x_n$ was arbitrary, we can conclude that $\lim_{x\to a}[f(x)+g(x)]=L+M$.
+\end{proof}
+% of course the last statement actually requires some care
+
+\begin{thm}[Functional squeeze theorem]\
+  \begin{itemize}
+  \item If $f(x)\geq0$ in a neighborhood of $a$ and $\lim_{x\to a}f(x)$ exists then $\lim_{x\to a}f(x)\geq0$.
+  \item If $f(x)\leq g(x)\leq h(x)$ and $\lim_{x\to a}f(x)=\lim_{x\to a}h(x)=L$ then $\lim_{x\to a}g(x)$ exists and $=L$.
+  \end{itemize}
+\end{thm}
+
+The proof is requested as an exercise.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Continuous functions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Thanks to our rigorous treatment of functional limits, we are now ready to define continuity. Recall that intuitively speaking, we said that $f$ is continuous at a point $a$ if whenever values of $x$ get near to $a$, values of $f(x)$ get near to $f(a)$. Formally, this can be stated as follows.
+
+\begin{defn}
+  Let $f$ be a real-valued function defined on an interval of $\RR$. We say $f$ is \emph{continuous} at a point $a$ in its domain if $\lim_{x\to a}f(x)$ exists and equals $f(a)$. We say that $f$ is \emph{continuous} if it is continuous on every point of its domain.
+\end{defn}
+
+Our theorems regarding functional limits are now ready to bear fruit. First of all, since functional limits admit both an $\epsilon,\delta$ and a sequential characterization, so too does continuity.
+
+\begin{prop}
+  The function $f$ is continuous at $a$ if and only if either of the two following conditions holds:
+  \begin{enumerate}
+  \item for all $\epsilon$ there exists a $\delta$ such that for all $x$, $|x-a|<\delta$ implies $|f(x)-f(a)|<\epsilon$; or
+  \item for all sequences $x_n$, if $x_n\to a$ then $f(x_n)\to f(a)$
+  \end{enumerate}
+\end{prop}  
+
+\begin{proof}
+  The equivalence of continuity with (a) is clear from the $\epsilon,\delta$ definition of functional limit. The equivalence of continuity with (b) is clear from the sequential characterization of functional limit.
+\end{proof}
+
+\begin{thm}[Calculus of continuity]
+  Suppose that $f,g$ are continuous functions on a common domain. Then we have:
+  \begin{enumerate}
+  \item $f+g$ is continuous
+  \item $kf$ is continuous for any $k\in\RR$
+  \item $fg$ is continuous
+  \item $f/g$ is continuous wherever it is defined
+  \end{enumerate}
+\end{thm}
+
+These properties follow trivially from the calculus for functional limits, together with the definition of continuity. To this list of laws we can add one additional operation, namely composition of functions.
+
+\begin{thm}
+  If $f,g$ are continuous and $\rng(f)\subset\dom(g)$ then the composition $g\circ f$ is continuous.
+\end{thm}
+
+\begin{proof}
+  This follows trivially from the sequential characterization of continuity. Let $a$ be a point of $\dom(g\circ f)=\dom(f)$ and let $x_n\to a$. Then since $f$ is continuous $f(x_n)\to f(a)$, and since $g$ is continuous $g\circ f(x_n)\to g\circ f(a)$. This shows $g\circ f$ is continuous at $a$.
+\end{proof}
+
+\begin{example}
+  Since it is clear that the identity function $f(x)=x$ is continuous, we can use the arithmetic laws to conclude that polynomial functions such as $3x^5-17x^2+12$ are continuous. We can also conclude that rational functions such as $(3x^3+17x)/(2x^2-13)$ are continuous whenever the denominator is not zero.
+\end{example}
+
+\begin{example}
+  The function $f(x)=\sqrt{x}$ is continuous on its domain. However since there is no square root law, we must check this by hand. First let $a>0$ and given $\epsilon$ let $\delta=\epsilon\sqrt{a}$. Then if $|x-a|<\delta$ we have
+  \begin{align*}
+    |\sqrt{x}-\sqrt{a}|&=|x-a|/(\sqrt{x}+\sqrt{a})\\
+                       &<|x-a|/\sqrt{a}\\
+                       &<(\epsilon\sqrt{a})/\sqrt{a}=\epsilon
+  \end{align*}
+  One must check separately that $\sqrt{x}$ is continuous at $a=0$.
+\end{example}
+
+\begin{example}
+  The function $f(x)=\sin(x)$ is continuous. However since there is on square root law, we must check this by hand using the definition of the $\sin$ function. Without going into details, it is not difficult to see geometrically that we always have $|\sin(x)-\sin(a)|\leq|x-a|$, so we may take $\delta=\epsilon$ in this proof.
+\end{example}
+
+\begin{example}
+  Using the composition law, we may now conclude that the function $\sqrt{x^2+17\sin(1/x)}$ is continuous where it is defined.
+\end{example}
+
+We close with a beautiful characterization which expresses continuity in purely topological terms. First we need to define forward and inverse images of a set with respect to a function.
+
+\begin{defn}
+  Let $f\colon X\to Y$ be any function. If $A$ is a subset of $X$ then the \emph{forward image} of $A$ with respect to $f$ is the set $f(A)=\set{f(a)\mid a\in A}$. And if $B$ is a subset of $Y$ then the \emph{inverse image} of $B$ with respect to $f$ is $f^{-1}(B)=\set{x\in X\mid f(x)\in B}$.
+\end{defn}
+
+Notice that if $f$ is a continuous function and $V$ is an open set, it is not necessarily the case that $f(V)$ is open too. For example if $f(x)=x^2$ and $V=(-1,1)$, then $f[V]=[0,1)$ which is not open. Rather than this, the following result states that the continuous functions are precisely those which preserve the open sets under inverse images.
+
+\begin{thm}
+  Let $f\colon\RR\to\RR$. Then $f$ is continuous everywhere if and only if for every open set $V$ we have $f^{-1}(V)$ is open too.
+\end{thm}
+
+\begin{proof}
+  Let $a$ be an arbitrary point of $f^{-1}(V)$. Since $V$ is open, $f(a)$ has a neighborhood $V_\epsilon(f(a))$ which is contained in $V$. Since $f$ is continuous at $a$ we may let $\delta$ be the corresponding value from the definition of continuity. Now we claim that $V_\delta(a)$ is contained in $f^{-1}(V)$. Indeed, for any $x\in V_\delta(a)$ we have $|x-a|<\delta$ and hence $|f(x)-f(a)|<\epsilon$. This means that $f(x)\in V$ or in other words $x\in f^{-1}(V)$.
+\end{proof}
+
+We should remark that this open set characterization of continuity holds in much greater generality. Indeed, functional limits and continuity may all be formulated for functions $f\colon X\to Y$ where $X,Y$ are arbitrary metric spaces. We then have that $f$ is continuous on $X$ if and only if $V$ open implies $f^{-1}(V)$ open.
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Continuity and preservation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In the previous section we concluded that continuous functions preserve open sets under inverse images but not necessarily under forward images. In this section we address the same questions for closed, connected, and compact sets. In doing so we will run across two major theorems from calculus: the extreme value theorem and the intermediate value theorem.
+
+Before beginning our investigation, we should point out some further properties of forward and inverse images. It is not hard to check that for any function $f$, the inverse image mapping $f^{-1}$ preserves unions, intersections, and differences. That is, we have
+\begin{itemize}
+\item $f^{-1}(A\cup B)=f^{-1}(A)\cup f^{-1}(B)$
+\item $f^{-1}(A\cap B)=f^{-1}(A)\cap f^{-1}(B)$
+\item $f^{-1}(A\smallsetminus B)=f^{-1}(A)\smallsetminus f^{-1}(B)$
+\end{itemize}
+The forward image mapping $f(\cdot)$ also preserves unions, but fails to preserve intersections or differences. For counterexamples, look to the function $f(x)=x^2$.
+
+\begin{prop}
+  If $f$ is continuous and $C$ is closed, then $f^{-1}(C)$ is closed.
+\end{prop}
+
+\begin{proof}
+  We have shown that if $f$ is continuous and $V$ is open, then $f^{-1}(V)$ is open. Since $C$ is closed, its complement $\RR\smallsetminus C$ is open. It follows from the pervious discussion that $f^{-1}(\RR)\smallsetminus f^{-1}(C)$ is open since it is equal to $f^{-1}(\RR\smallsetminus C)$. We therefore conclude that $f^{-1}(C)$ is closed.
+\end{proof}
+
+Just as continuous functions need not preserve open sets under forward images, neither must they preserve closed sets under forward images. For example if $f(x)=1/(1+x^2)$ and $A=\RR$ then $f(A)=(0,1]$. Observe that for this counterexample we chose to go with an unbounded set $A$. The following result implies that it was necessary to do so.
+
+\begin{thm}
+  If $f$ is continuous and $K$ is compact, then $f(K)$ is compact.
+\end{thm}
+
+\begin{proof}
+  Let $y_n$ be a seqence of $f(K)$, and let $x_n$ be such that $y_n=f(x_n)$ for all $n$. Since $K$ is compact, $x_n$ has a convergent subsequence $x_{n_k}$ with limit $x\in K$. Since $f$ is continuous we have that $y_{n_k}=f(x_{n_k})$ converges to the limit $f(x)$ which is in $f(K)$. Thus $f(K)$ is compact.
+\end{proof}
+
+We have mentioned the extreme value theorem before as an important property of compact sets. At the time we did not have the framework to give a formal proof, but now we do.
+
+\begin{cor}[Extreme value theorem]
+  If $K$ is compact and $f\colon K\to\RR$ is continuous, then $f$ achieves a minimum and maximum value on $K$.
+\end{cor}
+
+\begin{proof}
+  By the theorem, $f(K)$ is a compact subset of $\RR$. Since compact sets are bounded, $f(K)$ has an infemum $\alpha$ and a supremum $\beta$. Since compact sets are closed, and we have seen that $\alpha,\beta$ are limits of sequences in $f(K)$, it follows that $\alpha,\beta\in f(K)$. Thus there exist $a,b\in K$ such that $f(a)=\alpha$ and $f(b)=\beta$, as claimed.
+\end{proof}
+
+The extreme value theorem is the key to any kind of optimization. If one is seeking an optimum value (usually an infemum or supremum), the exterem value theorem gives conditions under which one can be assured that such a value exists.
+
+Finally we turn to preservation of connected sets. To movitate this, observe intuitively that if $f$ is a continuous real-valued function defined on an interval, then the range of $f$ had better be an interval too. That's because if there were a gap in the range then $f$ would have to have some kind of jump, which means a discontinutiy. 
+
+\begin{thm}
+  If $f$ is continuous and $A$ is connected then $f(A)$ is connected.
+\end{thm}
+
+\begin{proof}
+  Let us prove the contrapositive, that if $f(A)$ is disconnected then $A$ is disconnected. So suppose that there exist disjoint open sets $V,V'$ both meeting $f(A)$ and such that $f(A)\subset V\cup V'$. Observe that the inverse image mapping $f^{-1}$ preserves open sets, disjointness, and unions. It follows that $f^{-1}(V),f^{-1}(V')$ are disjoint open sets, both meeting $A$, and such that $A\subset f^{-1}(V)\cup f^{-1}(V')$. This means that $A$ is disconnected, as desired.
+\end{proof}
+
+Once again, this simple preservation property has an important consequence in calculus.
+
+\begin{cor}[Intermediate value theorem]
+  If $f$ is continuous on $[a,b]$ and $f(a)<L<f(b)$ then there exists $c$ such that $a<c<b$ and $f(c)=L$.
+\end{cor}
+
+\begin{proof}
+  Since $[a,b]$ is connected, the previous theorem gives that $f([a,b])$ is connected. As we have shown that connected subsets of $\RR$ are intervals, we have that $f([a,b])$ is an interval. It follos that $f([a,b])$ contains $[f(a),f(b)]$ and therefore it contains $L$. Thus there exists $c\in[a,b]$ such that $f(c)=L$. Finally note that $c$ cannot equal $a$ or $b$ itself.
+\end{proof}
+
+The intermediate value theorem has many practical consequences, just one of which is the following.
+
+\begin{cor}
+  If $f\colon[0,1]\to[0,1]$ is a continuous function, then $f$ has a fixed point.
+\end{cor}
+
+\begin{proof}
+  Consider the function $g(x)=f(x)-x$; we are looking for some point $c$ such that $g(c)=0$. If either $g(0)$ or $g(1)=$ then we would be done. Otherwise, we clearly have that $g(0)<0<g(1)$. By the intermediate value theorem it follows that there exists $c$ such that $g(c)=0$, as desired.
+\end{proof}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Continuity and derivatives}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The derivative is one of the most important developments of modern mathematics because it captures the intuitive notion of ``rate of change''. As simple as this intuition may seem, one must be careful since not all functions have a well-defined derivative. Our study of continuous functions and limits leaves us prepared to explore the concept rigorously.
+
+\begin{defn}
+If $f$ is a real-valued function defined on an interval and $x$ is in the domain of $f$, then $f$ is said to be \emph{differentiable} at $x$ if the limit exists:
+\[\lim_{h\to0}\frac{f(x+h)-f(x)}{h}
+\]
+In this case the value of the limit is called the \emph{derivative} of $f$ at $x$ and denoted $f'(x)$.
+\end{defn}
+
+As one often observes in a calculus class, the derivative is a limit of slopes between $(x,f(x))$ and nearby points $(x+h,f(x+h))$. This means that $f'(x)$ represents the slope of the line tangent to $f$ at $x$. If a function is differentiable on its domain, we sometimes say that it is ``locally linear''.
+
+\begin{example}
+  The function $f(x)=x^2$ is differentiable at every point and we can calculate using the functional limit calculus as follows:
+  \[f'(x)=\lim_{h\to0}\frac{(x+h)^2-x^2}{h}
+  =\lim_{h\to0}\frac{x^2+2xh+h^2-x^2}{h}=\lim_{h\to0}2x+h=2x
+  \]
+\end{example}
+
+\begin{example}
+  Any function with a corner or pointy cusp is not differentiable at that point. For example $f(x)=|x|$ is not differentiable at $x=0$ because $\lim_{h\to0}|h|/h$ does not exist.
+\end{example}
+
+The following result implies that any function which is discontinuous will also fail to be differentiable.
+
+\begin{prop}
+  If $f$ is differentiable at a point $x$ then $f$ is continuous at $x$.
+\end{prop}
+
+\begin{proof}
+  For this proof it is convenient to use the common substitution $y=x+h$ and write $f'(x)=\lim_{y\to x}(f(y)-f(x))/(y-x)$. It follows from this and the functional limit calculus that
+\[\lim_{y\to x}(f(y)-f(x))=\lim_{y\to x}\frac{(f(y)-f(x))(y-x)}{(y-x)}
+=f'(x)\lim_{y\to x}(y-x)=0\text{.}
+\]
+This implies that $\lim_{y\to x}f(y)=f(x)$, which means by definition that $f$ is continuous at $x$.
+\end{proof}
+
+The development of differential calculus now consists of two pieces: using the definition to calculate a library of derivatives of common functions, and using the definition to establish the algebraic laws of the derivative operation.
+
+\begin{thm}[Derivative calculus]\ 
+
+  Derivative formulas
+  \begin{itemize}
+  \item The derivative of $x^\alpha$ is $\alpha x^{\alpha-1}$ for $\alpha\neq0$
+  \item The derivative of $e^x$ is $e^x$
+  \item The derivative of $\ln(x)$ is $1/x$
+  \item The derivative of $\sin(x)$ is $\cos(x)$
+  \item The derivative of $\cos(x)$ is $-\sin(x)$
+  \end{itemize}
+
+  Derivative laws
+  \begin{itemize}
+  \item summation rule: $(f+g)'=f'+g'$
+  \item product rule: $(fg)'=f'g+fg'$
+  \item chain rule: $(f\circ g)'=(f'\circ g)g'$
+  \item inverse rule: $(f^{-1})'=1/(f'\circ f^{-1})$ if $f$ is invertible
+  \end{itemize}
+\end{thm}
+
+We leave the proof of this theorem to your old calculus textbook.
+
+In the rest of the section, we further investigate the subtle relationship between continuity and differentiability. As we have seen, every differentiable function is continuous, but not every continuous function is differentiable. It is natural to ask whether $f$ being differentiable implies $f'$ is continuous. It turns out that the answer is ``no''.
+
+\begin{example}
+  Let $f(x)=x^2\sin(1/x)$, and specify additionally that $f(0)=0$. The function is clearly differentiable at any point $x\neq0$, and it is actually differentiable at $x=0$ too. To see this, observe that
+\[f'(0)=\lim_{h\to0}\frac{h^2\sin(1/h)}{h}=\lim_{h\to0}h\sin(1/h)
+\]
+Since $\sin(1/h)$ is bounded and $h\to 0$, it follows that $f'(0)=0$. On the other hand, the derivative is $f'(x)=2x\sin(1/x)-\sin(1/x)$. It is easy to see that the first term $x\sin(1/x)$ is continuous, but we have seen that the second term $\sin(1/x)$ is not continuous at $x=0$. It follows that $f'(x)$ is not continuous at $x=0$.
+\end{example}
+% actually we only saw it in homework. but ok
+
+In fact there is a whole hierarchy of differentiability properties. We say that a function $f$ is in the class $C^0$ if $f$ is continuous, in the class $C^1$ if $f$ is differentiable $f'$ is continuous, in the class $C^2$ if $f'$ is differentiable and $f''$ is continuous, and so forth. We say that $f$ is in the class $C^\infty$ or \emph{smooth} if it is differentiable infinitely many times. Functions such as polynomials and $\sin(x)$ are all smooth. But the function $x^n\sin(1/x)$ lies in the class $C^{n-2}$.
+
+In the example above, the discontinuous derivative $f'(x)$ did not just have a simple jump discontinuity, but something much uglier. In our final result of the section, we will show that this ugliness was essential. The result states that while derivatives need not be continuous, they still satisfy the \emph{intermediate value property}, that is, the conclusion of the intermediate value theorem. First we need the following familiar lemma.
+
+\begin{lem}[Interior extremum theorem]
+  If $f$ is differentiable on the interval $(a,b)$ and $f$ attains a maximum or minimum value at $c\in(a,b)$, then $f'(c)=0$.
+\end{lem}
+
+\begin{proof}
+  Let us treat the case when $f$ attains a maximum value at $c$. Then for any $h$ we have $f(c+h)-f(c)\leq0$. It follows that for $h_n$ positive we have $(f(c+h_n)-f(c))/h_n\leq0$, which implies that $f'(c)\leq0$. Similarly for $h_n$ negative we have $(f(c+h_n)-f(c))/h_n\geq0$, which implies that $f'(c)\geq0$. This leaves only the possibility that $f'(c)=0$.
+\end{proof}
+
+\begin{thm}[Darboux's theorem]
+  If $f$ is differentiable on $[a,b]$ and $f'(a)<L<f'(b)$, then there exists $c\in(a,b)$ such that $f'(c)=L$.
+\end{thm}
+
+\begin{proof}
+  We may assume without loss of generality that $L=0$. Since $[a,b]$ is compact, the extreme value thorem implies that $f$ attains its minimum value at some point $c\in[a,b]$. We claim that $c$ is not equal to $a$ or $b$. Admitting the claim for the moment, this implies $f$ attains its minimum at a point $c\in(a,b)$. Thus the interior extremum theorem implies that $f'(c)=0$, as desired.
+
+  To see that $f$ doesn't attain its minimum value at $a$ or $b$, first note that since $f'(a)<0$ we have $\lim_{h\to0}(f(a+h)-f(a))<0$. It follows that there exists $h>0$ such that $f(a+h)<f(a)$, that is, $f$ cannot attain its minimum value at $a$. Similarly since $f'(b)>0$ we have $\lim_{h\to0}(f(b+h)-f(b))/h>0$. It follows that there exists $h<0$ such that $f(b+h)<f(b)$, so once eagain $f$ cannot attain its minimum value at $b$ either.
+\end{proof}
+
+% could also use IET to prove Rolle and then MVT, and then a weak form of the fundamental theorem of calculus!
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Baire's theorem and sets of discontinuity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Baire's theorem, also called Baire's category theorem, is one of the most important results of analysis and topology This theorem is not hard to prove, in fact the proof is essentially the same as our first proof of the NIP. But the theorem has a profound impact on the development of analysis. In this section and the next we will elaborate on just two consequences of the theorem.
+
+Before stating the theorem, recall that a subset $A$ of a metric space is called \emph{dense} if $A$ meets every open subset of $X$.
+
+\begin{thm}[Baire's theorem]
+  If $X$ is a complete metric space then the following hold:
+  \begin{enumerate}
+  \item The intersection of countably many dense open subsets of $X$ is nonempty.
+  \item The union of countably many closed sets with empty interior is not all of $X$.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  We will prove the first statement, since the second follows by taking complements. Given a sequence $O_n$ dense open sets we will inductively construct a nested sequence of neighborhoods $V_{\epsilon_n}(x_n)$ such that $V_{\epsilon_n}(x_n)\subset O_n$. To begin choose $V_{\epsilon_1}(x_1)\subset O_1$ arbitrarily. Assuming $V_{\epsilon_n}(x_n)$ has been constructed, since $O_n$ is dense open we haev that $V_{\epsilon_n}(x_n)\cap O_{n+1}$ is a nonempty open set. Hence we can find a neighborhood $V_{\epsilon_{n+1}}(x_{n+1})\subset V_{\epsilon_n}(x_n)\cap O_{n+1}$.
+
+  By choosing the $\epsilon_n$ small enough in the above construction, we can ensure that $\epsilon_n\to0$ and that $\overline{V_{\epsilon_{n+1}}(x_{n+1})}\subset V_{\epsilon_n}(x_n)$. It follows that the sequence $x_n$ is Cauchy, and since $X$ is complete, that $x_n$ converges to a limit $x$. Then this limit $x$ lies in every neighborhood $V_{\epsilon_n}(x_n)$ and hence in every set $O_n$, which implies that $\bigcap O_n\neq\emptyset$, as desired.
+\end{proof}
+
+Our first application of Baire's theorem will be to address the question: if $f$ is a discontinuous function, what does its set of discontinuities look like? Recall that we have seen examples of functions that are discontinuous at a single point, discontinuous at a few points, and discontinuous everywhere.
+
+\begin{defn}
+  If $f\colon\RR\to\RR$ then the \emph{set of discontinuities} of $f$ is the set $D_f=\set{x\in\RR\mid\text{$f$ is discontinuous at $x$}}$.
+\end{defn}
+
+It is possible to produce examples of functions $f$ with interesting discontinuity sets $D_f$.
+
+\begin{example}
+  Let $f(x)=$ the greatest integer less than or equal to $x$ (the floor of $x$). Then the set $D_f$ is exactly $\mathbb Z$.
+\end{example}
+
+\begin{example}
+  Let $f(x)=1/n$ if $x=m/n$ is a rational number and $m/n$ is its reduced representation. Let $f(x)=0$ if $x$ is irrational. This function $f$ is called Thomae's function, and it has the remarkable property that $D_f$ is exactly $\QQ$. To see this, one should check that if $x$ is any number and $a_n/b_n$ is any nonconstant sequence of reduced rational numbers such that $a_n/b_n\to x$, then the sequence $1/b_n\to0$.
+\end{example}
+
+% play around with other sets: [0,1], (0,1), 1/n, 1/n\cup0, etc
+
+The example of Thomae's function naturally leads to the question: If we can find a function $f$ such that $D_f$ is the set of rational numbers, can we also finda  function $f$ such that $D_f$ is the set of irrational numbers? With all our ingenuity to create bizarre functions, it may surprise you that the answer is ``no''. To help us reach this conclusion, we need the following partial characterization of the sets $D_f$.
+
+\begin{thm}
+  \label{thm:df-closed}
+  If $f\colon\RR\to\RR$, then $D_f$ can be written as a union of closed sets.
+\end{thm}
+
+\begin{proof}
+  Define a function $f$ to be \emph{$\epsilon$-continuous} at $a$ if there exists $\delta$ such that for all $x,y\in V_\delta(a)$ we have $|f(x)-f(y)|<\epsilon$. Accordingly, we let $D_{f,\epsilon}$ be the set of points $a$ such that $f$ is \emph{not} $\epsilon$-continuous at $a$. We make the following two claims:
+  \begin{enumerate}
+  \item $f$ is continuous at $a$ if and only if for all $\epsilon>0$, $f$ is $\epsilon$-continuous at $a$. Thus $D_f=\bigcup D_{f,\epsilon}$.
+  \item Each set $D_{f,\epsilon}$ is closed.
+  \end{enumerate}
+  Admitting these for the moment, the result follows since then $D_f$ is the countable union of closed sets $D_f=\bigcup_nD_{f,1/n}$
+
+  For claim (a), the backwards implication is immediate. For the forwards implication, suppose that $f$ is continuous at $a$. Then given $\epsilon>0$ we can find a $\delta>0$ such that $|x-a|<\delta$ implies $|f(x)-f(a)|<\epsilon/2$. Then if $x,y\in V_\epsilon(a)$ we have
+  \[|f(x)-f(y)|\leq|f(x)-f(a)|+|f(a)-f(y)|<\epsilon/2+\epsilon/2=\epsilon
+  \]
+  as desired.
+
+  For claim (b), we will show that if $a_n\in D_{f,\epsilon}$ and $a_n\to a$ then $a\in D_{f,\epsilon}$. Observe here that $a\in D_{f,\epsilon}$ means for all $\delta$ there exist $x,y\in V_\delta(a)$ such that $|f(x)-f(y)|<\epsilon$. Now let $\delta>0$ be given, and choose $n$ large enough that $|a_n-a|<\delta/2$. Since $a_n\in D_{f,\epsilon}$ we can find $x,y\in V_{\delta/2}(a_n)$ such that $|f(x)-f(y)|\geq\epsilon$. Then by our choice of $a_n$ we have that $V_{\delta/2}(a_n)\subset V_\delta(a)$. Thus $x,y$ also lie in $V_\delta(a)$, which implies that $a\in D_{f,\epsilon}$ too.
+\end{proof}
+
+\begin{rem}
+  The converse to Theorem~\ref{thm:df-closed} is also true. If $A$ is an set which is a union of closed sets, then there exists a function $f$ such that $D_f$ is exactly equal to $A$.
+\end{rem}
+% exercise: do it for a closed set? ... uh how?
+
+Now we are ready to give a negative answer to the question of whether there is a function $f$ such that $D_f$ is exactly the set of irrational numbers.
+
+\begin{thm}
+  \label{thm:df-irrationals}
+  The set of irrational numbers cannot be written as a countable union of closed sets. Hence there is no function $f$ such that $D_f=$ the set of irrational numbers.
+\end{thm}
+
+\begin{proof}
+  Suppose towards a contradiction that the set $\mathbb I$ of irrational numbers can be written as a union $\mathbb I=\bigcup F_n$, where each $F_n$ is closed. Since any open set contains rational numbers, it must be the case that each set $F_n$ has empty interior. Let $\QQ=\mathbb{q_n}$ be an enumeration of the rational numbers. Then $\RR=\bigcup F_n\cup\bigcup\{q_n\}$ is a union of a countable family of closed subsets with empty interior, contradicting Baire's theorem.
+\end{proof}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Most functions are not differentiable}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We have seen many examples of continuous functions which fail to be differentiable at one or more points. Our second application of Baire's theorem will be to answer the quesiton: how rare is it for a function to be differentiable? In order to proceed, we need a measure of size for subsets of the space $C[0,1]$ of continuous functions. Cardinality isn't useful here, since there are uncountably many differentiable functions and uncountably many non-differentiable functions. We have also discussed the notions of length and dimension for subsets of $\RR^n$, but again these will not help here. In this section we introduce a notion of size which stems from Baire's theorem.
+
+\begin{defn}
+  A subset $A\subset X$ is said to be \emph{meager} if it is contained in a countable union of closed sets with empty interior.
+\end{defn}
+
+The Baire category can be rephrased to say that any complete metric space is comeager and not meager. A consequence is that the subsets of a complete metric space can be divided into three possible ``categories'':
+\begin{itemize}
+\item meager (small)
+\item comeager (large)
+\item neither meager nor comeager (intermediate)
+\end{itemize}
+For this reason, Baire's theorem is traditionally called the \emph{Baire category theorem}.
+% exercise: check no set is meager and comeager, and there exist sets which are neither meager nor comeager
+
+Recall that the space $C[0,1]$ of continuous functions is a complete metric space. Letting $D[0,1]\subset C[0,1]$ denote the subset of differentiable functions, it makes sense to ask which size $D$ has.
+
+\begin{thm}
+  The set $D[0,1]$ of differentiable functions on $[0,1]$ is a meager subset of $C[0,1]$.
+\end{thm}
+
+\begin{proof}
+  To witness that $D[0,1]$ is meager, we will show it is the union of closed sets without interior:
+  \[A_{M,\epsilon}=\set{f\in C[0,1]:\text{for some $x\in[0,1]$, for all $|h|<\epsilon$, we have }\left|\frac{f(x+h)-f(x)}{h}\right|\leq M}
+  \]
+  \ldots
+\end{proof}
+
+\end{document}
+
+
