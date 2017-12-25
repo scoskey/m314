@@ -1,5 +1,6 @@
 old
-private 
+private
+*.lb 
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
