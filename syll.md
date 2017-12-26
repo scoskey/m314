@@ -4,7 +4,7 @@
 
 Meeting times: M,W from 12:00&ndash;1:15pm  
 Meeting place: MB 124  
-Textbook: Stephen Abbott, *Understanding analysis* 2nd edition  
+Textbook: Stephen Abbott, *Understanding analysis*, 2nd edition  
 Web site: `github.com/scoskey/m314`  
 My email: `scoskey@boisestate.edu`  
 My office: MB 237-A  
@@ -31,19 +31,19 @@ We will begin by discussing a simple but surprisingly deep question: *what are r
 * Exam 1 25%
 * Exam 2 25%
 * Exam 3 (non-cumulative final) 25%
+* Daily prep and classwork 5%
 * Homework 20%
-* Participation 5%
 
 ## Tentative exam dates
 
-* Exam 1: 
-* Exam 2: 
-* Exam 3: 
+* Exam 1: Monday, February 12
+* Exam 2: Wednesday, March 21
+* Exam 3: Monday, April 30 from 12:30&ndash;2:30pm
+
+## Daily prep and classwork
+
+Reading will be assigned prior to each class. You are expected to arrive prepared to ask questions and discuss the material. All homework assignments will begin as in-class group work. Daily participation and collaboration are required. A small discretionary portion of your grade will be based on your attendance, attention, and collaboration.
 
 ## Homework
 
-Assignments will be started in class at the end of each lecture and collected on the following Monday. All work well be evaluated for completeness, and certain problems will be evaluated for correcteness and mathematical style. You are encouraged to collaborate with your peers, and you are welcome to use online resources when you are stuck. But please keep in mind that you must always fully understand your solutions and most importantly *write them in your own words*.
-
-## Participation
-
-In-class group work is required and will be a part of most class meetings.  A small discretionary portion of your grade will be based on your attendance, attention, and collaboration.
+All homework assignments will begin as in-class group work, which we will begin following each lecture. Your written solutions will be collected on the following Monday. All work well be evaluated for completeness, and certain items will be evaluated for correcteness and mathematical style. You are encouraged to collaborate with your peers inside and outised of class, and you are free to use online resources when you are stuck. But please keep in mind that you must always fully understand your solutions and most importantly *write them in your own words*.
