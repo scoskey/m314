@@ -46,8 +46,9 @@
 \theoremstyle{remark}
 \newtheorem{rem}[thm]{Remark}
 \newtheorem{example}[thm]{Example}
-\newtheorem*{notes}{Notes and further reading}
 \newtheorem*{reading}{Reading}
+\newtheorem*{readnext}{Reading for next time}
+\newtheorem*{notes}{Notes and further reading}
 \numberwithin{equation}{section}
 \numberwithin{figure}{section}
 \renewcommand{\theequation}{\arabic{section}.e\arabic{equation}}
@@ -70,7 +71,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{reading}
-  Abbott, \S 1.1, 1.2
+  Abbott, \S 1.1, 1.2, start 8.6
 \end{reading}
 
 % real numbers can be motivated by the intermediate value theorem, which is false in the rational number system
@@ -127,9 +128,47 @@ There are two types of cuts: obvious ones called rational cuts, such as the cut 
 For example, the cut at $r=2$ is the set $C=\set{q\in\QQ\mid q<2}$, and this is a rational cut because $\QQ\smallsetminus C=\set{q\in\QQ\mid q\geq2}$ has a least element, namely $2$. Generally, $C$ is a rational cut exactly when $C$ is of the form $\set{q\in\QQ\mid q<r}$ for some $r\in\QQ$. On the other hand the cut at $\sqrt2$ is the set $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$ and this is a gap because $\QQ\smallsetminus C=\set{q\in\QQ\mid q>0\text{ and}q^2\geq2}$ has no rational least element (we will prove this rigorously in the next section).
 
 \newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}[see Abbott, ex 8.4.1]
+  For each set, either argue that it is a cut, or show that one of the conditions in the definition of cut is not satisfied.
+  \begin{enumerate}
+  \item $\set{t\in\QQ\mid t<r}$, where $r$ is a rational number
+  \item $\set{t\in\QQ\mid t\leq2}$
+  \item $\set{t\in\QQ\mid t^2<2}$
+  \item $\set{t\in\QQ\mid t^2<2\text{ or }t<0}$
+  \item $\set{t\in\QQ\mid t^2\leq2\text{ or }t<0}$
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 1.2.1]
+  Study the proof that there is no rational number $r$ such that $r^2=2$.
+  \begin{enumerate}
+  \item Modify this proof to show that there is no rational number $r$ such that $r^2=3$.
+  \item Obviously there \emph{is} a rational number such that $r^2=4$, so your proof in part (a) cannot work if $3$ is replaced by $4$.  But where does the proof actually break down?
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}
+  Let $P$ and $Q$ be points in the plane.
+  \begin{enumerate}
+  \item Suppose that $P$ is $3$ units away from the origin and $Q$ is $5$ units away from the origin.  What is the farthest $P$ and $Q$ can be from each other?  The closest?
+  \item Now generalize.  Suppose that $P$ is $|P|$ units away from the origin and that $Q$ is $|Q|$ units away from the origin.  Use the notation $|P-Q|$ for the distance between $P$ and $Q$.  Can you write two rules that generalize your two answers from part~(a)? (Explain your answer with a picture.  You do not need to give a proof.)
+  \end{enumerate}
+\end{exerc}
+
+\begin{readnext}
+  Abbott, \S 8.6, 1.3
+\end{readnext}
+
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cuts and least upper bounds}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{reading}
+  Abbott, \S 8.6, 1.3
+\end{reading}
 
 We have just given a definition of a gap in the rational number system, but have yet to give an official example. According to our motivation, the cut at $\sqrt2$ should be a gap. The proof turns out somewhat more technical than may be expected. It gives an example of the kind of arguments we will be giving quite a lot in this class.
 
@@ -212,9 +251,55 @@ We close this section with characterization of the supremum that is useful for w
 The proof of this is left as an exercise.
 
 \newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}[Abbott, ex 1.3.8]
+  Find the supremum and infemum of each of the following sets. You do not need to give a detailed proof, but please explain your reasoning.
+  \begin{enumerate}
+  \item $\set{n\in\NN\mid n^2<10}$
+  \item $\set{n/(m+n)\mid m,n\in\NN}$
+  \item $\set{n/(2n+1)\mid n\in\NN}$
+  \item $\set{n/m\mid m,n\in\NN\text{ and }m+n\leq10}$
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 8.6.3]
+  Read the properties of a ``field'' of numbers.  Which of these properties is satisfied by $\NN$?  By $\ZZ$?  By $\QQ$?
+\end{exerc}
+
+\begin{exerc}
+  Suppose that $A$ and $B$ are subsets of $\RR$ and that $A\subset B$.  Which of the following is right, and why? ``any upper bound for $A$ is also an upper bound for $B$'', or; ``any upper bound of $B$ is also an upper bound for $A$.''
+
+  Now additionally suppose that $\sup(A)$ and $\sup(B)$ exist.  Which inequality is right, and why? $\sup(A)\leq\sup(B)$, or; $\sup(B)\leq\sup(A)$.
+\end{exerc}
+
+\begin{exerc}
+  Modify a proof given in class to instead show that the set
+$\set{q\in\QQ\mid q^3<2}$ has no last element.
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 8.6.5(a)]
+  Review the three-part definition of cut. Suppose that $A$ and $B$ are cuts, and let $S$ be the so-called sum-set of the two cuts, that is, let $S=\set{a+b\mid a\in A\text{ and }b\in B}$. Prove that $S$ is a cut by proving that each of the conditions in the definition of cut is satisfied.
+
+  Why isn't the set $P=\set{ab\mid a\in A\text{ and }b\in B}$ a cut?  What kinds of things do you have to do to fix this?
+\end{exerc}
+
+% \question Consider the sequence defined by $x_1=0$ and $x_{n+1}=\sqrt{2+x_n}$.  Prove using induction that for all $n$, $x_n<2$.  Prove using induction that for all $n$, $x_n<x_{n+1}$.
+
+% \question Give a detailed proof from the definition of supremum that the supremum of the interval $(0,1)$ is exactly $1$.
+
+\begin{readnext}
+  Abbott, \S 1.3, 1.4
+\end{readnext}
+
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The axiom of completeness}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{reading}
+  Abbott, \S 1.3, 1.4
+\end{reading}
 
 In the previous section we showed how one can construct the real number system; in this section we take a high-level approach and show how to define the real number system by its properties alone.
 
@@ -286,6 +371,10 @@ To see that this implies we can approximate real numbers by rational numbers, le
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Completeness and the size of the reals}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{reading}
+  Abbott, \S 1.5, 1.6
+\end{reading}
 
 The NIP has numerous consequences, one of which is the surprising fact that there are more irrational numbers than there are rational numbers!
 
