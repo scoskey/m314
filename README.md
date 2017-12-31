@@ -2,6 +2,6 @@
 
 Welcome! Please visit the following course resources.
 
-* [syllabus](http://github.com/scoskey/m314/blob/master/syll.md)  
-* [notes](https://latexonline.cc/compile?git=https%3A%2F%2Fgithub.com%2Fscoskey%2Fm314&target=notes.tex&command=pdflatex&trackId=1514180713399)  
+* [syllabus](syll)  
+* [notes](https://github.com/scoskey/m314/raw/master/notes.pdf)  
 Disclaimer: these lecture are not a replacement for the text, because they cover less information and are somewhat unedited (they are more for me than for you).
