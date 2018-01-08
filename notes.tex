@@ -78,13 +78,13 @@
 
 We begin the course by briefly pondering a very deep question: what are numbers and what are they for?
 
-The natural or counting numbers $0$, $1$, $2$, etc are collectively denoted $\NN$ and lead to numerous areas of mathematical study. \emph{Combinatorics} is the study of counting finite sets. For example: how many ways are there to write 10 as a sum of smaller positive integers? \emph{Number theory} is the study of the arithmetic operations on the natural numbers. For example: how many prime numbers are there less than $10^{10}$?
+The natural or counting numbers $1,2,3,\ldots$ are collectively denoted $\NN$ and are central to many areas of mathematical study. \emph{Combinatorics} is the study of counting finite sets. For example: how many ways are there to write the number 10 as a sum of smaller natural numbers? \emph{Number theory} is the study of the arithmetic operations on the natural numbers. For example: how many prime numbers are there less than $10^{10}$?
 
-But in \emph{calculus}, analysis, and geometry, numbers are used for measurement. Using the blackboard as a plane, how can we measure the distance between two points? To answer this we would first need to choose a unit, such as a randomly chosen straight stick. With this in hand, we can try count how many copies of the unit stick fit along the striaght line segment joining the two points. But what if the number of unit sticks doesn't come out whole?
+But in \emph{calculus}, analysis, and geometry, numbers are used for measurement. Using the board as a plane, how can we measure the distance between two points? To answer this we would first need to choose a unit, such as a randomly chosen straight stick. With this in hand, we can try count how many copies of the unit stick fit along the striaght line segment joining the two points. But what if the number of unit sticks doesn't come out whole?
 
-In this case we can try to use \emph{ratios} to measure the distance. For example, suppose we are trying to measure the distance $d$, and three unit sticks fit perfectly inside two copies of $d$. Then we say that $d=3/2$ units. Sometimes this telescoping process takes a long time, for example if five units fit perfectly inside four copies of $d$.
+In this case we can try to use \emph{ratios} to measure the distance. For example, suppose we are trying to measure the distance $d$, and three unit sticks fit perfectly inside two copies of $d$. Then we say that $d=3/2$ units. Sometimes this telescoping process takes a long time, for example if five units fit perfectly inside four copies of $d$. The set of ratios of natural numbers are collectively denoted $\QQ$ and are called the rational numbers.
 
-This leads to the \emph{big question}: do ratios suffice to measure all distances? The answer to this question is a big fat NO, a fact which surprised the ancients. Rational distances do suffice for any practical purposes because in the real world we are satisfied with approximations. But there are ideal distances (numbers) which cannot be measured by any ratio. The classical Greek example is $d=$ the diagonal of a square. Notice that $d$ has the property that $d^2=2$.
+This leads to a \emph{big question}: do ratios suffice to measure all distances? The answer to this question is a big fat NO, a fact that surprised the ancients. Rational distances do suffice for most practical purposes because in the real world we can usually use approximations. But there are ideal distances (numbers) which cannot be measured by a ratio of natural numbers. The classical Greek example is $d=$ the diagonal of a square. Notice that $d$ has the property that $d^2=2$.
 
 \begin{center}
 \begin{tikzpicture}
@@ -93,22 +93,22 @@ This leads to the \emph{big question}: do ratios suffice to measure all distance
 \quad
 \begin{tikzpicture}
   \draw (0,0)--(2,0)--(2,2)--node[above]{$2$}(0,2)--node[left]{$2$}(0,0);
-  \draw (1,0)--(2,1)--(1,2)--node[below right,inner sep=0]{$d$}(0,1)--(1,0);
+  \draw (1,0)--node[below right,inner sep=0]{$d$}(2,1)--(1,2)--(0,1)--(1,0);
 \end{tikzpicture}
 \end{center}
 
 The argument is given in Plato's Meno. If we quadruplicate the square, we see that the square with sidelength $d$ is exactly half the square with sidelength $2$. Thus $d^2=2^2/2=2$.
 
-\begin{thm}
+\begin{thm}t
   \label{thm:root-2-irrational}
   If $d^2=2$ then $d\notin\QQ$.
 \end{thm}
 
 \begin{proof}
-  Suppose $d$ is rational and write $d=a/b$ where $a,b$ are integers and the fraction is in lowest terms. Then $a^2=2b^2$. Notice that the right-hand side is even, and therefore so is the left-hand side. It follows that $a$ is even. Hence the left-hand side is divisible by $4$, and so is the right-hand side. It follows that $b$ is even. Thus both $a$ and $B$ are even, contradicting that the fraction $a/b$ is in lowest terms.
+  Suppose $d$ is rational and write $d=a/b$ where $a,b$ are integers and the fraction is in lowest terms. Then $a^2=2b^2$. Notice that the right-hand side is even, and therefore so is the left-hand side. It follows that $a$ is even. Hence the left-hand side is divisible by $4$, and so is the right-hand side. It follows that $b$ is even. Thus both $a$ and $b$ are even, contradicting that the fraction $a/b$ is in lowest terms.
 \end{proof}
 
-We conclude that the rational number system has \emph{gaps}, such as that defined by $\sqrt2$. All we can say at the moment is that some rational numbers are less than $\sqrt2$ and others are larger than $\sqrt2$. Actually the number $\sqrt2$ doesn't exist yet, we can only really say that some numbers have square less than $2$ and others have square greater than $2$. This is an example of a property which \emph{cuts} the rational number system into two halves.
+We conclude that the rational number system has \emph{gaps}, such as that defined by $\sqrt2$. All we can say at the moment is that some rational numbers are less than $\sqrt2$ and the rest are larger than $\sqrt2$. More accurately, since in our development the number $\sqrt2$ doesn't exist yet, we can only say that some numbers have square less than $2$ and others have square greater than $2$. This is an example of a property which \emph{cuts} the rational number system into two halves.
 
 \begin{defn}
   A subset $C\subset\QQ$ is called a \emph{cut} if it satisfies the following three properties.
@@ -119,13 +119,15 @@ We conclude that the rational number system has \emph{gaps}, such as that define
   \end{enumerate}
 \end{defn}
 
-There are two types of cuts: obvious ones called rational cuts, such as the cut at $2$, and less obvious ones called gaps such as the cut at $\sqrt2$. The latter kind are called gaps, because these correspond to distances that the rational number system cannot measure.
+For example, it is easy to check that the set $C=\{q\in\QQ\mid q<2\}$ satisfies all three properties of a cut. In fact, any set of the form $\set{q\in\QQ\mid q<r}$ for some $r\in\QQ$ is a cut. These cuts are somewhat obvious to define, and they are called \emph{rational cuts}.
+
+On the other hand, the cut at $\sqrt{2}$ considered previously would formally be defined as $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$. This cut did not have as obvious of a definition and it is an example of an irrational cut.
 
 \begin{defn}
-  A cut $C$ is said to be a \emph{gap} if the complement $\QQ\smallsetminus C$ has no least element.
+  A cut $C$ is said to be an \emph{irrational cut} or a \emph{gap} if the complement of the cut, $\QQ\smallsetminus C$, has no least element.
 \end{defn}
 
-For example, the cut at $r=2$ is the set $C=\set{q\in\QQ\mid q<2}$, and this is a rational cut because $\QQ\smallsetminus C=\set{q\in\QQ\mid q\geq2}$ has a least element, namely $2$. Generally, $C$ is a rational cut exactly when $C$ is of the form $\set{q\in\QQ\mid q<r}$ for some $r\in\QQ$. On the other hand the cut at $\sqrt2$ is the set $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$ and this is a gap because $\QQ\smallsetminus C=\set{q\in\QQ\mid q>0\text{ and}q^2\geq2}$ has no rational least element (we will prove this rigorously in the next section).
+In the next section, we will prove rigorously that the cut at $\sqrt{2}$ is really an example of an irrational cut. We will then describe a correspondence between cuts and real numbers, with rational cuts corresponding to rational numbers and irrational cuts corresponding to irrational numbers.
 
 \newpage
 \subsection*{Exercises for \S \thesection}
