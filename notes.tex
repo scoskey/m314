@@ -32,6 +32,7 @@
 \DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\inte}{int}
 \DeclareMathOperator{\ext}{ext}
+\renewcommand{\setminus}{\smallsetminus}
 
 \theoremstyle{definition}
 \newtheorem{exerc}{Exercise}[section]
@@ -124,7 +125,7 @@ For example, it is easy to check that the set $C=\{q\in\QQ\mid q<2\}$ satisfies 
 On the other hand, the cut at $\sqrt{2}$ considered previously would formally be defined as $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$. This cut did not have as obvious of a definition and it is an example of an irrational cut.
 
 \begin{defn}
-  A cut $C$ is said to be an \emph{irrational cut} or a \emph{gap} if the complement of the cut, $\QQ\smallsetminus C$, has no least element.
+  A cut $C$ is said to be an \emph{irrational cut} or a \emph{gap} if the complement of the cut, $\QQ\setminus C$, has no least element.
 \end{defn}
 
 In the next section, we will prove rigorously that the cut at $\sqrt{2}$ is really an example of an irrational cut. We will then describe a correspondence between cuts and real numbers, with rational cuts corresponding to rational numbers and irrational cuts corresponding to irrational numbers.
@@ -135,31 +136,31 @@ In the next section, we will prove rigorously that the cut at $\sqrt{2}$ is real
 \begin{exerc}[see Abbott, ex 8.6.1]
   For each set, either argue that it is a cut, or show that one of the conditions in the definition of cut is not satisfied.
   \begin{enumerate}
-  \item $\set{t\in\QQ\mid t<r}$, where $r$ is a rational number
-  \item $\set{t\in\QQ\mid t\leq2}$
-  \item $\set{t\in\QQ\mid t^2<2}$
-  \item $\set{t\in\QQ\mid t^2<2\text{ or }t<0}$
-  \item $\set{t\in\QQ\mid t^2\leq2\text{ or }t<0}$
+  \item $\set{q\in\QQ\mid q<r}$, where $r$ is a fixed rational number
+  \item $\set{q\in\QQ\mid q\leq2}$
+  \item $\set{q\in\QQ\mid q^2<2}$
+  \item $\set{q\in\QQ\mid q<0\text{ or }q^2<2}$
+  \item $\set{q\in\QQ\mid q<0\text{ or }q^2\leq2}$
   \end{enumerate}
 \end{exerc}
 
 \begin{exerc}[Abbott, ex 8.6.2]
-  Suppose that $C$ is a cut, $q\in C$, and $r\notin C$. Show that $q<r$.
+  Suppose that $C$ is a cut, $q\in C$, and that $r$ is a rational number such that $r\notin C$. Show that $q<r$.
 \end{exerc}
 
 \begin{exerc}[Abbott, ex 1.2.1]
-  Study the proof that there is no rational number $r$ such that $r^2=2$.
+  Study the proof that there is no rational number $q$ such that $q^2=2$.
   \begin{enumerate}
-  \item Modify this proof to show that there is no rational number $r$ such that $r^2=3$.
-  \item Obviously there \emph{is} a rational number such that $r^2=4$, so your proof in part (a) cannot work if $3$ is replaced by $4$. But where exactly does your proof break down in this case?
+  \item Modify this proof to show that there is no rational number $q$ such that $q^2=3$.
+  \item Obviously there \emph{is} a rational number such that $q^2=4$, so your proof in part (a) cannot work if $3$ is replaced by $4$. But where exactly does your proof break down in this case?
   \end{enumerate}
 \end{exerc}
 
 \begin{exerc}
-  Let $P$ and $Q$ be points in the plane.
+  Let $A$ and $B$ be points in the plane.
   \begin{enumerate}
-  \item Suppose that $P$ is $3$ units away from the origin and $Q$ is $5$ units away from the origin.  What is the farthest $P$ and $Q$ can be from each other?  The closest?
-  \item Now generalize.  Suppose that $P$ is $|P|$ units away from the origin and that $Q$ is $|Q|$ units away from the origin.  Use the notation $|P-Q|$ for the distance between $P$ and $Q$.  Can you write two rules that generalize your two answers from part~(a)? (Explain your answer with a picture.  You do not need to give a proof.)
+  \item Suppose that $A$ is $3$ units away from the origin and $B$ is $5$ units away from the origin. What is the farthest $A$ and $B$ can be from each other? The closest?
+  \item Now generalize. Suppose that $A$ is $|A|$ units away from the origin and that $B$ is $|B|$ units away from the origin.  Use the notation $|A-B|$ for the distance between $A$ and $B$. Can you write two rules that generalize your two answers from part~(a)? (Explain your answer with a picture. You do not need to give a proof.)
   \end{enumerate}
 \end{exerc}
 
@@ -176,11 +177,11 @@ In the next section, we will prove rigorously that the cut at $\sqrt{2}$ is real
   Abbott, \S 8.6, 1.3
 \end{reading}
 
-We have just given a definition of a gap in the rational number system, but have yet to give an official example. According to our motivation, the cut at $\sqrt2$ should be a gap. The proof turns out somewhat more technical than may be expected. It gives an example of the kind of arguments we will be giving quite a lot in this class.
+In the previous section we defined a cut in the rational number system, and stated that some cuts are ``rational'' while others are ``irrational'' (or ``gaps''). However we have yet to actually prove that any cut is really irrational. According to our motivation, the cut at $\sqrt2$ should be a gap. The proof turns out to be more technical than one might have expected. It will provide us with a not-so-soft example of the kind of arguments we will see later in the class.
 
 \begin{thm}
   \label{thm:root-2-cut}
-  $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$ is a gap.
+  The cut $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$ is an irrational cut.
 \end{thm}
 
 \begin{proof}
@@ -195,14 +196,14 @@ We have just given a definition of a gap in the rational number system, but have
   To see what $\epsilon$ has to be, we work \emph{backwards}.
   \begin{align*}
     (q+\epsilon)^2<2&\iff q^2+2q\epsilon+\epsilon^2<2\\
-    &\,\Longleftarrow\,\,\, q^2+2q\epsilon+\epsilon\leq2\\
-    &\iff \epsilon\leq(2-q^2)/(2q+1)
+    &\,\Longleftarrow\,\,\, q^2+2q\epsilon+\epsilon<2\\
+    &\iff \epsilon<(2-q^2)/(2q+1)
   \end{align*}
-  There is a clever trick going on it the second implication (the $\Longleftarrow$ one) which we will comment on in a moment. But overall, this calculation is telling us that we will be safe if we choose $\epsilon\leq(2-q^2)/(2q+1)$.
+  There is a clever trick going on in the second implication (the $\Longleftarrow$ one) which we will comment on in a moment. But overall, this calculation is telling us that we will be safe if we choose $\epsilon<(2-q^2)/(2q+1)$.
 
-  Now, in the second implication we replaced $\epsilon^2$ with $\epsilon$ to simplify the expression and make it easy to solve for $\epsilon$. To do this, we actually need to make the extra assumption that $\epsilon$ is smaller than $1$, since then $\epsilon^2<\epsilon$ and the $\Longleftarrow$ holds true. This is acceptible because we haven't yet chosen $\epsilon$, so we just need to additionally promise to choose $\epsilon<1$.
+  Now, in the second implication we replaced $\epsilon^2$ with $\epsilon$ to simplify the expression and make it easy to solve for $\epsilon$. To do this, we actually need to make the extra assumption that $\epsilon<1$, since then $\epsilon^2<\epsilon$ and the $\Longleftarrow$ holds true. This is acceptible because we haven't yet chosen $\epsilon$, so we just need to additionally promise to choose $\epsilon<1$.
 
-  We now know that our proof will succeed if we choose $\epsilon$ to be any rational number that is both $<1$ and $\leq(2-q^2)/(2q+1)$. To verify that this works, we use our preparatory work above \emph{forwards} as follows.
+  We now know that our proof will succeed if we choose $\epsilon$ to be any positive rational number that is both $<1$ and also $<(2-q^2)/(2q+1)$. To verify that this works, we use our preparatory work above \emph{forwards} as follows.
   \begin{align*}
     (q+\epsilon)^2&=q^2+2q\epsilon+\epsilon^2\\
     &<q^2+2q\epsilon+\epsilon\\
@@ -212,20 +213,20 @@ We have just given a definition of a gap in the rational number system, but have
   \end{align*}
   Thus we conclude that $r=q+\epsilon$ is a rational number such that $q<r$ and $r^2<2$, which completes the proof of (c).
 
-  Finally, to see that $C$ is a gap, we note that the same argument as in part (c) above can be used to show that the set $\set{q\in\QQ\mid q>0\text{ and }q^2>2}$ has no least element. Then since Theorem~\ref{thm:root-2-irrational} implies that $\sqrt2$ is itself not rational, we can conclude that $\QQ\smallsetminus C$ has no least element.
+  Finally, to see that $C$ is a gap, we note that the same argument as in part (c) above can be used to show that the set $\set{q\in\QQ\mid q>0\text{ and }q^2>2}$ has no least element. And since Theorem~\ref{thm:root-2-irrational} implies that $\sqrt2$ is itself not rational, we can conclude that $\QQ\setminus C$ has no least element.
 \end{proof}
 
 Let us look at the number systems we know so far, from smallest to largest. Each one has progressively more power than the last.
 \begin{itemize}
 \item $\NN$: you can add but not subtract.
 \item $\ZZ$: you can add and subtract, but not divide.
-\item $\QQ$: you can add and subtract and divide, but there are gaps.
+\item $\QQ$: you can add and subtract and divide, but there are ``gaps''.
 \end{itemize}
 
-The real number system $\RR$ will be defined in such a way that it fills the gaps of $\QQ$. Last time we defined a gap as a cut without a least upper bound. We now investigate gaps further in terms of least upper bounds.
+The real number system $\RR$ will be defined in such a way that it fills the gaps of $\QQ$. In order to fill these gaps, we need the terminology of least upper bounds.
 
 \begin{defn}
-  If $A$ is a set of real numbers, then an \emph{upper bound} for $A$ is any number $b$ such that for all $a\in A$, $a\leq b$. If $b$ is an upper bound for $A$ then it is called the \emph{least upper bound} or \emph{supremum} of $A$ if it is least among all possible upper bounds of $A$.
+  If $A$ is any set of numbers, then an \emph{upper bound} for $A$ is a number $b$ such that for all $a\in A$, $a\leq b$. If $b$ is an upper bound for $A$ then it is called the \emph{least upper bound} or \emph{supremum} of $A$ if it is least among all possible upper bounds of $A$.
 \end{defn}
 
 \begin{example}
@@ -236,15 +237,17 @@ The real number system $\RR$ will be defined in such a way that it fills the gap
   \end{itemize}
 \end{example}
 
-The fact that $\QQ$ has gaps can be summarized as saying that $\QQ$ has cuts with no supremum in $\QQ$. We therefore fill these gaps by adding a supremum to every cut that doesn't have one.
+Our definitions of rational and irrational cuts can now be rephrased as follows. A rational cut is one which has a supremum in $\QQ$, and an irrational cut is one which does not have a supremum in $\QQ$. We can therefore ``fill'' the gaps in $\QQ$ by inserting a newly created supremum for every irrational cut.
 
 \begin{defn}
-  The \emph{real number system} consists of the rational numbers $\QQ$ together with a supremum for every cut of $\QQ$ that doesn't already have a supremum (that is, for every gap).
+  The \emph{real number system} consists of the rational numbers $\QQ$ together with a supremum for every cut of $\QQ$ that doesn't already have a supremum (that is, for every irrational cut).
 \end{defn}
 
-In other words, to form the real number system we first build the rational number system, observe that it has gaps, and then manually \emph{fill in} all these gaps. According to this definition, irrational numbers are \emph{defined} by their cuts. We can't define $\sqrt2$ by saying it is positive number whose square is $2$, that tells you what property the number has, but not what it actually is. Rather we must define $\sqrt2$ to be the supremum of the cut $\set{q\in\QQ\mid q<0\text{ or }q^2<2}$.
+In summary, to form the real number system we first built the rational number system, observe that it has gaps, and then manually \emph{filled in} all these gaps.
 
-We close this section with characterization of the supremum that is useful for working with the notion.
+It is important to emphasize that with our definition of real numbers, an irrational number is literally \emph{defined} by its cut. That is, we didn't define $\sqrt2$ simply by saying it is a positive number whose square is $2$. That would tell you what property the number has, but not where it actually lies. Instead we defined $\sqrt2$ to be the supremum of the cut $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$.
+
+We close this section with a characterization of the supremum of a set that will be useful in the future.
 
 \begin{lem}
   If $A$ is a set, then $\alpha$ is the supremum of $A$ if and only if the following two conditions are satisfied:
@@ -270,11 +273,11 @@ The proof of this is left as an exercise.
 \end{exerc}
 
 \begin{exerc}[Abbott, ex 8.6.3]
-  Read the properties of a ``field'' of numbers.  Which of these properties is satisfied by $\NN$?  By $\ZZ$?  By $\QQ$?
+  Read the list of properties of a ``field'' of numbers.  Which of these properties is satisfied by $\NN$?  By $\ZZ$?  By $\QQ$?
 \end{exerc}
 
 \begin{exerc}
-  Suppose that $A$ and $B$ are subsets of $\RR$ and that $A\subset B$.  Which of the following is right, and why? ``any upper bound for $A$ is also an upper bound for $B$'', or; ``any upper bound of $B$ is also an upper bound for $A$.''
+  Suppose that $A$ and $B$ are subsets of $\RR$ and that $A\subset B$.  Which of the following is correct, and why? ``any upper bound for $A$ is also an upper bound for $B$'', or; ``any upper bound of $B$ is also an upper bound for $A$.''
 
   Now additionally suppose that $\sup(A)$ and $\sup(B)$ exist.  Which inequality is right, and why? $\sup(A)\leq\sup(B)$, or; $\sup(B)\leq\sup(A)$.
 \end{exerc}
@@ -284,7 +287,7 @@ The proof of this is left as an exercise.
 $\set{q\in\QQ\mid q^3<2}$ has no last element.
 \end{exerc}
 
-\begin{exerc}[Abbott, ex 8.6.5(a)]
+\begin{exerc}[see Abbott, ex 8.6.5(a)]
   Review the three-part definition of cut. Suppose that $A$ and $B$ are cuts, and let $S$ be the so-called sum-set of the two cuts, that is, let $S=\set{a+b\mid a\in A\text{ and }b\in B}$. Prove that $S$ is a cut by proving that each of the conditions in the definition of cut is satisfied.
 
   Why isn't the set $P=\set{ab\mid a\in A\text{ and }b\in B}$ a cut?  What kinds of things do you have to do to fix this?
@@ -458,7 +461,7 @@ We are now ready to prove that the set of real numbers is uncountable.
 \end{cor}
 
 \begin{proof}
-  Suppose towards a contradiction that the set of irrational numbers is countable. Then $\RR=\QQ\bigcup(\RR\smallsetminus\QQ)$ is countable, being the union of two countable sets, contradicting the theorem.
+  Suppose towards a contradiction that the set of irrational numbers is countable. Then $\RR=\QQ\bigcup(\RR\setminus\QQ)$ is countable, being the union of two countable sets, contradicting the theorem.
 \end{proof}
 
 \newpage
@@ -1448,7 +1451,7 @@ We conclude this section with a second very natural method of forming the closur
   Let $A$ be a subset of $\RR$.
   \begin{itemize}
   \item A point $x$ is said to be a \emph{limit point} of $A$ if every neighborhood $V_\epsilon(x)$ meets $A$ in some point other than $x$ itself. The set of limit points of $A$ is denoted $A'$.
-  \item A point $x$ is said to be a \emph{isolated point} of $A$ if $x\in A$ and there exists a neighborhood $V_\epsilon(x)$ which meets $A$ in no points other than $x$ itself. In other words the set of isolated points of $A$ is equal to $A\smallsetminus A'$.
+  \item A point $x$ is said to be a \emph{isolated point} of $A$ if $x\in A$ and there exists a neighborhood $V_\epsilon(x)$ which meets $A$ in no points other than $x$ itself. In other words the set of isolated points of $A$ is equal to $A\setminus A'$.
   \end{itemize}
 \end{defn}
 
@@ -1517,7 +1520,7 @@ As we have outlined above, any closed and bounded subset of $\RR$ is compact. In
 
   First suppose that $A$ is unbounded. Then for all $n$ there exists some point $a_n\in A$ such that $|a_n|>n$. It follows that every subsequence of $a_n$ does not converge at all, and therefore that $A$ is not compact.
 
-  Next suppose that $A$ is not closed. Then by Theorems~\ref{thm:closure} and~\ref{prop:closure-equiv} there exists some $a\in A'\smallsetminus A$. By our remarks about limit points, there exists a sequence $a_n$ contained in $A$ such that $a_n\to a$. Then $a_n$ has the property that none of its subsequences converges to a point of $A$, and so $A$ is again not compact.
+  Next suppose that $A$ is not closed. Then by Theorems~\ref{thm:closure} and~\ref{prop:closure-equiv} there exists some $a\in A'\setminus A$. By our remarks about limit points, there exists a sequence $a_n$ contained in $A$ such that $a_n\to a$. Then $a_n$ has the property that none of its subsequences converges to a point of $A$, and so $A$ is again not compact.
 \end{proof}
 
 \begin{rem}
@@ -1632,7 +1635,7 @@ We can use these neighborhoods to repeat the definitions of all the basic topolo
 \begin{defn}
   Let $X$ be a metric space with distance function $d$ and let $A\subset X$.
   \begin{itemize}
-  \item A point $x\in X$ is on the boundary of $A$ if every neighborhood $V_\epsilon(x)$ meets both $A$ and $X\smallsetminus A$
+  \item A point $x\in X$ is on the boundary of $A$ if every neighborhood $V_\epsilon(x)$ meets both $A$ and $X\setminus A$
   \item $A$ is open if it omits its boundary, $A$ is closed if it contains its boundary
   \item $A$ is compact if every sequence of $A$ has a subsequence converging to a limit in $A$
   \item $A$ is connected if one cannot find disjoint open sets $V,V'$ meeting $A$ such that $A\subset V\cup V'$.
@@ -1942,7 +1945,7 @@ Before beginning our investigation, we should point out some further properties 
 \begin{itemize}
 \item $f^{-1}(A\cup B)=f^{-1}(A)\cup f^{-1}(B)$
 \item $f^{-1}(A\cap B)=f^{-1}(A)\cap f^{-1}(B)$
-\item $f^{-1}(A\smallsetminus B)=f^{-1}(A)\smallsetminus f^{-1}(B)$
+\item $f^{-1}(A\setminus B)=f^{-1}(A)\setminus f^{-1}(B)$
 \end{itemize}
 The forward image mapping $f(\cdot)$ also preserves unions, but fails to preserve intersections or differences. For counterexamples, look to the function $f(x)=x^2$.
 
@@ -1951,7 +1954,7 @@ The forward image mapping $f(\cdot)$ also preserves unions, but fails to preserv
 \end{prop}
 
 \begin{proof}
-  We have shown that if $f$ is continuous and $V$ is open, then $f^{-1}(V)$ is open. Since $C$ is closed, its complement $\RR\smallsetminus C$ is open. It follows from the pervious discussion that $f^{-1}(\RR)\smallsetminus f^{-1}(C)$ is open since it is equal to $f^{-1}(\RR\smallsetminus C)$. We therefore conclude that $f^{-1}(C)$ is closed.
+  We have shown that if $f$ is continuous and $V$ is open, then $f^{-1}(V)$ is open. Since $C$ is closed, its complement $\RR\setminus C$ is open. It follows from the pervious discussion that $f^{-1}(\RR)\setminus f^{-1}(C)$ is open since it is equal to $f^{-1}(\RR\setminus C)$. We therefore conclude that $f^{-1}(C)$ is closed.
 \end{proof}
 
 Just as continuous functions need not preserve open sets under forward images, neither must they preserve closed sets under forward images. For example if $f(x)=1/(1+x^2)$ and $A=\RR$ then $f(A)=(0,1]$. Observe that for this counterexample we chose to go with an unbounded set $A$. The following result implies that it was necessary to do so.
