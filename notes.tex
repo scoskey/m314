@@ -312,20 +312,20 @@ $\set{q\in\QQ\mid q^3<2}$ has no last element.
 
 In the previous section we showed how one can construct the real number system; in this section we take a high-level approach and show how to define the real number system by its properties alone.
 
-To begin, we note that the real number system should be much more than just a set of distances, it should be an \emph{ordered field}. This means that you should be able to add, subtract, multiply, divide, and compare numbers, and these operations should satisfy the usual axioms of associativity, commutativity, and so forth. The rational number system has all these properties, and the real number system does too. What is missing are the definitions of the plus, times, and comparison operations, as well as the verification that the usual axioms are actually true.
+Although we introduced the real numbers as a way to measure distances, we of course know that the real numbers should carry arithmetic operations, too. In fact, it should be an \emph{ordered field}, which means we should be able to add, subtract, multiply, divide, and compare numbers, and these operations should satisfy the usual axioms of associativity, commutativity, and so forth. The rational number system has all these properties, and the real number system does too. The only thing we haven't done is actually \emph{define} the concepts of plus, times, and comparison for real numbers. Then in principle we have to verify that the usual axioms are actually true.
 
 For example, if $A$ and $B$ are cuts then we define
 \[A+B=\set{a+b\mid a\in A\text{ and }b\in B}
 \]
-One should then verify that $A+B=B+A$, and $(A+B)+C=A+(B+C)$, and so forth. Similarly we define
+One should then verify that $A+B$ is a cut, that $A+B=B+A$, that $(A+B)+C=A+(B+C)$, and so forth. Similarly we define
 \[A<B\iff A\subset B\text{ and }A\neq B
 \]
-One should then verify that $A<B<C\implies A<C$, and $A<B\implies A+C<B+C$, and so forth. We skip the remaining details of these tedious definitions and verifications.
+One should then verify that $A<B<C\implies A<C$, and $A<B\implies A+C<B+C$, and so forth. We will skip the remaining details of these tedious definitions and verifications.
 
-Since we constructed $\RR$ by filling the gaps of $\QQ$, it is natural to ask whether $\RR$ itself has gaps. In other words, maybe in filling some gaps we introduced new ones! In fact $\RR$ does not have any gaps
+Since we constructed $\RR$ by filling in gaps in the rational number system $\QQ$, it is natural to ask whether $\RR$ itself has any gaps. In other words, maybe in filling some gaps we introduced new ones! In fact $\RR$ does not have any gaps.
 
 \begin{defn}
-  An ordered field is said to satisfy the \emph{axiom of completeness} or the \emph{least upper bound property (LUBP)} if every bounded subset has a least upper bound.
+  An ordered field is said to satisfy the \emph{axiom of completeness} or the \emph{least upper bound property (LUBP)} if every bounded subset has a least upper bound, that is, a supremum.
 \end{defn}
 
 For example, $\QQ$ is an ordered field that is not complete, since we checked that the cut corresponding to $\sqrt2$ has no supremum. On the other hand the real field $\RR$ does turn out to be complete. The results of this discussion are summarized in the following big theorem.
@@ -334,7 +334,7 @@ For example, $\QQ$ is an ordered field that is not complete, since we checked th
   The real number system $\RR$ is an ordered field satisfying the axiom of completeness. Moreover, $\RR$ is the unique such field up to isomorphism.
 \end{thm}
 
-As soon as one accepts this theorem, it is actually never necessary to speak of cuts again. In the future we can describe a real number in many ways: algebraically, as a limit, as a summation, or even by its decimal expansion.
+As soon as one accepts this theorem, it is actually never necessary to speak of cuts again. In the future we can describe a real number in many ways: algebraically, as a limit, as a summation, or of course by its decimal expansion.
 
 Although we are omitting the greater part of the proof of the above theorem, let us verify the axiom of completeness holds in the real number system.
 
