@@ -395,7 +395,7 @@ To see that this implies we can approximate real numbers by rational numbers as 
 \end{exerc}
 
 \begin{exerc}[Abbott, exercise 1.4.5]
-  Prove the statement known as \emph{irrational density}: for every two real numbers $a$ and $b$ with $a<b$, there exists an \emph{irrational} number $r$ satisfying $a<r<b$. [Hint: Consider the interval $(a+\sqrt{2},b+\sqrt{2})$ and apply rational density.]
+  Prove the statement known as \emph{irrational density}: for every two real numbers $a$ and $b$ with $a<b$, there exists an \emph{irrational} number $r$ satisfying $a<r<b$. [Hint: Consider the interval $(a-\sqrt{2},b-\sqrt{2})$ and apply rational density.]
 \end{exerc}
 
 \begin{exerc}
@@ -429,15 +429,15 @@ In order to make this claim precise, we need to introduce the notion of countabl
   \begin{tikzpicture}
     \foreach \i in {0,...,4}
     \draw (\i,0) rectangle (\i+1,1);
-    \draw (5,0)--(6,0);
-    \draw (5,1)--(6,1);
-    \node at (6.5,.5) {$\cdots$};
+    \draw (5,0)--(5.5,0);
+    \draw (5,1)--(5.5,1);
+    \node at (6,.5) {$\cdots$};
   \end{tikzpicture}
 \end{center}
 \end{defn}
 
 \begin{example}
-  The set of natural numbers $\NN$ is countable, as is any of its subsets.
+  The set of natural numbers $\NN$ is countable, as is any subset of $\NN$.
 \end{example}
 
 \begin{example}
