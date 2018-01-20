@@ -1,6 +1,8 @@
 ## Homework 2, due Tuesday, Jan 23 at 4:30pm
 
-* ...
+* Ex 3.2 (Abbott, ex 1.4.5)
+* Ex 3.3
+* Ex 3.4
 
 ## Homework 1, due Wednesday, Jan 17
 
