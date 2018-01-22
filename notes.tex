@@ -419,9 +419,7 @@ To see that this implies we can approximate real numbers by rational numbers as 
   Abbott, \S 1.5, 1.6
 \end{reading}
 
-The NIP has numerous consequences, one of which is the surprising fact that there are more irrational numbers than there are rational numbers!
-
-In order to make this claim precise, we need to introduce the notion of countable and uncountable sets.
+In this section we will continue with consequences of the completeness axiom. In particular we will establish one of the most surprising and historically disruptive consequences: the fact that there are more irrational numbers than there are rational numbers! In order to make this statement precise, we need to introduce the notion of countable and uncountable sets.
 
 \begin{defn}
   A set $A$ is \emph{countable} if its elements all appear in some sequence. Intuitively, $A$ is countable if and only if its elements can be placed into a system of boxes of the form
@@ -441,11 +439,11 @@ In order to make this claim precise, we need to introduce the notion of countabl
 \end{example}
 
 \begin{example}
-  The set of integers $\ZZ$ is countable. To see this, one can simply alternate between positive and negative integers: $0,1,-1,2,-2,3,-3,\ldots$.
+  The set of integers $\ZZ$ is countable. To see this, one can simply alternate between positive and negative integers: $0,+1,-1,+2,-2,+3,-3,\ldots$.
 \end{example}
 
 \begin{example}
-  The set of rational numbers $\QQ$ is countable. To see this, let us first show that the set of positive rational numbers $\QQ_+$ is countable. Although the numerator and denominator make it seem like there are two ``dimensions'' of information, we can get around this by fixing the sum of the two and then letting it increase: begin with $\frac11$, then do $\frac12,\frac21$, then $\frac13,\frac22,\frac31$, then $\frac14,\frac23,\frac32,\frac41$, and so forth. Finally we can include the negatives as well by applying the same method as we did for $\ZZ$.
+  The set of rational numbers $\QQ$ is countable. To see this, let us first show that the set of positive rational numbers $\QQ_+$ is countable. Although the numerator and denominator make it seem like there are two ``dimensions'' of information, we can get around this by fixing the sum of the two and then letting it increase: begin with $\frac11$, then do $\frac12,\frac21$, then $\frac13,\frac22,\frac31$, then $\frac14,\frac23,\frac32,\frac41$, and so forth. The list has duplicates such as $\frac11$ and $\frac22$, but we can go through and delete these if desired. Finally we can include the negatives as well by applying the same method as we did with $\ZZ$.
 \end{example}
 
 The following result can be handy for showing sets are countable.
@@ -458,36 +456,38 @@ The following result can be handy for showing sets are countable.
 \end{lem}
 
 \begin{proof}
-  For the first statement, since $A$ is countable we can enumerate its elements $a_1,a_2,a_3,\ldots$ and since $B$ is countable we can enumerate its elements $b_1,b_2,b_3,\ldots$. It follows that we can enumerate the elements of $A\cup B$ in the sequence $a_1,b_1,a_2,b_2,a_3,b_3\ldots$ and so $A\cup B$ is countable.
+  For the first statement, since $A$ is countable we can enumerate its elements $a_1,a_2,a_3,\ldots$ and since $B$ is countable we can enumerate its elements $b_1,b_2,b_3,\ldots$. It follows that we can enumerate the elements of $A\cup B$ in the sequence $a_1,b_1,a_2,b_2,a_3,b_3\ldots$. (Formally we are describing $c_n$ where $c_{2n}=b_n$ and $c_{2n-1}=a_n$.) Thus $A\cup B$ is countable.
 
   We leave the proof of the second statement as an exercise.
 \end{proof}
 
-For example, the result can be used to give a systematic proof that $\ZZ$ is countable. It is obvious that the set $\ZZ_+$ of nonnegative integers is uncountable, and ditto for the negative integers $\ZZ_-$. Since $\ZZ$ is the union of the two sets, it follows that $\ZZ$ is countable.
+To show how this lemma can come in handy, we can use it recast the proof that $\ZZ$ is countable. It is obvious that the set $\ZZ_+$ of nonnegative integers is uncountable, and ditto for the negative integers $\ZZ_-$. Since $\ZZ$ is the union of the two sets, it follows that $\ZZ$ is countable.
+
+We now come to the ``surprising'' fact hinted at above.
 
 \begin{thm}
   \label{thm:reals-uncountable}
-  The set of real numbers $\RR$ is \emph{not} countable.
+  The set of real numbers $\RR$ is \textbf{not} countable.
 \end{thm}
 
-In order to prove this theorem, we need the following consequence of completeness, which will be used frequently throughout the course.
+In order to prove this theorem, we need the following consequence of the completeness of the real numbers, which will be used several more times throughout the course.
 
 \begin{thm}[Nested interval property]
-  Suppose that $I_n$ is a sequence of closed and bounded intervals, that is, intervals of the form $[l,r]$. Moreover suppose that the intervals $I_n$ are nested, that is, $I_{n+1}\subset I_n$. Then we have $\bigcap I_n\neq\emptyset$.
+  Suppose that $I_n$ is a sequence of closed and bounded intervals, that is, intervals of the form $[a,b]$. Moreover suppose that the intervals $I_n$ are nested, that is, $I_{n+1}\subset I_n$. Then we have $\bigcap I_n\neq\emptyset$.
 \end{thm}
 
 \begin{proof}
-  For naming purposes, let $l_n$ be the left endpoint and $r_n$ be the right endpoint of the interval $I_n$. Notice that the set of left endpoints $\set{l_n\mid n\in\NN}$ is bounded above, with any of the $r_n$ being such an upper bound. By the axiom of completeness, the set $\set{l_n\mid n\in\NN}$ has a least upper bound, call it $\alpha$.
+  For naming purposes, let $a_n$ be the left endpoint and $b_n$ be the right endpoint of the interval $I_n$. Notice that the set of left endpoints $\set{a_n\mid n\in\NN}$ is bounded above, with any of the $b_n$ being such an upper bound. By the axiom of completeness, the set $\set{a_n\mid n\in\NN}$ has a least upper bound, call it $\alpha$.
 
-  Then given any $n$, we have $l_n\leq\alpha$, since $\alpha$ is an upper bound for the set $\set{l_n\mid n\in\NN}$. On the other hand, we also have $\alpha<r_n$, since $\alpha$ is the \emph{least} upper bound for the set $\set{l_n\mid n\in\NN}$. It follows that $\alpha$ lies in the interval $I_n=[l_n,r_n]$. Since $n$ was arbitrary, we have that $\alpha$ lies in $\bigcap I_n$.
+  Then given any $n$, we have $a_n\leq\alpha$, since $\alpha$ is an upper bound for the set $\set{a_n\mid n\in\NN}$. On the other hand, we also have $\alpha\leq b_n$, since $\alpha$ is the \emph{least} upper bound for the set $\set{a_n\mid n\in\NN}$. It follows that $\alpha$ lies in the interval $I_n=[a_n,b_n]$. Since $n$ was arbitrary, we conclude that $\alpha$ lies in $\bigcap I_n$. This completes the proof.
 \end{proof}
 
 We are now ready to prove that the set of real numbers is uncountable.
 
 \begin{proof}[Proof of Theorem~\ref{thm:reals-uncountable}]
-  Suppose towards a contradiction that $\RR$ is countable. Then its elements can be enumerated in a sequence $a_n$. Now inductively construct a nested sequence of closed, bounded intervals as follows. Let $I_1$ be any closed, bounded interval not containing $a_1$. Let $I_2$ be any closed subinterval of $I_1$ not containing $a_2$. Inductively, let $I_n\subset I_{n-1}$ be any closed interval not containing $a_n$. This completes the construction.
+  Suppose towards a contradiction that $\RR$ is countable. Then its elements can be enumerated in a sequence $x_n$. Now inductively construct a nested sequence of closed, bounded intervals as follows. Let $I_1$ be any closed, bounded interval not containing $x_1$. Let $I_2$ be any closed subinterval of $I_1$ not containing $x_2$. Inductively, let $I_n\subset I_{n-1}$ be any closed interval not containing $x_n$. This completes the construction.
 
-  Now by the NIP, there exists an element $\alpha\in\RR$ such that for all $n$, we have $\alpha\in I_n$. Since $I_n$ does not contain $a_n$ and $\alpha\in I_n$, we have that $\alpha\neq a_n$. Since this is true for all $n$, the existence of $\alpha$ contradicts the claim that every element of $\RR$ is enumerated in the sequence $a_n$!
+  Now by the NIP, there exists an element $\alpha\in\RR$ such that for all $n$, we have $\alpha\in I_n$. Since $I_n$ does not contain $x_n$ and $\alpha\in I_n$, we have that $\alpha\neq x_n$. Since this is true for all $n$, the existence of $\alpha$ contradicts the claim that every element of $\RR$ was enumerated in the sequence $x_n$!
 \end{proof}
 
 \begin{cor}
@@ -495,13 +495,39 @@ We are now ready to prove that the set of real numbers is uncountable.
 \end{cor}
 
 \begin{proof}
-  Suppose towards a contradiction that the set of irrational numbers is countable. Then $\RR=\QQ\bigcup(\RR\setminus\QQ)$ is countable, being the union of two countable sets, contradicting the theorem.
+  Suppose towards a contradiction that the set of irrational numbers is countable. Then $\RR=\QQ\bigcup(\RR\setminus\QQ)$ is countable, being the union of two countable sets. This contradicts Theorem~\ref{thm:reals-uncountable}.
 \end{proof}
+
+\newpage
+\subsection*{Exercises for\S \thesection}
+
+\begin{exerc}
+  Show that the set of Gaussian integers is countable. Recall that the Gaussian integers is the set of all complex numbers of the form $a+bi$ where $a,b\in\ZZ$.
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 1.5.3(c)]
+  Suppose that for every $n$, the set $A_n$ is countable. Show that the set $A=\bigcup A_n$ is countable. [See the hint to Exercise~1.5.3(c).]
+\end{exerc}
+
+\begin{exerc}
+  Show that the set $\NN^3$ is countable. Here $\NN^3$ consists of all triples of the form $(a,b,c)$, where $a,b,c\in\NN$. [Hint: use th previous two exercises.]
+\end{exerc}
+
+\begin{exerc}
+  \begin{enumerate}
+    \item Find a nested family of nonempty bounded intervals with empty intersection.
+    \item Find a nested family of nonempty closed intervals with empty intersection.
+  \end{enumerate}
+\end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{More on countability and uncountability}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{reading}
+  Abbott, \S 1.5, 1.6
+\end{reading}
 
 When Cantor found that the real numbers are uncountable, he was so surprised that he continued studying it for a long time. Eventually he gave the following more systematic argument of uncountability using the decimal number system. The proof is referred to as the Cantor diagonalization argument, and has since appeared in many different contexts.
 
