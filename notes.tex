@@ -529,7 +529,9 @@ We are now ready to prove that the set of real numbers is uncountable.
   Abbott, \S 1.5, 1.6
 \end{reading}
 
-When Cantor found that the real numbers are uncountable, he was so surprised that he continued studying it for a long time. Eventually he gave the following more systematic argument of uncountability using the decimal number system. The proof is referred to as the Cantor diagonalization argument, and has since appeared in many different contexts.
+In the previous section we saw that while all infinite sets are big, some of them are not so big (countable sets) while others are larger (uncountable sets). Showing that a set is countable requires a direct argument---one simply has to enumerate all its elements in a sequence. Showing a set is uncountable often requires an indirect argument---using contradiction to show that the set cannot possibly be countable.
+
+We were able to show that $\RR$ is uncountable using the Nested Interval Property. But that proof seemed very particular to the real number system. How would we show that some other given set is uncountable? It turns out there is another and more systematic proof that $\RR$ is uncountable, called Cantor's diagonalization argument.
 
 \begin{thm}
   The unit interval $(0,1)$ is uncountable.
@@ -549,6 +551,8 @@ When Cantor found that the real numbers are uncountable, he was so surprised tha
   More precisely, we let $d_n=2$ if $a_{nn}\neq2$ and we let $d_n=3$ if $a_{nn}=2$. It then follows that for all $n$, we have $d\neq a_n$. Thus $d$ is an element of $(0,1)$ which does not appear in the sequence $a_n$, contradicting our assumption that every element of $(0,1)$ appears in the sequence $a_n$.
 \end{proof}
 
+In the exercises you will be asked to apply this ``diagonal'' argument to other types of sets.
+
 The dichotomy between countable and uncountable sets suggests that one should further investigate the possibilities for the size of an infinite set. Recall that for finite sets we write $|A|$ for the number of elements of $A$. However for infinite sets this definition of $|A|$ isn't a good one anymore. What is needed is the following.
 
 \begin{defn}
@@ -560,9 +564,9 @@ The dichotomy between countable and uncountable sets suggests that one should fu
   \end{itemize}
 \end{defn}
 
-Observe that we never defined what $|A|$ actually is, only the way in which it compares with other sets. Such a thing can be done (as set theorists do), but it isn't necessary for this class.
-
 While the terms ``more'' or ``fewer'' elements lose their meaning for infinite sets, the notions of one-to-one and onto functions do not. Moreover, the definition given above is consistent with the behavior of the ``number of elements'' definition used in the special case of finite sets.
+
+We call $|A|$ the \emph{cardinality} of $A$. It is important to understand that we never defined what $|A|$ actually is, only how it compares with other cardinality values $|B|$. Using set theory we can also define what $|A|$ actually is, but it isn't necessary for this class.
 
 Cantor's theorem can be generalized to show that for any set there is a set of even larger cardinality. Therefore there is no bound on the number of different sizes of infinity! Recall that if $A$ is any set, the \emph{power set} $\mathcal P(A)$ is the set of all subsets of $A$. Of course if $A$ is finite, then we have $|\mathcal P(A)|=2^{|A|}$ so in particular $|A|<|\mathcal P(A)|$. Cantor showed that this generalizes to arbitrary sets.
 
@@ -579,18 +583,40 @@ Cantor's theorem can be generalized to show that for any set there is a set of e
   We claim that $D$ is not in the range of $f$, and therefore that $f$ is not onto. To see this, suppose towards a contradiction that there exists $a_0\in A$ such that $D=f(a_0)$. Then by the definition of $D$, we have that $a_0\in D$ iff $a_0\notin f(a_0)$. And since $D=f(a_0)$ we can write this as $a_0\in D$ iff $a_0\notin D$, which is a clear contradiction.
 \end{proof}
 
-It is natural to ask to what extent cardinalities behave like ordinary finite counting numbers. For instance, is it possible to have two sets which are \emph{incomarable} in size, that is $|A|\not\leq|B|$ and $|B|\not\leq|A|$? If we assume all of the standard axioms about sets (including the axiom of choice) then this situation is impossible.
+It is natural to ask to what extent cardinalities behave like ordinary finite counting numbers. For instance, is it possible to have two sets which are \emph{incomparable} in size, that is $|A|\not\leq|B|$ and $|B|\not\leq|A|$? If we assume all of the standard axioms about sets (including the axiom of choice) then this situation is impossible.
 
 \begin{thm}
   If $A,B$ are any sets, then exactly one of the following is true: $|A|<|B|$, $|A|=|B|$, or $|B|<|A|$.
 \end{thm}
 
-Another natural question is whether the set of all real numbers is the \emph{smallest} uncountable set. Many very narrow or thin subsets of $\RR$ still have the full cardinality of $\RR$. Just consider $(0,1)$ or $(0,\epsilon)$ or the set of irrationals. So one is led to ask whether it is true that for any set $A$ of real numbers, if $A$ is uncountable then $|A|=|\RR|$? 
+Another natural question is whether the cardinality of $\RR$ is the \emph{smallest} uncountable cardinality. Many very narrow or thin subsets of $\RR$ still have the full cardinality of $\RR$. Just consider $(0,1)$ or $(0,\epsilon)$ or the set of irrationals. So the question is whether for any set $A$ of real numbers, if $A$ is uncountable then is it necessarily true that $|A|=|\RR|$?
 
-This question is known as the \emph{continuum hypothesis} and has great historical significance. After remaining open for many decades, it was finally settled in a surprising way: the answer is \emph{undecidable} using the usual axioms about sets! In other words, there is a universe in which the continuum hypothesis is true, and also a universe in which it is false.
+This question is known as the \emph{continuum hypothesis} and has great historical significance. After remaining open for many decades, it was finally settled in a surprising way: the answer is \emph{undecidable} using the accepted axioms about sets! In other words, there is a universe of sets (model) in which the continuum hypothesis is true, and also a universe of sets in which it is false.
 
-The existence of undecidable propositions in mathematics has been a key interest to set theorists ever since.
+Ever since this stunning resolution to the continuum hypothesis was found in 1965, the existence of undecidable statements in mathematics has remained of key interest to mathematicians.
 
+\newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}
+  Let $S_\text{fin}$ be the set of all \emph{finite} words made with the letters $a,b$. So $S$ contains elements like $ab$, $abb$, $ababa$, $aabbbbaa$, and so forth. Prove that $S_\text{fin}$ is countable.
+\end{exerc}
+
+\begin{exerc}
+  Let $S_\text{inf}$ be the set of all \emph{infinite} words made with the letters $a,b$. So $S$ contains elements like $aaaa\cdots$, $ababa\cdots$, $aabaabaab\cdots$, also non-repeating strings like $abaabaaabaaaab\cdots$, and even strings with no discernible pattern whatsoever. Prove that $S_\text{inf}$ is uncountable. Why would this proof fail if applied to $S_\text{fin}$?
+\end{exerc}
+
+\begin{exerc}[See Abbott, ex 1.5.9]
+  Recall that a real number $\alpha$ is called \emph{algebraic} if there exists a polynomial $p$ with integer coefficients such that $p(\alpha)=0$. Is the set $A$ of all algebraic numbers countable or uncountable? Prove your assertion.
+\end{exerc}
+
+\begin{exerc}
+  Suppose that $A$ is an infinite set. Show that $|\NN|\leq|A|$.
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 1.5.10(a)]
+  Let $A\subset[0,1]$ and assume that $A$ is uncountable. Show that there exists $a>0$ such that $C\cap[a,1]$ is uncountable.
+\end{exerc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
