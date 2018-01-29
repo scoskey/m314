@@ -629,24 +629,24 @@ Ever since this stunning resolution to the continuum hypothesis was found in 196
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{sec:sequences}
 
-We have already used the concept of a sequence of real numbers $a_n$. In fact sequences play a huge role in analysis. In this section we give some motivation for studying sequences and their brother concept of series.
+A sequence of real numbers consists of one real number $a_n$ for each natural number $n$. Formally we can think of a sequence as a \emph{function} from $\NN$ to $\RR$. However sequences are so special that we rarely use the functional notation $a(n)$ and instead prefer the special notation $a_n$. We have already used sequences, for instance in the definition of a countable set. We will see later in the course that sequences play a huge role in analysis. In this section we give further motivation for studying sequences and the sibling concept of series.
 
 To begin consider the simple addition problem $\pi+e$, which we write out in decimal notation as
 \begin{align*}
 &3.14159265\cdots\\
 {}+&2.71828182\cdots
 \end{align*}
-It is unclear how to begin this problem. Our usual method of carrying would have us start at the right-most digit, but there isn't one! It is possible to handle this issue by regarding $\pi$ and $e$ as cuts. But it is even more elegant to regard $\pi$ and $e$ as limits of a sequence, and perform the addition term-by-term.
+It is unclear how to begin this problem. Our usual method of carrying would have us start at the right-most digit, but there isn't one! It is possible to handle this issue by regarding $\pi$ and $e$ as cuts. But it is even more elegant to regard each of $\pi$ and $e$ as the limit of a sequence, and perform the addition term-by-term.
 
 Another problem with addition is the prospect of adding together infinitely many numbers at once. Sometimes this clearly isn't possible, since for example 
 \[1+1+1+1+\cdots
 \]
-should by infinite, and certainly cannot be said to have any real value. On the other hand the familiar Zeno paradox asks whether
+should by infinite, and certainly cannot be said to have any real number as its value. On the other hand the familiar Zeno paradox asks whether
 \[1+\frac12+\frac14+\frac18+\cdots
 \]
-has any real value, and we usually agree that has a value of $2$. It seems that sometimes it makes sense to add together infinitely many numbers, and other times it does not.
+has any real number as its value, and we usually agree that has a value of $2$. It seems that sometimes it makes sense to add together infinitely many numbers, and other times it doesn't.
 
-But this conclusion deserves a great deal of scrutiny. For instance, consider the following simple proof that the Zeno series has a value of $2$. We first notice that
+But this conclusion deserves a great deal of scrutiny. To see why, consider the following simple proof that the Zeno series has a value of $2$. We first notice that
 \begin{align*}
 (1+\frac12+\frac14+\frac18+\cdots)-1&=\frac12+\frac14+\frac18+\cdots\\
                                     &=\frac12(1+\frac12+\frac14+\cdots)
@@ -658,7 +658,7 @@ Now let us apply this proof to the series $1+2+4+8+\cdots$. Again write
 (1+2+4+8+\cdots)-1&=2+4+8+\cdots\\
                   &=2(1+2+4+\cdots)
 \end{align*}
-This time we conclude that if $x=1+2+4+8+\cdots$ then $x$ satisfies the equation $x-1=2x$ and therefore that $x=-1$, which is absurd!
+This time we conclude that if $x=1+2+4+8+\cdots$ then $x$ satisfies the equation $x-1=2x$ and therefore that $x=-1$, which is nonsense!
 
 Finally, even if we do accept infinite summations as valid, we must take care to decide whether the familiar laws of associativity and commutativity of addition may be used in this situation. To see the potential difficulty, consider two ways of grouping the terms of the same infinite summation:
 \begin{align*}
@@ -672,9 +672,41 @@ Commutativity has similar issues. For example, consider two ways of summing the 
 S_1&=1-\frac12+\frac13-\frac14+\frac15-\frac16+-\cdots\\
 S_2&=1+\frac13-\frac12+\frac15+\frac17-\frac14++-\cdots
 \end{align*}
-In the second summation we first add two of the positive terms before then adding one of the negative terms. A quick calculator computation shows that $S_1\approx0.69$ while $S_2\approx1.03$. This time we conclude that even if infinite summations are possible, one must be very careful when applying the usual laws of arithmetic to them!
+In the second summation we first add two of the positive terms before then adding one of the negative terms. A quick approximation with a calculator reveals that $S_1\approx0.69$ while $S_2\approx1.03$. This time we conclude that even if infinite summations are possible, one must be very careful when applying the usual laws of arithmetic to them!
 
-[Activity about rearrangements of this series]
+\newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}
+  Consider the following infinite summation.
+  \[1-\frac12+\frac13-\frac14+\frac15-+\cdots
+  \]
+  \begin{itemize}
+    \item Try to reorder the terms to make the value of the sum as close as possible to $\frac12$.
+    \item Try to reorder the terms to make the value of the sum as close as possible to $1$.
+    \item Try to reorder the terms to make the value of the sum as close as possible to $1.5$.
+  \end{itemize}
+  Were you (approximately) successful in each case? If so, show at least fifteen terms of your arrangment. What method did you use to get it?
+\end{exerc}
+
+\begin{exerc}
+  This time consider the following infinite summation:
+  \[1-\frac12+\frac14-\frac18+\frac{1}{16}-+\cdots
+  \]
+  \begin{itemize}
+    \item Try to reorder the terms to make the value of the sum as close as possible to $\frac12$.
+    \item Try to reorder the terms to make the value of the sum as close as possible to $1$.
+    \item Try to reorder the terms to make the value of the sum as close as possible to $1.5$.
+  \end{itemize}
+  Were you (approximately) successful in each case? If so, show at least fifteen terms of your arrangment. What method did you use to get it? What further observations do you have?
+\end{exerc}
+
+\begin{exerc}
+  Suppose that $A$ is a set of real numbers and that $A$ is bounded above. Let $B$ be the set 
+  \[B=\set{b\mid b\text{ is an upper bound for }A}
+  \]
+  Show that $\sup(A)=\inf(B)$.
+\end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
