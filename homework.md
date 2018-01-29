@@ -1,3 +1,9 @@
+Turn in homework using one of the options:
+* Hand to me during class, office hours, etc
+* Put in my box in the Math office
+* Slide under my door
+* Via Dropbox [link](https://www.dropbox.com/request/7g3uNNOWtplL9eAIZkRN)
+
 ## Homework 3, due Tuesday, Jan 30 at 4:30pm
 
 * Ex 4.1
