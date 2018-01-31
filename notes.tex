@@ -717,9 +717,7 @@ In the second summation we first add two of the positive terms before then addin
 \section{Convergence}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Recall that a \emph{sequence} is just a list $a_n$ of real numbers indexed by natural numbers. Set-theoretically, a sequence is simply a function $\NN\to\RR$. The only difference is that in the sequence notation we write $a_n$, and in the function notation we write $f(n)$.
-
-The most important characteristic of a sequence is whether it converges or diverges. Intuitively a sequence $a_n$ converges to a limit point $L$ if the sequence eventually comes as close as one wishes to $L$.
+Recall that a \emph{sequence} is a list of one real number $a_n$ for every natural number $n$. The most important characteristic of a sequence is whether it converges or diverges. Intuitively a sequence $a_n$ converges to a limit point $L$ if the sequence eventually comes as close to $L$ as one could ever wish.
 
 \begin{defn}
   The sequence $a_n$ \emph{converges} to $L$ if the following holds:
@@ -732,31 +730,31 @@ Since the definition is both of central importance and also somewhat subtle, we 
 
 \begin{itemize}
 \item The $(\forall\epsilon>0)$ clause. Intuitively we think of $\epsilon$ as a very small \emph{tolerance}. Thus the definition of convergence begins by saying that for all possible tolerances, something will happen.
-\item The $(\exists N\in\NN)\;(\forall n>N)$ clause. Intuitively this means that \emph{eventually} something will happen. This is because it says that there is some index such that for all later indices, that thing will be true.
+\item The $(\exists N\in\NN)\;(\forall n\geq N)$ clause. Intuitively this means that \emph{eventually} something will happen. This is because it says that there is some index such that for all later indices, that thing will be true.
 \item The $|a_n-L|<\epsilon$ clause. Intuitively we think of this as saying that $a_n$ lies within a small \emph{neighborhood} of $L$. Formally, if $x$ is any real number and $\epsilon>0$, then the \emph{$\epsilon$-neighborhood} of $x$, denoted $V_\epsilon(x)$, is the open interval centered at $x$ of radius $\epsilon$. In symbols:
   \[V_\epsilon(x)=(x-\epsilon,x+\epsilon)=\set{y\in\RR\mid|y-x|<\epsilon}
   \]
-  Thus the conclusion of the definition of convergence says precisely that $a_n$ lies in the $\epsilon$-neighborhood of $L$.
+  Thus the conclusion of the definition of convergence says precisely that $a_n$ lies within the $\epsilon$-neighborhood of $L$.
 \end{itemize}
 
-In conclusion, the statement that $a_n$ converges to $L$ says
+To summarize, the statement that $a_n$ converges to $L$ says
 \begin{quotation}
- ``for all tolerances $\epsilon$, the sequence eventually falls within the $\epsilon$-neighborhood of $L$.''
+ ``for all tolerances $\epsilon$, the sequence eventually lies within the $\epsilon$-neighborhood of $L$.''
 \end{quotation}
 
-So how does one show that a given sequence converges to a specified limit? One way to think of verifying that the three-quantifier definition holds is to play a three-step game. Your enemy takes the first turn and gives you some (small) value of $\epsilon$. You respond by calculating a (large enough) value of $N$. Your enemy then responds by choosing some $n\geq N$. Finally, you win if you can show that $L-\epsilon<a_n<L+\epsilon$.
+So how does one show that a given sequence converges to a specified limit? One way to think of verifying the three-quantifier definition holds true is to play a three-step game. Your enemy takes the first turn and gives you some (small) value of $\epsilon$. You respond by calculating a (large enough) natural number $N$. Your enemy then responds by choosing a number $n\geq N$. Finally, you win if you can show that $L-\epsilon<a_n<L+\epsilon$.
 
 \begin{example}
   Let us confirm from the definition that $\lim1/\sqrt{n}=0$. Suppose that $\epsilon$ is given to us. We must find a value $N$ (depending on this $\epsilon$) with the property that whenever $n\geq N$ we have $-\epsilon<1/\sqrt{n}<\epsilon$. Since $1/\sqrt{n}$ is always positive, we only have to worry about the second inequality.
 
-  To get an idea of how this is going to work, if $\epsilon=.1$ then we would need to take $N=100$. Similarly if $\epsilon=.01$ then we would need to take $N=10,000$. In general we can figure out the needed relationship by working backwards. We want
+  To get an idea of how this is going to work, if $\epsilon=.1$ then we would need to take $N=101$. Similarly if $\epsilon=.01$ then we would need to take $N=10,001$. In general we can figure out the needed relationship by working backwards. We want
   \begin{align*}
     1/\sqrt{n}<\epsilon &\iff \sqrt{n}>1/\epsilon\\
                         &\iff n>1/\epsilon^2
   \end{align*}
-  This tells us we should take $N=1/\epsilon^2$. Technically $N$ has to be a natural number, but we can just take any natural number $N\geq\epsilon^2$.
+  This tells us we should choose $N>1/\epsilon^2$. Technically $N$ has to be a natural number, but we can just take $N$ to be the first natural number $N>1/\epsilon^2$.
 
-  Finally we can write the proof forwards as follows. Given any $\epsilon>0$, we let $N$ be any natural number such that $N\geq1/\epsilon^2$. Then for all $n>N$ we have
+  Finally we can write the proof forwards as follows. Given any $\epsilon>0$, we let $N$ be any natural number such that $N>1/\epsilon^2$. Then for all $n\geq N$ we have
   \begin{align*}
     n>1/\epsilon^2&\implies\sqrt{n}>1/\epsilon\\
                   &\implies1/\sqrt{n}<\epsilon
@@ -772,9 +770,9 @@ So how does one show that a given sequence converges to a specified limit? One w
                       &\iff n+1>1/\epsilon \\
                       &\iff n>1/\epsilon-1
   \end{align*}
-  Thus the needed value of $N$ is $1/\epsilon-1$. To simplify the calculation, it will be good enough to take $N\geq1/\epsilon$.
+  Thus the needed value of $N$ is $1/\epsilon-1$. To simplify the calculation, it will be good enough to take $N\geq 1/\epsilon$.
   
-  Now to write the proof forwards, let $\epsilon$ be given and let $N$ be a natural number such that $N\geq1/\epsilon$. Then for all $n>N$ we have
+  Now to write the proof forwards, let $\epsilon$ be given and let $N$ be a natural number such that $N\geq 1/\epsilon$. Then for all $n>N$ we have
   \begin{align*}
     1-n/(n+1) &= 1/(n+1)\\
               &< 1/n\\
@@ -783,9 +781,9 @@ So how does one show that a given sequence converges to a specified limit? One w
   Thus $1-\epsilon < n/(n+1)$, as desired.\qed
 \end{example}
 
-We should be careful to point out that we give a careful definition of convergence not so we can routinely verify specific instances of convergence. Rather, we verify the specific instances so that we can be sure our definition agrees with our intuition.
+We should be careful to point out that we are not just giving a careful definition of convergence so that we can verify routine instances of convergence. Instead, we verify the routine instances of convergence so that we can be sure our definition agrees with our intuition.
 
-%discussion of tails?
+% discussion of tails?
 
 So far we have discussed only convergence of sequences. What happens when a sequence $a_n$ does \emph{not} converge to $L$? Formally negating the definition of convergence, this says
 \[(\exists\epsilon>0)\;(\forall N\in\NN)\;(\exists n\geq N)\;|a_n-L|\geq\epsilon
@@ -800,6 +798,43 @@ Intuitively this says that there is some tolerance $\epsilon$ such that the sequ
 \end{example}
 
 In general, we say that a sequence \emph{diverges} if it fails to converge to $L$ for every possible limit $L$.
+
+\newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}
+  In each case, prove the given sequence converges to the proposed limit directly from the definition of convergence.
+  \begin{enumerate}
+    \item $\displaystyle\lim\frac{1}{6n^2+1}=0$
+    \item $\displaystyle\lim\frac{3n-1}{2n+5}=\frac32$
+    \item $\displaystyle\lim\frac{2}{\sqrt{n+3}}=0$
+    \item $\displaystyle\lim\frac{\sin(n)}{n}=0$
+    \item $\displaystyle\lim2^{1/n}=1$
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}
+  In each case, prove the given sequence \emph{does not} converge to the proposed limit directly from the negation of the definition of convergence.
+  \begin{enumerate}
+    \item Sequence: $0,1,0,1,0,1,\ldots$. Proposed limit: $\frac12$.
+    \item Sequence: $0.1,0.01,0.1,0.01,0.1,0.01,\ldots$. Proposed limit: $0$.
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 2.2.1]
+  Suppose we swap the first two quantifiers in the definition of convergence, and write $x_n$ \emph{verconges} to $L$ if
+  \[(\exists\epsilon>0)\;(\forall N\in\NN)\;(\forall n\geq N)\;|x_n-L|<\epsilon
+  \]
+  Give an example of a vercongent sequence that is not convergent. What exactly is being described in this definition?
+\end{exerc}
+  
+\begin{exerc}
+  Suppose that $A\subset\RR$ is bounded and that $\alpha=\sup(A)$.  This exercise shows how to prove that there exists a sequence in $A$ which converges to $\alpha$.
+  \begin{enumerate}
+    \item Prove that for each $n\in\NN$ there exists $a_n\in A$ such that $a_n>\alpha-1/n$.
+    \item Use the definition of convergence to conclude that $\lim a_n=\alpha$.
+  \end{enumerate}
+\end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
