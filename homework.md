@@ -6,7 +6,12 @@ Turn in homework using one of the options:
 
 ## Homework 4, due Tuesday, Feb 6 at 4:30pm
 
-* ...
+* Ex 6.2
+* Ex 6.3
+* Ex 7.1(d)
+* Ex 7.2
+* Ex 7.3
+* Ex 7.4
 
 ## Homework 3, due Tuesday, Jan 30 at 4:30pm
 
