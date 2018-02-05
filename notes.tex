@@ -855,7 +855,9 @@ In general, we say that a sequence \emph{diverges} if it fails to converge to $L
 
 In the previous section we gave a rigorous definition of the limit of a sequence, and checked that it corresponds with our intuition for several special examples. In this section we begin our study of \emph{calculus}, that is, the rules for calculating with operators such as limits. Of course the core of calculus consists of the formulas and laws for derivatives and integrals. But limits obey laws as well, and understanding these limit laws is a prerequesite to understanding derivatives and integrals.
 
-Before we begin recall the \emph{triangle inequality} states that for any $x,y$ we have $||x|-|y||\leq|x-y|\leq|x|+|y|$. The triangle inequality is actually best visualized in two dimensions, where it says that if $x$ is $|x|$ away from the origin and $y$ is $|y|$ away from the origin, then the distance between $x$ and $y$ cannot be less than $||x|-|y||$ and not more than $|x|+|y|$.
+Before we begin recall the \emph{triangle inequality} states that for any $x,y$ we have $||x|-|y||\leq|x-y|\leq|x|+|y|$. The triangle inequality is actually best visualized in two dimensions, where it says that if $x$ is $|x|$ away from the origin and $y$ is $|y|$ away from the origin, then the distance between $x$ and $y$ cannot be less than $||x|-|y||$ and not more than $|x|+|y|$. Since the sign of $y$ doesn't matter, we can write:
+\[||x|-|y||\leq|x\pm y|\leq|x|+|y|
+\]
 
 \begin{figure}[h]
   \centering
@@ -909,7 +911,7 @@ We can now state the laws for the calculus of limits. The proof is long, but the
       &=|a_n-a||b_n|+|a||b_n-b|
     \end{align*}
     Since $b_n$ converges, we can find a bound $M$ such that $|b_n|\leq M$ for all $n$ (see below). Now since $a_n$ and $b_n$ converge, we can find an $N$ large enough so that for $n\geq N$ we have both $|a_n-a|<\epsilon/2M$ and $|b_n-b|<\epsilon/2|a|$. Together with the calculation above, we thus conclude that $|a_nb_n-ab|<\epsilon$, as desired.
-  \item This is similar to multiplication and we omit it.
+  \item This is similar to multiplication so we omit it.
   \end{enumerate}
 \end{proof}
 
@@ -923,7 +925,27 @@ We can now state the laws for the calculus of limits. The proof is long, but the
   \end{align*}
 \end{example}
 
-Thus the previous result provides a method of establishing convergence using algebraic properties of the sequence. Another key method of establishing convergence is using the order properties of sequence. The result is sometimes known as the \emph{squeeze theorem}.
+Before we continue, we owe
+
+\begin{defn}
+  The sequence $a_n$ is \emph{bounded} if there exists some $M\in\RR$ such that for all $n$ we have $|a_n|\leq M$.
+\end{defn}
+
+It is equivalent to say that $a_n$ is bounded if there exists an interval $[a,b]$ such that $\{a_n\}\subset[a,b]$.
+
+\begin{prop}
+  If $a_n$ is convergent, then $a_n$ is bounded.
+\end{prop}
+
+\begin{proof}
+  Suppose $a_n\to L$, so that for all $\epsilon$ we can find $N$ such that $|a_n-L|<\epsilon$ whenever $n>N$. In particular whenever $n\geq N$ we have that $|a_n|\leq|a_n-L|+|L|<\epsilon+|L|$. Thus we may take $M_0=\epsilon+|L|$ as a bound for these terms.
+
+  Meanwhile all that remains of the sequence is the finite initial segment $a_1,\ldots,a_N$. Letting $M_1=\max(|a_1|,\ldots,|a_N|)$, we of course have for all $n\leq N$ that $|a_n|\leq M_1$. It follows that the full sequence is bounded by the constant $M=\max(M_0,M_1)$.
+\end{proof}
+
+The converse of this Proposition is false, with a simple example being the sequence with terms $+1,-1,+1,-1,\ldots$.
+
+The limit calculus theorem above provides a method of establishing convergence using algebraic properties of the sequence. Another key method of establishing convergence is using the order properties of sequence. The result is sometimes known as the \emph{squeeze theorem}.
 
 \begin{thm}[Squeeze theorem]\
   \begin{itemize}
@@ -948,26 +970,6 @@ Thus the previous result provides a method of establishing convergence using alg
 \begin{example}
   We can now show that $\lim\frac{1}{n^2}e^{1/n}\to0$ by writing $0\leq\frac{1}{n^2}e^{1/n}\leq\frac{e}{n^2}$ and noting the left and right sides converge to $0$.
 \end{example}
-
-If convergence or divergence is the most important property of a sequence, a second very important property is that of boundedness.
-
-\begin{defn}
-  The sequence $a_n$ is \emph{bounded} if there exists an interval $[a,b]$ such that $\{a_n\}\subset[a,b]$.
-\end{defn}
-
-Frequently one shows that a sequence is bounded by showing the equivalent property that the set of absolute values $|a_n|$ is bounded above. Indeed, if $|a_n|\leq M$ for all $n\in\NN$, then it follows that $a_n$ is contained in the interval $[-M,M]$ and thus is bounded.
-
-\begin{prop}
-  If $a_n$ is convergent, then $a_n$ is bounded.
-\end{prop}
-
-\begin{proof}
-  Suppose $a_n\to L$, so that for all $\epsilon$ we can find $N$ such that $|a_n-L|<\epsilon$ whenever $n>N$. In particular whenever $n\geq N$ we have that $a_n$ lies in the interval $[a,b]=[L-\epsilon,L+\epsilon]$ and so this tail of the sequence is bounded.
-
-  Meanwhile all that remains of the sequence is the finite initial segment $a_1,\ldots,a_N$. Since finite sets are always bounded between their minimum and maximum element, we may say that this initial segment is contained in some interval $[c,d]$. It follows that the full sequence is contained in the interval $[\min(a,c),\max(b,d)]$ and therefore is bounded.
-\end{proof}
-
-The converse of this Proposition is false, with a simple example being the sequence with terms $+1,-1,+1,-1,\ldots$.
 
 \newpage
 \subsection*{Exercises for \S \thesection}
