@@ -933,7 +933,7 @@ Thus the previous result provides a method of establishing convergence using alg
 \end{thm}
 
 \begin{proof}
-  For the first statement, suppose towards a contradiction that $a=\lim a_n<0$. Then applying the definition of convergence to $\epsilon=|a|$ we see that eventually $|a_n-a|<|a|$. It follows that $a_n-a<-a$ and hence $a_n<0$, which is a contradiction.
+  For the first statement, suppose towards a contradiction that $a=\lim a_n<0$. Then applying the definition of convergence to $\epsilon=-a$ we see that eventually $|a_n-a|<-a$. It follows that $a_n-a<-a$ and hence $a_n<0$, which is a contradiction.
 
   For the second statement, first note that by the limit laws $\lim(c_n-a_n)=0$. Thus given $\epsilon$ we eventually have both $c_n-a_n<\epsilon/2$ and also $|a_n-L|<\epsilon/2$. Now we calculate that
   \begin{align*}
@@ -988,8 +988,15 @@ The converse of this Proposition is false, with a simple example being the seque
   Show that if $\lim a_n=a$ and $a\neq0$ and $\lim a_nb_n=ab$ then $\lim b_n=b$.
 \end{exerc}
 
-\begin{exerc}
-  Prove that a sequence can have at most one limit. In other words, suppose that $a_n$ converges to $L$ \textbf{and} suppose that $a_n$ converges to $M$. Using the definition of limit directly (and not the limit laws), prove that $L=M$.
+% \begin{exerc}
+%   Prove that a sequence can have at most one limit. In other words, suppose that $a_n$ converges to $L$ \textbf{and} suppose that $a_n$ converges to $M$. Using the definition of limit directly (and not the limit laws), prove that $L=M$.
+% \end{exerc}
+
+\begin{exerc}[Abbott, ex 2.3.5]
+  Let $a_n$ and $b_n$ be sequences, and let $c_n$ be the ``shuffled'' sequence
+  \[a_1,b_1,a_2,b_2,\ldots
+  \]
+  Show that $c_n$ is convergent if and only if $a_n$ and $b_n$ are both convergent and both have the same limit.
 \end{exerc}
 
 \begin{exerc}
@@ -1000,7 +1007,7 @@ The converse of this Proposition is false, with a simple example being the seque
   \end{enumerate}
 \end{exerc}
 
-\begin{exerc}[Abbott, ex 2.2.7]
+\begin{exerc}
   Imitate the logical structure of the definition of convergence to give a rigorous definition for the statement ``$a_n$ converges to $\infty$''.
 
   Use your definition to prove that the sequence $a_n=\sqrt{n}$ converges to $\infty$.
