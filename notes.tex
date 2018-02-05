@@ -629,6 +629,10 @@ Ever since this stunning resolution to the continuum hypothesis was found in 196
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \label{sec:sequences}
 
+\begin{reading}
+  Abbott, \S 2.1
+\end{reading}
+
 A sequence of real numbers consists of one real number $a_n$ for each natural number $n$. Formally we can think of a sequence as a \emph{function} from $\NN$ to $\RR$. However sequences are so special that we rarely use the functional notation $a(n)$ and instead prefer the special notation $a_n$. We have already used sequences, for instance in the definition of a countable set. We will see later in the course that sequences play a huge role in analysis. In this section we give further motivation for studying sequences and the sibling concept of series.
 
 To begin consider the simple addition problem $\pi+e$, which we write out in decimal notation as
@@ -716,6 +720,10 @@ In the second summation we first add two of the positive terms before then addin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Convergence}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{reading}
+  Abbott, \S 2.2
+\end{reading}
 
 Recall that a \emph{sequence} is a list of one real number $a_n$ for every natural number $n$. The most important characteristic of a sequence is whether it converges or diverges. Intuitively a sequence $a_n$ converges to a limit point $L$ if the sequence eventually comes as close to $L$ as one could ever wish.
 
@@ -841,7 +849,11 @@ In general, we say that a sequence \emph{diverges} if it fails to converge to $L
 \section{Limit calculus}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In the previous section we gave a rigorous definition of convergence, and checked that it corresponds with our intuition for several special examples. In this section we begin our study of \emph{calculus}, that is, the rules for calculating with objects such as limits. Many people think of calculus as the rules for calculating with derivatives and integrals, but limits are a predecessor to both.
+\begin{reading}
+  Abbott, \S 2.3
+\end{reading}
+
+In the previous section we gave a rigorous definition of the limit of a sequence, and checked that it corresponds with our intuition for several special examples. In this section we begin our study of \emph{calculus}, that is, the rules for calculating with operators such as limits. Of course the core of calculus consists of the formulas and laws for derivatives and integrals. But limits obey laws as well, and understanding these limit laws is a prerequesite to understanding derivatives and integrals.
 
 Before we begin recall the \emph{triangle inequality} states that for any $x,y$ we have $||x|-|y||\leq|x-y|\leq|x|+|y|$. The triangle inequality is actually best visualized in two dimensions, where it says that if $x$ is $|x|$ away from the origin and $y$ is $|y|$ away from the origin, then the distance between $x$ and $y$ cannot be less than $||x|-|y||$ and not more than $|x|+|y|$.
 
@@ -864,10 +876,10 @@ Before we begin recall the \emph{triangle inequality} states that for any $x,y$ 
     \node[circle,fill,draw,inner sep=1,label=right:$y$] (y) at (0:1.3) {};
     \draw (x)--(y);
   \end{tikzpicture}
-  \caption{On the left, $x$ and $y$ are as far apart as possible at $|x|+|y|$ units. On the right, $x$ and $y$ are as close together as possible at $||x|-|y||$ units.}
+  \caption{Intuitive justification for the triangle inequalities. On the left, $x$ and $y$ are as far apart as possible at $|x|+|y|$ units. On the right, $x$ and $y$ are as close together as possible at $||x|-|y||$ units.}
 \end{figure}
 
-We can now state the laws for the calculus of limits. The proof is long, but the method of proof is very important and worth exploring at least until the tedium sets in.
+We can now state the laws for the calculus of limits. The proof is long, but the method of proof is very important and worth exploring at least until it becomes familiar (and somewhat tedious).
 
 \begin{thm}[Limit calculus]
   Suppose that $\lim a_n=a$ and $\lim b_n=b$. Then we have
@@ -881,22 +893,22 @@ We can now state the laws for the calculus of limits. The proof is long, but the
 
 \begin{proof}
   \begin{enumerate}
-  \item This is our first example of a so-called ``$\epsilon/2$-argument.'' If $\epsilon>0$ is given, we cleverly apply the convergence of $a_n$ and $b_n$ to $\epsilon/2$. Thus there exists an $N_1$ such that for all $n>N_1$ we have $|a_n-a|<\epsilon/2$, and there exsits an $N_2$ such that for all $n>N_2$ we have $|b_n-b|<\epsilon/2$. Thus if $n>\max(N_2,N_2)$, we have
+  \item This is our first example of a so-called ``$\epsilon/2$-argument.'' If $\epsilon>0$ is given, we cleverly apply the convergence of $a_n$ and $b_n$ to the tolerance value $\epsilon/2$. Thus there exists an $N_1$ such that for all $n\geq N_1$ we have $|a_n-a|<\epsilon/2$, and there exsits an $N_2$ such that for all $n\geq N_2$ we have $|b_n-b|<\epsilon/2$. Thus if $n\geq\max(N_2,N_2)$, we have
     \begin{align*}
       |(a_n+b_n)-(a+b)|&=|(a_n-a)+(b_n-b)|\\
       &\leq|a_n-a|+|b_n-b|\\
       &<\epsilon/2+\epsilon/2\\
       &=\epsilon
     \end{align*}
-    In other words, we use the triangle inequality to \emph{split} the distance from $a_n+b_n$ to $a+b$ into two portions, each of which we can bound.
-  \item This is similar but easier; we just use an $\epsilon/|k|$ argument. Given $\epsilon$, we can find $N$ such that for all $n>N$ we have $|a_n-a|<\epsilon/|k|$. It follows that $|ka_n-ka|<\epsilon$, as desired.
+    In other words, we use the triangle inequality to \emph{split} the distance between $a_n+b_n$ and $a+b$ into two portions, each of which we can bound.
+  \item This is similar but easier; we just use an $\epsilon/|k|$ argument. Given $\epsilon$, we can find $N$ such that for all $n\geq N$ we have $|a_n-a|<\epsilon/|k|$. It follows that $|ka_n-ka|<\epsilon$, as desired.
   \item Given $\epsilon$, we wish to show that eventually we have $|a_nb_n-ab|<\epsilon$. To see what we will need, we calculate
     \begin{align*}
       |a_nb_n-ab|&\leq|a_nb_n-ab_n+ab_n-ab|\\
       &\leq|a_nb_n-ab_n|+|ab_n-ab|\\
       &=|a_n-a||b_n|+|a||b_n-b|
     \end{align*}
-    Since $b_n$ converges, we can find a bound $M$ such that $|b_n|\leq M$ for all $n$ (see below). Now since $a_n$ and $b_n$ converge, we can find an $N$ large enough so that for $n>N$ we have both $|a_n-a|<\epsilon/2M$ and $|b_n-b|<\epsilon/2|a|$. Together with the calculation above, we thus conclude that $|a_nb_n-ab|<\epsilon$, as desired.
+    Since $b_n$ converges, we can find a bound $M$ such that $|b_n|\leq M$ for all $n$ (see below). Now since $a_n$ and $b_n$ converge, we can find an $N$ large enough so that for $n\geq N$ we have both $|a_n-a|<\epsilon/2M$ and $|b_n-b|<\epsilon/2|a|$. Together with the calculation above, we thus conclude that $|a_nb_n-ab|<\epsilon$, as desired.
   \item This is similar to multiplication and we omit it.
   \end{enumerate}
 \end{proof}
@@ -952,10 +964,51 @@ Frequently one shows that a sequence is bounded by showing the equivalent proper
 \begin{proof}
   Suppose $a_n\to L$, so that for all $\epsilon$ we can find $N$ such that $|a_n-L|<\epsilon$ whenever $n>N$. In particular whenever $n\geq N$ we have that $a_n$ lies in the interval $[a,b]=[L-\epsilon,L+\epsilon]$ and so this tail of the sequence is bounded.
 
-  Meanwhile all that remains of the sequence is the finite initial segment $a_1,\ldots,a_N$. Since it is clear that finite sets are always bounded, let us say that this initial segment is contained in the interval $[c,d]$. It follows that the full sequence is contained in the interval $[\min(a,c),\max(b,d)]$ and therefore is bounded.
+  Meanwhile all that remains of the sequence is the finite initial segment $a_1,\ldots,a_N$. Since finite sets are always bounded between their minimum and maximum element, we may say that this initial segment is contained in some interval $[c,d]$. It follows that the full sequence is contained in the interval $[\min(a,c),\max(b,d)]$ and therefore is bounded.
 \end{proof}
 
 The converse of this Proposition is false, with a simple example being the sequence with terms $+1,-1,+1,-1,\ldots$.
+
+\newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}
+  Use the limit calculus to evaluate the limits.  Carefully justify all of your steps.
+  \begin{enumerate}
+    \item $\lim(2+\frac1n)^2$
+    \item $\lim\frac{1}{3n^2-n}$
+    \item $\lim\frac{\sqrt{n^2+1}}{n-2}$
+    \item $\lim\frac{\sin(n)}{n}$
+    \item $\lim\frac{2n+\cos(n)}{n+2}$
+    % \item $\lim\frac{\arctan(n)}{n\sqrt{n}}$
+  \end{enumerate}
+\end{exerc}
+  
+\begin{exerc}
+  Show that if $\lim a_n=a$ and $a\neq0$ and $\lim a_nb_n=ab$ then $\lim b_n=b$.
+\end{exerc}
+
+\begin{exerc}
+  Prove that a sequence can have at most one limit. In other words, suppose that $a_n$ converges to $L$ \textbf{and} suppose that $a_n$ converges to $M$. Using the definition of limit directly (and not the limit laws), prove that $L=M$.
+\end{exerc}
+
+\begin{exerc}
+  \begin{enumerate}
+    \item Give an example of a sequence where $\lim a_n=\sup a_n$.
+    \item Give an example of a sequence where $\lim a_n=\inf a_n$.
+    \item Give an example of a sequence where $\lim a_n$ is neither $\sup a_n$ nor $\inf a_n$.
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 2.2.7]
+  Imitate the logical structure of the definition of convergence to give a rigorous definition for the statement ``$a_n$ converges to $\infty$''.
+
+  Use your definition to prove that the sequence $a_n=\sqrt{n}$ converges to $\infty$.
+
+  What does your definition say about the sequence:
+  \[1,0,2,0,3,0,4,0,5,0,\ldots
+  \]
+\end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
