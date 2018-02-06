@@ -36,7 +36,7 @@ We will begin by discussing a simple but surprisingly deep question: *what are r
 
 ## Tentative exam dates
 
-* Exam 1: Monday, February 12
+* Exam 1: Wednesday, February 14
 * Exam 2: Wednesday, March 21
 * Exam 3: Monday, April 30 from 12:30&ndash;2:30pm
 
