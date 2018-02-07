@@ -1025,6 +1025,10 @@ The limit calculus theorem above provides a method of establishing convergence u
 \section{Convergence and summations}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{reading}
+  Abbott, \S 2.4
+\end{reading}
+
 In this section we begin to look at convergence in the context of series summations. We will define what it means for an infinite series to converge, and give a first look into the so-called convergence tests. We will return to convergence tests later on.
 
 \begin{defn}
@@ -1034,15 +1038,15 @@ In this section we begin to look at convergence in the context of series summati
   We say that the series $\sum a_n$ \emph{converges} and equals $L$ if the sequence of partial sums $S_n$ converges to $L$ in the ordinary sense.
 \end{defn}
 
-This definition answers any questions about how the terms of the sum are grouped. When we write $\sum a_n$, we mean $\cdots(((a_1+a_2)+a_3)+a_4)+\cdots$
+This definition answers the question of how the terms of an infinite sum are supposed to be grouped. When we write $\sum a_n$, we mean $\cdots(((a_1+a_2)+a_3)+a_4)+\cdots$
 
 It is important to remark that the sequence of terms $a_n$ and the sequence of partial sums $S_n$ are both just ordinary sequences. The precise relation ship between the two is given by the two equations:
 \begin{align*}
   S_n&=a_1+\cdots+a_n\\
-  a_n&=S_{n+1}-S_n
+  a_n&=S_n-S_{n-1}
 \end{align*}
 
-It is natural to ask about the relationship between convergence of $a_n$ and convergence of $S_n$. We will see later on that if $S_n$ converges then $a_n$ converges too. On the other hand the converse is false, that is, $a_n$ may converge while $S_n$ diverges. For a simple example if $a_n=1$ for all $n$, then $S_n=n$ for all $n$ and this clearly diverges.
+It is natural to ask about the relationship between convergence of $a_n$ and convergence of $S_n$. We will see later on that if $S_n$ converges then $a_n$ converges too. On the other hand the converse is false, that is, $a_n$ may converge while $S_n$ diverges. For a simple example, if $a_n$ is the sequence $1,1,1,\ldots$ then $S_n$ is the sequences $1,2,3,\ldots$, and this clearly diverges.
 
 The definition of $S_n$ as a sum of a variable number of terms frequently makes it difficult to compute its values exactly. Still, sometimes one can find tricks to do so, such as with the following ``geometric'' sequence.
 
@@ -1058,15 +1062,15 @@ It is not usually so easy to calculate the exact value of $S_n$ and of $\sum a_n
 
 \begin{example}
   \label{ex:1/n^2}
-  The series $\sum1/n^2$ converges. In fact the value is $\pi^2/6$, but it requires some serious calculus to determine this! Rather than calculate the partial sums exactly, we will show only that the sequence $S_n$ of partial sums is bounded as follows. 
+  The series $\sum1/n^2$ converges. In fact the value is $\pi^2/6$, but this fact rests on some serious calculus! Rather than calculate the partial sums exactly, we will show only that the sequence $S_n$ of partial sums is bounded as follows. 
   \begin{align*}
     S_{2^n}&=1+\left(\frac14+\frac19\right)
              +\left(\frac1{16}+\frac1{25}+\frac1{36}+\frac1{49}\right)
              +\cdots
              +\frac1{(2^n)^2}\\
-           &\leq1+2\frac14+4\frac1{16}
-             +\cdots+2^{n-1}\frac1{(2^{n-1})^2}+\frac1{(2^n)^2}\\
-           &\leq\sum\frac1{2^n}=1
+           &\leq1+2\left(\frac14\right)+4\left(\frac1{16}\right)
+             +\cdots+2^{n-1}\left(\frac1{(2^{n-1})^2}\right)+\frac1{(2^n)^2}\\
+           &\leq1+\sum\frac1{2^n}=2
   \end{align*}
   This shows that $S_{2^n}$ is bounded by $1$, and since the sequence $S_n$ is increasing, clearly the whole sequence $S_n$ is bounded by $1$. The next result implies that we can conclude $\sum1/n^2$ converges even without knowing its value.
 \end{example}
@@ -1086,12 +1090,12 @@ We conclude our examples with a divergent series.
 \begin{example}
   The series $\sum 1/n$ looks similar to the previous one, but in fact it diverges. To prove this, we show that the sequence of partial sums is unbounded using a similar grouping trick.
 \begin{align*}
-  S_{2^n} &= 1+\frac12+\frac13+\frac14+\frac15+\frac16+\frac17+\frac18
+  S_{2^n} &= 1+\frac12+\frac13+\frac14+\frac15+\frac16+\frac17+\frac18+
             \cdots+\frac1{2^n}\\
           &\geq 1+\frac12+\left(\frac14+\frac14\right)
             +\left(\frac18+\frac18+\frac18+\frac18\right)
             +\cdots+2^{n-1}\frac1{2^n}\\
-          &=1+n\frac12
+          &=1+n\left(\frac12\right)
 \end{align*}
 It follows that the sequence of partial sums $S_n$ is unbounded and therefore divergent.
 \end{example}
@@ -1144,6 +1148,30 @@ The condensation test may be applied to our earlier examples as follows.
 % \begin{cor}[Comparison test]
 %   If $a_n$ and $b_n$ are nonnegative sequences with $a_n\leq b_n$ for all $n$, and if $\sum b_n$ is known to converge, then $\sum a_n$ converges too.
 % \end{cor}
+
+\newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}
+  Use the condensation test to determine whether the series converge.
+  \begin{enumerate}
+    \item $\sum\frac{1}{n\ln(n)}$
+    \item $\sum\frac{1}{n(\ln n)^2}$
+  \end{enumerate}
+\end{exerc}
+ 
+\begin{exerc}
+  Let $p$ be any real number. Prove that $\sum\frac1{n^p}$ converges if and only if $p>1$. (This is called the ``$p$-test.'')
+\end{exerc}
+
+\begin{exerc}
+  For each sequence, use induction to prove that the sequence is bounded and monotone. Then, find the limit.  [Note: For (b) and (c) you will have to find the recurrence yourself!]
+  \begin{enumerate}
+    \item The sequence defined by $x_1=1$ and the recurrence $x_{n+1}=\frac12x_n+1$
+    \item $\sqrt{2},\sqrt{2+\sqrt{2}},\sqrt{2+\sqrt{2+\sqrt{2}}},\ldots$
+    \item $\sqrt{2},\sqrt{2\sqrt{2}},\sqrt{2\sqrt{2\sqrt{2}}},\ldots$
+  \end{enumerate}
+\end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
