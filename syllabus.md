@@ -5,7 +5,7 @@
 Meeting times: M,W from 12:00&ndash;1:15pm  
 Meeting place: MB 124  
 Textbook: Stephen Abbott, *Understanding analysis*, 2nd edition  
-Web site: `scoskey.github.io/m314`  
+Web site: `scoskey.org/m314`  
 My email: `scoskey@boisestate.edu`  
 My office: MB 237-A  
 Office hours: Monday 2&ndash;3pm, Thursday 2&ndash;3pm, and by appointment
