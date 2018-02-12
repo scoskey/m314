@@ -4,6 +4,19 @@ Turn in homework using one of the options:
 * Slide under my door
 * Via Dropbox [link](https://www.dropbox.com/request/7g3uNNOWtplL9eAIZkRN)
 
+## Homework 6, due Wednesday, Feb 21 in class
+
+* Ex 9.1
+* Ex 9.2
+* Ex 9.3
+
+## Homework 5, due Tuesday, Feb 13 at 4:30pm
+
+* Ex 8.1(b)(e)
+* Ex 8.2
+* Ex 8.3
+* Ex 8.4
+
 ## Homework 4, due Tuesday, Feb 6 at 4:30pm
 
 * Ex 6.2
