@@ -1178,9 +1178,7 @@ The condensation test may be applied to our earlier examples as follows.
 \section{Subsequences}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{defn}
-  Given a sequence $a_n$, a \emph{subsequence} of $a_n$ is a selection of infinitely many terms of $a_n$. More formally, if $n_1<n_2<n_3<\ldots$ is a properly increasing sequence of indices, then the corresponding subsequence $a_{n_k}$ consists of the temrs $a_{n_1},a_{n_2},a_{n_3},\ldots$.
-\end{defn}
+Given a sequence $a_n$, a \emph{subsequence} of $a_n$ is a selection of infinitely many terms of $a_n$. More formally, if $n_1<n_2<n_3<\ldots$ is a properly increasing sequence of indices, then the corresponding subsequence $a_{n_k}$ consists of the temrs $a_{n_1},a_{n_2},a_{n_3},\ldots$.
 
 \begin{example}
   Starting with the sequence $a_n=1/n$, let's make some subsequences:
@@ -1193,7 +1191,7 @@ The condensation test may be applied to our earlier examples as follows.
   \]
 \end{example}
 
-One must be careful to point out that it is not allowed to reorder or repeat the terms. Thus in the example of $a_n=1/n^2$ the terms $1,\frac13,\frac12,\frac14,\ldots$ cannot be part of a subsequence of $a_n$, and neither can the terms $1,\frac12,\frac12,\frac13,\ldots$.
+One must be careful to point out that it is not allowed to reorder or repeat the terms. Thus in the example of $a_n=1/n^2$ the terms $1,\frac19,\frac14,\frac16,\ldots$ cannot be part of a subsequence of $a_n$, and neither can the terms $1,\frac12,\frac12,\frac13,\ldots$.
 
 It should not be surprising that if a sequence converges, so do its subsequences.
 
@@ -1219,7 +1217,7 @@ So for example if $\sum a_n$ converges then the following series converges:
 \]
 The proof is simple: the partial sums of the re-associated series form a subsequence of the partial sums of the original series. Therefore the re-associated series converges by Proposition~\ref{prop:subsequence}.
 
-The second application gives a method of determining that a seqeunce is divergent. In the past, we have checked that a given sequence fails to converge to a proposed limit. The following result lets you check that a sequence fails to converge at all.
+A second application of Proposition~\ref{prop:subsequence} gives a method of determining that a sequence is divergent. In the past, we have checked that a given sequence fails to converge to a proposed limit. The following result lets you check that a sequence fails to converge to any/every limit.
 
 \begin{cor}
   \label{cor:divergence}
@@ -1247,7 +1245,7 @@ We conclude this section with an existence result surrounding convergent subsequ
   For this, let $\epsilon>0$ be given. Choose $K$ large enough so that $M/2^{K-1}<\epsilon$. Then for all $k>K$ we have $a_{n_k}\in I_k\subset I_K$ and therefore $|a_{n_k}-L|<\epsilon$, as desired.
 \end{proof}
 
-The BW theorem has numerous theoretical applications, some of which we shall see throughout the course. To give one small example, we can establish the following partial converse to Corollary~\ref{cor:divergence}.
+The Bolzano--Weierstra\ss theorem has numerous theoretical applications, some of which we will see later in the course. To give one small example, we can establish the following partial converse to Corollary~\ref{cor:divergence}.
 
 \begin{prop}
   Let $a_n$ be a bounded sequence. If $a_n$ is divergent, then it has subsequences $a_{n_k}$ and $a_{n_l}$ which both converge but to different limits.
