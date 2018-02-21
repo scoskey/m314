@@ -1195,7 +1195,7 @@ Given a sequence $a_n$, a \emph{subsequence} of $a_n$ is a selection of infinite
   \]
 \end{example}
 
-One must be careful to point out that it is not allowed to reorder or repeat the terms. Thus in the example of $a_n=1/n^2$ the terms $1,\frac19,\frac14,\frac16,\ldots$ cannot be part of a subsequence of $a_n$, and neither can the terms $1,\frac12,\frac12,\frac13,\ldots$.
+One must be careful to point out that it is not allowed to reorder or repeat the terms. Thus in the example of $a_n=1/n$ the terms $1,\frac13,\frac12,\frac14,\ldots$ cannot be part of a subsequence of $a_n$, and neither can the terms $1,\frac12,\frac12,\frac13,\ldots$.
 
 It should not be surprising that if a sequence converges, so do its subsequences.
 
@@ -1229,11 +1229,11 @@ A second application of Proposition~\ref{prop:subsequence} gives a method of det
 \end{cor}
 
 For example if $a_n=(-1)^n(1+1/n)$, then $a_n$ has terms
-\[-2,3/2,-4/3,5/4,-6/5,\ldots
+\[-2,\frac32,-\frac{4}{3},\frac54,-\frac{6}{5},\ldots
 \]
 The subsequence $a_{2n}=1+1/n$ converges to $1$, and the subsequence $a_{2n+1}=-1-1/n$ converges to $-1$. Therefore the original sequence $a_n$ diverges.
 
-We conclude this section with an existence result surrounding convergent subsequences. Recall that we saw every convergent sequence is bounded, but not every bounded sequence is convergent. The following famous theorem states that even if a bounded sequence does not converge, it is at least guaranteed to  have convergent subsequences.
+We conclude this section with a key theorem about subsequences. Recall that we saw every convergent sequence is bounded, but not every bounded sequence is convergent. The following theorem gives a consolation prize instead: even if a bounded sequence doesn't converge, at least it has a convergent subsequence.
 
 \begin{thm}[Bolzano--Weierstra\ss]
   If $a_n$ is a bounded sequence, then $a_n$ has a convergent subsequence.
@@ -1252,7 +1252,7 @@ We conclude this section with an existence result surrounding convergent subsequ
 The Bolzano--Weierstra\ss\ theorem has numerous theoretical applications, some of which we will see later in the course. To give one small example, we can establish the following partial converse to Corollary~\ref{cor:divergence}.
 
 \begin{prop}
-  Let $a_n$ be a bounded sequence. If $a_n$ is divergent, then it has subsequences $a_{n_k}$ and $a_{n_l}$ which both converge but to different limits.
+  Let $a_n$ be a bounded sequence. If $a_n$ does not converge, then it has subsequences $a_{n_k}$ and $a_{n_l}$ which both converge but to different limits.
 \end{prop}
 
 \begin{proof}
