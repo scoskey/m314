@@ -1242,9 +1242,9 @@ We conclude this section with an existence result surrounding convergent subsequ
 \begin{proof}
   Since $a_n$ is bounded we may assume it is a subset of some large interval $[-M,M]$. We go in search of the limit by iteratively subdividing the interval. To begin, at least one of $[-M,0]$ or $[0,M]$ must contain infinitely many terms of the sequence. Whichever of these intervals it is, call it $I_1$, and let $a_{n_1}$ be a term of the sequence lying in $I_1$.
 
-  Next, one of the two halves of $I_1$ must contain infinitely terms of the sequence $a_n$, call it $I_2$, and let $a_{n_2}$ be a term of the sequence lying in $I_2$. (Ensure here that $n_1<n_2$.)
+  Next, one of the two halves of $I_1$ must contain infinitely terms of the sequence $a_n$, call it $I_2$, and let $a_{n_2}$ be a term of the sequence lying in $I_2$. (Let us also ensure that $n_1<n_2$.)
 
-  Continuing in this manner, we find intervals $I_{n_k}\subset I_{n_{k-1}}$ with diameter $M/2^{k-1}$ and terms of the sequence $a_{n_k}\in I_{n_k}$. By the NIP there exists a real number $L\in\bigcap I_k$. We claim $a_{n_k}$ is convergent and has limit $L$.
+  Continuing in this manner, we find intervals $I_{n_k}\subset I_{n_{k-1}}$ with diameter $M/2^{k-1}$, and terms of the sequence $a_{n_k}\in I_{n_k}$. By the NIP there exists a real number $L\in\bigcap I_k$. We claim $a_{n_k}$ is convergent and has limit $L$.
 
   For this, let $\epsilon>0$ be given. Choose $K$ large enough so that $M/2^{K-1}<\epsilon$. Then for all $k>K$ we have $a_{n_k}\in I_k\subset I_K$ and therefore $|a_{n_k}-L|<\epsilon$, as desired.
 \end{proof}
