@@ -1178,6 +1178,10 @@ The condensation test may be applied to our earlier examples as follows.
 \section{Subsequences}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{reading}
+  Abbott, \S 2.5
+\end{reading}
+
 Given a sequence $a_n$, a \emph{subsequence} of $a_n$ is a selection of infinitely many terms of $a_n$. More formally, if $n_1<n_2<n_3<\ldots$ is a properly increasing sequence of indices, then the corresponding subsequence $a_{n_k}$ consists of the temrs $a_{n_1},a_{n_2},a_{n_3},\ldots$.
 
 \begin{example}
@@ -1245,7 +1249,7 @@ We conclude this section with an existence result surrounding convergent subsequ
   For this, let $\epsilon>0$ be given. Choose $K$ large enough so that $M/2^{K-1}<\epsilon$. Then for all $k>K$ we have $a_{n_k}\in I_k\subset I_K$ and therefore $|a_{n_k}-L|<\epsilon$, as desired.
 \end{proof}
 
-The Bolzano--Weierstra\ss theorem has numerous theoretical applications, some of which we will see later in the course. To give one small example, we can establish the following partial converse to Corollary~\ref{cor:divergence}.
+The Bolzano--Weierstra\ss\ theorem has numerous theoretical applications, some of which we will see later in the course. To give one small example, we can establish the following partial converse to Corollary~\ref{cor:divergence}.
 
 \begin{prop}
   Let $a_n$ be a bounded sequence. If $a_n$ is divergent, then it has subsequences $a_{n_k}$ and $a_{n_l}$ which both converge but to different limits.
@@ -1254,6 +1258,36 @@ The Bolzano--Weierstra\ss theorem has numerous theoretical applications, some of
 \begin{proof}
   By the Bolzano--Weierstra\ss\ theorem, there is a convergent subsequence $a_{n_k}\to L$. Since $a_n$ itself does not converge to $L$, there exists $\epsilon$ such that infinitely many terms $a_n$ of the sequence satisfy $|a_n-L|\geq\epsilon$. Enumerate these terms in a subsequence $a_{n_l}$. Again by the Bolzano--Weierstra\ss\ theorem, this subsequence $a_{n_l}$ has a further subsequence $a_{n_{l_m}}$ which converges to a limit $M$. Then we have $|M-L|\geq\epsilon$, in particular $M\neq L$.
 \end{proof}
+
+\newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}[Abbott, ex 2.5.3]
+  Give an example of each of the following, or prove that no such example exists.
+  \begin{enumerate}
+    \item A sequence that does not contain $0$ or $1$ as a term but contains subsequences converging to each of these values
+    \item A monotone sequence that diverges but has a convergent subsequence
+    \item A sequence that contains subsequences converging to every point in the infinite set $\{1,\frac12,\frac13,\frac14,\ldots\}$
+    \item An unbounded sequence with a convergent subsequence
+    \item A sequence that has a subsequence that is bounded but contains no subsequence that converges
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}
+  Prove the following characterization: $a_n$ has a subsequence converging to $L$ if and only if for all $\epsilon>0$, for all $N$, there exists $n>N$ such that $|a_n-L|<\epsilon$.
+\end{exerc}
+
+\begin{exerc}
+  Prove or give a counterexample: If $a_n$ has a subsequence converging to $a$ and $b_n$ has a subsequence converging to $b$ then $a_n+b_n$ has a subsequence converging to $a+b$.
+\end{exerc}
+
+\begin{exerc}
+  Consider the sequence $a_n=$ the reciprocal of the least prime factor of $n$. Write out the first 20 terms of the sequence. Find two subsequences of $a_n$ that converge but to different limits.
+\end{exerc}
+
+\begin{exerc}
+  Suppose that $a_n$ has the property that every subsequence $a_{n_k}$ has a \emph{further} subsequence $a_{n_{k_\ell}}$ which converges to $L$.  Show that $a_n$ converges to $L$.  (Hint: try contradiction!)
+\end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
