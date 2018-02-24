@@ -4,6 +4,12 @@ Turn in homework using one of the options:
 * Slide under my door
 * Via Dropbox [link](https://www.dropbox.com/request/7g3uNNOWtplL9eAIZkRN)
 
+## Homework 7, due Tuesday, Feb 27 at 4:30pm
+
+* Ex 10.1
+* Ex 10.3
+* Re-do one problem from the exam that you skipped or got fewer than 3 points on. I will add 7 points to your score for a correct solution.
+
 ## Homework 6, due Wednesday, Feb 21 in class
 
 * Ex 9.1
