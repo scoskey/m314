@@ -1171,6 +1171,7 @@ The condensation test may be applied to our earlier examples as follows.
     \item $\sqrt{2},\sqrt{2+\sqrt{2}},\sqrt{2+\sqrt{2+\sqrt{2}}},\ldots$
     \item $\sqrt{2},\sqrt{2\sqrt{2}},\sqrt{2\sqrt{2\sqrt{2}}},\ldots$
   \end{enumerate}
+  [Note: in parts (b) and (c) you may use the fact that $\lim\sqrt{x_n}=\sqrt{\lim x_n}$. We'll prove it later.]
 \end{exerc}
 
 \newpage
@@ -1210,18 +1211,7 @@ It should not be surprising that if a sequence converges, so do its subsequences
 
 Of course the converse is false with a simple example being the subsequence $1,1,1,1,\ldots$ of $1,-1,+1,-1,\ldots$.
 
-Although it is very simple, Proposition~\ref{prop:subsequence} has a surprising number of applications. The first application allows us to settle the question posed about the associative law for series way back in Section~\ref{sec:sequences}.
-
-\begin{cor}
-  The associative law holds for convergent series. That is, if $\sum a_n$ converges then any association of its terms converges.
-\end{cor}
-
-So for example if $\sum a_n$ converges then the following series converges:
-\[(a_1+a_2+a_3)+(a_4+a_5+a_6)+\cdots
-\]
-The proof is simple: the partial sums of the re-associated series form a subsequence of the partial sums of the original series. Therefore the re-associated series converges by Proposition~\ref{prop:subsequence}.
-
-A second application of Proposition~\ref{prop:subsequence} gives a method of determining that a sequence is divergent. In the past, we have checked that a given sequence fails to converge to a proposed limit. The following result lets you check that a sequence fails to converge to any/every limit.
+Although it is very simple, Proposition~\ref{prop:subsequence} has a surprising number of applications. The first application gives a method of determining that a sequence is divergent. In the past, we have checked that a given sequence fails to converge to a proposed limit. The following result lets you check that a sequence fails to converge to any/every limit.
 
 \begin{cor}
   \label{cor:divergence}
@@ -1232,6 +1222,17 @@ For example if $a_n=(-1)^n(1+1/n)$, then $a_n$ has terms
 \[-2,\frac32,-\frac{4}{3},\frac54,-\frac{6}{5},\ldots
 \]
 The subsequence $a_{2n}=1+1/n$ converges to $1$, and the subsequence $a_{2n+1}=-1-1/n$ converges to $-1$. Therefore the original sequence $a_n$ diverges.
+
+A second application of Proposition~\ref{prop:subsequence} allows us to settle the question posed about the associative law for series way back in Section~\ref{sec:sequences}.
+
+\begin{cor}
+  The associative law holds for convergent series. That is, if $\sum a_n$ converges then any association of its terms converges.
+\end{cor}
+
+So for example if $\sum a_n$ converges then the following series converges:
+\[(a_1+a_2+a_3)+(a_4+a_5+a_6)+\cdots
+\]
+The proof is simple: the partial sums of the re-associated series form a subsequence of the partial sums of the original series. Therefore the re-associated series converges by Proposition~\ref{prop:subsequence}.
 
 We conclude this section with a key theorem about subsequences. Recall that we saw every convergent sequence is bounded, but not every bounded sequence is convergent. The following theorem gives a consolation prize instead: even if a bounded sequence doesn't converge, at least it has a convergent subsequence.
 
@@ -1350,10 +1351,10 @@ We now show that in fact all four of these statements are equivalent by showing 
   All of the statements LUBP, NIP, BWT, CC are equivalent.
 \end{thm}
 
-\begin{proof}
+\begin{proof}[Proof outline]
   It remains only to show that CC implies LUBP. Suppose we know Cauchy sequences converge and let $A$ be a bounded subset of $\RR$. Then $A$ is contained in some interval $[a,b]$. For each $n$, divide $[a,b]$ into cells of width $(b-a)/2^n$ and let $a_n$ be the top endpoint of the highest cell meeting $A$. Then for any $N$, the sequence $a_n$ eventually lies in an interval of with $(b-a)/2^N$ and hence $a_n$ is Cauchy.
 
-  Since Cauchy sequences converge we may let $L$ be the limit of $a_n$. We claim that $L$ is the least upper bound for $A$. Indeed since for all $n$ we have that $a_n$ is an upper bound for $A$, it is clear that $L$ is an upper bound for $A$. Moreover given $\epsilon$ we can find $n$ large enough that $(b-a)/2^n<\epsilon$, and then we have $a_n>L-\epsilon$. Thus the LUBP holds, as desired.
+  Since Cauchy sequences converge we may let $L$ be the limit of $a_n$. We claim that $L$ is the least upper bound for $A$. Indeed since for all $n$ we have that $a_n$ is an upper bound for $A$, it is clear that $L$ is an upper bound for $A$. Moreover given any $n$ we can find $a\in A$ such that $a\geq a_n-1/2^n$. Since the latter is $\geq L-1/2^n$, this implies $L=\sup(A)$. Thus the LUBP holds, as desired.
 \end{proof}
 
 In the exercises you will be asked to prove that the monotone convergence theorem (MCT) is also equivalent to completeness.
