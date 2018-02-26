@@ -1294,9 +1294,11 @@ The Bolzano--Weierstra\ss\ theorem has numerous theoretical applications, some o
 \section{Completeness}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Recall that the real number system satisfies the axiom of completeness, which says that every bounded set has a least upper bound (supremum). We have said that this should be interpreted as saying that the real number system does not have any gaps.
+\begin{reading}
+  Abbott, \S 2.6
+\end{reading}
 
-But this leads to the question of what it means for other spaces, besides the real numbers, to be complete? For example it is intuitively clear that $\RR^2$ or the sphere $\mathbb S^2$ do not have any gaps. To capture this, we need a more general definition of completeness.
+Recall that the the real number system satisfies the axiom of completeness, which says that every bounded set has a supremum. (We also called this the least upper bound property.) We have said that this axiom should be interpreted as saying that the real number system does not have any gaps. But this leads to the question of what it means for other spaces, besides the real numbers, to be complete? For example it is intuitively clear that $\RR^2$ or the sphere $\mathbb S^2$ do not have any gaps. To capture this, we need a more general way to define completeness.
 
 \begin{defn}
   The sequence $a_n$ is \emph{Cauchy} if for all $\epsilon>0$ there exists $N\in\NN$ such that for all $m,n>N$ we have $|a_n-a_m|<\epsilon$.
@@ -1337,25 +1339,54 @@ The proof that the above sequence is Cauchy is not too different than the proof 
   and so $a_n$ converges to $L$, as desired.
 \end{proof}
 
-The above theorem says that in the real number system, every sequence that wants to converge (beacues it is Cauchy) really does converge. This statement is false if you restrict to the just the rational number system. Rather, the statement can be regarded as another way of saying that the real number system is complete. (More generally, we say that a space is \emph{Cauchy complete} if all of its Cauchy sequences converge.)
+The above theorem says that in the real number system, every sequence that wants to converge (beacuse it is Cauchy) really does converge. This statement is false if you restrict consider the rational number system only. Instead, the statement can be regarded as another way of saying that the real number system is complete. In general, we say that a space is \emph{Cauchy complete} if all of its Cauchy sequences converge.
 
-Like this one, many of the statements we have investigated so far can be regarded as statements of completeness: the axiom of completeness itself (AOC) the nested interval property (NIP), the Bolzano--Weierstra\ss\ theorem (BWT), and the Cauchy criterion (CC). Examining our proofs, we have seen that
+It turns out that many of the theorems we have investigated so far can be regarded as statements of completeness. Just now we proved the Cauchy criterion (CC) using the Bolzano--Weierstra\ss\ theorem (BWT). Earlier we proved the Bolzano--Weierstra\ss\ theorem using the NIP. And we proved the NIP using our original axiom of completeness, the least upper bound principal (LUBP). We therefore see that:
 \[AOC\implies NIP\implies BWT\implies CC
 \]
-
-We now prepare to show that in fact all four of these statements are equivalent by showing that the Cauchy criterion implies the axiom of completeness.
+We now show that in fact all four of these statements are equivalent by showing that the Cauchy criterion implies the axiom of completeness.
 
 \begin{thm}
-  All of the statements AOC, NIP, BWT, CC are equivalent.
+  All of the statements LUBP, NIP, BWT, CC are equivalent.
 \end{thm}
 
 \begin{proof}
-  It remains only to show that CC implies AOC. Suppose we know Cauchy sequences converge and let $A$ be a bounded subset of $\RR$. Then $A$ is contained in some interval $[a,b]$. For each $n$, divide $[a,b]$ into cells of width $(b-a)/2^n$ and let $a_n$ be the top endpoint of the highest cell meeting $A$. Then for any $N$, the sequence $a_n$ eventually lies in an interval of with $(b-a)/2^N$ and hence $a_n$ is Cauchy.
+  It remains only to show that CC implies LUBP. Suppose we know Cauchy sequences converge and let $A$ be a bounded subset of $\RR$. Then $A$ is contained in some interval $[a,b]$. For each $n$, divide $[a,b]$ into cells of width $(b-a)/2^n$ and let $a_n$ be the top endpoint of the highest cell meeting $A$. Then for any $N$, the sequence $a_n$ eventually lies in an interval of with $(b-a)/2^N$ and hence $a_n$ is Cauchy.
 
-  Since Cauchy sequences converge we may let $L$ be the limit of $a_n$. We claim that $L$ is the least upper bound for $A$. Indeed since for all $n$ we have that $a_n$ is an upper bound for $A$, it is clear that $L$ is an upper bound for $A$. Moreover given $\epsilon$ we can find $n$ large enough that $(b-a)/2^n<\epsilon$, and then we have $a_n>L-\epsilon$. Thus AOC holds, as desired.
+  Since Cauchy sequences converge we may let $L$ be the limit of $a_n$. We claim that $L$ is the least upper bound for $A$. Indeed since for all $n$ we have that $a_n$ is an upper bound for $A$, it is clear that $L$ is an upper bound for $A$. Moreover given $\epsilon$ we can find $n$ large enough that $(b-a)/2^n<\epsilon$, and then we have $a_n>L-\epsilon$. Thus the LUBP holds, as desired.
 \end{proof}
 
 In the exercises you will be asked to prove that the monotone convergence theorem (MCT) is also equivalent to completeness.
+
+\newpage
+\subsection*{Exerecises for \S \thesection}
+
+\begin{exerc}
+  Show directly from the definition that the sequence $x_n=\frac{n+1}{n}$ is Cauchy.
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 2.6.2]
+  Give an example of each of the following, or prove that no such example exists.
+  \begin{enumerate}
+    \item A Cauchy sequence that is not monotone
+    \item A monotone sequence that is not Cauchy
+    \item A Cauchy sequence with a divergent subsequence
+    \item An unbounded sequence containing a subsequence that is Cauchy
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}
+  Find an example of a divergent sequence $a_n$ which satisfies $\lim(a_{n+1}-a_n)=0$.
+\end{exerc}
+
+\begin{exerc}
+  The MCT (monotone convergence theorem) is yet another equivalent of completness. To establish this, complete the following proof that MCT implies BWT. To begin, say that a term $a_n$ of a sequence is a \emph{peak} if for all $n'>n$ we have $a_n'\leq a_n$.
+  \begin{enumerate}
+    \item Assume the sequence $a_n$ has infinitely many peaks. Conclude that $a_n$ has a monotone decreasing subsequence.
+    \item Assume the sequence $a_n$ has a last peak. Conclude that $a_n$ has a monotone increasing subsequence.
+    \item Use parts (a) and (b) together with the MCT to prove the BWT.
+  \end{enumerate}
+\end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
