@@ -1394,6 +1394,10 @@ In the exercises you will be asked to prove that the monotone convergence theore
 \section{Series convergence tests}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{reading}
+  Abbott, \S 2.7
+\end{reading}
+
 In this section we return to series and the so-called tests for series convergence. First, we note that just as limits obey calculus laws, series obey certain rules as well.
 
 \begin{thm}[Series calculus]
@@ -1418,7 +1422,7 @@ Before proceeding to the convergence tests, we state formally one simple test fo
 \end{thm}
 
 \begin{proof}
-  We use the contrapositive. Suppose that $\sum a_n=S$. Then the sequence partial sums $S_n$ converges to $S$. It follows from the summation law that the terms $a_n=S_n-S_{n-1}$ converge to $S-S=0$.
+  We use the contrapositive. Suppose that $\sum a_n=S$. Then the sequence partial sums $S_n$ converges to $S$. It follows from the addition law foro limits that the terms $a_n=S_n-S_{n-1}$ converge to $S-S=0$.
 \end{proof}
 
 \begin{example}
@@ -1435,8 +1439,7 @@ The next two tests summarize some familiar series, and help give us a library of
   Let $p$ be a real number. Then the series $\sum \frac{1}{n^p}$ converges if and only if $p>1$.
 \end{thm}
 
-We leave the proofs of these results as exercises. 
-The geometric series test is a straightforward generalization of the calculation in Example~\ref{ex:geometric}. The $p$-test is an easy application of the condensation test.
+We leave the proofs of these results as exercises. The geometric series test is standard in calculus and can be proved with a calculation similar to that of Example~\ref{ex:geometric}. The $p$-series test is an easy application of the condensation test (see earlier exercise).
 
 \begin{example}
   Consider the series $\sum 9^{-n+2}4^{n+1}$. We can rewrite it as $4\cdot81\sum(4/9)^n$. Since $4/9<1$ the series converges and the summation is $4\cdot81/(1-4/9)$.
@@ -1444,7 +1447,7 @@ The geometric series test is a straightforward generalization of the calculation
 
 
 \begin{thm}[Comparison test]
-  Let $a_n$ and $b_n$ be positive-term sequences and suppose $\sum b_n$ converges. If for all $n$ we have $a_n\leq b_n$, then $\sum a_n$ converges too.
+  Let $a_n$ and $b_n$ be nonnegative sequences of terms, and suppose $\sum b_n$ converges. If for all $n$ we have $a_n\leq b_n$, then $\sum a_n$ converges too.
 \end{thm}
 
 \begin{proof}
@@ -1452,23 +1455,23 @@ The geometric series test is a straightforward generalization of the calculation
 \end{proof}
 
 \begin{example}
-  Consider the series $\sum\frac{n^2-3n-1}{n^4+2n^3+3}$. Intuitively the series is little different from $\sum\frac{1}{n^2}$, but it is difficult to apply the condensation test to this one directly. However, we can easily calculate
+  Consider the series $\sum\frac{n^2-3n-1}{n^4+2n^3+3}$. Intuitively this series isn't very different than the simpler series $\sum\frac{1}{n^2}$, but it would be a mess to apply the condensation test to this one directly. Instead, we can easily calculate
   \[\frac{n^2-3n-1}{n^4+2n^3+3}\leq\frac{n^2}{n^4}=\frac{1}{n^2}
   \]
-  Since $\sum\frac{1}{n^2}$ converges, the comparison test implies that $\sum\frac{n^2-3n-1}{n^4+2n^3+3}$ converges too.
+  Since $\sum\frac{1}{n^2}$ converges by the $p$-series test, the comparison test implies that $\sum\frac{n^2-3n-1}{n^4+2n^3+3}$ converges too.
 \end{example}
 
 \begin{example}
-  The comparison test may also be applied in contrapositive as follows. Consider the series $\sum\frac{n^2+2n+1}{n^3-2n-1}$. Intuitively the series is little different from $\sum\frac1n$, and this again bears out:
+  The comparison test may also be applied in contrapositive as follows. Consider the series $\sum\frac{n^2+2n+1}{n^3-2n-1}$. Intuitively this series isn't very different than the simpler series $\sum\frac1n$, and we can again bear this out:
   \[\frac{n^2+2n+1}{n^3-2n-1}\geq\frac{n^2}{n^3}=\frac1n
   \]
   Since $\sum\frac1n$ diverges, the comparison test implies that $\sum\frac{n^2+2n+1}{n^3-2n-1}$ diverges too.
 \end{example}
 
-Although the comparison test is very simple, it may be leveraged to yield numerous more powerful tests. Perhaps the most famous consequences of the comparison test are the ratio and root tests.
+Although the comparison test is very simple, it may be leveraged to yield several more powerful tests. Perhaps the most famous applications of the comparison test are the ratio and root tests.
 
 \begin{thm}[Root and ratio test]
-  Let $a_n$ be a positive-term sequence.
+  Let $a_n$ be a nonnegative sequence of terms.
   \begin{itemize}
   \item If the sequence $(a_n)^{1/n}$ converges to a limit $r<1$, then the series $\sum a_n$ converges.
   \item If the sequence $a_{n+1}/a_n$ converges to a limit $r<1$, then the series $\sum a_n$ converges.
@@ -1476,7 +1479,7 @@ Although the comparison test is very simple, it may be leveraged to yield numero
 \end{thm}
 
 \begin{proof}
-  We prove only the root test. Let $r'$ be any number such that $r<r'<1$. Then there exists $N$ such that $n>N$ implies $a_n^{1/n}<r'$. Since we can ignore initial segments for the purposes of series convergence, we can suppose without loss of generality that $a_n^{1/n}<r'$ for all $n$. It follows that $a_n<(r')^n$, and since $\sum (r')^n$ converges, the comparison test implies that $\sum a_n$ converges too.
+  We prove only the root test. Let $r'$ be any number such that $r<r'<1$. Then there exists $N$ such that $n>N$ implies $a_n^{1/n}<r'$. Since we can ignore initial segments for the purposes of series convergence, we can suppose without loss of generality that $a_n^{1/n}<r'$ for all $n$. It follows that $a_n<(r')^n$, and since we know $\sum(r')^n$ converges, the comparison test implies that $\sum a_n$ converges too.
 \end{proof}
 
 \begin{example}
@@ -1485,6 +1488,33 @@ Although the comparison test is very simple, it may be leveraged to yield numero
   \]
   Since this value is less than $1$, the root test implies the series converges.
 \end{example}
+
+\newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}
+  Decide whether the given series converge or diverge.
+  \begin{enumerate}
+    \item $\displaystyle\sum\frac{1}{n^2+250n+37}$
+    \item $\displaystyle\sum\frac{1}{n^2-37}$
+    \item $\displaystyle\sum\frac{1}{3n-2}$
+    \item $\displaystyle\sum\frac{1}{3n+2}$
+    \item $\displaystyle\sum\frac{e^n}{\pi^n}$
+    \item $\displaystyle\sum\frac{n!}{n^n}$
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}  
+  Suppose that $a_n,b_n\geq0$ and that $\sum a_n$ and $\sum b_n$ both converge. Prove that $\sum a_nb_n$ converges.
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 2.7.4(a)]
+  Give an example of two divergent series $\sum a_n$ and $\sum b_n$ such that $\sum a_nb_n$ converges.
+\end{exerc}
+
+% prove the ratio test?
+
+% prove the limit comparison test?
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
