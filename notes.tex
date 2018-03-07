@@ -1607,7 +1607,7 @@ We close our discussion of series by answering our initial question about commut
 \end{proof}
 
 \newpage
-\subsection*{Exercises for \S thesection}
+\subsection*{Exercises for \S \thesection}
 
 \begin{exerc}
   Decide whether the given series converge absolutely, converge conditionally, or diverge.
@@ -1651,13 +1651,13 @@ The Cantor set is constructed as follows. Begin with the unit interval $[0,1]$, 
 \begin{figure}[h]
 \begin{center}
   \begin{tikzpicture}
-    \draw[|-|] (0,0) -- (10,0) node[anchor=west] {\ \ $C_1$};
+    \draw[|-|] (0,0) -- (10,0) node[anchor=west] {\ \ $C_0$};
     \draw[|-|] (0,-.5) -- (10/3,-.5);
-    \draw[|-|] (20/3,-.5) -- (10,-.5) node[anchor=west] {\ \ $C_2$};
+    \draw[|-|] (20/3,-.5) -- (10,-.5) node[anchor=west] {\ \ $C_1$};
     \draw[|-|] (0,-1) -- (10/9,-1);
     \draw[|-|] (20/9,-1) -- (30/9,-1);
     \draw[|-|] (60/9,-1) -- (70/9,-1);
-    \draw[|-|] (80/9,-1) -- (10,-1) node[anchor=west] {\ \ $C_3$};
+    \draw[|-|] (80/9,-1) -- (10,-1) node[anchor=west] {\ \ $C_2$};
     \node[anchor=west] at (10,-1.4) {\ \ \ $\vdots$};
     \draw[decoration=Cantor set,very thick]
     decorate{ decorate{ decorate{ decorate{ decorate{ decorate{
@@ -1736,21 +1736,22 @@ For a new example, if $\alpha=\frac14$ then we construct the modified Cantor set
 \end{center}
 
 \begin{exerc}
-  In the construction of $C^{1/4}$ shown above, for each $n$ find the total length removed when going from $B_n$ to $B_{n+1}$.
+  \begin{enumerate}
+    \item In the construction of $C^{1/4}$ shown above, for each $n$ find the total length removed when going from $B_n$ to $B_{n+1}$.
+    \item Find the sum of all the lengths removed, that is, the numbers calculated in part~(a). Then take $1$ minus this number to find the length of the modified Cantor set $C^{1/4}$.
+  \end{enumerate}
 \end{exerc}
 
 \begin{exerc}
-  Find the sum of all the lengths removed, that is, the numbers calculated in Question~1. Then take $1$ minus this number to find the length of the modified Cantor set $C^{1/4}$.
+  Find the fractal dimension of $C^{1/4}$. [Hint: you need to use a scaling factor that grows both intervals in $B_1$ to a length of $1$.]
 \end{exerc}
 
 \begin{exerc}
-  Now repeat Questions 1 and 2 for the set $C^\alpha$, where $0<\alpha<1$ is arbitrary.
+  Repeat Question~1 for the set $C^\alpha$, where $0<\alpha<1$ is arbitrary.
 \end{exerc}
 
 \begin{exerc}
-  What is the fractal dimension of $C^\alpha$?  Use the following formula:
-  \[\text{number of copies}=\text{(scaling factor)}^\text{dimension}
-  \]
+  Repeat Question~2 for the set $C^\alpha$, where $0<\alpha<1$ is arbitrary.
 \end{exerc}
 
 \begin{exerc}
