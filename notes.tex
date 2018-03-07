@@ -1574,7 +1574,7 @@ All of the tests in the previous section can now be regarded as tests for absolu
 \end{thm}
 
 \begin{proof}
-  Observe that $S_{2n+2}=S_{2n}-(a_{2n+1}-a_{2n+2})$ and that $S_{2n+3}=S_{2n+1}+(a_{2n+2}-a_{2n+3})$. Since the terms $a_n$ are decreasing, it follows that the even-indexed subsequence $S_{2n}$ is decreasing and the odd-indexed subsequence $S_{2n+1}$ is increasing. Moreover $S_{2n}$ is bounded below by $a_1$ and $S_{2n+1}$ is bounded above by $S_2$.
+  Observe that $S_{2n+2}=S_{2n}-(a_{2n+1}-a_{2n+2})$ and that $S_{2n+3}=S_{2n+1}+(a_{2n+2}-a_{2n+3})$. Since the terms $a_n$ are decreasing, it follows that the even-indexed subsequence $S_{2n}$ is decreasing and the odd-indexed subsequence $S_{2n+1}$ is increasing. Moreover $S_{2n}$ is bounded below by $-a_1$ and $S_{2n+1}$ is bounded above by $-a_1+a_2$.
 
   Therefore by the monotone convergence theorem, both subsequences converge, say to $S$ and $T$ respectively. Now it follows that $S_{2n+1}-S_{2n}\to S-T$. But we also have $S_{2n+1}-S_{2n}=a_{2n+1}\to0$. Therefore $S=T$ and it is easy to see this implies $S_n\to S$. Hence $\sum a_n$ converges.
 \end{proof}
@@ -1603,7 +1603,7 @@ We close our discussion of series by answering our initial question about commut
   \end{align*}
   This shows that the partial sums of the $b_n$ converge to $A$, as desired.
   
-  For the second statement, note that the sum of just the positive terms must be divergent, and the sum of just the negative terms must also be divergent. Thus given a target summation $S$, we can add together enough positive terms until we just overshoot $S$. We can then add together enough negative terms until we just undershoot $S$. Continuing in like fashion, we straddle $S$ infinitely many times. Since the terms $a_n\to0$, these attempts get arbitrarily close to the value $S$.
+  For the second statement, note that the sum of just the positive terms must be divergent, and the sum of just the negative terms must also be divergent. () Thus given a target summation $S$, we can add together enough positive terms until we just overshoot $S$. We can then add together enough negative terms until we just undershoot $S$. Continuing in like fashion, we straddle $S$ infinitely many times. Since the terms $a_n\to0$, these attempts get arbitrarily close to the value $S$.
 \end{proof}
 
 \newpage
@@ -1626,6 +1626,8 @@ We close our discussion of series by answering our initial question about commut
 \begin{exerc}
   Suppose that $\sum a_n$ converges absolutely and that the sequence $b_n$ is bounded.  Prove that $\sum a_nb_n$ converges absolutely.
 \end{exerc}
+
+% Show that if a series is CC then its positive and negative terms are Div
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
