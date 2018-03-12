@@ -1856,7 +1856,7 @@ Thus, to return to the motivation at the beginning of the section, any set $A$ d
 \end{thm}
 
 \begin{proof}
-  For the first statement, first assume that $A$ is open. Note that we always have $\inte(A)\subset A$. On the other hand since $A$ is open it omits its boundary. And since $A$ always omits its exterior we must have $A\subset\inte(A)$. Conversely, if $A=\inte(A)$ then $A$ clearly omits its boundary so $A$ is open.
+  The first statement holds because every interior point of $A$ is an element of $A$, and the definiton of $A$ being open says precisely that every element of $A$ is an interior point of $A$.
 
   The second statement follows from the first by taking complements: $A$ is closed iff $A^c$ is open iff $A^c=\inte(A^c)$ iff $A^c=\ext(A)$ iff $A=\inte(A)\cup\partial A$.
 \end{proof}
@@ -1875,19 +1875,20 @@ The terminology ``limit point'' is justified by the fact that in $\RR$, if $x$ i
 
 \begin{prop}
   \label{prop:closure-equiv}
-  We have $\overline{A}=A\cup\partial A=A\cup A'$.
+  The closure $\bar A$ is equal to both $A\cup\partial A$ and $A\cup A'$.
 \end{prop}
 
 \begin{proof}
-  Suppose first that $x\in A\cup\partial A$. If $x\in A$ we are done, so suppose $x\notin A$. Then $x\in \partial A$, so every neighborhood $V_\epsilon(x)$ meets $A$. Since $x\notin A$ this meeting must be in a point other than $x$ itself, and so $x\in A'$.
+  We first show that $A\cup\partial A\subset A\cup A'$. Suppose that $x\in A\cup\partial A$. If $x\in A$ we are done, so suppose $x\notin A$. Then $x\in \partial A$, so every neighborhood $V_\epsilon(x)$ meets $A$. Since $x\notin A$ this meeting must be in a point other than $x$ itself, and so $x\in A'$.
 
-  Converesly suppose that $x\in A\cup A'$. If $x\in A$ we are again done, so suppose $x\notin A$. Then $x\in A'$, so every neighborhood $V_\epsilon(x)$ meets $A$. Since $x\notin A$, every neighborhood $V_\epsilon(x)$ also meets $A^c$, and so $x\in\partial A$, as desired.
+  Converesly we show that $A\cup A'\subset A\cup\partial A$. Suppose that $x\in A\cup A'$. If $x\in A$ we are again done, so suppose $x\notin A$. Then $x\in A'$, so every neighborhood $V_\epsilon(x)$ meets $A$. Since $x\notin A$, every neighborhood $V_\epsilon(x)$ also meets $A^c$, and so $x\in\partial A$, as desired.
 \end{proof}
 
 % venn diagram of different types of points?
 
 % zooming metaphor?
 
+\newpage
 \subsection*{Exercises for \S \thesection}
 
 Decide whether the following sets are open, closed, both, or neither.
