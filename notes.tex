@@ -1639,6 +1639,10 @@ We close our discussion of series by answering our initial question about commut
 \section{The Cantor set}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{reading}
+  Abbott, \S 3.1
+\end{reading}
+
 In this chapter we study subsets of the real line using \emph{topology}, which is an abstract notion of shape. Before commencing with the appropriate definitions, we wish to give a taste for how complicated subsets of the real line can really be.
 
 To motivate our discussion, let us begin with the notoriously difficult problem of measuring the \emph{size} of a subset. We have already introduced the notion of countable and uncountable sets, which gives us some idea of their size. But this notion is very course (it has only two outcomes). In this section we wish to focus on two new ideas: the \emph{length} and the \emph{dimension} of a set. Once we have introduced topology we will briefly touch on a fourth notion called \emph{category}.
@@ -1763,7 +1767,11 @@ For a new example, if $\alpha=\frac14$ then we construct the modified Cantor set
 \section{The boundary of a set}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We can think of a subset $A$ of some universe $X$ as dividing the universe into two parts: the points in $A$ and the points in $A^c$. However this divide is purely set-theoretic in that it doesn't take into account the relative placement of the points. If one has any kind of idea about the location or ordering of the points of $X$, then $A$ really divides the universe into \emph{three} parts: the points well inside $A$, the points well outside of $A$, and the points on the boundary of $A$.
+\begin{reading}
+  Abbott, \S 3.2
+\end{reading}
+
+We can think of a subset $A$ of some universe $X$ as dividing the universe into two parts: the points in $A$ and the points in $A^c$. However this divide is purely set-theoretic in that it doesn't take into account the relative placement of the points. If one the other hand we have some idea about the location or ordering of the points of $X$, then we can think of $A$ as dividing the universe into \emph{three} parts: the points well inside $A$, the points well outside of $A$, and the points on the boundary of $A$.
 
 Recall the neighborhood notation that we introduced alongside the definition of convergence. If $x$ is any point of $\RR$ then the $\epsilon$-neighborhood of $x$ consists of all points whose distance to $x$ is less than $\epsilon$. In symobls:
 \[V_\epsilon(x)=\set{y\in\RR\mid|y-x|<\epsilon}
@@ -1777,10 +1785,10 @@ In other words $\epsilon$-neighborhood is simply the interval $V_\epsilon(x)=(x-
 \end{defn}
 
 \begin{example}
-  If $A$ is the closed interval $[0,1]$ then the boundary of $A$ is exactly the set $\{0,1\}$. Similarly, if $A$ is the open interval $(0,1)$ then the boundary is once again the set $\{0,1\}$.
+  If $A$ is the closed interval $[0,1]$ then the boundary of $A$ is the set $\{0,1\}$. Similarly, if $A$ is the open interval $(0,1)$ then the boundary is once again the set $\{0,1\}$.
 \end{example}
 
-Notice that the boundary points of a set $A$ may lie in $A$ but that they do not necessarily. In fact following the example above, it is easy to see that a closed interval will always contain its boundary, while an open interval will always omit its boundary. This observation leads us to make the following general definition of closed and open sets.
+Notice that the boundary points of a set $A$ may lie in $A$ or may not lie in $A$. In fact following the example above, it is easy to see that a closed interval will always contain its boundary, while an open interval will always omit its boundary. This observation leads us to make the following general definition of closed and open sets.
 
 \begin{defn}
   The set $A$ is \emph{open} if $\partial A\cap A=\emptyset$. The set $A\subset\RR$ is \emph{closed} if $\partial A\subset A$.
@@ -1836,7 +1844,7 @@ It is now time to introduce some more terminology surrounding open and closed se
   \end{itemize}
 \end{defn}
 
-Thus, as hinted in our motivation, any set $A$ it divides $\RR$ into three disjoint pieces: the interior of $A$, the exterior of $A$, and the boundary of $A$.
+Thus, to return to the motivation at the beginning of the section, any set $A$ divides $\RR$ into three disjoint pieces: the interior of $A$, the exterior of $A$, and the boundary of $A$.
 
 \begin{defn}
   The \emph{closure} of $A$ is the set $\overline{A}=A\cup\partial A$.
@@ -1879,6 +1887,36 @@ The terminology ``limit point'' is justified by the fact that in $\RR$, if $x$ i
 % venn diagram of different types of points?
 
 % zooming metaphor?
+
+\subsection*{Exercises for \S \thesection}
+
+Decide whether the following sets are open, closed, both, or neither.
+\begin{exerc}
+  \begin{enumerate}
+    \item $A=\set{0,1,\ldots,10}$
+    \item $A=\set{1/n\mid n\in\NN}\cup\{0\}$
+    \item $A=(-1,1)\cup\{2\}$
+    \item $A=[-1,1]\cup\{2\}$
+    \item $A=\QQ$
+    \item $A=\set{x\mid (\exists n\in\NN)\,\frac1{n+1}<x<\frac1n}$
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}
+  Give an example of a sequence of open sets $A_n$ such that $\bigcap A_n$ is \emph{not} open. Give an example of a sequence of closed sets $B_n$ such that $\bigcup B_n$ is \emph{not} closed.
+\end{exerc}
+
+%\question Suppose that $A$ is an open set, that $x\in A$, and that $x_n\to x$. Show that the sequence $x_n$ eventually lies in $A$.
+
+%\question Show that the previous exercise fails if $A$ is not assumed to be open. In other words, give an example of a set $A$, an element $x\in A$, and a sequence $x_n\to x$ such that the sequence $x_n$ does \emph{not} eventually lie in $A$.
+
+\begin{exerc}
+  Show that if $x\in A'$ then there exists a sequence $a_n$ such that $\{a_n\}\subset A$ and $\lim a_n=x$.
+\end{exerc}
+
+\begin{exerc}
+  Show that $\partial A$ is always closed.
+\end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
