@@ -1814,6 +1814,18 @@ As we have just seen, open and closed sets are not opposites, since it is possib
   By the symmetry of the definition of boundary point, it is clear that $\partial A=\partial(A^c)$. Hence $A$ omits its boundary if and only if $A^c$ contains its boundary.
 \end{proof}
 
+It is now time to introduce some more terminology surrounding open and closed sets.
+
+\begin{defn}
+  Let $A$ be a subset of $\RR$.
+  \begin{itemize}
+  \item A point $x$ is said to be an \emph{interior point} of $A$ if there exists a neighborhood $V_\epsilon(x)$ which is contained in $A$. The set of all interior points of $A$ is denoted $\inte(A)$.
+  \item A point $x$ is said to be an \emph{exterior point} of $A$ if there exists a neighborhood $V_\epsilon(x)$ which is contained in $A^c$. The set of all exterior points of $A$ is denoted $\ext(A)$.
+  \end{itemize}
+\end{defn}
+
+Thus, to return to the motivation at the beginning of the section, any set $A$ divides $\RR$ into three disjoint pieces: the interior of $A$, the exterior of $A$, and the boundary of $A$.
+
 \begin{thm}
   The union of any family of open sets is open. The intersection of finitely many open sets is open.
 \end{thm}
@@ -1833,18 +1845,6 @@ We also have an analogous statement regarding closed sets. It follows directly f
 \begin{example}
   The Cantor set is closed. Indeed, all of the sets removed in the construction of the Cantor set are open. This includes the initial removal of $(-\infty,0)$ and $(1,\infty)$, and then all the open middle thirds. Thus the complement of the Cantor set is a union of open sets and hence open. Hence the Cantor set is closed.
 \end{example}
-
-It is now time to introduce some more terminology surrounding open and closed sets.
-
-\begin{defn}
-  Let $A$ be a subset of $\RR$.
-  \begin{itemize}
-  \item A point $x$ is said to be an \emph{interior point} of $A$ if there exists a neighborhood $V_\epsilon(x)$ which is contained in $A$. The set of all interior points of $A$ is denoted $\inte(A)$.
-  \item A point $x$ is said to be an \emph{exterior point} of $A$ if there exists a neighborhood $V_\epsilon(x)$ which is contained in $A^c$. The set of all exterior points of $A$ is denoted $\ext(A)$.
-  \end{itemize}
-\end{defn}
-
-Thus, to return to the motivation at the beginning of the section, any set $A$ divides $\RR$ into three disjoint pieces: the interior of $A$, the exterior of $A$, and the boundary of $A$.
 
 \begin{defn}
   The \emph{closure} of $A$ is the set $\overline{A}=A\cup\partial A$.
@@ -1891,8 +1891,8 @@ The terminology ``limit point'' is justified by the fact that in $\RR$, if $x$ i
 \newpage
 \subsection*{Exercises for \S \thesection}
 
-Decide whether the following sets are open, closed, both, or neither.
 \begin{exerc}
+  For each of the following sets $A$, find the boundary $\partial A$. Then decide whether the following sets are open, closed, both, or neither.
   \begin{enumerate}
     \item $A=\set{0,1,\ldots,10}$
     \item $A=\set{1/n\mid n\in\NN}\cup\{0\}$
@@ -1926,7 +1926,7 @@ Decide whether the following sets are open, closed, both, or neither.
 
 Recall the Nested Interval Property, which states that the intersection of a family of nested closed intervals $I_n$ is nonempty. We have seen that this theorem may fail if the intervals are not assumed to be closed, or not assumed to be bounded. However, a version of the NIP does hold even if the intervals are replaced by arbitrary sets which are both closed and bounded.
 
-It turns out that for subsets of $\RR$, the closed and bounded properties together are very strong. Indeed if $A$ is bounded then every sequence of elements of $A$ has a convergent subsequence, and if $A$ is also closed then the limit of the subesquence lies in $A$. Sets with this latter property are given a special name.
+For subsets of $\RR$, being both closed and bounded is very strong. To understand why, notice that if $A$ is bounded then every sequence of elements of $A$ has a convergent subsequence, and if $A$ is also closed then the limit of the subesquence lies in $A$. Sets with this latter property are given a special name.
 
 \begin{defn}
   A subset $A\subset\RR$ is called \emph{compact} if every sequence from $A$ has a convergent subsequence whose limit lies in $A$.
@@ -1946,14 +1946,14 @@ The following result gives what one might call the ``nested compact sets propert
   For each $n$ choose any element $a_n\in A_n$. In particular the entire sequence lies in $A_1$, and since $A_1$ is compact, $a_n$ has a convergent subsequence $a_{n_k}$ with some limit $L\in A_1$. Moreover, since the $A_n$ are nested, for every $n$ some tail of the subsequence $a_{n_k}$ lies entirely within $A_n$. Since $A_n$ is compact, $a_{n_k}$ has a subsequence whose limit is in $A_n$. Since $a_{n_k}$ converges to $L$, this limit must be $x$ and therefore $L\in A_n$. Thus we have shown that $L\in\bigcap A_n$.
 \end{proof}
 
-Compact sets occur far and wide in mathematics. As just a small example consider the extreme value theorem from calculus. The way it is usually stated, the EVT says that a continuous function on a closed, bounded interval attains its minimum and maximum value. It turns out that the domain of the function can be taken to be any compact set. Since we have not yet introduced continuous functions, we give a sketch of the proof that will be made more formal in the future.
+Compact sets play a role in almost every area of mathematics. As just a small example consider the extreme value theorem from calculus. The way it is usually stated, the EVT says that a continuous function on a closed, bounded interval attains its minimum and maximum value. It turns out that the domain of the function can be taken to be any compact set. Since we have not yet introduced continuous functions, we give a sketch of the proof that will be made more formal in the future.
 
 \begin{thm}[Extreme Value Theorem]
   Any continuous function defined on a compact set attains a minimum and maximum value.
 \end{thm}
 
 \begin{proof}[Proof sketch]
-  Let $A$ be a compact set and let $f\colon A\to\RR$ be a continuous function. Let $R=\{f(x)\mid x\in A\}$ be the range of $f$, and let $\alpha=\sup(R)$. We wish to show there is some $x\in A$ such that $f(x)=\alpha$. Since $\alpha=\sup(R)$ there exists a sequence $y_n$ contained within $R$ such that $y_n\to\alpha$. For each $n$ we may then let $x_n\in A$ be such that $f(x_n)=y_n$. Since $A$ is compact, there exists a convergent subsequence $x_{n_k}$ with some limit $x$. Then since $f$ is continuous $f(x)=f(\lim x_{n_k})=\lim f(x_{n_k})=\lim y_{n_k}=\alpha$, as desired. [Passing the limit inside the function $f$ that remains to be justified using the definition of continuity.]
+  Let $A$ be a compact set and let $f\colon A\to\RR$ be a continuous function. Let $R=\{f(x)\mid x\in A\}$ be the range of $f$, and let $\alpha=\sup(R)$. We wish to show there is some $x\in A$ such that $f(x)=\alpha$. Since $\alpha=\sup(R)$ there exists a sequence $y_n$ contained within $R$ such that $y_n\to\alpha$. For each $n$ we may then let $x_n\in A$ be such that $f(x_n)=y_n$. Since $A$ is compact, there exists a convergent subsequence $x_{n_k}$ with some limit $x$. Then since $f$ is continuous $f(x)=f(\lim x_{n_k})=\lim f(x_{n_k})=\lim y_{n_k}=\alpha$, which means $f$ attains a maximum value. [It remains for us to justify why we can pass the limit from the inside to the outside ofthe function $f$.]
 \end{proof}
 
 As we have outlined above, any closed and bounded subset of $\RR$ is compact. In fact for subsets of $\RR$ (or even $\RR^n$), this turns out to be an equivalence.
@@ -1967,12 +1967,39 @@ As we have outlined above, any closed and bounded subset of $\RR$ is compact. In
 
   First suppose that $A$ is unbounded. Then for all $n$ there exists some point $a_n\in A$ such that $|a_n|>n$. It follows that every subsequence of $a_n$ does not converge at all, and therefore that $A$ is not compact.
 
-  Next suppose that $A$ is not closed. Then by Theorems~\ref{thm:closure} and~\ref{prop:closure-equiv} there exists some $a\in A'\setminus A$. By our remarks about limit points, there exists a sequence $a_n$ contained in $A$ such that $a_n\to a$. Then $a_n$ has the property that none of its subsequences converges to a point of $A$, and so $A$ is again not compact.
+  Next suppose that $A$ is not closed. Then by Theorems~\ref{thm:closure} and~\ref{prop:closure-equiv} there exists some $a\in A'\setminus A$. That is, $a$ is a limit point of $A$ that is not in $A$. By our remarks about limit points, there exists a sequence $a_n$ contained in $A$ such that $a_n\to a$. Then $a_n$ has the property that none of its subsequences converges to a point of $A$, and so $A$ is again not compact.
 \end{proof}
 
-\begin{rem}
-  The equivalence in the last theorem turns out to be something of a coincidence. Indeed when one studies the topology of more general types of spaces, the result above turns out to fail. For example, if one does topology on $\RR$ with the usual distance $|x-y|$ replaced by the function $d(x,y)=|x-y|/(1+|x-y|)$ then the entire space $\RR$ is closed and bounded, though it fails to be compact. Perhaps more surprisingly, if one studies general topology without any distance function at all, then our definition of compactness above fails to be adequate as well.
-\end{rem}
+The equivalence in the last theorem turns out to be something of a coincidence. Indeed when one studies the topology of more general types of spaces, the equivalence can fail. For example, if one studies topology on $\RR$ with the usual distance $|x-y|$ replaced by the function $d(x,y)=|x-y|/(1+|x-y|)$, then the entire space $\RR$ is closed and bounded, and fails to be compact. In general topology one doesn't use a distance function at all, so ``bounded'' doesn't make sense. In this setting, even the subsequence definiton of compactness fails to be adequate.
+
+\newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}
+  Decide whether each of the following sets $A$ is compact. If it is not compact, give an example of a sequence in $A$ with no subsequential limit in $A$.
+  \begin{enumerate}
+    \item $A=\set{0,1,\ldots,10}$
+    \item $A=\mathbb\ZZ$
+    \item $A=\set{1/n\mid n\in\NN}\cup\{0\}$
+    \item $A=\set{q\in\QQ\mid0\leq q\leq2}$
+    \item $A=\set{x\mid (\exists n\in\NN) |x-n|\leq.1}$
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}
+  Prove, using the ``subsequential limit'' definition of compactness, that if $A$ and $B$ are both compact then $A\cup B$ is compact.
+\end{exerc}
+
+\begin{exerc}
+  Prove, using the ``subsequential limit'' definition of compactness, that if $A$ is a closed subset of a compact set $B$, then $A$ is compact. Conclude that the boundary of any compact set is compact.
+\end{exerc}
+
+\begin{exerc}
+  \begin{enumerate}
+    \item Suppose that $A$ is a closed subset of $\RR$ which is bounded above. Show that $\sup(A)\in A$.
+    \item Suppose that $A$ is an open subset of $\RR$ which is bounded above. Show that $\sup(A)\notin A$.
+  \end{enumerate}
+\end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
