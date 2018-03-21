@@ -1773,16 +1773,17 @@ For a new example, if $\alpha=\frac14$ then we construct the modified Cantor set
 
 We can think of a subset $A$ of some universe $X$ as dividing the universe into two parts: the points in $A$ and the points in $A^c$. However this divide is purely set-theoretic in that it doesn't take into account the relative placement of the points. If one the other hand we have some idea about the location or ordering of the points of $X$, then we can think of $A$ as dividing the universe into \emph{three} parts: the points well inside $A$, the points well outside of $A$, and the points on the boundary of $A$.
 
-Recall the neighborhood notation that we introduced alongside the definition of convergence. If $x$ is any point of $\RR$ then the $\epsilon$-neighborhood of $x$ consists of all points whose distance to $x$ is less than $\epsilon$. In symobls:
+In order to define these concepts formally, first recall the neighborhood notation that we introduced alongside the definition of convergence. For any point $x$, the \emph{$\epsilon$-neighborhood of $x$} consists of all points that are less than $\epsilon$ away from $x$. In symbols:
 \[V_\epsilon(x)=\set{y\in\RR\mid|y-x|<\epsilon}
 \]
-In other words $\epsilon$-neighborhood is simply the interval $V_\epsilon(x)=(x-\epsilon,x+\epsilon)$.
 
-% mention of other spaces such as plane, sphere, metric space?
+In other words, the neighborhood $V_\epsilon(x)$ is an interval centered at $x$, that is, $(x-\epsilon,x+\epsilon)$. Note however that if we were to make the analogous definition for $\RR^2$ we would define $V_\epsilon(x)=$ a disk centered at $x$, for $\RR^3$ we would define $V_\epsilon(x)=$ a ball centered at $x$, and so on.
 
 \begin{defn}
   Let $A$ be a subset of $\RR$. A point $x$ is said to be a \emph{boundary point} of $A$ if every neighborhood $V_\epsilon(x)$ meets both $A$ and $A^c$. The set of all boundary points of $A$ is denoted $\partial A$.
 \end{defn}
+
+Intuitively, if we think of points of $A$ as colored red and points of $A^c$ as colored blue, the boundary of $A$ consists of those points such that no matter how far you zoom in on them, you still see the colors red and blue.
 
 \begin{example}
   If $A$ is the closed interval $[0,1]$ then the boundary of $A$ is the set $\{0,1\}$. Similarly, if $A$ is the open interval $(0,1)$ then the boundary is once again the set $\{0,1\}$.
@@ -1791,7 +1792,10 @@ In other words $\epsilon$-neighborhood is simply the interval $V_\epsilon(x)=(x-
 Notice that the boundary points of a set $A$ may lie in $A$ or may not lie in $A$. In fact following the example above, it is easy to see that a closed interval will always contain its boundary, while an open interval will always omit its boundary. This observation leads us to make the following general definition of closed and open sets.
 
 \begin{defn}
-  The set $A$ is \emph{open} if $\partial A\cap A=\emptyset$. The set $A\subset\RR$ is \emph{closed} if $\partial A\subset A$.
+  \begin{itemize}
+    \item The set $A$ is \emph{open} if $\partial A\cap A=\emptyset$.
+    \item The set $A\subset\RR$ is \emph{closed} if $\partial A\subset A$.
+  \end{itemize}
 \end{defn}
 
 \begin{example}
@@ -1827,7 +1831,7 @@ It is now time to introduce some more terminology surrounding open and closed se
 Thus, to return to the motivation at the beginning of the section, any set $A$ divides $\RR$ into three disjoint pieces: the interior of $A$, the exterior of $A$, and the boundary of $A$.
 
 \begin{thm}
-  The union of any family of open sets is open. The intersection of finitely many open sets is open.
+  The union of any collection of open sets is open. The intersection of finitely many open sets is open.
 \end{thm}
 
 \begin{proof}
@@ -1839,7 +1843,7 @@ Thus, to return to the motivation at the beginning of the section, any set $A$ d
 We also have an analogous statement regarding closed sets. It follows directly from the previous theorem using De Morgan's law.
 
 \begin{thm}
-  The intersection of any family of closed sets is closed. The union of finitely many closed sets is closed.
+  The intersection of any collection of closed sets is closed. The union of finitely many closed sets is closed.
 \end{thm}
 
 \begin{example}
@@ -1916,7 +1920,11 @@ The terminology ``limit point'' is justified by the fact that in $\RR$, if $x$ i
 \end{exerc}
 
 \begin{exerc}
-  Show that $\partial A$ is always closed.
+  For any set $A$, show that $\inte(A)$ and $\ext(A)$ are open, and $\partial A$ and $\overline{A}$ are closed.
+\end{exerc}
+
+\begin{exerc}
+  Show that $A$ is clopen (both open and closed) if and only if $\partial A=\emptyset$.
 \end{exerc}
 
 \newpage
