@@ -1771,18 +1771,19 @@ For a new example, if $\alpha=\frac14$ then we construct the modified Cantor set
   Abbott, \S 3.2
 \end{reading}
 
-We can think of a subset $A$ of some universe $X$ as dividing the universe into two parts: the points in $A$ and the points in $A^c$. However this divide is purely set-theoretic in that it doesn't take into account the relative placement of the points. If one the other hand we have some idea about the location or ordering of the points of $X$, then we can think of $A$ as dividing the universe into \emph{three} parts: the points well inside $A$, the points well outside of $A$, and the points on the boundary of $A$.
+We can think of a subset $A$ of some universe set $X$ as a black-and-white division: every point is either in $A$ or in $A^c$. However this division is purely set-theoretic in that it doesn't take into account the relative placement of the points. If one the other hand we have some idea about the location or ordering of the points of $X$, then we can imagine a kind of grey area for points that are on the boundary of $A$.
 
-Recall the neighborhood notation that we introduced alongside the definition of convergence. If $x$ is any point of $\RR$ then the $\epsilon$-neighborhood of $x$ consists of all points whose distance to $x$ is less than $\epsilon$. In symobls:
+Before we formally define the concept of boundary, recall the neighborhood notation that we introduced alongside the definition of convergence. The \emph{$\epsilon$-neighborhood of $x$} consists of all points that are less than $\epsilon$ away from $x$. In symbols:
 \[V_\epsilon(x)=\set{y\in\RR\mid|y-x|<\epsilon}
 \]
-In other words $\epsilon$-neighborhood is simply the interval $V_\epsilon(x)=(x-\epsilon,x+\epsilon)$.
 
-% mention of other spaces such as plane, sphere, metric space?
+In other words, $V_\epsilon(x)$ is an interval centered at $x$, that is, $(x-\epsilon,x+\epsilon)$. Note that if we were working in $X=\RR^2$ we would define $V_\epsilon(x)$ to be a disk centered at $x$, in $X=\RR^3$ we would define $V_\epsilon(x)$ to be a ball centered at $x$, and so on.
 
 \begin{defn}
   Let $A$ be a subset of $\RR$. A point $x$ is said to be a \emph{boundary point} of $A$ if every neighborhood $V_\epsilon(x)$ meets both $A$ and $A^c$. The set of all boundary points of $A$ is denoted $\partial A$.
 \end{defn}
+
+Intuitively, if we think of points of $A$ as colored black and points of $A^c$ as colored white, the boundary of $A$ consists of those points such that no matter how far you zoom in on them, you still see the colors black and white.
 
 \begin{example}
   If $A$ is the closed interval $[0,1]$ then the boundary of $A$ is the set $\{0,1\}$. Similarly, if $A$ is the open interval $(0,1)$ then the boundary is once again the set $\{0,1\}$.
@@ -1791,7 +1792,10 @@ In other words $\epsilon$-neighborhood is simply the interval $V_\epsilon(x)=(x-
 Notice that the boundary points of a set $A$ may lie in $A$ or may not lie in $A$. In fact following the example above, it is easy to see that a closed interval will always contain its boundary, while an open interval will always omit its boundary. This observation leads us to make the following general definition of closed and open sets.
 
 \begin{defn}
-  The set $A$ is \emph{open} if $\partial A\cap A=\emptyset$. The set $A\subset\RR$ is \emph{closed} if $\partial A\subset A$.
+  \begin{itemize}
+    \item The set $A$ is \emph{open} if $\partial A\cap A=\emptyset$.
+    \item The set $A\subset\RR$ is \emph{closed} if $\partial A\subset A$.
+  \end{itemize}
 \end{defn}
 
 \begin{example}
@@ -1814,79 +1818,95 @@ As we have just seen, open and closed sets are not opposites, since it is possib
   By the symmetry of the definition of boundary point, it is clear that $\partial A=\partial(A^c)$. Hence $A$ omits its boundary if and only if $A^c$ contains its boundary.
 \end{proof}
 
-It is now time to introduce some more terminology surrounding open and closed sets.
+It is now time to introduce some more terminology that will help us understand boundary and open and closed sets.
 
 \begin{defn}
   Let $A$ be a subset of $\RR$.
   \begin{itemize}
-  \item A point $x$ is said to be an \emph{interior point} of $A$ if there exists a neighborhood $V_\epsilon(x)$ which is contained in $A$. The set of all interior points of $A$ is denoted $\inte(A)$.
-  \item A point $x$ is said to be an \emph{exterior point} of $A$ if there exists a neighborhood $V_\epsilon(x)$ which is contained in $A^c$. The set of all exterior points of $A$ is denoted $\ext(A)$.
+    \item The \emph{interior} of $A$ is $\inte(A)=A\setminus\partial A$.
+    \item The \emph{closure} of $A$ is $\cl(A)=A\cup\partial A$.
   \end{itemize}
 \end{defn}
 
-Thus, to return to the motivation at the beginning of the section, any set $A$ divides $\RR$ into three disjoint pieces: the interior of $A$, the exterior of $A$, and the boundary of $A$.
+Thus we have $\inte(A)\subset A\subset\cl(A)$. It is not hard to believe that $\inte(A)$ is open and $\cl(A)$ is closed. In order to prove this, we need the following more basic fact.
+
+\begin{prop}
+  \label{prop:closure}
+  Let $A$ be a subset of $\RR$.
+  \begin{itemize}
+    \item $\inte(\inte(A))=\inte(A)$.
+    \item $\cl(\cl(A))=\cl(A)$.
+  \end{itemize}
+\end{prop}
+
+The proof of the proposition is requested in the exercises.
 
 \begin{thm}
-  The union of any family of open sets is open. The intersection of finitely many open sets is open.
+  For any set $A$ we have that $\inte(A)$ is open and $\cl(A)$ is closed.
 \end{thm}
 
 \begin{proof}
-  For the first statement let $\mathcal A$ be a family of open sets, and $S=\bigcup\mathcal A$. Let $x\in S$; we wish to show that $x$ lies in the interior of $S$. Indeed, let $A\in\mathcal A$ be such that $x\in A$. Since $A$ is open, $x$ is in the interior of $A$. Thus there exists $\epsilon$ such that $V_\epsilon(x)\subset A$. Hence also $V_\epsilon(x)\subset S$, so $x$ lies in the interior of $S$, as desired.
-
-  For the second statement let $A_1,\ldots,A_n$ be open sets, let $T=A_1\cap\cdots\cap A_n$, and let $x\in T$. Then for all $i\leq n$ there exists $\epsilon_i$ such that $V_{\epsilon_i}(x)\subset A_i$. Letting $\epsilon=\min(\epsilon_1,\ldots,\epsilon_n)$ we clearly have that $V_\epsilon(x)\subset T$. Thus $x$ lies in the interior of $T$.
+  Let us prove first that $\cl(A)$ is closed. For any set $B$ we have $\partial B\subset \cl(B)$. Hence we have $\partial(\cl(A))\subset\cl(\cl(A))$, and by the above we have $\cl(\cl(A))=\cl(A)$. Hence we have $\partial(\cl(A))\subset\cl(A)$ and so $\cl(A)$ is closed.
+  
+  To see that $\inte(A)$ is open, note that $\inte(A)=\cl(A^c)^c$, and hence $\inte(A)$ is the complement of a closed set.
 \end{proof}
 
-We also have an analogous statement regarding closed sets. It follows directly from the previous theorem using De Morgan's law.
+\begin{thm}
+  The union of any collection of open sets is open. The intersection of finitely many open sets is open.
+\end{thm}
+
+\begin{proof}
+  For the first statement let $\mathcal A$ be a collection of open sets, and $S=\bigcup\mathcal A$. We will show that $S\subset\inte(S)$. This is sufficient because clearly $S\supset\inte(S)$, so $S=\inte(S)$, and the previous result states that the interior of any set is open.
+  
+  Given $x\in S$ let $A\in\mathcal A$ be such that $x\in A$. Since $A$ is open, $x$ is in the interior of $A$. Thus there exists $\epsilon$ such that $V_\epsilon(x)\subset A$. Hence also $V_\epsilon(x)\subset S$, so $x$ lies in the interior of $S$, as desired.
+
+  For the second statement let $A_1,\ldots,A_n$ be open sets, let $T=A_1\cap\cdots\cap A_n$, and let $x\in T$. Then for all $i\leq n$ there exists $\epsilon_i$ such that $V_{\epsilon_i}(x)\subset A_i$. Letting $\epsilon=\min(\epsilon_1,\ldots,\epsilon_n)$ we clearly have that $V_\epsilon(x)\subset T$. Thus $x$ lies in the interior of $T$, and we can conclude as before.
+\end{proof}
+
+We also have an analogous statement regarding closed sets. It follows directly from the previous theorem using complements.
 
 \begin{thm}
-  The intersection of any family of closed sets is closed. The union of finitely many closed sets is closed.
+  The intersection of any collection of closed sets is closed. The union of finitely many closed sets is closed.
 \end{thm}
 
 \begin{example}
   The Cantor set is closed. Indeed, all of the sets removed in the construction of the Cantor set are open. This includes the initial removal of $(-\infty,0)$ and $(1,\infty)$, and then all the open middle thirds. Thus the complement of the Cantor set is a union of open sets and hence open. Hence the Cantor set is closed.
 \end{example}
 
-\begin{defn}
-  The \emph{closure} of $A$ is the set $\overline{A}=A\cup\partial A$.
-\end{defn}
+We conclude this section with a justification for the term ``closed''. The next result says that closed sets are closed under the limit operation.
 
 \begin{thm}
-  \label{thm:closure}
-  A set $A$ is open if and only if $A=\inte(A)$. A set $A$ is closed if and only if $A=\overline{A}$.
+  Suppose $a_n$ is a sequence of $A$ and $a_n\to x$. If $A$ is closed then $x\in A$.
 \end{thm}
 
 \begin{proof}
-  The first statement holds because every interior point of $A$ is an element of $A$, and the definiton of $A$ being open says precisely that every element of $A$ is an interior point of $A$.
-
-  The second statement follows from the first by taking complements: $A$ is closed iff $A^c$ is open iff $A^c=\inte(A^c)$ iff $A^c=\ext(A)$ iff $A=\inte(A)\cup\partial A$.
+  Using contraposition, suppose $x\notin A$. Since $a_n\to x$, for every $\epsilon$ there exists $n$ such that $a_n\in V_\epsilon(x)$. Thus $V_\epsilon(x)$ meets $A$ (at $a_n$) and meets $A^c$ (at $x$). This means by definition that $x\in\partial A$. Thus $x$ is a boundary point of $A$ that is not in $A$, so $A$ is not closed.
 \end{proof}
 
-We conclude this section with a second very natural method of forming the closure of a set. Intuitively, if one begins with a set $A$ and takes limits of all convergent sequences in $A$, then one should end up with the closure of $A$.
-
-\begin{defn}
-  Let $A$ be a subset of $\RR$.
-  \begin{itemize}
-  \item A point $x$ is said to be a \emph{limit point} of $A$ if every neighborhood $V_\epsilon(x)$ meets $A$ in some point other than $x$ itself. The set of limit points of $A$ is denoted $A'$.
-  \item A point $x$ is said to be a \emph{isolated point} of $A$ if $x\in A$ and there exists a neighborhood $V_\epsilon(x)$ which meets $A$ in no points other than $x$ itself. In other words the set of isolated points of $A$ is equal to $A\setminus A'$.
-  \end{itemize}
-\end{defn}
-
-The terminology ``limit point'' is justified by the fact that in $\RR$, if $x$ is a limit point of $A$ then there is some sequence of elements of $A$ which converges to $x$. The following result explains the ``closure'' terminology: the closure of a set can be thought of as the closure under the limit operation.
-
-\begin{prop}
-  \label{prop:closure-equiv}
-  The closure $\bar A$ is equal to both $A\cup\partial A$ and $A\cup A'$.
-\end{prop}
-
-\begin{proof}
-  We first show that $A\cup\partial A\subset A\cup A'$. Suppose that $x\in A\cup\partial A$. If $x\in A$ we are done, so suppose $x\notin A$. Then $x\in \partial A$, so every neighborhood $V_\epsilon(x)$ meets $A$. Since $x\notin A$ this meeting must be in a point other than $x$ itself, and so $x\in A'$.
-
-  Converesly we show that $A\cup A'\subset A\cup\partial A$. Suppose that $x\in A\cup A'$. If $x\in A$ we are again done, so suppose $x\notin A$. Then $x\in A'$, so every neighborhood $V_\epsilon(x)$ meets $A$. Since $x\notin A$, every neighborhood $V_\epsilon(x)$ also meets $A^c$, and so $x\in\partial A$, as desired.
-\end{proof}
+% We conclude this section with a second very natural method of forming the closure of a set. Intuitively, if one begins with a set $A$ and takes limits of all convergent sequences in $A$, then one should end up with the closure of $A$.
+%
+% \begin{defn}
+%   Let $A$ be a subset of $\RR$.
+%   \begin{itemize}
+%   \item A point $x$ is said to be a \emph{limit point} of $A$ if every neighborhood $V_\epsilon(x)$ meets $A$ in some point other than $x$ itself. The set of limit points of $A$ is denoted $A'$.
+%   \item A point $x$ is said to be a \emph{isolated point} of $A$ if $x\in A$ and there exists a neighborhood $V_\epsilon(x)$ which meets $A$ in no points other than $x$ itself. In other words the set of isolated points of $A$ is equal to $A\setminus A'$.
+%   \end{itemize}
+% \end{defn}
+%
+% The terminology ``limit point'' is justified by the fact that in $\RR$, if $x$ is a limit point of $A$ then there is some sequence of elements of $A$ which converges to $x$. The following result explains the ``closure'' terminology: the closure of a set can be thought of as the closure under the limit operation.
+%
+% \begin{prop}
+%   \label{prop:closure-equiv}
+%   The closure $\bar A$ is equal to both $A\cup\partial A$ and $A\cup A'$.
+% \end{prop}
+%
+% \begin{proof}
+%   We first show that $A\cup\partial A\subset A\cup A'$. Suppose that $x\in A\cup\partial A$. If $x\in A$ we are done, so suppose $x\notin A$. Then $x\in \partial A$, so every neighborhood $V_\epsilon(x)$ meets $A$. Since $x\notin A$ this meeting must be in a point other than $x$ itself, and so $x\in A'$.
+%
+%   Converesly we show that $A\cup A'\subset A\cup\partial A$. Suppose that $x\in A\cup A'$. If $x\in A$ we are again done, so suppose $x\notin A$. Then $x\in A'$, so every neighborhood $V_\epsilon(x)$ meets $A$. Since $x\notin A$, every neighborhood $V_\epsilon(x)$ also meets $A^c$, and so $x\in\partial A$, as desired.
+% \end{proof}
 
 % venn diagram of different types of points?
-
-% zooming metaphor?
 
 \newpage
 \subsection*{Exercises for \S \thesection}
@@ -1912,12 +1932,17 @@ The terminology ``limit point'' is justified by the fact that in $\RR$, if $x$ i
 %\question Show that the previous exercise fails if $A$ is not assumed to be open. In other words, give an example of a set $A$, an element $x\in A$, and a sequence $x_n\to x$ such that the sequence $x_n$ does \emph{not} eventually lie in $A$.
 
 \begin{exerc}
-  Show that if $x\in A'$ then there exists a sequence $a_n$ such that $\{a_n\}\subset A$ and $\lim a_n=x$.
+  Show that $A$ is clopen (both open and closed) if and only if $\partial A=\emptyset$.
 \end{exerc}
 
 \begin{exerc}
-  Show that $\partial A$ is always closed.
+  Provide the proof of Proposition~\ref{prop:closure}. [Hint: First prove the second statement, then use the fact that $\inte(A)=\cl(A^c)^c$ to obtain the first statement.]
 \end{exerc}
+
+\begin{exerc}
+  Show that $\inte(A)$ contains all open subsets of $A$. Show that $\cl(A)$ is contained in all closed supersets of $A$.
+\end{exerc}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1943,7 +1968,7 @@ The following result gives what one might call the ``nested compact sets propert
 \end{thm}
 
 \begin{proof}
-  For each $n$ choose any element $a_n\in A_n$. In particular the entire sequence lies in $A_1$, and since $A_1$ is compact, $a_n$ has a convergent subsequence $a_{n_k}$ with some limit $L\in A_1$. Moreover, since the $A_n$ are nested, for every $n$ some tail of the subsequence $a_{n_k}$ lies entirely within $A_n$. Since $A_n$ is compact, $a_{n_k}$ has a subsequence whose limit is in $A_n$. Since $a_{n_k}$ converges to $L$, this limit must be $x$ and therefore $L\in A_n$. Thus we have shown that $L\in\bigcap A_n$.
+  For each $n$ choose any element $a_n\in A_n$. In particular the entire sequence lies in $A_1$, and since $A_1$ is compact, $a_n$ has a convergent subsequence $a_{n_k}$ with some limit $L\in A_1$. Moreover, since the $A_n$ are nested, for every $n$ some tail of the subsequence $a_{n_k}$ lies entirely within $A_n$. Since $A_n$ is compact, $a_{n_k}$ has a subsequence whose limit is in $A_n$. Since $a_{n_k}$ converges to $L$, this limit must be $L$ and therefore $L\in A_n$. Thus we have shown that $L\in\bigcap A_n$.
 \end{proof}
 
 Compact sets play a role in almost every area of mathematics. As just a small example consider the extreme value theorem from calculus. The way it is usually stated, the EVT says that a continuous function on a closed, bounded interval attains its minimum and maximum value. It turns out that the domain of the function can be taken to be any compact set. Since we have not yet introduced continuous functions, we give a sketch of the proof that will be made more formal in the future.
@@ -1975,7 +2000,7 @@ The equivalence in the last theorem turns out to be something of a coincidence. 
 \newpage
 \subsection*{Exercises for \S \thesection}
 
-\begin{exerc}
+\begin{exerc}[See Abbott, ex 3.3.5]
   Decide whether each of the following sets $A$ is compact. If it is not compact, give an example of a sequence in $A$ with no subsequential limit in $A$.
   \begin{enumerate}
     \item $A=\set{0,1,\ldots,10}$
