@@ -2006,11 +2006,11 @@ The equivalence in the last theorem turns out to be something of a coincidence. 
 \section{Connected sets}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Thinking about sets in the plane, it is easy to visualize the idea that some sets come all in one blob, while others are split up into multiple blobs. But if a set is just a collection of points, how can we make precise the distinction between one and multiple blobs? This task turns out to be somewhat difficult to achieve using just na\"ive intuition.
+Thinking about sets in the plane, it is easy to visualize the idea that some sets come all in one blob, while others are split up into multiple blobs. But if a set is just a collection of points, how can we make precise the distinction between one and multiple blobs? This task turns out to be somewhat difficult to achieve using only na\"ive intuition.
 
 For open sets a good definition is the natural one: an open set is connected if it cannot be expressed as a union of two (nonempty) disjoint open subsets. Thus $(0,1)\cup(1,2)$ is disconnected, and one can verify that $(0,3)$ is connected. However this definition is problematic for more general types of sets. For example $[0,1]\cup[2,3]$ should be disconnected but it can't be expressed as a union of two disjoint open subsets. At this point one might suggest dropping the condition that the two disjoint subsets be open. But consider that $(0,1)\cup[1,2)$ is actually connected, being equal to $(0,2)$.
 
-To begin to resolve this mess, let us return to the example of $[0,1]\cup[2,3]$. Although it cannot be expressed as a union of two disjoint open subsets, its two components are \emph{contained} in disjoint open subsets. That is, $[0,1]\subset(-.1,1.1)$ and $[2,3]\subset(1.9,3.1)$. The following correct definition takes all of this discussion into account. 
+To begin to resolve this mess, let us return to the example of $[0,1]\cup[2,3]$. Although it cannot be expressed as a union of two disjoint open subsets, its two components are \emph{contained} in disjoint open subsets. That is, $[0,1]\subset(-0.1,1.1)$ and $[2,3]\subset(1.9,3.1)$. The following correct definition is the end result of this line of thinking.
 
 \begin{defn}
   A subset $A\subset\RR^n$ is said to be \emph{disconnected} if there exist disjoint open sets $V,V'$, both meeting $A$, and such that $A\subset V\cup V'$. A subset $A\subset\RR^n$ is said to be \emph{connected} if it is not disconnected.
@@ -2022,7 +2022,7 @@ Observe that it was easier to define disconnectedness first, and connectedness a
   The union $(0,1)\cup(3,4)$ is clearly disconnected. The Cantor set is disconnected, being contained in $(-1,\frac12)\cup(\frac12,2)$. The set $\QQ$ is disconnected, being contained in $(-\infty,\sqrt2)\cup(\sqrt2,\infty)$.
 \end{example}
 
-In fact, as the next proposition shows, any subset of $\RR$ which is not an interval must be disconnected. In the past we have mentioned open and closed intervals, but when we say just \emph{interval}, we mean an interval of any type. Thus the sets $(a,b)$, $(a,b]$, $[a,b)$, and $[a,b]$ are all intervals, where $a,b$ may be real numbers or even $\pm\infty$. It is easy to see that a subset $A\subset\RR$ is an interval if and only if whenever $a,b\in A$ and $a<c<b$ we have $c\in A$ too.
+In fact, as the next proposition shows, any subset of $\RR$ which is not an interval must be disconnected. In the past we have mentioned open and closed intervals, but when we say just \emph{interval}, we mean an interval of any type. Thus the sets $(a,b)$, $(a,b]$, $[a,b)$, and $[a,b]$ are all intervals, where $a,b$ may be real numbers or even $\pm\infty$ when it makes sense. It is easy to see that a subset $A\subset\RR$ is an interval if and only if whenever $a,b\in A$ and $a<c<b$ we have $c\in A$ too.
 
 \begin{prop}
   If $A$ is a subset of $\RR$ and $A$ is connected, then $A$ is an interval.
@@ -2041,13 +2041,23 @@ So far we have not given any examples of connected sets. Intuitively speaking al
 \end{thm}
 
 \begin{proof}
-  We have already shown that connected subsets of $\RR$ must be intervals. Conversely, let $I$ be an interval, and towards a contradiction let $V,V'$ be disjoint open sets meeting $I$, such that $I\subset V\cup V'$. Since $V,V'$ meet $I$ we can choose elements $a_1\in I\cap V$ and $b_1\in I\cap V'$. Since $V,V'$ are disjoint, we can assume without loss of generality that $a_1<b_1$.
+  We have already shown that connected subsets of $\RR$ must be intervals. Conversely, let $I$ be an interval, and suppose towards a contradiction that $I\subset V\cup V'$ where $V,V'$ are disjoint open sets meeting $I$. Let us also choose specific elements $a_1\in I\cap V$ and $b_1\in I\cap V'$, and assume without loss of generality that $a_1<b_1$.
 
   In the next part of the proof, we will use $a_1,b_1$ as the basis for sequences $a_n$ and $b_n$. The sequence $a_n$ will be monotone increasing and lie in $V$, while the sequence $b_n$ will be monotone decreasing and lie in $V'$. Moreover the two sequences will be getting closer and closer to one another, that is, $a_n-b_n\to0$.
 
   Assuming this has been done, we can complete the proof as follows. By the monotone convergence theorem $a_n$ and $b_n$ both converge, and since $a_n-b_n\to0$ they both converge to the same limit $L$. Since $I$ is an interval and $a_1\leq L\leq b_1$, we clearly have $L\in I$. Since $I\subset V\cup V'$, we have either $L\in V$ or $V'$. But $L$ cannot be in $V$ since $V$ is open and $L$ is a limit of points outside $V$. Similarly, $L$ cannot be in $V'$, resulting in a contradiction.
 
   To construct the sequences $a_n$ and $b_n$, assume the terms $a_n,b_n$ have been defined and define $a_{n+1},b_{n+1}$ as follows. Let $c$ be the midpoint of $a_n,b_n$. Since $I$ is an interval, $c$ lies in $I$ too. Since $I\subset V\cup V'$, we either have $c\in V$ or $V'$. If $c$ lies in $V$ then let $a_{n+1}=c$ and $b_{n+1}=b_n$; if $c$ lies in $V'$ then let $a_{n+1}=a_n$ and $b_{n+1}=c$. In either case we have everything we want: $a_{n+1}\in V$, $b_{n+1}\in V'$, $a_n\leq a_{n+1}<b_{n+1}\leq b_n$ and the distance between $a_{n+1},b_{n+1}$ has decreased by half.
+\end{proof}
+
+Recall that the compact sets will play a key role in the Extreme Value Theorem from calculus. Similarly, the connected sets will play a key role in the Intermediate Value Theorem from calculus. Once again, we provide only a preview.
+
+\begin{thm}[Intermediate Value Theorem]
+  If $f$ is a continuous function defined on an interval, then $f(a)<0<f(b)$ implies there exists $c$ such that $f(c)=0$.
+\end{thm}
+
+\begin{proof}[Sketch of proof]
+  If there was no such $c$, then the sets $V=\{x\mid f(x)<0\}$ and $V'=\{x\mid f(x)>0\}$ would witness that the domain of $f$ is disconnected, a contradiction. [It remains to justify why $V$ and $V'$ are open.]
 \end{proof}
 
 Athough we had some difficulty establishing the intervals are connected, this fact can be leveraged to show that a variety of subsets of $\RR^n$ are connected. For this we will need to see how one can piece together several connected sets to make a larger one.
@@ -2057,7 +2067,7 @@ Athough we had some difficulty establishing the intervals are connected, this fa
 \end{prop}
 
 \begin{proof}
-  Suppose, towards a contradiction, that there exist disjoint open sets $V,V'$ meeting $S$ such that $S\subset V\cup V'$. Since each set $A\in\mathcal F$ is connected, must be contained in either $V$ or $V'$. Indeed, otherwise $V,V'$ would witness that $A$ is disconnected. Since both $V,V'$ meet $S$, we can find $A,B\in\mathcal F$ such that $A\subset V$ and $B\subset V'$. But we are assuming that $A,B$ overlap, while $V,V'$ are disjoint, a contradiction.
+  Suppose, towards a contradiction, that there exist disjoint open sets $V,V'$ meeting $S$ such that $S\subset V\cup V'$. Since each set $A\in\mathcal F$ is connected, it must be contained in either $V$ or $V'$. Indeed, otherwise $V,V'$ would witness that $A$ is disconnected. Since both $V,V'$ meet $S$, we can find $A,B\in\mathcal F$ such that $A\subset V$ and $B\subset V'$. But we are assuming that $A,B$ overlap, while $V,V'$ are disjoint, a contradiction.
 \end{proof}
 
 As a simple application, this result can be used to show that disks in $\RR^2$ are connected.
@@ -2071,6 +2081,38 @@ As a simple application, this result can be used to show that disks in $\RR^2$ a
 \end{proof}
 
 % connected components?
+
+\newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}
+  Decide whether each of the following sets $A$ is connected. If it is not connected, give an example of disjoint open sets $V,V'$ meeting $A$ such that $S\subset V\cup V'$.
+  \begin{enumerate}
+    \item $\set{x\mid x^2<5}$
+    \item $\set{x\mid 2<x^2<5}$
+    \item $\set{x\mid x^3-3x^2+x=0}$
+    \item $\set{x\mid x^3+x^2+x=0}$
+    \item A countably infinite set $A$
+  \end{enumerate}
+\end{exerc}
+  
+\begin{exerc}
+  Show that a subset $A\subset\RR$ is an interval if and only if whenever $a,b\in A$ and $a<c<b$ we have $c\in A$ too.
+\end{exerc}
+
+%\question Suppose $A$ and $B$ are open intervals. Under what circumstances will $A\cup B$ be connected? Under what circumstances  will $A\cap B$ be connected?
+
+\begin{exerc}
+  If $A,B$ are connected subsets of $\RR$, show that $A\cap B$ is connected. Is this true for connected subsets $A,B$ of $\RR^2$?
+\end{exerc}
+
+\begin{exerc}
+  Let $A$ be a subset of $\RR^n$.
+  \begin{enumerate}
+    \item Show that any open set which meets $\cl(A)$ also meets $A$. [Recall that $\cl(A)=A\cup\partial A$.]
+    \item Show that if $A$ is connected then $\cl(A)$ is connected.
+  \end{enumerate}
+\end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
