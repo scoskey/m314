@@ -1974,7 +1974,7 @@ The following result gives what one might call the ``nested compact sets propert
 Compact sets play a role in almost every area of mathematics. As just a small example consider the extreme value theorem from calculus. The way it is usually stated, the EVT says that a continuous function on a closed, bounded interval attains its minimum and maximum value. It turns out that the domain of the function can be taken to be any compact set. Since we have not yet introduced continuous functions, we give a sketch of the proof that will be made more formal in the future.
 
 \begin{thm}[Extreme Value Theorem]
-  Any continuous function defined on a compact set attains a minimum and maximum value.
+  Any continuous function with a compact domain attains a minimum and maximum value.
 \end{thm}
 
 \begin{proof}[Proof sketch]
@@ -2078,7 +2078,7 @@ So far we have not given any examples of connected sets. Intuitively speaking al
 Recall that the compact sets will play a key role in the Extreme Value Theorem from calculus. Similarly, the connected sets will play a key role in the Intermediate Value Theorem from calculus. Once again, we provide only a preview.
 
 \begin{thm}[Intermediate Value Theorem]
-  If $f$ is a continuous function defined on an interval, then $f(a)<0<f(b)$ implies there exists $c$ such that $f(c)=0$.
+  If $f$ is a continuous function with a connected domain, then $f(a)<0<f(b)$ implies there exists $c$ such that $f(c)=0$.
 \end{thm}
 
 \begin{proof}[Sketch of proof]
@@ -2235,7 +2235,7 @@ When $f_n\to f$ in the uniform metric, we say that the sequence $f_n$ \emph{conv
 
 So far in this course we have investigated real numbers and their arithmetic, and sets of real numbers. In this part we will study functions, especially those that arise naturally in models and applications.
 
-Many of the most important functions in terms of theory, models, and applications turn out to be continuous. For example if you go for a jog, the distance you have travelled varies continuously over time. Moreover many common expressions such as $x^2$, $\ln(x)$, or $3\sin(x)-2e^x$ define continuous functions. However it is important to note that not all natural functions are continuous. For example the charge for a phone call does not vary continuous over time, but rather jumps at each minute.
+Many of the most important functions in terms of theory, models, and applications turn out to be continuous. For example if you go for a jog, the distance you have traveled varies continuously over time. Moreover many common expressions such as $x^2$, $\ln(x)$, or $3\sin(x)-2e^x$ define continuous functions. However it is important to note that not all natural functions are continuous. For example the charge for a phone call does not vary continuous over time, but rather jumps at each minute.
 
 What exactly is a continuous function? We often say intuitively that a continuous function has no breaks in its graph. But what does this mean in terms of formal definitions? A simple example of a discontinuous function is one with a jump:
 \begin{center}
@@ -2296,7 +2296,7 @@ For example, if $f(x)=x^2$, then we can calculate $\lim_{x\to2}f(x)$ as follows.
 
 In the previous section we finally settled upon a definition for the functional limit symbol: $\lim_{x\to a}f(x)$ has the value $L$ if and only if whenever $x_n\to a$ and $x_n\neq a$ we have $f(x_n)\to L$. In this section we develop an equivalent definition that more closely mirrors our definition of sequential limits.
 
-In convergence for ordinary limits, as the index $n$ gets larger the values $x_n$ get closer to the limit $L$. Thus the definition began ``for all $epsilon$ there exists an $N$.'' In convergence for functional limits, as the variable $x$ gets closer to $a$ the values $f(x)$ get closer to $L$. Thus the definition will begin ``for all $\epsilon$ there exists a $\delta$'', where $\delta$ is another small quantity.
+In convergence for ordinary limits, as the index $n$ gets larger the values $x_n$ get closer to the limit $L$. Thus the definition began ``for all $\epsilon$ there exists an $N$.'' In convergence for functional limits, as the variable $x$ gets closer to $a$ the values $f(x)$ get closer to $L$. Thus the definition will begin ``for all $\epsilon$ there exists a $\delta$'', where $\delta$ is another small quantity.
 
 \begin{defn}
   We say that $\lim_{x\to a}f(x)=L$ if for all $\epsilon>0$ there exists $\delta>0$ such that $0<|x-a|<\delta$ implies $|f(x)-L|<\epsilon$.
@@ -2389,6 +2389,33 @@ We close this section with the analog of the limit calculus for functional limit
 \end{thm}
 
 The proof is requested as an exercise.
+
+\newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}
+  Read \S4.1 of the text and write a one-paragraph response. You may use the following questions as a writing prompt. What definition of function does the text give? How do the examples of ``wild'' functions given in the text challenge your intuitive idea of what a function is? What implications does this have on the difficulty of the task of investigating continuity? Did you have any other comments or questions while reading the section?
+\end{exerc}
+
+\begin{exerc}
+  Prove the following using the $\epsilon,\delta$-definition of functional limits.
+  \begin{enumerate}
+    \item $\lim_{x\to4}\sqrt{x}=2$
+    \item $\lim_{x\to3}x^2=9$
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 4.2.6(a)]
+  Suppose $\delta>0$ has been constructed as a suitable response to a particular $\epsilon$ challenge. Which is correct and why: any larger $\delta$ will also suffice, or; any smaller $\delta$ will also suffice.
+\end{exerc}
+
+\begin{exerc}
+  Prove using the $\epsilon,\delta$ definition that if $\lim_{x\to a}f(x)=L$ and $\lim_{x\to a}g(x)=M$ then $\lim_{x\to a}\left[f(x)+g(x)\right]=L+M$.
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 4.2.11]
+  Prove the squeeze theorem for functional limits: if $f(x)\leq g(x)\leq h(x)$ and $\lim_{x\to a}f(x)=\lim_{x\to a}h(x)=L$ then $\lim_{x\to a}g(x)$ exists and $=L$. You may use either definition of functional limit.
+\end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
