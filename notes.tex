@@ -2422,7 +2422,7 @@ The proof is requested as an exercise.
 \section{Continuous functions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Thanks to our rigorous treatment of functional limits, we are now ready to define continuity. Recall that intuitively speaking, we said that $f$ is continuous at a point $a$ if whenever values of $x$ get near to $a$, values of $f(x)$ get near to $f(a)$. Formally, this can be stated as follows.
+Thanks to our rigorous treatment of functional limits, we are now ready to define continuous fucntions. Recall that intuitively speaking, we said that $f$ is continuous at a point $a$ if whenever values of $x$ get near to $a$, values of $f(x)$ get near to $f(a)$. Formally, this can be stated as follows.
 
 \begin{defn}
   Let $f$ be a real-valued function defined on an interval of $\RR$. We say $f$ is \emph{continuous} at a point $a$ in its domain if $\lim_{x\to a}f(x)$ exists and equals $f(a)$. We say that $f$ is \emph{continuous} if it is continuous on every point of its domain.
@@ -2490,7 +2490,7 @@ We close with a beautiful characterization which expresses continuity in purely 
   Let $f\colon X\to Y$ be any function. If $A$ is a subset of $X$ then the \emph{forward image} of $A$ with respect to $f$ is the set $f(A)=\set{f(a)\mid a\in A}$. And if $B$ is a subset of $Y$ then the \emph{inverse image} of $B$ with respect to $f$ is $f^{-1}(B)=\set{x\in X\mid f(x)\in B}$.
 \end{defn}
 
-Notice that if $f$ is a continuous function and $V$ is an open set, it is not necessarily the case that $f(V)$ is open too. For example if $f(x)=x^2$ and $V=(-1,1)$, then $f[V]=[0,1)$ which is not open. Rather than this, the following result states that the continuous functions are precisely those which preserve the open sets under inverse images.
+Notice that if $f$ is a continuous function and $V$ is an open set, it is not necessarily the case that $f(V)$ is open too. For example if $f(x)=x^2$ and $V=(-1,1)$, then $f[V]=[0,1)$ which is not open. On the other hand, the following result states that the continuous functions are precisely those which preserve the open sets under inverse images.
 
 \begin{thm}
   Let $f\colon\RR\to\RR$. Then $f$ is continuous everywhere if and only if for every open set $V$ we have $f^{-1}(V)$ is open too.
@@ -2501,6 +2501,40 @@ Notice that if $f$ is a continuous function and $V$ is an open set, it is not ne
 \end{proof}
 
 We should remark that this open set characterization of continuity holds in much greater generality. Indeed, functional limits and continuity may all be formulated for functions $f\colon X\to Y$ where $X,Y$ are arbitrary metric spaces. We then have that $f$ is continuous on $X$ if and only if $V$ open implies $f^{-1}(V)$ open.
+
+\newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}
+  Find the places where each of the following functions is discontinuous.
+  \begin{enumerate}
+    \item $\displaystyle f(x)=\frac{x^2+2x+3}{x^2+1}$
+    \item $\displaystyle f(x)=\frac{x^2+x+3}{x^2-1}$
+  \end{enumerate}
+\end{exerc}
+  
+\begin{exerc}
+  \begin{enumerate}
+    \item Give an example of a discontinuous function $f$ such that $|f|$ is continuous.
+    \item Give an example of a pair of discontinuous functions $f$ and $g$ such that $f+g$ is continuous.
+  \end{enumerate}
+\end{exerc}
+  
+\begin{exerc}[Abbott, ex 4.3.9]
+  Let $f$ be a continuous function and let $A=\set{x\mid f(x)=0}$. Prove that $A$ is closed.
+\end{exerc}
+
+\begin{exerc}
+  Suppose that $f$ is continuous and $f(c)>0$. Show that there exists a neighborhood of $c$ on which $f$ is positive.
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 4.3.1]
+  Let $f(x)=\sqrt[3]{x}$.
+  \begin{enumerate}
+    \item Prove that $f(x)$ is continuous at $c=0$.
+    \item Prove that $f(x)$ is continuous at $c\neq0$. [Hint: you will need the identity $a^3-b^3=(a-b)(a^2+ab+b^2)$.]
+  \end{enumerate}
+\end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
