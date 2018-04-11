@@ -2541,7 +2541,7 @@ We should remark that this open set characterization of continuity holds in much
 \section{Continuity and preservation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In the previous section we concluded that continuous functions preserve open sets under inverse images but not necessarily under forward images. In this section we address the same questions for closed, connected, and compact sets. In doing so we will run across two major theorems from calculus: the extreme value theorem and the intermediate value theorem.
+In the previous section we concluded that continuous functions preserve open sets under inverse images but not necessarily under forward images. In this section we address the same questions for closed, compact, and connected sets. In doing so we will finally be able to explain two major theorems from calculus: the extreme value theorem and the intermediate value theorem.
 
 Before beginning our investigation, we should point out some further properties of forward and inverse images. It is not hard to check that for any function $f$, the inverse image mapping $f^{-1}$ preserves unions, intersections, and differences. That is, we have
 \begin{itemize}
@@ -2576,12 +2576,12 @@ We have mentioned the extreme value theorem before as an important property of c
 \end{cor}
 
 \begin{proof}
-  By the theorem, $f(K)$ is a compact subset of $\RR$. Since compact sets are bounded, $f(K)$ has an infemum $\alpha$ and a supremum $\beta$. Since compact sets are closed, and we have seen that $\alpha,\beta$ are limits of sequences in $f(K)$, it follows that $\alpha,\beta\in f(K)$. Thus there exist $a,b\in K$ such that $f(a)=\alpha$ and $f(b)=\beta$, as claimed.
+  By the theorem, $f(K)$ is a compact subset of $\RR$. Since compact sets are bounded, $f(K)$ has an infemum $\alpha$ and a supremum $\beta$. Since compact sets are closed, and we have seen that $\alpha,\beta$ lie on the boundary of $f(K)$, it follows that $\alpha,\beta\in f(K)$. Thus there exist $a,b\in K$ such that $f(a)=\alpha$ and $f(b)=\beta$, as claimed.
 \end{proof}
 
 The extreme value theorem is the key to any kind of optimization. If one is seeking an optimum value (usually an infemum or supremum), the exterem value theorem gives conditions under which one can be assured that such a value exists.
 
-Finally we turn to preservation of connected sets. To movitate this, observe intuitively that if $f$ is a continuous real-valued function defined on an interval, then the range of $f$ had better be an interval too. That's because if there were a gap in the range then $f$ would have to have some kind of jump, which means a discontinutiy. 
+Finally we turn to preservation of connected sets. To motivate this, observe intuitively that if $f$ is a continuous real-valued function defined on an interval, then the range of $f$ had better be an interval too. That's because if there were a gap in the range then $f$ would have to have some kind of jump, which means a discontinutiy. 
 
 \begin{thm}
   If $f$ is continuous and $A$ is connected then $f(A)$ is connected.
@@ -2598,7 +2598,7 @@ Once again, this simple preservation property has an important consequence in ca
 \end{cor}
 
 \begin{proof}
-  Since $[a,b]$ is connected, the previous theorem gives that $f([a,b])$ is connected. As we have shown that connected subsets of $\RR$ are intervals, we have that $f([a,b])$ is an interval. It follos that $f([a,b])$ contains $[f(a),f(b)]$ and therefore it contains $L$. Thus there exists $c\in[a,b]$ such that $f(c)=L$. Finally note that $c$ cannot equal $a$ or $b$ itself.
+  Since $[a,b]$ is connected, the previous theorem gives that $f([a,b])$ is connected. As we have shown that connected subsets of $\RR$ are intervals, we have that $f([a,b])$ is an interval. Recall our characterization that $I$ is an interval iff $x,y\in I$ and $x<z<y$ implies $z\in I$. We currently have $f(a),f(b)\in f([a,b])$ and $f(a)<L<f(b)$. Thus $L\in f([a,b])$, which means there exists $c\in[a,b]$ such that $f(c)=L$. Finally note that $c$ clearly cannot equal $a$ or $b$ itself.
 \end{proof}
 
 The intermediate value theorem has many practical consequences, just one of which is the following.
@@ -2608,8 +2608,47 @@ The intermediate value theorem has many practical consequences, just one of whic
 \end{cor}
 
 \begin{proof}
-  Consider the function $g(x)=f(x)-x$; we are looking for some point $c$ such that $g(c)=0$. If either $g(0)$ or $g(1)=$ then we would be done. Otherwise, we clearly have that $g(0)<0<g(1)$. By the intermediate value theorem it follows that there exists $c$ such that $g(c)=0$, as desired.
+  Consider the function $g(x)=x-f(x)$; we are looking for some point $c$ such that $g(c)=0$. If either $g(0)$ or $g(1)=0$ then we would be done. Otherwise, we clearly have that $g(0)<0<g(1)$. By the intermediate value theorem it follows that there exists $c$ such that $g(c)=0$, as desired.
 \end{proof}
+
+\newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}
+  Give an example of each of the following, or argue that no such example exists.
+  \begin{enumerate}
+    \item A continuous function $f$ and a compcat set $K$ such that $f^{-1}(K)$ is not compact.
+    \item A continuous function $f$ and a connected set $C$ such that $f^{-1}(C)$ is disconnected.
+    \item A continuous function $f$ and a bounded set $A$ such that $f(A)$ is not bounded.
+    \item A continuous function $f$, whose domain is $\RR$, and a bounded set $A$ such that $f(A)$ is not bounded.
+    \item a continuous function $f$ and a bounded set $B$ such that $f^{-1}(B)$ is not bounded.
+    % \item A continuous function $f$ on the interval $(0,1)$ and a convergent sequence $x_n\in(0,1)$ with limit in $(0,1)$ such that $f(x_n)$ is not a convergent sequence.
+    % \item A continuous function $f$ on the interval $(0,1)$ and a Cauchy sequence $x_n\in(0,1)$ such that $f(x_n)$ is not a Cauchy sequence.
+    % \item A continuous function $f$ on the interval $[0,1]$ and a Cauchy sequence $x_n\in[0,1]$ such that $f(x_n)$ is not a Cauchy sequence.
+    % \item A continuous function $f$ on the interval $[1,\infty)$ and a Cauchy sequence $x_n\in[1,\infty)$ such that $f(x_n)$ is not a Cauchy sequence.
+    % \item A continuous and bounded function $f$ on the interval $(0,1)$ that attains a maximum value on this interval but not a minimum value.
+  \end{enumerate}
+\end{exerc}
+  
+%\question Suppose that $f$ is continuous on $[a,b]$ and that for every $n\in\NN$ there exists $x\in[a,b]$ such that $\abs{f(x)}\leq\frac1n$. Show that there exists $x\in[a,b]$ such that $f(x)=0$.
+
+\begin{exerc}[Abbott, ex 4.4.4(a)]
+  Suppose that $f$ is continuous on the interval $[a,b]$ and that $f(x)>0$ for all $x\in[a,b]$.  Show that the reciprocal function $1/f$ is bounded on $[a,b]$.
+\end{exerc}
+
+\begin{exerc}
+  Show that the equation $2^x+3^x=4^x$ has a positive solution $x$.
+\end{exerc}
+
+\begin{exerc}
+  A function $f$ is said to be monotone if either it is increasing ($x<x'\Rightarrow f(x)\leq f(x')$) or else it is decreasing ($x<x'\Rightarrow f(x)\geq f(x')$).
+
+  Suppose that $f(x)$ is continuous and one-to-one on the interval $[a,b]$. Show that $f$ is monotone.
+\end{exerc}
+
+% sphere temperature thing
+
+% ham sandwich thing
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
