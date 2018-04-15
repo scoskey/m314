@@ -2665,7 +2665,7 @@ In this case the value of the limit is called the \emph{derivative} of $f$ at $x
 As one often observes in a calculus class, the derivative is a limit of slopes between $(x,f(x))$ and nearby points $(x+h,f(x+h))$. This means that $f'(x)$ represents the slope of the line tangent to $f$ at $x$. If a function is differentiable on its domain, we sometimes say that it is ``locally linear''.
 
 \begin{example}
-  The function $f(x)=x^2$ is differentiable at every point and we can calculate using the functional limit calculus as follows:
+  The function $f(x)=x^2$ is differentiable at every point and we can use the functional limit calculus to find $f'(x)$ as follows:
   \[f'(x)=\lim_{h\to0}\frac{(x+h)^2-x^2}{h}
   =\lim_{h\to0}\frac{x^2+2xh+h^2-x^2}{h}=\lim_{h\to0}2x+h=2x
   \]
@@ -2689,7 +2689,7 @@ The following result implies that any function which is discontinuous will also 
 This implies that $\lim_{y\to x}f(y)=f(x)$, which means by definition that $f$ is continuous at $x$.
 \end{proof}
 
-The development of differential calculus now consists of two pieces: using the definition to calculate a library of derivatives of common functions, and using the definition to establish the algebraic laws of the derivative operation.
+The development of differential calculus now consists of two pieces: using the definition to calculate a library of formulas for the derivatives of common functions, and using the definition to establish the algebraic laws of the derivative operation itself.
 
 \begin{thm}[Derivative calculus]\ 
 
@@ -2719,13 +2719,13 @@ In the rest of the section, we further investigate the subtle relationship betwe
   Let $f(x)=x^2\sin(1/x)$, and specify additionally that $f(0)=0$. The function is clearly differentiable at any point $x\neq0$, and it is actually differentiable at $x=0$ too. To see this, observe that
 \[f'(0)=\lim_{h\to0}\frac{h^2\sin(1/h)}{h}=\lim_{h\to0}h\sin(1/h)
 \]
-Since $\sin(1/h)$ is bounded and $h\to 0$, it follows that $f'(0)=0$. On the other hand, the derivative is $f'(x)=2x\sin(1/x)-\sin(1/x)$. It is easy to see that the first term $x\sin(1/x)$ is continuous, but we have seen that the second term $\sin(1/x)$ is not continuous at $x=0$. It follows that $f'(x)$ is not continuous at $x=0$.
+Since $\sin(1/h)$ is bounded and $h\to 0$, it follows that $f'(0)=0$. On the other hand, the derivative is $f'(x)=2x\sin(1/x)-\sin(1/x)$. It is easy to see that the first term $x\sin(1/x)$ is continuous, but the second term $\sin(1/x)$ is not continuous at $x=0$. It follows that $f'(x)$ is not continuous at $x=0$.
 \end{example}
-% actually we only saw it in homework. but ok
+% don't think we still have this homework problem about sin(1/x)
 
 In fact there is a whole hierarchy of differentiability properties. We say that a function $f$ is in the class $C^0$ if $f$ is continuous, in the class $C^1$ if $f$ is differentiable $f'$ is continuous, in the class $C^2$ if $f'$ is differentiable and $f''$ is continuous, and so forth. We say that $f$ is in the class $C^\infty$ or \emph{smooth} if it is differentiable infinitely many times. Functions such as polynomials and $\sin(x)$ are all smooth. But the function $x^n\sin(1/x)$ lies in the class $C^{n-2}$.
 
-In the example above, the discontinuous derivative $f'(x)$ did not just have a simple jump discontinuity, but something much uglier. In our final result of the section, we will show that this ugliness was essential. The result states that while derivatives need not be continuous, they still satisfy the \emph{intermediate value property}, that is, the conclusion of the intermediate value theorem. First we need the following familiar lemma.
+In the example above, the discontinuous derivative $f'(x)$ did not just have a simple jump discontinuity, but something much uglier. In our final result of the section, we will show that this ugliness can't be avoided. The result states that while derivatives need not be continuous, they still satisfy the \emph{intermediate value property}, that is, the conclusion of the intermediate value theorem. First we need the following familiar lemma.
 
 \begin{lem}[Interior extremum theorem]
   If $f$ is differentiable on the interval $(a,b)$ and $f$ attains a maximum or minimum value at $c\in(a,b)$, then $f'(c)=0$.
@@ -2745,7 +2745,44 @@ In the example above, the discontinuous derivative $f'(x)$ did not just have a s
   To see that $f$ doesn't attain its minimum value at $a$ or $b$, first note that since $f'(a)<0$ we have $\lim_{h\to0}(f(a+h)-f(a))<0$. It follows that there exists $h>0$ such that $f(a+h)<f(a)$, that is, $f$ cannot attain its minimum value at $a$. Similarly since $f'(b)>0$ we have $\lim_{h\to0}(f(b+h)-f(b))/h>0$. It follows that there exists $h<0$ such that $f(b+h)<f(b)$, so once eagain $f$ cannot attain its minimum value at $b$ either.
 \end{proof}
 
-% could also use IET to prove Rolle and then MVT, and then a weak form of the fundamental theorem of calculus!
+% could also use IET to prove Rolle and then MVT, and then (a typical weak form of) the fundamental theorem of calculus! this can be another section.
+
+\newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}
+  Find the derivative of each function directly from the definition.
+  \begin{enumerate}
+    \item $\displaystyle f(x)=x^3$
+    \item $\displaystyle f(x)=\frac{1}{\sqrt{x}}$
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}
+  Decide, with justification, whether each of the following functions is differentiable.
+  \begin{enumerate}
+    \item $\displaystyle f(x)=|x|+|x-1|$
+    \item $\displaystyle f(x)=x\,|x|$
+    \item $\displaystyle f(x)=|\sin(x)|$
+  \end{enumerate}
+\end{exerc}
+  
+\begin{exerc}[Abbott, ex 5.2.3]
+  \begin{enumerate}
+    \item Use the definition of derivative to find the derivative of $f(x)=1/x$.
+    \item Give a proof of the quotient rule using part (a) together with the product and chain rules.
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 5.2.5]
+  Let $f(x)$ be the function:
+  \[f(x)=\begin{cases}x^a&x\geq0\\0&x<0\end{cases}\]
+  \begin{enumerate}
+    \item For which values of $a$ is $f$ continuous at $0$?
+    \item For which values of $a$ is $f'(0)$ defined?
+    \item For which values of $a$ is $f''(0)$ defined?
+  \end{enumerate}
+\end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
