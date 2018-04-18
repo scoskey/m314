@@ -2529,8 +2529,8 @@ We should remark that this open set characterization of continuity holds in much
 \begin{exerc}[Abbott, ex 4.3.1]
   Let $f(x)=\sqrt[3]{x}$.
   \begin{enumerate}
-    \item Prove that $f(x)$ is continuous at $c=0$.
-    \item Prove that $f(x)$ is continuous at $c\neq0$. [Hint: you will need the identity $a^3-b^3=(a-b)(a^2+ab+b^2)$.]
+    \item Prove that $f(x)$ is continuous at $a=0$.
+    \item Prove that $f(x)$ is continuous at $a\neq0$. [Hint: you will need the algebraic identity $A^3-B^3=(A-B)(A^2+AB+B^2)$.]
   \end{enumerate}
 \end{exerc}
 
@@ -2675,21 +2675,7 @@ As one often observes in a calculus class, the derivative is a limit of slopes b
   Any function with a corner or pointy cusp is not differentiable at that point. For example $f(x)=|x|$ is not differentiable at $x=0$ because $\lim_{h\to0}|h|/h$ does not exist.
 \end{example}
 
-The following result implies that any function which is discontinuous will also fail to be differentiable.
-
-\begin{prop}
-  If $f$ is differentiable at a point $x$ then $f$ is continuous at $x$.
-\end{prop}
-
-\begin{proof}
-  For this proof it is convenient to use the common substitution $y=x+h$ and write $f'(x)=\lim_{y\to x}(f(y)-f(x))/(y-x)$. It follows from this and the functional limit calculus that
-\[\lim_{y\to x}(f(y)-f(x))=\lim_{y\to x}\frac{(f(y)-f(x))(y-x)}{(y-x)}
-=f'(x)\lim_{y\to x}(y-x)=0\text{.}
-\]
-This implies that $\lim_{y\to x}f(y)=f(x)$, which means by definition that $f$ is continuous at $x$.
-\end{proof}
-
-The development of differential calculus now consists of two pieces: using the definition to calculate a library of formulas for the derivatives of common functions, and using the definition to establish the algebraic laws of the derivative operation itself.
+The primary development of differential calculus now proceeds in two pieces. First, one uses the definition of the derivative to calculate a library of \emph{formulas} for the derivatives of common functions. Second, one uses the definition of the derivative to establish the algebraic \emph{laws} of the derivative operation itself.
 
 \begin{thm}[Derivative calculus]\ 
 
@@ -2713,7 +2699,21 @@ The development of differential calculus now consists of two pieces: using the d
 
 We leave the proof of this theorem to your old calculus textbook.
 
-In the rest of the section, we further investigate the subtle relationship between continuity and differentiability. As we have seen, every differentiable function is continuous, but not every continuous function is differentiable. It is natural to ask whether $f$ being differentiable implies $f'$ is continuous. It turns out that the answer is ``no''.
+In the rest of the section, we investigate the subtle relationship between continuity and differentiability. Our first result in this direction implies that differentiability is stronger than continuity. Phrased another way, any function which is discontinuous will also be non-differentiable.
+
+\begin{prop}
+  If $f$ is differentiable at a point $x$ then $f$ is continuous at $x$.
+\end{prop}
+
+\begin{proof}
+  For this proof it is convenient to use the common substitution $y=x+h$ and write $f'(x)=\lim_{y\to x}(f(y)-f(x))/(y-x)$. It follows from this and the functional limit calculus that
+\[\lim_{y\to x}(f(y)-f(x))=\lim_{y\to x}\frac{(f(y)-f(x))(y-x)}{(y-x)}
+=f'(x)\lim_{y\to x}(y-x)=0\text{.}
+\]
+This implies that $\lim_{y\to x}f(y)=f(x)$, which means by definition that $f$ is continuous at $x$.
+\end{proof}
+
+Now we know that every differentiable function is continuous, but not every continuous function is differentiable. It is natural to ask whether $f$ being differentiable implies $f'$ is continuous. It turns out that the answer is ``no''.
 
 \begin{example}
   Let $f(x)=x^2\sin(1/x)$, and specify additionally that $f(0)=0$. The function is clearly differentiable at any point $x\neq0$, and it is actually differentiable at $x=0$ too. To see this, observe that
@@ -2725,15 +2725,17 @@ Since $\sin(1/h)$ is bounded and $h\to 0$, it follows that $f'(0)=0$. On the oth
 
 In fact there is a whole hierarchy of differentiability properties. We say that a function $f$ is in the class $C^0$ if $f$ is continuous, in the class $C^1$ if $f$ is differentiable $f'$ is continuous, in the class $C^2$ if $f'$ is differentiable and $f''$ is continuous, and so forth. We say that $f$ is in the class $C^\infty$ or \emph{smooth} if it is differentiable infinitely many times. Functions such as polynomials and $\sin(x)$ are all smooth. But the function $x^n\sin(1/x)$ lies in the class $C^{n-2}$.
 
-In the example above, the discontinuous derivative $f'(x)$ did not just have a simple jump discontinuity, but something much uglier. In our final result of the section, we will show that this ugliness can't be avoided. The result states that while derivatives need not be continuous, they still satisfy the \emph{intermediate value property}, that is, the conclusion of the intermediate value theorem. First we need the following familiar lemma.
+In the example above, the discontinuous derivative $f'(x)$ did not just have a simple jump discontinuity, but something much uglier. In our final result of the section, we will show that this ugliness can't be avoided. The result states that while derivatives need not be continuous, derivatives still share the \emph{intermediate value property} with continuous functions. That is, the conclusion of the intermediate value theorem is true for derivatives. First we need the following familiar lemma.
 
 \begin{lem}[Interior extremum theorem]
   If $f$ is differentiable on the interval $(a,b)$ and $f$ attains a maximum or minimum value at $c\in(a,b)$, then $f'(c)=0$.
 \end{lem}
 
 \begin{proof}
-  Let us treat the case when $f$ attains a maximum value at $c$. Then for any $h$ we have $f(c+h)-f(c)\leq0$. It follows that for $h_n$ positive we have $(f(c+h_n)-f(c))/h_n\leq0$, which implies that $f'(c)\leq0$. Similarly for $h_n$ negative we have $(f(c+h_n)-f(c))/h_n\geq0$, which implies that $f'(c)\geq0$. This leaves only the possibility that $f'(c)=0$.
+  Let us treat the case when $f$ attains a maximum value at $c$. Then for any $h$ we have $f(c+h)-f(c)\leq0$. It follows that for $h>0$ we have $(f(c+h_n)-f(c))/h\leq0$, which implies that $f'(c)\leq0$. Similarly for $h<0$ we have $(f(c+h_n)-f(c))/h\geq0$, which implies that $f'(c)\geq0$. This leaves only the possibility that $f'(c)=0$.
 \end{proof}
+
+The interior extremum theorem has applications to optimization, because it says that to find a minimum or maximum a good place to look is at the critical points.
 
 \begin{thm}[Darboux's theorem]
   If $f$ is differentiable on $[a,b]$ and $f'(a)<L<f'(b)$, then there exists $c\in(a,b)$ such that $f'(c)=L$.
@@ -2785,6 +2787,107 @@ In the example above, the discontinuous derivative $f'(x)$ did not just have a s
 \end{exerc}
 
 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Continuity and integrals}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Along with the derivative, the integral is one of the highlights of modern mathematics because it helps capture the concept of area. Just as the idea of ``slope of a function'' is intuitively simple but required regorous definition, the idea of ``area under a curve'' is easy to visualize but must be defined carefully. Once again, our knowledge of functions, infemums, and supremums leaves us prepared to define and explore integrals.
+
+\begin{defn}
+  Let $f$ be a bounded function defined on an interval $[a,b]$. Given a finite sequence $P$ of endpoints $a=x_0<x_1<\cdots<x_n=b$, we let $m_i=\inf f([x_{i-1},x_i])$ and $M_i=\sup f([x_{i-1},x_i])$, and:
+  \begin{align*}
+    L(f,P)&=\sum_{i=1}^n m_i(x_i-x_{i-1})\\
+    U(f,P)&=\sum_{i=1}^n M_i(x_i-x_{i-1})
+  \end{align*}
+  We then define the \emph{lower integral} of $f$ as $L(f)=\sup_P\{L(f,P)\}$ and the \emph{upper integral} of $f$ as $U(f)=\inf_P\{U(f,P)\}$. One can verify that we always have $L(f)\leq U(f)$. If we in fact have that $L(f)=U(f)$, then we say $f$ is \emph{integrable} and write
+  \[\int_a^bf\,dx=\text{the common value of }L(f)\text{ and }U(f)
+  \]
+\end{defn}
+
+\begin{example}
+  The function $f(x)=x^2$ on the interval $[0,b]$ is integrable. To see why, given any $n$ we define the regularly-spaced partition $P_n$ by $x_i=bi/n$. Since $f$ is a monotone increasing function, maximum values occur at right endpoints, which means we always have $M_i=(bi/n)^2$. Now we can calculate:
+  \begin{align*}
+    U(f,P_n)&=\sum_{i=1}^n\left(\frac{bi}{n}\right)^2\left(\frac{b}{n}\right)\\
+    &=\frac{b^3}{n^3}\sum_{i=1}^n i^2\\
+    &=\frac{b^3}{n^3}\frac{n(n+1)(2n+1)}{6}
+  \end{align*}
+  Here we are using a classic formula for the sum of the first $n$ squares. It is easy to calculate that $\lim U(f,P_n)=b^3/3$, and since $U(f)$ is the infemum over all possible $U(f,P)$, we conclude that $U(f)\leq b^3/3$. An analogous calculation shows that $L(f)\geq b^3/3$, and we conclude from these inequalities that $\int_0^bf\,dx$ exists and equals $b^3/3$.
+\end{example}
+
+\begin{example}
+  Let $f$ be the Dirichlet function on $[0,1]$, which is defined by
+  \[f(x)=\begin{cases}1&x\in[0,1]\cap\QQ\\0&x\in[0,1]\setminus\QQ\end{cases}
+  \]
+  Then $f$ is not integrable. In fact using rational and irrational density, for any $P$ we have $L(f,P)=0$ and $U(f,P)=1$.
+\end{example}
+
+As was the case with limits and derivatives, the integral operation obeys a raft of simple laws.
+
+\begin{thm}[Integral calculus]
+  Assume $f,g$ are integrable functions on $[a,b]$.
+  \begin{enumerate}
+    \item $\int_a^b(f(x)+g(x))\,dx=\int_a^bf(x)\,dx+\int_a^bg(x)\,dx$
+    \item $\int_a^bkf(x)\,dx=k\int_a^bf(x)\,dx$
+    \item If $f\leq g$ then $\int_a^bf(x)\,dx\leq\int_a^bg(x)\,dx$
+    \item If $a<c<b$ then $\int_a^cf(x)\,dx+\int_c^bf(x)\,dx=\int_a^bf(x)\,dx$
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  As these results are standard facts of calculus, we prove only (c). For this let $h(x)=g(x)-f(x)$, so that we have $h\geq0$. Now using parts~(a) and~(b), $h$ is integrable and our desired conclusion is equivalent to $\int_a^bh(x)\,dx\geq0$. Since $h\geq0$ we have that for any $P$, all values of $m_i\geq0$ and thus $L(f,p)\geq0$. It follows that $L(f)\geq0$ too, and hence that $\int_a^bh(x)\,dx\geq0$.
+\end{proof}
+
+We close this section by establishing the first link between continuity and integration. We show that any continuous function is integrable. Since we have seen that every differentiable function is continuous and not every continuous function is differentiable, we can conclude that the integral operation is properly \emph{more general} than the derivative operation!
+
+\begin{thm}
+  If $f$ is a continuous function on $[a,b]$ then $f$ is integrable. If $f$ has finitely many discontinuities on $[a,b]$ then $f$ is integrable.
+\end{thm}
+
+\begin{proof}
+  We will use Abbott, Theorem~4.4.7 as a black box. It states that if $f$ is a continuous function on a compact domain, then it satisfies the following strong form of continuity:
+  \[(\forall\epsilon>0)(\exists\delta>0)(\forall x,y)\;
+  |x-y|<\delta\implies|f(x)-f(y)|<\epsilon
+  \]
+  (The difference is only that $\delta$ does not depend on $x$.) Now given any $\epsilon>0$, we create a partition $P$ such that $x_i-x_{i-1}<\delta$ for all $i$. This implies that for all $i$, we have $M_i-m_i\leq\epsilon$. Thus
+  \[U(f,P)-L(f,P)=\sum_{i=1}^n(M_i-m_i)(x_i-x_{i-1})\leq\sum_{i=1}^n\epsilon(x_i-x_{i-1})
+  =\epsilon(b-a)
+  \]
+  Since $\epsilon$ was arbitrary, we conclude that $U(f,P)-L(f,P)=0$.
+  
+  The second statement follows from this together with law~(d).
+\end{proof}
+
+\newpage
+\subsection*{Exercises for \S \thesection}
+
+\begin{exerc}[See Abbott, ex 7.2.2]
+  Consider the function $f(x)=1/x$ on the interval $[1,4]$. Find a partition $P$ such that $U(f,P)$ and $L(f,P)$ are less than $0.3$ units apart.
+\end{exerc}
+
+\begin{exerc}
+  Calculate $\int_0^bx^3\,dx$. You may have to look up a formula for the sum of the first $n$ cubes.
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 7.3.1]
+  Let $h(x)$ be the function on $[0,1]$ defined by
+  \[h(x)\begin{cases}1&x<1\\2&x=1\end{cases}
+  \]
+  \begin{enumerate}
+    \item For any $P$, what is the value of $L(f,P)$?
+    \item Can you find a $P$ such that $U(f,P)$ is within $1/10$ of $L(f,P)$?
+    \item Show that $h$ is integrable.
+  \end{enumerate}
+\end{exerc}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Derivatives and integrals}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Exercises for \S \thesection}
+
+\iffalse
+\chapter{Appendix}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Baire's theorem and sets of discontinuity}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2896,6 +2999,7 @@ Recall that the space $C[0,1]$ of continuous functions is a complete metric spac
   \]
   \ldots
 \end{proof}
+\fi
 
 \end{document}
 
