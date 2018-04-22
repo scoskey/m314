@@ -2226,14 +2226,10 @@ When $f_n\to f$ in the uniform metric, we say that the sequence $f_n$ \emph{conv
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Wild functions}
+\section{Functions and limits}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% booooring. combine with next section!
-
-So far in this course we have investigated real numbers and their arithmetic, and sets of real numbers. In this part we will study functions, especially those that arise naturally in models and applications.
-
-Many of the most important functions in terms of theory, models, and applications turn out to be continuous. For example if you go for a jog, the distance you have traveled varies continuously over time. Moreover many common expressions such as $x^2$, $\ln(x)$, or $3\sin(x)-2e^x$ define continuous functions. However it is important to note that not all natural functions are continuous. For example the charge for a phone call does not vary continuous over time, but rather jumps at each minute.
+So far in this course we have investigated real numbers and sets of real numbers. In this part we will study functions because they are fundamental to applications such as modeling. Many of the most important functions turn out to be continuous. For example if you go for a jog, the distance you have traveled varies continuously over time. Moreover many common expressions such as $x^2$, $\ln(x)$, or $3\sin(x)-2e^x$ define continuous functions. However it is important to note that not all natural functions are continuous. For example the charge for a phone call does not vary continuously over time because it jumps at each minute.
 
 What exactly is a continuous function? We often say intuitively that a continuous function has no breaks in its graph. But what does this mean in terms of formal definitions? A simple example of a discontinuous function is one with a jump:
 \begin{center}
@@ -2249,50 +2245,10 @@ What exactly is a continuous function? We often say intuitively that a continuou
 \end{center}
 What makes this function discontinuous is that the value $f(a)$ is nowhere near the values of $f(x)$ for $x$ very near to $a$.
 
-At this point one may guess that the concept of a limit should be useful here. In fact, roughly speaking, we will define that $f$ is continuous at $a$ if whenever the values of $x$ approach $a$, the values of $f(x)$ approach $f(a)$:
+At this point one should see that the concept of a limit is useful here. In fact, roughly speaking, we will define that $f$ is continuous at $a$ if whenever the values of $x$ approach $a$, the values of $f(x)$ approach $f(a)$:
 \[f(a)=\lim_{x\to a}f(x)
 \]
-Unfortunately, in the past we have only worked with limits as the integer value $n$ approaches $\infty$, never as a continuous variable $x$ approaches $a$. In the rest of this section we will begin to explore what should be meant by this limit expression.
-
-To reduce the question to one of sequential limits, one might replace the continuous variable $x$ by a sequence $x_n$ converging to $a$. For example, if $f(x)=x^3+5x+2$ then we can compute $\lim_{x\to0}f(x)$ as follows. First replace $x$ with the sequence $1/n$, since this has limit $0$. Next note that $\lim f(x_n)=\lim \frac{1}{n^3}+5\frac{1}{n}+2=2$.
-
-On problem with this approach is the possibility that the function doesn't just have a jump iscontinuity, but actually has a break.
-\begin{center}
-\begin{tikzpicture}
-\draw (-0.2,0) -- (4.2,0);
-\draw (0,-0.2) -- (0,2.2);
-\draw[domain=0:3] plot (\x,{1+sin(\x r)});
-\draw[domain=3:4] plot (\x,{1.5+sin(\x r)});
-\draw[fill=white] (3,{1+sin(3r)}) circle (.07);
-\draw[fill=black] (3,{1.5+sin(3r)}) circle (.07);
-\draw (3,.05)--(3,-.05);
-\node[below] at (3,0) {$a$};
-\end{tikzpicture}
-\end{center}
-When we used the sequence $1/n$ we only considered values of $x$ to the right of $a$, and none to the left. Thus this method would mistakenly conclude that the function depicted above is continuous.
-
-For example, if $f$ is the function
-\[f(x)=\begin{cases}x-1&x\leq0\\x+1&x>0\end{cases}
-\]
-then $\lim f(1/n)=1$, while $\lim f(-1/n)=-1$. Since we cannot say that either value has a greater claim to being the true limit, we correctly conclude that $\lim_{x\to0}f(x)$ does not exist.
-
-At this point one may be tempted to define $\lim_{x\to a}f(x)$ as the value of $\lim f(a+1/n)$ and $\lim f(a-1/n)$ provided these values exist and agree. However, this would again be mistaken! To see this consider the \emph{Dirichlet function} defined by
-\[f(x)=\begin{cases}1&x\in\QQ\\0&x\notin\QQ\end{cases}
-\]
-This function is so ugly that our definitions should definitely imply it is discontinuous. In fact our definitions should imply that none of its functional limits exist. But since we have $\lim f(1/n)=\lim f(-1/n)=1$, the above method would incorrectly conclude that $\lim_{x\to0}f(x)=1$. It is thanks to this strange example that we settle on the following very strong definition.
-
-\begin{defn}
-  We say that $\lim_{x\to a}f(x)=L$ if for every sequence $x_n$ such that $x_n\to a$ and $x_n\neq a$, we have $\lim f(x_n)=f(a)$.
-\end{defn}
-
-For example, if $f(x)=x^2$, then we can calculate $\lim_{x\to2}f(x)$ as follows. Let $x_n$ be an arbitrary sequence such that $x_n\to2$. Then $\lim f(x_n)=\lim(x_n)^2=(\lim x_n)^2=2^2=4$. Since $x_n$ was arbitrary, we can conclude that the functional limit $\lim_{x\to2}f(x)=4$ too.
-
-\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Functions and limits}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-In the previous section we finally settled upon a definition for the functional limit symbol: $\lim_{x\to a}f(x)$ has the value $L$ if and only if whenever $x_n\to a$ and $x_n\neq a$ we have $f(x_n)\to L$. In this section we develop an equivalent definition that more closely mirrors our definition of sequential limits.
+Unfortunately, in the past we have only worked with limits as the integer value $n$ approaches $\infty$, never as a continuous variable $x$ approaches $a$. We will now introduce a definition of functional limit that mirrors or definition for sequential limits.
 
 In convergence for ordinary limits, as the index $n$ gets larger the values $x_n$ get closer to the limit $L$. Thus the definition began ``for all $\epsilon$ there exists an $N$.'' In convergence for functional limits, as the variable $x$ gets closer to $a$ the values $f(x)$ get closer to $L$. Thus the definition will begin ``for all $\epsilon$ there exists a $\delta$'', where $\delta$ is another small quantity.
 
@@ -2401,6 +2357,13 @@ The proof is requested as an exercise.
     \item $\lim_{x\to4}\sqrt{x}=2$
     \item $\lim_{x\to3}x^2=9$
   \end{enumerate}
+\end{exerc}
+
+\begin{exerc}
+  Let $f(x)$ be the Dirichlet function, defined by
+  \[f(x)=\begin{cases}1&x\in\QQ\\0&x\notin\QQ\end{cases}
+  \]
+  Prove that for every real number $a$, $f$ is discontinuous at $a$.
 \end{exerc}
 
 \begin{exerc}[Abbott, ex 4.2.6(a)]
@@ -2884,10 +2847,122 @@ We close this section by establishing the first link between continuity and inte
 \section{Derivatives and integrals}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+We have introduced derivatives as slopes or rates of change, and integrals as areas or accumulations. How are the two concepts related?
+
+\begin{thm}[Mean Value Theorem]
+  Let $f$ be differentiable on $[a,b]$. Then there exists $c\in[a,b]$ such that
+  \[\frac{f(b)-f(a)}{b-a}=f'(c)
+  \]
+\end{thm}
+
+\begin{proof}
+  
+\end{proof}
+
+The MVT says that the ``average rate of change'' of a function over an interval is equal to the instantaneous rate of change at some point in the interval. The MVT has a number of important applications. For example.
+
+\begin{thm}[FTC, net change version]
+  Let $f$ be differentiable on $[a,b]$. Then
+  \[f(b)-f(a)=\int_a^b f'(x)\,dx
+  \]
+\end{thm}
+
+\begin{proof}
+  
+\end{proof}
+
+Dividing both sides of the net change theorem by $b-a$, we obtain a statement which says that the ``average rate of change'' of a function over an interval is equal to the average of its instantaneous rates of change over the interval.
+\[\frac{f(b)-f(a)}{b-a}=\frac{1}{b-a}\int_a^b f'(x)\,dx
+\]
+
+\begin{thm}[FTC, inverse operations version]
+  Let $f(x)$ be a continuous function and let $F(x)=\int_0^xf(t)\,dt$. Then $F'$ is differentiable, and
+  \[F'(x)=f(x)
+  \]
+\end{thm}
+
+\begin{proof}
+  
+\end{proof}
+
+Recall that in the differential calculus we had both formulas for specific derivatives as well as laws for the derivative operation, but in the integral calculus we had only the laws. The inverse operations theorem allows us to reverse each derivative formula to obtain an integral formula.
+
+\begin{thm}[Integral calculus formulas]
+  \begin{enumerate}
+    \item 
+  \end{enumerate}
+\end{thm}
+
 \subsection*{Exercises for \S \thesection}
 
 \iffalse
-\chapter{Appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Additional material}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Wild functions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+So far in this course we have investigated real numbers and their arithmetic, and sets of real numbers. In this part we will study functions, especially those that arise naturally in models and applications.
+
+Many of the most important functions in terms of theory, models, and applications turn out to be continuous. For example if you go for a jog, the distance you have traveled varies continuously over time. Moreover many common expressions such as $x^2$, $\ln(x)$, or $3\sin(x)-2e^x$ define continuous functions. However it is important to note that not all natural functions are continuous. For example the charge for a phone call does not vary continuous over time, but rather jumps at each minute.
+
+What exactly is a continuous function? We often say intuitively that a continuous function has no breaks in its graph. But what does this mean in terms of formal definitions? A simple example of a discontinuous function is one with a jump:
+\begin{center}
+\begin{tikzpicture}[domain=0:4]
+\draw (-0.2,0) -- (4.2,0);
+\draw (0,-0.2) -- (0,2.2);
+\draw plot (\x,{1+sin(\x r)});
+\draw[fill=white] (3,{1+sin(3r)}) circle (.07);
+\draw[fill=black] (3,{1.5+sin(3r)}) circle (.07);
+\draw (3,.05)--(3,-.05);
+\node[below] at (3,0) {$a$};
+\end{tikzpicture}
+\end{center}
+What makes this function discontinuous is that the value $f(a)$ is nowhere near the values of $f(x)$ for $x$ very near to $a$.
+
+At this point one may guess that the concept of a limit should be useful here. In fact, roughly speaking, we will define that $f$ is continuous at $a$ if whenever the values of $x$ approach $a$, the values of $f(x)$ approach $f(a)$:
+\[f(a)=\lim_{x\to a}f(x)
+\]
+Unfortunately, in the past we have only worked with limits as the integer value $n$ approaches $\infty$, never as a continuous variable $x$ approaches $a$. In the rest of this section we will begin to explore what should be meant by this limit expression.
+
+To reduce the question to one of sequential limits, one might replace the continuous variable $x$ by a sequence $x_n$ converging to $a$. For example, if $f(x)=x^3+5x+2$ then we can compute $\lim_{x\to0}f(x)$ as follows. First replace $x$ with the sequence $1/n$, since this has limit $0$. Next note that $\lim f(x_n)=\lim \frac{1}{n^3}+5\frac{1}{n}+2=2$.
+
+On problem with this approach is the possibility that the function doesn't just have a jump iscontinuity, but actually has a break.
+\begin{center}
+\begin{tikzpicture}
+\draw (-0.2,0) -- (4.2,0);
+\draw (0,-0.2) -- (0,2.2);
+\draw[domain=0:3] plot (\x,{1+sin(\x r)});
+\draw[domain=3:4] plot (\x,{1.5+sin(\x r)});
+\draw[fill=white] (3,{1+sin(3r)}) circle (.07);
+\draw[fill=black] (3,{1.5+sin(3r)}) circle (.07);
+\draw (3,.05)--(3,-.05);
+\node[below] at (3,0) {$a$};
+\end{tikzpicture}
+\end{center}
+When we used the sequence $1/n$ we only considered values of $x$ to the right of $a$, and none to the left. Thus this method would mistakenly conclude that the function depicted above is continuous.
+
+For example, if $f$ is the function
+\[f(x)=\begin{cases}x-1&x\leq0\\x+1&x>0\end{cases}
+\]
+then $\lim f(1/n)=1$, while $\lim f(-1/n)=-1$. Since we cannot say that either value has a greater claim to being the true limit, we correctly conclude that $\lim_{x\to0}f(x)$ does not exist.
+
+At this point one may be tempted to define $\lim_{x\to a}f(x)$ as the value of $\lim f(a+1/n)$ and $\lim f(a-1/n)$ provided these values exist and agree. However, this would again be mistaken! To see this consider the \emph{Dirichlet function} defined by
+\[f(x)=\begin{cases}1&x\in\QQ\\0&x\notin\QQ\end{cases}
+\]
+This function is so ugly that our definitions should definitely imply it is discontinuous. In fact our definitions should imply that none of its functional limits exist. But since we have $\lim f(1/n)=\lim f(-1/n)=1$, the above method would incorrectly conclude that $\lim_{x\to0}f(x)=1$. It is thanks to this strange example that we settle on the following very strong definition.
+
+\begin{defn}
+  We say that $\lim_{x\to a}f(x)=L$ if for every sequence $x_n$ such that $x_n\to a$ and $x_n\neq a$, we have $\lim f(x_n)=f(a)$.
+\end{defn}
+
+For example, if $f(x)=x^2$, then we can calculate $\lim_{x\to2}f(x)$ as follows. Let $x_n$ be an arbitrary sequence such that $x_n\to2$. Then $\lim f(x_n)=\lim(x_n)^2=(\lim x_n)^2=2^2=4$. Since $x_n$ was arbitrary, we can conclude that the functional limit $\lim_{x\to2}f(x)=4$ too.
+
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Baire's theorem and sets of discontinuity}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
