@@ -2853,7 +2853,7 @@ We close this section by establishing the first link between continuity and inte
 
 We have introduced derivatives as slopes or rates of change, and integrals as areas or accumulations. How are the two concepts related? Since we have already calculated that $\int_0^b x^2\,dx=b^3/3$ and $\int_0^b x^3\,dx=b^4/4$, it is not difficult to guess that integration is related to antiderivatives. Intuitively, it is also not hard to accept that the rate of change of an accumulation of some quantity should at least be related to the size of the original quantity. This is all confirmed in surprisingly great generality by the fundamental theorem of calculus, which says in brief that differentiation and integration are inverse operations.
 
-Before stating and proving the fundamental theorem of calculus, we need to visit a closely related cornerstone result about derivatives.
+Before stating and proving the fundamental theorem of calculus, we need to visit the mean value theorem, a cornerstone result about derivatives that is closely related to it.
 
 \begin{thm}[Mean Value Theorem]
   Let $f$ be differentiable on $[a,b]$. Then there exists $c\in[a,b]$ such that
@@ -2865,7 +2865,12 @@ Before stating and proving the fundamental theorem of calculus, we need to visit
   We can add a linear term to $f$ to assume without loss of generality that $f(a)=f(b)$. (Note that passing from $f(x)$ to $f(x)+mx+b$ has the effect of adding an $m$ to both sides of the desired equation.) Now we can use the Extreme Value Thoerem together with the Interior Extremum Theorem to conclude that there must exist $c\in[a,b]$ such that $f'(c)=0$, the desired result.
 \end{proof}
 
-The MVT says that the ``average rate of change'' of a function over an interval is equal to the instantaneous rate of change at some point in the interval. The MVT has a number of important applications. For example, it can be used to show that antiderivatives are unique up to an additive constant.
+We can also write the conclusion of the MVT as
+\[f(b)-f(a)=f'(c)(b-a)
+\]
+an equation which foreshadows the fundamental theorem of calculus. As we originally wrote it, the MVT says that the ``average rate of change'' of a function over an interval is equal to the instantaneous rate of change at some point in the interval.
+
+The MVT has a number of important applications. For example, it can be used to show that antiderivatives are unique up to an additive constant.
 
 \begin{cor}
   Suppose that $f'(x)=g'(x)$. Then $f-g$ is a constant function.
@@ -2900,10 +2905,10 @@ Dividing both sides of the net change theorem by $b-a$, we obtain a statement wh
 \[\frac{f(b)-f(a)}{b-a}=\frac{1}{b-a}\int_a^b f'(x)\,dx
 \]
 
-We now continue with the second part of the FTC. First, given any integrable function $f$ we define its \emph{accumulation function} (or \emph{area function}) as $\int_0^xf(t)\,dt$. The second part of the FTC says that the accumulation function is an antiderivative of $f$.
+We now continue with the second part of the FTC. First, given any integrable function $f$ we define its \emph{accumulation function} (or \emph{area function}) as $\int_0^xf(t)\,dt$. The second part of the FTC concerns the derivative of the accumulation function. To understand the statement intuitively, imagine extending a $0.5\times x$ rectangle in the $x$ direction. The area grows at a rate of $0.5$. In a similar way, if we extend the region under $f$ in the $x$ direction the area should grow at a rate of $f(x)$. Said another way, the derivative of the accumulation of $f$ is $f$, or, the accumulation of $f$ is an antiderivative of $f$.
 
 \begin{thm}[FTC, accumulation-is-antiderivative theorem]
-  Let $f(x)$ be a continuous function and let $F(x)=\int_a^x f(t)\,dt$. Then $F'$ is differentiable, and
+  Let $f(x)$ be a continuous function and let $F(x)=\int_a^x f(t)\,dt$. Then $F$ is differentiable, and
   \[F'(x)=f(x)
   \]
 \end{thm}
@@ -2938,14 +2943,15 @@ Recall that in the differential calculus we had both formulas for specific deriv
 \subsection*{Exercises for \S \thesection}
 
 \begin{exerc}
-  Suppose that $f(2)=5$ and $f'(x)\leq3$ for all $x$. How big or small must $f(8)$ be? How do you prove it?
+  Suppose that $f(2)=5$ and $-.5\leq f'(x)\leq.5$ for all $x$. How big or small can $f(8)$ be? How do you prove it?
 \end{exerc}
 
 \begin{exerc}
   Find the derivative of the function:
   \begin{enumerate}
-    \item $F(x)=\int_0^{x}\cos(t^2)\,dt$
-    \item $F(x)=\int_0^{\ln(x)}\cos(t^2)\,dt$
+    \item $F(x)=\int_0^x \cos(3t)\,dt$
+    \item $F(x)=\int_0^x \cos(t^2)\,dt$
+    \item $F(x)=\int_0^{\ln(x)} \cos(t^2)\,dt$
   \end{enumerate}
 \end{exerc}
 
