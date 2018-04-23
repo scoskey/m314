@@ -2533,6 +2533,7 @@ Just as continuous functions need not preserve open sets under forward images, n
 We have mentioned the extreme value theorem before as an important property of compact sets. At the time we did not have the framework to give a formal proof, but now we do.
 
 \begin{cor}[Extreme value theorem]
+  \label{cor:evt}
   If $K$ is compact and $f\colon K\to\RR$ is continuous, then $f$ achieves a minimum and maximum value on $K$.
 \end{cor}
 
@@ -2644,9 +2645,9 @@ The primary development of differential calculus now proceeds in two pieces. Fir
 
   Derivative formulas
   \begin{itemize}
-  \item The derivative of $x^\alpha$ is $\alpha x^{\alpha-1}$ for $\alpha\neq0$
-  \item The derivative of $e^x$ is $e^x$
+  \item The derivative of $x^\alpha$ is $\alpha x^{\alpha-1}$
   \item The derivative of $\ln(x)$ is $1/x$
+  \item The derivative of $e^x$ is $e^x$
   \item The derivative of $\sin(x)$ is $\cos(x)$
   \item The derivative of $\cos(x)$ is $-\sin(x)$
   \end{itemize}
@@ -2691,6 +2692,7 @@ In fact there is a whole hierarchy of differentiability properties. We say that 
 In the example above, the discontinuous derivative $f'(x)$ did not just have a simple jump discontinuity, but something much uglier. In our final result of the section, we will show that this ugliness can't be avoided. The result states that while derivatives need not be continuous, derivatives still share the \emph{intermediate value property} with continuous functions. That is, the conclusion of the intermediate value theorem is true for derivatives. First we need the following familiar lemma.
 
 \begin{lem}[Interior extremum theorem]
+  \label{thm:iet}
   If $f$ is differentiable on the interval $(a,b)$ and $f$ attains a maximum or minimum value at $c\in(a,b)$, then $f'(c)=0$.
 \end{lem}
 
@@ -2847,7 +2849,9 @@ We close this section by establishing the first link between continuity and inte
 \section{Derivatives and integrals}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We have introduced derivatives as slopes or rates of change, and integrals as areas or accumulations. How are the two concepts related?
+We have introduced derivatives as slopes or rates of change, and integrals as areas or accumulations. How are the two concepts related? Since we have already calculated that $\int_0^b x^2\,dx=b^3/3$ and $\int_0^b x^3\,dx=b^4/4$, it is not difficult to guess that integration is related to antiderivatives. Intuitively, it is also not hard to accept that the rate of change of an accumulation of some quantity should at least be related to the size of the original quantity. This is all confirmed in surprisingly great generality by the fundamental theorem of calculus, which says in brief that differentiation and integration are inverse operations.
+
+Before stating and proving the fundamental theorem of calculus, we need to visit a closely related cornerstone result about derivatives.
 
 \begin{thm}[Mean Value Theorem]
   Let $f$ be differentiable on $[a,b]$. Then there exists $c\in[a,b]$ such that
@@ -2856,44 +2860,98 @@ We have introduced derivatives as slopes or rates of change, and integrals as ar
 \end{thm}
 
 \begin{proof}
-  
+  We can add a linear term to $f$ to assume without loss of generality that $f(a)=f(b)$. (Note that passing from $f(x)$ to $f(x)+mx+b$ has the effect of adding an $m$ to both sides of the desired equation.) Now we can use the Extreme Value Thoerem together with the Interior Extremum Theorem to conclude that there must exist $c\in[a,b]$ such that $f'(c)=0$, the desired result.
 \end{proof}
 
-The MVT says that the ``average rate of change'' of a function over an interval is equal to the instantaneous rate of change at some point in the interval. The MVT has a number of important applications. For example.
+The MVT says that the ``average rate of change'' of a function over an interval is equal to the instantaneous rate of change at some point in the interval. The MVT has a number of important applications. For example, it can be used to show that antiderivatives are unique up to an additive constant.
 
-\begin{thm}[FTC, net change version]
-  Let $f$ be differentiable on $[a,b]$. Then
+\begin{cor}
+  Suppose that $f'(x)=g'(x)$. Then $f-g$ is a constant function.
+\end{cor}
+
+\begin{proof}
+  Let $h=f-g$ and suppose $h$ is not a constant function. Then there exist $a,b$ in the domain of $h$ such that $(h(b)-h(a))/(b-a)\neq0$. It follows from the MVT that there exists $c$ such that $h'(c)\neq0$. Thus $f'(c)\neq g'(c)$, contradicting our hypothesis.
+\end{proof}
+
+We are now ready to dive into the fundamental theorem of calculus. As we said, the FTC says differentiation and integration are inverse operations. This is actually two separate statements: the integral of a derivative is (related to) the original function, and the derivative of an integral is the original function. We begin with the first version, sometimes called the net change theorem.
+
+\begin{thm}[FTC, net change theorem]
+  Let $f$ be differentiable on $[a,b]$ and $f'$ be integrable on $[a,b]$. Then
   \[f(b)-f(a)=\int_a^b f'(x)\,dx
   \]
 \end{thm}
 
 \begin{proof}
-  
+  Let $P$ be a partition of $[a,b]$ consisting of endpoints $0=x_0<x_1<\cdots<x_n=b$. Then for each $i$, the MVT gives us $c_i\in[x_{i-1},x_i]$ such that
+  \[f(x_i)-f(x_{i-1})=f'(c_i)(x_i-x_{i-1})
+  \]
+  Summing both sides over $i\leq n$, the left-hand side telescopes and becomes $f(b)-f(a)$. Therefore we have
+  \[f(b)-f(a)=\sum_{i=1}^n f'(c_i)(x_i-x_{i-1})
+  \]
+  Since we clearly have $m_i\leq f'(c_i)\leq M_i$, we obtain
+  \[L(f',P)\leq f(b)-f(a)\leq U(f',P)
+  \]
+  Since the partition $P$ was arbitrary, we conclude that $L(f')\leq f(b)-f(a)\leq U(f')$. Since we are assuming $L(f')=U(f')=\int_a^bf'(x)\,dx$, we have $f(b)-f(a)=\int_a^bf'(x)\,dx$ as desired.
 \end{proof}
 
 Dividing both sides of the net change theorem by $b-a$, we obtain a statement which says that the ``average rate of change'' of a function over an interval is equal to the average of its instantaneous rates of change over the interval.
 \[\frac{f(b)-f(a)}{b-a}=\frac{1}{b-a}\int_a^b f'(x)\,dx
 \]
 
-\begin{thm}[FTC, inverse operations version]
-  Let $f(x)$ be a continuous function and let $F(x)=\int_0^xf(t)\,dt$. Then $F'$ is differentiable, and
+We now continue with the second part of the FTC. First, given any integrable function $f$ we define its \emph{accumulation function} (or \emph{area function}) as $\int_0^xf(t)\,dt$. The second part of the FTC says that the accumulation function is an antiderivative of $f$.
+
+\begin{thm}[FTC, accumulation-is-antiderivative theorem]
+  Let $f(x)$ be a continuous function and let $F(x)=\int_a^x f(t)\,dt$. Then $F'$ is differentiable, and
   \[F'(x)=f(x)
   \]
 \end{thm}
 
 \begin{proof}
-  
+  Substituting the defintion of $F$ into the difference quotient for $F$, we have:
+  \[F'(x)=\frac{1}{h}\int_x^{x+h} f(t)\,dt
+  \]
+  By the continuity of $f$, given $\epsilon>0$ we can find $\delta>0$ such that $|t-x|<\delta$ implies $|f(t)-f(x)|<\epsilon$. Letting $h<\delta$, we it follows that
+  \[h(f(x)-\epsilon)\leq\int_x^{x+h} f(t)\,dt\leq h(f(x)+\epsilon)
+  \]
+  Dividing all sides by $h$, we have:
+  \[f(x)-\epsilon\leq F'(x)\leq f(x)+\epsilon
+  \]
+  Since $\epsilon$ was arbitrary, we conclude that $F'(x)=f(x)$.
 \end{proof}
 
 Recall that in the differential calculus we had both formulas for specific derivatives as well as laws for the derivative operation, but in the integral calculus we had only the laws. The inverse operations theorem allows us to reverse each derivative formula to obtain an integral formula.
 
 \begin{thm}[Integral calculus formulas]
+  For each function $f(x)$, we have $\int_a^bf(t)\,dt=F(b)-F(a)$ where $F$ is the function shown.
   \begin{enumerate}
-    \item 
+    \item If $f(x)=x^\alpha$ then $F(x)=\frac{1}{\alpha+1}x^{\alpha+1}+C$, for $\alpha\neq-1$
+    \item If $f(x)=1/x$ then $F(x)=\ln(x)+C$
+    \item If $f(x)=e^x$ then $F(x)=e^x+C$
+    \item If $f(x)=\sin(x)$ then $F(x)=-\cos(x)+C$
+    \item If $f(x)=\cos(x)$ then $F(x)=sin(x)+C$
   \end{enumerate}
 \end{thm}
 
+\newpage
 \subsection*{Exercises for \S \thesection}
+
+\begin{exerc}
+  Suppose that $f(2)=5$ and $f'(x)\leq3$ for all $x$. How big or small must $f(8)$ be? How do you prove it?
+\end{exerc}
+
+\begin{exerc}
+  Find the derivative of the function:
+  \begin{enumerate}
+    \item $F(x)=\int_0^{x}\cos(t^2)\,dt$
+    \item $F(x)=\int_0^{\ln(x)}\cos(t^2)\,dt$
+  \end{enumerate}
+\end{exerc}
+
+\begin{exerc}[Abbott, ex 7.5.4]
+  Let $f$ be a continuous function on $[a,b]$ and assume that $\int_a^xf(t)\,dt=0$ for all $x$. Show that $f=0$.
+  
+  Give a counterexample to show that the statement is false if $f$ is not assumed to be continuous.
+\end{exerc}
 
 \iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
