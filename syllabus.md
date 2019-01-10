@@ -2,21 +2,26 @@
 
 ## Course information
 
-Meeting times: M,W from 12:00&ndash;1:15pm  
-Meeting place: MB 124  
+Meeting times: T,Th from 9:00&ndash;10:15pm  
+Meeting place: MB 139  
 Textbook: Stephen Abbott, *Understanding analysis*, 2nd edition  
 Web site: `scoskey.org/m314`  
 My email: `scoskey@boisestate.edu`  
-My office: MB 237-A  
-Office hours: Monday 2&ndash;3pm, Thursday 2&ndash;3pm, and by appointment
+My office: MB 238-B  
+Office hours: TBA, and by appointment
 
-## Course goals
+## Course content
 
-Real analysis is one of the core areas of modern pure mathematics. It is also the subject that provides the foundations for first-year calculus. It is important for aspiring math practitioners and educators alike to become familiar with real analysis. In this class we will also be exposed to rigorous mathematical thinking, reasoning, problem solving, and proof. My goals for this course include guiding you to further appreciate beauty in abstract concepts, become more fluent in the language of mathematics, become more comfortable discovering mathematical truth, and gain new experience writing rigorous and readable proofs.
-
-## Course topics
+Real analysis is one of the core areas of modern mathematics. It is also the subject that provides the foundations for introductory calculus. It is important for aspiring math practitioners and educators alike to become familiar with real analysis. In this class we will also be exposed to rigorous mathematical thinking, reasoning, problem solving, and proof.
 
 We will begin by discussing a simple but surprisingly deep question: *what are real numbers*? The answer to this question will lead us to the key concept of *completeness*. And with this concept in hand, will be able to undertake a rigorous study of the most familiar concepts from calculus: *limits*, *series*, *continuity*, and *derivatives*. (Sadly we will not have much time for integration.) Our study of continuity will take us on a short tour of the theory of *topology*&mdash;the study of abstract spaces where, like on the real line, continuity makes sense.
+
+## Anticipated learning outcomes
+
+* Appreciation for beauty in abstract concepts
+* Fluency in the language of mathematics
+* Comfort with mathematical discovery in content area
+* Write rigorous and readable proofs in content area
 
 ## Rough plan
 
@@ -36,9 +41,9 @@ We will begin by discussing a simple but surprisingly deep question: *what are r
 
 ## Tentative exam dates
 
-* Exam 1: Wednesday, February 14
-* Exam 2: Wednesday, March 21
-* Exam 3: Monday, April 30 from 12:30&ndash;2:30pm
+* Exam 1: Thursday, February 14
+* Exam 2: Thursday, March 28
+* Exam 3: Tuesday, May 7 from 9:30&ndash;11:30am
 
 ## Daily prep and classwork
 
@@ -46,4 +51,4 @@ Reading will be assigned prior to each class. You are expected to arrive prepare
 
 ## Homework
 
-All homework assignments will be started as in-class group work, which will take place following the daily lecture. Your written solutions will be turned in the following Tuesday by 4:30pm. All work will be evaluated for completeness, and certain items will be evaluated for correcteness and mathematical style. You are encouraged to collaborate with your peers inside and outside of class, and you are free to use online resources when you are stuck. But please keep in mind that you must always fully understand your solutions and most importantly *write them in your own words*.
+All homework assignments will be started as in-class group work, which will take place following the daily lecture. Your written solutions will be turned in the following Tuesday. All work will be evaluated for completeness, and certain items will be evaluated for correcteness and mathematical style. You are encouraged to collaborate with your peers inside and outside of class, and you are free to use online resources when you are stuck. But please keep in mind that you must always fully understand your solutions and most importantly *write them in your own words*.
