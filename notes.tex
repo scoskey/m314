@@ -100,7 +100,7 @@ This leads to a \emph{big question}: do ratios suffice to measure all distances?
 
 The argument is given in Plato's Meno. If we quadruplicate the square, we see that the square with sidelength $d$ is exactly half the square with sidelength $2$. Thus $d^2=2^2/2=2$.
 
-\begin{thm}t
+\begin{thm}
   \label{thm:root-2-irrational}
   If $d^2=2$ then $d\notin\QQ$.
 \end{thm}
@@ -109,7 +109,7 @@ The argument is given in Plato's Meno. If we quadruplicate the square, we see th
   Suppose $d$ is rational and write $d=a/b$ where $a,b$ are integers and the fraction is in lowest terms. Then $a^2=2b^2$. Notice that the right-hand side is even, and therefore so is the left-hand side. It follows that $a$ is even. Hence the left-hand side is divisible by $4$, and so is the right-hand side. It follows that $b$ is even. Thus both $a$ and $b$ are even, contradicting that the fraction $a/b$ is in lowest terms.
 \end{proof}
 
-We conclude that the rational number system has \emph{gaps}, such as that defined by $\sqrt2$. All we can say at the moment is that some rational numbers are less than $\sqrt2$ and the rest are larger than $\sqrt2$. More accurately, since in our development the number $\sqrt2$ doesn't exist yet, we can only say that some numbers have square less than $2$ and others have square greater than $2$. This is an example of a property which \emph{cuts} the rational number system into two halves.
+We conclude that the rational number system has \emph{gaps}, such as the one at $\sqrt2$. All we can say at the moment is that some rational numbers are less than $\sqrt2$ and the rest are larger than $\sqrt{2}$. More accurately, since in our development the number $\sqrt{2}$ doesn't exist yet, we can only say that some numbers have square less than $2$ and others have square greater than $2$. This is an example of a property which \emph{cuts} the rational number system into two halves.
 
 \begin{defn}
   A subset $C\subset\QQ$ is called a \emph{cut} if it satisfies the following three properties.
@@ -122,7 +122,7 @@ We conclude that the rational number system has \emph{gaps}, such as that define
 
 For example, it is easy to check that the set $C=\{q\in\QQ\mid q<2\}$ satisfies all three properties of a cut. In fact, any set of the form $\set{q\in\QQ\mid q<r}$ for some $r\in\QQ$ is a cut. These cuts are somewhat obvious to define, and they are called \emph{rational cuts}.
 
-On the other hand, the cut at $\sqrt{2}$ considered previously would formally be defined as $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$. This cut did not have as obvious of a definition and it is an example of an irrational cut.
+On the other hand, the cut at $\sqrt{2}$ considered previously would formally be defined as $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$. This is an example of an irrational cut.
 
 \begin{defn}
   A cut $C$ is said to be an \emph{irrational cut} or a \emph{gap} if the complement of the cut, $\QQ\setminus C$, has no least element.
