@@ -1992,7 +1992,7 @@ As we have outlined above, any closed and bounded subset of $\RR$ is compact. In
 
   First suppose that $A$ is unbounded. Then for all $n$ there exists some point $a_n\in A$ such that $|a_n|>n$. It follows that every subsequence of $a_n$ does not converge at all, and therefore that $A$ is not compact.
 
-  Next suppose that $A$ is not closed. Then by Theorems~\ref{thm:closure} and~\ref{prop:closure-equiv} there exists some $a\in A'\setminus A$. That is, $a$ is a limit point of $A$ that is not in $A$. By our remarks about limit points, there exists a sequence $a_n$ contained in $A$ such that $a_n\to a$. Then $a_n$ has the property that none of its subsequences converges to a point of $A$, and so $A$ is again not compact.
+  Next suppose that $A$ is not closed. Then by there exists some $a\in\partial A\setminus A$. That is, $a$ is in the boundary of $A$ but not in $A$. From the definition of boundary, it is not difficult to verify there exists a sequence $a_n$ of elements of $A$ such that $a_n\to a$. Then $a_n$ has the property that none of its subsequences converges to a point of $A$, and so $A$ is again not compact.
 \end{proof}
 
 The equivalence in the last theorem turns out to be something of a coincidence. Indeed when one studies the topology of more general types of spaces, the equivalence can fail. For example, if one studies topology on $\RR$ with the usual distance $|x-y|$ replaced by the function $d(x,y)=|x-y|/(1+|x-y|)$, then the entire space $\RR$ is closed and bounded, and fails to be compact. In general topology one doesn't use a distance function at all, so ``bounded'' doesn't make sense. In this setting, even the subsequence definiton of compactness fails to be adequate.
