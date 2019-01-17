@@ -201,9 +201,9 @@ In the previous section we defined a cut in the rational number system, and stat
   \end{align*}
   There is a clever trick going on in the second implication (the $\Longleftarrow$ one) which we will comment on in a moment. But overall, this calculation is telling us that we will be safe if we choose $\epsilon<(2-q^2)/(2q+1)$.
 
-  Now, in the second implication we replaced $\epsilon^2$ with $\epsilon$ to simplify the expression and make it easy to solve for $\epsilon$. To do this, we actually need to make the extra assumption that $\epsilon<1$, since then $\epsilon^2<\epsilon$ and the $\Longleftarrow$ holds true. This is acceptible because we haven't yet chosen $\epsilon$, so we just need to additionally promise to choose $\epsilon<1$.
+  Now, in the second implication we replaced $\epsilon^2$ with $\epsilon$ to simplify things and make it easier to solve for $\epsilon$. To do this, we actually need to make the extra assumption that $\epsilon<1$, since then $\epsilon^2<\epsilon$ and the $\Longleftarrow$ holds true. This is acceptible because we haven't yet chosen $\epsilon$, so we just need to additionally promise to choose $\epsilon<1$.
 
-  We now know that our proof will succeed if we choose $\epsilon$ to be any positive rational number that is both $<1$ and also $<(2-q^2)/(2q+1)$. To verify that this works, we use our preparatory work above \emph{forwards} as follows.
+  We now know that our proof will succeed if we choose $\epsilon$ to be any positive rational number such that both $\epsilon<1$ and also $\epsilon<(2-q^2)/(2q+1)$. To verify that this works, we use our preparatory work above \emph{forwards} as follows.
   \begin{align*}
     (q+\epsilon)^2&=q^2+2q\epsilon+\epsilon^2\\
     &<q^2+2q\epsilon+\epsilon\\
@@ -213,14 +213,14 @@ In the previous section we defined a cut in the rational number system, and stat
   \end{align*}
   Thus we conclude that $r=q+\epsilon$ is a rational number such that $q<r$ and $r^2<2$, which completes the proof of (c).
 
-  Finally, to see that $C$ is a gap, we note that the same argument as in part (c) above can be used to show that the set $\set{q\in\QQ\mid q>0\text{ and }q^2>2}$ has no least element. And since Theorem~\ref{thm:root-2-irrational} implies that $\sqrt2$ is itself not rational, we can conclude that $\QQ\setminus C$ has no least element.
+  Finally, to see that $C$ is a gap, we note that the same argument as in part~(c) above can be used to show that the set $\set{q\in\QQ\mid q>0\text{ and }q^2>2}$ has no least element. And since Theorem~\ref{thm:root-2-irrational} implies that $\sqrt2$ is itself not rational, we can conclude that $\QQ\setminus C$ has no least element.
 \end{proof}
 
 Let us look at the number systems we know so far, from smallest to largest. Each one has progressively more power than the last.
 \begin{itemize}
 \item $\NN$: you can add but not subtract.
 \item $\ZZ$: you can add and subtract, but not divide.
-\item $\QQ$: you can add and subtract and divide, but there are ``gaps''.
+\item $\QQ$: you can add, subtract, and divide, but there are ``gaps''.
 \end{itemize}
 
 The real number system $\RR$ will be defined in such a way that it fills the gaps of $\QQ$. In order to fill these gaps, we need the terminology of least upper bounds.
@@ -243,9 +243,9 @@ Our definitions of rational and irrational cuts can now be rephrased as follows.
   The \emph{real number system} consists of the rational numbers $\QQ$ together with a supremum for every cut of $\QQ$ that doesn't already have a supremum (that is, for every irrational cut).
 \end{defn}
 
-In summary, to form the real number system we first built the rational number system, observe that it has gaps, and then manually \emph{filled in} all these gaps.
+In summary, to form the real number system we first built the rational number system, observed that it has gaps, and then manually \emph{filled in} all these gaps.
 
-It is important to emphasize that with our definition of real numbers, an irrational number is literally \emph{defined} by its cut. That is, we didn't define $\sqrt2$ simply by saying it is a positive number whose square is $2$. That would tell you what property the number has, but not where it actually lies. Instead we defined $\sqrt2$ to be the supremum of the cut $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$.
+It is important to emphasize that with our definition of real numbers, an irrational number is literally \emph{defined} by its cut. That is, we don't define $\sqrt2$ by saying it is a positive number whose square is $2$. That would tell you what property the number has, but not where it actually sits. Instead we define $\sqrt2$ to be the supremum of the cut $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$.
 
 We close this section with a characterization of the supremum of a set that will be useful in the future.
 
