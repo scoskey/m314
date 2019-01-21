@@ -23,10 +23,10 @@
 \usepackage{tikz}\usetikzlibrary{positioning,decorations.fractals,decorations.pathmorphing}
 
 \newcommand{\set}[1]{\left\{\,#1\,\right\}}
-\newcommand{\NN}{\mathbb N}
-\newcommand{\ZZ}{\mathbb Z}
-\newcommand{\QQ}{\mathbb Q}
-\newcommand{\RR}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\rng}{rng}
 \DeclareMathOperator{\cl}{cl}
@@ -79,11 +79,11 @@
 
 We begin the course by briefly pondering a very deep question: what are numbers and what are they for?
 
-The natural or counting numbers $1,2,3,\ldots$ are collectively denoted $\NN$ and are central to many areas of mathematical study. \emph{Combinatorics} is the study of counting finite sets. For example: how many ways are there to write the number 10 as a sum of smaller natural numbers? \emph{Number theory} is the study of the arithmetic operations on the natural numbers. For example: how many prime numbers are there less than $10^{10}$?
+The natural or counting numbers $1,2,3,\ldots$ are collectively denoted $\N$ and are central to many areas of mathematical study. \emph{Combinatorics} is the study of counting finite sets. For example: how many ways are there to write the number 10 as a sum of smaller natural numbers? \emph{Number theory} is the study of the arithmetic operations on the natural numbers. For example: how many prime numbers are there less than $10^{10}$?
 
 But in \emph{calculus}, analysis, and geometry, numbers are used for measurement. Using the board as a plane, how can we measure the distance between two points? To answer this we would first need to choose a unit, such as a randomly chosen straight stick. With this in hand, we can try count how many copies of the unit stick fit along the striaght line segment joining the two points. But what if the number of unit sticks doesn't come out whole?
 
-In this case we can try to use \emph{ratios} to measure the distance. For example, suppose we are trying to measure the distance $d$, and three unit sticks fit perfectly inside two copies of $d$. Then we say that $d=3/2$ units. Sometimes this telescoping process takes a long time, for example if five units fit perfectly inside four copies of $d$. The set of ratios of natural numbers are collectively denoted $\QQ$ and are called the rational numbers.
+In this case we can try to use \emph{ratios} to measure the distance. For example, suppose we are trying to measure the distance $d$, and three unit sticks fit perfectly inside two copies of $d$. Then we say that $d=3/2$ units. Sometimes this telescoping process takes a long time, for example if five units fit perfectly inside four copies of $d$. The set of ratios of natural numbers are collectively denoted $\Q$ and are called the rational numbers.
 
 This leads to a \emph{big question}: do ratios suffice to measure all distances? The answer to this question is a big fat NO, a fact that surprised the ancients. Rational distances do suffice for most practical purposes because in the real world we can usually use approximations. But there are ideal distances (numbers) which cannot be measured by a ratio of natural numbers. The classical Greek example is $d=$ the diagonal of a square. Notice that $d$ has the property that $d^2=2$.
 
@@ -102,7 +102,7 @@ The argument is given in Plato's Meno. If we quadruplicate the square, we see th
 
 \begin{thm}
   \label{thm:root-2-irrational}
-  If $d^2=2$ then $d\notin\QQ$.
+  If $d^2=2$ then $d\notin\Q$.
 \end{thm}
 
 \begin{proof}
@@ -112,20 +112,20 @@ The argument is given in Plato's Meno. If we quadruplicate the square, we see th
 We conclude that the rational number system has \emph{gaps}, such as the one at $\sqrt2$. All we can say at the moment is that some rational numbers are less than $\sqrt2$ and the rest are larger than $\sqrt{2}$. More accurately, since in our development the number $\sqrt{2}$ doesn't exist yet, we can only say that some numbers have square less than $2$ and others have square greater than $2$. This is an example of a property which \emph{cuts} the rational number system into two halves.
 
 \begin{defn}
-  A subset $C\subset\QQ$ is called a \emph{cut} if it satisfies the following three properties.
+  A subset $C\subset\Q$ is called a \emph{cut} if it satisfies the following three properties.
   \begin{enumerate}
-  \item (nontriviality) $C\neq\emptyset$ and $C\neq\QQ$
+  \item (nontriviality) $C\neq\emptyset$ and $C\neq\Q$
   \item (downward closure) if $q<r$ and $r\in C$ then $q\in C$
   \item (no greatest element) if $q\in C$ then there is $r\in C$ such that $q<r$
   \end{enumerate}
 \end{defn}
 
-For example, it is easy to check that the set $C=\{q\in\QQ\mid q<2\}$ satisfies all three properties of a cut. In fact, any set of the form $\set{q\in\QQ\mid q<r}$ for some $r\in\QQ$ is a cut. These cuts are somewhat obvious to define, and they are called \emph{rational cuts}.
+For example, it is easy to check that the set $C=\{q\in\Q\mid q<2\}$ satisfies all three properties of a cut. In fact, any set of the form $\set{q\in\Q\mid q<r}$ for some $r\in\Q$ is a cut. These cuts are somewhat obvious to define, and they are called \emph{rational cuts}.
 
-On the other hand, the cut at $\sqrt{2}$ considered previously would formally be defined as $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$. This is an example of an irrational cut.
+On the other hand, the cut at $\sqrt{2}$ considered previously would formally be defined as $C=\set{q\in\Q\mid q<0\text{ or }q^2<2}$. This is an example of an irrational cut.
 
 \begin{defn}
-  A cut $C$ is said to be an \emph{irrational cut} or a \emph{gap} if the complement of the cut, $\QQ\setminus C$, has no least element.
+  A cut $C$ is said to be an \emph{irrational cut} or a \emph{gap} if the complement of the cut, $\Q\setminus C$, has no least element.
 \end{defn}
 
 In the next section, we will prove rigorously that the cut at $\sqrt{2}$ is really an example of an irrational cut. We will then describe a correspondence between cuts and real numbers, with rational cuts corresponding to rational numbers and irrational cuts corresponding to irrational numbers.
@@ -136,11 +136,11 @@ In the next section, we will prove rigorously that the cut at $\sqrt{2}$ is real
 \begin{exerc}[see also Abbott, ex 8.6.1]
   For each set, either argue that it is a cut, or show that one of the conditions in the definition of cut is not satisfied.
   \begin{enumerate}
-  \item $\set{q\in\QQ\mid q<r}$, where $r$ is a fixed rational number
-  \item $\set{q\in\QQ\mid q\leq2}$
-  \item $\set{q\in\QQ\mid q^2<2}$
-  \item $\set{q\in\QQ\mid q<0\text{ or }q^2<2}$
-  \item $\set{q\in\QQ\mid q<0\text{ or }q^2\leq2}$
+  \item $\set{q\in\Q\mid q<r}$, where $r$ is a fixed rational number
+  \item $\set{q\in\Q\mid q\leq2}$
+  \item $\set{q\in\Q\mid q^2<2}$
+  \item $\set{q\in\Q\mid q<0\text{ or }q^2<2}$
+  \item $\set{q\in\Q\mid q<0\text{ or }q^2\leq2}$
   \end{enumerate}
 \end{exerc}
 
@@ -181,7 +181,7 @@ In the previous section we defined a cut in the rational number system, and stat
 
 \begin{thm}
   \label{thm:root-2-cut}
-  The cut $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$ is an irrational cut.
+  The cut $C=\set{q\in\Q\mid q<0\text{ or }q^2<2}$ is an irrational cut.
 \end{thm}
 
 \begin{proof}
@@ -213,17 +213,17 @@ In the previous section we defined a cut in the rational number system, and stat
   \end{align*}
   Thus we conclude that $r=q+\epsilon$ is a rational number such that $q<r$ and $r^2<2$, which completes the proof of (c).
 
-  Finally, to see that $C$ is a gap, we note that the same argument as in part~(c) above can be used to show that the set $\set{q\in\QQ\mid q>0\text{ and }q^2>2}$ has no least element. And since Theorem~\ref{thm:root-2-irrational} implies that $\sqrt2$ is itself not rational, we can conclude that $\QQ\setminus C$ has no least element.
+  Finally, to see that $C$ is a gap, we note that the same argument as in part~(c) above can be used to show that the set $\set{q\in\Q\mid q>0\text{ and }q^2>2}$ has no least element. And since Theorem~\ref{thm:root-2-irrational} implies that $\sqrt2$ is itself not rational, we can conclude that $\Q\setminus C$ has no least element.
 \end{proof}
 
 Let us look at the number systems we know so far, from smallest to largest. Each one has progressively more power than the last.
 \begin{itemize}
-\item $\NN$: you can add but not subtract.
-\item $\ZZ$: you can add and subtract, but not divide.
-\item $\QQ$: you can add, subtract, and divide, but there are ``gaps''.
+\item $\N$: you can add but not subtract.
+\item $\Z$: you can add and subtract, but not divide.
+\item $\Q$: you can add, subtract, and divide, but there are ``gaps''.
 \end{itemize}
 
-The real number system $\RR$ will be defined in such a way that it fills the gaps of $\QQ$. In order to fill these gaps, we need the terminology of least upper bounds.
+The real number system $\R$ will be defined in such a way that it fills the gaps of $\Q$. In order to fill these gaps, we need the terminology of least upper bounds.
 
 \begin{defn}
   If $A$ is any set of numbers, then an \emph{upper bound} for $A$ is a number $b$ such that for all $a\in A$, $a\leq b$. If $b$ is an upper bound for $A$ then it is called the \emph{least upper bound} or \emph{supremum} of $A$ if it is least among all possible upper bounds of $A$.
@@ -237,15 +237,15 @@ The real number system $\RR$ will be defined in such a way that it fills the gap
   \end{itemize}
 \end{example}
 
-Our definitions of rational and irrational cuts can now be rephrased as follows. A rational cut is one which has a supremum in $\QQ$, and an irrational cut is one which does not have a supremum in $\QQ$. We can therefore ``fill'' the gaps in $\QQ$ by inserting a newly created supremum for every irrational cut.
+Our definitions of rational and irrational cuts can now be rephrased as follows. A rational cut is one which has a supremum in $\Q$, and an irrational cut is one which does not have a supremum in $\Q$. We can therefore ``fill'' the gaps in $\Q$ by inserting a newly created supremum for every irrational cut.
 
 \begin{defn}
-  The \emph{real number system} consists of the rational numbers $\QQ$ together with a supremum for every cut of $\QQ$ that doesn't already have a supremum (that is, for every irrational cut).
+  The \emph{real number system} consists of the rational numbers $\Q$ together with a supremum for every cut of $\Q$ that doesn't already have a supremum (that is, for every irrational cut).
 \end{defn}
 
 In summary, to form the real number system we first built the rational number system, observed that it has gaps, and then manually \emph{filled in} all these gaps.
 
-It is important to emphasize that with our definition of real numbers, an irrational number is literally \emph{defined} by its cut. That is, we don't define $\sqrt2$ by saying it is a positive number whose square is $2$. That would tell you what property the number has, but not where it actually sits. Instead we define $\sqrt2$ to be the supremum of the cut $C=\set{q\in\QQ\mid q<0\text{ or }q^2<2}$.
+It is important to emphasize that with our definition of real numbers, an irrational number is literally \emph{defined} by its cut. That is, we don't define $\sqrt2$ by saying it is a positive number whose square is $2$. That would tell you what property the number has, but not where it actually sits. Instead we define $\sqrt2$ to be the supremum of the cut $C=\set{q\in\Q\mid q<0\text{ or }q^2<2}$.
 
 We close this section with a characterization of the supremum of a set that will be useful in the future.
 
@@ -265,26 +265,26 @@ The proof of this is left as an exercise.
 \begin{exerc}[see also Abbott, ex 1.3.8]
   Find the supremum and infemum of each of the following sets. You do not need to give a detailed proof, but please explain your reasoning.
   \begin{enumerate}
-  \item $\set{n\in\NN\mid n^2<10}$
-  \item $\set{n/(m+n)\mid m,n\in\NN}$
-  \item $\set{n/(2n+1)\mid n\in\NN}$
-  \item $\set{n/m\mid m,n\in\NN\text{ and }m+n\leq10}$
+  \item $\set{n\in\N\mid n^2<10}$
+  \item $\set{n/(m+n)\mid m,n\in\N}$
+  \item $\set{n/(2n+1)\mid n\in\N}$
+  \item $\set{n/m\mid m,n\in\N\text{ and }m+n\leq10}$
   \end{enumerate}
 \end{exerc}
 
 \begin{exerc}
-  Suppose that $A$ and $B$ are subsets of $\RR$ and that $A\subset B$.  Which of the following is correct, and why? ``any upper bound for $A$ is also an upper bound for $B$'', or; ``any upper bound of $B$ is also an upper bound for $A$.''
+  Suppose that $A$ and $B$ are subsets of $\R$ and that $A\subset B$.  Which of the following is correct, and why? ``any upper bound for $A$ is also an upper bound for $B$'', or; ``any upper bound of $B$ is also an upper bound for $A$.''
 
   Now additionally suppose that $\sup(A)$ and $\sup(B)$ exist.  Which inequality is right, and why? $\sup(A)\leq\sup(B)$, or; $\sup(B)\leq\sup(A)$.
 \end{exerc}
 
 \begin{exerc}
   Modify a proof given in class to instead show that the set
-$\set{q\in\QQ\mid q^3<2}$ has no last element.
+$\set{q\in\Q\mid q^3<2}$ has no last element.
 \end{exerc}
 
 \begin{exerc}[Abbott, ex 8.6.3]
-  Read the list of properties of a ``field'' of numbers.  Which of these properties is satisfied by $\NN$?  By $\ZZ$?  By $\QQ$?
+  Read the list of properties of a ``field'' of numbers.  Which of these properties is satisfied by $\N$?  By $\Z$?  By $\Q$?
 \end{exerc}
 
 \begin{exerc}[see also Abbott, ex 8.6.5(a)]
@@ -322,16 +322,16 @@ One should then verify that $A+B$ is a cut, that $A+B=B+A$, that $(A+B)+C=A+(B+C
 \]
 One should then verify that $A<B<C\implies A<C$, and $A<B\implies A+C<B+C$, and so forth. We will skip the remaining details of these tedious definitions and verifications.
 
-Since we constructed $\RR$ by filling in gaps in the rational number system $\QQ$, it is natural to ask whether $\RR$ itself has any gaps. In other words, maybe in filling some gaps we introduced new ones! In fact $\RR$ does not have any gaps.
+Since we constructed $\R$ by filling in gaps in the rational number system $\Q$, it is natural to ask whether $\R$ itself has any gaps. In other words, could it be that by filling in gaps we introduced new ones? Thankfully the answer to this question is no, and $\R$ does not have any gaps.
 
 \begin{defn}
   An ordered field is said to satisfy the \emph{axiom of completeness} or the \emph{least upper bound property (LUBP)} if every bounded subset has a least upper bound, that is, a supremum.
 \end{defn}
 
-For example, $\QQ$ is an ordered field that is not complete, since we checked that the cut corresponding to $\sqrt2$ has no supremum. On the other hand the real field $\RR$ does turn out to be complete. The results of this discussion are summarized in the following big theorem.
+For example, $\Q$ is an ordered field that is not complete, since we checked that the cut corresponding to $\sqrt2$ has no rational supremum. On the other hand the real field $\R$ does turn out to be complete. The results of this discussion are summarized in the following big theorem.
 
 \begin{thm}
-  The real number system $\RR$ is an ordered field satisfying the axiom of completeness. Moreover, $\RR$ is the unique such field up to isomorphism.
+  The real number system $\R$ is an ordered field satisfying the axiom of completeness. Moreover, $\R$ is the unique such field up to isomorphism.
 \end{thm}
 
 As soon as one accepts this theorem, it is actually never necessary to speak of cuts again. In the future we can describe a real number in many ways: algebraically, as a limit, as a summation, or of course by its decimal expansion.
@@ -344,28 +344,28 @@ Although we are omitting the greater part of the proof of the above theorem, let
   Now, since $A\subset U$ for every $A\in S$, we see that $U$ is an upper bound for $S$. Moreover $U$ is the least upper bound for $S$. Indeed, any other upper bound $U'$ satisfies $A\subset U'$ for every $A\in S$, and therefore $U=\bigcup S\subset U'$. In other words, $U\leq U'$, as desired.
 \end{proof}
 
-Once again, although we have defined the real number system using cuts, now that the construction is complete we refer to the properties of the system rather than the construction. So from now on the real number system $\RR$ is the unique ordered field extending the rational number system and satisfying the axiom of completeness. From these properties alone we can conclude all familiar facts about the real number system.
+From this point on, we will never need cuts again, and the real number system $\R$ is simply the unique ordered field extending the rational number system and satisfying the axiom of completeness. From this abstract definition we can prove all the facts we will need about the real number system. We begin with the following.
 
 \begin{thm}[Archimedian property]
-  For any real number $x$ there exists a natural number $n$ such that $x<n$. That is, the real numbers fill in between the integers, they do not extend beyond them to the right.
+  For any real number $x$, there exists a natural number $n$ such that $x<n$. That is, while there are real numbers between integers, there aren't any real numbers beyond the integers to the right.
 \end{thm}
 
 \begin{proof}
-  Suppose to the contrary that $x$ is a real number such that for all $n\in\NN$ we have $n\leq x$. Then this says the set $\NN$ is bounded. By the axiom of completeness, $\NN$ should have a least upper bound, call it $\alpha$.
+  Suppose to the contrary that $x$ is a real number such that for all $n\in\N$ we have $n\leq x$. Then this says the set $\N$ is bounded. By the axiom of completeness, $\N$ should have a least upper bound, call it $\alpha$.
 
-  Now, since $\alpha$ is the \emph{least} upper bound, $\alpha-1$ is not an upper bound for $\NN$. Hence there exists $n\in\NN$ such that $\alpha-1\leq n$. It follows that $\alpha\leq n+1$, contradicting that $\alpha$ is an upper bound for all natural numbers.
+  Now, since $\alpha$ is the \emph{least} upper bound, $\alpha-1$ is not an upper bound for $\N$. Hence there exists $n\in\N$ such that $\alpha-1<n$. It follows that $\alpha<n+1$, contradicting that $\alpha$ is an upper bound for all natural numbers.
 \end{proof}
 
 As a consequence of this simple fact, we can now formally establish one fact we have previously stated without proof. While the rational number system is not sufficient to measure all distances, it is sufficient to \emph{approximate} any distance. In the following result, we let $x<y$ and imagine that they are very close to one another.
 
 \begin{thm}[Rational density]
-  For any real numbers $x<y$ there exists $q\in\QQ$ such that $x<q<y$.
+  For any real numbers $x,y$, if $x<y$ then there exists $q\in\Q$ such that $x<q<y$.
 \end{thm}
 
 \begin{proof}
-  Using the Archimedean principle, we can find $n\in\NN$ such that $n>1/(y-x)$. Intuitively, this guarantees that increments of size $1/n$ cannot step over the interval $(x,y)$.
+  Using the Archimedean principle, we can find $n\in\N$ such that $n>1/(y-x)$. Intuitively, this guarantees that increments of size $1/n$ cannot step over the interval $(x,y)$.
 
-  Now let $m\in\NN$ be the smallest natural number such that $x<m/n$ (again use the Archimedean principle). Note that by this minimality we have $m/n-1/n\leq x$. Putting these equations together, we have
+  Now let $m\in\N$ be the smallest natural number such that $x<m/n$ (again use the Archimedean principle). Note that by this minimality we have $m/n-1/n\leq x$. Putting these equations together, we have
 \begin{align*}
   x&<m/n\\
    &\leq x+1/n\\
@@ -374,7 +374,7 @@ As a consequence of this simple fact, we can now formally establish one fact we 
 Thus the rational number $q=m/n$ lies in the interval $(x,y)$.
 \end{proof}
 
-To see that this implies we can approximate real numbers by rational numbers as closely as we like, let $x$ be a given real number and apply the rational density theorem to the intervals $(x-\epsilon,x+\epsilon)$.
+To see that this implies we can approximate real numbers by rational numbers as closely as we like, let $x$ be a given real number and apply the rational density theorem to intervals of the form $(x-\epsilon,x+\epsilon)$ where $\epsilon$ is small.
 
 \newpage
 \subsection*{Exercises for \S\thesection}
@@ -383,7 +383,7 @@ To see that this implies we can approximate real numbers by rational numbers as 
 %   Give a detailed proof from the definition of supremum that the supremum of the interval $(0,1)$ is exactly $1$.
 % \end{exerc}
 
-\begin{exerc}[Abbott, exercise 1.4.1]
+\begin{exerc}[see also Abbott, exercise 1.4.1]
   Complete and prove:
   \begin{enumerate}
     \item The sum of two rational numbers is\ldots
@@ -403,7 +403,7 @@ To see that this implies we can approximate real numbers by rational numbers as 
 \end{exerc}
 
 \begin{exerc}
-  Read the characterization of supremum described in Abbott, Lemma~1.3.8. Then, give a thorough proof that $1/2$ is the supremum of the set $\set{n/(2n+1)\mid n\in\NN}$. Point out the exact moment in the proof when the Archimedean Property is used.
+  Read the characterization of supremum described in Abbott, Lemma~1.3.8. Then, give a thorough proof that $1/2$ is the supremum of the set $\set{n/(2n+1)\mid n\in\N}$. Point out the exact moment in the proof when the Archimedean Property is used.
 \end{exerc}
 
 \begin{exerc}
@@ -435,15 +435,15 @@ In this section we will continue with consequences of the completeness axiom. In
 \end{defn}
 
 \begin{example}
-  The set of natural numbers $\NN$ is countable, as is any subset of $\NN$.
+  The set of natural numbers $\N$ is countable, as is any subset of $\N$.
 \end{example}
 
 \begin{example}
-  The set of integers $\ZZ$ is countable. To see this, one can simply alternate between positive and negative integers: $0,+1,-1,+2,-2,+3,-3,\ldots$.
+  The set of integers $\Z$ is countable. To see this, one can simply alternate between positive and negative integers: $0,+1,-1,+2,-2,+3,-3,\ldots$.
 \end{example}
 
 \begin{example}
-  The set of rational numbers $\QQ$ is countable. To see this, let us first show that the set of positive rational numbers $\QQ_+$ is countable. Although the numerator and denominator make it seem like there are two ``dimensions'' of information, we can get around this by fixing the sum of the two and then letting it increase: begin with $\frac11$, then do $\frac12,\frac21$, then $\frac13,\frac22,\frac31$, then $\frac14,\frac23,\frac32,\frac41$, and so forth. The list has duplicates such as $\frac11$ and $\frac22$, but we can go through and delete these if desired. Finally we can include the negatives as well by applying the same method as we did with $\ZZ$.
+  The set of rational numbers $\Q$ is countable. To see this, let us first show that the set of positive rational numbers $\Q_+$ is countable. Although the numerator and denominator make it seem like there are two ``dimensions'' of information, we can get around this by fixing the sum of the two and then letting it increase: begin with $\frac11$, then do $\frac12,\frac21$, then $\frac13,\frac22,\frac31$, then $\frac14,\frac23,\frac32,\frac41$, and so forth. The list has duplicates such as $\frac11$ and $\frac22$, but we can go through and delete these if desired. Finally we can include the negatives as well by applying the same method as we did with $\Z$.
 \end{example}
 
 The following result can be handy for showing sets are countable.
@@ -461,13 +461,13 @@ The following result can be handy for showing sets are countable.
   We leave the proof of the second statement as an exercise.
 \end{proof}
 
-To show how this lemma can come in handy, we can use it recast the proof that $\ZZ$ is countable. It is obvious that the set $\ZZ_+$ of nonnegative integers is uncountable, and ditto for the negative integers $\ZZ_-$. Since $\ZZ$ is the union of the two sets, it follows that $\ZZ$ is countable.
+To show how this lemma can come in handy, we can use it recast the proof that $\Z$ is countable. It is obvious that the set $\Z_+$ of nonnegative integers is uncountable, and ditto for the negative integers $\Z_-$. Since $\Z$ is the union of the two sets, it follows that $\Z$ is countable.
 
 We now come to the ``surprising'' fact hinted at above.
 
 \begin{thm}
   \label{thm:reals-uncountable}
-  The set of real numbers $\RR$ is \textbf{not} countable.
+  The set of real numbers $\R$ is \textbf{not} countable.
 \end{thm}
 
 In order to prove this theorem, we need the following consequence of the completeness of the real numbers, which will be used several more times throughout the course.
@@ -477,17 +477,17 @@ In order to prove this theorem, we need the following consequence of the complet
 \end{thm}
 
 \begin{proof}
-  For naming purposes, let $a_n$ be the left endpoint and $b_n$ be the right endpoint of the interval $I_n$. Notice that the set of left endpoints $\set{a_n\mid n\in\NN}$ is bounded above, with any of the $b_n$ being such an upper bound. By the axiom of completeness, the set $\set{a_n\mid n\in\NN}$ has a least upper bound, call it $\alpha$.
+  For naming purposes, let $a_n$ be the left endpoint and $b_n$ be the right endpoint of the interval $I_n$. Notice that the set of left endpoints $\set{a_n\mid n\in\N}$ is bounded above, with any of the $b_n$ being such an upper bound. By the axiom of completeness, the set $\set{a_n\mid n\in\N}$ has a least upper bound, call it $\alpha$.
 
-  Then given any $n$, we have $a_n\leq\alpha$, since $\alpha$ is an upper bound for the set $\set{a_n\mid n\in\NN}$. On the other hand, we also have $\alpha\leq b_n$, since $\alpha$ is the \emph{least} upper bound for the set $\set{a_n\mid n\in\NN}$. It follows that $\alpha$ lies in the interval $I_n=[a_n,b_n]$. Since $n$ was arbitrary, we conclude that $\alpha$ lies in $\bigcap I_n$. This completes the proof.
+  Then given any $n$, we have $a_n\leq\alpha$, since $\alpha$ is an upper bound for the set $\set{a_n\mid n\in\N}$. On the other hand, we also have $\alpha\leq b_n$, since $\alpha$ is the \emph{least} upper bound for the set $\set{a_n\mid n\in\N}$. It follows that $\alpha$ lies in the interval $I_n=[a_n,b_n]$. Since $n$ was arbitrary, we conclude that $\alpha$ lies in $\bigcap I_n$. This completes the proof.
 \end{proof}
 
 We are now ready to prove that the set of real numbers is uncountable.
 
 \begin{proof}[Proof of Theorem~\ref{thm:reals-uncountable}]
-  Suppose towards a contradiction that $\RR$ is countable. Then its elements can be enumerated in a sequence $x_n$. Now inductively construct a nested sequence of closed, bounded intervals as follows. Let $I_1$ be any closed, bounded interval not containing $x_1$. Let $I_2$ be any closed subinterval of $I_1$ not containing $x_2$. Inductively, let $I_n\subset I_{n-1}$ be any closed interval not containing $x_n$. This completes the construction.
+  Suppose towards a contradiction that $\R$ is countable. Then its elements can be enumerated in a sequence $x_n$. Now inductively construct a nested sequence of closed, bounded intervals as follows. Let $I_1$ be any closed, bounded interval not containing $x_1$. Let $I_2$ be any closed subinterval of $I_1$ not containing $x_2$. Inductively, let $I_n\subset I_{n-1}$ be any closed interval not containing $x_n$. This completes the construction.
 
-  Now by the NIP, there exists an element $\alpha\in\RR$ such that for all $n$, we have $\alpha\in I_n$. Since $I_n$ does not contain $x_n$ and $\alpha\in I_n$, we have that $\alpha\neq x_n$. Since this is true for all $n$, the existence of $\alpha$ contradicts the claim that every element of $\RR$ was enumerated in the sequence $x_n$!
+  Now by the NIP, there exists an element $\alpha\in\R$ such that for all $n$, we have $\alpha\in I_n$. Since $I_n$ does not contain $x_n$ and $\alpha\in I_n$, we have that $\alpha\neq x_n$. Since this is true for all $n$, the existence of $\alpha$ contradicts the claim that every element of $\R$ was enumerated in the sequence $x_n$!
 \end{proof}
 
 \begin{cor}
@@ -495,14 +495,14 @@ We are now ready to prove that the set of real numbers is uncountable.
 \end{cor}
 
 \begin{proof}
-  Suppose towards a contradiction that the set of irrational numbers is countable. Then $\RR=\QQ\bigcup(\RR\setminus\QQ)$ is countable, being the union of two countable sets. This contradicts Theorem~\ref{thm:reals-uncountable}.
+  Suppose towards a contradiction that the set of irrational numbers is countable. Then $\R=\Q\bigcup(\R\setminus\Q)$ is countable, being the union of two countable sets. This contradicts Theorem~\ref{thm:reals-uncountable}.
 \end{proof}
 
 \newpage
 \subsection*{Exercises for\S \thesection}
 
 \begin{exerc}
-  Show that the set of Gaussian integers is countable. Recall that the Gaussian integers is the set of all complex numbers of the form $a+bi$ where $a,b\in\ZZ$.
+  Show that the set of Gaussian integers is countable. Recall that the Gaussian integers is the set of all complex numbers of the form $a+bi$ where $a,b\in\Z$.
 \end{exerc}
 
 \begin{exerc}[Abbott, ex 1.5.3(c)]
@@ -510,7 +510,7 @@ We are now ready to prove that the set of real numbers is uncountable.
 \end{exerc}
 
 \begin{exerc}
-  Show that the set $\NN^3$ is countable. Here $\NN^3$ consists of all triples of the form $(a,b,c)$, where $a,b,c\in\NN$. [Hint: use th previous two exercises.]
+  Show that the set $\N^3$ is countable. Here $\N^3$ consists of all triples of the form $(a,b,c)$, where $a,b,c\in\N$. [Hint: use th previous two exercises.]
 \end{exerc}
 
 \begin{exerc}
@@ -531,7 +531,7 @@ We are now ready to prove that the set of real numbers is uncountable.
 
 In the previous section we saw that among the infinite sets, some of them are not too big (countable sets) while others are much larger (uncountable sets). Showing that a set is countable requires a direct argument---one simply has to enumerate all its elements in a sequence. Showing a set is uncountable often requires an indirect argument---using contradiction to show that the set cannot possibly be countable.
 
-We were able to show that $\RR$ is uncountable using the Nested Interval Property. But that proof seemed very particular to the set of real numbers. How would we show that some other given set is uncountable? It turns out there is another and more systematic proof that $\RR$ is uncountable, called Cantor's diagonalization argument.
+We were able to show that $\R$ is uncountable using the Nested Interval Property. But that proof seemed very particular to the set of real numbers. How would we show that some other given set is uncountable? It turns out there is another and more systematic proof that $\R$ is uncountable, called Cantor's diagonalization argument.
 
 \begin{thm}
   The unit interval $(0,1)$ is uncountable.
@@ -589,7 +589,7 @@ It is natural to ask to what extent cardinalities behave like ordinary finite co
   If $A,B$ are any sets, then exactly one of the following is true: $|A|<|B|$, $|A|=|B|$, or $|B|<|A|$.
 \end{thm}
 
-Another natural question is whether the cardinality of $\RR$ is the \emph{smallest} uncountable cardinality. Many very narrow or thin subsets of $\RR$ still have the full cardinality of $\RR$. Just consider $(0,1)$ or $(0,\epsilon)$ or the set of irrationals. So the question is whether for any set $A$ of real numbers, if $A$ is uncountable then is it necessarily true that $|A|=|\RR|$?
+Another natural question is whether the cardinality of $\R$ is the \emph{smallest} uncountable cardinality. Many very narrow or thin subsets of $\R$ still have the full cardinality of $\R$. Just consider $(0,1)$ or $(0,\epsilon)$ or the set of irrationals. So the question is whether for any set $A$ of real numbers, if $A$ is uncountable then is it necessarily true that $|A|=|\R|$?
 
 This question is known as the \emph{continuum hypothesis} and has great historical significance. After remaining open for many decades, it was finally settled in a surprising way: the answer is \emph{undecidable} using the accepted axioms about sets! In other words, there is a universe of sets (model) in which the continuum hypothesis is true, and also a universe of sets in which it is false.
 
@@ -611,7 +611,7 @@ Ever since this stunning resolution to the continuum hypothesis was found in 196
 \end{exerc}
 
 \begin{exerc}
-  Suppose that $A$ is an infinite set. Show that $|\NN|\leq|A|$.
+  Suppose that $A$ is an infinite set. Show that $|\N|\leq|A|$.
 \end{exerc}
 
 \begin{exerc}[Abbott, ex 1.5.10(a)]
@@ -633,7 +633,7 @@ Ever since this stunning resolution to the continuum hypothesis was found in 196
   Abbott, \S 2.1
 \end{reading}
 
-A sequence of real numbers consists of one real number $a_n$ for each natural number $n$. Formally we can think of a sequence as a \emph{function} from $\NN$ to $\RR$. However sequences are so special that we rarely use the functional notation $a(n)$ and instead prefer the special notation $a_n$. We have already used sequences, for instance in the definition of a countable set. We will see later in the course that sequences play a huge role in analysis. In this section we give further motivation for studying sequences and the sibling concept of series.
+A sequence of real numbers consists of one real number $a_n$ for each natural number $n$. Formally we can think of a sequence as a \emph{function} from $\N$ to $\R$. However sequences are so special that we rarely use the functional notation $a(n)$ and instead prefer the special notation $a_n$. We have already used sequences, for instance in the definition of a countable set. We will see later in the course that sequences play a huge role in analysis. In this section we give further motivation for studying sequences and the sibling concept of series.
 
 To begin consider the simple addition problem $\pi+e$, which we write out in decimal notation as
 \begin{align*}
@@ -713,7 +713,7 @@ In the second summation we first add two of the positive terms before then addin
 % \end{exerc}
 
 \begin{exerc}
-  Let $a_n$ be a sequence of real numbers and assume that $a_n\leq a_{n+1}$ for all $n$. Let $\alpha=\sup\{a_n\mid n\in\NN\}$. Show that for all $\epsilon$, just finitely many terms of the sequence are $\leq\alpha-\epsilon$.
+  Let $a_n$ be a sequence of real numbers and assume that $a_n\leq a_{n+1}$ for all $n$. Let $\alpha=\sup\{a_n\mid n\in\N\}$. Show that for all $\epsilon$, just finitely many terms of the sequence are $\leq\alpha-\epsilon$.
 \end{exerc}
 
 \newpage
@@ -729,7 +729,7 @@ Recall that a \emph{sequence} is a list of one real number $a_n$ for every natur
 
 \begin{defn}
   The sequence $a_n$ \emph{converges} to $L$ if the following holds:
-  \[(\forall\epsilon>0)\;(\exists N\in\NN)\;(\forall n\geq N)\;|a_n-L|<\epsilon
+  \[(\forall\epsilon>0)\;(\exists N\in\N)\;(\forall n\geq N)\;|a_n-L|<\epsilon
   \]
   In this case we write both $\lim a_n=L$ and also $a_n\to L$, and we say that $L$ is the \emph{limit} of the sequence.
 \end{defn}
@@ -738,9 +738,9 @@ Since the definition is both of central importance and also somewhat subtle, we 
 
 \begin{itemize}
 \item The $(\forall\epsilon>0)$ clause. Intuitively we think of $\epsilon$ as a very small \emph{tolerance}. Thus the definition of convergence begins by saying that for all possible tolerances, something will happen.
-\item The $(\exists N\in\NN)\;(\forall n\geq N)$ clause. Intuitively this means that \emph{eventually} something will happen. This is because it says that there is some index such that for all later indices, that thing will be true.
+\item The $(\exists N\in\N)\;(\forall n\geq N)$ clause. Intuitively this means that \emph{eventually} something will happen. This is because it says that there is some index such that for all later indices, that thing will be true.
 \item The $|a_n-L|<\epsilon$ clause. Intuitively we think of this as saying that $a_n$ lies within a small \emph{neighborhood} of $L$. Formally, if $x$ is any real number and $\epsilon>0$, then the \emph{$\epsilon$-neighborhood} of $x$, denoted $V_\epsilon(x)$, is the open interval centered at $x$ of radius $\epsilon$. In symbols:
-  \[V_\epsilon(x)=(x-\epsilon,x+\epsilon)=\set{y\in\RR\mid|y-x|<\epsilon}
+  \[V_\epsilon(x)=(x-\epsilon,x+\epsilon)=\set{y\in\R\mid|y-x|<\epsilon}
   \]
   Thus the conclusion of the definition of convergence says precisely that $a_n$ lies within the $\epsilon$-neighborhood of $L$.
 \end{itemize}
@@ -794,7 +794,7 @@ We should be careful to point out that we are not just giving a careful definiti
 % discussion of tails?
 
 So far we have discussed only convergence of sequences. What happens when a sequence $a_n$ does \emph{not} converge to $L$? Formally negating the definition of convergence, this says
-\[(\exists\epsilon>0)\;(\forall N\in\NN)\;(\exists n\geq N)\;|a_n-L|\geq\epsilon
+\[(\exists\epsilon>0)\;(\forall N\in\N)\;(\exists n\geq N)\;|a_n-L|\geq\epsilon
 \]
 Intuitively this says that there is some tolerance $\epsilon$ such that the sequence frequently lies outside the $\epsilon$-neighborhood of $L$.
 
@@ -831,15 +831,15 @@ In general, we say that a sequence \emph{diverges} if it fails to converge to $L
 
 \begin{exerc}[Abbott, ex 2.2.1]
   Suppose we swap the first two quantifiers in the definition of convergence, and write $x_n$ \emph{verconges} to $L$ if
-  \[(\exists\epsilon>0)\;(\forall N\in\NN)\;(\forall n\geq N)\;|x_n-L|<\epsilon
+  \[(\exists\epsilon>0)\;(\forall N\in\N)\;(\forall n\geq N)\;|x_n-L|<\epsilon
   \]
   Give an example of a vercongent sequence that is not convergent. What exactly is being described in this definition?
 \end{exerc}
   
 \begin{exerc}
-  Suppose that $A\subset\RR$ is bounded and that $\alpha=\sup(A)$.  This exercise shows how to prove that there exists a sequence in $A$ which converges to $\alpha$.
+  Suppose that $A\subset\R$ is bounded and that $\alpha=\sup(A)$.  This exercise shows how to prove that there exists a sequence in $A$ which converges to $\alpha$.
   \begin{enumerate}
-    \item Prove that for each $n\in\NN$ there exists $a_n\in A$ such that $a_n>\alpha-1/n$.
+    \item Prove that for each $n\in\N$ there exists $a_n\in A$ such that $a_n>\alpha-1/n$.
     \item Use the definition of convergence to conclude that $\lim a_n=\alpha$.
   \end{enumerate}
 \end{exerc}
@@ -869,7 +869,7 @@ Before we begin recall the \emph{triangle inequality} states that for any $x,y$ 
     \node[circle,fill,draw,inner sep=1,label=left:$y$] (y) at (180:1.3) {};
     \draw (x)--(y);
   \end{tikzpicture}
-  \qquad
+  \quad
   \begin{tikzpicture}
     \draw (0,0) circle (.8);
     \draw (0,0) circle (1.3);
@@ -887,7 +887,7 @@ We can now state the laws for the calculus of limits. The proof is long, but the
   Suppose that $\lim a_n=a$ and $\lim b_n=b$. Then we have
   \begin{enumerate}
   \item $\lim a_n+b_n=a+b$
-  \item $\lim ka_n=ka$ for any $k\in\RR$
+  \item $\lim ka_n=ka$ for any $k\in\R$
   \item $\lim a_nb_n=ab$
   \item $\lim a_n/b_n=a/b$ provided $b_n,b\neq 0$
   \end{enumerate}
@@ -928,7 +928,7 @@ We can now state the laws for the calculus of limits. The proof is long, but the
 Before we continue, we owe
 
 \begin{defn}
-  The sequence $a_n$ is \emph{bounded} if there exists some $M\in\RR$ such that for all $n$ we have $|a_n|\leq M$.
+  The sequence $a_n$ is \emph{bounded} if there exists some $M\in\R$ such that for all $n$ we have $|a_n|\leq M$.
 \end{defn}
 
 It is equivalent to say that $a_n$ is bounded if there exists an interval $[a,b]$ such that $\{a_n\}\subset[a,b]$.
@@ -1299,10 +1299,10 @@ The Bolzano--Weierstra\ss\ theorem has numerous theoretical applications, some o
   Abbott, \S 2.6
 \end{reading}
 
-Recall that the the real number system satisfies the axiom of completeness, which says that every bounded set has a supremum. (We also called this the least upper bound property.) We have said that this axiom should be interpreted as saying that the real number system does not have any gaps. But this leads to the question of what it means for other spaces, besides the real numbers, to be complete? For example it is intuitively clear that $\RR^2$ or the sphere $\mathbb S^2$ do not have any gaps. To capture this, we need a more general way to define completeness.
+Recall that the the real number system satisfies the axiom of completeness, which says that every bounded set has a supremum. (We also called this the least upper bound property.) We have said that this axiom should be interpreted as saying that the real number system does not have any gaps. But this leads to the question of what it means for other spaces, besides the real numbers, to be complete? For example it is intuitively clear that $\R^2$ or the sphere $\mathbb S^2$ do not have any gaps. To capture this, we need a more general way to define completeness.
 
 \begin{defn}
-  The sequence $a_n$ is \emph{Cauchy} if for all $\epsilon>0$ there exists $N\in\NN$ such that for all $m,n>N$ we have $|a_n-a_m|<\epsilon$.
+  The sequence $a_n$ is \emph{Cauchy} if for all $\epsilon>0$ there exists $N\in\N$ such that for all $m,n>N$ we have $|a_n-a_m|<\epsilon$.
 \end{defn}
 
 The Cauchy sequences are the ones which really, really want to converge, but don't know what their limit should be!
@@ -1352,7 +1352,7 @@ We now show that in fact all four of these statements are equivalent by showing 
 \end{thm}
 
 \begin{proof}[Proof outline]
-  It remains only to show that CC implies LUBP. Suppose we know Cauchy sequences converge and let $A$ be a bounded subset of $\RR$. Then $A$ is contained in some interval $[a,b]$. For each $n$, divide $[a,b]$ into cells of width $(b-a)/2^n$ and let $a_n$ be the top endpoint of the highest cell meeting $A$. Then for any $N$, the sequence $a_n$ eventually lies in an interval of with $(b-a)/2^N$ and hence $a_n$ is Cauchy.
+  It remains only to show that CC implies LUBP. Suppose we know Cauchy sequences converge and let $A$ be a bounded subset of $\R$. Then $A$ is contained in some interval $[a,b]$. For each $n$, divide $[a,b]$ into cells of width $(b-a)/2^n$ and let $a_n$ be the top endpoint of the highest cell meeting $A$. Then for any $N$, the sequence $a_n$ eventually lies in an interval of with $(b-a)/2^N$ and hence $a_n$ is Cauchy.
 
   Since Cauchy sequences converge we may let $L$ be the limit of $a_n$. We claim that $L$ is the least upper bound for $A$. Indeed since for all $n$ we have that $a_n$ is an upper bound for $A$, it is clear that $L$ is an upper bound for $A$. Moreover given any $n$ we can find $a\in A$ such that $a\geq a_n-1/2^n$. Since the latter is $\geq L-1/2^n$, this implies $L=\sup(A)$. Thus the LUBP holds, as desired.
 \end{proof}
@@ -1774,13 +1774,13 @@ For a new example, if $\alpha=\frac14$ then we construct the modified Cantor set
 We can think of a subset $A$ of some universe set $X$ as a black-and-white division: every point is either in $A$ or in $A^c$. However this division is purely set-theoretic in that it doesn't take into account the relative placement of the points. If one the other hand we have some idea about the location or ordering of the points of $X$, then we can imagine a kind of grey area for points that are on the boundary of $A$.
 
 Before we formally define the concept of boundary, recall the neighborhood notation that we introduced alongside the definition of convergence. The \emph{$\epsilon$-neighborhood of $x$} consists of all points that are less than $\epsilon$ away from $x$. In symbols:
-\[V_\epsilon(x)=\set{y\in\RR\mid|y-x|<\epsilon}
+\[V_\epsilon(x)=\set{y\in\R\mid|y-x|<\epsilon}
 \]
 
-In other words, $V_\epsilon(x)$ is an interval centered at $x$, that is, $(x-\epsilon,x+\epsilon)$. Note that if we were working in $X=\RR^2$ we would define $V_\epsilon(x)$ to be a disk centered at $x$, in $X=\RR^3$ we would define $V_\epsilon(x)$ to be a ball centered at $x$, and so on.
+In other words, $V_\epsilon(x)$ is an interval centered at $x$, that is, $(x-\epsilon,x+\epsilon)$. Note that if we were working in $X=\R^2$ we would define $V_\epsilon(x)$ to be a disk centered at $x$, in $X=\R^3$ we would define $V_\epsilon(x)$ to be a ball centered at $x$, and so on.
 
 \begin{defn}
-  Let $A$ be a subset of $\RR$. A point $x$ is said to be a \emph{boundary point} of $A$ if every neighborhood $V_\epsilon(x)$ meets both $A$ and $A^c$. The set of all boundary points of $A$ is denoted $\partial A$.
+  Let $A$ be a subset of $\R$. A point $x$ is said to be a \emph{boundary point} of $A$ if every neighborhood $V_\epsilon(x)$ meets both $A$ and $A^c$. The set of all boundary points of $A$ is denoted $\partial A$.
 \end{defn}
 
 Intuitively, if we think of points of $A$ as colored black and points of $A^c$ as colored white, the boundary of $A$ consists of those points such that no matter how far you zoom in on them, you still see the colors black and white.
@@ -1794,7 +1794,7 @@ Notice that the boundary points of a set $A$ may lie in $A$ or may not lie in $A
 \begin{defn}
   \begin{itemize}
     \item The set $A$ is \emph{open} if $\partial A\cap A=\emptyset$.
-    \item The set $A\subset\RR$ is \emph{closed} if $\partial A\subset A$.
+    \item The set $A\subset\R$ is \emph{closed} if $\partial A\subset A$.
   \end{itemize}
 \end{defn}
 
@@ -1802,8 +1802,8 @@ Notice that the boundary points of a set $A$ may lie in $A$ or may not lie in $A
   \begin{itemize}
   \item Open intervals are open, and so are unions of open intervals such as $(0,1)\cup(2,3)$.
   \item Closed intervals are closed, and so are unions of (finitely many) closed intervals such as $[0,1]\cup[2,3]$.
-  \item Single points $\{x\}$ are closed, as is the set $\ZZ$.
-  \item The set $\set{1/n\mid n\in\NN}$ is neither open nor closed: $1$ is a boundary point which lies in the set, and $0$ is a boundary point which does not lie in the set.
+  \item Single points $\{x\}$ are closed, as is the set $\Z$.
+  \item The set $\set{1/n\mid n\in\N}$ is neither open nor closed: $1$ is a boundary point which lies in the set, and $0$ is a boundary point which does not lie in the set.
   \item The empty set $\emptyset$ is both open and closed.
   \end{itemize}
 \end{example}
@@ -1821,7 +1821,7 @@ As we have just seen, open and closed sets are not opposites, since it is possib
 It is now time to introduce some more terminology that will help us understand boundary and open and closed sets.
 
 \begin{defn}
-  Let $A$ be a subset of $\RR$.
+  Let $A$ be a subset of $\R$.
   \begin{itemize}
     \item The \emph{interior} of $A$ is $\inte(A)=A\setminus\partial A$.
     \item The \emph{closure} of $A$ is $\cl(A)=A\cup\partial A$.
@@ -1832,7 +1832,7 @@ Thus we have $\inte(A)\subset A\subset\cl(A)$. It is not hard to believe that $\
 
 \begin{prop}
   \label{prop:closure}
-  Let $A$ be a subset of $\RR$.
+  Let $A$ be a subset of $\R$.
   \begin{itemize}
     \item $\inte(\inte(A))=\inte(A)$.
     \item $\cl(\cl(A))=\cl(A)$.
@@ -1886,14 +1886,14 @@ We conclude this section with a justification for the term ``closed''. The next 
 % We conclude this section with a second very natural method of forming the closure of a set. Intuitively, if one begins with a set $A$ and takes limits of all convergent sequences in $A$, then one should end up with the closure of $A$.
 %
 % \begin{defn}
-%   Let $A$ be a subset of $\RR$.
+%   Let $A$ be a subset of $\R$.
 %   \begin{itemize}
 %   \item A point $x$ is said to be a \emph{limit point} of $A$ if every neighborhood $V_\epsilon(x)$ meets $A$ in some point other than $x$ itself. The set of limit points of $A$ is denoted $A'$.
 %   \item A point $x$ is said to be a \emph{isolated point} of $A$ if $x\in A$ and there exists a neighborhood $V_\epsilon(x)$ which meets $A$ in no points other than $x$ itself. In other words the set of isolated points of $A$ is equal to $A\setminus A'$.
 %   \end{itemize}
 % \end{defn}
 %
-% The terminology ``limit point'' is justified by the fact that in $\RR$, if $x$ is a limit point of $A$ then there is some sequence of elements of $A$ which converges to $x$. The following result explains the ``closure'' terminology: the closure of a set can be thought of as the closure under the limit operation.
+% The terminology ``limit point'' is justified by the fact that in $\R$, if $x$ is a limit point of $A$ then there is some sequence of elements of $A$ which converges to $x$. The following result explains the ``closure'' terminology: the closure of a set can be thought of as the closure under the limit operation.
 %
 % \begin{prop}
 %   \label{prop:closure-equiv}
@@ -1915,11 +1915,11 @@ We conclude this section with a justification for the term ``closed''. The next 
   For each of the following sets $A$, find the boundary $\partial A$. Then decide whether the following sets are open, closed, both, or neither.
   \begin{enumerate}
     \item $A=\set{0,1,\ldots,10}$
-    \item $A=\set{1/n\mid n\in\NN}\cup\{0\}$
+    \item $A=\set{1/n\mid n\in\N}\cup\{0\}$
     \item $A=(-1,1)\cup\{2\}$
     \item $A=[-1,1]\cup\{2\}$
-    \item $A=\QQ$
-    \item $A=\set{x\mid (\exists n\in\NN)\,\frac1{n+1}<x<\frac1n}$
+    \item $A=\Q$
+    \item $A=\set{x\mid (\exists n\in\N)\,\frac1{n+1}<x<\frac1n}$
   \end{enumerate}
 \end{exerc}
 
@@ -1951,10 +1951,10 @@ We conclude this section with a justification for the term ``closed''. The next 
 
 Recall the Nested Interval Property, which states that the intersection of a family of nested closed intervals $I_n$ is nonempty. We have seen that this theorem may fail if the intervals are not assumed to be closed, or not assumed to be bounded. However, a version of the NIP does hold even if the intervals are replaced by arbitrary sets which are both closed and bounded.
 
-For subsets of $\RR$, being both closed and bounded is very strong. To understand why, notice that if $A$ is bounded then every sequence of elements of $A$ has a convergent subsequence, and if $A$ is also closed then the limit of the subesquence lies in $A$. Sets with this latter property are given a special name.
+For subsets of $\R$, being both closed and bounded is very strong. To understand why, notice that if $A$ is bounded then every sequence of elements of $A$ has a convergent subsequence, and if $A$ is also closed then the limit of the subesquence lies in $A$. Sets with this latter property are given a special name.
 
 \begin{defn}
-  A subset $A\subset\RR$ is called \emph{compact} if every sequence from $A$ has a convergent subsequence whose limit lies in $A$.
+  A subset $A\subset\R$ is called \emph{compact} if every sequence from $A$ has a convergent subsequence whose limit lies in $A$.
 \end{defn}
 
 \begin{example}
@@ -1978,13 +1978,13 @@ Compact sets play a role in almost every area of mathematics. As just a small ex
 \end{thm}
 
 \begin{proof}[Proof sketch]
-  Let $A$ be a compact set and let $f\colon A\to\RR$ be a continuous function. Let $R=\{f(x)\mid x\in A\}$ be the range of $f$, and let $\alpha=\sup(R)$. We wish to show there is some $x\in A$ such that $f(x)=\alpha$. Since $\alpha=\sup(R)$ there exists a sequence $y_n$ contained within $R$ such that $y_n\to\alpha$. For each $n$ we may then let $x_n\in A$ be such that $f(x_n)=y_n$. Since $A$ is compact, there exists a convergent subsequence $x_{n_k}$ with some limit $x$. Then since $f$ is continuous $f(x)=f(\lim x_{n_k})=\lim f(x_{n_k})=\lim y_{n_k}=\alpha$, which means $f$ attains a maximum value. [It remains for us to justify why we can pass the limit from the inside to the outside ofthe function $f$.]
+  Let $A$ be a compact set and let $f\colon A\to\R$ be a continuous function. Let $R=\{f(x)\mid x\in A\}$ be the range of $f$, and let $\alpha=\sup(R)$. We wish to show there is some $x\in A$ such that $f(x)=\alpha$. Since $\alpha=\sup(R)$ there exists a sequence $y_n$ contained within $R$ such that $y_n\to\alpha$. For each $n$ we may then let $x_n\in A$ be such that $f(x_n)=y_n$. Since $A$ is compact, there exists a convergent subsequence $x_{n_k}$ with some limit $x$. Then since $f$ is continuous $f(x)=f(\lim x_{n_k})=\lim f(x_{n_k})=\lim y_{n_k}=\alpha$, which means $f$ attains a maximum value. [It remains for us to justify why we can pass the limit from the inside to the outside ofthe function $f$.]
 \end{proof}
 
-As we have outlined above, any closed and bounded subset of $\RR$ is compact. In fact for subsets of $\RR$ (or even $\RR^n$), this turns out to be an equivalence.
+As we have outlined above, any closed and bounded subset of $\R$ is compact. In fact for subsets of $\R$ (or even $\R^n$), this turns out to be an equivalence.
 
 \begin{thm}[Heine--Borel]
-  If $A\subset\RR$ then $A$ is compact if and only if $A$ is closed and bounded.
+  If $A\subset\R$ then $A$ is compact if and only if $A$ is closed and bounded.
 \end{thm}
 
 \begin{proof}
@@ -1995,7 +1995,7 @@ As we have outlined above, any closed and bounded subset of $\RR$ is compact. In
   Next suppose that $A$ is not closed. Then by there exists some $a\in\partial A\setminus A$. That is, $a$ is in the boundary of $A$ but not in $A$. From the definition of boundary, it is not difficult to verify there exists a sequence $a_n$ of elements of $A$ such that $a_n\to a$. Then $a_n$ has the property that none of its subsequences converges to a point of $A$, and so $A$ is again not compact.
 \end{proof}
 
-The equivalence in the last theorem turns out to be something of a coincidence. Indeed when one studies the topology of more general types of spaces, the equivalence can fail. For example, if one studies topology on $\RR$ with the usual distance $|x-y|$ replaced by the function $d(x,y)=|x-y|/(1+|x-y|)$, then the entire space $\RR$ is closed and bounded, and fails to be compact. In general topology one doesn't use a distance function at all, so ``bounded'' doesn't make sense. In this setting, even the subsequence definiton of compactness fails to be adequate.
+The equivalence in the last theorem turns out to be something of a coincidence. Indeed when one studies the topology of more general types of spaces, the equivalence can fail. For example, if one studies topology on $\R$ with the usual distance $|x-y|$ replaced by the function $d(x,y)=|x-y|/(1+|x-y|)$, then the entire space $\R$ is closed and bounded, and fails to be compact. In general topology one doesn't use a distance function at all, so ``bounded'' doesn't make sense. In this setting, even the subsequence definiton of compactness fails to be adequate.
 
 \newpage
 \subsection*{Exercises for \S \thesection}
@@ -2004,10 +2004,10 @@ The equivalence in the last theorem turns out to be something of a coincidence. 
   Decide whether each of the following sets $A$ is compact. If it is not compact, give an example of a sequence in $A$ with no subsequential limit in $A$.
   \begin{enumerate}
     \item $A=\set{0,1,\ldots,10}$
-    \item $A=\mathbb\ZZ$
-    \item $A=\set{1/n\mid n\in\NN}\cup\{0\}$
-    \item $A=\set{q\in\QQ\mid0\leq q\leq2}$
-    \item $A=\set{x\mid (\exists n\in\NN) |x-n|\leq.1}$
+    \item $A=\Z$
+    \item $A=\set{1/n\mid n\in\N}\cup\{0\}$
+    \item $A=\set{q\in\Q\mid0\leq q\leq2}$
+    \item $A=\set{x\mid (\exists n\in\N) |x-n|\leq.1}$
   \end{enumerate}
 \end{exerc}
 
@@ -2021,8 +2021,8 @@ The equivalence in the last theorem turns out to be something of a coincidence. 
 
 \begin{exerc}
   \begin{enumerate}
-    \item Suppose that $A$ is a closed subset of $\RR$ which is bounded above. Show that $\sup(A)\in A$.
-    \item Suppose that $A$ is an open subset of $\RR$ which is bounded above. Show that $\sup(A)\notin A$.
+    \item Suppose that $A$ is a closed subset of $\R$ which is bounded above. Show that $\sup(A)\in A$.
+    \item Suppose that $A$ is an open subset of $\R$ which is bounded above. Show that $\sup(A)\notin A$.
   \end{enumerate}
 \end{exerc}
 
@@ -2038,35 +2038,35 @@ For open sets a good definition is the natural one: an open set is connected if 
 To begin to resolve this mess, let us return to the example of $[0,1]\cup[2,3]$. Although it cannot be expressed as a union of two disjoint open subsets, its two components are \emph{contained} in disjoint open subsets. That is, $[0,1]\subset(-0.1,1.1)$ and $[2,3]\subset(1.9,3.1)$. The following correct definition is the end result of this line of thinking.
 
 \begin{defn}
-  A subset $A\subset\RR^n$ is said to be \emph{disconnected} if there exist disjoint open sets $V,V'$, both meeting $A$, and such that $A\subset V\cup V'$. A subset $A\subset\RR^n$ is said to be \emph{connected} if it is not disconnected.
+  A subset $A\subset\R^n$ is said to be \emph{disconnected} if there exist disjoint open sets $V,V'$, both meeting $A$, and such that $A\subset V\cup V'$. A subset $A\subset\R^n$ is said to be \emph{connected} if it is not disconnected.
 \end{defn}
 
 Observe that it was easier to define disconnectedness first, and connectedness as its opposite. Thus we begin with examples of disconnected sets.
 
 \begin{example}
-  The union $(0,1)\cup(3,4)$ is clearly disconnected. The Cantor set is disconnected, being contained in $(-1,\frac12)\cup(\frac12,2)$. The set $\QQ$ is disconnected, being contained in $(-\infty,\sqrt2)\cup(\sqrt2,\infty)$.
+  The union $(0,1)\cup(3,4)$ is clearly disconnected. The Cantor set is disconnected, being contained in $(-1,\frac12)\cup(\frac12,2)$. The set $\Q$ is disconnected, being contained in $(-\infty,\sqrt2)\cup(\sqrt2,\infty)$.
 \end{example}
 
-In fact, as the next proposition shows, any subset of $\RR$ which is not an interval must be disconnected. In the past we have mentioned open and closed intervals, but when we say just \emph{interval}, we mean an interval of any type. Thus the sets $(a,b)$, $(a,b]$, $[a,b)$, and $[a,b]$ are all intervals, where $a,b$ may be real numbers or even $\pm\infty$ when it makes sense. It is easy to see that a subset $A\subset\RR$ is an interval if and only if whenever $a,b\in A$ and $a<c<b$ we have $c\in A$ too.
+In fact, as the next proposition shows, any subset of $\R$ which is not an interval must be disconnected. In the past we have mentioned open and closed intervals, but when we say just \emph{interval}, we mean an interval of any type. Thus the sets $(a,b)$, $(a,b]$, $[a,b)$, and $[a,b]$ are all intervals, where $a,b$ may be real numbers or even $\pm\infty$ when it makes sense. It is easy to see that a subset $A\subset\R$ is an interval if and only if whenever $a,b\in A$ and $a<c<b$ we have $c\in A$ too.
 
 \begin{prop}
-  If $A$ is a subset of $\RR$ and $A$ is connected, then $A$ is an interval.
+  If $A$ is a subset of $\R$ and $A$ is connected, then $A$ is an interval.
 \end{prop}
 
 \begin{proof}
   Let $a,b\in A$ and $a<c<b$; we wish to show that $c\in A$ too. Indeed if $c\notin A$, then the sets $V=(-\infty,c)$ and $V'=(c,\infty)$ would witness that $A$ is disconnected, which is contrary to our hypothesis.
 \end{proof}
 
-At this point we should stress that for subsets of $\RR^2$ or higher, the situation is much more complex. In fact, in these higher dimensions there are connected figures of any shape you can imagine.
+At this point we should stress that for subsets of $\R^2$ or higher, the situation is much more complex. In fact, in these higher dimensions there are connected figures of any shape you can imagine.
 
 So far we have not given any examples of connected sets. Intuitively speaking all intervals should be connected, that is, the converse to the above proposition should be true. Thus if our definition of connectedness is a good one, it will allow us to verify that intervals are connected. Because the definition was so complex, this verification turns out to be slightly tricky.
 
 \begin{thm}
-  If $A$ is a subset of $\RR$, then $A$ is connected if and only if $A$ is an interval.
+  If $A$ is a subset of $\R$, then $A$ is connected if and only if $A$ is an interval.
 \end{thm}
 
 \begin{proof}
-  We have already shown that connected subsets of $\RR$ must be intervals. Conversely, let $I$ be an interval, and suppose towards a contradiction that $I\subset V\cup V'$ where $V,V'$ are disjoint open sets meeting $I$. Let us also choose specific elements $a_1\in I\cap V$ and $b_1\in I\cap V'$, and assume without loss of generality that $a_1<b_1$.
+  We have already shown that connected subsets of $\R$ must be intervals. Conversely, let $I$ be an interval, and suppose towards a contradiction that $I\subset V\cup V'$ where $V,V'$ are disjoint open sets meeting $I$. Let us also choose specific elements $a_1\in I\cap V$ and $b_1\in I\cap V'$, and assume without loss of generality that $a_1<b_1$.
 
   In the next part of the proof, we will use $a_1,b_1$ as the basis for sequences $a_n$ and $b_n$. The sequence $a_n$ will be monotone increasing and lie in $V$, while the sequence $b_n$ will be monotone decreasing and lie in $V'$. Moreover the two sequences will be getting closer and closer to one another, that is, $a_n-b_n\to0$.
 
@@ -2085,7 +2085,7 @@ Recall that the compact sets will play a key role in the Extreme Value Theorem f
   If there was no such $c$, then the sets $V=\{x\mid f(x)<0\}$ and $V'=\{x\mid f(x)>0\}$ would witness that the domain of $f$ is disconnected, a contradiction. [It remains to justify why $V$ and $V'$ are open.]
 \end{proof}
 
-Athough it took some work to show the intervals are connected, this fact can be leveraged to show that a variety of subsets of $\RR^n$ are connected. For this we will need to see how one can piece together several connected sets to make a larger one.
+Athough it took some work to show the intervals are connected, this fact can be leveraged to show that a variety of subsets of $\R^n$ are connected. For this we will need to see how one can piece together several connected sets to make a larger one.
 
 \begin{prop}
   If $\mathcal F$ is a family of connected sets which overlap pairwise, then $S=\bigcup\mathcal F$ is connected.
@@ -2095,10 +2095,10 @@ Athough it took some work to show the intervals are connected, this fact can be 
   Suppose, towards a contradiction, that there exist disjoint open sets $V,V'$ meeting $S$ such that $S\subset V\cup V'$. Since each set $A\in\mathcal F$ is connected, it must be contained in either $V$ or $V'$. Indeed, otherwise $V,V'$ would witness that $A$ is disconnected. Since both $V,V'$ meet $S$, we can find $A,B\in\mathcal F$ such that $A\subset V$ and $B\subset V'$. But we are assuming that $A,B$ overlap, while $V,V'$ are disjoint, a contradiction.
 \end{proof}
 
-As a simple application, this result can be used to show that disks in $\RR^2$ are connected.
+As a simple application, this result can be used to show that disks in $\R^2$ are connected.
 
 \begin{cor}
-  Let $D$ be a disk in $\RR^2$, possibly containing some or all of its boundary. Then $D$ is connected.
+  Let $D$ be a disk in $\R^2$, possibly containing some or all of its boundary. Then $D$ is connected.
 \end{cor}
 
 \begin{proof}
@@ -2120,17 +2120,17 @@ As a simple application, this result can be used to show that disks in $\RR^2$ a
 \end{exerc}
   
 \begin{exerc}
-  Show that a subset $A\subset\RR$ is an interval if and only if whenever $a,b\in A$ and $a<c<b$ we have $c\in A$ too.
+  Show that a subset $A\subset\R$ is an interval if and only if whenever $a,b\in A$ and $a<c<b$ we have $c\in A$ too.
 \end{exerc}
 
 %\question Suppose $A$ and $B$ are open intervals. Under what circumstances will $A\cup B$ be connected? Under what circumstances  will $A\cap B$ be connected?
 
 \begin{exerc}
-  If $A,B$ are connected subsets of $\RR$, show that $A\cap B$ is connected. Is this true for connected subsets $A,B$ of $\RR^2$?
+  If $A,B$ are connected subsets of $\R$, show that $A\cap B$ is connected. Is this true for connected subsets $A,B$ of $\R^2$?
 \end{exerc}
 
 \begin{exerc}
-  Let $A$ be a subset of $\RR^n$.
+  Let $A$ be a subset of $\R^n$.
   \begin{enumerate}
     \item Show that any open set which meets $\cl(A)$ also meets $A$. [Recall that $\cl(A)=A\cup\partial A$.]
     \item Show that if $A$ is connected then $\cl(A)$ is connected.
@@ -2142,10 +2142,10 @@ As a simple application, this result can be used to show that disks in $\RR^2$ a
 \section{Metric space}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-So far we have studied the topology of the real line $\RR$ and to some extent the Euclidean spaces $\RR^n$. Almost everything we have said about these spaces applies in a vastly more general context
+So far we have studied the topology of the real line $\R$ and to some extent the Euclidean spaces $\R^n$. Almost everything we have said about these spaces applies in a vastly more general context
 
 \begin{defn}
-  A \emph{metric space} consists of a set of points $X$ together with a distance function $d\colon X\times X\to\RR$ satisfying the following properties for all $x,y,z\in X$:
+  A \emph{metric space} consists of a set of points $X$ together with a distance function $d\colon X\times X\to\R$ satisfying the following properties for all $x,y,z\in X$:
   \begin{enumerate}
   \item $d(x,y)\geq0$, with $d(x,y)=0$ iff $x=y$;
   \item $d(x,y)=d(y,x)$; and
@@ -2156,7 +2156,7 @@ So far we have studied the topology of the real line $\RR$ and to some extent th
 Parts~(a) and (b) of the definition should seem quite natural. Part~(c) is motivated by the triangle inequality for real numbers, which we have often used in the form $|x-z|\leq|x-y|+|y-z|$.
 
 \begin{example}
-  The real line $\RR$ and Euclidean spaces $\RR^n$ are the quintessential examples of metric spaces. The usual distance function on $\RR$ is $d(x,y)=|x-y|$ and the usual distance function on $\RR^n$ is $d(x,y)=\|x-y\|$.
+  The real line $\R$ and Euclidean spaces $\R^n$ are the quintessential examples of metric spaces. The usual distance function on $\R$ is $d(x,y)=|x-y|$ and the usual distance function on $\R^n$ is $d(x,y)=\|x-y\|$.
 \end{example}
 
 \begin{example}
@@ -2164,10 +2164,10 @@ Parts~(a) and (b) of the definition should seem quite natural. Part~(c) is motiv
 \end{example}
 
 \begin{example}
-  The space $C[0,1]$ consists of all continuous functions $f\colon[0,1]\to\RR$. (Recall that we will discuss continuity more rigorously in the next chapter.) The distance function is the \emph{uniform distance} $d(f,g)=\sup_{t\in[0,1]}|f(t)-g(t)|$.
+  The space $C[0,1]$ consists of all continuous functions $f\colon[0,1]\to\R$. (Recall that we will discuss continuity more rigorously in the next chapter.) The distance function is the \emph{uniform distance} $d(f,g)=\sup_{t\in[0,1]}|f(t)-g(t)|$.
 \end{example}
 
-To do topology in metric space, we first have to have neighborhoods. Recall that in $\RR$ the neighborhood notation $V_\epsilon(x)$ denotes the interval $(x-\epsilon,x+\epsilon)$. In $\RR^2$ the neighborhood notation $V_\epsilon(\mathbf{x})$ denotes the disk centered at $x$ of radius $\epsilon$, and so forth. By analogy, if $X$ is a metric space with distance function $d$, we can define the neighborhoods $V_\epsilon(x)=\{y\mid d(x,y)<\epsilon\}$.
+To do topology in metric space, we first have to have neighborhoods. Recall that in $\R$ the neighborhood notation $V_\epsilon(x)$ denotes the interval $(x-\epsilon,x+\epsilon)$. In $\R^2$ the neighborhood notation $V_\epsilon(\mathbf{x})$ denotes the disk centered at $x$ of radius $\epsilon$, and so forth. By analogy, if $X$ is a metric space with distance function $d$, we can define the neighborhoods $V_\epsilon(x)=\{y\mid d(x,y)<\epsilon\}$.
 
 We can use these neighborhoods to repeat the definitions of all the basic topological concepts.
 
@@ -2189,10 +2189,10 @@ We can also define convergent and Cauchy sequences in metric space as follows. T
   A metric space $X$ is \emph{complete} if every Cauchy sequence is convergent.
 \end{defn}
 
-The space $\RR$ is complete by the Cauchy criterion itself, and the spaces $\RR^n$ are complete as well. On the other hand, the space $X=(0,1)$, that is the open unit interval considered as a subspace of $\RR$, is not complete. For example the sequence $1/n$ is a Cauchy sequence of $(0,1)$ but has no limit in $(0,1)$.
+The space $\R$ is complete by the Cauchy criterion itself, and the spaces $\R^n$ are complete as well. On the other hand, the space $X=(0,1)$, that is the open unit interval considered as a subspace of $\R$, is not complete. For example the sequence $1/n$ is a Cauchy sequence of $(0,1)$ but has no limit in $(0,1)$.
 
 \begin{prop}
-  A subspace $A\subset\RR$ is complete if and only if $A$ is closed.
+  A subspace $A\subset\R$ is complete if and only if $A$ is closed.
 \end{prop}
 
 \begin{proof}
@@ -2324,7 +2324,7 @@ We close this section with the analog of the limit calculus for functional limit
   Suppose that $\lim_{x\to a}f(x)=L$ and $\lim_{x\to a}g(x)=M$. Then we have
   \begin{enumerate}
   \item $\displaystyle\lim_{x\to a}[f(x)+g(x)]=L+M$
-  \item $\displaystyle\lim_{x\to a}kf(x)=kM$ for any $k\in\RR$
+  \item $\displaystyle\lim_{x\to a}kf(x)=kM$ for any $k\in\R$
   \item $\displaystyle\lim_{x\to a}f(x)g(x)=LM$
   \item $\displaystyle\lim_{x\to a}f(x)/g(x)=L/M$ provided $M\neq 0$
   \end{enumerate}
@@ -2361,7 +2361,7 @@ The proof is requested as an exercise.
 
 \begin{exerc}
   Let $f(x)$ be the Dirichlet function, defined by
-  \[f(x)=\begin{cases}1&x\in\QQ\\0&x\notin\QQ\end{cases}
+  \[f(x)=\begin{cases}1&x\in\Q\\0&x\notin\Q\end{cases}
   \]
   Prove that for every real number $a$, $f$ is discontinuous at $a$.
 \end{exerc}
@@ -2386,7 +2386,7 @@ The proof is requested as an exercise.
 Thanks to our rigorous treatment of functional limits, we are now ready to define continuous fucntions. Recall that intuitively speaking, we said that $f$ is continuous at a point $a$ if whenever values of $x$ get near to $a$, values of $f(x)$ get near to $f(a)$. Formally, this can be stated as follows.
 
 \begin{defn}
-  Let $f$ be a real-valued function defined on an interval of $\RR$. We say $f$ is \emph{continuous} at a point $a$ in its domain if $\lim_{x\to a}f(x)$ exists and equals $f(a)$. We say that $f$ is \emph{continuous} if it is continuous on every point of its domain.
+  Let $f$ be a real-valued function defined on an interval of $\R$. We say $f$ is \emph{continuous} at a point $a$ in its domain if $\lim_{x\to a}f(x)$ exists and equals $f(a)$. We say that $f$ is \emph{continuous} if it is continuous on every point of its domain.
 \end{defn}
 
 Our theorems regarding functional limits are now ready to bear fruit. First of all, since functional limits admit both an $\epsilon,\delta$ and a sequential characterization, so too does continuity.
@@ -2407,7 +2407,7 @@ Our theorems regarding functional limits are now ready to bear fruit. First of a
   Suppose that $f,g$ are continuous functions on a common domain. Then we have:
   \begin{enumerate}
   \item $f+g$ is continuous
-  \item $kf$ is continuous for any $k\in\RR$
+  \item $kf$ is continuous for any $k\in\R$
   \item $fg$ is continuous
   \item $f/g$ is continuous wherever it is defined
   \end{enumerate}
@@ -2454,7 +2454,7 @@ We close with a beautiful characterization which expresses continuity in purely 
 Notice that if $f$ is a continuous function and $V$ is an open set, it is not necessarily the case that $f(V)$ is open too. For example if $f(x)=x^2$ and $V=(-1,1)$, then $f[V]=[0,1)$ which is not open. On the other hand, the following result states that the continuous functions are precisely those which preserve the open sets under inverse images.
 
 \begin{thm}
-  Let $f\colon\RR\to\RR$. Then $f$ is continuous everywhere if and only if for every open set $V$ we have $f^{-1}(V)$ is open too.
+  Let $f\colon\R\to\R$. Then $f$ is continuous everywhere if and only if for every open set $V$ we have $f^{-1}(V)$ is open too.
 \end{thm}
 
 \begin{proof}
@@ -2517,10 +2517,10 @@ The forward image mapping $f(\cdot)$ also preserves unions, but fails to preserv
 \end{prop}
 
 \begin{proof}
-  We have shown that if $f$ is continuous and $V$ is open, then $f^{-1}(V)$ is open. Since $C$ is closed, its complement $\RR\setminus C$ is open. It follows from the pervious discussion that $f^{-1}(\RR)\setminus f^{-1}(C)$ is open since it is equal to $f^{-1}(\RR\setminus C)$. We therefore conclude that $f^{-1}(C)$ is closed.
+  We have shown that if $f$ is continuous and $V$ is open, then $f^{-1}(V)$ is open. Since $C$ is closed, its complement $\R\setminus C$ is open. It follows from the pervious discussion that $f^{-1}(\R)\setminus f^{-1}(C)$ is open since it is equal to $f^{-1}(\R\setminus C)$. We therefore conclude that $f^{-1}(C)$ is closed.
 \end{proof}
 
-Just as continuous functions need not preserve open sets under forward images, neither must they preserve closed sets under forward images. For example if $f(x)=1/(1+x^2)$ and $A=\RR$ then $f(A)=(0,1]$. Observe that for this counterexample we chose to go with an unbounded set $A$. The following result implies that it was necessary to do so.
+Just as continuous functions need not preserve open sets under forward images, neither must they preserve closed sets under forward images. For example if $f(x)=1/(1+x^2)$ and $A=\R$ then $f(A)=(0,1]$. Observe that for this counterexample we chose to go with an unbounded set $A$. The following result implies that it was necessary to do so.
 
 \begin{thm}
   If $f$ is continuous and $K$ is compact, then $f(K)$ is compact.
@@ -2534,11 +2534,11 @@ We have mentioned the extreme value theorem before as an important property of c
 
 \begin{cor}[Extreme value theorem]
   \label{cor:evt}
-  If $K$ is compact and $f\colon K\to\RR$ is continuous, then $f$ achieves a minimum and maximum value on $K$.
+  If $K$ is compact and $f\colon K\to\R$ is continuous, then $f$ achieves a minimum and maximum value on $K$.
 \end{cor}
 
 \begin{proof}
-  By the theorem, $f(K)$ is a compact subset of $\RR$. Since compact sets are bounded, $f(K)$ has an infemum $\alpha$ and a supremum $\beta$. Since compact sets are closed, and we have seen that $\alpha,\beta$ lie on the boundary of $f(K)$, it follows that $\alpha,\beta\in f(K)$. Thus there exist $a,b\in K$ such that $f(a)=\alpha$ and $f(b)=\beta$, as claimed.
+  By the theorem, $f(K)$ is a compact subset of $\R$. Since compact sets are bounded, $f(K)$ has an infemum $\alpha$ and a supremum $\beta$. Since compact sets are closed, and we have seen that $\alpha,\beta$ lie on the boundary of $f(K)$, it follows that $\alpha,\beta\in f(K)$. Thus there exist $a,b\in K$ such that $f(a)=\alpha$ and $f(b)=\beta$, as claimed.
 \end{proof}
 
 The extreme value theorem is the key to any kind of optimization. If one is seeking an optimum value (usually an infemum or supremum), the exterem value theorem gives conditions under which one can be assured that such a value exists.
@@ -2560,7 +2560,7 @@ Once again, this simple preservation property has an important consequence in ca
 \end{cor}
 
 \begin{proof}
-  Since $[a,b]$ is connected, the previous theorem gives that $f([a,b])$ is connected. As we have shown that connected subsets of $\RR$ are intervals, we have that $f([a,b])$ is an interval. Recall our characterization that $I$ is an interval iff $x,y\in I$ and $x<z<y$ implies $z\in I$. We currently have $f(a),f(b)\in f([a,b])$ and $f(a)<L<f(b)$. Thus $L\in f([a,b])$, which means there exists $c\in[a,b]$ such that $f(c)=L$. Finally note that $c$ clearly cannot equal $a$ or $b$ itself.
+  Since $[a,b]$ is connected, the previous theorem gives that $f([a,b])$ is connected. As we have shown that connected subsets of $\R$ are intervals, we have that $f([a,b])$ is an interval. Recall our characterization that $I$ is an interval iff $x,y\in I$ and $x<z<y$ implies $z\in I$. We currently have $f(a),f(b)\in f([a,b])$ and $f(a)<L<f(b)$. Thus $L\in f([a,b])$, which means there exists $c\in[a,b]$ such that $f(c)=L$. Finally note that $c$ clearly cannot equal $a$ or $b$ itself.
 \end{proof}
 
 The intermediate value theorem has many practical consequences, just one of which is the following.
@@ -2582,7 +2582,7 @@ The intermediate value theorem has many practical consequences, just one of whic
     \item A continuous function $f$ and a compcat set $K$ such that $f^{-1}(K)$ is not compact.
     \item A continuous function $f$ and a connected set $C$ such that $f^{-1}(C)$ is disconnected.
     \item A continuous function $f$ and a bounded set $A$ such that $f(A)$ is not bounded.
-    \item A continuous function $f$, whose domain is $\RR$, and a bounded set $A$ such that $f(A)$ is not bounded.
+    \item A continuous function $f$, whose domain is $\R$, and a bounded set $A$ such that $f(A)$ is not bounded.
     \item a continuous function $f$ and a bounded set $B$ such that $f^{-1}(B)$ is not bounded.
     % \item A continuous function $f$ on the interval $(0,1)$ and a convergent sequence $x_n\in(0,1)$ with limit in $(0,1)$ such that $f(x_n)$ is not a convergent sequence.
     % \item A continuous function $f$ on the interval $(0,1)$ and a Cauchy sequence $x_n\in(0,1)$ such that $f(x_n)$ is not a Cauchy sequence.
@@ -2592,7 +2592,7 @@ The intermediate value theorem has many practical consequences, just one of whic
   \end{enumerate}
 \end{exerc}
   
-%\question Suppose that $f$ is continuous on $[a,b]$ and that for every $n\in\NN$ there exists $x\in[a,b]$ such that $\abs{f(x)}\leq\frac1n$. Show that there exists $x\in[a,b]$ such that $f(x)=0$.
+%\question Suppose that $f$ is continuous on $[a,b]$ and that for every $n\in\N$ there exists $x\in[a,b]$ such that $\abs{f(x)}\leq\frac1n$. Show that there exists $x\in[a,b]$ such that $f(x)=0$.
 
 \begin{exerc}[Abbott, ex 4.4.4(a)]
   Suppose that $f$ is continuous on the interval $[a,b]$ and that $f(x)>0$ for all $x\in[a,b]$.  Show that the reciprocal function $1/f$ is bounded on $[a,b]$.
@@ -2781,7 +2781,7 @@ Along with the derivative, the integral is one of the highlights of modern mathe
 
 \begin{example}
   Let $f$ be the Dirichlet function on $[0,1]$, which is defined by
-  \[f(x)=\begin{cases}1&x\in[0,1]\cap\QQ\\0&x\in[0,1]\setminus\QQ\end{cases}
+  \[f(x)=\begin{cases}1&x\in[0,1]\cap\Q\\0&x\in[0,1]\setminus\Q\end{cases}
   \]
   Then $f$ is not integrable. In fact using rational and irrational density, for any $P$ we have $L(f,P)=0$ and $U(f,P)=1$.
 \end{example}
@@ -3016,7 +3016,7 @@ For example, if $f$ is the function
 then $\lim f(1/n)=1$, while $\lim f(-1/n)=-1$. Since we cannot say that either value has a greater claim to being the true limit, we correctly conclude that $\lim_{x\to0}f(x)$ does not exist.
 
 At this point one may be tempted to define $\lim_{x\to a}f(x)$ as the value of $\lim f(a+1/n)$ and $\lim f(a-1/n)$ provided these values exist and agree. However, this would again be mistaken! To see this consider the \emph{Dirichlet function} defined by
-\[f(x)=\begin{cases}1&x\in\QQ\\0&x\notin\QQ\end{cases}
+\[f(x)=\begin{cases}1&x\in\Q\\0&x\notin\Q\end{cases}
 \]
 This function is so ugly that our definitions should definitely imply it is discontinuous. In fact our definitions should imply that none of its functional limits exist. But since we have $\lim f(1/n)=\lim f(-1/n)=1$, the above method would incorrectly conclude that $\lim_{x\to0}f(x)=1$. It is thanks to this strange example that we settle on the following very strong definition.
 
@@ -3052,7 +3052,7 @@ Before stating the theorem, recall that a subset $A$ of a metric space is called
 Our first application of Baire's theorem will be to address the question: if $f$ is a discontinuous function, what does its set of discontinuities look like? Recall that we have seen examples of functions that are discontinuous at a single point, discontinuous at a few points, and discontinuous everywhere.
 
 \begin{defn}
-  If $f\colon\RR\to\RR$ then the \emph{set of discontinuities} of $f$ is the set $D_f=\set{x\in\RR\mid\text{$f$ is discontinuous at $x$}}$.
+  If $f\colon\R\to\R$ then the \emph{set of discontinuities} of $f$ is the set $D_f=\set{x\in\R\mid\text{$f$ is discontinuous at $x$}}$.
 \end{defn}
 
 It is possible to produce examples of functions $f$ with interesting discontinuity sets $D_f$.
@@ -3062,7 +3062,7 @@ It is possible to produce examples of functions $f$ with interesting discontinui
 \end{example}
 
 \begin{example}
-  Let $f(x)=1/n$ if $x=m/n$ is a rational number and $m/n$ is its reduced representation. Let $f(x)=0$ if $x$ is irrational. This function $f$ is called Thomae's function, and it has the remarkable property that $D_f$ is exactly $\QQ$. To see this, one should check that if $x$ is any number and $a_n/b_n$ is any nonconstant sequence of reduced rational numbers such that $a_n/b_n\to x$, then the sequence $1/b_n\to0$.
+  Let $f(x)=1/n$ if $x=m/n$ is a rational number and $m/n$ is its reduced representation. Let $f(x)=0$ if $x$ is irrational. This function $f$ is called Thomae's function, and it has the remarkable property that $D_f$ is exactly $\Q$. To see this, one should check that if $x$ is any number and $a_n/b_n$ is any nonconstant sequence of reduced rational numbers such that $a_n/b_n\to x$, then the sequence $1/b_n\to0$.
 \end{example}
 
 % play around with other sets: [0,1], (0,1), 1/n, 1/n\cup0, etc
@@ -3071,7 +3071,7 @@ The example of Thomae's function naturally leads to the question: If we can find
 
 \begin{thm}
   \label{thm:df-closed}
-  If $f\colon\RR\to\RR$, then $D_f$ can be written as a union of closed sets.
+  If $f\colon\R\to\R$, then $D_f$ can be written as a union of closed sets.
 \end{thm}
 
 \begin{proof}
@@ -3103,7 +3103,7 @@ Now we are ready to give a negative answer to the question of whether there is a
 \end{thm}
 
 \begin{proof}
-  Suppose towards a contradiction that the set $\mathbb I$ of irrational numbers can be written as a union $\mathbb I=\bigcup F_n$, where each $F_n$ is closed. Since any open set contains rational numbers, it must be the case that each set $F_n$ has empty interior. Let $\QQ=\mathbb{q_n}$ be an enumeration of the rational numbers. Then $\RR=\bigcup F_n\cup\bigcup\{q_n\}$ is a union of a countable family of closed subsets with empty interior, contradicting Baire's theorem.
+  Suppose towards a contradiction that the set $\mathbb I$ of irrational numbers can be written as a union $\mathbb I=\bigcup F_n$, where each $F_n$ is closed. Since any open set contains rational numbers, it must be the case that each set $F_n$ has empty interior. Let $\Q=\mathbb{q_n}$ be an enumeration of the rational numbers. Then $\R=\bigcup F_n\cup\bigcup\{q_n\}$ is a union of a countable family of closed subsets with empty interior, contradicting Baire's theorem.
 \end{proof}
 
 \newpage
@@ -3111,7 +3111,7 @@ Now we are ready to give a negative answer to the question of whether there is a
 \section{Most functions are not differentiable}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We have seen many examples of continuous functions which fail to be differentiable at one or more points. Our second application of Baire's theorem will be to answer the quesiton: how rare is it for a function to be differentiable? In order to proceed, we need a measure of size for subsets of the space $C[0,1]$ of continuous functions. Cardinality isn't useful here, since there are uncountably many differentiable functions and uncountably many non-differentiable functions. We have also discussed the notions of length and dimension for subsets of $\RR^n$, but again these will not help here. In this section we introduce a notion of size which stems from Baire's theorem.
+We have seen many examples of continuous functions which fail to be differentiable at one or more points. Our second application of Baire's theorem will be to answer the quesiton: how rare is it for a function to be differentiable? In order to proceed, we need a measure of size for subsets of the space $C[0,1]$ of continuous functions. Cardinality isn't useful here, since there are uncountably many differentiable functions and uncountably many non-differentiable functions. We have also discussed the notions of length and dimension for subsets of $\R^n$, but again these will not help here. In this section we introduce a notion of size which stems from Baire's theorem.
 
 \begin{defn}
   A subset $A\subset X$ is said to be \emph{meager} if it is contained in a countable union of closed sets with empty interior.
