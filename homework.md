@@ -2,7 +2,9 @@
 
 * Ex 3.2 (Abbott, ex 1.4.5)
 * Ex 3.4
-* ...
+* Ex 4.1
+* Ex 4.3
+* Ex 4.4
 
 ## Homework 1, due Wednesday, January 23 at 12pm
 
