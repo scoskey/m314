@@ -1,7 +1,7 @@
 \documentclass[11pt,oneside]{amsbook}
 
 \title{Introduction to real analysis}
-\author{Course notes written by Samuel Coskey\\Based on material from ``Understanding Analysis,'' by Stephen Abbott}
+\author{Course notes written by Samuel Coskey;\\Based on material from ``Understanding Analysis'',\\written by Stephen Abbott}
 
 \usepackage[vscale=.8,vmarginratio=4:3]{geometry}
 \usepackage{mathpazo,amssymb}
@@ -548,7 +548,7 @@ We were able to show that $\R$ is uncountable using the Nested Interval Property
   We now define a ``diagonal'' real number $d\in(0,1)$ with a decimal expansion $d_n$ with the property that for all $n$
   \[d_n\neq a_{nn}
   \]
-  More precisely, we let $d_n=2$ if $a_{nn}\neq2$ and we let $d_n=3$ if $a_{nn}=2$. It then follows that for all $n$, we have $d\neq a_n$. Thus $d$ is an element of $(0,1)$ which does not appear in the sequence $a_n$, contradicting our assumption that every element of $(0,1)$ appears in the sequence $a_n$.
+  If we want to be more precise, we can for example let $d_n=2$ when $a_{nn}\neq2$ and let $d_n=3$ when $a_{nn}=2$. It then follows that for all $n$, we have $d\neq a_n$. Thus $d$ is an element of $(0,1)$ which does not appear in the sequence $a_n$, contradicting our assumption that every element of $(0,1)$ appears in the sequence $a_n$.
 \end{proof}
 
 In the exercises you will be asked to apply this powerful ``diagonal'' argument to other examples of sets.
@@ -566,7 +566,7 @@ The dichotomy between countable and uncountable sets suggests that one should fu
 
 While the terms ``more'' or ``fewer'' elements lose their meaning for infinite sets, the notions of one-to-one and onto functions do not. Moreover, the definition given above is consistent with the behavior of the ``number of elements'' definition used in the special case of finite sets.
 
-We call $|A|$ the \emph{cardinality} of $A$. It is important to understand that we never defined what $|A|$ actually is, only how it compares with other cardinality values $|B|$. Using set theory we can also define what $|A|$ actually is, but it isn't necessary for this class.
+We call $|A|$ the \emph{cardinality} of $A$. It is important to understand that we never defined what $|A|$ actually is, only how it compares with other set cardinalities $|B|$. Using set theory we can also define what $|A|$ actually is, but it isn't necessary for this class.
 
 Cantor's theorem can be generalized to show that for any set there is a set of even larger cardinality. Therefore there is no bound on the number of different sizes of infinity! Recall that if $A$ is any set, the \emph{power set} $\mathcal P(A)$ is the set of all subsets of $A$. Of course if $A$ is finite, then we have $|\mathcal P(A)|=2^{|A|}$ so in particular $|A|<|\mathcal P(A)|$. Cantor showed that this generalizes to arbitrary sets.
 
@@ -591,9 +591,9 @@ It is natural to ask to what extent cardinalities behave like ordinary finite co
 
 Another natural question is whether the cardinality of $\R$ is the \emph{smallest} uncountable cardinality. Many very narrow or thin subsets of $\R$ still have the full cardinality of $\R$. Just consider $(0,1)$ or $(0,\epsilon)$ or the set of irrationals. So the question is whether for any set $A$ of real numbers, if $A$ is uncountable then is it necessarily true that $|A|=|\R|$?
 
-This question is known as the \emph{continuum hypothesis} and has great historical significance. After remaining open for many decades, it was finally settled in a surprising way: the answer is \emph{undecidable} using the accepted axioms about sets! In other words, there is a universe of sets (model) in which the continuum hypothesis is true, and also a universe of sets in which it is false.
+This question is known as the \emph{continuum hypothesis} and has great historical significance. After remaining open for many decades, it was finally settled in a surprising way: the answer is \emph{undecidable} using the accepted axioms of mathematics! In other words, there is a universe of mathematics in which the continuum hypothesis is true, and also a universe of mathematics in which it is false.
 
-Ever since this stunning resolution to the continuum hypothesis was found in 1965, the existence of undecidable statements in mathematics has remained of key interest to mathematicians.
+Ever since this stunning resolution to the continuum hypothesis was found in 1965, the occurrence and nature of undecidable statements has remained of key interest to mathematicians.
 
 \newpage
 \subsection*{Exercises for \S \thesection}
@@ -606,7 +606,7 @@ Ever since this stunning resolution to the continuum hypothesis was found in 196
   Let $S_\text{inf}$ be the set of all \emph{infinite} words made with the letters $a,b$. So $S$ contains elements like $aaaa\cdots$, $ababa\cdots$, $aabaabaab\cdots$, also non-repeating strings like $abaabaaabaaaab\cdots$, and even strings with no discernible pattern whatsoever. Prove that $S_\text{inf}$ is uncountable. Why would this proof fail if applied to $S_\text{fin}$?
 \end{exerc}
 
-\begin{exerc}[See Abbott, ex 1.5.9]
+\begin{exerc}[See also Abbott, ex 1.5.9]
   Recall that a real number $\alpha$ is called \emph{algebraic} if there exists a polynomial $p$ with integer coefficients such that $p(\alpha)=0$. Is the set $A$ of all algebraic numbers countable or uncountable? Prove your assertion.
 \end{exerc}
 
