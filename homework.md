@@ -1,3 +1,11 @@
+## Homework 3, due Wednesday, February 6 at 12pm
+(I am late in posting this, so if you need an extra day or two that's fine!)
+
+* Ex 5.2
+* Ex 5.4
+* Ex 6.1
+* ex 6.2
+
 ## Homework 2, due Wednesday, January 30 at 12pm
 
 * Ex 3.2 (Abbott, ex 1.4.5)
