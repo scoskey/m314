@@ -1,8 +1,8 @@
-Welcome to the course web site for Math 314, Foundations of analysys.
+Welcome to the course web site for Math 314, Foundations of analysys, Spring 2019.
 
 *Catalog description*. The real number system, completeness and compactness, sequences, continuity, foundations of the calculus.
 
-*Course resources*
+*Course resources*:
 
 * [syllabus](syllabus)
 * [homework](homework)
