@@ -1,3 +1,11 @@
+## Homework 4, due Wednesday, February 13 at 12pm
+
+* Ex 7.1(a)-(c)
+* Ex 7.2
+* Ex 7.3
+* Ex 8.2
+* Ex 8.4
+
 ## Homework 3, due Wednesday, February 6 at 12pm
 (I am late in posting this, so if you need an extra day or two that's fine!)
 
