@@ -1,3 +1,9 @@
+## Homework 5, due Wednesday, February 27 at 12pm
+
+* Ex 9.1
+* Ex 9.3
+* ...
+
 ## Homework 4, due Wednesday, February 13 at 12pm
 
 * Ex 7.1(a)-(c)
