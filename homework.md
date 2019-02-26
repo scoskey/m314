@@ -2,7 +2,8 @@
 
 * Ex 9.1
 * Ex 9.3
-* ...
+* Ex 10.1
+* Ex 10.3
 
 ## Homework 4, due Wednesday, February 13 at 12pm
 
