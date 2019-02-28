@@ -1302,18 +1302,15 @@ The Bolzano--Weierstra\ss\ theorem has numerous theoretical applications, some o
 Recall that the the real number system satisfies the axiom of completeness, which says that every bounded set has a supremum. (We also called this the least upper bound property.) We have said that this axiom should be interpreted as saying that the real number system does not have any gaps. But this leads to the question of what it means for other spaces, besides the real numbers, to be complete? For example it is intuitively clear that $\R^2$ or the sphere $\mathbb S^2$ do not have any gaps. To capture this, we need a more general way to define completeness.
 
 \begin{defn}
-  The sequence $a_n$ is \emph{Cauchy} if for all $\epsilon>0$ there exists $N\in\N$ such that for all $m,n>N$ we have $|a_n-a_m|<\epsilon$.
+  The sequence $a_n$ is \emph{Cauchy} if for all $\epsilon>0$ there exists $N\in\N$ such that for all $m,n\geq N$ we have $|a_n-a_m|<\epsilon$.
 \end{defn}
 
 The Cauchy sequences are the ones which really, really want to converge, but don't know what their limit should be!
 
 \begin{example}
-  The sequence $a_n=1/2^n$ is Cauchy. Indeed given $\epsilon$ we can let $N$ be large enough that $1/2^N<\epsilon$. Then if $m,n>N$ we have the following (assume for convenience that $m>n$):
-  \begin{align*}
-    \frac1{2^n}-\frac1{2^m}&=\frac{2^m-2^n}{2^{m+n}}\\
-    &\leq\frac{2^m}{2^{m+n}}\\
-    &\leq\frac1{2^N}<\epsilon
-  \end{align*}
+  The sequence $a_n=1/n$ is Cauchy. As scratch work, we seek $N$ large enuogh that whenever $n,m\geq N$ we have $|1/n-1/m|<\epsilon$. Since the variables $n,m$ are symmetric, assume for convenience that $n<m$. This way $|1/n-1/m|$ is simply $1/n-1/m$. Now $1/n-1/m<\epsilon$ would follow from $1/n<\epsilon$, or $n>1/\epsilon$.
+  
+  To complete the proof, let $N>1/\epsilon$ and without loss of generaltiy let $m>n\geq N$. Then $|1/n-1/m|=1/n-1/m<1/n\leq 1/N<\epsilon$, as desired.
 \end{example}
 
 The proof that the above sequence is Cauchy is not too different than the proof that it is convergent. In fact the notions of Cauchy and convergent sequences turn out to be exactly the same.
@@ -1363,7 +1360,7 @@ In the exercises you will be asked to prove that the monotone convergence theore
 \subsection*{Exerecises for \S \thesection}
 
 \begin{exerc}
-  Show directly from the definition that the sequence $x_n=\frac{n+1}{n}$ is Cauchy.
+  Show directly from the definition that the sequence $x_n=\frac{n}{n+1}$ is Cauchy.
 \end{exerc}
 
 \begin{exerc}[Abbott, ex 2.6.2]
@@ -1422,7 +1419,7 @@ Before proceeding to the convergence tests, we state formally one simple test fo
 \end{thm}
 
 \begin{proof}
-  We use the contrapositive. Suppose that $\sum a_n=S$. Then the sequence partial sums $S_n$ converges to $S$. It follows from the addition law foro limits that the terms $a_n=S_n-S_{n-1}$ converge to $S-S=0$.
+  We use the contrapositive. Suppose that $\sum a_n=S$. Then the sequence partial sums $S_n$ converges to $S$. It follows from the addition law for limits that the terms $a_n=S_n-S_{n-1}$ converge to $S-S=0$.
 \end{proof}
 
 \begin{example}
