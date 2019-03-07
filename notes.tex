@@ -1643,11 +1643,11 @@ We close our discussion of series by answering our initial question about commut
   Abbott, \S 3.1
 \end{reading}
 
-In this chapter we study subsets of the real line using \emph{topology}, which is an abstract notion of shape. Before commencing with the appropriate definitions, we wish to give a taste for how complicated subsets of the real line can really be.
+In this chapter we study subsets of the real line using \emph{topology}, which is a notion of abstract shape. In the context of our class, topology will let us explore the shape of subsets of $\R$. Before commencing with the appropriate definitions, we wish to give a small taste of just how complicated subsets of $\R$ can be.
 
-To motivate our discussion, let us begin with the notoriously difficult problem of measuring the \emph{size} of a subset. We have already introduced the notion of countable and uncountable sets, which gives us some idea of their size. But this notion is very course (it has only two outcomes). In this section we wish to focus on two new ideas: the \emph{length} and the \emph{dimension} of a set. Once we have introduced topology we will briefly touch on a fourth notion called \emph{category}.
+To motivate our discussion, let us begin with the notoriously difficult problem of measuring the \emph{size} of a subset. We have already introduced the notion of \emph{cardinality}, which gives us some idea of the size of a set (countable vs uncountable). But this notion is very course since it has just two outcomes. In this section we will discuss two more notions: the \emph{length} and the \emph{dimension} of a set. After we have introduced topology we will briefly touch on a fourth notion called \emph{category}.
 
-To give an idea of how complex the problem of measuring length is, we will introduce the \emph{Cantor set}. This set has many unusual properties not seen in our familiar examples of sets, that is, the intervals, cuts, sequences, and so forth.
+We will now introduce the \emph{Cantor set}, which will help us challenge our ideas about what cardinality, length, and dimension mean, and how they interact with one another. The Cantor set set has many unusual properties not seen in our familiar examples of sets, that is, the intervals, cuts, sequences, and so forth.
 
 The Cantor set is constructed as follows. Begin with the unit interval $[0,1]$, and remove its open middle third to obtain the set $C_1=[0,\frac13]\cup[2/3,1]$. Next remove the open middle third of each of these intervals to obtain the set $C_2=[0,\frac19]\cup[\frac29,\frac13]
 \cup[\frac23,\frac79]\cup[\frac89,1]$. Continuing in like fashion, we obtain a decreasing sequence of closed sets $C_n$, each of which is the union of several disjoint closed intervals. The Cantor set $C$ is then defined to be $\bigcap C_n$.
@@ -1699,7 +1699,7 @@ We next consider the \emph{length} of the Cantor set. Although we do not give th
   We therefore conclude that the total length remaining in the Cantor set is $0$.
 \end{proof}
 
-We close with a brief discussion of the \emph{dimension} of the Cantor set. Although we do not give a precise definition of dimension, we motivate it by observing the following property. When you dilate a square by a factor of two, the result contains $4=2^2$ copies of the original square. When you dilate a cube by a factor of two, the result contains $8=2^3$ copies of the original cube. In each case the number appearing in the exponent is commonly known as the dimension of the object. This leads to the following formula, which is used whenever it is applicable:
+We close with a brief discussion of the \emph{dimension} of the Cantor set. Although we do not give a precise definition of dimension, we motivate it by observing the following property. When you dilate a square by a factor of two, the result contains $4=2^2$ copies of the original square. When you dilate a cube by a factor of two, the result contains $8=2^3$ copies of the original cube. In each case the number appearing in the exponent matches our intuitive idea of the dimension of the object. This leads to the following formula, which is used whenever it is applicable:
 \[\text{number of copies}=\text{(scaling factor)}^\text{dimension}
 \]
 The most general definitions of dimension are somewhat complicated to describe, but all of them reduce to the above formula when it applies.
