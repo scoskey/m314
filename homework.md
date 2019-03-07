@@ -1,8 +1,16 @@
+## Homework 6, due Wedsesday, March 6 at 12pm
+
+* Ex 11.1
+* Ex 11.2
+* Ex 12.1(a)--(e)
+* Ex 12.3
+
 ## Homework 5, due Wednesday, February 27 at 12pm
 
 * Ex 9.1
 * Ex 9.3
-* ...
+* Ex 10.1
+* Ex 10.3
 
 ## Homework 4, due Wednesday, February 13 at 12pm
 
