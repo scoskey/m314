@@ -1,3 +1,8 @@
+## Homework 8, due Wednesday, March 27 at 12pm
+
+* Ex 15.1
+* Ex 15.2
+
 ## Homework 7, due Wednesday, March 13 at 12pm
 
 * Ex 13.1
