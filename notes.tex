@@ -1963,7 +1963,7 @@ We conclude this section with a justification for the term ``closed''. The next 
 
 Recall the Nested Interval Property, which states that the intersection of a family of nested closed intervals $I_n$ is nonempty. We have seen that this theorem may fail if the intervals are not assumed to be closed, or not assumed to be bounded. However, a version of the NIP does hold even if the intervals are replaced by arbitrary sets which are both closed and bounded.
 
-For subsets of $\R$, being both closed and bounded is very strong. To understand why, notice that if $A$ is bounded then every sequence of elements of $A$ has a convergent subsequence, and if $A$ is also closed then the limit of the subesquence lies in $A$. Sets with this latter property are given a special name.
+For subsets of $\R$, being both closed and bounded is very strong. To understand why, notice that if $A$ is bounded then by the Bolzano--Weierstra\ss\ theorem every sequence of elements of $A$ has a convergent subsequence, and if $A$ is also closed then the limit of the subsequence lies in $A$. Sets with this compound property are given a special name.
 
 \begin{definition}
   A subset $A\subset\R$ is called \emph{compact} if every sequence from $A$ has a convergent subsequence whose limit lies in $A$.
@@ -1990,7 +1990,7 @@ Compact sets play a role in almost every area of mathematics. As just a small ex
 \end{theorem}
 
 \begin{proof}[Proof sketch]
-  Let $A$ be a compact set and let $f\colon A\to\R$ be a continuous function. Let $R=\{f(x)\mid x\in A\}$ be the range of $f$, and let $\alpha=\sup(R)$. We wish to show there is some $x\in A$ such that $f(x)=\alpha$. Since $\alpha=\sup(R)$ there exists a sequence $y_n$ contained within $R$ such that $y_n\to\alpha$. For each $n$ we may then let $x_n\in A$ be such that $f(x_n)=y_n$. Since $A$ is compact, there exists a convergent subsequence $x_{n_k}$ with some limit $x$. Then since $f$ is continuous $f(x)=f(\lim x_{n_k})=\lim f(x_{n_k})=\lim y_{n_k}=\alpha$, which means $f$ attains a maximum value. [It remains for us to justify why we can pass the limit from the inside to the outside ofthe function $f$.]
+  Let $A$ be a compact set and let $f\colon A\to\R$ be a continuous function. Let $R=\{f(x)\mid x\in A\}$ be the range of $f$, and let $\alpha=\sup(R)$. We wish to show there is some $x\in A$ such that $f(x)=\alpha$. Since $\alpha=\sup(R)$ there exists a sequence $y_n$ contained within $R$ such that $y_n\to\alpha$. For each $n$ we may then let $x_n\in A$ be such that $f(x_n)=y_n$. Since $A$ is compact, there exists a convergent subsequence $x_{n_k}$ with some limit $x$. Then since $f$ is continuous $f(x)=f(\lim x_{n_k})=\lim f(x_{n_k})=\lim y_{n_k}=\alpha$, which means $f$ attains a maximum value. [It remains for us to justify why we can pass the limit from the inside to the outside of the function $f$.]
 \end{proof}
 
 As we have outlined above, any closed and bounded subset of $\R$ is compact. In fact for subsets of $\R$ (or even $\R^n$), this turns out to be an equivalence.
@@ -2019,7 +2019,7 @@ The equivalence in the last theorem turns out to be something of a coincidence. 
     \item $A=\Z$
     \item $A=\set{1/n\mid n\in\N}\cup\{0\}$
     \item $A=\set{q\in\Q\mid0\leq q\leq2}$
-    \item $A=\set{x\mid (\exists n\in\N) |x-n|\leq.1}$
+    \item $A=\set{x\mid (\exists n\in\N)\,|x-n|\leq.1}$
   \end{enumerate}
 \end{exerc}
 
