@@ -1,3 +1,10 @@
+## Homework 9, due Friday, April 12 at 12pm
+
+* Ex 16.1
+* Ex 16.2
+* Ex 17.1
+* Ex 17.3
+
 ## Homework 8, due Wednesday, March 27 at 12pm
 
 * Ex 15.1
