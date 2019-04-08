@@ -1768,25 +1768,27 @@ For a new example, if $\alpha=\frac14$ then we construct the modified Cantor set
   Abbott, \S 3.2
 \end{reading}
 
-We can think of a subset $A$ of some universe set $X$ as a black-and-white division: every point is either in $A$ or in $A^c$. However this division is purely set-theoretic in that it doesn't take into account the relative placement of the points. If one the other hand we have some idea about the location or ordering of the points of $X$, then we can imagine a kind of grey area for points that are on the boundary of $A$.
+We can think of a subset $A$ of some universe set $X$ as a black-and-white division: every point is either in $A$ or in its complement $A^c$. However this division is purely set-theoretic in that it doesn't take into account the relative placement of the points. If one the other hand we have some idea about the location or ordering of the points of $X$, then we can imagine there is a grey area consisting of points that are ``on the boundary'' of $A$.
 
-Before we formally define the concept of boundary, recall the neighborhood notation that we introduced alongside the definition of convergence. The \emph{$\epsilon$-neighborhood of $x$} consists of all points that are less than $\epsilon$ away from $x$. In symbols:
+Before we formally define the boundary of a set, recall the neighborhood notation that we introduced alongside the definition of convergence. The \emph{$\epsilon$-neighborhood of $x$} consists of all points that are less than $\epsilon$ away from $x$. In symbols:
 \[N_\epsilon(x)=\set{y\in\R\mid|y-x|<\epsilon}
 \]
 
 In other words, $N_\epsilon(x)$ is an interval centered at $x$, that is, $(x-\epsilon,x+\epsilon)$. Note that if we were working in $X=\R^2$ we would define $N_\epsilon(x)$ to be a disk centered at $x$, in $X=\R^3$ we would define $N_\epsilon(x)$ to be a ball centered at $x$, and so on.
 
 \begin{definition}
-  Let $A$ be a subset of $\R$. A point $x$ is said to be a \emph{boundary point} of $A$ if every neighborhood $N_\epsilon(x)$ meets both $A$ and $A^c$. The set of all boundary points of $A$ is denoted $\partial A$.
+  Let $A$ be a subset of $\R$. A point $x$ is said to be a \emph{boundary point} of $A$ if for every $\epsilon>0$, we have that $N_\epsilon(x)\cap A\neq\emptyset$ and $N_\epsilon(x)\cap A^c\neq\emptyset$.
+  
+  The set of all boundary points of $A$ is denoted $\partial A$.
 \end{definition}
 
-Intuitively, if we think of points of $A$ as colored black and points of $A^c$ as colored white, the boundary of $A$ consists of those points such that no matter how far you zoom in on them, you still see the colors black and white.
+Intuitively, if we think of points of $A$ as colored black and points of $A^c$ as colored white, the boundary of $A$ consists of those points such that no matter how far you zoom in on them, you still see both the colors black and white.
 
 \begin{example}
   If $A$ is the closed interval $[0,1]$ then the boundary of $A$ is the set $\{0,1\}$. Similarly, if $A$ is the open interval $(0,1)$ then the boundary is once again the set $\{0,1\}$.
 \end{example}
 
-Notice that the boundary points of a set $A$ may lie in $A$ or may not lie in $A$. In fact following the example above, it is easy to see that a closed interval will always contain its boundary, while an open interval will always omit its boundary. This observation leads us to make the following general definition of closed and open sets.
+Notice that the boundary points of a set $A$ may be in either $A$ or $A^c$. In fact following the example above, it is easy to see that a closed interval will always contain its boundary, while an open interval will always omit its boundary. This observation leads us to make the following general definition of closed and open sets.
 
 \begin{definition}
   \begin{itemize}
@@ -1849,28 +1851,30 @@ As we have just seen, open and closed sets are not opposites, since it is possib
 %   To see that $\inte(A)$ is open, note that $\inte(A)=\cl(A^c)^c$, and hence $\inte(A)$ is the complement of a closed set.
 % \end{proof}
 
-We next investigate the relationship between the boolean operations of union and intersection, and the concepts of open and closed sets. In order to proceed, we need to establish a characterization of open sets in terms of the interior of the set.
+% In order to proceed, we need to establish a characterization of open sets in terms of the interior of the set.
 
-\begin{proposition}
-  A set $A$ is open if and only if for every point $x\in A$, there exists a neighborhood $N_\epsilon(x)$ such that $N_\epsilon(x)\subset A$.
-\end{proposition}
+% \begin{proposition}
+%   A set $A$ is open if and only if for every point $x\in A$, there exists a neighborhood $N_\epsilon(x)$ such that $N_\epsilon(x)\subset A$.
+% \end{proposition}
+%
+% \begin{proof}
+%   First let $A$ be an open set and let $x\in A$. Since $x\notin\partial A$, there must exist a neighborhood $N_\epsilon(x)$ such that $N_\epsilon(x)\subset A$ or $N_\epsilon(x)\subset A^c$. Since $x\in A$ the latter option is impossible.
+%
+%   Conversely let $A$ be a set which is not open. Then there exists a point $x\in A$ such that $x\in\partial A$. By definition of $\partial A$, any neighborhood $N_\epsilon(x)$ satisfies $N_\epsilon(x)\cap A^c\neq\emptyset$, meaning that $N_\epsilon(x)\not\subset A$.
+% \end{proof}
 
-\begin{proof}
-  First let $A$ be an open set and let $x\in A$. Since $x\notin\partial A$, there must exist a neighborhood $N_\epsilon(x)$ such that $N_\epsilon(x)\subset A$ or $N_\epsilon(x)\subset A^c$. Since $x\in A$ the latter option is impossible.
-  
-  Conversely let $A$ be a set which is not open. Then there exists a point $x\in A$ such that $x\in\partial A$. By definition of $\partial A$, any neighborhood $N_\epsilon(x)$ satisfies $N_\epsilon(x)\cap A^c\neq\emptyset$, meaning that $N_\epsilon(x)\not\subset A$.
-\end{proof}
+% As a matter of terminology, we say that $x\in A$ is an \emph{interior point} of $A$ if there exists a neighborhood $N_\epsilon(x)$ such that $N_\epsilon(x)\subset A$. We write $\inte(A)$ for the set of interior points of $A$.
 
-As a matter of terminology, we say that $x\in A$ is an \emph{interior point} of $A$ if there exists a neighborhood $N_\epsilon(x)$ such that $N_\epsilon(x)\subset A$. We write $\inte(A)$ for the set of interior points of $A$.
+We next investigate the relationship between the boolean operations of union and intersection, and the concepts of open and closed sets.
 
 \begin{theorem}
   The union of any collection of open sets is open. The intersection of finitely many open sets is open.
 \end{theorem}
 
 \begin{proof}
-  For the first statement let $\mathcal A$ be a collection of open sets, and $S=\bigcup\mathcal A$. By the previous proposition, given any $x\in S$ we must show that $x$ is an interior point of $S$. Let $A\in\mathcal A$ be such that $x\in A$. Since $x$ is an interior point of $A$, there exists $\epsilon$ such that $N_\epsilon(x)\subset A$. Hence also $N_\epsilon(x)\subset S$, so $x$ is an interior point of $S$.
+  For the first statement let $\set{A_\alpha}$ be a collection of open sets; we use the index $\alpha$ to allow the collection to be finite, countable, or even uncountable. Let $S=\bigcup_\alpha A_\alpha$ and let $x\in S$ be given. We wish to show that $x$ is not in the boundary of $S$. Since $x\in S$ there exists an index $\alpha$ such that $x\in A_\alpha$. Since $A_\alpha$ is open, $x$ is not in the boundary of $A_\alpha$. Hence there exists a neighborhood $N_\epsilon(x)\subset A_\alpha$. It follows that also $N_\epsilon(x)\subset S$, which means $x$ is not in the boundary of $S$.
 
-  For the second statement let $A_1,\ldots,A_n$ be open sets, let $T=A_1\cap\cdots\cap A_n$, and let $x\in T$. Then for all $i\leq n$ there exists $\epsilon_i$ such that $N_{\epsilon_i}(x)\subset A_i$. Letting $\epsilon=\min(\epsilon_1,\ldots,\epsilon_n)$ we clearly have that $N_\epsilon(x)\subset T$. Thus $x$ is an interior point of $T$, as desired.
+  For the second statement let $A_1,\ldots,A_n$ be open sets, let $T=A_1\cap\cdots\cap A_n$, and let $x\in T$ be given. Again we wish to show that $x$ is not in the boundary of $T$. Since $A_i$ are open for each $i\leq n$, we can find $\epsilon_i$ such that $N_{\epsilon_i}(x)\subset A_i$. Letting $\epsilon=\min(\epsilon_1,\ldots,\epsilon_n)$ we clearly have that $N_\epsilon(x)\subset T$. Thus $x$ is not in the boundary of $T$, as desired.
 \end{proof}
 
 We also have an analogous statement regarding closed sets. It follows directly from the previous theorem using complements.
@@ -1883,7 +1887,7 @@ We also have an analogous statement regarding closed sets. It follows directly f
   The Cantor set is closed. Indeed, all of the sets removed in the construction of the Cantor set are open. This includes the initial removal of $(-\infty,0)$ and $(1,\infty)$, and then all the open middle thirds. Thus the complement of the Cantor set is a union of open sets and hence open. Hence the Cantor set is closed.
 \end{example}
 
-We conclude this section with a justification for the term ``closed''. The next result says that closed sets are closed under the limit operation.
+We conclude this section with a justification for the term ``closed''. The next result says that closed sets are closed under the operation of taking limits of sequences.
 
 \begin{theorem}
   Suppose $a_n$ is a sequence of $A$ and $a_n\to x$. If $A$ is closed then $x\in A$.
@@ -1946,6 +1950,8 @@ We conclude this section with a justification for the term ``closed''. The next 
 \begin{exerc}
   Show that $A$ is clopen (both open and closed) if and only if $\partial A=\emptyset$.
 \end{exerc}
+
+For the next two exercises, we say that $x\in A$ is an \emph{interior point} of $A$ if there exists a neighborhood $N_\epsilon(x)$ such that $N_\epsilon(x)\subset A$. We write $\inte(A)$ for the set of interior points of $A$.
 
 \begin{exerc}
   Prove that $\inte(\inte(A))=\inte(A)$.
@@ -2195,7 +2201,7 @@ We can use these neighborhoods to repeat the definitions of all the basic topolo
   \end{itemize}
 \end{definition}
 
-It is easy to fill in the omitted definitions of interior, exterior, limit point, isolated point, and several others.
+% It is easy to fill in the omitted definitions of interior, exterior, limit point, isolated point, and several others.
 
 We can also define convergent and Cauchy sequences in metric space as follows. The sequence $x_n$ is convergent with limit $x$ if and only if for all $\epsilon$ there exists $N$ such that $n>N$ implies $d(x_n,x)<\epsilon$. The sequence $x_n$ is Cauchy if and only if for all $\epsilon$ there exists $N$ such that $m,n>N$ implies $d(x_m,x_n)<\epsilon$. At the level of generality of metric spaces, the statement we called the Cauchy criterion now becomes a definition.
 
