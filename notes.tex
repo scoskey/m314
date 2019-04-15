@@ -2478,7 +2478,9 @@ Notice that if $f$ is a continuous function and $V$ is an open set, it is not ne
 \end{theorem}
 
 \begin{proof}
-  Let $a$ be an arbitrary point of $f^{-1}(V)$. Since $V$ is open, $f(a)$ has a neighborhood $N_\epsilon(f(a))$ which is contained in $V$. Since $f$ is continuous at $a$ we may let $\delta$ be the corresponding value from the definition of continuity. Now we claim that $N_\delta(a)$ is contained in $f^{-1}(V)$. Indeed, for any $x\in N_\delta(a)$ we have $|x-a|<\delta$ and hence $|f(x)-f(a)|<\epsilon$. This means that $f(x)\in V$ or in other words $x\in f^{-1}(V)$.
+  First suppose $f$ is continuous, and let $V$ be open and $a\in f^{-1}(V)$. Since $V$ is open, $f(a)$ has a neighborhood $N_\epsilon(f(a))\subset V$. Since $f$ is continuous at $a$ there exists $\delta$ such that $|x-a|<\delta$ implies $|f(x)-f(a)|<\epsilon$. This is equivalent to the set containment $N_\delta(a)\subset f^{-1}(N_\epsilon(f(a)))$. It follows that $N_\delta(a)\subset f^{-1}(V)$, so $f^{-1}(V)$ is open.
+  
+  Conversely, suppose $V$ open implies $f^{-1}(V)$ is open. Given $a$ and $\epsilon$ we apply this to the open set $N_\epsilon(f(a))$ to conclude $f^{-1}(N_\epsilon(a))$ is open. This implies there exists $\delta$ such that $N_\delta(a)\subset N_\epsilon(f(a))$. This means precisely that $|x-a|<\delta$ implies $|f(x)-f(a)|<\epsilon$, that is, $f$ is continuous at $a$.
 \end{proof}
 
 We should remark that this open set characterization of continuity holds in much greater generality. Indeed, functional limits and continuity may all be formulated for functions $f\colon X\to Y$ where $X,Y$ are arbitrary metric spaces. We then have that $f$ is continuous on $X$ if and only if $V$ open implies $f^{-1}(V)$ open.
@@ -2621,7 +2623,7 @@ The intermediate value theorem has many practical consequences, just one of whic
 \end{exerc}
 
 \begin{exerc}
-  Show that the equation $2^x+3^x=4^x$ has a positive solution $x$. You may assume the expressions involved are continuous.
+  Show that the equation $2^x+3^x=4^x$ has a positive solution, using the intermediate value theorem on an appropriate interval. (You may assume exponential functions are continuous.)
 \end{exerc}
 
 \begin{exerc}
