@@ -2721,7 +2721,7 @@ In the example above, the discontinuous derivative $f'(x)$ did not just have a s
 \end{lemma}
 
 \begin{proof}
-  Let us treat the case when $f$ attains a maximum value at $c$. Then for any $h$ we have $f(c+h)-f(c)\leq0$. It follows that for $h>0$ we have $(f(c+h_n)-f(c))/h\leq0$, which implies that $f'(c)\leq0$. Similarly for $h<0$ we have $(f(c+h_n)-f(c))/h\geq0$, which implies that $f'(c)\geq0$. This leaves only the possibility that $f'(c)=0$.
+  Let us treat the case when $f$ attains a maximum value at $c$. Then for any $h$ we have $f(c+h)-f(c)\leq0$. It follows that for $h>0$ we have $(f(c+h)-f(c))/h\leq0$, which implies that $f'(c)\leq0$. Similarly for $h<0$ we have $(f(c+h)-f(c))/h\geq0$, which implies that $f'(c)\geq0$. This leaves only the possibility that $f'(c)=0$.
 \end{proof}
 
 The interior extremum theorem has applications to optimization, because it says that to find a minimum or maximum a good place to look is at the critical points.
@@ -2733,7 +2733,7 @@ The interior extremum theorem has applications to optimization, because it says 
 \begin{proof}
   We may assume without loss of generality that $L=0$. Since $[a,b]$ is compact, the extreme value thorem implies that $f$ attains its minimum value at some point $c\in[a,b]$. We claim that $c$ is not equal to $a$ or $b$. Admitting the claim for the moment, this implies $f$ attains its minimum at a point $c\in(a,b)$. Thus the interior extremum theorem implies that $f'(c)=0$, as desired.
 
-  To see that $f$ doesn't attain its minimum value at $a$ or $b$, first note that since $f'(a)<0$ we have $\lim_{h\to0}(f(a+h)-f(a))<0$. It follows that there exists $h>0$ such that $f(a+h)<f(a)$, that is, $f$ cannot attain its minimum value at $a$. Similarly since $f'(b)>0$ we have $\lim_{h\to0}(f(b+h)-f(b))/h>0$. It follows that there exists $h<0$ such that $f(b+h)<f(b)$, so once eagain $f$ cannot attain its minimum value at $b$ either.
+  To see that $f$ doesn't attain its minimum value at $a$ or $b$, first note that since $f'(a)<0$ we have $\lim_{h\to0}(f(a+h)-f(a))/h<0$. It follows that there exists $h>0$ such that $f(a+h)<f(a)$, that is, $f$ cannot attain its minimum value at $a$. Similarly since $f'(b)>0$ we have $\lim_{h\to0}(f(b+h)-f(b))/h>0$. It follows that there exists $h<0$ such that $f(b+h)<f(b)$, so once eagain $f$ cannot attain its minimum value at $b$ either.
 \end{proof}
 
 % could also use IET to prove Rolle and then MVT, and then (a typical weak form of) the fundamental theorem of calculus! this can be another section.
