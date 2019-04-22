@@ -1,3 +1,10 @@
+## Homework 11, due Friday, April 26 at 12pm
+
+* Ex 21.2
+* Ex 21.3
+* Ex 22.1
+* Ex 22.4
+
 ## Homework 10, due Wednesday, April 17 at 12pm
 
 * Ex 19.2(b)
