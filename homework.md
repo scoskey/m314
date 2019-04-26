@@ -1,3 +1,7 @@
+## Homework 12
+
+No homework this week - study all problems from sections 23, 24 and bring your questions.
+
 ## Homework 11, due Friday, April 26 at 12pm
 
 * Ex 21.2
