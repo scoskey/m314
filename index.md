@@ -1,9 +1,6 @@
-Welcome to the course web site for Math 314, Foundations of analysys, Spring 2019.
+Welcome! Please visit the following course resources.
 
-*Catalog description*. The real number system, completeness and compactness, sequences, continuity, foundations of the calculus.
-
-*Course resources*:
-
-* [syllabus](syllabus)
-* [homework](homework)
-* [notes](https://github.com/scoskey/m314/raw/master/notes.pdf)
+* syllabus (coming soon)
+* homework (coming soon)
+* [notes](https://github.com/scoskey/m314/raw/master/notes.pdf)  
+Disclaimer: these lecture are not a replacement for the text, because they cover less information and are somewhat unedited (they are more for me than for you).
