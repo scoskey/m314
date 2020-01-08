@@ -3,7 +3,7 @@
 ## Course information
 
 Meeting times: M,W from 1:30&ndash;2:45pm  
-Meeting place: MB 124  
+Meeting place: MB 139  
 Textbook: Stephen Abbott, *Understanding analysis*, 2nd edition  
 Web site: `scoskey.org/m314`  
 My email: `scoskey@boisestate.edu`  
@@ -46,8 +46,8 @@ We will begin by discussing a simple but surprisingly deep question: *what are r
 
 ## Daily prep and classwork
 
-Reading will be assigned prior to each class. You are expected to arrive prepared to ask questions and discuss the material. All homework assignments will be started as in-class group work. Daily participation and collaboration are required. A small discretionary portion of your grade will be based on your attendance, attention, and collaboration.
+You are expected to attend class, prepared to ask questions and discuss the material. Following each content discussion, we will begin working on homework problems as an in-class group activity. A small portion of your grade will be based on your attendance, attention, and collaboration on these activities.
 
 ## Homework
 
-All homework assignments will be started as in-class group work, which will take place following the daily content discussion. Your written solutions will be turned in the following Tuesday. All work will be evaluated for completeness, and certain items will be evaluated for correcteness and mathematical style. You are encouraged to collaborate with your peers inside and outside of class, and you are free to use online resources when you are stuck. But please keep in mind that you must always fully understand your solutions and most importantly *write them in your own words*.
+Weekly homework will be assigned each Wednesday and collected the following Tuesday. All work will be evaluated for completeness, and certain items will be evaluated for correcteness and mathematical style. You are encouraged to collaborate with your peers inside and outside of class, and you are free to use online resources when you are stuck. But please keep in mind that you must always fully understand your solutions and most importantly *write them in your own words*.
