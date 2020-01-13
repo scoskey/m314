@@ -44,9 +44,9 @@ We will begin by discussing a simple but surprisingly deep question: *what are r
 * Exam 2: Wednesday, March 18
 * Exam 3: Wednesday, May 6 from 2:30&ndash;4:30pm
 
-## Daily prep and classwork
+## Classwork
 
-You are expected to attend class, prepared to ask questions and discuss the material. Following each content discussion, we will begin working on homework problems as an in-class group activity. A small portion of your grade will be based on your attendance, attention, and collaboration on these activities.
+You are expected to attend class, prepared to ask questions and discuss the material. Following the discussion, we will start an in-class activity. A small portion of your grade will be based on attendance, attention, collaboration and completion of these activities.
 
 ## Homework
 
