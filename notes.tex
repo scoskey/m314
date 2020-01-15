@@ -54,6 +54,8 @@
 \numberwithin{figure}{section}
 \renewcommand{\theequation}{\arabic{section}.e\arabic{equation}}
 \renewcommand{\thefigure}{\arabic{section}.f\arabic{figure}}
+\newcounter{activityitem}
+\newenvironment{activity}{\begin{list}{\arabic{activityitem}.}{\usecounter{activityitem}\setlength{\itemsep}{.2in}}}{\end{list}}
 
 \begin{document}
 
@@ -133,22 +135,19 @@ In the next section, we will prove rigorously that the cut at $\sqrt{2}$ is real
 \newpage
 \subsection*{Activity for \S \thesection}
 
-\begin{exerc}[Abbott, ex 8.6.1]
-  For each set, either argue that it is a cut, or show that one of the conditions in the definition of cut is not satisfied.
+\begin{activity}
+  \item (Abbott, ex 8.6.1) For each set, either argue that it is a cut, or show that one of the conditions in the definition of cut is not satisfied.
   \begin{enumerate}\itemsep.5in
-  \item $\set{q\in\Q\mid q<r}$, where $r$ is a fixed rational number
-  \item $\set{q\in\Q\mid q\leq2}$
-  \item $\set{q\in\Q\mid q^2<2}$
-  \item $\set{q\in\Q\mid q<0\text{ or }q^2<2}$
-  \item $\set{q\in\Q\mid q<0\text{ or }q^2\leq2}$
-  \vspace{.5in}
+    \item $\set{q\in\Q\mid q<r}$, where $r$ is a fixed rational number
+    \item $\set{q\in\Q\mid q\leq2}$
+    \item $\set{q\in\Q\mid q^2<2}$
+    \item $\set{q\in\Q\mid q<0\text{ or }q^2<2}$
+    \item $\set{q\in\Q\mid q<0\text{ or }q^2\leq2}$
+    \vspace{.5in}
   \end{enumerate}
-\end{exerc}
-
-\begin{exerc}[Abbott, ex 1.2.1]
-  Study the proof that there is no rational number $q$ such that $q^2=2$. Modify this proof to show that there is no rational number $q$ such that $q^2=3$.
+  \item (Abbott, ex 1.2.1) Study the proof that there is no rational number $q$ such that $q^2=2$. Modify this proof to show that there is no rational number $q$ such that $q^2=3$.
   \vspace{\fill}
-\end{exerc}
+\end{activity}
 
 \begin{readnext}
   Abbott, \S 8.6, 1.3
@@ -246,38 +245,28 @@ We close this section with a characterization of the supremum of a set that will
 The proof of this is left as an exercise.
 
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
-\begin{exerc}[see also Abbott, ex 1.3.8]
-  Find the supremum and infemum of each of the following sets. You do not need to give a detailed proof, but please explain your reasoning.
-  \begin{enumerate}
-  \item $\set{n\in\N\mid n^2<10}$
-  \item $\set{n/(m+n)\mid m,n\in\N}$
-  \item $\set{n/(2n+1)\mid n\in\N}$
-  \item $\set{n/m\mid m,n\in\N\text{ and }m+n\leq10}$
+\begin{activity}
+  \item (Abbott, ex 1.3.8) Find the supremum and infemum of each of the following sets. You do not need to give a detailed proof, but please explain your reasoning.
+  \begin{enumerate}\itemsep.5in
+    \item $\set{n\in\N\mid n^2<10}$
+    \item $\set{n/(m+n)\mid m,n\in\N}$
+    \item $\set{n/(2n+1)\mid n\in\N}$
+    \item $\set{n/m\mid m,n\in\N\text{ and }m+n\leq10}$
+    \vspace{.5in}
   \end{enumerate}
-\end{exerc}
-
-\begin{exerc}
-  Suppose that $A$ and $B$ are subsets of $\R$ and that $A\subset B$.  Which of the following is correct, and why? ``any upper bound for $A$ is also an upper bound for $B$'', or; ``any upper bound of $B$ is also an upper bound for $A$.''
+  \item Suppose that $A$ and $B$ are subsets of $\R$ and that $A\subset B$.  Which of the following is correct, and why? ``any upper bound for $A$ is also an upper bound for $B$'', or; ``any upper bound of $B$ is also an upper bound for $A$.''
 
   Now additionally suppose that $\sup(A)$ and $\sup(B)$ exist.  Which inequality is right, and why? $\sup(A)\leq\sup(B)$, or; $\sup(B)\leq\sup(A)$.
-\end{exerc}
+  \vspace{\fill}
+\end{activity}
 
-\begin{exerc}
-  Modify a proof given in class to instead show that the set
-$\set{q\in\Q\mid q^3<2}$ has no last element.
-\end{exerc}
-
-\begin{exerc}[Abbott, ex 8.6.3]
-  Read the list of properties of a ``field'' of numbers.  Which of these properties is satisfied by $\N$?  By $\Z$?  By $\Q$?
-\end{exerc}
-
-\begin{exerc}[see also Abbott, ex 8.6.5(a)]
-  Review the three-part definition of cut. Suppose that $A$ and $B$ are cuts, and let $S$ be the so-called sum-set of the two cuts, that is, let $S=\set{a+b\mid a\in A\text{ and }b\in B}$. Prove that $S$ is a cut by proving that each of the conditions in the definition of cut is satisfied.
-
-  Why isn't the set $P=\set{ab\mid a\in A\text{ and }b\in B}$ a cut?  What kinds of things do you have to do to fix this?
-\end{exerc}
+% \begin{exerc}[see also Abbott, ex 8.6.5(a)]
+%   Review the three-part definition of cut. Suppose that $A$ and $B$ are cuts, and let $S$ be the so-called sum-set of the two cuts, that is, let $S=\set{a+b\mid a\in A\text{ and }b\in B}$. Prove that $S$ is a cut by proving that each of the conditions in the definition of cut is satisfied.
+%
+%   Why isn't the set $P=\set{ab\mid a\in A\text{ and }b\in B}$ a cut?  What kinds of things do you have to do to fix this?
+% \end{exerc}
 
 % \question Consider the sequence defined by $x_1=0$ and $x_{n+1}=\sqrt{2+x_n}$.  Prove using induction that for all $n$, $x_n<2$.  Prove using induction that for all $n$, $x_n<x_{n+1}$.
 

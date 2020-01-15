@@ -7,7 +7,8 @@
 3. Let $A$ and $B$ be points in the plane.
   * Suppose that $A$ is $3$ units away from the origin and $B$ is $5$ units away from the origin. What is the farthest $A$ and $B$ can be from each other? The closest?
   * Now generalize. Suppose that $A$ is $\abs{A}$ units away from the origin and that $B$ is $\abs{B}$ units away from the origin.  Use the notation $\abs{A-B}$ for the distance between $A$ and $B$. Can you write two rules that generalize your two answers from the previous part? (Explain your answer with a picture. You do not need to give a proof.)
-4. ... TBA
+4. Modify a proof given in class to instead show that the set $\set{q\in\Q\mid q^3<2}$ has no last element.
+5. (Abbott, ex 8.6.3) Read the definition of a "field" of numbers and note the list of properties which must be true of a field. Which of these properties is satisfied by $\N$?  By $\Z$?  By $\Q$?
 
 
 <script type='text/x-mathjax-config'>
