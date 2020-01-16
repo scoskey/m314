@@ -1,4 +1,4 @@
-## Homework 1, due Tuesday, January 21 at 12pm
+## Homework 1, due Thursday, January 21 at 12pm
 
 1. (Abbott, ex 8.6.2). Suppose that $C$ is a cut, $q\in C$, and that $r$ is a rational number such that $r\notin C$. Show that $q\lt r$.
 2. (Abbott, ex 1.2.1)
