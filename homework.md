@@ -11,19 +11,18 @@
 5. (Abbott, ex 8.6.3) Read the definition of a "field" of numbers and note the list of properties which must be true of a field. Which of these properties are satisfied in $\mathbb N$? In $\mathbb Z$? In $\mathbb Q$?
 
 
-<script type='text/x-mathjax-config'>
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      processEscapes: true
-    },
-    TeX: {
-      Macros: {
-        set: ["{\\left\\{ #1 \\right\\}}", 1],
-        abs: ["{\\left| #1 \\right|}", 1],
-        lt: ["<"]
-      }
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true,
+    macros: {
+      set: ["{\\left\\{ #1 \\right\\}}", 1],
+      abs: ["{\\left| #1 \\right|}", 1],
+      lt: ["<"]
     }
-  });
+  }
+};
 </script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML'></script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
