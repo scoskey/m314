@@ -8,7 +8,7 @@ Textbook: Stephen Abbott, *Understanding analysis*, 2nd edition
 Web site: `scoskey.org/m314`  
 My email: `scoskey@boisestate.edu`  
 My office: MB 238-B  
-Office hours: TBA, and by appointment
+Office hours: T 1:30-2:30, Th 10:30-11:30, and by appointment
 
 ## Course content
 
