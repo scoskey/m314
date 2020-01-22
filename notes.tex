@@ -314,7 +314,7 @@ As soon as one accepts this theorem, it is actually never necessary to speak of 
 Although we are omitting the greater part of the proof of the above theorem, let us verify the axiom of completeness holds in the real number system.
 
 \begin{proof}[Proof of completeness]
-  Suppose that $S$ is a bounded set of real numbers (cuts). We claim that the union $U=\bigcup S$ is a cut too. Indeed, since $S$ is bounded, there is a cut $B$ such that  $U\subset B$. It follows that $U$ is nontrivial. Next it is easy to check that the union of downward closed sets is again downward closed. Thirdly if $U$ had a greatest element $x$, then $x$ must lie in some cut $A\in S$. But then $x$ would be the greatest element of $A$, a contradiction.
+  Suppose that $\mathcal S$ is a bounded set of real numbers (cuts). We claim that the union $U=\bigcup S$ is a cut too. Indeed, since $\mathcal S$ is bounded, there is a cut $B$ such that  $U\subset B$. It follows that $U$ is nontrivial. Next it is easy to check that the union of downward closed sets is again downward closed. Thirdly if $U$ had a greatest element $x$, then $x$ must lie in some cut $A\in S$. But then $x$ would be the greatest element of $A$, a contradiction.
 
   Now, since $A\subset U$ for every $A\in S$, we see that $U$ is an upper bound for $S$. Moreover $U$ is the least upper bound for $S$. Indeed, any other upper bound $U'$ satisfies $A\subset U'$ for every $A\in S$, and therefore $U=\bigcup S\subset U'$. In other words, $U\leq U'$, as desired.
 \end{proof}
@@ -326,12 +326,22 @@ From this point on, we will never need cuts again, and the real number system $\
 \end{theorem}
 
 \begin{proof}
-  Suppose to the contrary that $x$ is a real number such that for all $n\in\N$ we have $n\leq x$. Then this says the set $\N$ is bounded. By the axiom of completeness, $\N$ should have a least upper bound, call it $\alpha$.
+  Suppose to the contrary that $x$ is a real number such that for all $n\in\N$ we have $n\leq x$. This says $x$ is an upper bound for $\N$, in particular it would mean $\N$ is bounded. By the axiom of completeness, $\N$ should have a least upper bound, call it $\alpha$.
 
   Now, since $\alpha$ is the \emph{least} upper bound, $\alpha-1$ is not an upper bound for $\N$. Hence there exists $n\in\N$ such that $\alpha-1<n$. It follows that $\alpha<n+1$, contradicting that $\alpha$ is an upper bound for all natural numbers.
 \end{proof}
 
-As a consequence of this simple fact, we can now formally establish one fact we have previously stated without proof. While the rational number system is not sufficient to measure all distances, it is sufficient to \emph{approximate} any distance. In the following result, we let $x<y$ and imagine that they are very close to one another.
+\begin{center}
+  \begin{tikzpicture}
+    \draw[<->] (-1,0)--(8,0);
+    \node[label=above:{\small$\alpha-1$}] at (3,0) {$|$};
+    \node[label=below:{\small$n$}] at (3.8,0) {$|$};
+    \node[label=above:{\small$\alpha$}] at (5,0) {$)$};
+    \node[label=below:{\small$n+1$}] at (5.8,0) {$|$};
+  \end{tikzpicture}
+\end{center}
+
+As a consequence of this simple fact, we can now formally establish one fact we have previously stated without proof. While the rational number system is not sufficient to measure any distance, it is sufficient to \emph{approximate} any distance. In the following statement, we let $x<y$ and imagine that they are very close to one another.
 
 \begin{theorem}[Rational density]
   For any real numbers $x,y$, if $x<y$ then there exists $q\in\Q$ such that $x<q<y$.
@@ -352,25 +362,28 @@ Thus the rational number $q=m/n$ lies in the interval $(x,y)$.
 To see that this implies we can approximate real numbers by rational numbers as closely as we like, let $x$ be a given real number and apply the rational density theorem to intervals of the form $(x-\epsilon,x+\epsilon)$ where $\epsilon$ is small.
 
 \newpage
-\subsection*{Exercises for \S\thesection}
+\subsection*{Activity for \S\thesection}
+
+\begin{activity}
+  \item (see Abbott, exercise 1.4.1) Complete and prove:
+  \begin{enumerate}
+    \item The sum of two rational numbers is\ldots (complete and prove)
+    \item The product of two rational numbers is\ldots (complete and prove)
+    \item The sum of a rational number and an irrational number is\ldots (complete and prove)
+    \item The product of a rational number and an irrational number is\ldots unless\ldots (complete and prove)
+    \item What can you say about the product of two irrational numbers?
+  \end{enumerate}
+  \item (Abbott, exercise 1.4.5) Prove the statement known as \emph{irrational density}: for every two real numbers $a$ and $b$ with $a<b$, there exists an \emph{irrational} number $r$ satisfying $a<r<b$.
+\end{exerc}
+
+\end{activity}
 
 % \begin{exerc}
 %   Give a detailed proof from the definition of supremum that the supremum of the interval $(0,1)$ is exactly $1$.
 % \end{exerc}
 
-\begin{exerc}[see also Abbott, exercise 1.4.1]
-  Complete and prove:
-  \begin{enumerate}
-    \item The sum of two rational numbers is\ldots
-    \item The product of two rational numbers is\ldots
-    \item The sum of a rational number and an irrational number is\ldots
-    \item The product of a rational number and an irrational number is\ldots unless\ldots.
-  \end{enumerate}
-  What can you say about the product of two irrational numbers?
-\end{exerc}
-
 \begin{exerc}[Abbott, exercise 1.4.5]
-  Prove the statement known as \emph{irrational density}: for every two real numbers $a$ and $b$ with $a<b$, there exists an \emph{irrational} number $r$ satisfying $a<r<b$. [Hint: Consider the interval $(a-\sqrt{2},b-\sqrt{2})$ and apply rational density.]
+  Prove the statement known as \emph{irrational density}: for every two real numbers $a$ and $b$ with $a<b$, there exists an \emph{irrational} number $r$ satisfying $a<r<b$.
 \end{exerc}
 
 \begin{exerc}
@@ -382,8 +395,9 @@ To see that this implies we can approximate real numbers by rational numbers as 
 \end{exerc}
 
 \begin{exerc}
-  Consider the sequence defined by $x_1=0$ and $x_{n+1}=\sqrt{2+x_n}$.  Prove using induction that for all $n$, $x_n<2$. Prove using induction that for all $n$, $x_n<x_{n+1}$.
+  Consider the sequence defined by $x_1=0$ and $x_{n+1}=\sqrt{2+x_n}$. Prove using induction that for all $n$, $x_n<2$. Prove using induction that for all $n$, $x_n<x_{n+1}$.
 \end{exerc}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

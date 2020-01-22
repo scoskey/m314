@@ -1,3 +1,9 @@
+## Homework 2, due Thursday, January 30 at 3pm
+
+1. Prove or give a counterexample: If $A$ and $B$ are sets of real numbers such that $a\lt b$ for all $a\in A$ and $b\in B$, then $\sup(A)\lt\inf(B)$.
+2. Read the characterization of supremum described in Abbott, Lemma~1.3.8. Then, give a thorough proof that $1/2$ is the supremum of the set $\set{n/(2n+1)\mid n\in\mathbb N}$. Point out the exact moment in the proof when the Archimedean Property is used.
+3. Consider the sequence defined by $x\_1=0$ and $x\_{n+1}=\sqrt{2+x\_n}$. Prove using induction that for all $n$, $x\_n\lt 2$. Prove using induction that for all $n$, $x\_n\lt x\_{n+1}$.
+
 ## Homework 1, due Thursday, January 23 at 3pm
 
 1. (Abbott, ex 8.6.2). Suppose that $C$ is a cut, $q\in C$, and that $r$ is a rational number such that $r\notin C$. Show that $q\lt r$.
