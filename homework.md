@@ -1,4 +1,4 @@
-## Homework 2, due Thursday, January 30 at 3pm
+## Homework 2, due Tuesday, January 28 at 3pm
 
 1. Prove or give a counterexample: If $A$ and $B$ are sets of real numbers such that $a\lt b$ for all $a\in A$ and $b\in B$, then $\sup(A)\lt\inf(B)$.
 2. Read the characterization of supremum described in Abbott, Lemma~1.3.8. Then, give a thorough proof that $1/2$ is the supremum of the set $\set{n/(2n+1)\mid n\in\mathbb N}$. Point out the exact moment in the proof when the Archimedean Property is used.
