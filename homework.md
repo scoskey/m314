@@ -1,3 +1,9 @@
+## Homework 3, due Tuseday, February 4 at 3pm
+
+1. Suppose that for every $n$, the set $A\_n$ is countable. Show that the set $A=\bigcup A\_n$ is countable. [See the hint described in Exercise~1.5.3(c).]
+2. Show that the set $\N^3$ is countable. Here $\N^3$ consists of all triples of the form $(a,b,c)$, where $a,b,c\in\N$.
+3. ... tba
+
 ## Homework 2, due Tuesday, January 28 at 3pm
 
 1. Prove or give a counterexample: If $A$ and $B$ are sets of real numbers such that $a\lt b$ for all $a\in A$ and $b\in B$, then $\sup(A)\lt\inf(B)$.

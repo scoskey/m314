@@ -406,16 +406,22 @@ To see that this implies we can approximate real numbers by rational numbers as 
 In this section we will continue with consequences of the completeness axiom. In particular we will establish one of the most surprising and historically disruptive consequences: the fact that there are more irrational numbers than there are rational numbers! In order to make this statement precise, we need to introduce the notion of countable and uncountable sets.
 
 \begin{definition}
-  A set $A$ is \emph{countable} if its elements all appear in some sequence. Intuitively, $A$ is countable if and only if its elements can be placed into a system of boxes of the form
-\begin{center}
-  \begin{tikzpicture}
-    \foreach \i in {0,...,4}
-    \draw (\i,0) rectangle (\i+1,1);
-    \draw (5,0)--(5.5,0);
-    \draw (5,1)--(5.5,1);
-    \node at (6,.5) {$\cdots$};
-  \end{tikzpicture}
-\end{center}
+  A set $A$ is \emph{countable} if it can be enumerated in a sequence $a_n$, whose items are numbered by natural numbers $n$. Intuitively, $A$ is countable if all its elements can be ordered up in an infinite shopping list:
+% \begin{center}
+%   \begin{tikzpicture}
+%     \foreach \i in {0,...,4}
+%     \draw (\i,0) rectangle (\i+1,1);
+%     \draw (5,0)--(5.5,0);
+%     \draw (5,1)--(5.5,1);
+%     \node at (6,.5) {$\cdots$};
+%   \end{tikzpicture}
+% \end{center}
+  \begin{align*}
+    1.&\quad\underline{\hspace{1in}}\\
+    2.&\quad\underline{\hspace{1in}}\\
+    3.&\quad\underline{\hspace{1in}}\\
+    \vdots&
+  \end{align*}
 \end{definition}
 
 \begin{example}
@@ -427,7 +433,7 @@ In this section we will continue with consequences of the completeness axiom. In
 \end{example}
 
 \begin{example}
-  The set of rational numbers $\Q$ is countable. To see this, let us first show that the set of positive rational numbers $\Q_+$ is countable. Although the numerator and denominator make it seem like there are two ``dimensions'' of information, we can get around this by fixing the sum of the two and then letting it increase: begin with $\frac11$, then do $\frac12,\frac21$, then $\frac13,\frac22,\frac31$, then $\frac14,\frac23,\frac32,\frac41$, and so forth. The list has duplicates such as $\frac11$ and $\frac22$, but we can go through and delete these if desired. Finally we can include the negatives as well by applying the same method as we did with $\Z$.
+  The set of rational numbers $\Q$ is countable. To see this, let us first show that the set of positive rational numbers $\Q_+$ is countable. Although the numerator and denominator make it seem like there are two ``dimensions'' of information, we can get around this by fixing the sum of the two and then letting it increase: begin with $\frac11$, then do $\frac12,\frac21$, then $\frac13,\frac22,\frac31$, then $\frac14,\frac23,\frac32,\frac41$, and so forth. The list does have duplicates such as $\frac11$ and $\frac22$, but this is allowed, and in any case we could run through and delete them if we want. Finally we can include the negatives as well by applying the same method as we did with $\Z$.
 \end{example}
 
 The following result can be handy for showing sets are countable.
@@ -454,7 +460,7 @@ We now come to the ``surprising'' fact hinted at above.
   The set of real numbers $\R$ is \textbf{not} countable.
 \end{theorem}
 
-In order to prove this theorem, we need the following consequence of the completeness of the real numbers, which will be used several more times throughout the course.
+In order to prove this theorem, we need the following consequence of the axiom of completeness for the real numbers called the \emph{nested interval property}. This is a fact which we'll also use a few more times throughout the course.
 
 \begin{theorem}[Nested interval property]
   Suppose that $I_n$ is a sequence of closed and bounded intervals, that is, intervals of the form $[a,b]$. Moreover suppose that the intervals $I_n$ are nested, that is, $I_{n+1}\subset I_n$. Then we have $\bigcap I_n\neq\emptyset$.
@@ -485,24 +491,30 @@ We are now ready to prove that the set of real numbers is uncountable.
 \newpage
 \subsection*{Exercises for\S \thesection}
 
-\begin{exerc}
-  Show that the set of Gaussian integers is countable. Recall that the Gaussian integers is the set of all complex numbers of the form $a+bi$ where $a,b\in\Z$.
-\end{exerc}
+\begin{activity}
+  \item Let $A$ be the set of integer lattice points in the plane, that is, $A=\set{(x,y):x,y\in\Z}$. Draw a picture of the set $A$. Show that $A$ is countable by explaining how to enumerate all its elements in a list.
+  \item Find a nested family of nonempty bounded intervals with empty intersection.
+  \item Find a nested family of nonempty closed intervals with empty intersection.
+\end{activity}
 
-\begin{exerc}
-  Suppose that for every $n$, the set $A_n$ is countable. Show that the set $A=\bigcup A_n$ is countable. [See the hint described in Exercise~1.5.3(c).]
-\end{exerc}
-
-\begin{exerc}
-  Show that the set $\N^3$ is countable. Here $\N^3$ consists of all triples of the form $(a,b,c)$, where $a,b,c\in\N$. [Hint: use the previous two exercises.]
-\end{exerc}
-
-\begin{exerc}
-  \begin{enumerate}
-    \item Find a nested family of nonempty bounded intervals with empty intersection.
-    \item Find a nested family of nonempty closed intervals with empty intersection.
-  \end{enumerate}
-\end{exerc}
+% \begin{exerc}
+%   Show that the set of Gaussian integers is countable. Recall that the Gaussian integers is the set of all complex numbers of the form $a+bi$ where $a,b\in\Z$.
+% \end{exerc}
+%
+% \begin{exerc}
+%   Suppose that for every $n$, the set $A_n$ is countable. Show that the set $A=\bigcup A_n$ is countable. [See the hint described in Exercise~1.5.3(c).]
+% \end{exerc}
+%
+% \begin{exerc}
+%   Show that the set $\N^3$ is countable. Here $\N^3$ consists of all triples of the form $(a,b,c)$, where $a,b,c\in\N$. [Hint: use the previous two exercises.]
+% \end{exerc}
+%
+% \begin{exerc}
+%   \begin{enumerate}
+%     \item Find a nested family of nonempty bounded intervals with empty intersection.
+%     \item Find a nested family of nonempty closed intervals with empty intersection.
+%   \end{enumerate}
+% \end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
