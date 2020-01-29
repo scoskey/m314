@@ -489,7 +489,7 @@ We are now ready to prove that the set of real numbers is uncountable.
 \end{proof}
 
 \newpage
-\subsection*{Exercises for\S \thesection}
+\subsection*{Activity for\S \thesection}
 
 \begin{activity}
   \item Let $A$ be the set of integer lattice points in the plane, that is, $A=\set{(x,y):x,y\in\Z}$. Draw a picture of the set $A$. Show that $A$ is countable by explaining how to enumerate all its elements in a list.
@@ -525,9 +525,9 @@ We are now ready to prove that the set of real numbers is uncountable.
   Abbott, \S 1.5, 1.6
 \end{reading}
 
-In the previous section we saw that among the infinite sets, some of them are not too big (countable sets) while others are much larger (uncountable sets). Showing that a set is countable requires a direct argument---one simply has to enumerate all its elements in a sequence. Showing a set is uncountable often requires an indirect argument---using contradiction to show that the set cannot possibly be countable.
+In the previous section we saw that among the infinite sets, some of them are not too big (countable sets) while others are much larger (uncountable sets). Showing that a set is countable requires a direct argument---write down how to enumerate all its elements in a sequence. Showing that a set is uncountable often requires an indirect argument---assume the set is countable and find a contradiction.
 
-We were able to show that $\R$ is uncountable using the Nested Interval Property. But that proof seemed very particular to the set of real numbers. How would we show that some other given set is uncountable? It turns out there is another and more systematic proof that $\R$ is uncountable, called Cantor's diagonalization argument.
+We were able to show that $\R$ is uncountable using the Nested Interval Property. But that proof was very particular to the set of real numbers. How would we show that some other given set is uncountable? It turns out there is another and more systematic way to prove that $\R$ is uncountable, due the mathematician Cantor. The method is called \emph{diagonalization}, and uses the decimal digit system.
 
 \begin{theorem}
   The unit interval $(0,1)$ is uncountable.
@@ -547,7 +547,7 @@ We were able to show that $\R$ is uncountable using the Nested Interval Property
   If we want to be more precise, we can for example let $d_n=2$ when $a_{nn}\neq2$ and let $d_n=3$ when $a_{nn}=2$. It then follows that for all $n$, we have $d\neq a_n$. Thus $d$ is an element of $(0,1)$ which does not appear in the sequence $a_n$, contradicting our assumption that every element of $(0,1)$ appears in the sequence $a_n$.
 \end{proof}
 
-In the exercises you will be asked to apply this powerful ``diagonal'' argument to other examples of sets.
+In the exercises you will be asked to use diagonalization on other kinds of sets.
 
 The dichotomy between countable and uncountable sets suggests that one should further investigate the possibilities for the size of an infinite set. Recall that for finite sets we write $|A|$ for the number of elements of $A$. However for infinite sets this definition of $|A|$ isn't a good one anymore. What is needed is the following.
 
@@ -560,11 +560,11 @@ The dichotomy between countable and uncountable sets suggests that one should fu
   \end{itemize}
 \end{definition}
 
-While the terms ``more'' or ``fewer'' elements lose their meaning for infinite sets, the notions of one-to-one and onto functions do not. Moreover, the definition given above is consistent with the behavior of the ``number of elements'' definition used in the special case of finite sets.
+This definiton is consistent with the ``number of elements'' definition of $|A|$ when $A$ is finite. However, while the terms ``number of elements'', ``more'', and ``fewer'' all lose their meaning for infinite sets, the notions of one-to-one and onto functions remain meaningful.
 
 We call $|A|$ the \emph{cardinality} of $A$. It is important to understand that we never defined what $|A|$ actually is, only how it compares with other set cardinalities $|B|$. Using set theory we can also define what $|A|$ actually is, but it isn't necessary for this class.
 
-Cantor's theorem can be generalized to show that for any set there is a set of even larger cardinality. Therefore there is no bound on the number of different sizes of infinity! Recall that if $A$ is any set, the \emph{power set} $\mathcal P(A)$ is the set of all subsets of $A$. Of course if $A$ is finite, then we have $|\mathcal P(A)|=2^{|A|}$ so in particular $|A|<|\mathcal P(A)|$. Cantor showed that this generalizes to arbitrary sets.
+Cantor's theorem can be generalized to show that for any set there is a set of even larger cardinality. Therefore there is no bound on the number of different sizes of infinity! Recall that if $A$ is any set, the \emph{power set} $\mathcal P(A)$ is the set of all subsets of $A$. Of course if $A$ is finite, then we have $|\mathcal P(A)|=2^{|A|}$ so in particular $|A|<|\mathcal P(A)|$. It turns out that this works for infinite sets too.
 
 \begin{theorem}
   If $A$ is any set, then $|A|<|\mathcal P(A)|$.
@@ -589,30 +589,41 @@ Another natural question is whether the cardinality of $\R$ is the \emph{smalles
 
 This question is known as the \emph{continuum hypothesis} and has great historical significance. After remaining open for many decades, it was finally settled in a surprising way: the answer is \emph{undecidable} using the accepted axioms of mathematics! In other words, there is a universe of mathematics in which the continuum hypothesis is true, and also a universe of mathematics in which it is false.
 
-Ever since this stunning resolution to the continuum hypothesis was found in 1965, the occurrence and nature of undecidable statements has remained of key interest to mathematicians.
+Since this stunning resolution to the continuum hypothesis was found in 1965, the occurrence and nature of undecidable statements has remained of key interest to mathematicians.
 
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
-\begin{exerc}
-  Let $S_\text{fin}$ be the set of all \emph{finite} words made with the letters $a,b$. So $S$ contains elements like $ab$, $abb$, $ababa$, $aabbbbaa$, and so forth. Prove that $S_\text{fin}$ is countable.
-\end{exerc}
+In the following, let $S_{\infty}$ be the set of all \emph{infinite} words made with the letters $a,b$. So $S_\infty$ contains elements like $aaaa\cdots$, $ababa\cdots$, $aabaabaab\cdots$, also non-repeating strings like $abaabaaabaaaab\cdots$, and even strings with no discernible pattern whatsoever.
 
-\begin{exerc}
-  Let $S_\text{inf}$ be the set of all \emph{infinite} words made with the letters $a,b$. So $S$ contains elements like $aaaa\cdots$, $ababa\cdots$, $aabaabaab\cdots$, also non-repeating strings like $abaabaaabaaaab\cdots$, and even strings with no discernible pattern whatsoever. Prove that $S_\text{inf}$ is uncountable. Why would this proof fail if applied to $S_\text{fin}$?
-\end{exerc}
+\begin{activity}
+  \item Write any ten elements of $S_{\infty}$. Include at least ten letters in each element (with the understanding that the words continue indefinitely, either according to a pattern or arbitrarily).
+  \begin{align*}
+    s_1   & = \underline{\hspace{3in}\cdots} \\
+    s_2   & = \underline{\hspace{3in}\cdots} \\
+    s_3   & = \underline{\hspace{3in}\cdots} \\
+    s_4   & = \underline{\hspace{3in}\cdots} \\
+    s_5   & = \underline{\hspace{3in}\cdots} \\
+    s_6   & = \underline{\hspace{3in}\cdots} \\
+    s_7   & = \underline{\hspace{3in}\cdots} \\
+    s_8   & = \underline{\hspace{3in}\cdots} \\
+    s_9   & = \underline{\hspace{3in}\cdots} \\
+    s_{10}& = \underline{\hspace{3in}\cdots} \\
+  \end{align*}
+  \item Write a \emph{diagonal} word $d$ with the property that for all $n$, $d$ disagrees with $s_n$ on the $n$th letter.
+  \item Prove that $S_\text{inf}$ is uncountable.
+\end{activity}
 
-\begin{exerc}[See also Abbott, ex 1.5.9]
-  Recall that a real number $\alpha$ is called \emph{algebraic} if there exists a polynomial $p$ with integer coefficients such that $p(\alpha)=0$. Is the set $A$ of all algebraic numbers countable or uncountable? Prove your assertion.
-\end{exerc}
+% Idea: prove two sets have the same cardinality.
 
-\begin{exerc}
-  Suppose that $A$ is an infinite set. Show that $|\N|\leq|A|$.
-\end{exerc}
+% \begin{exerc}[See also Abbott, ex 1.5.9]
+%   Recall that a real number $\alpha$ is called \emph{algebraic} if there exists a polynomial $p$ with integer coefficients such that $p(\alpha)=0$. Is the set $A$ of all algebraic numbers countable or uncountable? Prove your assertion.
+% \end{exerc}
 
-\begin{exerc}[Abbott, ex 1.5.10(a)]
-  Let $A\subset[0,1]$ and assume that $A$ is uncountable. Show that there exists $a>0$ such that $C\cap[a,1]$ is uncountable.
-\end{exerc}
+% \begin{exerc}
+%   Suppose that $A$ is an infinite set. Show that $|\N|\leq|A|$.
+% \end{exerc}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

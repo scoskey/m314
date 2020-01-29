@@ -2,7 +2,9 @@
 
 1. Suppose that for every $n$, the set $A\_n$ is countable. Show that the set $A=\bigcup A\_n$ is countable. [See the hint described in Exercise~1.5.3(c).]
 2. Show that the set $\mathbb N^3$ is countable. Here $\mathbb N^3$ consists of all triples of the form $(a,b,c)$, where $a,b,c\in\mathbb N$.
-3. ... tba
+3. Let $S\_\text{fin}$ be the set of all *finite* words made with the letters $a,b$. So $S$ contains elements like $ab$, $abb$, $ababa$, $aabbbbaa$, and so forth. Prove that $S\_\text{fin}$ is countable.
+4. Read your proof from the activity that $S\_{\infty}$ is uncountable. Why doesn't this proof work for $S_\text{fin}$? Explain precisely where and why it fails.
+5. (Abbott, ex 1.5.10(a)) Let $A\subset[0,1]$ and assume that $A$ is uncountable. Show that there exists $a>0$ such that $C\cap[a,1]$ is uncountable.
 
 ## Homework 2, due Tuesday, January 28 at 3pm
 
