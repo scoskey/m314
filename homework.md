@@ -1,4 +1,10 @@
-## Homework 3, due Tuseday, February 4 at 3pm
+## Homework 4, due Tuesday, February 11 at 3pm
+
+1. Let $A$ be a set of real numbers and suppose that $A$ is bounded above. Let $B$ be the set of upper bounds for $A$. Show that $\sup(A)=\inf(B)$.
+2. Let $a\_n$ be a sequence of real numbers and assume that $a\_n\leq a\_{n+1}$ for all $n$. Let $\alpha=\sup\set{a_n\mid n\in\mathbb N}$. Show that for all $\epsilon$, just finitely many terms of the sequence are $\leq\alpha-\epsilon$.
+3. ... tba
+
+## Homework 3, due Tuesday, February 4 at 3pm
 
 1. Suppose that for every $n$, the set $A\_n$ is countable. Show that the set $A=\bigcup A\_n$ is countable. [See the hint described in Exercise~1.5.3(c).]
 2. Show that the set $\mathbb N^3$ is countable. Here $\mathbb N^3$ consists of all triples of the form $(a,b,c)$, where $a,b,c\in\mathbb N$.

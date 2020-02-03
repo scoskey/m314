@@ -650,34 +650,35 @@ A sequence of real numbers consists of one real number $a_n$ for each natural nu
 
 To begin consider the simple addition problem $\pi+e$, which we write out in decimal notation as
 \begin{align*}
-&3.14159265\cdots\\
-{}+&2.71828182\cdots
+     &3.14159265\cdots\\
+  {}+&2.71828182\cdots
 \end{align*}
 It is unclear how to begin this problem. Our usual method of carrying would have us start at the right-most digit, but there isn't one! It is possible to handle this issue by regarding $\pi$ and $e$ as cuts. But it is even more elegant to regard each of $\pi$ and $e$ as the limit of a sequence, and perform the addition term-by-term.
 
-Another problem with addition is the prospect of adding together infinitely many numbers at once. Sometimes this clearly isn't possible, since for example 
+Another problem with addition is the prospect of adding together infinitely many numbers at once. Sometimes this clearly isn't possible; for example the sum
 \[1+1+1+1+\cdots
 \]
-should by infinite, and certainly cannot be said to have any real number as its value. On the other hand the familiar Zeno paradox asks whether
+is infinite and has no value in the real numbers. On the other hand the familiar Zeno paradox asks whether the sum
 \[1+\frac12+\frac14+\frac18+\cdots
 \]
-has any real number as its value, and we usually agree that has a value of $2$. It seems that sometimes it makes sense to add together infinitely many numbers, and other times it doesn't.
+has any value in the real numbers, and we usually agree that has a value of $2$. It seems that sometimes it makes sense to add together infinitely many numbers, and other times it doesn't.
 
 But this conclusion deserves a great deal of scrutiny. To see why, consider the following simple proof that the Zeno series has a value of $2$. We first notice that
 \begin{align*}
-(1+\frac12+\frac14+\frac18+\cdots)-1&=\frac12+\frac14+\frac18+\cdots\\
-                                    &=\frac12(1+\frac12+\frac14+\cdots)
+  \left(1+\frac12+\frac14+\frac18+\cdots\right)-1
+  &=\frac12+\frac14+\frac18+\cdots\\                                  
+  &=\frac12\left(1+\frac12+\frac14+\cdots\right)
 \end{align*}
 Thus we see that if $x=1+\frac12+\frac14+\frac18+\cdots$, then $x$ satisfies the equation $x-1=\frac12x$ and therefore $x=2$.
 
 Now let us apply this proof to the series $1+2+4+8+\cdots$. Again write
 \begin{align*}
-(1+2+4+8+\cdots)-1&=2+4+8+\cdots\\
-                  &=2(1+2+4+\cdots)
+  (1+2+4+8+\cdots)-1&=2+4+8+\cdots\\
+                    &=2(1+2+4+\cdots)
 \end{align*}
 This time we conclude that if $x=1+2+4+8+\cdots$ then $x$ satisfies the equation $x-1=2x$ and therefore that $x=-1$, which is nonsense!
 
-Finally, even if we do accept infinite summations as valid, we must take care to decide whether the familiar laws of associativity and commutativity of addition may be used in this situation. To see the potential difficulty, consider two ways of grouping the terms of the same infinite summation:
+Finally, even if we do accept some infinite sums as valid, we still should decide whether the familiar laws of associativity and commutativity of addition are applicable to the terms of infinite sums. To see the potential difficulty, consider two ways of grouping the terms of the same infinite summation:
 \begin{align*}
 S_1&=(1-1)+(1-1)+(1-1)+\cdots\\
 S_2&=1+(-1+1)+(-1+1)+\cdots
@@ -692,31 +693,28 @@ S_2&=1+\frac13-\frac12+\frac15+\frac17-\frac14++-\cdots
 In the second summation we first add two of the positive terms before then adding one of the negative terms. A quick approximation with a calculator reveals that $S_1\approx0.69$ while $S_2\approx1.03$. This time we conclude that even if infinite summations are possible, one must be very careful when applying the usual laws of arithmetic to them!
 
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
-\begin{exerc}
-  Consider the following infinite summation:
+\begin{activity}
+  \item Consider the following infinite summation:
   \[1-\frac12+\frac13-\frac14+\frac15-+\cdots
   \]
   \begin{itemize}
-    \item Try to reorder the terms to make the value of the sum as close as possible to $\frac12$.
-    \item Try to reorder the terms to make the value of the sum as close as possible to $1$.
-    \item Try to reorder the terms to make the value of the sum as close as possible to $1.5$.
+    \item Try to reorder the terms to make the sum as close as possible to $0.5$. Use at least 15 terms to be sure you are actually close.
+    \item Try to reorder the terms to make the sum as close as possible to $1$.
+    \item Try to reorder the terms to make the sum as close as possible to $1.5$.
   \end{itemize}
   Were you (approximately) successful in each case? If so, show at least fifteen terms of your arrangment. What method did you use to get it?
-\end{exerc}
-
-\begin{exerc}
-  This time consider the following infinite summation:
+  \item This time consider the following infinite summation:
   \[1-\frac12+\frac14-\frac18+\frac{1}{16}-+\cdots
   \]
   \begin{itemize}
-    \item Try to reorder the terms to make the value of the sum as close as possible to $\frac12$.
-    \item Try to reorder the terms to make the value of the sum as close as possible to $1$.
-    \item Try to reorder the terms to make the value of the sum as close as possible to $1.5$.
+    \item Try to reorder the terms to make it come as close as possible to $0.5$.
+    \item Try to reorder the terms to make it come as close as possible to $1$.
+    \item Try to reorder the terms to make it come as close as possible to $1.5$.
   \end{itemize}
   Were you (approximately) successful in each case? If so, show at least fifteen terms of your arrangment. What method did you use to get it? What further observations do you have?
-\end{exerc}
+\end{activity}
 
 % \begin{exerc}
 %   Suppose that $A$ is a set of real numbers and that $A$ is bounded above. Let $B$ be the set
@@ -725,9 +723,9 @@ In the second summation we first add two of the positive terms before then addin
 %   Show that $\sup(A)=\inf(B)$.
 % \end{exerc}
 
-\begin{exerc}
-  Let $a_n$ be a sequence of real numbers and assume that $a_n\leq a_{n+1}$ for all $n$. Let $\alpha=\sup\{a_n\mid n\in\N\}$. Show that for all $\epsilon$, just finitely many terms of the sequence are $\leq\alpha-\epsilon$.
-\end{exerc}
+% \begin{exerc}
+%   Let $a_n$ be a sequence of real numbers and assume that $a_n\leq a_{n+1}$ for all $n$. Let $\alpha=\sup\{a_n\mid n\in\N\}$. Show that for all $\epsilon$, just finitely many terms of the sequence are $\leq\alpha-\epsilon$.
+% \end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
