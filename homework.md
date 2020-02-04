@@ -2,7 +2,12 @@
 
 1. Let $A$ be a set of real numbers and suppose that $A$ is bounded above. Let $B$ be the set of upper bounds for $A$. Show that $\sup(A)=\inf(B)$.
 2. Let $a\_n$ be a sequence of real numbers and assume that $a\_n\leq a\_{n+1}$ for all $n$. Let $\alpha=\sup\set{a_n\mid n\in\mathbb N}$. Show that for all $\epsilon$, just finitely many terms of the sequence are $\leq\alpha-\epsilon$.
-3. ... tba
+3. (Abbott, ex 2.2.1) Suppose we swap the first two quantifiers in the definition of convergence, and write $x\_n$ *verconges* to $L$ if:  
+   $(\exists\epsilon>0)\;(\forall N\in\mathbb N)\;(\forall n\geq N)\;|x_n-L|<\epsilon$.  
+   Give an example of a vercongent sequence that is not convergent. What exactly is being described in this definition?
+4. Suppose that $A\subset\mathbb R$ is bounded and that $\alpha=\sup(A)$.  This exercise shows how to prove that there exists a sequence in $A$ which converges to $\alpha$.
+  * Prove that for each $n\in\mathbb N$ there exists $a\_n\in A$ such that $a_n>\alpha-1/n$.
+  * Use the definition of convergence to conclude that $\lim a\_n=\alpha$.
 
 ## Homework 3, due Tuesday, February 4 at 3pm
 
