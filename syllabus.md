@@ -40,7 +40,7 @@ We will begin by discussing a simple but surprisingly deep question: *what are r
 
 ## Tentative exam dates
 
-* Exam 1: Wednesday, February 12
+* Exam 1: Wednesday, February ~~12~~ 19
 * Exam 2: Wednesday, March 18
 * Exam 3: Wednesday, May 6 from 2:30&ndash;4:30pm
 
