@@ -19,7 +19,7 @@
 \apptocmd{\tocsection}{\dotfill}{}{}
 \patchcmd{\@maketitle}{\newpage}{}{}{}
 \makeatother
-\usepackage[linktoc=all]{hyperref}
+\usepackage[linktoc=all,colorlinks,linkcolor=blue]{hyperref}
 \usepackage{tikz}\usetikzlibrary{positioning,decorations.fractals,decorations.pathmorphing}
 
 \newcommand{\set}[1]{\left\{\,#1\,\right\}}
@@ -816,7 +816,7 @@ Intuitively this says that there is some tolerance $\epsilon$ such that the sequ
   If $\epsilon$ has a given value of $.5$ it is possible to find a suitable response $N$ which satisfies the definition of convergence. The same is true if $\epsilon=.25$. But if $\epsilon=.2$ then it is \emph{not} possible, so we conclude that the sequence does not converge to $0$
 \end{example}
 
-In general, we say that a sequence \emph{diverges} if it fails to converge to $L$ for every possible limit $L$.
+In general, we say that a sequence \emph{diverges} if for every $L$, the sequence does not converge to $L$.
 
 \newpage
 \subsection*{Activity for \S \thesection}
