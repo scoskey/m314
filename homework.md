@@ -1,3 +1,12 @@
+## Homework 5, due Tuesday, February 25 at 3pm
+1. Show that if $\lim a\_n=a$ and $a\neq0$ and $\lim a\_nb\_n=ab$ then $\lim b\_n=b$.
+2. Give an example of sequences $a\_n$ such that:
+  * $\lim a\_n=\sup a\_n$
+  * $\lim a\_n=\inf a\_n$
+  * $\lim a\_n$ exists and is neither $\sup a\_n$ nor $\inf a\_n$
+3. Let $a\_n$ and $b\_n$ be sequences, and let $c\_n$ be the ``shuffled'' sequence $\{a\_1,b\_1,a\_2,b\_2,\ldots\}$. Show that $c\_n$ is convergent if and only if $a\_n$ and $b\_n$ are both convergent and both have the same limit.
+4. ...
+
 ## Homework 4, due Thursday, February 13 at 3pm
 
 1. Let $A$ be a set of real numbers and suppose that $A$ is bounded above. Let $B$ be the set of upper bounds for $A$. Show that $\sup(A)=\inf(B)$.
