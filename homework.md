@@ -5,7 +5,12 @@
   * $\lim a\_n=\inf a\_n$
   * $\lim a\_n$ exists and is neither $\sup a\_n$ nor $\inf a\_n$
 3. Let $a\_n$ and $b\_n$ be sequences, and let $c\_n$ be the ``shuffled'' sequence $\{a\_1,b\_1,a\_2,b\_2,\ldots\}$. Show that $c\_n$ is convergent if and only if $a\_n$ and $b\_n$ are both convergent and both have the same limit.
-4. ...
+4. Let $p$ be any real number. Prove that $\sum\frac1{n^p}$ converges if and only if $p>1$. (This is called the ``$p$-test.'')
+5. For each sequence, use induction to prove that the sequence is bounded and monotone. Then, find the limit.
+  * The sequence defined by $x\_1=1$ and the recurrence $x\_{n+1}=\frac12x\_n+1$
+  * $\sqrt{2},\sqrt{2+\sqrt{2}},\sqrt{2+\sqrt{2+\sqrt{2}}},\ldots$
+  * $\sqrt{2},\sqrt{2\sqrt{2}},\sqrt{2\sqrt{2\sqrt{2}}},\ldots$  
+  [Note: For the final two you will have to find the recurrence yourself! You may use the fact that $\lim\sqrt{a\_n}=\sqrt{\lim a\_n}$.]
 
 ## Homework 4, due Thursday, February 13 at 3pm
 
