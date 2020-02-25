@@ -1,4 +1,4 @@
-## Homework 5, due Tuesday, February 25 at 3pm
+## Homework 5, due Tuesday, March 3 at 3pm
 1. Show that if $\lim a\_n=a$ and $a\neq0$ and $\lim a\_nb\_n=ab$ then $\lim b\_n=b$.
 2. Give an example of sequences $a\_n$ such that:
   * $\lim a\_n=\sup a\_n$
