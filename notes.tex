@@ -1206,7 +1206,7 @@ Given a sequence $a_n$, a \emph{subsequence} of $a_n$ is a selection of infinite
 
 One must be careful to point out that it is not allowed to reorder or repeat the terms. Thus in the example of $a_n=1/n$ the terms $1,\frac13,\frac12,\frac14,\ldots$ cannot be part of a subsequence of $a_n$, and neither can the terms $1,\frac12,\frac12,\frac13,\ldots$.
 
-It should not be surprising that if a sequence converges, so do its subsequences.
+Not surprisingly, if a sequence converges, so do its subsequences.
 
 \begin{proposition}
   \label{prop:subsequence}
@@ -1217,9 +1217,9 @@ It should not be surprising that if a sequence converges, so do its subsequences
   Since $a_n\to L$, if $\epsilon>0$ is given we can find $N$ such that $n>N$ implies $|a_n-L|<\epsilon$. Since the $n_k$ are strictly increasing, we always have $n_k\geq k$. Hence if $k\geq N$ then we have $n_k\geq k\geq N$ and therefore $|a_{n_k}-L|<\epsilon$ too.
 \end{proof}
 
-Of course the converse is false with a simple example being the subsequence $1,1,1,1,\ldots$ of $1,-1,+1,-1,\ldots$.
+Of course the converse is false; for a simple example the sequence $1,-1,+1,-1,\ldots$ has the convergent subsequence $1,1,1,1,\ldots$.
 
-Although it is very simple, Proposition~\ref{prop:subsequence} has a surprising number of applications. The first application gives a method of determining that a sequence is divergent. In the past, we have checked that a given sequence fails to converge to a proposed limit. The following result lets you check that a sequence fails to converge to any/every limit.
+Although it is very simple, Proposition~\ref{prop:subsequence} has several useful applications. The first application gives a method of determining that a sequence is divergent. In the past, we have checked that a given sequence fails to converge to a proposed limit. The following result lets you check that a sequence fails to converge to any/every limit.
 
 \begin{corollary}
   \label{cor:divergence}
@@ -1269,34 +1269,36 @@ The Bolzano--Weierstra\ss\ theorem has numerous theoretical applications, some o
 \end{proof}
 
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
-\begin{exerc}[Abbott, ex 2.5.3]
-  Give an example of each of the following, or prove that no such example exists.
+\begin{activity}
+  \item (Abbott, ex 2.5.3) Give an example of each of the following, or prove that no such example exists.
   \begin{enumerate}
-    \item A sequence that does not contain $0$ or $1$ as a term but contains subsequences converging to each of these values
-    \item A monotone sequence that diverges but has a convergent subsequence
-    \item A sequence that contains subsequences converging to every point in the infinite set $\{1,\frac12,\frac13,\frac14,\ldots\}$
+    \item A sequence that does not have $0$ or $1$ as a term, but has a subsequence which converges to $0$ and a susequence which converges to $1$
     \item An unbounded sequence with a convergent subsequence
-    \item A sequence that has a subsequence that is bounded but contains no subsequence that converges
+    \item An unbounded monotone sequence with a convergent subsequence
+    \item A sequence that has subsequences which converge to each of the following: $1,\frac12,\frac13,\frac14,\ldots$
+    \item An unbounded sequence with a convergent subsequence
+    \item A sequence that has a subsequence that is bounded, but no subsequence that converges
   \end{enumerate}
-\end{exerc}
+\end{activity}
 
-\begin{exerc}
-  Prove the following characterization: $a_n$ has a subsequence converging to $L$ if and only if for all $\epsilon>0$, for all $N$, there exists $n>N$ such that $|a_n-L|<\epsilon$.
-\end{exerc}
-
-\begin{exerc}
-  Prove or give a counterexample: If $a_n$ has a subsequence converging to $a$ and $b_n$ has a subsequence converging to $b$ then $a_n+b_n$ has a subsequence converging to $a+b$.
-\end{exerc}
-
-\begin{exerc}
-  Consider the sequence $a_n=$ the reciprocal of the least prime factor of $n$. Write out the first 20 terms of the sequence. Find two subsequences of $a_n$ that converge but to different limits.
-\end{exerc}
-
-\begin{exerc}
-  Suppose that $a_n$ has the property that every subsequence $a_{n_k}$ has a \emph{further} subsequence $a_{n_{k_\ell}}$ which converges to $L$.  Show that $a_n$ converges to $L$.  (Hint: try contradiction!)
-\end{exerc}
+% \begin{exerc}
+%   Prove the following characterization: $a_n$ has a subsequence converging to $L$ if and only if for all $\epsilon>0$, for all $N$, there exists $n>N$ such that $|a_n-L|<\epsilon$.
+% \end{exerc}
+%
+% \begin{exerc}
+%   Prove or give a counterexample: If $a_n$ has a subsequence converging to $a$ and $b_n$ has a subsequence converging to $b$ then $a_n+b_n$ has a subsequence converging to $a+b$.
+% \end{exerc}
+%
+% \begin{exerc}
+%   Consider the sequence $a_n=$ the reciprocal of the least prime factor of $n$. Write out the first 20 terms of the sequence. Find two subsequences of $a_n$ that converge but to different limits.
+% \end{exerc}
+%
+% didn't port this one:
+% \begin{exerc}
+%   Suppose that $a_n$ has the property that every subsequence $a_{n_k}$ has a \emph{further} subsequence $a_{n_{k_\ell}}$ which converges to $L$.  Show that $a_n$ converges to $L$.  (Hint: try contradiction!)
+% \end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,4 +1,14 @@
+## Homework 6, due Tuesday, March 10 at 3pm
+
+1. The following quantifier statement is a small modification of the definition of convergence:  
+   $(\forall\epsilon>0)(\forall N\in\mathbb N)(\exists n>N)\,|a\_n-L|<\epsilon$  
+   Prove that this statement is true if and only if there exists a subsequence $a\_{n\_k}$ which converges to $L$.
+2. Prove or give a counterexample: If $a\_n$ has a subsequence which converges to $a$ and $b\_n$ has a subsequence which converges to $b$ then $a\_n+b\_n$ has a subsequence converging to $a+b$.
+3. Consider the sequence defined as follows: $a\_n=$ the reciprocal of the least prime factor of $n$. Write out the first 20 terms of $a\_n$. Find two subsequences of $a\_n$ that converge to two different limits.
+4. ...
+
 ## Homework 5, due Tuesday, March 3 at 3pm
+
 1. Show that if $\lim a\_n=a$ and $a\neq0$ and $\lim a\_nb\_n=ab$ then $\lim b\_n=b$.
 2. Give an example of sequences $a\_n$ such that:
   * $\lim a\_n=\sup a\_n$
