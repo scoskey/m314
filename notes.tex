@@ -987,10 +987,10 @@ The limit calculus theorem above provides a method of establishing convergence u
   \begin{enumerate}\itemsep 5pt
     \item $\lim(2+\frac1n)^2$
     \item $\lim\frac{1}{3n^2-n}$
-    \item $\lim\frac{\sqrt{n^2+1}}{n-2}$
+    \item $\lim\left(\frac{2n^2-3n+2}{3n^2+4n+1}\right)^{100}$
+    \item $\lim\frac{\sqrt{n^2+1}}{n-2}$ (you may use that limits pass through $\sqrt{\ }$)
     \item $\lim\frac{\sin(n)}{n}$
     \item $\lim\frac{2n+\cos(n)}{n+2}$
-    \item $\lim\left(\frac{2n^2-3n+2}{3n^2+4n+1}\right)^{100}$
     % \item $\lim\frac{\arctan(n)}{n\sqrt{n}}$
   \end{enumerate}
 \end{activity}
@@ -1080,7 +1080,7 @@ It is not usually so easy to calculate the exact value of $S_n$ and of $\sum a_n
              +\cdots+2^{n-1}\left(\frac1{(2^{n-1})^2}\right)+\frac1{(2^n)^2}\\
            &\leq1+\sum\frac1{2^n}=2
   \end{align*}
-  This shows that $S_{2^n}$ is bounded by $1$, and since the sequence $S_n$ is increasing, clearly the whole sequence $S_n$ is bounded by $1$. The next result implies that we can conclude $\sum1/n^2$ converges even without knowing its value.
+  This shows that $S_{2^n}$ is bounded by $2$, and since the sequence $S_n$ is increasing, clearly the whole sequence $S_n$ is bounded by $2$. The next result implies that we can conclude $\sum1/n^2$ converges even without knowing its value.
 \end{example}
 
 \begin{theorem}[Monotone convergence theorem]
@@ -1091,7 +1091,7 @@ It is not usually so easy to calculate the exact value of $S_n$ and of $\sum a_n
   Let $\epsilon>0$ be given. Since $L$ is an upper bound for the $b_n$, we have $b_n\leq L$ for all $n$. Since $L$ is the least upper bound for the $b_n$, we can find a particular element $b_N$ of the sequence such that $b_N>L-\epsilon$. Since the sequence is monotone increasing, $n>N\implies b_n>L-\epsilon$ as well. Thus for all $n>N$ we have $L-\epsilon<b_n<L+\epsilon$, and the convergence is established.
 \end{proof}
 
-To complete Example~\ref{ex:1/n^2}, we know that the sequence of partial sums $S_n$ is increasing and bounded above by $1$, therefore it is convergent. Hence the series $\sum1/n^2$ converges to some unknown value $\leq1$.
+To complete Example~\ref{ex:1/n^2}, we know that the sequence of partial sums $S_n$ is increasing and bounded above by $2$, therefore it is convergent. Hence the series $\sum1/n^2$ converges to some unknown value $\leq2$.
 
 We conclude our examples with a divergent series.
 
@@ -1158,29 +1158,17 @@ The condensation test may be applied to our earlier examples as follows.
 % \end{corollary}
 
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
-\begin{exerc}
-  Use the condensation test to determine whether the series converge.
+\begin{activity}
+  \item Use the condensation test to determine whether the series converge.
   \begin{enumerate}
     \item $\sum\frac{1}{n\ln(n)}$
     \item $\sum\frac{1}{n(\ln n)^2}$
   \end{enumerate}
-\end{exerc}
- 
-\begin{exerc}
-  Let $p$ be any real number. Prove that $\sum\frac1{n^p}$ converges if and only if $p>1$. (This is called the ``$p$-test.'')
-\end{exerc}
+  \item Let $p$ be any real number. Prove that $\sum\frac1{n^p}$ converges if and only if $p>1$. (This is called the ``$p$-test.'')
+\end{activity}
 
-\begin{exerc}
-  For each sequence, use induction to prove that the sequence is bounded and monotone. Then, find the limit.  [Note: For (b) and (c) you will have to find the recurrence yourself!]
-  \begin{enumerate}
-    \item The sequence defined by $x_1=1$ and the recurrence $x_{n+1}=\frac12x_n+1$
-    \item $\sqrt{2},\sqrt{2+\sqrt{2}},\sqrt{2+\sqrt{2+\sqrt{2}}},\ldots$
-    \item $\sqrt{2},\sqrt{2\sqrt{2}},\sqrt{2\sqrt{2\sqrt{2}}},\ldots$
-  \end{enumerate}
-  [Note: in parts (b) and (c) you may use the fact that $\lim\sqrt{x_n}=\sqrt{\lim x_n}$. We'll prove it later.]
-\end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
