@@ -1352,37 +1352,34 @@ We now show that in fact all four of these statements are equivalent by showing 
   Since Cauchy sequences converge we may let $L$ be the limit of $a_n$. We claim that $L$ is the least upper bound for $A$. Indeed since for all $n$ we have that $a_n$ is an upper bound for $A$, it is clear that $L$ is an upper bound for $A$. Moreover given any $n$ we can find $a\in A$ such that $a\geq a_n-1/2^n$. Since the latter is $\geq L-1/2^n$, this implies $L=\sup(A)$. Thus the LUBP holds, as desired.
 \end{proof}
 
-In the exercises you will be asked to prove that the monotone convergence theorem (MCT) is also equivalent to completeness.
+In the exercises you will be asked to prove that the monotone convergence theorem (MCT) is also equivalent to AOC.
 
 \newpage
-\subsection*{Exerecises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
-\begin{exerc}
-  Show directly from the definition that the sequence $x_n=\frac{n}{n+1}$ is Cauchy.
-\end{exerc}
-
-\begin{exerc}[Abbott, ex 2.6.2]
-  Give an example of each of the following, or prove that no such example exists.
+\begin{activity}
+  \item Show directly from the definition that the sequence $x_n=\frac{n}{n+1}$ is Cauchy.
+  \item (Abbott, ex 2.6.2) Give an example of each of the following, or prove that no such example exists.
   \begin{enumerate}
     \item A Cauchy sequence that is not monotone
     \item A monotone sequence that is not Cauchy
     \item A Cauchy sequence with a divergent subsequence
     \item An unbounded sequence containing a subsequence that is Cauchy
   \end{enumerate}
-\end{exerc}
+\end{activity}
 
-\begin{exerc}
-  Find an example of a divergent sequence $a_n$ which satisfies $\lim(a_{n+1}-a_n)=0$.
-\end{exerc}
-
-\begin{exerc}
-  The MCT (monotone convergence theorem) is yet another equivalent of completness. To establish this, complete the following proof that MCT implies BWT. To begin, say that a term $a_n$ of a sequence is a \emph{peak} if for all $n'>n$ we have $a_n'\leq a_n$.
-  \begin{enumerate}
-    \item Assume the sequence $a_n$ has infinitely many peaks. Conclude that $a_n$ has a monotone decreasing subsequence.
-    \item Assume the sequence $a_n$ has a last peak. Conclude that $a_n$ has a monotone increasing subsequence.
-    \item Use parts (a) and (b) together with the MCT to prove the BWT.
-  \end{enumerate}
-\end{exerc}
+% \begin{exerc}
+%   Find an example of a divergent sequence $a_n$ which satisfies $\lim(a_{n+1}-a_n)=0$.
+% \end{exerc}
+%
+% \begin{exerc}
+%   The MCT (monotone convergence theorem) is yet another equivalent of completness. To establish this, complete the following proof that MCT implies BWT. To begin, say that a term $a_n$ of a sequence is a \emph{peak} if for all $n'>n$ we have $a_n'\leq a_n$.
+%   \begin{enumerate}
+%     \item Assume the sequence $a_n$ has infinitely many peaks. Conclude that $a_n$ has a monotone decreasing subsequence.
+%     \item Assume the sequence $a_n$ has a last peak. Conclude that $a_n$ has a monotone increasing subsequence.
+%     \item Use parts (a) and (b) together with the MCT to prove the BWT.
+%   \end{enumerate}
+% \end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

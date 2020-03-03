@@ -5,7 +5,11 @@
    Prove that this statement is true if and only if there exists a subsequence $a\_{n\_k}$ which converges to $L$.
 2. Prove or give a counterexample: If $a\_n$ has a subsequence which converges to $a$ and $b\_n$ has a subsequence which converges to $b$ then $a\_n+b\_n$ has a subsequence converging to $a+b$.
 3. Consider the sequence defined as follows: $a\_n=$ the reciprocal of the least prime factor of $n$. Write out the first 20 terms of $a\_n$. Find two subsequences of $a\_n$ that converge to two different limits.
-4. ...
+4. Find an example of a divergent sequence $a\_n$ which satisfies $\lim(a\_{n+1}-a\_n)=0$.
+5. In this exercise you will show MCT implies BWT. Together with our work from class, we can conclude MCT is yet another equivalent to AOC. To begin, we say that a term $a\_n$ of a sequence is a *peak* if for all $n'>n$ we have $a\_n'\leq a\_n$.
+  * Assume the sequence $a\_n$ has infinitely many peaks. Show that $a\_n$ has a monotone decreasing subsequence.
+  * Assume the sequence $a\_n$ has a last peak. Conclude that $a\_n$ has a monotone increasing subsequence.
+  * Use parts (a) and (b) together with the MCT to prove the BWT.
 
 ## Homework 5, due Tuesday, March 3 at 3pm
 
