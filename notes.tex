@@ -1335,19 +1335,19 @@ The proof that the above sequence is Cauchy is not too different than the proof 
   and so $a_n$ converges to $L$, as desired.
 \end{proof}
 
-The above theorem says that in the real number system, every sequence that wants to converge (beacuse it is Cauchy) really does converge. This statement is false if you restrict consider the rational number system only. Instead, the statement can be regarded as another way of saying that the real number system is complete. In general, we say that a space is \emph{Cauchy complete} if all of its Cauchy sequences converge.
+The above theorem says that in the real number system, every sequence that wants to converge (beacuse it is Cauchy) really does converge. This statement is false if you restrict consider the rational number system only. Instead, the statement can be regarded as another way of saying that the real number system is complete. In general, we say that a space is \emph{Cauchy complete} if all of its Cauchy sequences converge. The spaces $\R$, $\R^2$, $\mathbb S^2$ are all Cauchy complete.
 
 It turns out that many of the theorems we have investigated so far can be regarded as statements of completeness. Just now we proved the Cauchy criterion (CC) using the Bolzano--Weierstra\ss\ theorem (BWT). Earlier we proved the Bolzano--Weierstra\ss\ theorem using the NIP. And we proved the NIP using our original axiom of completeness, the least upper bound principal (LUBP). We therefore see that:
 \[AOC\implies NIP\implies BWT\implies CC
 \]
-We now show that in fact all four of these statements are equivalent by showing that the Cauchy criterion implies the axiom of completeness.
+The following result states that in fact all four of these statements are equivalent to one another!
 
 \begin{theorem}
   All of the statements LUBP, NIP, BWT, CC are equivalent.
 \end{theorem}
 
 \begin{proof}[Proof outline]
-  It remains only to show that CC implies LUBP. Suppose we know Cauchy sequences converge and let $A$ be a bounded subset of $\R$. Then $A$ is contained in some interval $[a,b]$. For each $n$, divide $[a,b]$ into cells of width $(b-a)/2^n$ and let $a_n$ be the top endpoint of the highest cell meeting $A$. Then for any $N$, the sequence $a_n$ eventually lies in an interval of with $(b-a)/2^N$ and hence $a_n$ is Cauchy.
+  It remains only to show that CC implies AOC. Suppose we know Cauchy sequences converge and let $A$ be a bounded subset of $\R$. Then $A$ is contained in some interval $[a,b]$. For each $n$, divide $[a,b]$ into cells of width $(b-a)/2^n$ and let $a_n$ be the right endpoint of the right-most cell meeting $A$. Then for any $N$, the sequence $a_n$ eventually lies in an interval of with $(b-a)/2^N$ and hence $a_n$ is Cauchy.
 
   Since Cauchy sequences converge we may let $L$ be the limit of $a_n$. We claim that $L$ is the least upper bound for $A$. Indeed since for all $n$ we have that $a_n$ is an upper bound for $A$, it is clear that $L$ is an upper bound for $A$. Moreover given any $n$ we can find $a\in A$ such that $a\geq a_n-1/2^n$. Since the latter is $\geq L-1/2^n$, this implies $L=\sup(A)$. Thus the LUBP holds, as desired.
 \end{proof}
