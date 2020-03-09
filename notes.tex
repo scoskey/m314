@@ -894,10 +894,11 @@ We can now state the laws for the calculus of limits. The proof is long, but the
 \begin{theorem}[Limit calculus]
   Suppose that $\lim a_n=a$ and $\lim b_n=b$. Then we have
   \begin{enumerate}
-  \item $\lim a_n+b_n=a+b$
-  \item $\lim ka_n=ka$ for any $k\in\R$
-  \item $\lim a_nb_n=ab$
-  \item $\lim a_n/b_n=a/b$ provided $b_n,b\neq 0$
+    \item $\lim a_n+b_n=a+b$
+    \item $\lim ka_n=ka$ for any $k\in\R$
+    \item $\lim a_nb_n=ab$
+    \item $\lim a_n/b_n=a/b$ provided $b_n,b\neq 0$
+    \item $\lim \sqrt{a_n}=\sqrt{\lim a_n}$ provided $a_n\geq0$
   \end{enumerate}
 \end{theorem}
 
@@ -919,7 +920,7 @@ We can now state the laws for the calculus of limits. The proof is long, but the
       &=|a_n-a||b_n|+|a||b_n-b|
     \end{align*}
     Since $b_n$ converges, we can find a bound $M$ such that $|b_n|\leq M$ for all $n$ (see below). Now since $a_n$ and $b_n$ converge, we can find an $N$ large enough so that for $n\geq N$ we have both $|a_n-a|<\epsilon/2M$ and $|b_n-b|<\epsilon/2|a|$. Together with the calculation above, we thus conclude that $|a_nb_n-ab|<\epsilon$, as desired.
-  \item This is similar to multiplication so we omit it.
+  \item[(d),(e)] The proof of (d) is similar to (c), and the proof of (e) is left as an exercise.
   \end{enumerate}
 \end{proof}
 
@@ -988,7 +989,7 @@ The limit calculus theorem above provides a method of establishing convergence u
     \item $\lim(2+\frac1n)^2$
     \item $\lim\frac{1}{3n^2-n}$
     \item $\lim\left(\frac{2n^2-3n+2}{3n^2+4n+1}\right)^{100}$
-    \item $\lim\frac{\sqrt{n^2+1}}{n-2}$ (you may use that limits pass through $\sqrt{\ }$)
+    \item $\lim\frac{\sqrt{n^2+1}}{n-2}$
     \item $\lim\frac{\sin(n)}{n}$
     \item $\lim\frac{2n+\cos(n)}{n+2}$
     % \item $\lim\frac{\arctan(n)}{n\sqrt{n}}$
@@ -1423,20 +1424,18 @@ Before proceeding to the convergence tests, we state formally one simple test fo
 
 The next two tests summarize some familiar series, and help give us a library of known series convergence and divergence for future use.
 
-\begin{theorem}[Geometric series test]
-  Let $r$ be a real number. Then the series $\sum r^n$ converges if and only if $|r|<1$. If it does converge the value of the zero-indexed series is $1/(1-r)$.
-\end{theorem}
+\begin{proposition}[Series library]
+  \begin{itemize}
+    \item $\sum r^n$ converges if and only if $|r|<1$
+    \item $\sum\frac{1}{n^p}$ converges if and only if $p>1$
+  \end{itemize}
+\end{proposition}
 
-\begin{theorem}[$p$-series test]
-  Let $p$ be a real number. Then the series $\sum \frac{1}{n^p}$ converges if and only if $p>1$.
-\end{theorem}
-
-We leave the proofs of these results as exercises. The geometric series test is standard in calculus and can be proved with a calculation similar to that of Example~\ref{ex:geometric}. The $p$-series test is an easy application of the condensation test (see earlier exercise).
+The geometric series test is standard in calculus and can be proved with a calculation similar to that of Example~\ref{ex:geometric}. The $p$-series test was proved in an earlier exercise as an application of the condensation test.
 
 \begin{example}
   Consider the series $\sum 9^{-n+2}4^{n+1}$. We can rewrite it as $4\cdot81\sum(4/9)^n$. Since $4/9<1$ the series converges and the summation is $4\cdot81/(1-4/9)$.
 \end{example}
-
 
 \begin{theorem}[Comparison test]
   Let $a_n$ and $b_n$ be nonnegative sequences of terms, and suppose $\sum b_n$ converges. If for all $n$ we have $a_n\leq b_n$, then $\sum a_n$ converges too.
@@ -1482,10 +1481,10 @@ Although the comparison test is very simple, it may be leveraged to yield severa
 \end{example}
 
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
-\begin{exerc}
-  Decide whether the given series converge or diverge.
+\begin{activity}
+  \item Decide whether the given series converge or diverge.
   \begin{enumerate}
     \item $\displaystyle\sum\frac{1}{n^2+250n+37}$
     \item $\displaystyle\sum\frac{1}{n^2-37}$
@@ -1494,15 +1493,15 @@ Although the comparison test is very simple, it may be leveraged to yield severa
     \item $\displaystyle\sum\frac{e^n}{\pi^n}$
     \item $\displaystyle\sum\frac{n!}{n^n}$
   \end{enumerate}
-\end{exerc}
+\end{activity}
 
-\begin{exerc}  
-  Suppose that $a_n,b_n\geq0$ and that $\sum a_n$ and $\sum b_n$ both converge. Prove that $\sum a_nb_n$ converges.
-\end{exerc}
-
-\begin{exerc}[Abbott, ex 2.7.4(a)]
-  Give an example of two divergent series $\sum a_n$ and $\sum b_n$ such that $\sum a_nb_n$ converges.
-\end{exerc}
+% \begin{exerc}
+%   Suppose that $a_n,b_n\geq0$ and that $\sum a_n$ and $\sum b_n$ both converge. Prove that $\sum a_nb_n$ converges.
+% \end{exerc}
+%
+% \begin{exerc}[Abbott, ex 2.7.4(a)]
+%   Give an example of two divergent series $\sum a_n$ and $\sum b_n$ such that $\sum a_nb_n$ converges.
+% \end{exerc}
 
 % prove the ratio test?
 
