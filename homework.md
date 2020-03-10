@@ -2,7 +2,7 @@
 
 1. Suppose that $a\_n,b\_n\geq0$ and that $\sum a\_n$ and $\sum b\_n$ both converge. Prove that $\sum a\_nb\_n$ converges.
 2. Give an example of two divergent series $\sum a\_n$ and $\sum b\_n$ such that $\sum a\_nb\_n$ converges.
-3. ...
+3. Please complete and turn in the activity for Section 12.
 
 ## Homework 6, due Tuesday, March 10 at 3pm
 
