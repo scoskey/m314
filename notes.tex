@@ -1344,13 +1344,13 @@ It turns out that many of the theorems we have investigated so far can be regard
 The following result states that in fact all four of these statements are equivalent to one another!
 
 \begin{theorem}
-  All of the statements LUBP, NIP, BWT, CC are equivalent.
+  All of the statements AOC, NIP, BWT, CC are equivalent.
 \end{theorem}
 
 \begin{proof}[Proof outline]
   It remains only to show that CC implies AOC. Suppose we know Cauchy sequences converge and let $A$ be a bounded subset of $\R$. Then $A$ is contained in some interval $[a,b]$. For each $n$, divide $[a,b]$ into cells of width $(b-a)/2^n$ and let $a_n$ be the right endpoint of the right-most cell meeting $A$. Then for any $N$, the sequence $a_n$ eventually lies in an interval of with $(b-a)/2^N$ and hence $a_n$ is Cauchy.
 
-  Since Cauchy sequences converge we may let $L$ be the limit of $a_n$. We claim that $L$ is the least upper bound for $A$. Indeed since for all $n$ we have that $a_n$ is an upper bound for $A$, it is clear that $L$ is an upper bound for $A$. Moreover given any $n$ we can find $a\in A$ such that $a\geq a_n-1/2^n$. Since the latter is $\geq L-1/2^n$, this implies $L=\sup(A)$. Thus the LUBP holds, as desired.
+  Since Cauchy sequences converge we may let $L$ be the limit of $a_n$. We claim that $L$ is the least upper bound for $A$. Indeed since for all $n$ we have that $a_n$ is an upper bound for $A$, it is clear that $L$ is an upper bound for $A$. Moreover given any $n$ we can find $a\in A$ such that $a\geq a_n-1/2^n$. Since the latter is $\geq L-1/2^n$, this implies $L=\sup(A)$. Thus AOC holds, as desired.
 \end{proof}
 
 In the exercises you will be asked to prove that the monotone convergence theorem (MCT) is also equivalent to AOC.
