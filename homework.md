@@ -1,3 +1,9 @@
+## Homework 8, due Tuesday, March 31 at 3pm
+
+1. Give an example of two convergent series $\sum a\_n$ and $\sum b\_n$ such that $\sum a\_nb\_n$ diverges. (Compare with the previous homework.)
+2. Suppose that $\sum a\_n$ converges absolutely and that the sequence $b\_n$ is bounded. Prove that $\sum a\_nb\_n$ converges absolutely.
+3. ...
+
 ## Homework 7, due Tuesday, March 17 at 3pm
 
 1. Suppose that $a\_n,b\_n\geq0$ and that $\sum a\_n$ and $\sum b\_n$ both converge. Prove that $\sum a\_nb\_n$ converges.
