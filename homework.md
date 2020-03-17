@@ -2,7 +2,9 @@
 
 1. Give an example of two convergent series $\sum a\_n$ and $\sum b\_n$ such that $\sum a\_nb\_n$ diverges. (Compare with the previous homework.)
 2. Suppose that $\sum a\_n$ converges absolutely and that the sequence $b\_n$ is bounded. Prove that $\sum a\_nb\_n$ converges absolutely.
-3. ...
+3. Suppose that $\sum a\_n$ converges conditionally. Show that the series consisting of just the positive terms is divergent.
+4. Give an example of a sequence of open sets $A\_n$ such that $\bigcap A\_n$ is *not* open. Give an example of a sequence of closed sets $B\_n$ such that $\bigcup B\_n$ is *not* closed.
+5. Show that $A$ is clopen (both open and closed) if and only if $\partial A=\emptyset$.
 
 ## Homework 7, due Tuesday, March 17 at 3pm
 

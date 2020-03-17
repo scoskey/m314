@@ -1709,7 +1709,7 @@ Hence the dimension of $C$ is equal to $\log(2)/\log(3)\approx0.63$.
 The three propositions taken together yield an interesting conclusion: the Cantor set is large from the point of view of cardinality, small from the point of view of length, and intermediate from the point of view of dimension!
 
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
 For $0<\alpha<1$, the \emph{modified Cantor set} $C^\alpha$ is constructed by letting $B_0=[0,1]$ and inductively letting $B_{n+1}$ be the set obtained by removing the middle $\alpha$ from each interval of $B_n$. For example, if $\alpha=1/3$ then we obtain the set $C^{1/3}$, which is precisely the ordinary Cantor set $C$.
 
@@ -1730,28 +1730,17 @@ For a new example, if $\alpha=\frac14$ then we construct the modified Cantor set
   \end{tikzpicture}
 \end{center}
 
-\begin{exerc}
+\begin{activity}
+  \item 
   \begin{enumerate}
     \item In the construction of $C^{1/4}$ shown above, for each $n$ find the total length removed when going from $B_n$ to $B_{n+1}$.
     \item Find the sum of all the lengths removed, that is, the numbers calculated in part~(a). Then take $1$ minus this number to find the length of the modified Cantor set $C^{1/4}$.
   \end{enumerate}
-\end{exerc}
-
-\begin{exerc}
-  Find the fractal dimension of $C^{1/4}$. [Hint: you need to use a scaling factor that grows both intervals in $B_1$ to a length of $1$.]
-\end{exerc}
-
-\begin{exerc}
-  Repeat Question~1 for the set $C^\alpha$, where $0<\alpha<1$ is arbitrary.
-\end{exerc}
-
-\begin{exerc}
-  Repeat Question~2 for the set $C^\alpha$, where $0<\alpha<1$ is arbitrary.
-\end{exerc}
-
-\begin{exerc}
-  Given $\ell\in(0,1)$, can you always choose $\alpha$ to make the length of $C^\alpha$ equal to $\ell$? Given $d\in(0,1)$, can you always choose $\alpha$ to make the fractal dimension of $C^\alpha$ equal to $d$? Why or why not?
-\end{exerc}
+  \item Find the fractal dimension of $C^{1/4}$. [Hint: you need to use a scaling factor that grows both intervals in $B_1$ to a length of $1$.]
+  \item Repeat Question~1 for the set $C^\alpha$, where $0<\alpha<1$ is arbitrary.
+  \item Repeat Question~2 for the set $C^\alpha$, where $0<\alpha<1$ is arbitrary.
+  \item Given $\ell\in(0,1)$, can you always choose $\alpha$ to make the length of $C^\alpha$ equal to $\ell$? Given $d\in(0,1)$, can you always choose $\alpha$ to make the fractal dimension of $C^\alpha$ equal to $d$? Why or why not?
+\end{activity}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1919,10 +1908,10 @@ We conclude this section with a justification for the term ``closed''. The next 
 % venn diagram of different types of points?
 
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
-\begin{exerc}
-  For each of the following sets $A$, find the boundary $\partial A$. Then decide whether the following sets are open, closed, both, or neither.
+\begin{activity}
+  \item For each of the following sets $A$, find the boundary $\partial A$. Then decide whether the following sets are open, closed, both, or neither.
   \begin{enumerate}
     \item $A=\set{0,1,\ldots,10}$
     \item $A=\set{1/n\mid n\in\N}\cup\{0\}$
@@ -1931,29 +1920,29 @@ We conclude this section with a justification for the term ``closed''. The next 
     \item $A=\Q$
     \item $A=\set{x\mid (\exists n\in\N)\,\frac1{n+1}<x<\frac1n}$
   \end{enumerate}
-\end{exerc}
+\end{activity}
 
-\begin{exerc}
-  Give an example of a sequence of open sets $A_n$ such that $\bigcap A_n$ is \emph{not} open. Give an example of a sequence of closed sets $B_n$ such that $\bigcup B_n$ is \emph{not} closed.
-\end{exerc}
+% \begin{exerc}
+%   Give an example of a sequence of open sets $A_n$ such that $\bigcap A_n$ is \emph{not} open. Give an example of a sequence of closed sets $B_n$ such that $\bigcup B_n$ is \emph{not} closed.
+% \end{exerc}
 
 %\question Suppose that $A$ is an open set, that $x\in A$, and that $x_n\to x$. Show that the sequence $x_n$ eventually lies in $A$.
 
 %\question Show that the previous exercise fails if $A$ is not assumed to be open. In other words, give an example of a set $A$, an element $x\in A$, and a sequence $x_n\to x$ such that the sequence $x_n$ does \emph{not} eventually lie in $A$.
 
-\begin{exerc}
-  Show that $A$ is clopen (both open and closed) if and only if $\partial A=\emptyset$.
-\end{exerc}
+% \begin{exerc}
+%   Show that $A$ is clopen (both open and closed) if and only if $\partial A=\emptyset$.
+% \end{exerc}
 
-For the next two exercises, we say that $x\in A$ is an \emph{interior point} of $A$ if there exists a neighborhood $N_\epsilon(x)$ such that $N_\epsilon(x)\subset A$. We write $\inte(A)$ for the set of interior points of $A$.
-
-\begin{exerc}
-  Prove that $\inte(\inte(A))=\inte(A)$.
-\end{exerc}
-
-\begin{exerc}
-  Show that $\inte(A)$ contains all open subsets of $A$.
-\end{exerc}
+% For the next two exercises, we say that $x\in A$ is an \emph{interior point} of $A$ if there exists a neighborhood $N_\epsilon(x)$ such that $N_\epsilon(x)\subset A$. We write $\inte(A)$ for the set of interior points of $A$.
+%
+% \begin{exerc}
+%   Prove that $\inte(\inte(A))=\inte(A)$.
+% \end{exerc}
+%
+% \begin{exerc}
+%   Show that $\inte(A)$ contains all open subsets of $A$.
+% \end{exerc}
 
 
 \newpage
