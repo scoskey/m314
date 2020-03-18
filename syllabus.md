@@ -2,13 +2,13 @@
 
 ## Course information
 
-Meeting times: M,W from 1:30&ndash;2:45pm  
+Meeting times: M,W from 1:30&ndash;2:45pm ([zoom classroom](https://boisestate.zoom.us/j/725370209))  
 Meeting place: MB 139  
 Textbook: Stephen Abbott, *Understanding analysis*, 2nd edition  
 Web site: `scoskey.org/m314`  
 My email: `scoskey@boisestate.edu`  
 My office: MB 238-B  
-Office hours: T 1:30-2:30, Th 10:30-11:30, and by appointment
+Office hours: T 1:30-2:30, Th 10:30-11:30, and by appointment ([zoom office hours](https://boisestate.zoom.us/j/255135803))
 
 ## Course content
 
