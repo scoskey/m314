@@ -279,7 +279,7 @@ You can find the proof in Lemma~1.3.8 of the text.
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The axiom of completeness}
+\section{The Axiom of Completeness}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{reading}
@@ -301,18 +301,20 @@ One should then verify that $A<B<C\implies A<C$, and $A<B\implies A+C<B+C$, and 
 Since we constructed $\R$ by filling in gaps in the rational number system $\Q$, it is natural to ask whether $\R$ itself has any gaps. In other words, could it be that by filling in gaps we introduced new ones? Thankfully the answer to this question is no, and $\R$ does not have any gaps.
 
 \begin{definition}
-  An ordered field is said to satisfy the \emph{axiom of completeness} or the \emph{least upper bound property (LUBP)} if every bounded subset has a least upper bound, that is, a supremum.
+  An ordered field is said to satisfy the \emph{Axiom of Completeness} if every bounded subset has a least upper bound, that is, a supremum.
 \end{definition}
+
+% sometimes called the \emph{least upper bound property (LUBP)}
 
 For example, $\Q$ is an ordered field that is not complete, since we checked that the cut corresponding to $\sqrt2$ has no rational supremum. On the other hand the real field $\R$ does turn out to be complete. The results of this discussion are summarized in the following big theorem.
 
 \begin{theorem}
-  The real number system $\R$ is an ordered field satisfying the axiom of completeness. Moreover, $\R$ is the unique such field up to isomorphism.
+  The real number system $\R$ is an ordered field satisfying the Axiom of Completeness. Moreover, $\R$ is the unique such field up to isomorphism.
 \end{theorem}
 
 As soon as one accepts this theorem, it is actually never necessary to speak of cuts again. In the future we can describe a real number in many ways: algebraically, as a limit, as a summation, or of course by its decimal expansion.
 
-Although we are omitting the greater part of the proof of the above theorem, let us verify the axiom of completeness holds in the real number system.
+Although we are omitting the greater part of the proof of the above theorem, let us verify the Axiom of Completeness holds in the real number system.
 
 \begin{proof}[Proof of completeness]
   Suppose that $\mathcal S$ is a bounded set of real numbers (cuts). We claim that the union $U=\bigcup S$ is a cut too. Indeed, since $\mathcal S$ is bounded, there is a cut $B$ such that  $U\subset B$. It follows that $U$ is nontrivial. Next it is easy to check that the union of downward closed sets is again downward closed. Thirdly if $U$ had a greatest element $x$, then $x$ must lie in some cut $A\in S$. But then $x$ would be the greatest element of $A$, a contradiction.
@@ -320,14 +322,14 @@ Although we are omitting the greater part of the proof of the above theorem, let
   Now, since $A\subset U$ for every $A\in S$, we see that $U$ is an upper bound for $S$. Moreover $U$ is the least upper bound for $S$. Indeed, any other upper bound $U'$ satisfies $A\subset U'$ for every $A\in S$, and therefore $U=\bigcup S\subset U'$. In other words, $U\leq U'$, as desired.
 \end{proof}
 
-From this point on, we will never need cuts again, and the real number system $\R$ is simply the unique ordered field extending the rational number system and satisfying the axiom of completeness. From this abstract definition we can prove all the facts we will need about the real number system. We begin with the following.
+From this point on, we will never need cuts again, and the real number system $\R$ is simply the unique ordered field extending the rational number system and satisfying the Axiom of Completeness. From this abstract definition we can prove all the facts we will need about the real number system. We begin with the following.
 
 \begin{theorem}[Archimedian property]
   For any real number $x$, there exists a natural number $n$ such that $x<n$. That is, while there are real numbers between integers, there aren't any real numbers beyond the integers to the right.
 \end{theorem}
 
 \begin{proof}
-  Suppose to the contrary that $x$ is a real number such that for all $n\in\N$ we have $n\leq x$. This says $x$ is an upper bound for $\N$, in particular it would mean $\N$ is bounded. By the axiom of completeness, $\N$ should have a least upper bound, call it $\alpha$.
+  Suppose to the contrary that $x$ is a real number such that for all $n\in\N$ we have $n\leq x$. This says $x$ is an upper bound for $\N$, in particular it would mean $\N$ is bounded. By the Axiom of Completeness, $\N$ should have a least upper bound, call it $\alpha$.
 
   Now, since $\alpha$ is the \emph{least} upper bound, $\alpha-1$ is not an upper bound for $\N$. Hence there exists $n\in\N$ such that $\alpha-1<n$. It follows that $\alpha<n+1$, contradicting that $\alpha$ is an upper bound for all natural numbers.
 \end{proof}
@@ -460,14 +462,14 @@ We now come to the ``surprising'' fact hinted at above.
   The set of real numbers $\R$ is \textbf{not} countable.
 \end{theorem}
 
-In order to prove this theorem, we need the following consequence of the axiom of completeness for the real numbers called the \emph{nested interval property}. This is a fact which we'll also use a few more times throughout the course.
+In order to prove this theorem, we need the following consequence of the Axiom of Completeness for the real numbers called the \emph{nested interval property}. This is a fact which we'll also use a few more times throughout the course.
 
 \begin{theorem}[Nested interval property]
   Suppose that $I_n$ is a sequence of closed and bounded intervals, that is, intervals of the form $[a,b]$. Moreover suppose that the intervals $I_n$ are nested, that is, $I_{n+1}\subset I_n$. Then we have $\bigcap I_n\neq\emptyset$.
 \end{theorem}
 
 \begin{proof}
-  For naming purposes, let $a_n$ be the left endpoint and $b_n$ be the right endpoint of the interval $I_n$. Notice that the set of left endpoints $\set{a_n\mid n\in\N}$ is bounded above, with any of the $b_n$ being such an upper bound. By the axiom of completeness, the set $\set{a_n\mid n\in\N}$ has a least upper bound, call it $\alpha$.
+  For naming purposes, let $a_n$ be the left endpoint and $b_n$ be the right endpoint of the interval $I_n$. Notice that the set of left endpoints $\set{a_n\mid n\in\N}$ is bounded above, with any of the $b_n$ being such an upper bound. By the Axiom of Completeness, the set $\set{a_n\mid n\in\N}$ has a least upper bound, call it $\alpha$.
 
   Then given any $n$, we have $a_n\leq\alpha$, since $\alpha$ is an upper bound for the set $\set{a_n\mid n\in\N}$. On the other hand, we also have $\alpha\leq b_n$, since $\alpha$ is the \emph{least} upper bound for the set $\set{a_n\mid n\in\N}$. It follows that $\alpha$ lies in the interval $I_n=[a_n,b_n]$. Since $n$ was arbitrary, we conclude that $\alpha$ lies in $\bigcap I_n$. This completes the proof.
 \end{proof}
@@ -1298,7 +1300,7 @@ The Bolzano--Weierstra\ss\ theorem has numerous theoretical applications, some o
   Abbott, \S 2.6
 \end{reading}
 
-Recall that the the real number system satisfies the axiom of completeness, which says that every bounded set has a supremum. (We also called this the least upper bound property.) We have said that this axiom should be interpreted as saying that the real number system does not have any gaps. But this leads to the question of what it means for other spaces, besides the real numbers, to be complete? For example it is intuitively clear that $\R^2$ or the sphere $\mathbb S^2$ do not have any gaps. To capture this, we need a more general way to define completeness.
+Recall that the the real number system satisfies the Axiom of Completeness, which says that every bounded set has a supremum. We have said that this axiom should be interpreted as saying that the real number system does not have any gaps. But this leads to the question of what it means for other spaces, besides the real numbers, to be complete? For example it is intuitively clear that $\R^2$ or the sphere $\mathbb S^2$ do not have any gaps. To capture this, we need a more general way to define completeness.
 
 \begin{definition}
   The sequence $a_n$ is \emph{Cauchy} if for all $\epsilon>0$ there exists $N\in\N$ such that for all $m,n\geq N$ we have $|a_n-a_m|<\epsilon$.
@@ -1338,7 +1340,7 @@ The proof that the above sequence is Cauchy is not too different than the proof 
 
 The above theorem says that in the real number system, every sequence that wants to converge (beacuse it is Cauchy) really does converge. This statement is false if you restrict consider the rational number system only. Instead, the statement can be regarded as another way of saying that the real number system is complete. In general, we say that a space is \emph{Cauchy complete} if all of its Cauchy sequences converge. The spaces $\R$, $\R^2$, $\mathbb S^2$ are all Cauchy complete.
 
-It turns out that many of the theorems we have investigated so far can be regarded as statements of completeness. Just now we proved the Cauchy criterion (CC) using the Bolzano--Weierstra\ss\ theorem (BWT). Earlier we proved the Bolzano--Weierstra\ss\ theorem using the NIP. And we proved the NIP using our original axiom of completeness, the least upper bound principal (LUBP). We therefore see that:
+It turns out that many of the theorems we have investigated so far can be regarded as statements of completeness. Just now we proved the Cauchy criterion (CC) using the Bolzano--Weierstra\ss\ theorem (BWT). Earlier we proved the Bolzano--Weierstra\ss\ theorem using the NIP. And we proved the NIP using our original Axiom of Completeness (bounded sets have a least upper bound). We therefore see that:
 \[AOC\implies NIP\implies BWT\implies CC
 \]
 The following result states that in fact all four of these statements are equivalent to one another!
@@ -1999,10 +2001,10 @@ As we have outlined above, any closed and bounded subset of $\R$ is compact. In 
 The equivalence in the last theorem turns out to be something of a coincidence. Indeed when one studies the topology of more general types of spaces, the equivalence can fail. For example, if one studies topology on $\R$ with the usual distance $|x-y|$ replaced by the function $d(x,y)=|x-y|/(1+|x-y|)$, then the entire space $\R$ is closed and bounded, and fails to be compact. In general topology one doesn't use a distance function at all, so ``bounded'' doesn't make sense. In this setting, even the subsequence definiton of compactness fails to be adequate.
 
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
-\begin{exerc}[See Abbott, ex 3.3.5]
-  Decide whether each of the following sets $A$ is compact. If it is not compact, give an example of a sequence in $A$ with no subsequential limit in $A$.
+\begin{activity}
+  \item (See Abbott, ex 3.3.5) Decide whether each of the following sets $A$ is compact. If it is not compact, give an example of a sequence in $A$ with no subsequential limit in $A$.
   \begin{enumerate}
     \item $A=\set{0,1,\ldots,10}$
     \item $A=\Z$
@@ -2010,22 +2012,22 @@ The equivalence in the last theorem turns out to be something of a coincidence. 
     \item $A=\set{q\in\Q\mid0\leq q\leq2}$
     \item $A=\set{x\mid (\exists n\in\N)\,|x-n|\leq.1}$
   \end{enumerate}
-\end{exerc}
+\end{activity}
 
-\begin{exerc}
-  Prove, using the ``subsequential limit'' definition of compactness, that if $A$ and $B$ are both compact then $A\cup B$ is compact.
-\end{exerc}
-
-\begin{exerc}
-  Prove, using the ``subsequential limit'' definition of compactness, that if $A$ is a closed subset of a compact set $B$, then $A$ is compact. Conclude that the boundary of any compact set is compact.
-\end{exerc}
-
-\begin{exerc}
-  \begin{enumerate}
-    \item Suppose that $A$ is a closed subset of $\R$ which is bounded above. Show that $\sup(A)\in A$.
-    \item Suppose that $A$ is an open subset of $\R$ which is bounded above. Show that $\sup(A)\notin A$.
-  \end{enumerate}
-\end{exerc}
+% \begin{exerc}
+%   Prove, using the ``subsequential limit'' definition of compactness, that if $A$ and $B$ are both compact then $A\cup B$ is compact.
+% \end{exerc}
+%
+% \begin{exerc}
+%   Prove, using the ``subsequential limit'' definition of compactness, that if $A$ is a closed subset of a compact set $B$, then $A$ is compact. Conclude that the boundary of any compact set is compact.
+% \end{exerc}
+%
+% \begin{exerc}
+%   \begin{enumerate}
+%     \item Suppose that $A$ is a closed subset of $\R$ which is bounded above. Show that $\sup(A)\in A$.
+%     \item Suppose that $A$ is an open subset of $\R$ which is bounded above. Show that $\sup(A)\notin A$.
+%   \end{enumerate}
+% \end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

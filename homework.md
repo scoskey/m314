@@ -1,3 +1,13 @@
+## Homework 9, due Tuesday, April 14
+
+1. In the following proofs, refer the "subsequential limit" definition of compactness, (not the Heine--Borel characterization).  
+  (a) Show that if $A$ and $B$ are both compact then $A\cup B$ is compact.  
+  (b) Show that if $A$ is closed, $B$ is compact, and $A\subset B$, then $A$ is compact.  
+  (c) Show that if $B$ is compact then $\partial B$ is compact. [Hint: Show a boundary is closed, and then use the previous item.]
+2. (a) Suppose that $A$ is a closed subset of $\mathbb R$ which is bounded above. Show that $\sup(A)\in A$.  
+  (b) Suppose that $A$ is an open subset of $\mathbb R$ which is bounded above. Show that $\sup(A)\notin A$.
+3. ...
+
 ## Homework 8, due Tuesday, March 31
 
 1. Give an example of two convergent series $\sum a\_n$ and $\sum b\_n$ such that $\sum a\_nb\_n$ diverges. (Compare with the previous homework.)
