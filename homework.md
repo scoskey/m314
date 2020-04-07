@@ -6,7 +6,10 @@
 2. (a) Show that for any set $A$, $\partial A$ is closed.  
   (b) Use Heine--Borel and the previous exercise to conclude that if $A$ is compact then $\partial A$ is compact.
 3. Show that if $A$ is compact then $\sup(A)\in A$.  
-4. ...
+4. If $A,B$ are connected subsets of $\mathbb R$, show that $A\cap B$ is connected. Is this true for connected subsets $A,B$ of $\mathbb R^2$?
+5. Let $A$ be a subset of $\mathbb R^n$.  
+  * Show that any open set which meets $\partial A$ also meets $A$.
+  * Show that if $A$ is connected then $A\cup\partial A$ is connected (this set is called the *closure* of $A$).
 
 ## Homework 8, due Tuesday, March 31
 

@@ -2038,7 +2038,7 @@ The equivalence in the last theorem turns out to be something of a coincidence. 
 
 Thinking about sets in the plane, it is easy to visualize the idea that some sets come all in one blob, while others are split up into multiple blobs. But if a set is just a collection of points, how can we make precise the distinction between one and multiple blobs? This task turns out to be somewhat difficult to achieve using only na\"ive intuition.
 
-For open sets a good definition is the natural one: an open set is connected if it cannot be expressed as a union of two (nonempty) disjoint open subsets. Thus $(0,1)\cup(1,2)$ is disconnected, and one can verify that $(0,3)$ is connected. However this definition is problematic for more general types of sets. For example $[0,1]\cup[2,3]$ should be disconnected but it can't be expressed as a union of two disjoint open subsets. At this point one might suggest dropping the condition that the two disjoint subsets be open. But consider that $(0,1)\cup[1,2)$ is actually connected, being equal to $(0,2)$.
+For open sets, the following is a natural and good definition of connected: an open set is connected if it cannot be expressed as a union of two nonempty disjoint open subsets. Thus $(0,1)\cup(1,2)$ is disconnected, and one can verify that $(0,3)$ is connected. However this definition is problematic for more general types of sets. For example $[0,1]\cup[2,3]$ should be disconnected but it can't be expressed as a union of two disjoint open subsets. At this point one might suggest dropping the condition that the two disjoint subsets be open. But consider that $(0,1)\cup[1,2)$ is actually connected, being equal to $(0,2)$.
 
 To begin to resolve this mess, let us return to the example of $[0,1]\cup[2,3]$. Although it cannot be expressed as a union of two disjoint open subsets, its two components are \emph{contained} in disjoint open subsets. That is, $[0,1]\subset(-0.1,1.1)$ and $[2,3]\subset(1.9,3.1)$. The following correct definition is the end result of this line of thinking.
 
@@ -2111,10 +2111,10 @@ As a simple application, this result can be used to show that disks in $\R^2$ ar
 \end{proof}
 
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
-\begin{exerc}
-  Decide whether each of the following sets $A$ is connected. If it is not connected, give an example of disjoint open sets $V,V'$ meeting $A$ such that $S\subset V\cup V'$.
+\begin{activity}
+  \item Decide whether each of the following sets $A$ is connected. If it is not connected, give an example of disjoint open sets $V,V'$ meeting $A$ such that $A\subset V\cup V'$.
   \begin{enumerate}
     \item $\set{x\mid x^2<5}$
     \item $\set{x\mid 2<x^2<5}$
@@ -2122,25 +2122,23 @@ As a simple application, this result can be used to show that disks in $\R^2$ ar
     \item $\set{x\mid x^3+x^2+x=0}$
     \item A countably infinite set $A$
   \end{enumerate}
-\end{exerc}
+  \item How many different kinds of interval are there?
+  \item Explain why $A$ is an interval if and only if whenever $a,b\in A$ and $a<c<b$ we have $c\in A$ too.
+\end{activity}
   
-\begin{exerc}
-  Show that a subset $A\subset\R$ is an interval if and only if whenever $a,b\in A$ and $a<c<b$ we have $c\in A$ too.
-\end{exerc}
-
 %\question Suppose $A$ and $B$ are open intervals. Under what circumstances will $A\cup B$ be connected? Under what circumstances  will $A\cap B$ be connected?
 
-\begin{exerc}
-  If $A,B$ are connected subsets of $\R$, show that $A\cap B$ is connected. Is this true for connected subsets $A,B$ of $\R^2$?
-\end{exerc}
+% \begin{exerc}
+%   If $A,B$ are connected subsets of $\R$, show that $A\cap B$ is connected. Is this true for connected subsets $A,B$ of $\R^2$?
+% \end{exerc}
 
-\begin{exerc}
-  Let $A$ be a subset of $\R^n$.
-  \begin{enumerate}
-    \item Show that any open set which meets $\cl(A)$ also meets $A$. [Recall that $\cl(A)=A\cup\partial A$.]
-    \item Show that if $A$ is connected then $\cl(A)$ is connected.
-  \end{enumerate}
-\end{exerc}
+% \begin{exerc}
+%   Let $A$ be a subset of $\R^n$.
+%   \begin{enumerate}
+%     \item Show that any open set which meets $\cl(A)$ also meets $A$. [Recall that $\cl(A)=A\cup\partial A$.]
+%     \item Show that if $A$ is connected then $\cl(A)$ is connected.
+%   \end{enumerate}
+% \end{exerc}
 
 % Replace with \partial(A)?
 
