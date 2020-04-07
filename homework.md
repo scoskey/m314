@@ -3,7 +3,8 @@
 1. In the following proofs, refer the "subsequential limit" definition of compactness, (not the Heine--Borel characterization).  
   (a) Show that if $A$ and $B$ are both compact then $A\cup B$ is compact.  
   (b) Show that if $A$ is closed, $B$ is compact, and $A\subset B$, then $A$ is compact.  
-2. Show that if $A$ is compact then $\partial A$ is compact. [Hint: Given a sequence of $\partial A$, find a "nearby" sequence of $A$.]
+2. (a) Show that for any set $A$, $\partial A$ is closed.  
+  (b) Use Heine--Borel and the previous exercise to conclude that if $A$ is compact then $\partial A$ is compact.
 3. Show that if $A$ is compact then $\sup(A)\in A$.  
 4. ...
 
