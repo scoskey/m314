@@ -2,9 +2,8 @@
 
 1. Let $f(x)$ be the Dirichlet function defined below. Prove that for every real number $a$, $f$ is discontinuous at $a$.  
   $f(x)=\begin{cases}1&x\in\mathbb Q\\\\0&x\notin\mathbb Q\end{cases}$
-2. Suppose $\delta>0$ has been constructed as a suitable response to a particular $\epsilon$ challenge. Which is correct and why: any larger $\delta$ will also suffice, or; any smaller $\delta$ will also suffice.
-3. Prove part (c) of the funcional limit calculus theorem: If $\lim\_{x\to a}f(x)=L$ and $\lim\_{x\to a}g(x)=M$ then $\lim\_{x\to a}f(x)g(x)=LM$.
-4. ...
+2. Prove part (c) of the funcional limit calculus theorem: If $\lim\_{x\to a}f(x)=L$ and $\lim\_{x\to a}g(x)=M$ then $\lim\_{x\to a}f(x)g(x)=LM$.
+3. ...
 
 ## Homework 9, due Tuesday, April 14
 
