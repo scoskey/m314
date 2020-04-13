@@ -2248,14 +2248,14 @@ What exactly is a continuous function? We often say intuitively that a continuou
 \node[below] at (3,0) {$a$};
 \end{tikzpicture}
 \end{center}
-What makes this function discontinuous is that the value $f(a)$ is nowhere near the values of $f(x)$ for $x$ very near to $a$.
+What makes this function discontinuous is that the value $f(a)$ (the filled dot) is nowhere near the limit of $f(x)$ as $x$ approaches $a$ (the unfilled dot). In order to follow through on this idea, we need to give a formal definition for ``the limit of $f(x)$ as $x$ approaches $a$.''
 
-At this point one should see that the concept of a limit is useful here. In fact, roughly speaking, we will define that $f$ is continuous at $a$ if whenever the values of $x$ approach $a$, the values of $f(x)$ approach $f(a)$:
-\[f(a)=\lim_{x\to a}f(x)
-\]
-Unfortunately, in the past we have only worked with limits as the integer value $n$ approaches $\infty$, never as a continuous variable $x$ approaches $a$. We will now introduce a definition of functional limit that mirrors or definition for sequential limits.
+% Roughly speaking, we will define that $f$ is continuous at $a$ if whenever the values of $x$ approach $a$, the values of $f(x)$ approach $f(a)$:
+% \[f(a)=\lim_{x\to a}f(x)
+% \]
+% In the past we have seen limits with $n\to\infty$, we have to make a new definition for $x\to a$.
 
-In convergence for ordinary limits, as the index $n$ gets larger the values $x_n$ get closer to the limit $L$. Thus the definition began ``for all $\epsilon$ there exists an $N$.'' In convergence for functional limits, as the variable $x$ gets closer to $a$ the values $f(x)$ get closer to $L$. Thus the definition will begin ``for all $\epsilon$ there exists a $\delta$'', where $\delta$ is another small quantity.
+% In convergence for ordinary limits, as the index $n$ gets larger the values $x_n$ get closer to the limit $L$. Thus the definition began ``for all $\epsilon$ there exists an $N$.'' In convergence for functional limits, as the variable $x$ gets closer to $a$ the values $f(x)$ get closer to $L$. Thus the definition will begin ``for all $\epsilon$ there exists a $\delta$'', where $\delta$ is another small quantity.
 
 \begin{definition}
   We say that $\lim_{x\to a}f(x)=L$ if for all $\epsilon>0$ there exists $\delta>0$ such that $0<|x-a|<\delta$ implies $|f(x)-L|<\epsilon$.
@@ -2279,7 +2279,7 @@ Visualizing the definition on the graph of $f$, it means that whenever we draw a
 \end{center}
 
 \begin{example}
-  We can verify by hand that $\lim_{x\to2}5x+3=13$. As scratch work, let $\epsilon$ be given and let us work backwards as follows:
+  We can verify by hand that $\lim_{x\to2}(5x+3)=13$. As scratch work, let $\epsilon$ be given and let us work backwards as follows:
   \begin{align*}
     |5x+3-13|<\epsilon&\iff|5x-10|<\epsilon\\
                       &\iff5|x-2|<\epsilon\\
@@ -2293,10 +2293,10 @@ The linear example above was perhaps a little too simple; the following quadrati
 \begin{example}
   Let us verify by hand that $\lim_{x\to2}x^2=4$. As scratch work, we once again work backwards from the desired conclusion:
   \begin{align*}
-    |x^2-4|<\epsilon&\iff |x-2||x+2|<\epsilon\\
+    |x^2-4|<\epsilon&\iff |x-2|\cdot|x+2|<\epsilon\\
                     &\iff |x-2|<\epsilon/|x+2|
   \end{align*}
-  Now unfurtunately this last quantity is not a constant so it does not tell us directly what number to choose for $\delta$. However for values of $x$ near $2$ we will certainly have $|x+2|<10$. Thus we choose $\delta=\epsilon/10$, promise ourselves to consider values of $x$ within a unit or two of $2$, and write the proof forwards as follows:
+  Now unfurtunately this last quantity is not a constant so it does not tell us directly what number to choose for $\delta$. However for values of $x$ near $2$ we will certainly have $|x+2|<10$. Thus we choose $\delta=\epsilon/10$, promise ourselves to consider values of $x$ near $2$, and write the proof forwards as follows:
   \begin{align*}
     |x-2|<\delta &\implies |x-2|<\epsilon/10\\
                  &\implies |x-2|<\epsilon/|x+2|\\
@@ -2305,7 +2305,7 @@ The linear example above was perhaps a little too simple; the following quadrati
   which concludes this example.
 \end{example}
 
-Between this section and the last, we have two different definitions of functional limits. As you might expect, they are equally good.
+It is also possible to use sequential limits to describe functional limits, as the next result shows.
 
 \begin{theorem}
   The following are equivalent.
@@ -2350,38 +2350,46 @@ We close this section with the analog of the limit calculus for functional limit
 The proof is requested as an exercise.
 
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
-\begin{exerc}
-  Read \S4.1 of the text and write a one-paragraph response. You may use the following questions as a writing prompt. What definition of function does the text give? How do the examples of ``wild'' functions given in the text challenge your intuitive idea of what a function is? What implications does this have on the difficulty of the task of investigating continuity? Did you have any other comments or questions while reading the section?
-\end{exerc}
-
-\begin{exerc}
-  Prove the following using the $\epsilon,\delta$-definition of functional limits.
+\begin{activity}
+  \item Prove the following using the $\epsilon,\delta$-definition of functional limits.
   \begin{enumerate}
     \item $\lim_{x\to4}\sqrt{x}=2$
     \item $\lim_{x\to3}x^2=9$
   \end{enumerate}
-\end{exerc}
+\end{activity}
 
-\begin{exerc}
-  Let $f(x)$ be the Dirichlet function, defined by
-  \[f(x)=\begin{cases}1&x\in\Q\\0&x\notin\Q\end{cases}
-  \]
-  Prove that for every real number $a$, $f$ is discontinuous at $a$.
-\end{exerc}
+% \begin{exerc}
+%   Read \S4.1 of the text and write a one-paragraph response. You may use the following questions as a writing prompt. What definition of function does the text give? How do the examples of ``wild'' functions given in the text challenge your intuitive idea of what a function is? What implications does this have on the difficulty of the task of investigating continuity? Did you have any other comments or questions while reading the section?
+% \end{exerc}
 
-\begin{exerc}[Abbott, ex 4.2.6(a)]
-  Suppose $\delta>0$ has been constructed as a suitable response to a particular $\epsilon$ challenge. Which is correct and why: any larger $\delta$ will also suffice, or; any smaller $\delta$ will also suffice.
-\end{exerc}
+% \begin{exerc}
+%   Prove the following using the $\epsilon,\delta$-definition of functional limits.
+%   \begin{enumerate}
+%     \item $\lim_{x\to4}\sqrt{x}=2$
+%     \item $\lim_{x\to3}x^2=9$
+%   \end{enumerate}
+% \end{exerc}
 
-\begin{exerc}
-  Prove using the $\epsilon,\delta$ definition that if $\lim_{x\to a}f(x)=L$ and $\lim_{x\to a}g(x)=M$ then $\lim_{x\to a}\left[f(x)+g(x)\right]=L+M$.
-\end{exerc}
+% \begin{exerc}
+%   Let $f(x)$ be the Dirichlet function, defined by
+%   \[f(x)=\begin{cases}1&x\in\Q\\0&x\notin\Q\end{cases}
+%   \]
+%   Prove that for every real number $a$, $f$ is discontinuous at $a$.
+% \end{exerc}
 
-\begin{exerc}[Abbott, ex 4.2.11]
-  Prove the squeeze theorem for functional limits: if $f(x)\leq g(x)\leq h(x)$ and $\lim_{x\to a}f(x)=\lim_{x\to a}h(x)=L$ then $\lim_{x\to a}g(x)$ exists and $=L$. You may use either definition of functional limit.
-\end{exerc}
+% \begin{exerc}[Abbott, ex 4.2.6(a)]
+%   Suppose $\delta>0$ has been constructed as a suitable response to a particular $\epsilon$ challenge. Which is correct and why: any larger $\delta$ will also suffice, or; any smaller $\delta$ will also suffice.
+% \end{exerc}
+
+% \begin{exerc}
+%   Prove using the $\epsilon,\delta$ definition that if $\lim_{x\to a}f(x)=L$ and $\lim_{x\to a}g(x)=M$ then $\lim_{x\to a}\left[f(x)+g(x)\right]=L+M$.
+% \end{exerc}
+
+% \begin{exerc}[Abbott, ex 4.2.11]
+%   Prove the squeeze theorem for functional limits: if $f(x)\leq g(x)\leq h(x)$ and $\lim_{x\to a}f(x)=\lim_{x\to a}h(x)=L$ then $\lim_{x\to a}g(x)$ exists and $=L$. You may use either definition of functional limit.
+% \end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
