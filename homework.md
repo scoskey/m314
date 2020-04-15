@@ -3,7 +3,10 @@
 1. Let $f(x)$ be the Dirichlet function defined below. Prove that for every real number $a$, $f$ is discontinuous at $a$.  
   $f(x)=\begin{cases}1&x\in\mathbb Q\\\\0&x\notin\mathbb Q\end{cases}$
 2. Prove part (c) of the funcional limit calculus theorem: If $\lim\_{x\to a}f(x)=L$ and $\lim\_{x\to a}g(x)=M$ then $\lim\_{x\to a}f(x)g(x)=LM$.
-3. ...
+3. Suppose that $f$ is continuous and $f(c)>0$. Show that there exists a neighborhood of $c$ on which $f$ is positive.
+4. (Abbott, ex 4.3.1)  
+  (a) Prove that $f(x)$ is continuous at $a=0$.  
+  (b) Prove that $f(x)$ is continuous at $a\neq0$. [Hint: you will need the algebraic identity $A^3-B^3=(A-B)(A^2+AB+B^2)$.]
 
 ## Homework 9, due Tuesday, April 14
 
@@ -15,8 +18,8 @@
 3. Show that if $A$ is compact then $\sup(A)\in A$.  
 4. If $A,B$ are connected subsets of $\mathbb R$, show that $A\cap B$ is connected. Is this true for connected subsets $A,B$ of $\mathbb R^2$?
 5. Let $A$ be a subset of $\mathbb R^n$.  
-  * Show that any open set which meets $\partial A$ also meets $A$.
-  * Show that if $A$ is connected then $A\cup\partial A$ is connected (this set is called the *closure* of $A$).
+  (a) Show that any open set which meets $\partial A$ also meets $A$.  
+  (b) Show that if $A$ is connected then $A\cup\partial A$ is connected (this set is called the *closure* of $A$).
 
 ## Homework 8, due Tuesday, March 31
 
