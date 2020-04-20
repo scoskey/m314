@@ -1,3 +1,13 @@
+## Homework 11, due Tuesday, April 28
+
+1. Prove *Rolle's thoerem*, which states that if $f$ is a differential function, $a\lt c$, and $f(a)=f(b)$, then there exists $c$ such that $a\lt c\lt b$ and $f'(c)=0$.
+2. Let $f(x)$ be the function:  
+  $f(x)=\begin{cases}x^a&x\geq0\\\\0&x<0\end{cases}$  
+  (a) For which values of $a$ is $f$ continuous at $0$?  
+  (b) For which values of $a$ is $f'(0)$ defined?  
+  (c) For which values of $a$ is $f''(0)$ defined?
+3. ...
+
 ## Homework 10, due Tuesday, April 21
 
 1. Let $f(x)$ be the Dirichlet function defined below. Prove that for every real number $a$, $f$ is discontinuous at $a$.  
@@ -44,23 +54,23 @@
 3. Consider the sequence defined as follows: $a\_n=$ the reciprocal of the least prime factor of $n$. Write out the first 20 terms of $a\_n$. Find two subsequences of $a\_n$ that converge to two different limits.
 4. Find an example of a divergent sequence $a\_n$ which satisfies $\lim(a\_{n+1}-a\_n)=0$.
 5. In this exercise you will show MCT implies BWT. Together with our work from class, we can conclude MCT is yet another equivalent to AOC. To begin, we say that a term $a\_n$ of a sequence is a *peak* if for all $n'>n$ we have $a\_n'\leq a\_n$.
-  * Assume the sequence $a\_n$ has infinitely many peaks. Show that $a\_n$ has a monotone decreasing subsequence.
-  * Assume the sequence $a\_n$ has a last peak. Conclude that $a\_n$ has a monotone increasing subsequence.
-  * Use parts (a) and (b) together with the MCT to prove the BWT.
+  (a) Assume the sequence $a\_n$ has infinitely many peaks. Show that $a\_n$ has a monotone decreasing subsequence.  
+  (b) Assume the sequence $a\_n$ has a last peak. Conclude that $a\_n$ has a monotone increasing subsequence.  
+  (c) Use parts (a) and (b) together with the MCT to prove the BWT.
 
 ## Homework 5, due Tuesday, March 3 at 3pm
 
 1. Show that if $\lim a\_n=a$ and $a\neq0$ and $\lim a\_nb\_n=ab$ then $\lim b\_n=b$.
 2. Give an example of sequences $a\_n$ such that:
-  * $\lim a\_n=\sup a\_n$
-  * $\lim a\_n=\inf a\_n$
-  * $\lim a\_n$ exists and is neither $\sup a\_n$ nor $\inf a\_n$
+  (a) $\lim a\_n=\sup a\_n$
+  (b) $\lim a\_n=\inf a\_n$
+  (c) $\lim a\_n$ exists and is neither $\sup a\_n$ nor $\inf a\_n$
 3. Let $a\_n$ and $b\_n$ be sequences, and let $c\_n$ be the ``shuffled'' sequence $\{a\_1,b\_1,a\_2,b\_2,\ldots\}$. Show that $c\_n$ is convergent if and only if $a\_n$ and $b\_n$ are both convergent and both have the same limit.
 4. Let $p$ be any real number. Prove that $\sum\frac1{n^p}$ converges if and only if $p>1$. (This is called the ``$p$-test.'')
 5. For each sequence, use induction to prove that the sequence is bounded and monotone. Then, find the limit.
-  * The sequence defined by $x\_1=1$ and the recurrence $x\_{n+1}=\frac12x\_n+1$
-  * $\sqrt{2},\sqrt{2+\sqrt{2}},\sqrt{2+\sqrt{2+\sqrt{2}}},\ldots$
-  * $\sqrt{2},\sqrt{2\sqrt{2}},\sqrt{2\sqrt{2\sqrt{2}}},\ldots$  
+  (a) The sequence defined by $x\_1=1$ and the recurrence $x\_{n+1}=\frac12x\_n+1$  
+  (b) $\sqrt{2},\sqrt{2+\sqrt{2}},\sqrt{2+\sqrt{2+\sqrt{2}}},\ldots$  
+  (c) $\sqrt{2},\sqrt{2\sqrt{2}},\sqrt{2\sqrt{2\sqrt{2}}},\ldots$  
   [Note: For the final two you will have to find the recurrence yourself! You may use the fact that $\lim\sqrt{a\_n}=\sqrt{\lim a\_n}$.]
 
 ## Homework 4, due Thursday, February 13 at 3pm
@@ -71,8 +81,8 @@
    $(\exists\epsilon>0)\;(\forall N\in\mathbb N)\;(\forall n\geq N)\;|x_n-L|<\epsilon$.  
    Give an example of a vercongent sequence that is not convergent. What exactly is being described in this definition?
 4. Suppose that $A\subset\mathbb R$ is bounded and that $\alpha=\sup(A)$.  This exercise shows how to prove that there exists a sequence in $A$ which converges to $\alpha$.
-  * Prove that for each $n\in\mathbb N$ there exists $a\_n\in A$ such that $a_n>\alpha-1/n$.
-  * Use the definition of convergence to conclude that $\lim a\_n=\alpha$.
+  (a) Prove that for each $n\in\mathbb N$ there exists $a\_n\in A$ such that $a_n>\alpha-1/n$.  
+  (b) Use the definition of convergence to conclude that $\lim a\_n=\alpha$.
 
 ## Homework 3, due Tuesday, February 4 at 3pm
 

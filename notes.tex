@@ -2624,10 +2624,10 @@ The intermediate value theorem has many practical consequences, just one of whic
 \end{proof}
 
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
-\begin{exerc}
-  Give an example of each of the following, or argue that no such example exists.
+\begin{activity}
+  \item Give an example of each of the following, or argue that no such example exists.
   \begin{enumerate}
     \item A continuous function $f$ and a compact set $K$ such that $f^{-1}(K)$ is not compact.
     \item A continuous function $f$ and a connected set $C$ such that $f^{-1}(C)$ is disconnected.
@@ -2640,23 +2640,23 @@ The intermediate value theorem has many practical consequences, just one of whic
     % \item A continuous function $f$ on the interval $[1,\infty)$ and a Cauchy sequence $x_n\in[1,\infty)$ such that $f(x_n)$ is not a Cauchy sequence.
     % \item A continuous and bounded function $f$ on the interval $(0,1)$ that attains a maximum value on this interval but not a minimum value.
   \end{enumerate}
-\end{exerc}
+\end{activity}
   
 %\question Suppose that $f$ is continuous on $[a,b]$ and that for every $n\in\N$ there exists $x\in[a,b]$ such that $\abs{f(x)}\leq\frac1n$. Show that there exists $x\in[a,b]$ such that $f(x)=0$.
 
-\begin{exerc}[Abbott, ex 4.4.4(a)]
-  Suppose that $f$ is continuous on the interval $[a,b]$ and that $f(x)>0$ for all $x\in[a,b]$.  Show that the reciprocal function $1/f$ is bounded on $[a,b]$.
-\end{exerc}
-
-\begin{exerc}
-  Show that the equation $2^x+3^x=4^x$ has a positive solution, using the intermediate value theorem on an appropriate interval. (You may assume exponential functions are continuous.)
-\end{exerc}
-
-\begin{exerc}
-  A function $f$ is said to be monotone if either it is increasing ($x<x'\Rightarrow f(x)\leq f(x')$) or else it is decreasing ($x<x'\Rightarrow f(x)\geq f(x')$).
-
-  Suppose that $f(x)$ is continuous and one-to-one on the interval $[a,b]$. Show that $f$ is monotone.
-\end{exerc}
+% \begin{exerc}[Abbott, ex 4.4.4(a)]
+%   Suppose that $f$ is continuous on the interval $[a,b]$ and that $f(x)>0$ for all $x\in[a,b]$.  Show that the reciprocal function $1/f$ is bounded on $[a,b]$.
+% \end{exerc}
+%
+% \begin{exerc}
+%   Show that the equation $2^x+3^x=4^x$ has a positive solution, using the intermediate value theorem on an appropriate interval. (You may assume exponential functions are continuous.)
+% \end{exerc}
+%
+% \begin{exerc}
+%   A function $f$ is said to be monotone if either it is increasing ($x<x'\Rightarrow f(x)\leq f(x')$) or else it is decreasing ($x<x'\Rightarrow f(x)\geq f(x')$).
+%
+%   Suppose that $f(x)$ is continuous and one-to-one on the interval $[a,b]$. Show that $f$ is monotone.
+% \end{exerc}
 
 % sphere temperature thing
 
@@ -2766,27 +2766,23 @@ The interior extremum theorem has applications to optimization, because it says 
   To see that $f$ doesn't attain its minimum value at $a$ or $b$, first note that since $f'(a)<0$ we have $\lim_{h\to0}(f(a+h)-f(a))/h<0$. It follows that there exists $h>0$ such that $f(a+h)<f(a)$, that is, $f$ cannot attain its minimum value at $a$. Similarly since $f'(b)>0$ we have $\lim_{h\to0}(f(b+h)-f(b))/h>0$. It follows that there exists $h<0$ such that $f(b+h)<f(b)$, so once eagain $f$ cannot attain its minimum value at $b$ either.
 \end{proof}
 
-% could also use IET to prove Rolle and then MVT, and then (a typical weak form of) the fundamental theorem of calculus! this can be another section.
-
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
-\begin{exerc}
-  Find the derivative of each function directly from the definition.
+\begin{activity}
+  \item Find the derivative of each function directly from the definition.
   \begin{enumerate}
     \item $\displaystyle f(x)=x^3$
+    \item $\displaystyle f(x)=1/x$
     \item $\displaystyle f(x)=\frac{1}{\sqrt{x}}$
   \end{enumerate}
-\end{exerc}
-
-\begin{exerc}
-  Decide, with justification, whether each of the following functions is differentiable.
+  \item Decide, with justification, whether each of the following functions is differentiable.
   \begin{enumerate}
     \item $\displaystyle f(x)=|x|+|x-1|$
     \item $\displaystyle f(x)=x\,|x|$
     \item $\displaystyle f(x)=|\sin(x)|$
   \end{enumerate}
-\end{exerc}
+\end{activity}
   
 % \begin{exerc}[Abbott, ex 5.2.3]
 %   \begin{enumerate}
@@ -2795,19 +2791,19 @@ The interior extremum theorem has applications to optimization, because it says 
 %   \end{enumerate}
 % \end{exerc}
 
-\begin{exerc}
-  Prove \emph{Rolle's thoerem}, which states that if $f$ is a differential function, $a<c$, and $f(a)=f(b)$, then there exists $c$ such that $a<c<b$ and $f'(c)=0$.
-\end{exerc}
+% \begin{exerc}
+%   Prove \emph{Rolle's thoerem}, which states that if $f$ is a differential function, $a<c$, and $f(a)=f(b)$, then there exists $c$ such that $a<c<b$ and $f'(c)=0$.
+% \end{exerc}
 
-\begin{exerc}[Abbott, ex 5.2.5]
-  Let $f(x)$ be the function:
-  \[f(x)=\begin{cases}x^a&x\geq0\\0&x<0\end{cases}\]
-  \begin{enumerate}
-    \item For which values of $a$ is $f$ continuous at $0$?
-    \item For which values of $a$ is $f'(0)$ defined?
-    \item For which values of $a$ is $f''(0)$ defined?
-  \end{enumerate}
-\end{exerc}
+% \begin{exerc}[Abbott, ex 5.2.5]
+%   Let $f(x)$ be the function:
+%   \[f(x)=\begin{cases}x^a&x\geq0\\0&x<0\end{cases}\]
+%   \begin{enumerate}
+%     \item For which values of $a$ is $f$ continuous at $0$?
+%     \item For which values of $a$ is $f'(0)$ defined?
+%     \item For which values of $a$ is $f''(0)$ defined?
+%   \end{enumerate}
+% \end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
