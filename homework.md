@@ -14,7 +14,7 @@
   $f(x)=\begin{cases}1&x\in\mathbb Q\\\\0&x\notin\mathbb Q\end{cases}$
 2. Prove part (c) of the funcional limit calculus theorem: If $\lim\_{x\to a}f(x)=L$ and $\lim\_{x\to a}g(x)=M$ then $\lim\_{x\to a}f(x)g(x)=LM$.
 3. Suppose that $f$ is continuous and $f(c)>0$. Show that there exists a neighborhood of $c$ on which $f$ is positive.
-4. (Abbott, ex 4.3.1)  
+4. (Abbott, ex 4.3.1) Let $f(x)=\sqrt[3]{x}$.  
   (a) Prove that $f(x)$ is continuous at $a=0$.  
   (b) Prove that $f(x)$ is continuous at $a\neq0$. [Hint: you will need the algebraic identity $A^3-B^3=(A-B)(A^2+AB+B^2)$.]
 
