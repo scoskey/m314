@@ -2582,7 +2582,7 @@ Just as continuous functions need not preserve open sets under forward images, n
 
 We have mentioned the extreme value theorem before as an important property of compact sets. At the time we did not have the framework to give a formal proof, but now we do.
 
-\begin{corollary}[Extreme value theorem]
+\begin{corollary}[Extreme Value Theorem]
   \label{cor:evt}
   If $K$ is compact and $f\colon K\to\R$ is continuous, then $f$ achieves a minimum and maximum value on $K$.
 \end{corollary}
@@ -2605,7 +2605,7 @@ Finally we turn to preservation of connected sets. To motivate this, observe int
 
 Once again, this simple preservation property has an important consequence in calculus.
 
-\begin{corollary}[Intermediate value theorem]
+\begin{corollary}[Intermediate Value Theorem]
   If $f$ is continuous on $[a,b]$ and $f(a)<L<f(b)$ then there exists $c$ such that $a<c<b$ and $f(c)=L$.
 \end{corollary}
 
@@ -2693,7 +2693,7 @@ As one often observes in a calculus class, the derivative is a limit of slopes b
   Any function with a corner or pointy cusp is not differentiable at that point. For example $f(x)=|x|$ is not differentiable at $x=0$ because $\lim_{h\to0}|h|/h$ does not exist.
 \end{example}
 
-The primary development of differential calculus now proceeds in two pieces. First, one uses the definition of the derivative to calculate a library of \emph{formulas} for the derivatives of common functions. Second, one uses the definition of the derivative to establish the algebraic \emph{laws} of the derivative operation itself.
+The primary development of differential calculus now proceeds in two pieces. First, one uses the definition of the derivative to calculate a library of \emph{formulas} for the derivatives of common functions. Second, one uses the definition of the derivative to prove the algebraic \emph{laws} of the derivative operation itself.
 
 \begin{theorem}[Derivative calculus]\ 
 
@@ -2734,10 +2734,12 @@ This implies that $\lim_{y\to x}f(y)=f(x)$, which means by definition that $f$ i
 Now we know that every differentiable function is continuous, but not every continuous function is differentiable. It is natural to ask whether $f$ being differentiable implies $f'$ is continuous. It turns out that the answer is ``no''.
 
 \begin{example}
-  Let $f(x)=x^2\sin(1/x)$, and specify additionally that $f(0)=0$. The function is clearly differentiable at any point $x\neq0$, and it is actually differentiable at $x=0$ too. To see this, observe that
-\[f'(0)=\lim_{h\to0}\frac{h^2\sin(1/h)}{h}=\lim_{h\to0}h\sin(1/h)
+  Let $f(x)=x^2\sin(1/x)$ and $f(0)=0$. The function is clearly differentiable at any point $x\neq0$, and it is actually differentiable at $x=0$ too. To see this, observe that
+\[f'(0)=\lim_{h\to0}\frac{h^2\sin(1/h)-0}{h}=\lim_{h\to0}h\sin(1/h)
 \]
-Since $\sin(1/h)$ is bounded and $h\to 0$, it follows that $f'(0)=0$. On the other hand, the derivative is $f'(x)=2x\sin(1/x)-\sin(1/x)$. It is easy to see that the first term $x\sin(1/x)$ is continuous, but the second term $\sin(1/x)$ is not continuous at $x=0$. It follows that $f'(x)$ is not continuous at $x=0$.
+Since $\sin(1/h)$ is bounded and $h\to 0$, it follows that $f'(0)=0$.
+
+Next, the derivative of $f$ is $f'(x)=2x\sin(1/x)-\sin(1/x)$ and $f'(0)=0$. It is easy to see that the first term $x\sin(1/x)$ is continuous, but the second term $\sin(1/x)$ is not continuous at $x=0$. It follows that $f'(x)$ is not continuous at $x=0$.
 \end{example}
 % don't think we still have this homework problem about sin(1/x)
 
@@ -2745,7 +2747,7 @@ In fact there is a whole hierarchy of differentiability properties. We say that 
 
 In the example above, the discontinuous derivative $f'(x)$ did not just have a simple jump discontinuity, but something much uglier. In our final result of the section, we will show that this ugliness can't be avoided. The result states that while derivatives need not be continuous, derivatives still share the \emph{intermediate value property} with continuous functions. That is, the conclusion of the intermediate value theorem is true for derivatives. First we need the following familiar lemma.
 
-\begin{lemma}[Interior extremum theorem]
+\begin{lemma}[Interior Extremum Theorem]
   \label{thm:iet}
   If $f$ is differentiable on the interval $(a,b)$ and $f$ attains a maximum or minimum value at $c\in(a,b)$, then $f'(c)=0$.
 \end{lemma}
@@ -2761,7 +2763,7 @@ The interior extremum theorem has applications to optimization, because it says 
 \end{theorem}
 
 \begin{proof}
-  We may assume without loss of generality that $L=0$. Since $[a,b]$ is compact, the extreme value thorem implies that $f$ attains its minimum value at some point $c\in[a,b]$. We claim that $c$ is not equal to $a$ or $b$. Admitting the claim for the moment, this implies $f$ attains its minimum at a point $c\in(a,b)$. Thus the interior extremum theorem implies that $f'(c)=0$, as desired.
+  We may assume without loss of generality that $L=0$. Since $[a,b]$ is compact, the extreme value thorem implies that $f$ attains its minimum value at some point $c\in[a,b]$. We claim that $c$ is not equal to $a$ or $b$. Admitting the claim for the moment, this implies $f$ attains its minimum at a point $c\in(a,b)$. Thus the Interior Extremum Theorem implies that $f'(c)=0$, as desired.
 
   To see that $f$ doesn't attain its minimum value at $a$ or $b$, first note that since $f'(a)<0$ we have $\lim_{h\to0}(f(a+h)-f(a))/h<0$. It follows that there exists $h>0$ such that $f(a+h)<f(a)$, that is, $f$ cannot attain its minimum value at $a$. Similarly since $f'(b)>0$ we have $\lim_{h\to0}(f(b+h)-f(b))/h>0$. It follows that there exists $h<0$ such that $f(b+h)<f(b)$, so once eagain $f$ cannot attain its minimum value at $b$ either.
 \end{proof}
