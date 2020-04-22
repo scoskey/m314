@@ -2695,23 +2695,25 @@ As one often observes in a calculus class, the derivative is a limit of slopes b
 
 The primary development of differential calculus now proceeds in two pieces. First, one uses the definition of the derivative to calculate a library of \emph{formulas} for the derivatives of common functions. Second, one uses the definition of the derivative to prove the algebraic \emph{laws} of the derivative operation itself.
 
-\begin{theorem}[Derivative calculus]\ 
-
-  Derivative formulas
+\begin{theorem}[Derivative formulas]
   \begin{itemize}
-  \item The derivative of $x^\alpha$ is $\alpha x^{\alpha-1}$
-  \item The derivative of $\ln(x)$ is $1/x$
-  \item The derivative of $e^x$ is $e^x$
-  \item The derivative of $\sin(x)$ is $\cos(x)$
-  \item The derivative of $\cos(x)$ is $-\sin(x)$
+    \item The derivative of $x^\alpha$ is $\alpha x^{\alpha-1}$
+    \item The derivative of $\ln(x)$ is $1/x$
+    \item The derivative of $e^x$ is $e^x$
+    \item The derivative of $\sin(x)$ is $\cos(x)$
+    \item The derivative of $\cos(x)$ is $-\sin(x)$
   \end{itemize}
+\end{theorem}
 
-  Derivative laws
+\begin{theorem}[Derivative calculus]
+  Asusme $f,g$ are differentiable functions with the same domain.
   \begin{itemize}
-  \item summation rule: $(f+g)'=f'+g'$
-  \item product rule: $(fg)'=f'g+fg'$
-  \item chain rule: $(f\circ g)'=(f'\circ g)g'$
-  \item inverse rule: $(f^{-1})'=1/(f'\circ f^{-1})$ if $f$ is invertible
+    \item $(f+g)'=f'+g'$
+    \item $(kf)'=kf'$
+    \item $(fg)'=f'g+fg'$
+    \item $(f/g)'=(f'g-g'f)/g^2$
+    \item chain rule: $(f\circ g)'=(f'\circ g)g'$
+    \item inverse rule: $(f^{-1})'=1/(f'\circ f^{-1})$ if $f$ is invertible
   \end{itemize}
 \end{theorem}
 
@@ -2816,7 +2818,7 @@ The interior extremum theorem has applications to optimization, because it says 
   Abbott, \S 7.2, 7.4
 \end{reading}
 
-Along with the derivative, the integral is one of the highlights of modern mathematics because it helps capture the concept of area. Just as the idea of ``slope of a function'' is intuitively simple but required regorous definition, the idea of ``area under a curve'' is easy to visualize but must be defined carefully. Once again, our knowledge of functions, infemums, and supremums leaves us prepared to define and explore integrals.
+Along with the derivative, the integral is one of the highlights of modern mathematics because it helps capture the concept of area. Just as the idea of ``slope of a function'' is intuitively simple but required rigorous definition, the idea of ``area under a curve'' is easy to visualize but must be defined carefully. Once again, our knowledge of functions, infemums, and supremums leaves us prepared to define and explore integrals.
 
 \begin{definition}
   Let $f$ be a bounded function defined on an interval $[a,b]$. Given a finite sequence $P$ of endpoints $a=x_0<x_1<\cdots<x_n=b$, we let $m_i=\inf f([x_{i-1},x_i])$ and $M_i=\sup f([x_{i-1},x_i])$, and:
@@ -2824,7 +2826,7 @@ Along with the derivative, the integral is one of the highlights of modern mathe
     L(f,P)&=\sum_{i=1}^n m_i(x_i-x_{i-1})\\
     U(f,P)&=\sum_{i=1}^n M_i(x_i-x_{i-1})
   \end{align*}
-  We then define the \emph{lower integral} of $f$ as $L(f)=\sup_P\{L(f,P)\}$ and the \emph{upper integral} of $f$ as $U(f)=\inf_P\{U(f,P)\}$. One can verify that we always have $L(f)\leq U(f)$. If we in fact have that $L(f)=U(f)$, then we say $f$ is \emph{integrable} and write
+  We then define the \emph{lower integral} of $f$ as $L(f)=\sup_P\{L(f,P)\}$ and the \emph{upper integral} of $f$ as $U(f)=\inf_P\{U(f,P)\}$. One can verify that we always have $L(f)\leq U(f)$. If in fact $L(f)=U(f)$, then we say $f$ is \emph{integrable} and write
   \[\int_a^bf\,dx=\text{the common value of }L(f)\text{ and }U(f)
   \]
 \end{definition}
@@ -2846,7 +2848,7 @@ Along with the derivative, the integral is one of the highlights of modern mathe
   Then $f$ is not integrable. In fact using rational and irrational density, for any $P$ we have $L(f,P)=0$ and $U(f,P)=1$.
 \end{example}
 
-As was the case with limits and derivatives, the integral operation obeys a raft of simple laws.
+As was the case with limits and derivatives, the integral operation obeys some useful laws.
 
 \begin{theorem}[Integral calculus]
   Assume $f,g$ are integrable functions on $[a,b]$.
@@ -2883,26 +2885,31 @@ We close this section by establishing the first link between continuity and inte
 \end{proof}
 
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
-\begin{exerc}[See Abbott, ex 7.2.2]
-  Consider the function $f(x)=1/x$ on the interval $[1,4]$. Find a partition $P$ such that $U(f,P)$ and $L(f,P)$ are less than $0.3$ units apart.
-\end{exerc}
-
-\begin{exerc}
-  Calculate $\int_0^bx^3\,dx$. You may have to look up a formula for the sum of the first $n$ cubes.
-\end{exerc}
-
-\begin{exerc}[Abbott, ex 7.3.1]
-  Let $h(x)$ be the function on $[0,1]$ defined by
-  \[h(x)\begin{cases}1&x<1\\2&x=1\end{cases}
+\begin{activity}
+  \item Use the definition of integral to calculate the value of
+  \[\int_0^bx^3\,dx
   \]
-  \begin{enumerate}
-    \item For any $P$, what is the value of $L(f,P)$?
-    \item Can you find a $P$ such that $U(f,P)$ is within $1/10$ of $L(f,P)$?
-    \item Show that $h$ is integrable.
-  \end{enumerate}
-\end{exerc}
+  You will need the sum of cubes formula.
+  \[\sum_1^ni^3=\frac{n^2(n+1)^2}{4}
+  \]
+\end{activity}
+
+% \begin{exerc}[See Abbott, ex 7.2.2]
+%   Consider the function $f(x)=1/x$ on the interval $[1,4]$. Find a partition $P$ such that $U(f,P)$ and $L(f,P)$ are less than $0.3$ units apart.
+% \end{exerc}
+
+% \begin{exerc}[Abbott, ex 7.3.1]
+%   Let $h(x)$ be the function on $[0,1]$ defined by
+%   \[h(x)\begin{cases}1&x<1\\2&x=1\end{cases}
+%   \]
+%   \begin{enumerate}
+%     \item For any $P$, what is the value of $L(f,P)$?
+%     \item Can you find a $P$ such that $U(f,P)$ is within $1/10$ of $L(f,P)$?
+%     \item Show that $h$ is integrable.
+%   \end{enumerate}
+% \end{exerc}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
