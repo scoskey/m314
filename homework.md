@@ -8,7 +8,7 @@
   (c) For which values of $a$ is $f''(0)$ defined?
 3. Consider the function $f(x)=1/x$ on the domain $[1,4]$. Find a partition $P$ such that $U(f,P)$ and $L(f,P)$ are less than $0.2$ units apart.
 4. Let $h(x)$ be the function on $[0,1]$ defined by  
-  $h(x)\begin{cases}1&x<1\\\\2&x=1\end{cases}$  
+  $h(x)=\begin{cases}1&x<1\\\\2&x=1\end{cases}$  
   (a) For any $P$, what is the value of $L(f,P)$?  
   (b) Can you find a $P$ such that $U(f,P)$ is within $1/10$ of $L(f,P)$?  
   (c) Show that $h$ is integrable.
