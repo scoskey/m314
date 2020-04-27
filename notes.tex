@@ -2920,9 +2920,9 @@ We close this section by establishing the first link between continuity and inte
   Abbott, \S 7.5
 \end{reading}
 
-We have introduced derivatives as slopes or rates of change, and integrals as areas or accumulations. How are the two concepts related? Since we have already calculated that $\int_0^b x^2\,dx=b^3/3$ and $\int_0^b x^3\,dx=b^4/4$, it is not difficult to guess that integration is related to antiderivatives. Intuitively, it is also not hard to accept that the rate of change of an accumulation of some quantity should at least be related to the size of the original quantity. This is all confirmed in surprisingly great generality by the fundamental theorem of calculus, which says in brief that differentiation and integration are inverse operations.
+We have introduced derivatives as slopes or rates of change, and integrals as areas or accumulations. How are the two concepts related? Since we have already calculated that $\int_0^b x^2\,dx=b^3/3$ and $\int_0^b x^3\,dx=b^4/4$, it is not difficult to guess that integration is related to antiderivatives. Intuitively, it is also not hard to accept that the rate of change of an accumulation of some quantity should at least be related to the size of the original quantity. This is all confirmed in surprisingly great generality by the Fundamental Theorem of Calculus, which says in brief that derivatives and integrals are inverse operations.
 
-Before stating and proving the fundamental theorem of calculus, we need to visit the mean value theorem, a cornerstone result about derivatives that is closely related to it.
+Before stating and proving the FTC, we need to visit the Mean Value Theorem, a cornerstone result about derivatives that is closely related to the FTC.
 
 \begin{theorem}[Mean Value Theorem]
   Let $f$ be differentiable on $[a,b]$. Then there exists $c\in[a,b]$ such that
@@ -2934,10 +2934,10 @@ Before stating and proving the fundamental theorem of calculus, we need to visit
   We can add a linear term to $f$ to assume without loss of generality that $f(a)=f(b)$. (Note that passing from $f(x)$ to $f(x)+mx+b$ has the effect of adding an $m$ to both sides of the desired equation.) Now we can use the Extreme Value Thoerem together with the Interior Extremum Theorem to conclude that there must exist $c\in[a,b]$ such that $f'(c)=0$, the desired result.
 \end{proof}
 
-We can also write the conclusion of the MVT as
+The MVT says that the ``average rate of change'' of a function over an interval is equal to the instantaneous rate of change at some point in the interval. On the other hand, the conclusion of the MVT can also be written as follows:
 \[f(b)-f(a)=f'(c)(b-a)
 \]
-an equation which foreshadows the fundamental theorem of calculus. As we originally wrote it, the MVT says that the ``average rate of change'' of a function over an interval is equal to the instantaneous rate of change at some point in the interval.
+This version foreshadows the FTC because the left side involves a change in $f$, and the right side involves a derivative times a change in $x$.
 
 The MVT has a number of important applications. For example, it can be used to show that antiderivatives are unique up to an additive constant.
 
@@ -2949,7 +2949,7 @@ The MVT has a number of important applications. For example, it can be used to s
   Let $h=f-g$ and suppose $h$ is not a constant function. Then there exist $a,b$ in the domain of $h$ such that $(h(b)-h(a))/(b-a)\neq0$. It follows from the MVT that there exists $c$ such that $h'(c)\neq0$. Thus $f'(c)\neq g'(c)$, contradicting our hypothesis.
 \end{proof}
 
-We are now ready to dive into the fundamental theorem of calculus. As we said, the FTC says differentiation and integration are inverse operations. This is actually two separate statements: the integral of a derivative is (related to) the original function, and the derivative of an integral is the original function. We begin with the first version, sometimes called the net change theorem.
+We are now ready to dive into the FTC, which we recall says that derivatives and indegrals are inverse operations. This is actually two separate statements: the integral of a derivative is (related to) the original function, and the derivative of an integral is the original function. We begin with the first version, sometimes called the net change theorem.
 
 \begin{theorem}[FTC, net change theorem]
   Let $f$ be differentiable on $[a,b]$ and $f'$ be integrable on $[a,b]$. Then
@@ -2983,10 +2983,10 @@ We now continue with the second part of the FTC. First, given any integrable fun
 \end{theorem}
 
 \begin{proof}
-  Substituting the defintion of $F$ into the difference quotient for $F$, we have:
+  Substituting the definition of $F$ into the difference quotient for $F$, we have:
   \[F'(x)=\frac{1}{h}\int_x^{x+h} f(t)\,dt
   \]
-  By the continuity of $f$, given $\epsilon>0$ we can find $\delta>0$ such that $|t-x|<\delta$ implies $|f(t)-f(x)|<\epsilon$. Letting $h<\delta$, we it follows that
+  By the continuity of $f$, given $\epsilon>0$ we can find $\delta>0$ such that $|t-x|<\delta$ implies $|f(t)-f(x)|<\epsilon$. Letting $h<\delta$, it follows that
   \[h(f(x)-\epsilon)\leq\int_x^{x+h} f(t)\,dt\leq h(f(x)+\epsilon)
   \]
   Dividing all sides by $h$, we have:
@@ -2995,7 +2995,7 @@ We now continue with the second part of the FTC. First, given any integrable fun
   Since $\epsilon$ was arbitrary, we conclude that $F'(x)=f(x)$.
 \end{proof}
 
-Recall that in the differential calculus we had both formulas for specific derivatives as well as laws for the derivative operation, but in the integral calculus we had only the laws. The inverse operations theorem allows us to reverse each derivative formula to obtain an integral formula.
+Recall that when we introduced the derivative calculus we had both formulas for specific derivatives as well as laws for the derivative operation. On the other hand for the integral calculus we have only introduced laws, and still owe the formulas. The accumulation-is-antiderivative theorem implies that every derivative formula can be reversed to give an integral formula, and therefore completes our basic picture of calculus.
 
 \begin{theorem}[Integral calculus formulas]
   For each function $f(x)$, we have $\int_a^bf(t)\,dt=F(b)-F(a)$ where $F$ is the function shown.
@@ -3009,7 +3009,7 @@ Recall that in the differential calculus we had both formulas for specific deriv
 \end{theorem}
 
 \newpage
-\subsection*{Exercises for \S \thesection}
+\subsection*{Activity for \S \thesection}
 
 \begin{activity}
   \item Find the derivative of the function:
