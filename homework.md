@@ -1,6 +1,6 @@
 ## Homework 11, due Tuesday, April 28
 
-1. Prove *Rolle's thoerem*, which states that if $f$ is a differential function, $a\lt c$, and $f(a)=f(b)$, then there exists $c$ such that $a\lt c\lt b$ and $f'(c)=0$.
+1. Prove *Rolle's thoerem*, which states that if $f$ is a differential function, $a\lt b$, and $f(a)=f(b)$, then there exists $c$ such that $a\lt c\lt b$ and $f'(c)=0$.
 2. Let $f(x)$ be the function:  
   $f(x)=\begin{cases}x^a&x\geq0\\\\0&x<0\end{cases}$  
   (a) For which values of $a$ is $f$ continuous at $0$?  
