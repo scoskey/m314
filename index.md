@@ -52,5 +52,5 @@ Take-home exams will be given during the 8th week and the finals week of the cla
 
 ## Disclaimer
 
-This syllabus is subject to change. I may make refinements and updates in the first week of classes. While I don't expect any substantial changes, due to the unpredictable conditions of this semester, please allow for some flexibility. I will give notice before making any changes to the syllabus.
+This syllabus is subject to change. I may make refinements and updates in the first week of classes. While I don't expect any substantial changes, please allow for some flexibility. I will give notice before making any changes to the syllabus.
 
