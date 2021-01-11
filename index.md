@@ -2,7 +2,7 @@
 
 ## Course information
 
-Meeting times: M,W from 1:30&ndash;2:45pm  
+Meeting times: M,W from 3:00&ndash;4:15pm  
 Textbook: Stephen Abbott, *Understanding analysis*, 2nd edition  
 Lecture notes: [Draft notes document](https://github.com/scoskey/m314/raw/master/notes.pdf)  
 Homework assignments: [View homework](homework)  
