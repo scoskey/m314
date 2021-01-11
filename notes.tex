@@ -74,7 +74,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{reading}
-  Abbott, \S 1.1, 1.2, start 8.6
+  Abbott \S 1.1, 1.2, start 8.6
 \end{reading}
 
 % real numbers can be motivated by the intermediate value theorem, which is false in the rational number system
@@ -152,12 +152,12 @@ In the next section, we will prove rigorously that the cut at $\sqrt{2}$ is real
     \item $\set{q\in\Q\mid q^2=2}$
     \item $\set{q\in\Q\mid q^2<2}$
     \item $\set{q\in\Q\mid q<0\text{ or }q^2<2}$
-    \vspace{\fill}
   \end{enumerate}
 \end{activity}
 
+\vspace{\fill}
 \begin{readnext}
-  Abbott, \S 8.6, 1.3
+  Abbott \S 8.6, start \S 1.3
 \end{readnext}
 
 \newpage
@@ -166,7 +166,7 @@ In the next section, we will prove rigorously that the cut at $\sqrt{2}$ is real
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{reading}
-  Abbott, \S 8.6, 1.3
+  Abbott \S 8.6, start \S 1.3
 \end{reading}
 
 In the previous section we defined a cut in the rational number system, and stated that some cuts are ``rational'' while others are ``irrational'' (or ``gaps''). However we have yet to actually prove that any cut is really irrational. According to our motivation, the cut at $\sqrt2$ should be a gap. The proof turns out to be more technical than one might have expected. It will provide us with a not-so-soft example of the kind of arguments we will see later in the class.
@@ -266,7 +266,6 @@ You can find the proof in Lemma~1.3.8 of the text.
   \item Suppose that $A$ and $B$ are subsets of $\R$ and that $A\subset B$.  Which of the following is correct, and why? ``any upper bound for $A$ is also an upper bound for $B$'', or; ``any upper bound of $B$ is also an upper bound for $A$.''
 
   Now additionally suppose that $\sup(A)$ and $\sup(B)$ exist.  Which inequality is right, and why? $\sup(A)\leq\sup(B)$, or; $\sup(B)\leq\sup(A)$.
-  \vspace{\fill}
 \end{activity}
 
 % \begin{exerc}[see also Abbott, ex 8.6.5(a)]
@@ -279,8 +278,9 @@ You can find the proof in Lemma~1.3.8 of the text.
 
 % \question Give a detailed proof from the definition of supremum that the supremum of the interval $(0,1)$ is exactly $1$.
 
+\vspace{\fill}
 \begin{readnext}
-  Abbott, \S 1.3, 1.4
+  Abbott \S 1.3, 1.4
 \end{readnext}
 
 
@@ -375,16 +375,13 @@ To see that this implies we can approximate real numbers by rational numbers as 
 \subsection*{Activity for \S\thesection}
 
 \begin{activity}
-  \item ...
   \item (Abbott, exercise 1.4.5) Prove the statement known as \emph{irrational density}: for every two real numbers $a$ and $b$ with $a<b$, there exists an \emph{irrational} number $r$ satisfying $a<r<b$.
+  \vspace{\fill}
+  \item Prove or give a counterexample: If $A$ and $B$ are sets of real numbers such that $a<b$ for all $a\in A$ and $b\in B$, then $\sup(A)<\inf(B)$.
 \end{activity}
 
 % \begin{exerc}
 %   Give a detailed proof from the definition of supremum that the supremum of the interval $(0,1)$ is exactly $1$.
-% \end{exerc}
-
-% \begin{exerc}
-%   Prove or give a counterexample: If $A$ and $B$ are sets of real numbers such that $a<b$ for all $a\in A$ and $b\in B$, then $\sup(A)<\inf(B)$.
 % \end{exerc}
 %
 % \begin{exerc}
@@ -395,6 +392,10 @@ To see that this implies we can approximate real numbers by rational numbers as 
 %   Consider the sequence defined by $x_1=0$ and $x_{n+1}=\sqrt{2+x_n}$. Prove using induction that for all $n$, $x_n<2$. Prove using induction that for all $n$, $x_n<x_{n+1}$.
 % \end{exerc}
 
+\vspace{\fill}
+\begin{readnext}
+  Abbott, \S 1.5
+\end{readnext}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -402,7 +403,7 @@ To see that this implies we can approximate real numbers by rational numbers as 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{reading}
-  Abbott, \S 1.5, 1.6
+  Abbott, \S 1.5
 \end{reading}
 
 In this section we will continue with consequences of the completeness axiom. In particular we will establish one of the most surprising and historically disruptive consequences: the fact that there are more irrational numbers than there are rational numbers! In order to make this statement precise, we need to introduce the notion of countable and uncountable sets.
@@ -495,7 +496,9 @@ We are now ready to prove that the set of real numbers is uncountable.
 
 \begin{activity}
   \item Let $A$ be the set of integer lattice points in the plane, that is, $A=\set{(x,y):x,y\in\Z}$. Draw a picture of the set $A$. Show that $A$ is countable by explaining how to enumerate all its elements in a list.
+  \vspace\fill
   \item Find a nested family of nonempty bounded intervals with empty intersection.
+  \vspace\fill
   \item Find a nested family of nonempty closed intervals with empty intersection.
 \end{activity}
 
@@ -518,13 +521,18 @@ We are now ready to prove that the set of real numbers is uncountable.
 %   \end{enumerate}
 % \end{exerc}
 
+\vspace{\fill}
+\begin{readnext}
+  Abbott, \S 1.6
+\end{readnext}
+
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{More on countability and uncountability}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{reading}
-  Abbott, \S 1.5, 1.6
+  Abbott, \S 1.6
 \end{reading}
 
 In the previous section we saw that among the infinite sets, some of them are not too big (countable sets) while others are much larger (uncountable sets). Showing that a set is countable requires a direct argument---write down how to enumerate all its elements in a sequence. Showing that a set is uncountable often requires an indirect argument---assume the set is countable and find a contradiction.
@@ -632,6 +640,10 @@ In the following, let $S_{\infty}$ be the set of all \emph{infinite} words made 
 %   Suppose that $A$ is an infinite set. Show that $|\N|\leq|A|$.
 % \end{exerc}
 
+\vspace\fill
+\begin{readnext}
+  Abbott, \S 2.1
+\end{readnext}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
