@@ -11,7 +11,7 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
-## Week 1, due Thursday, January 21 at 12pm
+## Week 1, due Thursday, January 21 (end of day)
 
 1. (Abbott, ex 1.2.1)  
   * Study the proof that there is no rational number $q$ such that $q^2=2$. Modify this proof to show that there is no rational number $q$ such that $q^2=3$.
