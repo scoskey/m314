@@ -7,7 +7,7 @@ Textbook: Stephen Abbott, *Understanding analysis*, 2nd edition
 Lecture notes: [Draft notes document](https://github.com/scoskey/m314/raw/master/notes.pdf)  
 Homework assignments: [View homework](homework)  
 Contact: `scoskey@boisestate.edu`  
-Office hours: TBA
+Office hours: Tuesday at 1:30 and by appointment
 
 ## Course description
 
