@@ -11,6 +11,19 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 5, due Thursday, February 18
+
+1. (Abbot, 2.3.4) Suppose that $\lim a\_n=0$. Find, with justification, each of the following limits.  
+  * $\lim \frac{1+2a\_n}{1+3a\_n-4a\_n^2}$
+  * $\lim \frac{(a\_n+2)^2-4}{a\_n}$
+  * $\lim \frac{\frac{2}{a\_n}+3}{\frac{1}{a\_n}+5}$
+2. Show that if $\lim a\_n=a$ and $a\neq0$ and $\lim a\_nb\_n=ab$ then $\lim b\_n=b$.
+3. (Abbot, 2.3.6) Let $a\_n=n-\sqrt{n^2+2n}$. Find the limit of $a\_n$.
+4. Let $p$ be any real number. Prove that $\sum\frac1{n^p}$ converges if and only if $p>1$. (This is called the ``$p$-test.'')
+5. Let $x\_n$ be the sequence indicated below. Write down a recurrence for the sequence $x\_n$ (that is, a formula for $x\_{n+1}$ in terms of $x\_n$). Use induction to prove that the sequence is both bounded and monotone. Prove that the sequence converges. Finally, find the limit.  
+  $x\_1=\sqrt{2},x\_2=\sqrt{2+\sqrt{2}},x\_3=\sqrt{2+\sqrt{2+\sqrt{2}}}$, $\ldots$  
+
+
 ## Week 4, due Tuesday, February 9
 
 1. Use the definition of limit to prove $\lim\frac{3n-1}{2n+5}=\frac32$.
@@ -19,7 +32,7 @@ header-includes: |
 4. (Abbott, ex 2.2.1) Suppose we swap the first two quantifiers in the definition of convergence, and write $x\_n$ *verconges* to $L$ if:  
    $(\exists\epsilon>0)\;(\forall N\in\mathbb N)\;(\forall n\geq N)\;|x_n-L|<\epsilon$.  
    Give an example of a vercongent sequence that is not convergent. What exactly is being described in this definition?
-5. Suppose that $A\subset\mathbb R$ is bounded and that $\alpha=\sup(A)$.  This exercise shows how to prove that there exists a sequence in $A$ which converges to $\alpha$.
+5. Suppose that $A\subset\mathbb R$ is bounded and that $\alpha=\sup(A)$.  This exercise shows how to prove that there exists a sequence in $A$ which converges to $\alpha$.  
   (a) Prove that for each $n\in\mathbb N$ there exists $a\_n\in A$ such that $a_n>\alpha-1/n$.  
   (b) Use the definition of convergence to conclude that $\lim a\_n=\alpha$.
 
