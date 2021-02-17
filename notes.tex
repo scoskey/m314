@@ -1246,7 +1246,7 @@ We conclude this section with a key theorem about subsequences. Recall that we s
 \begin{proof}
   Since $a_n$ is bounded we may assume it is a subset of some large interval $[-M,M]$. We go in search of the limit by iteratively subdividing the interval. To begin, at least one of $[-M,0]$ or $[0,M]$ must contain infinitely many terms of the sequence. Whichever of these intervals it is, call it $I_1$, and let $a_{n_1}$ be a term of the sequence lying in $I_1$.
 
-  Next, one of the two halves of $I_1$ must contain infinitely terms of the sequence $a_n$, call it $I_2$, and let $a_{n_2}$ be a term of the sequence lying in $I_2$. (Let us also ensure that $n_1<n_2$.)
+  Next, one of the two halves of $I_1$ must contain infinitely many terms of the sequence $a_n$, call it $I_2$, and let $a_{n_2}$ be a term of the sequence lying in $I_2$. (Let us also ensure that $n_1<n_2$.)
 
   Continuing in this manner, we find intervals $I_k\subset I_{k-1}$ with length $M/2^{k-1}$, and terms of the sequence $a_{n_k}\in I_k$. By the NIP there exists a real number $L\in\bigcap I_k$. We claim $a_{n_k}$ is convergent and has limit $L$.
 
@@ -1268,13 +1268,14 @@ The Bolzano--Weierstra\ss\ theorem has numerous theoretical applications, some o
 
 \begin{activity}
   \item (Abbott, ex 2.5.3) Give an example of each of the following, or prove that no such example exists.
-  \begin{enumerate}
+  \begin{enumerate}\itemsep\fill
     \item A sequence that does not have $0$ or $1$ as a term, but has a subsequence which converges to $0$ and a susequence which converges to $1$
     \item An unbounded sequence with a convergent subsequence
     \item An unbounded monotone sequence with a convergent subsequence
     \item A sequence that has subsequences which converge to each of the following: $1,\frac12,\frac13,\frac14,\ldots$
     \item An unbounded sequence with a convergent subsequence
     \item A sequence that has a subsequence that is bounded, but no subsequence that converges
+    \vspace\fill
   \end{enumerate}
 \end{activity}
 
@@ -1294,6 +1295,11 @@ The Bolzano--Weierstra\ss\ theorem has numerous theoretical applications, some o
 % \begin{exerc}
 %   Suppose that $a_n$ has the property that every subsequence $a_{n_k}$ has a \emph{further} subsequence $a_{n_{k_\ell}}$ which converges to $L$.  Show that $a_n$ converges to $L$.  (Hint: try contradiction!)
 % \end{exerc}
+
+\begin{readnext}
+  Abbott, \S 2.6
+\end{readnext}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

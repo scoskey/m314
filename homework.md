@@ -11,6 +11,10 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Weeks 6-7, due Tuesday, March 2
+
+1. TBA
+
 ## Week 5, due Thursday, February 18
 
 1. (Abbot, 2.3.4) Suppose that $\lim a\_n=0$. Find, with justification, each of the following limits.  
