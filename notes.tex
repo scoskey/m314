@@ -1525,6 +1525,7 @@ Although the comparison test is very simple, it may be leveraged to yield severa
 
 % prove the limit comparison test?
 
+
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conditional convergence}
@@ -1589,7 +1590,7 @@ All of the tests in the previous section can now be regarded as tests for absolu
 \end{proof}
 
 \begin{example}
-  The series $\sum(-1)^n\frac{n^2}{n^3+9}$ is conditionally convergent. To see that it is not absolutely convergent one can compare $\sum\frac{n^2}{n^3+9}$ against a variant of the series $\sum 1/n$. To see that it is convergent, we apply the alternating series test. The only tricky thing to check is that $n^2/(n^3+9)$ is (eventually) decreasing. For this one can simply check that the derivative of $x^2/(x^3+9)$ is (eventually) negative.
+  The series $\sum(-1)^n\frac{n^2}{n^3+9}$ is conditionally convergent. To see that it is not absolutely convergent one can compare $\sum\frac{n^2}{n^3+9}$ against the series $\sum 1/2n$. To see that it is convergent, we apply the alternating series test. The only tricky thing to check is that $n^2/(n^3+9)$ is (eventually) decreasing. For this one can simply check that the derivative of $x^2/(x^3+9)$ is (eventually) negative.
 \end{example}
 
 We close our discussion of series by answering our initial question about commutativity in infinite summations. Recall that we calculated two different values for series with terms $1,-1/2,+1/3,-1/4,\ldots$. As we shall now see, this phenomenon occurs precisely when a series is conditionally convergent.
@@ -1620,11 +1621,12 @@ We close our discussion of series by answering our initial question about commut
 
 \begin{exerc}
   Decide whether the given series converge absolutely, converge conditionally, or diverge.
-  \begin{enumerate}
-  \item $\displaystyle\sum\frac{(-2)^n}{3^n}$
-  \item $\displaystyle\sum\frac{(-3)^n}{2^n}$
-  \item $\displaystyle\sum\frac{(-1)^n\ln n}{n}$
-  \item $\displaystyle\sum\frac{(-1)^n}{\sqrt[3]{n^2+7}}$
+  \begin{enumerate}\itemsep\fill
+    \item $\displaystyle\sum\frac{(-2)^n}{3^n}$
+    \item $\displaystyle\sum\frac{(-3)^n}{2^n}$
+    \item $\displaystyle\sum\frac{(-1)^n\ln n}{n}$
+    \item $\displaystyle\sum\frac{(-1)^n}{\sqrt[3]{n^2+7}}$
+    \vspace\fill
   \end{enumerate}
 \end{exerc}
 
@@ -1637,6 +1639,11 @@ We close our discussion of series by answering our initial question about commut
 % \end{exerc}
 
 % Show that if a series is CC then its positive and negative terms are Div
+
+\begin{readnext}
+  Abbott, \S 3.1
+\end{readnext}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
