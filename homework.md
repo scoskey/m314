@@ -11,6 +11,13 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 9, due Tuesday, March 16
+
+1. Give an example of two convergent series $\sum a\_n$ and $\sum b\_n$ such that $\sum a\_nb\_n$ diverges. (Compare with the previous homework.)
+2. Suppose that $\sum a\_n$ converges absolutely and that the sequence $b\_n$ is bounded. Prove that $\sum a\_nb\_n$ converges absolutely.
+3. Suppose that $\sum a\_n$ converges conditionally. Show that the series consisting of just the positive terms is divergent.
+5. Please complete all activity exercises for Section 14.
+
 ## Weeks 6-7, due Tuesday, March 2
 
 1. Consider the sequence defined as follows: $a\_n=$ the reciprocal of the least prime factor of $n$. Write out the first 20 terms of $a\_n$. Find two subsequences of $a\_n$ that converge to two different limits.
