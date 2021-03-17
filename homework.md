@@ -11,6 +11,17 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 10, due Tuesday, March 23
+
+1. Give an example of a sequence of open sets $A\_n$ such that $\bigcap A\_n$ is *not* open. Give an example of a sequence of closed sets $B\_n$ such that $\bigcup B\_n$ is *not* closed.
+2. Show that $A$ is clopen (both open and closed) if and only if $\partial A=\emptyset$.
+3. Show that if $A$ is compact then $\sup(A)$ exists and $\sup(A)\in A$.
+4. In the following proofs, refer the "subsequential limit" definition of compactness, (not the Heine--Borel characterization).  
+  (a) Show that if $A$ and $B$ are both compact then $A\cup B$ is compact.  
+  (b) Show that if $A$ is closed, $B$ is compact, and $A\subset B$, then $A$ is compact.  
+5. (a) Show that for any set $A$, $\partial A$ is closed.  
+  (b) Use Heine--Borel and the previous exercise to conclude that if $A$ is compact then $\partial A$ is compact.
+
 ## Week 9, due Tuesday, March 16
 
 1. Give an example of two convergent series $\sum a\_n$ and $\sum b\_n$ such that $\sum a\_nb\_n$ diverges. (Compare with the previous homework.)
