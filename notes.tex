@@ -2205,7 +2205,7 @@ As a simple application, this result can be used to show that disks in $\R^2$ ar
   Abbott, \S 8.2
 \end{reading}
 
-So far we have studied the topology of the real line $\R$ and to some extent the Euclidean spaces $\R^n$. Almost everything we have said about these spaces applies in a vastly more general context
+So far we have studied the topology of the real line $\R$ and to some extent the Euclidean spaces $\R^n$. Almost everything we have said about these spaces applies in a vastly more general context.
 
 \begin{definition}
   A \emph{metric space} consists of a set of points $X$ together with a distance function $d\colon X\times X\to\R$ satisfying the following properties for all $x,y,z\in X$:
@@ -2280,6 +2280,29 @@ Since $t$ was arbitrary, we have $\sup_{t\in[0,1]}|f_n(t)-f(t)|\leq\epsilon$, wh
 \end{proof}
 
 When $f_n\to f$ in the uniform metric, we say that the sequence $f_n$ \emph{converges uniformly} to $f$. Our text addresses the missing component in the above proof by showing that whenever a sequence of continuous functions converges uniformly to a limit, the limit must be continuous.
+
+\newpage
+\subsection*{Activity for \S \thesection}
+
+\begin{activity}
+  \item For each of the distance functions below, verify that it is a metric on $\R^2$. Then plot the set of points in the plane that are exactly one unit away from the origin.
+  \begin{enumerate}
+    \item $\displaystyle d(\mathbf{x},\mathbf{y})=\max\set{|x_1-y_1|,|x_2-y_2|}$
+    \vspace\fill
+    \item $\displaystyle d(\mathbf{x},\mathbf{y})=|x_1-y_1|+|x_2-y_2|$
+    \vspace\fill
+    \item $\displaystyle d(\mathbf{x},\mathbf{y})=\begin{cases}1&x\neq y\\0&x=y\end{cases}$
+    \vspace\fill
+  \end{enumerate}
+  \item Give an informal explanation why the following is a metric on $C[0,1]$. What does it mean for a function $f$ to be in $N_\epsilon(0)$?
+  \[d(f,g)=\int_0^1|f-g|
+  \]
+  \vspace\fill
+\end{activity}
+
+\begin{readnext}
+  Abbott, \S 4.2
+\end{readnext}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
