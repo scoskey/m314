@@ -2271,15 +2271,15 @@ The space $\R$ is complete by the Cauchy criterion itself, and the spaces $\R^n$
 \begin{proof}
   Let $f_n$ be a sequence of functions which is Cauchy in the metric of $C[0,1]$. This means that for all $\epsilon$ there exists $N$ such that $n>N$ implies $\sup_{t\in[0,1]}|f_n(t)-f_m(t)|<\epsilon$. We seek to find a function $f$ which is the limit of the sequence. To define the function $f$, first note that since $f_n$ is Cauchy, it follows that for each $t\in[0,1]$ the sequence $f_n(t)$ is a Cauchy sequence of real numbers. Now by the Cauchy criterion, for each $t$ the sequence $f_n(t)$ has a limit. Thus we can define a function $f(t)=\lim f_n(t)$.
 
-  While it may seem like we are done, we actually have to verify that $f$ really lies in $C[0,1]$, in other words, that $f$ is a continuous function. We also have to verify that $f_n$ converges to $f$ in the metric of $C[0,1]$. The proof that $f$ is continuous will be postponed until we have studied continuity more formally.
+  While it may seem like we are done, we actually have to verify two things. First we have to check that $f$ really lies in $C[0,1]$, in other words, that $f$ is a continuous function. We will leave out this check for now, and revisit it when we have introduced continuous functions more formally. Second we have to check that $f_n\to f$ in the uniform metric (at the moment we only know $f_n\to f$ pointwise).
 
-  To see that $f_n$ converges to $f$ in the uniform metric, let $\epsilon$ be given and choose $N$ large enough such that $m,n>N$ implies $\sup_{t\in[0,1]}|f_m(t)-f_n(t)|<\epsilon/2$. Fixing $n>N$ and $t\in[0,1]$, find $m>N$ large enough that $|f_m(t)-f(t)|<\epsilon/2$. Now we have
+  To see that $f_n\to f$ in the uniform metric, let $\epsilon>0$ be given and choose $N$ large enough such that $m,n>N$ implies $\sup_{t\in[0,1]}|f_m(t)-f_n(t)|<\epsilon/2$. Fixing $n>N$ and $t\in[0,1]$, find $m>N$ large enough that $|f_m(t)-f(t)|<\epsilon/2$. Now we have
 \[|f_n(t)-f(t)|\leq|f_n(t)-f_m(t)|+|f_m(t)-f(t)|<\epsilon/2+\epsilon/2=\epsilon\;.
 \]
 Since $t$ was arbitrary, we have $\sup_{t\in[0,1]}|f_n(t)-f(t)|\leq\epsilon$, which shows that $f_n\to f$ in the uniform metric.
 \end{proof}
 
-When $f_n\to f$ in the uniform metric, we say that the sequence $f_n$ \emph{converges uniformly} to $f$. Our text addresses the missing component in the above proof by showing that whenever a sequence of continuous functions converges uniformly to a limit, the limit must be continuous.
+When $f_n\to f$ in the uniform metric, we say that the sequence $f_n$ \emph{converges uniformly} to $f$. In the future we will address the missing component in the above proof by showing that whenever a sequence of continuous functions converges uniformly to a limit, the limit must be continuous.
 
 \newpage
 \subsection*{Activity for \S \thesection}
