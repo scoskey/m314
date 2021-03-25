@@ -11,6 +11,15 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 11, due Tuesday, March 30
+
+1. If $A,B$ are connected subsets of $\mathbb R$, show that $A\cap B$ is connected. Is this true for connected subsets $A,B$ of $\mathbb R^2$?
+2. Let $A$ be a subset of $\mathbb R^n$.  
+  (a) Show that any open set which meets $\partial A$ also meets $A$.  
+  (b) Show that if $A$ is connected then $A\cup\partial A$ is connected (this set is called the *closure* of $A$).
+3. Let $X$ be a metric space with distance function $d$. Show that for any $\epsilon>0$ the neighborhood $V_\epsilon(x)$ is open.
+4. Let $X$ be a metric space with distance function $d$. We defined that a set $A$ is closed if $\partial A\subset A$. The text defines that $A$ is closed if every limit of every sequence of $A$ is contained in $A$. Show that the two definitions coincide.
+
 ## Week 10, due Tuesday, March 23
 
 1. Give an example of a sequence of open sets $A\_n$ such that $\bigcap A\_n$ is *not* open. Give an example of a sequence of closed sets $B\_n$ such that $\bigcup B\_n$ is *not* closed.
