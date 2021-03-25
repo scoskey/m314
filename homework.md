@@ -18,7 +18,7 @@ header-includes: |
   (a) Show that any open set which meets $\partial A$ also meets $A$.  
   (b) Show that if $A$ is connected then $A\cup\partial A$ is connected (this set is called the *closure* of $A$).
 3. Let $X$ be a metric space with distance function $d$. Show that for any $\epsilon>0$ the neighborhood $N_\epsilon(x)$ is open.
-4. Let $X$ be a metric space with distance function $d$. We defined that a set $A$ is closed if $\partial A\subset A$. The text defines that $A$ is closed if every limit of every sequence of $A$ is contained in $A$. Show that the two definitions coincide.
+4. Let $X$ be a metric space with distance function $d$. We defined that a set $A$ is closed if $\partial A\subset A$. The text defines that $A$ is closed if every sequence in $A$ with a limit has its limit in $A$. Show that the two definitions agree.
 
 ## Week 10, due Tuesday, March 23
 
