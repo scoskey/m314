@@ -2319,9 +2319,9 @@ When $f_n\to f$ in the uniform metric, we say that the sequence $f_n$ \emph{conv
   Abbott, \S 4.2
 \end{reading}
 
-So far in this course we have investigated real numbers and sets of real numbers. In this part we will study functions because they are fundamental to applications such as modeling. Many of the most important functions turn out to be continuous. For example if you go for a jog, the distance you have traveled varies continuously over time. Moreover many common expressions such as $x^2$, $\ln(x)$, or $3\sin(x)-2e^x$ define continuous functions. However it is important to note that not all natural functions are continuous. For example the charge for a phone call does not vary continuously over time because it jumps at each minute.
+So far in this course we have investigated real numbers and sets of real numbers. In this part we will study functions because they are fundamental to applications such as modeling. Many of the most important functions turn out to be continuous. For example if you go for a jog, the distance you travel varies continuously over time. Moreover many common expressions such as $x^2$, $\ln(x)$, or $3\sin(x)-2e^x$ define continuous functions. However it is important to note that not all natural functions are continuous. For example the charge for a phone call does not vary continuously over time because it jumps at each minute.
 
-What exactly is a continuous function? We often say intuitively that a continuous function has no breaks in its graph. But what does this mean in terms of formal definitions? A simple example of a discontinuous function is one with a jump:
+What exactly is a continuous function? We often say intuitively that a continuous function has no breaks in its graph. But how can we make ``no breaks'' more formal? A simple example of a discontinuous function is one with a jump:
 \begin{center}
 \begin{tikzpicture}[domain=0:4]
 \draw (-0.2,0) -- (4.2,0);
@@ -2441,10 +2441,13 @@ The proof is requested as an exercise.
 \begin{activity}
   \item Prove the following using the $\epsilon,\delta$-definition of functional limits.
   \begin{enumerate}
-    \item $\lim_{x\to4}\sqrt{x}=2$
     \item $\lim_{x\to3}x^2=9$
+    \vspace\fill
+    \item $\lim_{x\to4}\sqrt{x}=2$
+    \vspace\fill
   \end{enumerate}
   \item (Abbott, ex 4.2.6(a)) Suppose $\delta>0$ has been constructed as a suitable response to a particular $\epsilon$ challenge. Which is correct and why: any larger $\delta$ will also suffice, or; any smaller $\delta$ will also suffice.
+  \vspace\fill
 \end{activity}
 
 % \begin{exerc}
@@ -2477,6 +2480,11 @@ The proof is requested as an exercise.
 % \begin{exerc}[Abbott, ex 4.2.11]
 %   Prove the squeeze theorem for functional limits: if $f(x)\leq g(x)\leq h(x)$ and $\lim_{x\to a}f(x)=\lim_{x\to a}h(x)=L$ then $\lim_{x\to a}g(x)$ exists and $=L$. You may use either definition of functional limit.
 % \end{exerc}
+
+\begin{readnext}
+  Abbott, \S 4.3
+\end{readnext}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
