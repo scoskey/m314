@@ -2573,7 +2573,7 @@ Notice that if $f$ is a continuous function and $V$ is an open set, it is not ne
 \end{theorem}
 
 \begin{proof}
-  First suppose $f$ is continuous, and let $V$ be open and $a\in f^{-1}(V)$. Since $V$ is open, $f(a)$ has a neighborhood $N_\epsilon(f(a))\subset V$. Since $f$ is continuous at $a$ there exists $\delta$ such that $|x-a|<\delta$ implies $|f(x)-f(a)|<\epsilon$. This is equivalent to the set containment $N_\delta(a)\subset f^{-1}(N_\epsilon(f(a)))$. It follows that $N_\delta(a)\subset f^{-1}(V)$, so $f^{-1}(V)$ is open.
+  First suppose $f$ is continuous, and let $V$ be open and $a\in f^{-1}(V)$. Since $V$ is open, $f(a)$ has a neighborhood $N_\epsilon(f(a))\subset V$. Since $f$ is continuous at $a$ there exists $\delta$ such that $|x-a|<\delta$ implies $|f(x)-f(a)|<\epsilon$. This is equivalent to the set containment $N_\delta(a)\subset N_\epsilon(f(a))$. It follows that $N_\delta(a)\subset f^{-1}(V)$, so $f^{-1}(V)$ is open.
   
   Conversely, suppose $V$ open implies $f^{-1}(V)$ is open. Given $a$ and $\epsilon$ we apply this to the open set $N_\epsilon(f(a))$ to conclude $f^{-1}(N_\epsilon(a))$ is open. This implies there exists $\delta$ such that $N_\delta(a)\subset N_\epsilon(f(a))$. This means precisely that $|x-a|<\delta$ implies $|f(x)-f(a)|<\epsilon$, that is, $f$ is continuous at $a$.
 \end{proof}
@@ -2586,15 +2586,27 @@ We remark that this characterization is true in the world of metric spaces too: 
 \subsection*{Activity for \S \thesection}
 
 \begin{activity}
-  \item Write an expression for a function $f$ with the given property.
+  % \item Write an expression for a function $f$ with the given property.
+  % \begin{enumerate}
+  %   \item $f$ is defined and continuous everywhere except $x=1$
+  %   \item $f$ is defined and continuous everywhere except $x=1,2$
+  %   \item $f$ is defined and continuous everywhere except the integers
+  %   \item $f$ is defined and continuous everywhere except $(-1,1)$
+  % \end{enumerate}
+  \item Let $f(x)=\frac{3}{1+x^2}$.
   \begin{enumerate}
-    \item $f$ is defined and continuous everywhere except $x=1$
-    \item $f$ is defined and continuous everywhere except $x=1,2$
-    \item $f$ is defined and continuous everywhere except the integers
-    \item $f$ is defined and continuous everywhere except $(-1,1)$
+    \item Let $V=(1,2)$ and find $f^{-1}(V)$ (a graph may help). Is it open?
+    \vspace\fill
+    \item Let $W=(-1,1)$ and find $f^{-1}(V)$. Is it open?
+    \vspace\fill
+    \item Let $V=(1,2)$ and find $f(V)$. Is it open?
+    \vspace\fill
+    \item Let $W=(-1,1)$ and find $f(W)$. Is it open?
+    \vspace\fill
   \end{enumerate}
-  \item Give an example of a discontinuous function $f$ such that $|f|$ is continuous.
+  % \item Give an example of a discontinuous function $f$ such that $|f|$ is continuous.
   \item (Abbott, ex 4.3.9) Let $f$ be a continuous function and let $Z=\set{x\mid f(x)=0}$ (the zeroes or roots of the function). Prove that $Z$ is closed.
+  \vspace\fill
 \end{activity}
   
 % \begin{exerc}
@@ -2602,10 +2614,6 @@ We remark that this characterization is true in the world of metric spaces too: 
 %     \item Give an example of a discontinuous function $f$ such that $|f|$ is continuous.
 %     \item Give an example of a pair of discontinuous functions $f$ and $g$ such that $f+g$ is continuous.
 %   \end{enumerate}
-% \end{exerc}
-  
-% \begin{exerc}[Abbott, ex 4.3.9]
-%   Let $f$ be a continuous function and let $Z=\set{x\mid f(x)=0}$ (the zeroes or roots of the function). Prove that $Z$ is closed.
 % \end{exerc}
 
 % \begin{exerc}
@@ -2619,6 +2627,11 @@ We remark that this characterization is true in the world of metric spaces too: 
 %     \item Prove that $f(x)$ is continuous at $a\neq0$. [Hint: you will need the algebraic identity $A^3-B^3=(A-B)(A^2+AB+B^2)$.]
 %   \end{enumerate}
 % \end{exerc}
+
+\begin{readnext}
+  Abbott, \S 4.4, 4.5
+\end{readnext}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
