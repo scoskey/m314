@@ -2688,11 +2688,11 @@ Finally we turn to preservation of connected sets. To motivate this, observe int
 Once again, this simple preservation property has an important consequence in calculus.
 
 \begin{corollary}[Intermediate Value Theorem]
-  If $f$ is continuous on $[a,b]$ and $f(a)<L<f(b)$ then there exists $c$ such that $a<c<b$ and $f(c)=L$.
+  If $A$ is connected and $f\colon A\to\R$ is continuous, then $f(a)<L<f(b)$ implies there exists $c\in A$ such that $f(c)=L$.
 \end{corollary}
 
 \begin{proof}
-  Since $[a,b]$ is connected, the previous theorem gives that $f([a,b])$ is connected. As we have shown that connected subsets of $\R$ are intervals, we have that $f([a,b])$ is an interval. Recall our characterization that $I$ is an interval iff $x,y\in I$ and $x<z<y$ implies $z\in I$. We currently have $f(a),f(b)\in f([a,b])$ and $f(a)<L<f(b)$. Thus $L\in f([a,b])$, which means there exists $c\in[a,b]$ such that $f(c)=L$. Finally note that $c$ clearly cannot equal $a$ or $b$ itself.
+  By the previous theorem we have that $f(A)$ is connected. We have shown that connected subsets of $\R$ are intervals, so $f(A)$ is an interval. Recall our characterization that $I$ is an interval iff $x,y\in I$ and $x<z<y$ implies $z\in I$. We currently have $f(a),f(b)\in f(A)$ and $f(a)<L<f(b)$. Thus $L\in f(A)$, which means there exists $c\in A$ such that $f(c)=L$.
 \end{proof}
 
 The intermediate value theorem has many practical consequences, just one of which is the following.
@@ -2820,7 +2820,7 @@ In the rest of the section, we investigate the subtle relationship between conti
 This implies that $\lim_{y\to x}f(y)=f(x)$, which means by definition that $f$ is continuous at $x$.
 \end{proof}
 
-Now we know that every differentiable function is continuous, but not every continuous function is differentiable. It is natural to ask whether $f$ being differentiable implies $f'$ is continuous. It turns out that the answer is ``no''.
+Now we know that every differentiable function is continuous, but not every continuous function is differentiable. It is natural to ask whether $f$ being differentiable implies $f'$ is differentiable too. It turns out that the answer is ``no'', and in fact $f'$ doesen't even have to be continuous.
 
 \begin{example}
   Let $f(x)=x^2\sin(1/x)$ and $f(0)=0$. The function is clearly differentiable at any point $x\neq0$, and it is actually differentiable at $x=0$ too. To see this, observe that
@@ -2832,7 +2832,7 @@ Next, the derivative of $f$ is $f'(x)=2x\sin(1/x)-\sin(1/x)$ and $f'(0)=0$. It i
 \end{example}
 % don't think we still have this homework problem about sin(1/x)
 
-In fact there is a whole hierarchy of differentiability properties. We say that a function $f$ is in the class $C^0$ if $f$ is continuous, in the class $C^1$ if $f$ is differentiable $f'$ is continuous, in the class $C^2$ if $f'$ is differentiable and $f''$ is continuous, and so forth. We say that $f$ is in the class $C^\infty$ or \emph{smooth} if it is differentiable infinitely many times. Functions such as polynomials and $\sin(x)$ are all smooth. But the function $x^n\sin(1/x)$ lies in the class $C^{n-2}$.
+In fact there is a whole ``hierarchy of differentiability''. We say that a function $f$ is in the class $C^0$ if $f$ is continuous, in the class $C^1$ if $f$ is differentiable $f'$ is continuous, in the class $C^2$ if $f'$ is differentiable and $f''$ is continuous, and so forth. We say that $f$ is in the class $C^\infty$ or \emph{smooth} if it is differentiable infinitely many times. Functions such as polynomials and $\sin(x)$ are all smooth. But the function $x^n\sin(1/x)$ lies in the class $C^{n-2}$.
 
 In the example above, the discontinuous derivative $f'(x)$ did not just have a simple jump discontinuity, but something much uglier. In our final result of the section, we will show that this ugliness can't be avoided. The result states that while derivatives need not be continuous, derivatives still share the \emph{intermediate value property} with continuous functions. That is, the conclusion of the intermediate value theorem is true for derivatives. First we need the following familiar lemma.
 
@@ -2864,14 +2864,20 @@ The interior extremum theorem has applications to optimization, because it says 
   \item Find the derivative of each function directly from the definition.
   \begin{enumerate}
     \item $\displaystyle f(x)=x^3$
+    \vspace\fill
     \item $\displaystyle f(x)=1/x$
+    \vspace\fill
     \item $\displaystyle f(x)=\frac{1}{\sqrt{x}}$
+    \vspace\fill
   \end{enumerate}
-  \item Decide, with justification, whether each of the following functions is differentiable.
+  \item Decide, with justification, whether each of the following functions is differentiable at $x=0$.
   \begin{enumerate}
-    \item $\displaystyle f(x)=|x|+|x-1|$
+    \item $\displaystyle f(x)=x+|x|$
+    \vspace\fill
     \item $\displaystyle f(x)=x\,|x|$
-    \item $\displaystyle f(x)=|\sin(x)|$
+    \vspace\fill
+    % \item $\displaystyle f(x)=|\sin(x)|$
+    % \vspace\fill
   \end{enumerate}
 \end{activity}
   
@@ -2895,6 +2901,10 @@ The interior extremum theorem has applications to optimization, because it says 
 %     \item For which values of $a$ is $f''(0)$ defined?
 %   \end{enumerate}
 % \end{exerc}
+
+\begin{readnext}
+  Abbott, \S 7.2, 7.4
+\end{readnext}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
