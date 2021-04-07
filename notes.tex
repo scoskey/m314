@@ -2809,15 +2809,15 @@ We leave the proof of this theorem to your old calculus textbook.
 In the rest of the section, we investigate the subtle relationship between continuity and differentiability. Our first result in this direction implies that differentiability is stronger than continuity. Phrased another way, any function which is discontinuous will also be non-differentiable.
 
 \begin{proposition}
-  If $f$ is differentiable at a point $x$ then $f$ is continuous at $x$.
+  If $f$ is differentiable at a point $a$ then $f$ is continuous at $a$.
 \end{proposition}
 
 \begin{proof}
-  For this proof it is convenient to use the common substitution $y=x+h$ and write $f'(x)=\lim_{y\to x}(f(y)-f(x))/(y-x)$. It follows from this and the functional limit calculus that
-\[\lim_{y\to x}(f(y)-f(x))=\lim_{y\to x}\frac{(f(y)-f(x))(y-x)}{(y-x)}
-=f'(x)\lim_{y\to x}(y-x)=0\text{.}
-\]
-This implies that $\lim_{y\to x}f(y)=f(x)$, which means by definition that $f$ is continuous at $x$.
+  We begin by calculating:
+  \[\lim_{h\to 0}(f(a+h)-f(a))=\lim_{h\to 0}\frac{(f(a+h)-f(a))h}{h}
+    =f'(a)\lim_{h\to 0}h=0\text{.}
+  \]
+  Substituting $x=a+h$ into this limit, we have $\lim_{x\to a}(f(x)-f(a))=0$. This implies $\lim_{x\to a}f(x)=f(a)$, which means by definition that $f$ is continuous at $a$.
 \end{proof}
 
 Now we know that every differentiable function is continuous, but not every continuous function is differentiable. It is natural to ask whether $f$ being differentiable implies $f'$ is differentiable too. It turns out that the answer is ``no'', and in fact $f'$ doesen't even have to be continuous.
@@ -2834,7 +2834,9 @@ Next, the derivative of $f$ is $f'(x)=2x\sin(1/x)-\sin(1/x)$ and $f'(0)=0$. It i
 
 In fact there is a whole ``hierarchy of differentiability''. We say that a function $f$ is in the class $C^0$ if $f$ is continuous, in the class $C^1$ if $f$ is differentiable $f'$ is continuous, in the class $C^2$ if $f'$ is differentiable and $f''$ is continuous, and so forth. We say that $f$ is in the class $C^\infty$ or \emph{smooth} if it is differentiable infinitely many times. Functions such as polynomials and $\sin(x)$ are all smooth. But the function $x^n\sin(1/x)$ lies in the class $C^{n-2}$.
 
-In the example above, the discontinuous derivative $f'(x)$ did not just have a simple jump discontinuity, but something much uglier. In our final result of the section, we will show that this ugliness can't be avoided. The result states that while derivatives need not be continuous, derivatives still share the \emph{intermediate value property} with continuous functions. That is, the conclusion of the intermediate value theorem is true for derivatives. First we need the following familiar lemma.
+In the example above, the discontinuous derivative $f'(x)$ did not just have a simple jump discontinuity, but something much uglier. In our final result of the section, we will show that this ugliness can't be avoided. The reason is that derivatives have to satisfy the \emph{conclusion} of the IVT, so while they don't have to be continuous, their discontinuities cannot be simple jumps.
+
+First we need the following familiar lemma, which states that when trying to optimize a function, a good place to look is at its critical points.
 
 \begin{lemma}[Interior Extremum Theorem]
   \label{thm:iet}
@@ -2845,7 +2847,7 @@ In the example above, the discontinuous derivative $f'(x)$ did not just have a s
   Let us treat the case when $f$ attains a maximum value at $c$. Then for any $h$ we have $f(c+h)-f(c)\leq0$. It follows that for $h>0$ we have $(f(c+h)-f(c))/h\leq0$, which implies that $f'(c)\leq0$. Similarly for $h<0$ we have $(f(c+h)-f(c))/h\geq0$, which implies that $f'(c)\geq0$. This leaves only the possibility that $f'(c)=0$.
 \end{proof}
 
-The interior extremum theorem has applications to optimization, because it says that to find a minimum or maximum a good place to look is at the critical points.
+We are now ready to show that derivatives satisfy the conclusion of the Intermediate Value Theorem.
 
 \begin{theorem}[Darboux's theorem]
   If $f$ is differentiable on $[a,b]$ and $f'(a)<L<f'(b)$, then there exists $c\in(a,b)$ such that $f'(c)=L$.
