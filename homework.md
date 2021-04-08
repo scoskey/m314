@@ -11,6 +11,17 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 13, due Tuesday, April 20
+
+1. Suppose that $f$ is continuous on $[a,b]$ and that for every $n\in\mathbb N$ there exists $x\in[a,b]$ such that $\abs{f(x)}\leq\frac1n$. Show that there exists $x\in[a,b]$ such that $f(x)=0$.
+2. Show that the equation $2^x+3^x=4^x$ has a positive solution. [Hint: apply the Intermediate Value Theorem on an appropriate interval. You may assume exponential functions are continuous.]
+3. Prove *Rolle's thoerem*, which states that if $f$ is a differentiable function, $a\lt b$, and $f(a)=f(b)$, then there exists $c$ such that $a\lt c\lt b$ and $f'(c)=0$.
+4. Let $f(x)$ be the function:  
+  $f(x)=\begin{cases}x^a&x\geq0\\\\0&x<0\end{cases}$  
+  (a) For which values of $a$ is $f$ continuous at $0$?  
+  (b) For which values of $a$ is $f'(0)$ defined?  
+  (c) For which values of $a$ is $f''(0)$ defined?
+
 ## Week 12, due Tuesday, April 6
 
 1. Let $f(x)$ be the function defined below. Prove that for every real number $a$, $f$ is discontinuous at $a$.  
