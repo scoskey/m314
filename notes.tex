@@ -3024,7 +3024,7 @@ We close this section by establishing the first link between continuity and inte
   Abbott, \S 7.5
 \end{reading}
 
-We have introduced derivatives as slopes or rates of change, and integrals as areas or accumulations. How are the two concepts related? Since we have already calculated that $\int_0^b x^2\,dx=b^3/3$ and $\int_0^b x^3\,dx=b^4/4$, it is not difficult to guess that integration is related to antiderivatives. Intuitively, it is also not hard to accept that the rate of change of an accumulation of some quantity should at least be related to the size of the original quantity. This is all confirmed in surprisingly great generality by the Fundamental Theorem of Calculus, which says in brief that derivatives and integrals are inverse operations.
+We have introduced derivatives as slopes or rates of change, and integrals as areas or accumulations. How are the two concepts related? Since we have already calculated that $\int_0^b x^2\,dx=b^3/3$ and $\int_0^b x^3\,dx=b^4/4$, it is not difficult to guess that the integral of a function is related to its \emph{antiderivative}. Intuitively, it is also not hard to accept that the rate of change of an accumulation of some quantity should at least be related to the size of the original quantity. This is all confirmed in surprisingly great generality by the Fundamental Theorem of Calculus, which says in brief that derivatives and integrals are inverse operations.
 
 Before stating and proving the FTC, we need to visit the Mean Value Theorem, a cornerstone result about derivatives that is closely related to the FTC.
 
@@ -3053,7 +3053,7 @@ The MVT has a number of important applications. For example, it can be used to s
   Let $h=f-g$ and suppose $h$ is not a constant function. Then there exist $a,b$ in the domain of $h$ such that $(h(b)-h(a))/(b-a)\neq0$. It follows from the MVT that there exists $c$ such that $h'(c)\neq0$. Thus $f'(c)\neq g'(c)$, contradicting our hypothesis.
 \end{proof}
 
-We are now ready to dive into the FTC, which we recall says that derivatives and indegrals are inverse operations. This is actually two separate statements: the integral of a derivative is (related to) the original function, and the derivative of an integral is the original function. We begin with the first version, sometimes called the net change theorem.
+We are now ready to dive into the FTC, which we recall says that derivatives and integrals are inverse operations. This is actually two separate statements: the integral of a derivative is (related to) the original function, and the derivative of an integral is the original function. We begin with the first version, sometimes called the net change theorem.
 
 \begin{theorem}[FTC, net change theorem]
   Let $f$ be differentiable on $[a,b]$ and $f'$ be integrable on $[a,b]$. Then
@@ -3099,7 +3099,7 @@ We now continue with the second part of the FTC. First, given any integrable fun
   Since $\epsilon$ was arbitrary, we conclude that $F'(x)=f(x)$.
 \end{proof}
 
-Recall that when we introduced the derivative calculus we had both formulas for specific derivatives as well as laws for the derivative operation. On the other hand for the integral calculus we have only introduced laws, and still owe the formulas. The accumulation-is-antiderivative theorem implies that every derivative formula can be reversed to give an integral formula, and therefore completes our basic picture of calculus.
+Recall that when we introduced the derivative calculus we had both formulas for specific derivatives as well as laws for the derivative operation. On the other hand for the integral calculus we have only introduced laws, which means we have yet to deliver the formulas. The accumulation-is-antiderivative theorem implies that every derivative formula can be reversed to give an integral formula, and therefore completes our basic picture of calculus.
 
 \begin{theorem}[Integral calculus formulas]
   For each function $f(x)$, we have $\int_a^bf(t)\,dt=F(b)-F(a)$ where $F$ is the function shown.
@@ -3118,14 +3118,16 @@ Recall that when we introduced the derivative calculus we had both formulas for 
 \begin{activity}
   \item Find the derivative of the function:
   \begin{enumerate}
-    \item $F(x)=\int_0^x \cos(3t)\,dt$
-    \item $F(x)=\int_0^x \cos(t^2)\,dt$
-    \item $F(x)=\int_0^{\ln(x)} \cos(t^2)\,dt$
+    \item $F(x)=\int_0^x \cos(3t)\,dt$\vspace\fill
+    \item $F(x)=\int_0^x \cos(t^2)\,dt$\vspace\fill
+    \item $F(x)=\int_0^{\ln(x)} \cos(t^2)\,dt$\vspace\fill
   \end{enumerate}
   \item Suppose you know $f(2)=5$ and $-.5\leq f'(x)\leq.5$ for all $x$. What is the biggest $f(8)$ can be? What is the smallest? How do you prove it?
+  \vspace\fill
   \item (Abbott, ex 7.5.4) Let $f$ be a continuous function on $[a,b]$ and assume that $\int_a^xf(t)\,dt=0$ for all $x$. Show that $f=0$.
 
    Give a counterexample to show that the statement is false if $f$ is not assumed to be continuous.
+  \vspace\fill
 \end{activity}
 
 
