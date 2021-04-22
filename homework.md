@@ -19,7 +19,7 @@ header-includes: |
   (a) For any $P$, what is the value of $L(f,P)$?  
   (b) Can you find a $P$ such that $U(f,P)$ is within $0.05$ of $L(f,P)$?  
   (c) Is $h$ integrable? Why or why not?
-3. A vehicle drives on a freeway with speed limit 70mph. The vehicle passes mile marker 53 at 2pm and later passes mile marker 271 at 5pm. Use the MVT to prove the vehicle was speeding for at least some portion of the trip.
+3. A vehicle drives on a freeway with speed limit 70mph. Trooper Millie Van Teeter observes the vehicle pass mile marker 53 at 2pm, and later trooper Miles Von Trotter observes the vehicle pass mile marker 271 at 5pm. Help the troopers prove the vehicle was speeding for at least some portion of its trip.
 4. (Abbott, ex 7.5.4) Let $f$ be a continuous function on $[a,b]$ and assume that $\int_a^xf(t)\,dt=0$ for all $x$. Show that $f=0$.
 
    Give a counterexample to show that the statement is false if $f$ is not assumed to be continuous.
