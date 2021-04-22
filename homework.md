@@ -11,6 +11,19 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 14, due Tuesday, April 27
+
+1. Consider the function $f(x)=1/x$ on the domain $[1,4]$. Find a partition $P$ such that $U(f,P)$ and $L(f,P)$ are less than $0.1$ units apart.
+2. Let $h(x)$ be the function on $[0,1]$ defined by  
+  $h(x)=\begin{cases}1&x<1\\\\2&x=1\end{cases}$  
+  (a) For any $P$, what is the value of $L(f,P)$?  
+  (b) Can you find a $P$ such that $U(f,P)$ is within $0.05$ of $L(f,P)$?  
+  (c) Is $h$ integrable? Why or why not?
+3. A vehicle drives on a freeway with speed limit 70mph. The vehicle passes mile marker 53 at 2pm and later passes mile marker 271 at 5pm. Use the MVT to prove the vehicle was speeding for at least some portion of the trip.
+4. (Abbott, ex 7.5.4) Let $f$ be a continuous function on $[a,b]$ and assume that $\int_a^xf(t)\,dt=0$ for all $x$. Show that $f=0$.
+
+   Give a counterexample to show that the statement is false if $f$ is not assumed to be continuous.
+
 ## Week 13, due Tuesday, April 20
 
 1. Suppose that $f$ is continuous on $[a,b]$ and that for every $n\in\mathbb N$ there exists $x\in[a,b]$ such that $\abs{f(x)}\leq\frac1n$. Show that there exists $x\in[a,b]$ such that $f(x)=0$.
