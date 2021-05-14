@@ -191,7 +191,7 @@ In the previous section we defined a cut in the rational number system, and stat
     &\,\Longleftarrow\,\,\, q^2+2q\epsilon+\epsilon<2\\
     &\iff \epsilon<(2-q^2)/(2q+1)
   \end{align*}
-  There is a clever trick going on in the second implication (the $\Longleftarrow$ one) which we will comment on in a moment. But overall, this calculation is telling us that we will be safe if we choose $\epsilon<(2-q^2)/(2q+1)$.
+  There is a clever trick going on in the second implication (the $\Longleftarrow$ one) which we will comment on in a moment. But overall, this calculation is telling us that we will be safe if we choose $\epsilon<(2-q^2)/(2q+1)$. Note that we can do this and still have $\epsilon>0$, because $q^2<2$.
 
   Now, in the second implication we replaced $\epsilon^2$ with $\epsilon$ to simplify things and make it easier to solve for $\epsilon$. To do this, we actually need to make the extra assumption that $\epsilon<1$, since then $\epsilon^2<\epsilon$ and the $\Longleftarrow$ holds true. This is acceptible because we haven't yet chosen $\epsilon$, so we just need to additionally promise to choose $\epsilon<1$.
 
@@ -255,7 +255,7 @@ You can find the proof in Lemma~1.3.8 of the text.
 \subsection*{Activity for \S \thesection}
 
 \begin{activity}
-  \item (Abbott, ex 1.3.8) Find the supremum and infemum of each of the following sets. You do not need to give a detailed proof, but please explain your reasoning.
+  \item (Abbott, ex 1.3.8) Find the supremum and infemum of each of the following sets. You do not need to give a detailed proof, but please explain your reasoning. Assume for this exercise that $\N$ exludes $0$.
   \begin{enumerate}\itemsep.5in
     \item $\set{n\in\N\mid n^2<10}$
     \item $\set{n/(m+n)\mid m,n\in\N}$
@@ -331,7 +331,7 @@ Although we are omitting the greater part of the proof of the above theorem, let
 
 From this point on, we will never need cuts again, and the real number system $\R$ is simply the unique ordered field extending the rational number system and satisfying the Axiom of Completeness. From this abstract definition we can prove all the facts we will need about the real number system. We begin with the following.
 
-\begin{theorem}[Archimedian property]
+\begin{theorem}[Archimedean Principle]
   For any real number $x$, there exists a natural number $n$ such that $x<n$. That is, while there are real numbers between integers, there aren't any real numbers beyond the integers to the right.
 \end{theorem}
 
@@ -358,9 +358,9 @@ As a consequence of this simple fact, we can now formally establish one fact we 
 \end{theorem}
 
 \begin{proof}
-  Using the Archimedean principle, we can find $n\in\N$ such that $n>1/(y-x)$. Intuitively, this guarantees that increments of size $1/n$ cannot step over the interval $(x,y)$.
+  Using the Archimedean Principle, we can find $n\in\N$ such that $n>1/(y-x)$. Intuitively, this guarantees that increments of size $1/n$ cannot step over the interval $(x,y)$.
 
-  Now let $m\in\N$ be the smallest natural number such that $x<m/n$ (again use the Archimedean principle). Note that by this minimality we have $m/n-1/n\leq x$. Putting these equations together, we have
+  Now let $m\in\N$ be the smallest natural number such that $x<m/n$ (again use the Archimedean Principle). Note that by this minimality we have $m/n-1/n\leq x$. Putting these equations together, we have
 \begin{align*}
   x&<m/n\\
    &\leq x+1/n\\
@@ -385,7 +385,7 @@ To see that this implies we can approximate real numbers by rational numbers as 
 % \end{exerc}
 %
 % \begin{exerc}
-%   Read the characterization of supremum described in Abbott, Lemma~1.3.8. Then, give a thorough proof that $1/2$ is the supremum of the set $\set{n/(2n+1)\mid n\in\N}$. Point out the exact moment in the proof when the Archimedean Property is used.
+%   Read the characterization of supremum described in Abbott, Lemma~1.3.8. Then, give a thorough proof that $1/2$ is the supremum of the set $\set{n/(2n+1)\mid n\in\N}$. Point out the exact moment in the proof when the Archimedean Principle is used.
 % \end{exerc}
 %
 % \begin{exerc}
@@ -497,9 +497,9 @@ We are now ready to prove that the set of real numbers is uncountable.
 \begin{activity}
   \item Let $A$ be the set of integer lattice points in the plane, that is, $A=\set{(x,y):x,y\in\Z}$. Draw a picture of the set $A$. Show that $A$ is countable by explaining how to enumerate all its elements in a list.
   \vspace\fill
-  \item Find a nested family of nonempty bounded intervals with empty intersection.
+  \item Find a nested sequence of nonempty bounded intervals with empty intersection.
   \vspace\fill
-  \item Find a nested family of nonempty closed intervals with empty intersection.
+  \item Find a nested sequence of nonempty closed intervals with empty intersection.
 \end{activity}
 
 % \begin{exerc}
@@ -897,7 +897,7 @@ We can now state the laws for the calculus of limits. The proof is long, but the
     \item $\lim ka_n=ka$ for any $k\in\R$
     \item $\lim a_nb_n=ab$
     \item $\lim a_n/b_n=a/b$ provided $b_n,b\neq 0$
-    \item $\lim \sqrt{a_n}=\sqrt{\lim a_n}$ provided $a_n\geq0$
+    \item $\lim \sqrt{a_n}=\sqrt{a}$ provided $a_n\geq0$
   \end{enumerate}
 \end{theorem}
 
@@ -1339,16 +1339,16 @@ The proof that the above sequence is Cauchy is not too different than the proof 
   \end{align*}
   and hence $a_n$ is Cauchy.
   
-  Conversely suppose that $a_n$ is Cauchy. Before showing it is convergent, we will first show it is bounded. For this, we can choose $N$ large enough that $m,n>N$ implies $|a_n-a_m|<1$. This shows that a tail of the sequence is bounded, and since finite sets are always bounded, the whole sequence must be bounded too.
+  Conversely suppose that $a_n$ is Cauchy. Before showing it is convergent, we will first show it is bounded. For this, we can choose $N$ large enough that $m,n\geq N$ implies $|a_n-a_m|<1$. This shows that a tail of the sequence is bounded, and since finite sets are always bounded, the whole sequence must be bounded too.
 
-  Now since $a_n$ is bounded, it follows from the Bolzano--Weierstra\ss\ theorem that $a_n$ has a convergent subsequence $a_{n_k}$ with limit $L$. We claim that the whole sequence $a_n$ converges to $L$ as well. Indeed given $\epsilon$ we can choose $N$ large enough that $m,n>N$ implies $|a_n-a_m|<\epsilon/2$. Moreover we can find $k$ large enough that $n_k>N$ and $|a_{n_k}-L|<\epsilon/2$. Therefore
+  Now since $a_n$ is bounded, it follows from the Bolzano--Weierstra\ss\ theorem that $a_n$ has a convergent subsequence $a_{n_k}$ with limit $L$. We claim that the whole sequence $a_n$ converges to $L$ as well. Indeed given $\epsilon$ we can choose $N$ large enough that $m,n\geqN$ implies $|a_n-a_m|<\epsilon/2$. Moreover we can find $k$ large enough that $n_k\geq N$ and $|a_{n_k}-L|<\epsilon/2$. Therefore
   \begin{align*}
     |a_n-L|&\leq|a_n-a_{n_k}|+|a_{n_k}-L|<\epsilon
   \end{align*}
   and so $a_n$ converges to $L$, as desired.
 \end{proof}
 
-The above theorem says that in the real number system, every sequence that wants to converge (beacuse it is Cauchy) really does converge. This statement is false if you restrict consider the rational number system only. Instead, the statement can be regarded as another way of saying that the real number system is complete. In general, we say that a space is \emph{Cauchy complete} if all of its Cauchy sequences converge. The spaces $\R$, $\R^2$, $\mathbb S^2$ are all Cauchy complete.
+The above theorem says that in the real number system, every sequence that wants to converge (beacuse it is Cauchy) really does converge. This statement is false if you consider the rational number system only. Instead, the statement can be regarded as another way of saying that the real number system is complete. In general, we say that a space is \emph{Cauchy complete} if all of its Cauchy sequences converge. The spaces $\R$, $\R^2$, $\mathbb S^2$ are all Cauchy complete.
 
 It turns out that many of the theorems we have investigated so far can be regarded as statements of completeness. Just now we proved the Cauchy criterion (CC) using the Bolzano--Weierstra\ss\ theorem (BWT). Earlier we proved the Bolzano--Weierstra\ss\ theorem using the NIP. And we proved the NIP using our original Axiom of Completeness (bounded sets have a least upper bound). We therefore see that:
 \[AOC\implies NIP\implies BWT\implies CC
@@ -1365,7 +1365,7 @@ The following result states that in fact all four of these statements are equiva
   Since Cauchy sequences converge we may let $L$ be the limit of $a_n$. We claim that $L$ is the least upper bound for $A$. Indeed since for all $n$ we have that $a_n$ is an upper bound for $A$, it is clear that $L$ is an upper bound for $A$. Moreover given any $n$ we can find $a\in A$ such that $a\geq a_n-1/2^n$. Since the latter is $\geq L-1/2^n$, this implies $L=\sup(A)$. Thus AOC holds, as desired.
 \end{proof}
 
-In the exercises you will be asked to prove that the monotone convergence theorem (MCT) is also equivalent to AOC.
+It is also the case that the monotone convergence theorem (MCT) is equivalent to AOC, a fact we leave as an exercise.
 
 \newpage
 \subsection*{Activity for \S \thesection}
