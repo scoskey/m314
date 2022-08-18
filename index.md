@@ -1,4 +1,4 @@
-# Math 314 syllabus
+# Math 314, Spring 2021
 
 ## Course information
 
