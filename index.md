@@ -1,13 +1,13 @@
-# Math 314, Spring 2021
+# Math 314, Spring 2023
 
 ## Course information
 
-Meeting times: M,W from 3:00&ndash;4:15pm  
-Textbook: Stephen Abbott, *Understanding analysis*, 2nd edition  
-Lecture notes: [Draft notes document](https://github.com/scoskey/m314/raw/master/notes.pdf)  
-Homework assignments: [View homework](homework)  
+Meeting times: T,Th from 12:00&ndash;1:15pm  
+Textbook: Stephen Abbott, *Understanding Analysis* 2nd ed
+Lecture notes: Available in a [notes document](https://github.com/scoskey/m314/raw/master/notes.pdf) and via OneNote  
+Homework: [Homework is published here](homework) and collected via Gradescope  
 Contact: `scoskey@boisestate.edu`  
-Office hours: Tuesday at 1:30 and by appointment
+Office hours: TBA, and by appointment
 
 ## Course description
 
@@ -38,11 +38,11 @@ The course will be delivered through synchronous remote class sessions. Each ses
 
 ## Grading
 
-### In-class participation 10%
+### Attendance, participation, and group activities 20%
 
-You are expected to attend remote class sessions, and to be prepared to ask questions and discuss the material. Following the discussion, we will start an in-class activity. A small portion of your grade will be based on attendance, attention, collaboration and completion of these activities.
+You are expected to attend remote class sessions, and to be prepared to ask questions and discuss the material. Following the discussion, we will start a group activity, which will be submitted as a group. A portion of your grade will be based on your attendance, preparedness, attention, collaboration, and completion of these activities.
 
-### Homework 50%
+### Homework assignments 40%
 
 Homework will be assigned each week and collected the following week. Most exercises will be graded for both correcteness and mathematical style. Some will be graded for completeness only. You are encouraged to collaborate with your peers, and you are welcome to use online resources when you are stuck (please reference). But please keep in mind that you must always fully understand your solutions and most importantly *write them in your own words*.
 
@@ -52,5 +52,4 @@ Take-home exams will be given during the 8th week and the finals week of the cla
 
 ## Disclaimer
 
-This syllabus is subject to change. I may make refinements and updates in the first week of classes. While I don't expect any substantial changes, please allow for some flexibility. I will give notice before making any changes to the syllabus.
-
+This syllabus is subject to change. While I don't expect any substantial changes, please allow for some flexibility. I will give notice before making any changes to the syllabus.
