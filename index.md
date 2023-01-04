@@ -3,7 +3,7 @@
 ## Course information
 
 Meeting times: T,Th from 12:00&ndash;1:15pm  
-Textbook: Stephen Abbott, *Understanding Analysis* 2nd ed
+Textbook: Stephen Abbott, *Understanding Analysis* 2nd ed  
 Lecture notes: Available in a [notes document](https://github.com/scoskey/m314/raw/master/notes.pdf) and via OneNote  
 Homework: [Homework is published here](homework) and collected via Gradescope  
 Contact: `scoskey@boisestate.edu`  
@@ -11,9 +11,9 @@ Office hours: TBA, and by appointment
 
 ## Course description
 
-Real analysis is one of the core areas of modern mathematics. It is also the subject that provides the foundations for introductory calculus. The course content is valuable for both aspiring math practitioners and future educators. In this class we will also be exposed to rigorous mathematical thinking, reasoning, problem solving, and proof.
+Real analysis is one of the core areas of modern mathematics. It the area of math that provides the foundations for introductory calculus. The course content is valuable for both aspiring math practitioners and future educators. This class will also focus on mathematical reasoning and problem solving, and the fundamentals of rigor and proof.
 
-We will begin by discussing a simple but surprisingly deep question: *what are real numbers*? The answer to this question will lead us to a key concept, the *completeness* of the real numbers. With an understanding of completeness, will be able to undertake a rigorous study of familiar concepts from calculus: *limits*, *series*, *continuity*, and of course *derivatives* and *integrals*. Our study of continuity will also take us on a short tour of the theory of *topology*&mdash;the abstract study of continuity and its properties.
+We will begin by discussing a simple but surprisingly deep question: *what are real numbers*? The answer to this question will lead us to a key concept, the *completeness* of the real numbers. With an understanding of completeness, will be able to undertake a rigorous study of familiar concepts from calculus: *limits*, *series*, *continuous functions*, and of course *derivatives* and *integrals*. Our study of continuity will also take us on a short tour of the theory of *topology*&mdash;the abstract study of continuity and its properties.
 
 ### Anticipated learning outcomes
 
@@ -21,7 +21,7 @@ We will begin by discussing a simple but surprisingly deep question: *what are r
 * Fluency in the language of mathematics
 * Comfort with mathematical discovery in content area
 * Write rigorous and readable proofs in content area
-* Possess and exhibit knowledge in content area
+* Possess and exhibit factual knowledge in content area
 
 ### Rough plan
 
@@ -49,7 +49,3 @@ Homework will be assigned each week and collected the following week. Most exerc
 ### Take-home exams 20% x2
 
 Take-home exams will be given during the 8th week and the finals week of the class.
-
-## Disclaimer
-
-This syllabus is subject to change. While I don't expect any substantial changes, please allow for some flexibility. I will give notice before making any changes to the syllabus.
