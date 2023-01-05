@@ -4,8 +4,8 @@
 
 Meeting times: T,Th from 12:00&ndash;1:15pm  
 Textbook: Stephen Abbott, *Understanding Analysis* 2nd ed  
-Lecture notes: Available in a [notes document](https://github.com/scoskey/m314/raw/master/notes.pdf) and via OneNote  
-Homework: [Homework is published here](homework) and collected via Gradescope  
+Lecture notes: [Typed notes](https://github.com/scoskey/m314/raw/master/notes.pdf) and [Onenote class notes](https://1drv.ms/u/s!AiyUDYKYfAdGiTyAqXVG6d6cnyjl)  
+Homework: [Weekly exercises](homework) and [Gradescope submission](https://www.gradescope.com/courses/480803)  
 Contact: `scoskey@boisestate.edu`  
 Office hours: TBA, and by appointment
 
