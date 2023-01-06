@@ -81,13 +81,15 @@
 
 We begin the course by briefly pondering a very deep question: what are numbers and what are they for?
 
-The natural or counting numbers $1,2,3,\ldots$ are collectively denoted $\N$ and are central to many areas of mathematical study. \emph{Combinatorics} is the study of counting finite sets. For example: how many ways are there to write the number 10 as a sum of smaller natural numbers? \emph{Number theory} is the study of the arithmetic operations on the natural numbers. For example: how many prime numbers are there less than $10^{10}$?
+The natural or counting numbers $1,2,3,\ldots$ are collectively denoted $\N$ and are central to many areas of mathematical study. \emph{Combinatorics} is the study of counting finite sets. For example: how many ways are there to write the number 10 as a sum of three natural numbers? \emph{Number theory} is the study of the arithmetic operations on the natural numbers. For example: how many prime numbers are there less than 1 billion?
 
-But in \emph{calculus}, analysis, and geometry, numbers are used for measurement. Using the board as a plane, how can we measure the distance between two points? To answer this we would first need to choose a unit, such as a randomly chosen straight stick. With this in hand, we can try count how many copies of the unit stick fit along the striaght line segment joining the two points. But what if the number of unit sticks doesn't come out whole?
+But in \emph{calculus}, analysis, and geometry, numbers are used for measurement. How can we measure the distance between two points on the floor? To answer this we would first need to choose a unit, such as a straight stick of random length. With this in hand, we can try count how many copies of the unit stick fit along the striaght line segment joining the two points. But what if the number of unit sticks doesn't come out whole?
 
 In this case we can try to use \emph{ratios} to measure the distance. For example, suppose we are trying to measure the distance $d$, and three unit sticks fit perfectly inside two copies of $d$. Then we say that $d=3/2$ units. Sometimes this telescoping process takes a long time, for example if five units fit perfectly inside four copies of $d$. The set of all ratios of natural numbers (and their negatives) is called the \emph{rational numbers} and given the symbol $\Q$ (for quotient).
 
-This leads to the \emph{big question} of the day: are rational numbers enough to measure all distances? The answer turns out to be a big NO, and this fact surprised many early mathematicians (and still blows minds of new mathematicians today). Ratios are good enough for most practical purposes because in the real world we can accept approximations. But there are ideal distances (numbers) which are not rational. The simplest classical example is $d=$ the diagonal of a square. Notice that $d$ has the property that $d^2=2$.
+This leads to the \emph{big question} of the day: are rational numbers enough to measure all distances? It turns out that the answer is NO, and this fact surprised many early mathematicians (and still blows minds of new mathematicians today). Ratios are good enough for most practical purposes because in the real world we can accept approximations. But there are ideal distances (numbers) which are not rational. The simplest classical example is $d=$ the diagonal of a square.
+
+First notice that $d$ has the property that $d^2=2$. The explanation for this is at once simple, beautiful, and clever: If we quadruplicate the square, we see that the square with sidelength $d$ is exactly half the square with sidelength $2$. Thus $d^2=2^2/2=2$.
 
 \begin{center}
 \begin{tikzpicture}
@@ -100,7 +102,7 @@ This leads to the \emph{big question} of the day: are rational numbers enough to
 \end{tikzpicture}
 \end{center}
 
-The argument is given in Plato's Meno. If we quadruplicate the square, we see that the square with sidelength $d$ is exactly half the square with sidelength $2$. Thus $d^2=2^2/2=2$.
+Armed with the knowledge that $d^2=2$, we can now show $d$ is irrational.
 
 \begin{theorem}
   \label{thm:root-2-irrational}
@@ -108,29 +110,70 @@ The argument is given in Plato's Meno. If we quadruplicate the square, we see th
 \end{theorem}
 
 \begin{proof}
-  Suppose $d$ is rational and write $d=a/b$ where $a,b$ are integers and the fraction is in lowest terms. Then $a^2=2b^2$. Notice that the right-hand side is even, and therefore so is the left-hand side. It follows that $a$ is even. Hence the left-hand side is divisible by $4$, and so is the right-hand side. It follows that $b$ is even. Thus both $a$ and $b$ are even, contradicting that the fraction $a/b$ is in lowest terms.
+  Suppose $d$ is rational and write $d=a/b$ where $a,b$ are natural numbers and the fraction is in lowest terms. Then $a^2=2b^2$. Notice that the right-hand side is even, and therefore so is the left-hand side. It follows that $a$ is even. Hence the left-hand side is divisible by $4$, and therefore so is the right-hand side. It follows that $b$ is even. Thus both $a$ and $b$ are even, contradicting that the fraction $a/b$ is in lowest terms.
 \end{proof}
 
-We conclude that the rational number system has \emph{gaps}, such as the one at $\sqrt2$. All we can say at the moment is that some rational numbers are less than $\sqrt2$ and the rest are larger than $\sqrt{2}$. More accurately, since in our development the number $\sqrt{2}$ doesn't exist yet, we can only say that some numbers have square less than $2$ and others have square greater than $2$. This is an example of a property which \emph{cuts} the rational number system into two halves.
+We conclude that the rational number system possesses some kind of gap at $\sqrt2$. Another way to say it is that the concept of $\sqrt2$ \emph{cuts} the rationals into two pieces, those that are less than $\sqrt2$ and those that are larger than $\sqrt{2}$. (More accurately, since in our development the number $\sqrt{2}$ doesn't exist yet, it would be better to say those that are negative or have square less than $2$, and those that are nonnegative and have square greater than $2$.)
+
+This is much the same as the way a rational number $q$ cuts the rationals into three pieces: those numbers that are less than $q$, $q$ itself, and those numbers that are greater than $q$. The key difference is the presence of $q$ itself in between the two large pieces. The concept of a cut is made formal in the following definition.
 
 \begin{definition}
-  A subset $C\subset\Q$ is called a \emph{cut} if it satisfies the following three properties.
+  A \emph{cut} in the rational number system $\Q$ consists of a triple of sets $(A,P,B)$ such that $A\cup P\cup B=\Q$ and the following properties hold:
   \begin{enumerate}
-  \item (nontriviality) $C\neq\emptyset$ and $C\neq\Q$
-  \item (downward closure) if $q<r$ and $r\in C$ then $q\in C$
-  \item (no greatest element) if $q\in C$ then there is $r\in C$ such that $q<r$
+    \item $|A|=\infty$, $|P|=0$ or $1$, and $|B|=\infty$
+    \item $A$ is entirely below $B$, and if $P\neq\emptyset$ then $P$ is in between $A$ and $B$
+    \item $A$ has no greatest element, and $B$ has no least element
   \end{enumerate}
 \end{definition}
 
-For example, it is easy to check that the set $C=\{q\in\Q\mid q<2\}$ satisfies all three properties of a cut. In fact, any set of the form $\set{q\in\Q\mid q<r}$ for some $r\in\Q$ is a cut. These cuts are somewhat obvious to define, and they are called \emph{rational cuts}.
+In the textbook, a cut is defined simply as the $A$ component, as the $P$ and $B$ components may be deduced from $A$ alone.
 
-On the other hand, the cut at $\sqrt{2}$ considered previously would formally be defined as $C=\set{q\in\Q\mid q<0\text{ or }q^2<2}$. This is an example of an irrational cut.
+% \begin{definition}
+%   A subset $C\subset\Q$ is called a \emph{cut} if it satisfies the following three properties.
+%   \begin{enumerate}
+%   \item (nontriviality) $C\neq\emptyset$ and $C\neq\Q$
+%   \item (downward closure) if $q<r$ and $r\in C$ then $q\in C$
+%   \item (no greatest element) if $q\in C$ then there is $r\in C$ such that $q<r$
+%   \end{enumerate}
+% \end{definition}
 
-\begin{definition}
-  A cut $C$ is said to be an \emph{irrational cut} or a \emph{gap} if the complement of the cut, $\Q\setminus C$, has no least element.
-\end{definition}
+For example, the following triple is a cut:
+\begin{equation}
+  \label{eq:rationalcut}
+  \left(\set{q\in\Q\mid q<3/2},\set{3/2},\set{q\in\Q\mid q>3/2}\right)\text{.}
+\end{equation}
+This type of cut with $P$ containing a single rational number is somewhat obvious to define and is called a \emph{rational cut}.
 
-In the next section, we will prove rigorously that the cut at $\sqrt{2}$ is really an example of an irrational cut. We will then describe a correspondence between cuts and real numbers, with rational cuts corresponding to rational numbers and irrational cuts corresponding to irrational numbers.
+\begin{center}
+\begin{tikzpicture}
+  \draw[<-,very thick](-3,0)--node[below]{$A$}(-.05,0);
+  \draw[->,very thick](.05,0)--node[below]{$B$}(3,0);
+  \node[circle,fill,inner sep=1pt,label=below:$P$] at (0,0) {};
+  \node at (-.08,0) {$)$};
+  \node at (.08,0) {$($};
+\end{tikzpicture}
+\end{center}
+
+For another example, the following triple is a cut:
+\begin{equation}
+  \label{eq:irrationalcut}
+  \left(\set{q\in\Q\mid q<0\text{ or }q^2<2},\emptyset,\set{q\in\Q\mid q\geq0\text{ and }q^2>2}\right)\text{.}
+\end{equation}
+This is the cut at $\sqrt{2}$ considered previously, though we leave it until the next section to prove that $A$ has no greatest element and $B$ has no least element. This type of cut with $P=\emptyset$ is called a \emph{gap} or \emph{irrational cut}.
+
+\begin{center}
+\begin{tikzpicture}
+  \draw[<-,very thick](-3,0)--node[below]{$A$}(-.01,0);
+  \draw[->,very thick](.01,0)--node[below]{$B$}(3,0);
+  \node at (0,0) {$)\kern-2.5pt($};
+\end{tikzpicture}
+\end{center}
+
+% \begin{definition}
+%   A cut $C$ is said to be an \emph{irrational cut} or a \emph{gap} if the complement of the cut, $\Q\setminus C$, has no least element.
+% \end{definition}
+
+We will then describe a correspondence between cuts and real numbers, with rational cuts corresponding to rational numbers and irrational cuts corresponding to irrational numbers.
 
 \newpage
 \subsection*{Activity for \S \thesection}
@@ -169,21 +212,17 @@ In the next section, we will prove rigorously that the cut at $\sqrt{2}$ is real
   Abbott \S 8.6, start \S 1.3
 \end{reading}
 
-In the previous section we defined a cut in the rational number system, and stated that some cuts are ``rational'' while others are ``irrational'' (or ``gaps''). However we have yet to actually prove that any cut is really irrational. According to our motivation, the cut at $\sqrt2$ should be a gap. The proof turns out to be more technical than one might have expected. It will provide us with a not-so-soft example of the kind of arguments we will see later in the class.
+In the previous section we defined a cut in the rational number system, and gave examples of both rational and irrational cuts. It is relatively straightforward to prove that the triple in Equation~\eqref{eq:rationalcut} is really a cut. But we still need to prove that the triple in Equation~\eqref{eq:irrationalcut} (the cut at $\sqrt2$) is really a cut. The proof turns out to be more technical than one might have expected. It will provide us with a not-so-soft example of the kind of arguments we will see later in the course.
 
 \begin{theorem}
   \label{thm:root-2-cut}
-  The cut $C=\set{q\in\Q\mid q<0\text{ or }q^2<2}$ is an irrational cut.
+  The triple in Equation~\eqref{eq:irrationalcut} is a cut.
 \end{theorem}
 
 \begin{proof}
-  We begin by verifying that $C$ has the three properties of a cut.
-
-  (a) (nontriviality) Note that $0\in C$ and $5\notin C$.
-
-  (b) (downward closure) Suppose that $r\geq0$ and that $r\in C$, so that we have $r^2<2$. Let $q<r$ be given. Clearly if $q<0$ we have $q\in C$. On the other hand if $q\geq0$ then we have $q^2<r^2<2$ so again $q\in C$.
-
-  (c) (no greatest element) Suppose that $q\geq0$ and $q\in C$, so that $q^2<2$. We seek to find a small rational number $\epsilon>0$ such that $(q+\epsilon)^2<2$ also.
+  It is not difficult to verify properties (a) and (b) of a cut. Thus we need only show that the set $A=\set{q\in\Q\mid q<0\text{ or }q^2<2}$ has no greatest element. The proof that $B$ has no least element is nearly identical.
+  
+  Given any $q\in A$, we will show $q$ is not the greatest element of $A$. It is clear that a negative number cannot be the greatest element of $A$, so let's assume that $q\geq0$ and $q^2<2$. We wish to find a small rational number $\epsilon>0$ such that $q+\epsilon$ is in $A$ also, that is, $(q+\epsilon)^2<2$.
 
   To see what $\epsilon$ has to be, we work \emph{backwards}.
   \begin{align*}
@@ -203,19 +242,27 @@ In the previous section we defined a cut in the rational number system, and stat
     &=q^2+(2q+1)(2-q^2)/(2q+1)\\
     &=2
   \end{align*}
-  Thus we conclude that $r=q+\epsilon$ is a rational number such that $q<r$ and $r^2<2$, which completes the proof of (c).
-
-  Finally, to see that $C$ is a gap, we note that the same argument as in part~(c) above can be used to show that the set $\set{q\in\Q\mid q>0\text{ and }q^2>2}$ has no least element. And since Theorem~\ref{thm:root-2-irrational} implies that $\sqrt2$ is itself not rational, we can conclude that $\Q\setminus C$ has no least element.
+  We therefore conclude that $q+\epsilon$ is a rational number larger than $q$ and satisfying $(q+\epsilon)^2<2$. Thus $q$ is not the greatest element of $A$.
 \end{proof}
 
-Let us look at the number systems we know so far, from smallest to largest. Each one has progressively more power than the last.
+Let us look at the number systems we know so far, from smallest to largest. Each one has progressively more power than the last:
 \begin{itemize}
-\item $\N$: you can add but not subtract.
-\item $\Z$: you can add and subtract, but not divide.
-\item $\Q$: you can add, subtract, and divide, but there are ``gaps''.
+\item $\N$: you can add but not subtract;
+\item $\Z$: you can add and subtract, but not divide;
+\item $\Q$: you can add, subtract, and divide, but there are gaps.
 \end{itemize}
 
-The real number system $\R$ will be defined in such a way that it fills the gaps of $\Q$. In order to fill these gaps, we need the terminology of least upper bounds.
+We are now prepared to define the real number system $\R$ by ``filling in'' the gaps of $\Q$.
+
+\begin{definition}
+  The \emph{real number system} consists of the rational numbers $\Q$ together with, for every irrational cut $(A,\emptyset,B)$, a new point $p$ lying between the sets $A$ and $B$.
+\end{definition}
+
+Thus there is a one-to-one correspondence between real numbers and cuts, with the rational numbers corresponding to rational cuts, and the irrational numbers corresponding to irrational cuts.
+
+We emphasize that an irrational number is literally \emph{defined} from its cut. That is, we don't define $\sqrt2$ to be a positive number whose square is $2$, though it's true. That would tell you what property the number has, but not where to actually find it. Instead we define $\sqrt2$ to be a point in between $\set{q\in\Q\mid q<0\text{ or }q^2<2}$ and $\set{q\in\Q\mid q\geq0\text{ and }q^2<2}$.
+
+We would next like to say that the real number system $\R$ itself has no gaps, that is, we have solved the problem of gaps. Before we can do that it will be useful to introduce the terminology of the supremum of a set.
 
 \begin{definition}
   If $A$ is any set of numbers, then an \emph{upper bound} for $A$ is a number $b$ such that for all $a\in A$, $a\leq b$. If $b$ is an upper bound for $A$ then it is called the \emph{least upper bound} or \emph{supremum} of $A$ if it is least among all possible upper bounds of $A$.
@@ -224,20 +271,13 @@ The real number system $\R$ will be defined in such a way that it fills the gaps
 \begin{example}
   \begin{itemize}
   \item The set $(-5,5]$ has a maximum element $5$. Therefore it has least upper bound $5$.
-  \item The set $(-5,5)$ has no maximum element. But the set has upper bounds, for example $7$, $23.6$, and $100$. The least possible upper bound is $5$.
-  \item The set $\set{\frac12,\frac23,\frac34,\ldots}$ has no maximum element. But it again has upper bounds, and the least possible upper bound is $1$.
+  \item The set $(-5,5)$ has no maximum element. But it has upper bounds, for example $7$, $23.6$, and $100$. The least upper bound or supremum is $5$.
+  \item The set $\set{\frac12,\frac23,\frac34,\ldots}$ has no maximum element. But it has upper bounds, and its supremum is $1$.
+  \item The set $\set{q\in\Q\mid q<0\text{ or }q^2<2}$ has no maximum element. But it has upper bounds and its supremum is $\sqrt2$.
   \end{itemize}
 \end{example}
 
-Our definitions of rational and irrational cuts can now be rephrased as follows. A rational cut is one which has a supremum in $\Q$, and an irrational cut is one which does not have a supremum in $\Q$. We can therefore ``fill'' the gaps in $\Q$ by inserting a newly created supremum for every irrational cut.
-
-\begin{definition}
-  The \emph{real number system} consists of the rational numbers $\Q$ together with a supremum for every cut of $\Q$ that doesn't already have a supremum (that is, for every irrational cut).
-\end{definition}
-
-In summary, to form the real number system we first built the rational number system, observed that it has gaps, and then manually \emph{filled in} all these gaps.
-
-It is important to emphasize that with our definition of real numbers, an irrational number is literally \emph{defined} by its cut. That is, we don't define $\sqrt2$ by saying it is a positive number whose square is $2$. That would tell you what property the number has, but not where to actually find it. Instead we define $\sqrt2$ to be the supremum of the cut $C=\set{q\in\Q\mid q<0\text{ or }q^2<2}$.
+% Our definitions of rational and irrational cuts can now be rephrased as follows. A rational cut is one which has a supremum in $\Q$, and an irrational cut is one which does not have a supremum in $\Q$. We can therefore ``fill'' the gaps in $\Q$ by inserting a newly created supremum for every irrational cut.
 
 We close this section with a characterization of the supremum of a set that will be useful in the future.
 
