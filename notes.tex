@@ -118,6 +118,7 @@ We conclude that the rational number system possesses some kind of gap at $\sqrt
 This is much the same as the way a rational number $q$ cuts the rationals into three pieces: those numbers that are less than $q$, $q$ itself, and those numbers that are greater than $q$. The key difference is the presence of $q$ itself in between the two large pieces. The concept of a cut is made formal in the following definition.
 
 \begin{definition}
+  \label{def:cut}
   A \emph{cut} in the rational number system $\Q$ consists of a triple of sets $(A,P,B)$ such that $A\cup P\cup B=\Q$ and the following properties hold:
   \begin{enumerate}
     \item $|A|=\infty$, $|P|=0$ or $1$, and $|B|=\infty$
@@ -125,8 +126,6 @@ This is much the same as the way a rational number $q$ cuts the rationals into t
     \item $A$ has no greatest element, and $B$ has no least element
   \end{enumerate}
 \end{definition}
-
-In the textbook, a cut is defined simply as the $A$ component, as the $P$ and $B$ components may be deduced from $A$ alone.
 
 \begin{example}
   The following is a cut:
@@ -220,21 +219,32 @@ In the next section we will prove the final claim, that $\R$ has no gaps.
   Abbott \S 8.6, start \S 1.3
 \end{reading}
 
-In the previous section we defined the real numbers using cuts in the rational number system. Our ``triple'' notation for cuts $(A,P,B)$ is nice and symmetric, but as it happens knowing $A$ is enough to determine $P$ and $B$ too: $P\cup B$ will always be equal to the complement $\Q\setminus A$, with $P$ containing the least element of $\Q\setminus A$ if it exists. Thus from now on we drop the $P$ and the $B$ from cuts and make the following revised definition.
+Although we introduced the real numbers as a way to measure distances, we of course know that the real numbers should carry arithmetic operations, too. In fact, it should be an \emph{ordered field}, which means it should support the four arithmetic operations as well as the comparison $<$, and these operations should satisfy the usual axioms of associativity, commutativity, and so forth. The rational number system has all these properties, and the real number system does too. We have yet to \emph{define} the arithmetic operations on the real numbers, but in principle it isn't difficult.
+
+For example, we define the ordering $<$ on real numbers as follows. If $\alpha_1$ and $\alpha_2$ are real numbers corresponding to cuts $(A_1,P_1,B_1)$ and $(A_2,P_2,b_2)$ are cuts, then we say $\alpha_1\leq\alpha_2$ if and only if $A_1\subseteq A_2$. It is straightforward to check this definition satisfies the usual axioms of $\leq$.
+
+Similarly, if we define $\alpha_1+\alpha_2$ as the real number corresponding to the cut $(A,P,B)$, where
+\[A=\set{a_1+a_2\mid a_1\in A_1\text{ and }a_2\in A_2}
+\]
+and $P$ and $B$ determined using $A$. One must verify this really is a cut, and then verify the axioms of addition hold. We will omit the tedious details of defining the last three arithmetic operations, and verifying the remaining axioms.
+
+Thus we continue with the knowledge that $\R$ is an ordered field. But $\R$ must satisfy even more properties than just this, or else we would have been happy to stick with $\Q$. It turns out that $\R$ additionally supports the \emph{least upper bound} operation, which we now define.
+
+% In the previous section we defined the real numbers using cuts in the rational number system. Our ``triple'' notation for cuts $(A,P,B)$ is nice and symmetric, but as it happens knowing $A$ is enough to determine $P$ and $B$ too: $P\cup B$ will always be equal to the complement $\Q\setminus A$, with $P$ containing the least element of $\Q\setminus A$ if it exists. Thus from now on we drop the $P$ and the $B$ from cuts and make the following revised definition.
+% 
+% \begin{definition}
+%   A \emph{cut} in $\Q$ is a subset $A\subset\Q$ such that the following properties hold
+%   \begin{enumerate}
+%   \item $A$ is infinite, and $\Q\setminus A$ is infinite;
+%   \item $A$ lies entirely below $\Q\setminus A$;
+%   \item $A$ has no greatest element.
+%   \end{enumerate}
+% \end{definition}
+
+% Intuitively, a cut $A$ corresponds to a real number $\alpha$ which ``comes just after'' $A$. But what does it mean to come just after? To answer this, we must define an ordering on real numbers. This turns out to be easy using our new definition of cuts. If $\alpha,\alpha'$ are real numbers corresponding to cuts $A,A'$, we say that $\alpha\leq\alpha'$ if and only if $A\subseteq A'$.
 
 \begin{definition}
-  A \emph{cut} in $\Q$ is a subset $A\subset\Q$ such that the following properties hold
-  \begin{enumerate}
-  \item $A$ is infinite and $\Q\setminus A$ is infinite;
-  \item $A$ lies entirely below $\Q\setminus A$;
-  \item $A$ has no greatest element.
-  \end{enumerate}
-\end{definition}
-
-Intuitively, a cut $A$ corresponds to a real number $\alpha$ which ``comes just after'' $A$. But what does it mean to come just after? To answer this, we must define an ordering on real numbers. This turns out to be easy using our new definition of cuts. If $\alpha,\alpha'$ are real numbers corresponding to cuts $A,A'$, we say that $\alpha\leq\alpha'$ if and only if $A\subseteq A'$.
-
-\begin{definition}
-  If $S$ is any set of real numbers, then an \emph{upper bound} for $S$ is a real number $\beta$ such that for all $\alpha\in S$, $\alpha\leq\beta$. If $\beta$ is an upper bound for $S$ then it is called the \emph{least upper bound} or \emph{supremum} of $S$ if it is least among all possible upper bounds of $S$.
+  Let $S$ be a set of real numbers. An \emph{upper bound} for $S$ is a real number $\beta$ such that for all $\alpha\in S$, $\alpha\leq\beta$. If $\beta$ is an upper bound for $S$ then it is called the \emph{least upper bound} or \emph{supremum} of $S$ if it is least among all possible upper bounds of $S$.
 \end{definition}
 
 \begin{example}
@@ -242,45 +252,21 @@ Intuitively, a cut $A$ corresponds to a real number $\alpha$ which ``comes just 
   \item The set $(-5,5]$ has a maximum element $5$. Therefore it has least upper bound $5$.
   \item The set $(-5,5)$ has no maximum element. But it has upper bounds, for example $7$, $23.6$, and $100$. The least upper bound or supremum is $5$.
   \item The set $\set{\frac12,\frac23,\frac34,\ldots}$ has no maximum element. But it has upper bounds, and its supremum is $1$.
-  \item The set $A=\set{q\in\Q\mid q<0\text{ or }q^2<2}$ has no maximum element. But it has upper bounds, such as $1.5$, and its supremum is $\sqrt2$.
+%   \item The set $A=\set{q\in\Q\mid q<0\text{ or }q^2<2}$ has no maximum element. But it has upper bounds, such as $1.5$, and its supremum is $\sqrt2$.
   \end{itemize}
 \end{example}
 
-Our construction of the real numbers can now be rephrased using our new definition of cut and the concept of supremum. The real number system $\R$ consists of the rational numbers $\Q$ together with, for every cut $A\subset\Q$ which does not have a rational supremum, a new supremum $\alpha$ of $A$.
+% Our construction of the real numbers can now be rephrased using our new definition of cut and the concept of supremum: The real number system $\R$ consists of the rational numbers $\Q$ together with, for every cut $A\subset\Q$ which does not have a rational supremum, a newly inserted supremum $\alpha$ of $A$.
 
-Our next big goal is to prove the result, promised in the previous section, that the real number system solves the problem of gaps once and for all. That is, the real number system should not have any gaps. First we need the following lemma.
-
-\begin{lemma}
-  Let $S$ be a set of real numbers which has an upper bound. Then the supremum of $S$ exists.
-\end{lemma}
-
-\begin{proof}[Proof sketch]
-  By our definition of the real numbers, every $\alpha\in S$ corresponds to a cut $A_\alpha\subset\Q$. From these cuts we define the new cut $A=\bigcup A_\alpha$. We leave it to the reader to verify that $A$ is really a cut.
-
-  Now, since $A_\alpha\subset A$ for every $\alpha\in S$, we see that $A$ is an upper bound of $S$. Moreover $A$ is the least upper bound of $S$. Indeed, any other upper bound $A'$ satisfies $A_\alpha\subset A'$ for every $\alpha\in S$, and therefore $A=\bigcup A_\alpha\subset A'$. In other words, $A\leq A'$, as desired.
-\end{proof}
-
-We are finally ready to prove the desired result that $\R$ has no gaps.
-
-\begin{theorem}
-  The set of real numbers has no gaps. That is, if $(A,P,B)$ is such that $A\cup P\cup B=\R$ and properties (a)(b)(c) of a cut are satisfied, then $P\neq\emptyset$.
-\end{theorem}
-
-\begin{proof}
-  Let $(A,P,B)$ be such a triple. By the previous lemma, we can let $\alpha$ be the supremum of $A$. Since $A$ has no greatest element, we have $\alpha\notin A$. Since $B$ has no least element, $\alpha\notin B$. Thus we must have $\alpha\in P$, which means that $P\neq\emptyset$.
-\end{proof}
-
-
-
-We close this section with the proof that the cut at $\sqrt2$ is really a cut. The proof turns out to be more technical than one might expect. It will provide us with a not-so-soft example of the kind of arguments we will see later in the course.
+In the rational number system $\Q$, sets don't need to have a supremum. For example if $(A,\emptyset,B)$ is an irrational cut, then the set $A$ has no supremum in $\Q$. We now complete the proof that the cut at $\sqrt2$ is really a cut, and therefore its left set $A$ has no supremum in $\Q$. The proof turns out to be more technical than one might expect. It will provide us with a not-so-soft example of the kind of arguments we will see later in the course.
 
 \begin{theorem}
   \label{thm:root-2-cut}
-  The set $A=\set{q\in\Q\mid q<0\text{ or }q^2<2}$ is a cut.
+  Let $(A,\emptyset,B)$ be the triple from Equation~\ref{eq:irrationalcut}. Then $(A,\emptyset,B)$ is a cut in $\Q$, and $A$ has no supremum in $\Q$.
 \end{theorem}
 
 \begin{proof}
-  Properties (a)(b) are routine, so we focus on verifying property (c), that $A$ has no greatest element. To begin, let $q\in A$ be given; we will show $q$ is not the greatest element of $A$. It is clear that a negative number cannot be the greatest element of $A$, so we may assume that $q\geq0$ and $q^2<2$.
+  The key step is to verify that $A$ has no greatest element. Let $q\in A$ be given; we will show $q$ is not the greatest element of $A$. It is clear that a negative number cannot be the greatest element of $A$, so we may assume that $q\geq0$ and $q^2<2$.
   
   We wish to find a small rational number $\epsilon>0$ such that $q+\epsilon$ is in $A$ also, that is, $(q+\epsilon)^2<2$. To find what $\epsilon$ should be, we work \emph{backwards}.
   \begin{align*}
@@ -300,6 +286,28 @@ We close this section with the proof that the cut at $\sqrt2$ is really a cut. T
     &\implies (q+\epsilon)^2<2
   \end{align*}
   We conclude that $q+\epsilon$ is a rational number greater than $q$ satisfying $(q+\epsilon)^2<2$. This shows $q$ is \emph{not} the greatest element of $A$, as desired.
+\end{proof}
+
+In the real number system $\R$, on the other hand, sets do have a supremum whenever possible.
+
+\begin{lemma}
+  Let $S$ be a set of real numbers which has an upper bound. Then the supremum of $S$ exists.
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+  By our definition of the real numbers, every $\alpha\in S$ corresponds to a cut $(A_\alpha,P_\alpha,B_\alpha)$. From these cuts we define a new cut cut $(A,P,B)$ by letting $A=\bigcup A_\alpha$ and $P$ and $B$ be determined from $A$. We leave it to the reader to verify that $(A,P,B)$ is really a cut. Let $\beta$ be the real number corresponding to the cut $(A,P,B)$.
+
+  Now, since $A_\alpha\subset A$ for every $\alpha\in S$, we see that $\beta$ is an upper bound of $S$. Moreover $\beta$ is the least upper bound of $S$. Indeed, any other upper bound $\beta'$ corresponding to $(A',P',B')$ satisfies $A_\alpha\subset A'$ for every $\alpha\in S$, and therefore $A=\bigcup A_\alpha\subset A'$. In other words, $\alpha\leq\beta$, as desired.
+\end{proof}
+
+We are finally ready to prove the result, promised in the previous section, that $\R$ has no gaps.
+
+\begin{theorem}
+  The set of real numbers has no gaps. That is, if $(A,P,B)$ is such that $A\cup P\cup B=\R$ and properties (a)(b)(c) of Definition~\ref{def:cut} satisfied, then $P\neq\emptyset$.
+\end{theorem}
+
+\begin{proof}
+  Let $(A,P,B)$ be such a triple. By the previous lemma, we can let $\alpha$ be the supremum of $A$. Since $A$ has no greatest element, we have $\alpha\notin A$. Since $B$ has no least element, $\alpha\notin B$. Thus we must have $\alpha\in P$, which means that $P\neq\emptyset$.
 \end{proof}
 
 \newpage
@@ -346,26 +354,17 @@ We close this section with the proof that the cut at $\sqrt2$ is really a cut. T
 
 In the previous two sections we showed how one can construct the real number system using cuts. In this section we take a high-level approach and show how to define and work with the real number system using its properties alone. Thus we will soon be ready to leave cuts behind for good.
 
-Although we introduced the real numbers as a way to measure distances, we of course know that the real numbers should carry arithmetic operations, too. In fact, it should be an \emph{ordered field}, which means it should support the four arithmetic operations as well as the comparison $<$, and these operations should satisfy the usual axioms of associativity, commutativity, and so forth. The rational number system has all these properties, and the real number system does too. We have yet to \emph{define} the arithmetic operations on the real numbers, but in principle it isn't difficult.
-
-For example, if $A_1,A_2$ are cuts then we define the sum cut
-\[A_1+A_2=\set{a_1+a_2\mid a_1\in A_1\text{ and }a_2\in A_2}
-\]
-One should verify that the sum cut is really a cut, and then verify the axioms of addition such as $A_1+A_2=A_2+A_1$ and so forth.
-
-Similarly, it is possible to define the last three arithmetic operations, and verify the remaining axioms. We will skip the details of these tedious definitions and verifications, though they are partially completed in the text.
-
 \begin{definition}
   An ordered field is said to satisfy the \emph{Axiom of Completeness} if every bounded subset has a least upper bound, that is, a supremum.
 \end{definition}
 
-For example, $\Q$ is an ordered field that is not complete, since we checked that the cut corresponding to $\sqrt2$ has no rational supremum. On the other hand the real field $\R$ does turn out to be complete. The results of this discussion are summarized in the following big theorem.
+For example, the rational number system $\Q$ is an ordered field that is not complete, since we checked that the set $A$ in the cut corresponding to $\sqrt2$ has no supremum in $\Q$. On the other hand we showed that the real number system $\R$ is an ordered field which is complete. The results of this discussion are summarized in the following big theorem.
 
 \begin{theorem}
   The real number system $\R$ is an ordered field satisfying the Axiom of Completeness. Moreover, $\R$ is the unique such field up to isomorphism.
 \end{theorem}
 
-As soon as one accepts this theorem, it is actually never necessary to speak of cuts again. In the future we can describe a real number in many ways: algebraically, as a limit, as a summation, or of course by its decimal expansion.
+As soon as one accepts this theorem, it is never necessary to speak of cuts again. In the future we can describe a real number in many ways: algebraically, as a limit, as a summation, or of course by its decimal expansion.
 
 Although we are omitting the greater part of the proof of the above theorem, let us verify the Axiom of Completeness holds in the real number system.
 
