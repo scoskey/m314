@@ -147,12 +147,12 @@ This is much the same as the way a rational number $q$ cuts the rationals into t
 \end{example}
 
 \begin{example}
-  The following is a cut
+  The following is a cut:
   \begin{equation}
     \label{eq:irrationalcut}
     \left(\set{q\in\Q\mid q<0\text{ or }q^2<2},\emptyset,\set{q\in\Q\mid q\geq0\text{ and }q^2>2}\right)\text{.}
   \end{equation}
-  This is the cut at $\sqrt{2}$ considered previously. We leave it until the next section to prove that $A$ really has no greatest element and $B$ has no least element. This type of cut, with $P=\emptyset$, is called an \emph{irrational cut} or a \emph{gap}.
+  This is the cut at $\sqrt{2}$ discussed above. We leave it until the next section to prove that $A$ really has no greatest element and $B$ has no least element. This type of cut, with $P=\emptyset$, is called an \emph{irrational cut} or a \emph{gap}.
   
   \begin{center}
   \begin{tikzpicture}
@@ -176,7 +176,7 @@ To close, let us look at the number systems we know so far, from smallest to lar
   \item $\N$: supports addition and multiplication, but not subtraction or division
   \item $\Z$: supports addition, multiplication, and subtraction, but not division
   \item $\Q$: supports all four operations, but has gaps;
-  \item $\R$: supports all four opertations, and has no gaps.
+  \item $\R$: supports all four operations, and has no gaps.
 \end{itemize}
 In the next section we will prove the final claim, that $\R$ has no gaps.
 
@@ -219,9 +219,9 @@ In the next section we will prove the final claim, that $\R$ has no gaps.
   Abbott \S 8.6, start \S 1.3
 \end{reading}
 
-Although we introduced the real numbers as a way to measure distances, we of course know that the real numbers should carry arithmetic operations, too. In fact, it should be an \emph{ordered field}, which means it should support the four arithmetic operations as well as the comparison $<$, and these operations should satisfy the usual axioms of associativity, commutativity, and so forth. The rational number system has all these properties, and the real number system does too. We have yet to \emph{define} the arithmetic operations on the real numbers, but in principle it isn't difficult.
+Although we introduced the real numbers as a way to measure distances, we of course know that the real numbers should carry arithmetic operations, too. In fact, it should be an \emph{ordered field}, which means it should support the four arithmetic operations as well as the comparison $\leq$, and these operations should satisfy the usual axioms of associativity, commutativity, and so forth. The rational number system has all these properties, and the real number system does too. We have yet to \emph{define} the arithmetic operations on the real numbers, but in principle it isn't difficult.
 
-For example, we define the ordering $<$ on real numbers as follows. If $\alpha_1$ and $\alpha_2$ are real numbers corresponding to cuts $(A_1,P_1,B_1)$ and $(A_2,P_2,b_2)$ are cuts, then we say $\alpha_1\leq\alpha_2$ if and only if $A_1\subseteq A_2$. It is straightforward to check this definition satisfies the usual axioms of $\leq$.
+For example, we define the ordering $\leq$ on real numbers as follows. If $\alpha_1$ and $\alpha_2$ are real numbers corresponding to cuts $(A_1,P_1,B_1)$ and $(A_2,P_2,b_2)$ are cuts, then we say $\alpha_1\leq\alpha_2$ if and only if $A_1\subseteq A_2$. It is straightforward to check this definition satisfies the usual axioms of $\leq$.
 
 Similarly, if we define $\alpha_1+\alpha_2$ as the real number corresponding to the cut $(A,P,B)$, where
 \[A=\set{a_1+a_2\mid a_1\in A_1\text{ and }a_2\in A_2}
@@ -278,7 +278,7 @@ In the rational number system $\Q$, sets don't need to have a supremum (within $
 
   Now, in the second implication we replaced $\epsilon^2$ with $\epsilon$ to make it easier to solve for $\epsilon$. To do this, we actually need to make the extra assumption that $\epsilon<1$, since then $\epsilon^2<\epsilon$ and the $\Longleftarrow$ implication holds true. This is acceptible because we haven't yet chosen $\epsilon$, so we just need to additionally promise to choose $\epsilon<1$.
 
-  We now know that our proof will succeed if we choose $\epsilon$ to be any positive rational number such that $\epsilon<(2-q^2)/(2q+1)$ and $\epsilon<1$. To verify that this works, we use our above preparatory work \emph{forwards} as follows.
+  We now know that our proof will succeed if we choose $\epsilon$ to be any positive rational number such that $\epsilon<(2-q^2)/(2q+1)$ and $\epsilon<1$. To verify that this works, we use our preparatory work \emph{forwards} as follows.
   \begin{align*}
     \epsilon<(2-q^2)/(2q+1)\quad\&\quad\epsilon<1
     &\implies q^2+2q\epsilon+\epsilon<2\quad\&\quad\epsilon^2<\epsilon\\
@@ -296,8 +296,8 @@ In the real number system $\R$, on the other hand, sets do have a supremum whene
   Let $S$ be a set of real numbers which has an upper bound. Then the supremum of $S$ exists.
 \end{lemma}
 
-\begin{proof}[Proof sketch]
-  By our definition of the real numbers, every $\alpha\in S$ corresponds to a cut $(A_\alpha,P_\alpha,B_\alpha)$. From these cuts we define a new cut cut $(A,P,B)$ by letting $A=\bigcup A_\alpha$ and $P$ and $B$ be determined from $A$. We leave it to the reader to verify that $(A,P,B)$ is really a cut. Let $\beta$ be the real number corresponding to the cut $(A,P,B)$.
+\begin{proof}[Proof idea]
+  By our definition of the real numbers, every $\alpha\in S$ corresponds to a cut $(A_\alpha,P_\alpha,B_\alpha)$. From these cuts we define a new cut cut $(A,P,B)$ by letting $A=\bigcup A_\alpha$, $B=\bigcap B_\alpha$, and $P=$ whatever is left. We leave it to the reader to verify that $(A,P,B)$ is really a cut. Let $\beta$ be the real number corresponding to the cut $(A,P,B)$.
 
   Now, since $A_\alpha\subset A$ for every $\alpha\in S$, we see that $\beta$ is an upper bound of $S$. Moreover $\beta$ is the least upper bound of $S$. Indeed, any other upper bound $\beta'$ corresponding to $(A',P',B')$ satisfies $A_\alpha\subset A'$ for every $\alpha\in S$, and therefore $A=\bigcup A_\alpha\subset A'$. In other words, $\alpha\leq\beta$, as desired.
 \end{proof}
