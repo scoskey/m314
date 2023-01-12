@@ -258,15 +258,15 @@ Thus we continue with the knowledge that $\R$ is an ordered field. But $\R$ must
 
 % Our construction of the real numbers can now be rephrased using our new definition of cut and the concept of supremum: The real number system $\R$ consists of the rational numbers $\Q$ together with, for every cut $A\subset\Q$ which does not have a rational supremum, a newly inserted supremum $\alpha$ of $A$.
 
-In the rational number system $\Q$, sets don't need to have a supremum. For example if $(A,\emptyset,B)$ is an irrational cut, then the set $A$ has no supremum in $\Q$. We now complete the proof that the cut at $\sqrt2$ is really a cut, and therefore its left set $A$ has no supremum in $\Q$. The proof turns out to be more technical than one might expect. It will provide us with a not-so-soft example of the kind of arguments we will see later in the course.
+In the rational number system $\Q$, sets don't need to have a supremum (within $\Q$). Before we can prove this, we first show as promised that the cut at $\sqrt2$ is really a cut. The proof turns out to be more technical than one might expect. It will provide us with a not-so-soft example of the kind of arguments we will see later in the course.
 
 \begin{theorem}
   \label{thm:root-2-cut}
-  Let $(A,\emptyset,B)$ be the triple from Equation~\ref{eq:irrationalcut}. Then $(A,\emptyset,B)$ is a cut in $\Q$, and $A$ has no supremum in $\Q$.
+  Let $(A,\emptyset,B)$ be the triple from Equation~\ref{eq:irrationalcut}. Then $(A,\emptyset,B)$ is a cut in $\Q$.
 \end{theorem}
 
 \begin{proof}
-  The key step is to verify that $A$ has no greatest element. Let $q\in A$ be given; we will show $q$ is not the greatest element of $A$. It is clear that a negative number cannot be the greatest element of $A$, so we may assume that $q\geq0$ and $q^2<2$.
+  The key step is to verify that $A$ has no greatest element, as the proof that $B$ has no least element is symmetric. Let $q\in A$ be given; we will show $q$ is not the greatest element of $A$. It is clear that a negative number cannot be the greatest element of $A$, so we may assume that $q\geq0$ and $q^2<2$.
   
   We wish to find a small rational number $\epsilon>0$ such that $q+\epsilon$ is in $A$ also, that is, $(q+\epsilon)^2<2$. To find what $\epsilon$ should be, we work \emph{backwards}.
   \begin{align*}
@@ -287,6 +287,8 @@ In the rational number system $\Q$, sets don't need to have a supremum. For exam
   \end{align*}
   We conclude that $q+\epsilon$ is a rational number greater than $q$ satisfying $(q+\epsilon)^2<2$. This shows $q$ is \emph{not} the greatest element of $A$, as desired.
 \end{proof}
+
+We may now conclude that if $(A,\emptyset,B)$ is the cut at $\sqrt2$, then $A$ has no rational supremum. Indeed if $\alpha$ were the supremum of $A$, then since $A$ has no greatest element we have $\alpha\notin A$. Similarly since $B$ has no least element we have $\alpha\notin B$. Thus $\alpha\notin\Q$.
 
 In the real number system $\R$, on the other hand, sets do have a supremum whenever possible.
 
