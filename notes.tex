@@ -113,9 +113,9 @@ Armed with the knowledge that $d^2=2$, we can now show $d$ is irrational.
   Suppose $d$ is rational and write $d=a/b$ where $a,b$ are natural numbers and the fraction is in lowest terms. Then $a^2=2b^2$. Notice that the right-hand side is even, and therefore so is the left-hand side. It follows that $a$ is even. Hence the left-hand side is divisible by $4$, and therefore so is the right-hand side. It follows that $b$ is even. Thus both $a$ and $b$ are even, contradicting that the fraction $a/b$ is in lowest terms.
 \end{proof}
 
-We conclude that the rational number system possesses some kind of gap at $\sqrt2$. Another way to say it is that the concept of $\sqrt2$ \emph{cuts} the rationals into two pieces, those that are less than $\sqrt2$ and those that are larger than $\sqrt{2}$. (More accurately, since in our development the number $\sqrt{2}$ doesn't exist yet, it would be better to say those that are negative or have square less than $2$, and those that are nonnegative and have square greater than $2$.)
+We conclude that the rational number system possesses some kind of gap at $\sqrt2$. Another way to say it is that the concept of $\sqrt2$ \emph{cuts} the rationals into two pieces, those that are less than $\sqrt2$ and those that are larger than $\sqrt{2}$. (Actually, since in our development the number $\sqrt{2}$ doesn't exist yet, it would be more appropriate to say: those that are negative or have square less than $2$, and those that are nonnegative and have square greater than $2$.)
 
-This is much the same as the way a rational number $q$ cuts the rationals into three pieces: those numbers that are less than $q$, $q$ itself, and those numbers that are greater than $q$. The key difference is the presence of $q$ itself in between the two large pieces. The concept of a cut is made formal in the following definition.
+The situation we just described is very similary to the way a rational number $q$ cuts the rationals into three pieces: those numbers that are less than $q$, $q$ itself, and those numbers that are greater than $q$. The key difference is the presence of $q$ itself in between the two halves. The concept of a cut is made formal in the following definition.
 
 \begin{definition}
   \label{def:cut}
@@ -354,23 +354,21 @@ We are finally ready to prove the result, promised in the previous section, that
   Abbott, \S 1.3, 1.4
 \end{reading}
 
-In the previous two sections we showed how one can construct the real number system using cuts. In this section we take a high-level approach and show how to define and work with the real number system using its properties alone. Thus we will soon be ready to leave cuts behind for good.
+In the previous two sections we showed how one can construct the real number system using cuts. In this section we take a high-level approach and show how to work in the real number system using its properties alone. This will enable us to leave cuts behind for good.
 
 \begin{definition}
-  An ordered field is said to satisfy the \emph{Axiom of Completeness} if every bounded subset has a least upper bound, that is, a supremum.
+  An ordered field is said to satisfy the \emph{Axiom of Completeness} if every subset which has an upper bound in fact has a supremum.
 \end{definition}
 
-For example, the rational number system $\Q$ is an ordered field that is not complete, since we checked that the set $A$ in the cut corresponding to $\sqrt2$ has no supremum in $\Q$. On the other hand we showed that the real number system $\R$ is an ordered field which is complete. The results of this discussion are summarized in the following big theorem.
+In the previous section, we saw that the ordered field $\Q$ \emph{does not} satisfy the Axiom of Completeness, since the set $A=\set{q\in\Q\mid q<0\text{ or }q^2<2}$ has no supremum in $\Q$. We also saw that the ordered field $\R$ \emph{does} satisfy the Axiom of Completeness. In fact, the following is true:
 
 \begin{theorem}
   The real number system $\R$ is an ordered field satisfying the Axiom of Completeness. Moreover, $\R$ is the unique such field up to isomorphism.
 \end{theorem}
 
-As soon as one accepts this theorem, it is never necessary to speak of cuts again. In the future we can describe a real number in many ways: algebraically, as a limit, as a summation, or of course by its decimal expansion.
+From this point on, we \emph{define} the real number system $\R$ to be the unique ordered field satisfying the Axiom of Completeness. It is therefore never necessary to speak of cuts again! In the future we may describe real numbers in many different ways: with cuts, with equations, with limits, with series, and of course with decimal expansions.
 
-Although we are omitting the greater part of the proof of the above theorem, let us verify the Axiom of Completeness holds in the real number system.
-
-From this point on, we will never need cuts again, and the real number system $\R$ is simply the unique ordered field extending the rational number system and satisfying the Axiom of Completeness. From this abstract definition we can prove all the facts we will need about the real number system. We begin with the following.
+In the rest of this section, we take up the task of showing that we can use our new abstract definition of $\R$ to prove all the properties and facts we will need about the real number system. We begin with the following elementary result.
 
 \begin{theorem}[Archimedean Principle]
   For any real number $x$, there exists a natural number $n$ such that $x<n$. That is, while there are real numbers between integers, there aren't any real numbers beyond the integers to the right.
