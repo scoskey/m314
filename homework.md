@@ -13,7 +13,7 @@ header-includes: |
 
 ## Week 2, due Wednesday, January 25
 
-1. TBA
+1. (Abbott, ex 1.4.4) Let $a\lt b$ and $T=\mathbb{Q}\cap[a,b]$. Show $\sup(T)=b$.
 2. TBA
 3. TBA
 
