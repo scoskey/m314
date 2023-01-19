@@ -11,6 +11,15 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 2, due Wednesday, January 25
+
+1. (Abbott, ex 1.4.4) Let $a<b$ and $T=\Q\cap[a,b]$. Show $\sup(T)=b$.
+2. Prove or give a counterexample: If $A$ and $B$ are sets of real numbers such that $a<b$ for all $a\in A$ and $b\in B$, then $\sup(A)<\inf(B)$.
+3. (Abbott, ex 1.4.6) We say that a set $D$ is *dense* in $\R$ if between any two real numbers we can find an element of $D$. Which of the following are dense, and why?  
+  * The set of rational numbers $p/q$ with $q\leq10$
+  * The set of rational numbers $p/q$ with $q$ a power of $2$
+  * The set of rational numbers $p/q$ with $q\leq10|p|$
+
 ## Week 1, due Wednesday, January 18
 
 1. (Abbott, ex 1.2.1)  
