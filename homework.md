@@ -14,8 +14,11 @@ header-includes: |
 ## Week 2, due Wednesday, January 25
 
 1. (Abbott, ex 1.4.4) Let $a\lt b$ and $T=\mathbb{Q}\cap[a,b]$. Show $\sup(T)=b$.
-2. TBA
-3. TBA
+2. Prove or give a counterexample: If $A$ and $B$ are sets of real numbers such that $a\lt b$ for all $a\in A$ and $b\in B$, then $\sup(A)\lt\inf(B)$.
+3. (Abbott, ex 1.4.6) We say that a set $D$ is *dense* in $\mathbb{R}$ if between any two real numbers we can find an element of $D$. Which of the following sets are dense, and why?  
+  * The set of rational numbers $p/q$ with $q\leq10$
+  * The set of rational numbers $p/q$ with $q$ a power of $2$
+  * The set of rational numbers $p/q$ with $q\leq10\abs{p}$
 
 ## Week 1, due Wednesday, January 18
 
