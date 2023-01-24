@@ -11,6 +11,15 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 3, due Wednesday, February 1
+
+1. Recall $\mathbb N^3$ consists of all triples of the form $(a,b,c)$, where $a,b,c\in\mathbb N$. Prove $\mathbb N^3$ is countable by showing how to write its elements in a list. (Write the first 10+ elements, explain how you would continue, and explain why the completed list would include every element).
+2. Let $S\_\text{fin}$ be the set of all *finite* words made with the letters $a,b$. So $S$ contains elements like $ab$, $abb$, $ababa$, $aabbbbaa$, and so forth. Prove $S\_\text{fin}$ is countable. (Write the first 10+ elements, explain how you would continue, and explain why the completed list would include every element).
+3. Let $\epsilon>0$. Let $I\_n$ be a sequence of bounded intervals of width $\geq\epsilon$. Assume $I\_n$ are nested, that is $I\_n\supset I\_{n+1}$. Prove that $\bigcap I\_n\neq\emptyset$.
+4. Read your proof from the activity that $S\_{\infty}$ is uncountable. Why doesn't this proof work for $S_\text{fin}$? Explain precisely where and why it fails.
+5. (Abbott, ex 1.5.10(a)) Let $A\subset[0,1]$ and assume that $A$ is uncountable. Show that there exists $a>0$ such that $A\cap[a,1]$ is uncountable.
+
+
 ## Week 2, due Wednesday, January 25
 
 1. (Abbott, ex 1.4.4) Let $a\lt b$ and $T=\mathbb{Q}\cap[a,b]$. Show $\sup(T)=b$.
