@@ -473,16 +473,7 @@ You can find the proof in Lemma~1.3.8 of the text.
 In this section we will continue with consequences of the completeness axiom. In particular we will establish one of the most surprising and historically disruptive consequences: the fact that there are more irrational numbers than there are rational numbers! In order to make this statement precise, we need to introduce the notion of countable and uncountable sets.
 
 \begin{definition}
-  A set $A$ is \emph{countable} if it can be enumerated in a sequence $a_n$, whose items are numbered by natural numbers $n$. Intuitively, $A$ is countable if all its elements can be ordered up in an infinite shopping list:
-% \begin{center}
-%   \begin{tikzpicture}
-%     \foreach \i in {0,...,4}
-%     \draw (\i,0) rectangle (\i+1,1);
-%     \draw (5,0)--(5.5,0);
-%     \draw (5,1)--(5.5,1);
-%     \node at (6,.5) {$\cdots$};
-%   \end{tikzpicture}
-% \end{center}
+  A set $A$ is \emph{countable} if it can be enumerated in a sequence $a_n$, whose items are indexed by natural numbers $n$. Intuitively, $A$ is countable if all its elements can be ordered up in an infinite shopping list:
   \begin{align*}
     1.&\quad\underline{\hspace{1in}}\\
     2.&\quad\underline{\hspace{1in}}\\
@@ -500,7 +491,7 @@ In this section we will continue with consequences of the completeness axiom. In
 \end{example}
 
 \begin{example}
-  The set of rational numbers $\Q$ is countable. To see this, let us first show that the set of positive rational numbers $\Q_+$ is countable. Although the numerator and denominator make it seem like there are two ``dimensions'' of information, we can get around this by fixing the sum of the two and then letting it increase: begin with $\frac11$, then do $\frac12,\frac21$, then $\frac13,\frac22,\frac31$, then $\frac14,\frac23,\frac32,\frac41$, and so forth. The list does have duplicates such as $\frac11$ and $\frac22$, but this is allowed, and in any case we could run through and delete them if we want. Finally we can include the negatives as well by applying the same method as we did with $\Z$.
+  The set of rational numbers $\Q$ is countable. To see this, let us first show that the set of positive rational numbers $\Q_+$ is countable. Although the presences of the numerator and denominator make it seem like we would need infinitely many infinite lists, we can get around that by fixing the sum of the two and then letting it increase: begin with $\frac11$, then do $\frac12,\frac21$, then $\frac13,\frac22,\frac31$, then $\frac14,\frac23,\frac32,\frac41$, and so forth. The list does have duplicates such as $\frac11$ and $\frac22$, but this is allowed, as we could in principle run through and delete them if we wanted. Finally, we can add in the negative rationals by applying the same method as we did with $\Z$.
 \end{example}
 
 The following result can be handy for showing sets are countable.
@@ -518,7 +509,7 @@ The following result can be handy for showing sets are countable.
   We leave the proof of the second statement as an exercise.
 \end{proof}
 
-To show how this lemma can come in handy, we can use it recast the proof that $\Z$ is countable. It is obvious that the set $\Z_+$ of nonnegative integers is uncountable, and ditto for the negative integers $\Z_-$. Since $\Z$ is the union of the two sets, it follows that $\Z$ is countable.
+To show how this lemma can come in handy, we can use it recast the proof that $\Z$ is countable. It is obvious that the set $\Z_+$ of nonnegative integers is countable, and ditto for the negative integers $\Z_-$. Since $\Z$ is the union of the two sets, it follows that $\Z$ is countable.
 
 We now come to the ``surprising'' fact hinted at above.
 
@@ -530,11 +521,11 @@ We now come to the ``surprising'' fact hinted at above.
 In order to prove this theorem, we need the following consequence of the Axiom of Completeness for the real numbers called the \emph{nested interval property}. This is a fact which we'll also use a few more times throughout the course.
 
 \begin{theorem}[Nested interval property]
-  Suppose that $I_n$ is a sequence of closed and bounded intervals, that is, intervals of the form $[a,b]$. Moreover suppose that the intervals $I_n$ are nested, that is, $I_{n+1}\subset I_n$. Then we have $\bigcap I_n\neq\emptyset$.
+  Suppose that $I_n$ is a sequence of closed and bounded intervals, that is, $I_n=[a_n,b_n]$. Moreover suppose that the sequence is nested, that is, $I_{n+1}\subset I_n$. Then we have $\bigcap I_n\neq\emptyset$.
 \end{theorem}
 
 \begin{proof}
-  For naming purposes, let $a_n$ be the left endpoint and $b_n$ be the right endpoint of the interval $I_n$. Notice that the set of left endpoints $\set{a_n\mid n\in\N}$ is bounded above, with any of the $b_n$ being such an upper bound. By the Axiom of Completeness, the set $\set{a_n\mid n\in\N}$ has a least upper bound, call it $\alpha$.
+  Notice that the set of left endpoints $\set{a_n\mid n\in\N}$ is bounded above, because any of the $b_n$'s is an upper bound. By the Axiom of Completeness, the set $\set{a_n\mid n\in\N}$ has a least upper bound, call it $\alpha$.
 
   Then given any $n$, we have $a_n\leq\alpha$, since $\alpha$ is an upper bound for the set $\set{a_n\mid n\in\N}$. On the other hand, we also have $\alpha\leq b_n$, since $\alpha$ is the \emph{least} upper bound for the set $\set{a_n\mid n\in\N}$. It follows that $\alpha$ lies in the interval $I_n=[a_n,b_n]$. Since $n$ was arbitrary, we conclude that $\alpha$ lies in $\bigcap I_n$. This completes the proof.
 \end{proof}
@@ -544,7 +535,7 @@ We are now ready to prove that the set of real numbers is uncountable.
 \begin{proof}[Proof of Theorem~\ref{thm:reals-uncountable}]
   Suppose towards a contradiction that $\R$ is countable. Then its elements can be enumerated in a sequence $x_n$. Now inductively construct a nested sequence of closed, bounded intervals as follows. Let $I_1$ be any closed, bounded interval not containing $x_1$. Let $I_2$ be any closed subinterval of $I_1$ not containing $x_2$. Inductively, let $I_n\subset I_{n-1}$ be any closed interval not containing $x_n$. This completes the construction.
 
-  Now by the NIP, there exists an element $\alpha\in\R$ such that for all $n$, we have $\alpha\in I_n$. Since $I_n$ does not contain $x_n$ and $\alpha\in I_n$, we have that $\alpha\neq x_n$. Since this is true for all $n$, the existence of $\alpha$ contradicts the claim that every element of $\R$ was enumerated in the sequence $x_n$!
+  Now by the NIP, there exists an element $\alpha\in\R$ such that $\alpha\in\bigcap I_n$. Now for each $n$, we have both $x_n\notin I_n$ and $\alpha\in I_n$, which implies that $\alpha\neq x_n$. This contradicts the claim that every element of $\R$ was enumerated in the sequence $x_n$!
 \end{proof}
 
 \begin{corollary}
@@ -559,7 +550,7 @@ We are now ready to prove that the set of real numbers is uncountable.
 \subsection*{Activity for\S \thesection}
 
 \begin{activity}
-  \item Let $A$ be the set of integer lattice points in the plane, that is, $A=\set{(x,y):x,y\in\Z}$. Draw a picture of the set $A$. Show that $A$ is countable by explaining how to enumerate all its elements in a list.
+  \item Let $A$ be the set of integer lattice points in the plane, that is, $A=\set{(x,y):x,y\in\Z}$. Draw a picture of the set $A$. Show $A$ is countable by showing how to write all its elements in a list. (Write the first 6--10 elements, and explain how you would continue.)
   \vspace\fill
   \item Find a nested sequence of nonempty bounded intervals with empty intersection.
   \vspace\fill
