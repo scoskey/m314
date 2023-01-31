@@ -682,18 +682,12 @@ In the following, let $S_{\infty}$ be the set of all \emph{infinite} words made 
     \underline{\hspace{.5in}} & \text{if }s_{nn}=\underline{\hspace{.5in}}
   \end{cases}
   \]
-  \item Write the full proof that $S_{\infty}$ is uncountable.
+  \item Write out the proof that $S_{\infty}$ is uncountable.
 \end{activity}
 
-% Idea: prove two sets have the same cardinality.
+% Prove that R and P(N) have the same cardinality.
 
-% \begin{exerc}[See also Abbott, ex 1.5.9]
-%   Recall that a real number $\alpha$ is called \emph{algebraic} if there exists a polynomial $p$ with integer coefficients such that $p(\alpha)=0$. Is the set $A$ of all algebraic numbers countable or uncountable? Prove your assertion.
-% \end{exerc}
-
-% \begin{exerc}
-%   Suppose that $A$ is an infinite set. Show that $|\N|\leq|A|$.
-% \end{exerc}
+% (See also Abbott, ex 1.5.9). Recall that a real number $\alpha$ is called \emph{algebraic} if there exists a polynomial $p$ with integer coefficients such that $p(\alpha)=0$. Is the set $A$ of all algebraic numbers countable or uncountable? Prove your assertion.
 
 \vspace\fill
 \begin{readnext}
@@ -715,7 +709,7 @@ In the following, let $S_{\infty}$ be the set of all \emph{infinite} words made 
   Abbott, \S 2.1
 \end{reading}
 
-A sequence of real numbers consists of one real number $a_n$ for each natural number $n$. Formally we can think of a sequence as a \emph{function} from $\N$ to $\R$. However sequences are so special that we rarely use the functional notation $a(n)$ and instead prefer the special notation $a_n$. We have already used sequences, for instance in the definition of a countable set. We will see later in the course that sequences play a huge role in analysis. In this section we give further motivation for studying sequences and the sibling concept of series.
+A sequence of real numbers consists of one real number $a_n$ for each natural number $n$. Officially a sequence is a \emph{function} from $\N$ to $\R$. However sequences are so special that we rarely use the function notation $a(n)$ and instead prefer the traditional notation $a_n$. We have already used sequences, for instance in the definition of a countable set. We will see later in the course that sequences play a huge role in analysis. In this section we give further motivation for studying sequences and the sibling concept of series.
 
 To begin consider the simple addition problem $\pi+e$, which we write out in decimal notation as
 \begin{align*}
@@ -730,7 +724,7 @@ Another problem with addition is the prospect of adding together infinitely many
 is infinite and has no value in the real numbers. On the other hand the familiar Zeno paradox asks whether the sum
 \[1+\frac12+\frac14+\frac18+\cdots
 \]
-has any value in the real numbers, and we usually agree that has a value of $2$. It seems that sometimes it makes sense to add together infinitely many numbers, and other times it doesn't.
+has any value in the real numbers, and we usually agree that it has the value $2$. It seems that sometimes it makes sense to add together infinitely many numbers, and other times it doesn't.
 
 But this conclusion deserves a great deal of scrutiny. To see why, consider the following simple proof that the Zeno series has a value of $2$. We first notice that
 \begin{align*}
@@ -745,7 +739,7 @@ Now let us apply this proof to the series $1+2+4+8+\cdots$. Again write
   (1+2+4+8+\cdots)-1&=2+4+8+\cdots\\
                     &=2(1+2+4+\cdots)
 \end{align*}
-This time we conclude that if $x=1+2+4+8+\cdots$ then $x$ satisfies the equation $x-1=2x$ and therefore that $x=-1$, which is nonsense!
+This time we conclude that if $x=1+2+4+8+\cdots$ then $x$ satisfies the equation $x-1=2x$ and therefore that $x=-1$, which is nonsense! (Or is it?)
 
 Finally, even if we do accept some infinite sums as valid, we still should decide whether the familiar laws of associativity and commutativity of addition are applicable to the terms of infinite sums. To see the potential difficulty, consider two ways of grouping the terms of the same infinite summation:
 \begin{align*}
@@ -769,21 +763,21 @@ In the second summation we first add two of the positive terms before then addin
   \[1-\frac12+\frac13-\frac14+\frac15-+\cdots
   \]
   \begin{itemize}
-    \item Try to reorder the terms to make the sum as close as possible to $0.5$. Use at least 15 terms to be sure you are actually close.
+    \item Try to reorder the terms to make the sum as close as possible to $0.5$. Use at least 15 terms to be sure you are actually representing your pattern.
     \item Try to reorder the terms to make the sum as close as possible to $1$.
     \item Try to reorder the terms to make the sum as close as possible to $1.5$.
   \end{itemize}
-  Were you (approximately) successful in each case? If so, write down your ordering of the terms. What method did you use to get it? If not, what barrier did you encounter?
+  Were you (approximately) successful in each case? If so, write down your pattern and result. If not, what barrier did you encounter?
   \vspace{2in}
   \item This time consider the following infinite summation:
   \[1-\frac12+\frac14-\frac18+\frac{1}{16}-+\cdots
   \]
   \begin{itemize}
-    \item Try to reorder the terms to make it come as close as possible to $0.5$. Use at least 12 terms to be sure you are actually close.
+    \item Try to reorder the terms to make the sum as close as possible to $0.5$. Use at least 15 terms to be sure you are actually representing your pattern.
     \item Try to reorder the terms to make it come as close as possible to $1$.
     \item Try to reorder the terms to make it come as close as possible to $1.5$.
   \end{itemize}
-  Were you (approximately) successful in each case? If so, write down your ordering of the terms. What method did you use to get it? If not, what barrier did you encounter?
+  Were you (approximately) successful in each case? If so, write down your pattern and result. If not, what barrier did you encounter?
 \end{activity}
 
 \vspace\fill
