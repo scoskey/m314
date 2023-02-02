@@ -11,6 +11,19 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 4, due Wednesday, February 8
+
+1. Use the definition of limit to prove $\lim\frac{3n-1}{2n+5}=\frac32$.
+2. Use the negation of the definition of limit to prove $\lim\frac{(-1)^n}{100}\neq0$.
+3. (a) Let $a\_n$ be a sequence and assume $\alpha=\sup\set{a_n\mid n\in\mathbb N}$ exists. Explain why for any $\epsilon$, there exists a term of the sequence $a\_n$ such that $a\_n>\alpha-\epsilon$.  
+  (b) Now assume that $a\_n\leq a\_{n+1}$ for all $n$. Show that for any $\epsilon$, there are infinitely many terms of the sequence such that $a\_n>\alpha-\epsilon$.
+4. (Abbott, ex 2.2.1) Suppose we swap the first two quantifiers in the definition of convergence, and write $x\_n$ *verconges* to $L$ if:  
+   $(\exists\epsilon>0)\;(\forall N\in\mathbb N)\;(\forall n\geq N)\;|x_n-L|<\epsilon$.  
+   Give an example of a vercongent sequence that is not convergent. What exactly is being described in this definition?
+<!--5. Suppose that $A\subset\mathbb R$ is bounded and that $\alpha=\sup(A)$.  This exercise shows how to prove that there exists a sequence in $A$ which converges to $\alpha$.  
+  (a) Prove that for each $n\in\mathbb N$ there exists $a\_n\in A$ such that $a_n>\alpha-1/n$.  
+  (b) Use the definition of convergence to conclude that $\lim a\_n=\alpha$.-->
+
 ## Week 3, due Wednesday, February 1
 
 1. Recall $\mathbb N^3$ consists of all triples of the form $(a,b,c)$, where $a,b,c\in\mathbb N$. Prove $\mathbb N^3$ is countable by showing how to write its elements in a list. (Write the first 10+ elements, explain how you would continue, and explain why the completed list would include every element).
