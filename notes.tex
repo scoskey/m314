@@ -77,8 +77,6 @@
   Abbott \S 1.1, 1.2, start 8.6
 \end{reading}
 
-% real numbers can be motivated by the intermediate value theorem, which is false in the rational number system
-
 We begin the course by briefly pondering a very deep question: what are numbers and what are they for?
 
 The natural or counting numbers $1,2,3,\ldots$ are collectively denoted $\N$ and are central to many areas of mathematical study. \emph{Combinatorics} is the study of counting finite sets. For example: how many ways are there to write the number 10 as a sum of three natural numbers? \emph{Number theory} is the study of the arithmetic operations on the natural numbers. For example: how many prime numbers are there less than 1 billion?
@@ -806,20 +804,20 @@ Recall that a \emph{sequence} is a list of one real number $a_n$ for every natur
 Since the definition is both of central importance and also somewhat subtle, we will analyze it in great detail.
 
 \begin{itemize}
-\item The $(\forall\epsilon>0)$ clause. Intuitively we think of $\epsilon$ as a very small \emph{tolerance}. Thus the definition of convergence begins by saying that for all possible tolerances, something will happen.
-\item The $(\exists N\in\N)\;(\forall n\geq N)$ clause. Intuitively this means that \emph{eventually} something will happen. This is because it says that there is some index such that for all later indices, that thing will be true.
-\item The $|a_n-L|<\epsilon$ clause. Intuitively we think of this as saying that $a_n$ lies within a small \emph{neighborhood} of $L$. Formally, if $x$ is any real number and $\epsilon>0$, then the \emph{$\epsilon$-neighborhood} of $x$, denoted $N_\epsilon(x)$, is the open interval centered at $x$ of radius $\epsilon$. In symbols:
+  \item The $(\forall\epsilon>0)$ clause. We think of $\epsilon$ as a very small \emph{tolerance}. Thus the definition of convergence begins by saying that for all possible tolerances, something will happen.
+  \item The $(\exists N\in\N)\;(\forall n\geq N)$ clause. This means that \emph{eventually} in the timeline of the sequence, something will become true, and then continue to be true forever.
+  \item The $|a_n-L|<\epsilon$ clause. This means that $a_n$ lies within a small \emph{neighborhood} of $L$. Formally, if $x$ is any real number and $\epsilon>0$, then the \emph{$\epsilon$-neighborhood} of $x$, denoted $N_\epsilon(x)$, is the open interval centered at $x$ of radius $\epsilon$. In symbols:
   \[N_\epsilon(x)=(x-\epsilon,x+\epsilon)=\set{y\in\R\mid|y-x|<\epsilon}
   \]
   Thus the conclusion of the definition of convergence says precisely that $a_n$ lies within the $\epsilon$-neighborhood of $L$.
 \end{itemize}
 
-To summarize, the statement that $a_n$ converges to $L$ says
+To summarize, the statement that $a_n$ converges to $L$ says:
 \begin{quotation}
- ``for all tolerances $\epsilon$, the sequence eventually lies within the $\epsilon$-neighborhood of $L$.''
+ ``For all tolerances $\epsilon>0$, eventually, the terms of the sequence lie in the $\epsilon$-neighborhood of $L$.''
 \end{quotation}
 
-So how does one show that a given sequence converges to a specified limit? One way to think of verifying the three-quantifier definition holds true is to play a three-step game. Your enemy takes the first turn and gives you some (small) value of $\epsilon$. You respond by calculating a (large enough) natural number $N$. Your enemy then responds by choosing a number $n\geq N$. Finally, you win if you can show that $L-\epsilon<a_n<L+\epsilon$.
+So how does one show that a given sequence converges to a specified limit? One way to think of verifying the three-quantifier definition holds true is to play a three-step game. Your enemy takes the first turn and gives you some (small) value of $\epsilon$. You respond by calculating a (large enough) natural number $N$. Your enemy then responds by choosing a number $n\geq N$. Finally, you win if you can show that $|a_n-L|<\epsilon$, or in other words, $L-\epsilon<a_n<L+\epsilon$.
 
 \begin{example}
   Let us confirm from the definition that $\lim1/\sqrt{n}=0$. Suppose that $\epsilon$ is given to us. We must find a value $N$ (depending on this $\epsilon$) with the property that whenever $n\geq N$ we have $-\epsilon<1/\sqrt{n}<\epsilon$. Since $1/\sqrt{n}$ is always positive, we only have to worry about the second inequality.
@@ -847,20 +845,19 @@ So how does one show that a given sequence converges to a specified limit? One w
                       &\iff n+1>1/\epsilon \\
                       &\iff n>1/\epsilon-1
   \end{align*}
-  Thus the needed value of $N$ is $1/\epsilon-1$. To simplify the calculation, it will be good enough to take $N\geq 1/\epsilon$.
+  Thus the needed value of $N$ is $1/\epsilon-1$. To simplify the calculation, it will be good enough to take $N>1/\epsilon$.
   
-  Now to write the proof forwards, let $\epsilon$ be given and let $N$ be a natural number such that $N\geq 1/\epsilon$. Then for all $n>N$ we have
+  Now to write the proof forwards, let $\epsilon$ be given and let $N$ be a natural number such that $N>1/\epsilon$. Then for all $n\geq N$ we have
   \begin{align*}
     1-n/(n+1) &= 1/(n+1)\\
               &< 1/n\\
+              &\leq 1/N
               &<\epsilon
   \end{align*}
   Thus $1-\epsilon < n/(n+1)$, as desired.\qed
 \end{example}
 
-% discussion of tails?
-
-So far we have discussed only convergence of sequences. What happens when a sequence $a_n$ does \emph{not} converge to $L$? Formally negating the definition of convergence, this says
+So far we have discussed only convergence. What happens when a sequence $a_n$ does \emph{not} converge to $L$? Formally negating the definition of convergence, this says
 \[(\exists\epsilon>0)\;(\forall N\in\N)\;(\exists n\geq N)\;|a_n-L|\geq\epsilon
 \]
 Intuitively this says that there is some tolerance $\epsilon$ such that the sequence frequently lies outside the $\epsilon$-neighborhood of $L$.
@@ -899,6 +896,7 @@ In this section we made a formal definition of limit, and used it to verify seve
 \begin{readnext}
   Abbott, \S 2.3
 \end{readnext}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
