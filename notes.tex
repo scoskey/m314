@@ -906,9 +906,9 @@ In this section we made a formal definition of limit, and used it to verify seve
   Abbott, \S 2.3
 \end{reading}
 
-In the previous section we gave a rigorous definition of the limit of a sequence, and checked that it corresponds with our intuition for several special examples. In this section we begin our study of \emph{calculus}, that is, the rules for calculating with operators such as limits. Of course the core of calculus consists of the formulas and laws for derivatives and integrals. But limits obey laws as well, and understanding these limit laws is a prerequesite to understanding derivatives and integrals.
+In the previous section we gave a rigorous definition of the limit of a sequence, and checked that it corresponds with our intuition for several special examples. In this section we begin our study of \emph{calculus}, that is, the laws or rules for calculating limits, derivatives, and integrals. Of course calculus usually focuses on the derivatives and integrals, but before we can get there we must first understand limits.
 
-Before we begin recall the \emph{triangle inequality} states that for any $x,y$ we have $||x|-|y||\leq|x-y|\leq|x|+|y|$. The triangle inequality is actually best visualized in two dimensions, where it says that if $x$ is $|x|$ away from the origin and $y$ is $|y|$ away from the origin, then the distance between $x$ and $y$ cannot be less than $||x|-|y||$ and not more than $|x|+|y|$. Since the sign of $y$ doesn't matter, we can write:
+Before we begin recall the \emph{triangle inequality} states that for any $x,y$ we have $||x|-|y||\leq|x-y|\leq|x|+|y|$. The triangle inequality is actually best visualized in two (or more) dimensions, where it says that if $x$ is $|x|$ units from the origin, and $y$ is $|y|$ units from the origin, then the distance between $x$ and $y$ cannot be less than $||x|-|y||$, and cannot be more than $|x|+|y|$. Since the sign of $y$ doesn't matter, we can write:
 \[||x|-|y||\leq|x\pm y|\leq|x|+|y|
 \]
 
@@ -918,8 +918,8 @@ Before we begin recall the \emph{triangle inequality} states that for any $x,y$ 
     \draw (0,0) circle (.8);
     \draw (0,0) circle (1.3);
     \node[circle,draw,inner sep=1] at (0,0) {};
-    \node[circle,fill,draw,inner sep=1,label=right:$x$] (x) at (0:.8) {};
-    \node[circle,fill,draw,inner sep=1,label=left:$y$] (y) at (180:1.3) {};
+    \node[circle,fill,draw,inner sep=1,label=left:$x$] (x) at (30:.8) {};
+    \node[circle,fill,draw,inner sep=1,label=right:$y$] (y) at (30:1.3) {};
     \draw (x)--(y);
   \end{tikzpicture}
   \quad
@@ -927,14 +927,14 @@ Before we begin recall the \emph{triangle inequality} states that for any $x,y$ 
     \draw (0,0) circle (.8);
     \draw (0,0) circle (1.3);
     \node[circle,draw,inner sep=1] at (0,0) {};
-    \node[circle,fill,draw,inner sep=1,label=left:$x$] (x) at (0:.8) {};
-    \node[circle,fill,draw,inner sep=1,label=right:$y$] (y) at (0:1.3) {};
+    \node[circle,fill,draw,inner sep=1,label=right:$x$] (x) at (30:.8) {};
+    \node[circle,fill,draw,inner sep=1,label=left:$y$] (y) at (30:-1.3) {};
     \draw (x)--(y);
   \end{tikzpicture}
-  \caption{Intuitive justification for the triangle inequalities. On the left, $x$ and $y$ are as far apart as possible at $|x|+|y|$ units. On the right, $x$ and $y$ are as close together as possible at $||x|-|y||$ units.}
+  \caption{Intuitive justification for the triangle inequality. On the left, $x$ and $y$ are as close together as possible at $||x|-|y||$ units. On the right, $x$ and $y$ are as far apart as possible at $|x|+|y|$ units.}
 \end{figure}
 
-We can now state the laws for the calculus of limits. The proof is long, but the method of proof is very important and worth exploring at least until it becomes familiar (and somewhat tedious).
+We can now state the limit calculus laws. The proof is long, but the method of proof is very important and worth exploring at least until it becomes familiar (and somewhat tedious).
 
 \begin{theorem}[Limit calculus]
   Suppose that $\lim a_n=a$ and $\lim b_n=b$. Then we have
