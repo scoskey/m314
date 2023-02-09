@@ -11,6 +11,18 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 5, due Wednesday, February 9
+
+1. (Abbot, 2.3.4) Suppose that $\lim a\_n=0$. Find, with justification, each of the following limits.  
+  * $\lim \frac{1+2a\_n}{1+3a\_n-4a\_n^2}$
+  * $\lim \frac{(a\_n+2)^2-4}{a\_n}$
+  * $\lim \frac{\frac{2}{a\_n}+3}{\frac{1}{a\_n}+5}$
+  * $\lim n-\sqrt{n^2+2n}$
+2. Show that if $\lim a\_n=a$ and $a\neq0$ and $\lim a\_nb\_n=ab$ then $\lim b\_n=b$.
+3. Let $p$ be any real number. Prove that $\sum\frac1{n^p}$ converges if and only if $p>1$. (This is called the ``$p$-test.'' To solve this problem you may use the well-known fact that a geometric series $\sum r^n$ converges iff $\abs{r}\lt1$.)
+4. Let $x\_n$ be the sequence indicated below. Write down a recurrence for the sequence $x\_n$ (that is, a formula for $x\_{n+1}$ in terms of $x\_n$). Use induction to prove that the sequence is both bounded and monotone. Prove that the sequence converges. Finally, find the limit.  
+  $x\_1=\sqrt{2},x\_2=\sqrt{2+\sqrt{2}},x\_3=\sqrt{2+\sqrt{2+\sqrt{2}}}$, $\ldots$  
+
 ## Week 4, due Wednesday, February 8
 
 1. Use the definition of limit to prove $\lim\frac{3n-1}{2n+5}=\frac32$.
