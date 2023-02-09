@@ -17,6 +17,7 @@ header-includes: |
   * $\lim \frac{1+2a\_n}{1+3a\_n-4a\_n^2}$
   * $\lim \frac{(a\_n+2)^2-4}{a\_n}$
   * $\lim \frac{\frac{2}{a\_n}+3}{\frac{1}{a\_n}+5}$
+2. Find, with justification, the following limit.
   * $\lim n-\sqrt{n^2+2n}$
 2. Show that if $\lim a\_n=a$ and $a\neq0$ and $\lim a\_nb\_n=ab$ then $\lim b\_n=b$.
 3. Let $p$ be any real number. Prove that $\sum\frac1{n^p}$ converges if and only if $p>1$. (This is called the ``$p$-test.'' To solve this problem you may use the well-known fact that a geometric series $\sum r^n$ converges iff $\abs{r}\lt1$.)
