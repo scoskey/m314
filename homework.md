@@ -11,7 +11,7 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
-## Week 5, due Wednesday, February 9
+## Week 5, due Wednesday, February 15
 
 1. (Abbot, 2.3.4) Suppose that $\lim a\_n=0$. Find, with justification, each of the following limits.  
   * $\lim \frac{1+2a\_n}{1+3a\_n-4a\_n^2}$
