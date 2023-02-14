@@ -11,6 +11,17 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 6, due Wednesday, February 22
+
+1. Consider the sequence defined as follows: $a\_n=$ the reciprocal of the least prime factor of $n$. Write out the first 20 terms of $a\_n$. Find two subsequences of $a\_n$ that converge to two different limits.
+2. Find an example of a divergent sequence $a\_n$ which satisfies $\lim(a\_{n+1}-a\_n)=0$, and verify it has these properties.
+3. In this exercise you will show MCT implies BWT. Together with our work from class, we can conclude MCT is yet another equivalent to AOC. To begin, we say that a term $a\_n$ of a sequence is a *peak* if for all $n'>n$ we have $a\_n'\leq a\_n$.  
+  (a) Assume the sequence $a\_n$ has infinitely many peaks. Show that $a\_n$ has a monotone decreasing subsequence. [Hint: Use the peaks.]  
+  (b) Assume the sequence $a\_n$ has finitely many peaks. Show that $a\_n$ has a monotone increasing subsequence. [Hint: What happens after the last peak?]  
+  (c) Use parts (a) and (b) together with the MCT to prove the BWT.
+4. TBA
+5. TBA
+
 ## Week 5, due Wednesday, February 15
 
 1. (Abbot, 2.3.4) Suppose that $\lim a\_n=0$. Find, with justification, each of the following limits.  
