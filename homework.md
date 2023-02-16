@@ -19,8 +19,8 @@ header-includes: |
   (a) Assume the sequence $a\_n$ has infinitely many peaks. Show that $a\_n$ has a monotone decreasing subsequence. [Hint: Use the peaks.]  
   (b) Assume the sequence $a\_n$ has finitely many peaks. Show that $a\_n$ has a monotone increasing subsequence. [Hint: What happens after the last peak?]  
   (c) Use parts (a) and (b) together with the MCT to prove the BWT.
-4. TBA
-5. TBA
+4. (Abbott, 2.5.6) Let $b\geq0$. Show that the sequence $b^{1/n}$ is convergent and find the value of the limit.
+5. (See Abbott, 2.6.3) Prove directly from the definition of Cauchy sequence that if $x_n$ and $y_n$ are Cauchy sequences, then $x_n+y_n$ is a Cauchy sequence.
 
 ## Week 5, due Wednesday, February 15
 
