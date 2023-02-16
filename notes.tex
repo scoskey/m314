@@ -1349,14 +1349,14 @@ The Bolzano--Weierstra\ss\ theorem has numerous theoretical applications, some o
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Completeness}
+\section{More about completeness}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{reading}
   Abbott, \S 2.6
 \end{reading}
 
-Recall that the the real number system satisfies the Axiom of Completeness, which says that every bounded set has a supremum. We have said that this axiom should be interpreted as saying that the real number system does not have any gaps. But this leads to the question of what it means for other spaces, besides the real numbers, to be complete? For example it is intuitively clear that $\R^2$ or the sphere $\mathbb S^2$ do not have any gaps. To capture this, we need a more general way to define completeness.
+Recall that the the real number system satisfies the Axiom of Completeness, which says that every bounded set has a supremum. We have said that this axiom should be interpreted as saying that the real number system does not have any gaps. But this leads to the question of what it means for other spaces, besides the real numbers, to be complete. For example, it is intuitively clear that the plane $\R^2$ and the sphere $\mathbb S^2$ do not have any gaps, but they do not have any ``supremum'' operation. To continue with analysis beyond the real numbers, one needs a more general way to define completeness.
 
 \begin{definition}
   The sequence $a_n$ is \emph{Cauchy} if for all $\epsilon>0$ there exists $N\in\N$ such that for all $m,n\geq N$ we have $|a_n-a_m|<\epsilon$.
@@ -1365,9 +1365,9 @@ Recall that the the real number system satisfies the Axiom of Completeness, whic
 The Cauchy sequences are the ones which really, really want to converge, but don't know what their limit should be!
 
 \begin{example}
-  The sequence $a_n=1/n$ is Cauchy. As scratch work, we seek $N$ large enuogh that whenever $n,m\geq N$ we have $|1/n-1/m|<\epsilon$. Since the variables $n,m$ are symmetric, assume for convenience that $n<m$. This way $|1/n-1/m|$ is simply $1/n-1/m$. Now $1/n-1/m<\epsilon$ would follow from $1/n<\epsilon$, or $n>1/\epsilon$.
+  The sequence $a_n=1/n$ is Cauchy. As scratch work, we seek $N$ large enuogh that whenever $n,m\geq N$ we have $|1/n-1/m|<\epsilon$. Using the triangle inequality, this will be true so long as $1/n+1/m<\epsilon$. We therefore try to make both $1/n$ and $1/m$ be $<\epsilon/2$. Solving $1/n<\epsilon/2$ yields $n>2/\epsilon$, and solving $1/m<\epsilon/2$ yields $m>2/\epsilon$. 
   
-  To complete the proof, let $N>1/\epsilon$ and without loss of generaltiy let $m>n\geq N$. Then $|1/n-1/m|=1/n-1/m<1/n\leq 1/N<\epsilon$, as desired.
+  To complete the proof, let $N>2/\epsilon$, and let $m,n\geq N$ be given. Then $1/n+1/m\leq1/N+1/N=2/N<\epsilon$. Hence $|1/n-1/m|\leq1/n+1/m<\epsilon$, as desired.
 \end{example}
 
 The proof that the above sequence is Cauchy is not too different than the proof that it is convergent. In fact the notions of Cauchy and convergent sequences turn out to be exactly the same.
