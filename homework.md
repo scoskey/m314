@@ -11,6 +11,17 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 7, due Wednesday, March 1
+
+1. Use direct comparisons to decide whether the series converge or diverge.
+  * $\sum\frac{1+\sin(n)}{n^2}$
+  * $\sum\frac{n}{n^2+n}$
+2. Use the root or ratio tests to decide whether the series converge or diverge.  
+  * $\sum(\frac{3n+1}{2n+4})^{2n}$
+  * $\sum\frac{2^{1+3n}(n+1)}{n^25^{1+n}}$
+3. Suppose that $a\_n,b\_n\geq0$ and that $\sum a\_n$ and $\sum b\_n$ both converge. Prove that $\sum a\_nb\_n$ converges.
+
+
 ## Week 6, due Wednesday, February 22
 
 1. Consider the sequence defined as follows: $a\_n=$ the reciprocal of the least prime factor of $n$. Write out the first 20 terms of $a\_n$. Find two subsequences of $a\_n$ that converge to two different limits.
