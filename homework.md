@@ -11,7 +11,7 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
-## Exam 1, due Monday, March 6
+## Midterm, due Monday, March 6
 
 **Instructions** You may not consult with any other person or intelligence. Your work must be *completely your own*. You may refer to class notes and materials freely. If you use any outside resources, please *provide citations*. To receive full credit, use only the methods *we learned in our class*. To receive full credit, please *show all work*.
 
