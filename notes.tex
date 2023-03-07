@@ -1553,7 +1553,7 @@ Although the comparison test is very simple, it may be leveraged to yield severa
     \item $\displaystyle\sum\frac{1}{n^2-n+2}$
     \item $\displaystyle\sum\frac{1}{3n-2}$
     \item $\displaystyle\sum\frac{1}{3n+2}$
-    \item $\displaystyle\sum\frac{e^n}{\pi^n}$
+    \item $\displaystyle\sum\frac{(n+1)^{2n}}{(2n^2+n+1)^n}$
     \item $\displaystyle\sum\frac{n!}{n^n}$
     \vspace\fill
   \end{enumerate}
@@ -1577,42 +1577,36 @@ Although the comparison test is very simple, it may be leveraged to yield severa
 \section{Conditional convergence}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The convergence tests we studied in the previous section applied primarily to series with nonnegative terms. But many series have terms of mixed signs, and as we saw previously these series can exhibit some of the most confusing behavior (such as a lack of commutativity).
+The convergence tests we studied in the previous section were mainly applicable to series with nonnegative terms. But many series have mixed signs, and as we saw earlier that such series can exhibit some of the most confusing behavior (such as a lack of commutativity).
 
-Of course, if $\sum a_n$ is a series with mixed signs, one can always take absolute values of the terms and study $\sum|a_n|$ instead. Then all of the tests in the previous section may be applied to this latter series. This idea leads to the question of what is the relationship between convergence of $\sum a_n$ and convergence of $\sum|a_n|$.
-
-\begin{definition}
-  A series $\sum a_n$ is said to be \emph{absolutely convergent} if $\sum |a_n|$ is convergent.
-\end{definition}
-
-Thus if $\sum a_n$ is a series with nonnegative terms and $\sum a_n$ converges, then $\sum a_n$ is absolutely convergent by definition. 
+Of course, if $\sum a_n$ is a series with mixed signs, one can always take absolute values of the terms and study $\sum|a_n|$ instead. All of the tests in the previous section apply to $\sum|a_n|$. But this leads to the question of what is the relationship between convergence of $\sum a_n$ and convergence of $\sum|a_n|$.
 
 \begin{theorem}
   \label{thm:absolute}
-  If $\sum a_n$ is absolutely convergent, then $\sum a_n$ is convergent.
+  If $\sum|a_n|$ is convergent, then $\sum a_n$ is convergent.
 \end{theorem}
 
 \begin{proof}
   Consider the new series $\sum(a_n+|a_n|)$ and note that the terms $a_n+|a_n|$ are nonnegative. Since $a_n+|a_n|\leq2|a_n|$, the comparison test implies that $\sum(a_n+|a_n|)$ converges. Now the series calculus implies that $\sum a_n=\sum(a_n+|a_n|)-\sum|a_n|$, and in particular $\sum a_n$ converges.
 \end{proof}
 
-% maybe use b_n = min(a_n,0) ?
-
-\begin{example}
-  The series $\sum\sin(n)/n^2$ is absolutely convergent. Indeed, its absolute variant is $\sum|\sin(n)|/n^2$, and this can be compared with the convergent series $\sum 1/n^2$.
-\end{example}
-
-The converse to the Theorem~\ref{thm:absolute} is very false, that is, it is possible for a series to be convergent but not absolutely convergent.
-
-\begin{example}
-  The series $\sum(-1)^{n+1}/n$ is convergent. Although we will prove this shortly, for now recall that in the introductory section we estimated its value at 0.69. On the other hand, the absolute variant of this series is $\sum 1/n$, which we know to be divergent.
-\end{example}
+The converse of the Theorem~\ref{thm:absolute} is false, as we will see shortly in the examples.
 
 \begin{definition}
-  A series $\sum a_n$ is said to be \emph{conditionally convergent} if it is convergent but not absolutely convergent.
+  A series $\sum a_n$ is said to be \emph{absolutely convergent} if it is convergent, and moreover $\sum|a_n|$ is convergent.
+
+  A series $\sum a_n$ is said to be \emph{conditionally convergent} if it is convergent, and $\sum|a_n|$ is divergent.
 \end{definition}
 
-The possibilities for convergence are shown in Figure~\ref{fig:convergence}.
+\begin{example}
+  The series $\sum\sin(n)/n^2$ is absolutely convergent. Indeed, the series $\sum|\sin(n)|/n^2$ may be compared with $\sum 1/n^2$, which we know to be convergent. Therefore by Theorem~\ref{thm:absolute}, $\sum\sin(n)/n^2$ is convergent too.
+\end{example}
+
+\begin{example}
+  The series $\sum(-1)^{n+1}/n$ is conditionally convergent. Recall from Section~\ref{sec:sequences} we estimated its value at $0.69$ (we will prove it's convergent later). On the other hand, if we take the absolute values of the terms we get $\sum 1/n$, which we know to be divergent.
+\end{example}
+
+We can organize the possibilities for convergence in a table, see Figure~\ref{fig:convergence}.
 
 \begin{figure}[h]
   \begin{tabular}{l|cc}
@@ -1620,23 +1614,23 @@ The possibilities for convergence are shown in Figure~\ref{fig:convergence}.
     $\sum|a_n|$ conv & AC & X\\
     $\sum|a_n|$ div & CC & Div
   \end{tabular}
-  \caption{Possibilities for convergence. The ``X'' denotes an impossible situation\label{fig:convergence}}
+  \caption{AC denotes Absolutely Convergent, CC denotes Conditionally Convergent, Div denotes divergent, and X denotes an impossible situation\label{fig:convergence}.}
 \end{figure}
 
-All of the tests in the previous section can now be regarded as tests for absolute convergence. To apply them to a series $\sum a_n$ with mixed signs, one simply considers the series $\sum|a_n|$ and applies some test to conclude that $\sum|a_n|$ converges and hence $\sum a_n$ converges absolutely. Tests for conditional convergence are somewhat harder to come by, but there are several. The simplest and most famous is the following.
+If $\sum a_n$ is a nonnegative series, then convergence and absolute convergence are the same. If $\sum a_n$ has mixed signs, then we can test for absolute convergence by considering $\sum|a_n|$ and using any test from the previous sections. Testing for conditional convergence is more subtle, but there are some tests such as the following.
 
 \begin{theorem}[Alternating series test]
-  Assume that $a_n$ is a decreasing sequence with limit $0$. Then the series $\sum(-1)^na_n$ converges.
+  Assume that $a_n$ is monotone decreasing and $\lim a_n=0$. Then the series $\sum(-1)^na_n$ converges.
 \end{theorem}
 
 \begin{proof}
-  Observe that $S_{2n+2}=S_{2n}-(a_{2n+1}-a_{2n+2})$ and that $S_{2n+3}=S_{2n+1}+(a_{2n+2}-a_{2n+3})$. Since the terms $a_n$ are decreasing, it follows that the even-indexed subsequence $S_{2n}$ is decreasing and the odd-indexed subsequence $S_{2n+1}$ is increasing. Moreover $S_{2n}$ is bounded below by $-a_1$ and $S_{2n+1}$ is bounded above by $-a_1+a_2$.
+  Let $S_n$ be the sequence of partial sums, and consider the two subsequences $S_{2k}$ and $S_{2k+1}$. Then since $a_n$ is decreasing, we have $S_{2k+2}-S_{2k}=a_{2k+2}-a_{2k+1}<0$ and that $S_{2k+3}-S_{2k+1}=-a_{2k+3}+a_{2k+2}>0$. It follows that $S_{2k}$ is decreasing and $S_{2k+1}$ is increasing. Moreover $S_{2k}$ is bounded below by $-a_1$ and $S_{2k+1}$ is bounded above by $-a_1+a_2$.
 
-  Therefore by the monotone convergence theorem, both subsequences converge, say to $S$ and $T$ respectively. Now it follows that $S_{2n+1}-S_{2n}\to S-T$. But we also have $S_{2n+1}-S_{2n}=a_{2n+1}\to0$. Therefore $S=T$ and it is easy to see this implies $S_n\to S$. Hence $\sum a_n$ converges.
+  By the MCT, both $S_{2k}$ and $S_{2k+1}$ converge, say to $S$ and $T$ respectively. Now it follows that $S_{2k+1}-S_{2k}\to S-T$. But we also have $S_{2k+1}-S_{2n}=a_{2k+1}\to0$. Therefore $S=T$ and this implies $S_n\to S$. In particular $\sum a_n$ converges.
 \end{proof}
 
 \begin{example}
-  The series $\sum(-1)^n\frac{n^2}{n^3+9}$ is conditionally convergent. To see that it is not absolutely convergent one can compare $\sum\frac{n^2}{n^3+9}$ against the series $\sum 1/2n$. To see that it is convergent, we apply the alternating series test. The only tricky thing to check is that $n^2/(n^3+9)$ is (eventually) decreasing. For this one can simply check that the derivative of $x^2/(x^3+9)$ is (eventually) negative.
+  The series $\sum(-1)^n\frac{n^2}{n^3+9}$ is conditionally convergent. To show it is convergent, we apply the alternating series test. The only tricky thing to check is that $n^2/(n^3+9)$ is (eventually) decreasing. For this one can simply check that the derivative of $x^2/(x^3+9)$ is (eventually) negative. To see that it is not absolutely convergent one may compare $\sum\frac{n^2}{n^3+9}$ against $\sum 1/2n$. 
 \end{example}
 
 We close our discussion of series by answering our initial question about commutativity in infinite summations. Recall that we calculated two different values for series with terms $1,-1/2,+1/3,-1/4,\ldots$. As we shall now see, this phenomenon occurs precisely when a series is conditionally convergent.
@@ -1665,8 +1659,8 @@ We close our discussion of series by answering our initial question about commut
 \newpage
 \subsection*{Activity for \S \thesection}
 
-\begin{exerc}
-  Decide whether the given series converge absolutely, converge conditionally, or diverge.
+\begin{activity}
+  \item Decide whether the given series converge absolutely, converge conditionally, or diverge.
   \begin{enumerate}\itemsep\fill
     \item $\displaystyle\sum\frac{(-2)^n}{3^n}$
     \item $\displaystyle\sum\frac{(-3)^n}{2^n}$
@@ -1674,7 +1668,7 @@ We close our discussion of series by answering our initial question about commut
     \item $\displaystyle\sum\frac{(-1)^n}{\sqrt[3]{n^2+7}}$
     \vspace\fill
   \end{enumerate}
-\end{exerc}
+\end{activity}
 
 % \begin{exerc}
 %   Give an example of two convergent series $\sum a_n$ and $\sum b_n$ such that $\sum a_nb_n$ diverges. (Compare with the previous homework.)
