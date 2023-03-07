@@ -11,6 +11,14 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 9, due Wednesday, March 15 
+
+1. Give an example of two convergent series $\sum a\_n$ and $\sum b\_n$ such that $\sum a\_nb\_n$ diverges. Why doesn't this contradict Homework 7, exercise 3?
+2. Suppose that $\sum a\_n$ converges absolutely and that the sequence $b\_n$ is bounded. Prove that $\sum a\_nb\_n$ converges absolutely.
+3. Suppose that $\sum a\_n$ converges conditionally. Show that the series consisting of just the positive terms is divergent.
+4. TBA
+5. TBA
+
 ## Midterm, due Monday, March 6
 
 **Instructions** You may not consult with any other person or intelligence. Your work must be *completely your own*. You may refer to class notes and materials freely. If you use any outside resources, please *provide citations*. To receive full credit, use only the methods *we learned in our class*. To receive full credit, please *show all work*.
