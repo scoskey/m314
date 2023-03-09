@@ -16,8 +16,8 @@ header-includes: |
 1. Give an example of two convergent series $\sum a\_n$ and $\sum b\_n$ such that $\sum a\_nb\_n$ diverges. Why doesn't this contradict Homework 7, exercise 3?
 2. Suppose that $\sum a\_n$ converges absolutely and that the sequence $b\_n$ is bounded. Prove that $\sum a\_nb\_n$ converges absolutely.
 3. Suppose that $\sum a\_n$ converges conditionally. Show that the series consisting of just the positive terms is divergent.
-4. TBA
-5. TBA
+4. For $0<\alpha<1$, the modified Cantor set $C^\alpha$ is constructed by starting with $B_0=[0,1]$ and recursively letting $B_{n+1}$ be the set obtained by removing the middle $\alpha$ fraction of each interval of $B_n$. Find the length of $C^\alpha$.
+5. Find the fractal dimension of $C^\alpha$. Hint: use a scaling factor that grows both intervals in $B_1$ to a length of $1$.
 
 ## Midterm, due Monday, March 6
 
