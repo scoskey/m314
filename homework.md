@@ -11,6 +11,16 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 10, due Wednesday, March 29
+
+1. Give an example of a sequence of open sets $A\_n$ such that $\bigcap A\_n$ is *not* open. Give an example of a sequence of closed sets $B\_n$ such that $\bigcup B\_n$ is *not* closed.
+2. Show that $A$ is clopen (both open and closed) if and only if $\partial A=\emptyset$.
+3. Show that if $A$ is compact then $\sup(A)$ exists and $\sup(A)\in A$.
+4. In the following proofs, refer the "subsequential limit" definition of compactness, (not the Heine--Borel characterization).  
+  (a) Show that if $A$ and $B$ are both compact then $A\cup B$ is compact.  
+  (b) Show that if $A$ is closed, $B$ is compact, and $A\subset B$, then $A$ is compact.  
+5. Show that for any set $A$, $\partial A$ is closed. Then, use the previous exercise plus the Heine--Borel theorem to show that if $A$ is compact then $\partial A$ is compact.
+
 ## Week 9, due Wednesday, March 15 
 
 1. Give an example of two convergent series $\sum a\_n$ and $\sum b\_n$ such that $\sum a\_nb\_n$ diverges. Why doesn't this contradict Homework 7, exercise 3?
@@ -25,7 +35,7 @@ header-includes: |
 
 1. Please copy the following paragraph, and sign your name below it: "My solutions are my own original work. I completed this exam without consulting any other person. I followed Boise State University's policies on academic integrity."
 2. Suppose $\alpha$ is a real number corresponding to the cut $(A,P,B)$. Describe the cut corresponding to the real number $2\alpha$. You may want to separate into cases based on whether the cut is rational or irrational.
-3. Let $A,B$ be sets of real numbers such that $A\cap B=\emptyset$ and $\sup(A)=\sup(B)$. [Added after: Additionally assume both $A$ and $B$ have no maximum element.] Show that there exists a sequence $x\_n$ which is: monotone, has a subsequence in $A$, and has a subsequence in $B$.
+3. Let $A,B$ be sets of real numbers which have no maximum element, and assume $\sup(A)=\sup(B)$. Show that there exists a sequence $x\_n$ which is: monotone, has a subsequence in $A$, and has a subsequence in $B$.
 4. Prove that the set is countable: $A=$ the set of irrational numbers of the form $a+b\sqrt{2}$, where $a,b$ are nonzero rational numbers.
 5. Prove that the set is uncountable: $A=$ the set of real numbers whose decimals expansion use only the digits $3,5,7$.
 6. Use the definition of convergence to verify that the sequence converges to the proposed limit: $a_n=\frac{3n+1}{5n+1}$, $L=3/5$

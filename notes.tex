@@ -1701,12 +1701,11 @@ We close our discussion of series by answering our initial question about commut
 
 In this chapter we study subsets of the real line using \emph{topology}, which is a notion of abstract shape. In the context of our class, topology will let us explore the shape of subsets of $\R$. Before commencing with the appropriate definitions, we wish to give a small taste of just how complicated subsets of $\R$ can be.
 
-To motivate our discussion, let us begin with the notoriously difficult problem of measuring the \emph{size} of a subset. We have already introduced the notion of \emph{cardinality}, which gives us some idea of the size of a set (countable vs uncountable). But this notion is very course since it has just two outcomes. In this section we will discuss two more notions: the \emph{length} and the \emph{dimension} of a set. After we have introduced topology we will briefly touch on a fourth notion called \emph{category}.
+To motivate our discussion, let us begin with the notoriously difficult problem of measuring the \emph{size} of a subset. We have already introduced the notion of \emph{cardinality}, which gives us some idea of the size of a set (countable vs uncountable). But this notion is very course since it has just two outcomes. In this section we will discuss two more notions: the \emph{length} and the \emph{dimension} of a set.
 
 We will now introduce the \emph{Cantor set}, which will help us challenge our ideas about what cardinality, length, and dimension mean, and how they interact with one another. The Cantor set set has many unusual properties not seen in our familiar examples of sets, that is, the intervals, cuts, sequences, and so forth.
 
-The Cantor set is constructed as follows. Begin with the unit interval $[0,1]$, and remove its open middle third to obtain the set $C_1=[0,\frac13]\cup[2/3,1]$. Next remove the open middle third of each of these intervals to obtain the set $C_2=[0,\frac19]\cup[\frac29,\frac13]
-\cup[\frac23,\frac79]\cup[\frac89,1]$. Continuing in like fashion, we obtain a decreasing sequence of closed sets $C_n$, each of which is the union of several disjoint closed intervals. The Cantor set $C$ is then defined to be $\bigcap C_n$.
+The Cantor set is constructed as follows. Begin with the unit interval $[0,1]$, and remove its open middle third to obtain the set $C_1=[0,\frac13]\cup[2/3,1]$. Next remove the open middle third of each of these intervals to obtain the set $C_2=[0,\frac19]\cup[\frac29,\frac13] \cup[\frac23,\frac79]\cup[\frac89,1]$. Continuing in like fashion, we obtain a decreasing sequence of closed sets $C_n$, each of which is the union of several disjoint closed intervals. The Cantor set $C$ is then defined to be $\bigcap C_n$.
 
 \begin{figure}[h]
 \begin{center}
@@ -1734,12 +1733,12 @@ Initially it is hard to see whether $C$ has any elements at all. But it does, fo
 \end{proposition}
 
 \begin{proof}
-  Let $S$ denote the set of infinite binary sequences. We have already seen using the diagonalization argument that $S$ is uncountable. Thus it suffices to find a one-to-one function from $S$ to the Cantor set. Indeed, given any element $s\in S$ we define a sequence of intervals $I_n$ from $C_n$ as follows. If $s(1)=0$ we let $I_1=$ the left interval of $C_1$ and if $s(1)=1$ we let $I_1=$ the right such. Similarly if $s(2)=0$ we let $I_2=$ the left interval of $C_2$ contained in $I_1$, and if $s(2)=1$ we let $I_2=$ the right such.
+  Let $S$ denote the set of infinite binary sequences. We have already seen using a diagonalization argument that $S$ is uncountable. Thus it suffices to find a one-to-one function from $S$ to the Cantor set. Indeed, given any element $s\in S$ we define a sequence of intervals $I_n$ from $C_n$ as follows. If $s(1)=0$ we let $I_1=$ the left interval of $C_1$ and if $s(1)=1$ we let $I_1=$ the right such. Similarly if $s(2)=0$ we let $I_2=$ the left interval of $C_2$ contained in $I_1$, and if $s(2)=1$ we let $I_2=$ the right such.
 
   Continuing in this fashion, $s$ determines a nested sequence of closed intervals $I_n$. By the NIP there exists a point $x_s$ lying in $\bigcap I_n$. Moreover the function $x\mapsto x_s$ is one-to-one. Indeed, if $s\neq s'$ then there is some first index $n$ such that $s(n)\neq s(n')$. Then the interval $I_n$ determined by $s$ and the interval $I'_n$ determined by $s'$ are disjoint, and this implies $x_s\neq x_{s'}$.
 \end{proof}
 
-We next consider the \emph{length} of the Cantor set. Although we do not give the definition of length in full generality, we need only keep in mind the following very simple properties. First, the length of an interval $[a,b]$ or $(a,b)$ is equal to $b-a$. Second, the length of a finite or countable union of disjoint sets is equal to the sum of the lengths of the factors.
+We next consider the \emph{length} of the Cantor set. Although we do not give the definition of length in full generality, we need only keep in mind the following very simple properties. First, the length of an interval $[a,b]$ or $(a,b)$ is equal to $b-a$. Second, the length of a finite or countable union of disjoint sets is equal to the sum of the lengths of the sets.
 
 \begin{proposition}
   The Cantor set has zero length.
@@ -1979,7 +1978,7 @@ We conclude this section with a justification for the term ``closed''. The next 
 \subsection*{Activity for \S \thesection}
 
 \begin{activity}
-  \item For each of the following sets $A$, find the boundary $\partial A$. Then decide whether the following sets are open, closed, both, or neither.
+  \item For each of the following sets $A$, find the boundary $\partial A$. Then decide whether the set is open, closed, both, or neither.
   \begin{enumerate}\itemsep\fill
     \item $A=\set{0,1,\ldots,10}$
     \item $A=\set{1/n\mid n\in\N}\cup\{0\}$
