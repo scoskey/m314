@@ -2269,7 +2269,7 @@ Parts~(a) and (b) of the definition should seem quite natural. Part~(c) is motiv
   The space $C[0,1]$ consists of all continuous functions $f\colon[0,1]\to\R$. (Recall that we will discuss continuity more rigorously in the next chapter.) The distance function is the \emph{uniform distance} $d(f,g)=\sup_{t\in[0,1]}|f(t)-g(t)|$.
 \end{example}
 
-To do topology in metric space, we first have to have neighborhoods. Recall that in $\R$ the neighborhood notation $N_\epsilon(x)$ denotes the interval $(x-\epsilon,x+\epsilon)$. In $\R^2$ the neighborhood notation $N_\epsilon(\mathbf{x})$ denotes the disk centered at $x$ of radius $\epsilon$, and so forth. By analogy, if $X$ is a metric space with distance function $d$, we can define the neighborhoods $N_\epsilon(x)=\{y\mid d(x,y)<\epsilon\}$.
+To do topology in metric space, we first have to have neighborhoods. Recall that in $\R$ the neighborhood notation $N_\epsilon(x)$ denotes the interval $(x-\epsilon,x+\epsilon)$. In $\R^2$ the neighborhood notation $N_\epsilon(\mathbf{x})$ denotes the disk centered at $x$ of radius $\epsilon$, and so forth. By analogy, if $X$ is a metric space with distance function $d$, we can define the neighborhoods $N_\epsilon(x)=\{y\in X\mid d(x,y)<\epsilon\}$.
 
 We can use these neighborhoods to repeat the definitions of all the basic topological concepts.
 
@@ -2278,20 +2278,22 @@ We can use these neighborhoods to repeat the definitions of all the basic topolo
   \begin{itemize}
   \item A point $x\in X$ is on the boundary of $A$ if every neighborhood $N_\epsilon(x)$ meets both $A$ and $X\setminus A$
   \item $A$ is open if it omits its boundary, $A$ is closed if it contains its boundary
+  \item $x_n$ converges to $x$ if $(\forall\epsilon>0)(\exists N\in\N)(\forall n>N)\,d(x_n,x)<\epsilon$
+  \item $x_n$ is Cauchy if $(\forall\epsilon>0)(\exists N\in\N)(\forall m,n>N)\,d(x_m,x_n)<\epsilon$
   \item $A$ is compact if every sequence of $A$ has a subsequence converging to a limit in $A$
   \item $A$ is connected if one cannot find disjoint open sets $V,V'$ meeting $A$ such that $A\subset V\cup V'$.
   \end{itemize}
 \end{definition}
 
-% It is easy to fill in the omitted definitions of interior, exterior, limit point, isolated point, and several others.
+% It is easy to fill in the omitted definitions of interior, exterior, and several others.
 
-We can also define convergent and Cauchy sequences in metric space as follows. The sequence $x_n$ is convergent with limit $x$ if and only if for all $\epsilon$ there exists $N$ such that $n>N$ implies $d(x_n,x)<\epsilon$. The sequence $x_n$ is Cauchy if and only if for all $\epsilon$ there exists $N$ such that $m,n>N$ implies $d(x_m,x_n)<\epsilon$. At the level of generality of metric spaces, the statement we called the Cauchy criterion now becomes a definition.
+Since we have defined convergent and Cauchy sequences, it is natural to ask whether the Cauchy criterion is true in metric spaces. The answer is not in general! For example, if $X$ is the space $(0,1)$, then the sequence $1/n$ is a Cauchy sequence in $X$ with no limit in $X$. This means we need a name for the situation when the Cauchy criterion is true in $X$.
 
 \begin{definition}
   A metric space $X$ is \emph{complete} if every Cauchy sequence is convergent.
 \end{definition}
 
-The space $\R$ is complete by the Cauchy criterion itself, and the spaces $\R^n$ are complete as well. On the other hand, the space $X=(0,1)$, that is the open unit interval considered as a subspace of $\R$, is not complete. For example the sequence $1/n$ is a Cauchy sequence of $(0,1)$ but has no limit in $(0,1)$.
+In this terminology, $\R$ is complete (by the actual Cauchy criterion), and the spaces $\R^n$ are complete too. On the other hand, the space $X=(0,1)$ is not complete.
 
 \begin{proposition}
   A subspace $A\subset\R$ is complete if and only if $A$ is closed.
