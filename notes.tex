@@ -2128,6 +2128,16 @@ We will need to bring topology into the picture. If the two components are open,
 
 To resolve this mess, we observe that the two components of the set $[0,1]\cup[2,3]$ are \emph{contained in} disjoint open sets. That is, $[0,1]\subset(-0.1,1.1)$ and $[2,3]\subset(1.9,3.1)$. The following correct definition is the end result of this line of reasoning.
 
+% Suggestion for streamlined definition of connected.
+
+% Motivation: Consider the ways intervals can abut.
+% [0,1]u[1,2]. The sets overlap. The result is connected.
+% [0,1]u(1,2]. The sets are disjoint. But the boundaries meet. Even stronger, the boundary of one set meets the other set. The result is connected.
+% [0,1)u(1,2]. The boundaries meet. But at least the boundary of each set doesn't meet the other set. The result is disconnected.
+
+% A is connected if for any partition of A into nonempty sets BuC, either dB meets C or dC meets B.
+% A is disconnected if you can partition it into nonempty sets BuC, such that dB,C are disjoint and B,dC are disjoint.
+
 \begin{definition}
   A subset $A\subset\R^n$ is said to be \emph{disconnected} if there exist disjoint open sets $V,V'$, both meeting $A$, and such that $A\subset V\cup V'$. A subset $A\subset\R^n$ is said to be \emph{connected} if it is not disconnected.
 \end{definition}
@@ -2536,7 +2546,7 @@ The proof is left as an exercise.
 Recall that intuitively speaking, we said that $f$ is continuous at $a$ if the value of the function at $a$ is near the values $f(x)$ as $x$ approaches $a$. Thanks to our rigorous treatment of functional limits, we are now ready to state this formally as follows.
 
 \begin{definition}
-  Let $f$ be a real-valued function defined on an interval of $\R$. We say $f$ is \emph{continuous} at a point $a$ in its domain if $\lim_{x\to a}f(x)$ exists and equals $f(a)$. We say that $f$ is \emph{continuous} if it is continuous on every point of its domain.
+  Let $f$ be a real-valued function defined on an interval of $\R$. We say $f$ is \emph{continuous} at a point $a$ in its domain if $\lim_{x\to a}f(x)$ exists and equals $f(a)$. We say that $f$ is \emph{continuous} if it is continuous at every point of its domain.
 \end{definition}
 
 Our theorems regarding functional limits are now ready to bear fruit. First of all, since functional limits admit both an $\epsilon,\delta$ and a sequential characterization, so too does continuity.
@@ -2559,8 +2569,8 @@ Our theorems regarding functional limits are now ready to bear fruit. First of a
     \item $f+g$ is continuous
     \item $kf$ is continuous for any $k\in\R$
     \item $fg$ is continuous
-    \item $f/g$ is continuous (whenever $g(x)\neq 0$)
-    \item $\sqrt{f}$ is continuous (provided $f\geq0$)
+    \item $f/g$ is continuous, provided $g(x)\neq 0$
+    \item $\sqrt{f}$ is continuous, provided $f\geq0$
   \end{enumerate}
 \end{theorem}
 
@@ -2591,11 +2601,11 @@ The continuity calculus allows us to establish that a variety of functions are c
 % \end{example}
 
 \begin{example}
-  The function $f(x)=\sin(x)$ is continuous. Again we must check this by hand using the definition of the $\sin$ function. Without going into details, it is not difficult to see geometrically that we always have $|\sin(x)-\sin(a)|\leq|x-a|$, so we may take $\delta=\epsilon$ in this proof.
+  The function $\sqrt{x^2+17\sin(1/x)}$ is continuous where it is defined. Here we are using the composition law two times.
 \end{example}
 
 \begin{example}
-  The function $\sqrt{x^2+17\sin(1/x)}$ is continuous where it is defined. Here we are using the composition law two times.
+  The function $f(x)=\sin(x)$ is continuous. Since the continuity calculus doesn't apply, we must check this directly from the definition. Without going into details, it is not difficult to see geometrically that we always have $|\sin(x)-\sin(a)|\leq|x-a|$, so we may take $\delta=\epsilon$ in the proof.
 \end{example}
 
 We close with a beautiful characterization which expresses continuity in purely topological terms. First we need to define forward and inverse images of a set with respect to a function.
@@ -2643,8 +2653,7 @@ We remark that this characterization is true in the world of metric spaces too: 
     \vspace\fill
   \end{enumerate}
   % \item Give an example of a discontinuous function $f$ such that $|f|$ is continuous.
-  \item (Abbott, ex 4.3.9) Let $f$ be a continuous function and let $Z=\set{x\mid f(x)=0}$ (the zeroes or roots of the function). Prove that $Z$ is closed.
-  \vspace\fill
+%   \item (Abbott, ex 4.3.9) Let $f$ be a continuous function and let $Z=\set{x\mid f(x)=0}$ (the zeroes or roots of the function). Prove that $Z$ is closed.
 \end{activity}
   
 % \begin{exerc}

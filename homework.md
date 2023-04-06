@@ -18,7 +18,7 @@ header-includes: |
 3. Let $f(x)$ be the function defined below. Prove that for every real number $a$, $f$ is discontinuous at $a$.  
   $f(x)=\begin{cases}1&x\in\mathbb Q\\\\0&x\notin\mathbb Q\end{cases}$
 4. Find an example of functions $f,g$ such that $f,g$ are both discontinuous at $0$ but $f+g$ is continuous at $0$.
-5. ???
+5. (Abbott, ex 4.3.9) Let $f$ be a continuous function and let $Z=\set{x\mid f(x)=0}$ (the zeroes or roots of the function). Prove that $Z$ is closed.
 
 ## Week 11, due Wednesday, April 5
 
