@@ -2614,16 +2614,16 @@ We close with a beautiful characterization which expresses continuity in purely 
   Let $f\colon X\to Y$ be any function. If $A$ is a subset of $X$ then the \emph{forward image} of $A$ with respect to $f$ is the set $f(A)=\set{f(a)\mid a\in A}$. And if $B$ is a subset of $Y$ then the \emph{inverse image} of $B$ with respect to $f$ is $f^{-1}(B)=\set{x\in X\mid f(x)\in B}$.
 \end{definition}
 
-Notice that if $f$ is a continuous function and $V$ is an open set, it is not necessarily the case that $f(V)$ is open too. For example if $f(x)=x^2$ and $V=(-1,1)$, then $f[V]=[0,1)$ which is not open. On the other hand, the following result states that the continuous functions are precisely those which preserve the open sets under inverse images.
+Notice that if $f$ is a continuous function and $V$ is an open set, it is not necessarily the case that $f(V)$ is open too. For example if $f(x)=x^2$ and $V=(-1,1)$, then $f[V]=[0,1)$ which is not open. On the other hand, the following result states that the continuous functions are precisely those which preserve the open sets under inverse images. %]
 
 \begin{theorem}
   Let $f\colon\R\to\R$. Then $f$ is continuous everywhere if and only if for every open set $V$ we have $f^{-1}(V)$ is open too.
 \end{theorem}
 
 \begin{proof}
-  First suppose $f$ is continuous, and let $V$ be open and $a\in f^{-1}(V)$. Since $V$ is open, $f(a)$ has a neighborhood $N_\epsilon(f(a))\subset V$. Since $f$ is continuous at $a$ there exists $\delta$ such that $|x-a|<\delta$ implies $|f(x)-f(a)|<\epsilon$. This is equivalent to the set containment $N_\delta(a)\subset N_\epsilon(f(a))$. It follows that $N_\delta(a)\subset f^{-1}(V)$, so $f^{-1}(V)$ is open.
+  First suppose $f$ is continuous, and let $V$ be open and $a\in f^{-1}(V)$. Since $V$ is open, $f(a)$ has a neighborhood $N_\epsilon(f(a))\subset V$. Since $f$ is continuous at $a$ there exists $\delta$ such that $|x-a|<\delta$ implies $|f(x)-f(a)|<\epsilon$. This is equivalent to the set containment $F(N_\delta(a))\subset N_\epsilon(f(a))$. It follows that $N_\delta(a)\subset f^{-1}(V)$, so $f^{-1}(V)$ is open.
   
-  Conversely, suppose $V$ open implies $f^{-1}(V)$ is open. Given $a$ and $\epsilon$ we apply this to the open set $N_\epsilon(f(a))$ to conclude $f^{-1}(N_\epsilon(a))$ is open. This implies there exists $\delta$ such that $N_\delta(a)\subset N_\epsilon(f(a))$. This means precisely that $|x-a|<\delta$ implies $|f(x)-f(a)|<\epsilon$, that is, $f$ is continuous at $a$.
+  Conversely, suppose $V$ open implies $f^{-1}(V)$ is open. Given $a$ and $\epsilon$ we apply this to the open set $N_\epsilon(f(a))$ to conclude $f^{-1}(N_\epsilon(a))$ is open. This implies there exists $\delta$ such that $f(N_\delta(a))\subset N_\epsilon(f(a))$. This means precisely that $|x-a|<\delta$ implies $|f(x)-f(a)|<\epsilon$, that is, $f$ is continuous at $a$.
 \end{proof}
 
 We remark that this characterization is true in the world of metric spaces too: if $f\colon X\to Y$ then $f$ is continuous (preserves limits) if and only if for every open set $V$ in $Y$ we have $f^{-1}(V)$ is open in $X$.
