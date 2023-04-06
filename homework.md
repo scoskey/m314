@@ -11,6 +11,15 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 12, due Wednesday, April 12
+
+1. Prove part (c) of the funcional limit calculus theorem: If $\lim\_{x\to a}f(x)=L$ and $\lim\_{x\to a}g(x)=M$ then $\lim\_{x\to a}f(x)g(x)=LM$.
+2. (Abbott, ex 4.2.11) Prove the squeeze theorem for functional limits: if $f(x)\leq g(x)\leq h(x)$ and $\lim\_{x\to a}f(x)=\lim\_{x\to a}h(x)=L$ then $\lim_{x\to a}g(x)$ exists and $=L$. You may use either characterization of functional limit.
+3. Let $f(x)$ be the function defined below. Prove that for every real number $a$, $f$ is discontinuous at $a$.  
+  $f(x)=\begin{cases}1&x\in\mathbb Q\\\\0&x\notin\mathbb Q\end{cases}$
+4. Find an example of functions $f,g$ such that $f,g$ are both discontinuous at $0$ but $f+g$ is continuous at $0$.
+5. ???
+
 ## Week 11, due Wednesday, April 5
 
 1. If $A,B$ are connected subsets of $\mathbb R$, show that $A\cap B$ is connected. Is this true for connected subsets $A,B$ of $\mathbb R^2$? Explain why it is true or draw a counterexample.
