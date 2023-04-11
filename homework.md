@@ -11,6 +11,17 @@ header-includes: |
 
 [Draft Overleaf template](https://www.overleaf.com/read/wqzxckcdzwzr)
 
+## Week 13, due Wednesday, April 19
+
+1. Suppose that $f$ is continuous on $[a,b]$ and that for every $n\in\mathbb N$ there exists $x\in[a,b]$ such that $\abs{f(x)}\leq\frac1n$. Show that there exists $x\in[a,b]$ such that $f(x)=0$.
+2. Show that the equation $2^x+3^x=4^x$ has a solution. [Hint: apply the Intermediate Value Theorem on an appropriate interval. You may assume we know exponential functions are continuous.]
+3. Prove *Rolle's thoerem*, which states that if $f$ is a differentiable function, $a\lt b$, and $f(a)=f(b)$, then there exists $c$ such that $a\lt c\lt b$ and $f'(c)=0$. [Hint: let $c$ be an extreme value of $f$.]
+4. Let $f(x)$ be the function:  
+  $f(x)=\begin{cases}x^a&x\geq0\\\\0&x<0\end{cases}$  
+  (a) For which values of $a$ is $f$ continuous at $0$?  
+  (b) For which values of $a$ is $f'(0)$ defined?  
+  (c) For which values of $a$ is $f''(0)$ defined?
+
 ## Week 12, due Wednesday, April 12
 
 1. Prove part (c) of the funcional limit calculus theorem: If $\lim\_{x\to a}f(x)=L$ and $\lim\_{x\to a}g(x)=M$ then $\lim\_{x\to a}f(x)g(x)=LM$.
