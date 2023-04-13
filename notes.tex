@@ -2501,7 +2501,7 @@ The proof is left as an exercise.
   \begin{enumerate}
     \item $\displaystyle\lim_{x\to0}\frac{x^3+2x^2+3x+1}{x^5+x+2}$
     \vspace\fill
-    \item $\displaystyle\lim_{x\to2}\frac{x^2-x-6}{3x^2+5x-2}$
+    \item $\displaystyle\lim_{x\to-2}\frac{x^2-x-6}{3x^2+5x-2}$
     \vspace\fill
   \end{enumerate}
 \end{activity}
@@ -2813,7 +2813,7 @@ The intermediate value theorem has many practical consequences, just one of whic
   Abbott, \S 5.2
 \end{reading}
 
-The derivative is one of the most important developments of modern mathematics because it captures the intuitive notion of ``rate of change''. As simple as this intuition may seem, one must be careful since not all functions have a well-defined derivative. Our study of continuous functions and limits leaves us prepared to explore the concept rigorously.
+The derivative is one of the most important developments of modern mathematics because it captures the intuitive notion of instantaneous rate of change. As simple as a ``rate of change'' may seem, one must be careful with the ``instantaneous'' part since it isn't always well defined. Our study of continuous functions and limits leaves us prepared to explore the concept rigorously.
 
 \begin{definition}
 If $f$ is a real-valued function defined on an interval and $x$ is in the domain of $f$, then $f$ is said to be \emph{differentiable} at $x$ if the limit exists:
@@ -2909,7 +2909,7 @@ We are now ready to show that derivatives satisfy the conclusion of the Intermed
 \end{theorem}
 
 \begin{proof}
-  We may assume without loss of generality that $L=0$. Since $[a,b]$ is compact, the extreme value thorem implies that $f$ attains its minimum value at some point $c\in[a,b]$. We claim that $c$ is not equal to $a$ or $b$. Admitting the claim for the moment, this implies $f$ attains its minimum at a point $c\in(a,b)$. Thus the Interior Extremum Theorem implies that $f'(c)=0$, as desired.
+  We may assume without loss of generality that $L=0$. Since $[a,b]$ is compact, the Extreme Value Thorem implies that $f$ attains its minimum value at some point $c\in[a,b]$. We claim that $c$ is not equal to $a$ or $b$. Admitting the claim for the moment, this implies $f$ attains its minimum at a point $c\in(a,b)$. Thus the Interior Extremum Theorem implies that $f'(c)=0$, as desired.
 
   To see that $f$ doesn't attain its minimum value at $a$ or $b$, first note that since $f'(a)<0$ we have $\lim_{h\to0}(f(a+h)-f(a))/h<0$. It follows that there exists $h>0$ such that $f(a+h)<f(a)$, that is, $f$ cannot attain its minimum value at $a$. Similarly since $f'(b)>0$ we have $\lim_{h\to0}(f(b+h)-f(b))/h>0$. It follows that there exists $h<0$ such that $f(b+h)<f(b)$, so once eagain $f$ cannot attain its minimum value at $b$ either.
 \end{proof}
