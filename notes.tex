@@ -2837,29 +2837,29 @@ As one often observes in a calculus class, the derivative is a limit of slopes b
 
 The primary development of differential calculus now proceeds in two pieces. First, one uses the definition of the derivative to calculate a library of \emph{formulas} for the derivatives of common functions. Second, one uses the definition of the derivative to prove the algebraic \emph{laws} of the derivative operation itself.
 
-\begin{theorem}[Derivative formulas]
+\begin{theorem}[Derivative formulas]\
   \begin{itemize}
     \item The derivative of $x^\alpha$ is $\alpha x^{\alpha-1}$
-    \item The derivative of $\ln(x)$ is $1/x$
     \item The derivative of $e^x$ is $e^x$
+    \item The derivative of $\ln(x)$ is $1/x$
     \item The derivative of $\sin(x)$ is $\cos(x)$
     \item The derivative of $\cos(x)$ is $-\sin(x)$
   \end{itemize}
 \end{theorem}
 
 \begin{theorem}[Derivative calculus]
-  Asusme $f,g$ are differentiable functions with the same domain.
+  Asusme $f,g$ are differentiable functions with appropriate domains. Then we have:
   \begin{itemize}
     \item $(f+g)'=f'+g'$
     \item $(kf)'=kf'$
     \item $(fg)'=f'g+fg'$
     \item $(f/g)'=(f'g-g'f)/g^2$
-    \item chain rule: $(f\circ g)'=(f'\circ g)g'$
+    \item chain rule: $(g\circ f)'=(g'\circ f)f'$
     \item inverse rule: $(f^{-1})'=1/(f'\circ f^{-1})$ if $f$ is invertible
   \end{itemize}
 \end{theorem}
 
-We leave the proof of this theorem to your old calculus textbook.
+We leave the proofs of these theorems to your old calculus textbook.
 
 In the rest of the section, we investigate the subtle relationship between continuity and differentiability. Our first result in this direction implies that differentiability is stronger than continuity. Phrased another way, any function which is discontinuous will also be non-differentiable.
 
@@ -2889,11 +2889,9 @@ Next, the derivative of $f$ is $f'(x)=2x\sin(1/x)-\sin(1/x)$ and $f'(0)=0$. It i
 
 In fact there is a whole ``hierarchy of differentiability''. We say that a function $f$ is in the class $C^0$ if $f$ is continuous, in the class $C^1$ if $f$ is differentiable $f'$ is continuous, in the class $C^2$ if $f'$ is differentiable and $f''$ is continuous, and so forth. We say that $f$ is in the class $C^\infty$ or \emph{smooth} if it is differentiable infinitely many times. Functions such as polynomials and $\sin(x)$ are all smooth. But the function $x^n\sin(1/x)$ lies in the class $C^{n-2}$.
 
-In the example above, the discontinuous derivative $f'(x)$ did not just have a simple jump discontinuity, but something much uglier. In our final result of the section, we will show that this ugliness can't be avoided. The reason is that derivatives have to satisfy the \emph{conclusion} of the IVT, so while they don't have to be continuous, their discontinuities cannot be simple jumps.
+Recall that we have already seen that continuous functions and compact sets are important in optimization because of the Extreme Value Theorem. You surely recall that derivatives are also important in optimization, and that is due to the following result.
 
-First we need the following familiar lemma, which states that when trying to optimize a function, a good place to look is at its critical points.
-
-\begin{lemma}[Interior Extremum Theorem]
+\begin{lemma}[Interior Extremum Theorem, or, Critical Point Lemma]
   \label{thm:iet}
   If $f$ is differentiable on the interval $(a,b)$ and $f$ attains a maximum or minimum value at $c\in(a,b)$, then $f'(c)=0$.
 \end{lemma}
@@ -2902,9 +2900,9 @@ First we need the following familiar lemma, which states that when trying to opt
   Let us treat the case when $f$ attains a maximum value at $c$. Then for any $h$ we have $f(c+h)-f(c)\leq0$. It follows that for $h>0$ we have $(f(c+h)-f(c))/h\leq0$, which implies that $f'(c)\leq0$. Similarly for $h<0$ we have $(f(c+h)-f(c))/h\geq0$, which implies that $f'(c)\geq0$. This leaves only the possibility that $f'(c)=0$.
 \end{proof}
 
-We are now ready to show that derivatives satisfy the conclusion of the Intermediate Value Theorem.
+To conclude the section, we revisit the example of the differentiable function $f(x)=x^2\sin(x)$ with a discontinuous derivative. It didn't have a simple jump discontinuity, but something much uglier. In our final result of the section, we will show that this ugliness can't be avoided. The reason is that derivatives have to satisfy the \emph{conclusion} of the IVT, so while they don't have to be continuous, their discontinuities cannot be simple jumps.
 
-\begin{theorem}[Darboux's theorem]
+\begin{theorem}[Darboux's Theorem, or, IVT for derivatives]
   If $f$ is differentiable on $[a,b]$ and $f'(a)<L<f'(b)$, then there exists $c\in(a,b)$ such that $f'(c)=L$.
 \end{theorem}
 
