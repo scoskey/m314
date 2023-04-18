@@ -2990,7 +2990,13 @@ Along with the derivative, the integral is one of the highlights of modern mathe
     &=\frac{b^3}{n^3}\sum_{i=1}^n i^2\\
     &=\frac{b^3}{n^3}\frac{n(n+1)(2n+1)}{6}
   \end{align*}
-  Here we are using a classic formula for the sum of the first $n$ squares. It is easy to calculate that $\lim U(f,P_n)=b^3/3$, and since $U(f)$ is the infemum over all possible $U(f,P)$, we conclude that $U(f)\leq b^3/3$. An analogous calculation shows that $L(f)\geq b^3/3$, and we conclude from these inequalities that $\int_0^bf\,dx$ exists and equals $b^3/3$.
+  Here we are using a classic formula for the sum of the first $n$ squares. It is easy to calculate that $\lim U(f,P_n)=b^3/3$, and since $U(f)$ is the infemum over all possible $U(f,P)$, we conclude that $U(f)\leq b^3/3$.
+  
+  Similarly the minimum falues occur at left endpoints, which means we always have $m_i=(b(i-1)/n)^2$. We thus obtain:
+  \begin{equation}
+    L(f,P_n)=\frac{b^3}{n^3}\frac{(n-1)n(2n-1)}{6}
+  \end{equation}
+  Using the same logic as above, it follows that $L(f)\geq b^3/3$, and we conclude from these inequalities that $\int_0^bf\,dx$ exists and equals $b^3/3$.
 \end{example}
 
 \begin{example}
