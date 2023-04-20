@@ -3096,7 +3096,7 @@ Before stating and proving the FTC, we need to visit the Mean Value Theorem, a c
 \end{theorem}
 
 \begin{proof}
-  We can add a linear term to $f$ to assume without loss of generality that $f(a)=f(b)$. (Note that passing from $f(x)$ to $f(x)+mx+b$ has the effect of adding an $m$ to both sides of the desired equation.) Now we can use the Extreme Value Thoerem together with the Interior Extremum Theorem to conclude that there must exist $c\in[a,b]$ such that $f'(c)=0$, the desired result.
+  We can add a linear term to $f$ to assume without loss of generality that $f(a)=f(b)$. (Note that passing from $f(x)$ to $f(x)+mx+b$ has the effect of adding an $m$ to both sides of the desired equation.) This reduces the statement to Rolle's theorem, which uses the Extreme Value Thoerem together with the Interior Extremum Theorem to conclude that there must exist $c\in[a,b]$ such that $f'(c)=0$.
 \end{proof}
 
 The MVT says that the ``average rate of change'' of a function over an interval is equal to the instantaneous rate of change at some point in the interval. On the other hand, the conclusion of the MVT can also be written as follows:
@@ -3149,12 +3149,12 @@ We now continue with the second part of the FTC. First, given any integrable fun
 
 \begin{proof}
   Substituting the definition of $F$ into the difference quotient for $F$, we have:
-  \[F'(x)=\frac{1}{h}\int_x^{x+h} f(t)\,dt
+  \[F'(x)=\lim_{h\to0}\frac{1}{h}\int_x^{x+h} f(t)\,dt
   \]
   By the continuity of $f$, given $\epsilon>0$ we can find $\delta>0$ such that $|t-x|<\delta$ implies $|f(t)-f(x)|<\epsilon$. Letting $h<\delta$, it follows that
   \[h(f(x)-\epsilon)\leq\int_x^{x+h} f(t)\,dt\leq h(f(x)+\epsilon)
   \]
-  Dividing all sides by $h$, we have:
+  Dividing all sides by $h$ and taking the limit, we have:
   \[f(x)-\epsilon\leq F'(x)\leq f(x)+\epsilon
   \]
   Since $\epsilon$ was arbitrary, we conclude that $F'(x)=f(x)$.
@@ -3166,8 +3166,8 @@ Recall that when we introduced the derivative calculus we had both formulas for 
   For each function $f(x)$, we have $\int_a^bf(t)\,dt=F(b)-F(a)$ where $F$ is the function shown.
   \begin{enumerate}
     \item If $f(x)=x^\alpha$ then $F(x)=\frac{1}{\alpha+1}x^{\alpha+1}+C$, for $\alpha\neq-1$
-    \item If $f(x)=1/x$ then $F(x)=\ln(x)+C$
     \item If $f(x)=e^x$ then $F(x)=e^x+C$
+    \item If $f(x)=1/x$ then $F(x)=\ln(x)+C$
     \item If $f(x)=\sin(x)$ then $F(x)=-\cos(x)+C$
     \item If $f(x)=\cos(x)$ then $F(x)=sin(x)+C$
   \end{enumerate}
@@ -3180,6 +3180,7 @@ Recall that when we introduced the derivative calculus we had both formulas for 
   \item Find the derivative of the function:
   \begin{enumerate}
     \item $F(x)=\int_0^x \cos(3t)\,dt$\vspace\fill
+    \item $F(x)=\int_0^{\ln(x)}\cos(3t)\,dt$\vspace\fill
     \item $F(x)=\int_0^x \cos(t^2)\,dt$\vspace\fill
     \item $F(x)=\int_0^{\ln(x)} \cos(t^2)\,dt$\vspace\fill
   \end{enumerate}
@@ -3300,11 +3301,11 @@ It is possible to produce examples of functions $f$ with interesting discontinui
 
 % play around with other sets: [0,1], (0,1), 1/n, 1/n\cup0, etc
 
-The example of Thomae's function naturally leads to the question: If we can find a function $f$ such that $D_f$ is the set of rational numbers, can we also finda  function $f$ such that $D_f$ is the set of irrational numbers? With all our ingenuity to create bizarre functions, it may surprise you that the answer is ``no''. To help us reach this conclusion, we need the following partial characterization of the sets $D_f$.
+The example of Thomae's function naturally leads to the question: If we can find a function $f$ such that $D_f$ is the set of rational numbers, can we also find a function $f$ such that $D_f$ is the set of irrational numbers? With all our ingenuity to create bizarre functions, it may surprise you that the answer is ``no''. To help us reach this conclusion, we need the following partial characterization of the sets $D_f$.
 
 \begin{theorem}
   \label{thm:df-closed}
-  If $f\colon\R\to\R$, then $D_f$ can be written as a union of closed sets.
+  If $f\colon\R\to\R$, then $D_f$ can be written as a union of countably many closed sets.
 \end{theorem}
 
 \begin{proof}
