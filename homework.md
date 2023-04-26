@@ -72,28 +72,6 @@ header-includes: |
 4. For $0<\alpha<1$, the modified Cantor set $C^\alpha$ is constructed by starting with $B_0=[0,1]$ and recursively letting $B_{n+1}$ be the set obtained by removing the middle $\alpha$ fraction of each interval of $B_n$. Find the length of $C^\alpha$.
 5. Find the fractal dimension of $C^\alpha$. Hint: use a scaling factor that grows both intervals in $B_1$ to a length of $1$.
 
-## Midterm, due Monday, March 6
-
-**Instructions** You may not consult with any other person or intelligence. Your work must be *completely your own*. You may refer to class notes and materials freely. If you use any outside resources, please *provide citations*. To receive full credit, use only the methods *we learned in our class*. To receive full credit, please *show all work*.
-
-1. Please copy the following paragraph, and sign your name below it: "My solutions are my own original work. I completed this exam without consulting any other person. I followed Boise State University's policies on academic integrity."
-2. Suppose $\alpha$ is a real number corresponding to the cut $(A,P,B)$. Describe the cut corresponding to the real number $2\alpha$. You may want to separate into cases based on whether the cut is rational or irrational.
-3. Let $A,B$ be sets of real numbers which have no maximum element, and assume $\sup(A)=\sup(B)$. Show that there exists a sequence $x\_n$ which is: monotone, has a subsequence in $A$, and has a subsequence in $B$.
-4. Prove that the set is countable: $A=$ the set of irrational numbers of the form $a+b\sqrt{2}$, where $a,b$ are nonzero rational numbers.
-5. Prove that the set is uncountable: $A=$ the set of real numbers whose decimals expansion use only the digits $3,5,7$.
-6. Use the definition of convergence to verify that the sequence converges to the proposed limit: $a_n=\frac{3n+1}{5n+1}$, $L=3/5$
-7. Use the limit calculus laws to find each limit. Justify your steps.  
-  * $\lim\frac{(2n+2)(3n-1)}{12n^2+5n+1}$
-  * $\lim\frac{\sqrt{4n^3+3n^2+2n+1}}{\sqrt{n^3}+2\sqrt{n}+1}$
-8. Decide, with full justification, whether the positive-term series converge or diverge.  
-  * $\sum\frac{n^3-n}{n^4\sqrt{n}+2n+2}$
-  * $\sum\frac{e^n}{n!}$
-9. Let $a_n\geq0$. Show that if $\sum a_n$ converges then $\sum(a_n)^2$ converges. Give an example which shows that the converse is false.
-10. Consider the sequence defined by $a_1=2$ and $a_{n+1}=\frac{a_n+3}{4}$.  
-  * Use induction to prove the sequence is bounded below by $0$.
-  * Use induction to prove the sequence is monotone decreasing.
-  * Use the limit calculus laws to find the limit, $L$.
-
 ## Week 7, due Wednesday, March 1
 
 1. Use direct comparisons to decide whether the series converge or diverge.
